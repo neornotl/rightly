@@ -1,0 +1,6 @@
+{"case_id": 1, "accent_group": "northern", "reference": "thủ tục cấp giấy xác nhận hộ khẩu", "hypothesis": "thủ tục cấp giấy xác nhận hộ khẩu"}
+{"case_id": 2, "accent_group": "northern", "reference": "đăng ký khai sinh cho con tại xã", "hypothesis": "đăng ký khai sinh cho con tại xa"}
+{"case_id": 3, "accent_group": "southern", "reference": "xác nhận tình trạng hôn nhân mất bao lâu", "hypothesis": "xác nhận tình trạng hôn nhân mất bao lau"}
+{"case_id": 4, "accent_group": "southern", "reference": "đăng ký tạm trú ở xã bình minh", "hypothesis": "đăng ký tạm tru ở xã bình minh"}
+{"case_id": 5, "accent_group": "standard", "reference": "hỗ trợ khó khăn đột xuất cần hồ sơ gì", "hypothesis": "hỗ trợ khó khăn đột suất cần hồ sơ gì"}
+{"case_id": 6, "accent_group": "standard", "reference": "lệ phí xác nhận hộ khẩu là bao nhiêu", "hypothesis": "lệ phí xác nhận hộ khẩu là bao nhiêu"}

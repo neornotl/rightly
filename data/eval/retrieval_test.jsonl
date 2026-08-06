@@ -1,0 +1,6 @@
+{"query": "Tôi cần xác nhận hộ khẩu để vay vốn, làm sao?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Khai sinh trễ hạn có bị phạt không?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Tạm trú bao lâu thì phải đăng ký lại?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "central"}
+{"query": "Xác nhận độc thân cần mang giấy gì?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Nhà tôi bị hỏa hoạn, làm đơn hỗ trợ ở đâu?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Giờ làm việc của bộ phận một cửa xã Bình Minh?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}

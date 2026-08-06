@@ -1,0 +1,2 @@
+# Core dependencies - minimal. Mock mode runs without these too (stdlib only).
+python-dotenv>=1.0,<2.0

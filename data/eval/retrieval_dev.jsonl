@@ -1,0 +1,6 @@
+{"query": "Thủ tục cấp giấy xác nhận hộ khẩu tại xã Bình Minh?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Đăng ký khai sinh cho con tôi cần những giấy tờ gì?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "northern"}
+{"query": "Xác nhận tình trạng hôn nhân mất bao lâu?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Đăng ký tạm trú ở Bình Minh làm ở đâu?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "southern"}
+{"query": "Hỗ trợ khó khăn đột xuất cần hồ sơ gì?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}
+{"query": "Lệ phí xác nhận hộ khẩu là bao nhiêu?", "expected_source_id": "demo_binhminh_procedures", "accent_group": "standard"}

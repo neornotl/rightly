@@ -1,0 +1,42 @@
+# Environment / secrets - NEVER commit real keys
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Project outputs
+results/*
+!results/.gitkeep
+logs/*
+!logs/.gitkeep
+data/chunks/*.jsonl
+!data/chunks/demo_chunks.jsonl
+data/metadata.csv
+!data/metadata.csv
+
+# Runtime artifacts
+*.wav
+*.mp3
+!docs/example-audio*.md
+*.pyc
+
+# OS/editor
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,12 @@
+{"case_id": 0, "hold_message": true, "asr_ms": 3226.5, "retrieval_ms": 21.8, "llm_ms": 1295.1, "tts_ms": 567.9, "total_ms": 6587.8}
+{"case_id": 1, "hold_message": false, "asr_ms": 3327.1, "retrieval_ms": 82.5, "llm_ms": 956.5, "tts_ms": 806.3, "total_ms": 3337.1}
+{"case_id": 2, "hold_message": true, "asr_ms": 2090.3, "retrieval_ms": 55.4, "llm_ms": 847.8, "tts_ms": 538.6, "total_ms": 6189.5}
+{"case_id": 3, "hold_message": false, "asr_ms": 2971.3, "retrieval_ms": 35.4, "llm_ms": 1860.7, "tts_ms": 1271.3, "total_ms": 3229.9}
+{"case_id": 4, "hold_message": true, "asr_ms": 3675.7, "retrieval_ms": 68.9, "llm_ms": 1412.5, "tts_ms": 486.6, "total_ms": 7603.2}
+{"case_id": 5, "hold_message": false, "asr_ms": 2408.8, "retrieval_ms": 26.5, "llm_ms": 974.1, "tts_ms": 1317.0, "total_ms": 5977.1}
+{"case_id": 6, "hold_message": true, "asr_ms": 3679.2, "retrieval_ms": 71.1, "llm_ms": 1765.2, "tts_ms": 1467.7, "total_ms": 4941.3}
+{"case_id": 7, "hold_message": false, "asr_ms": 2990.5, "retrieval_ms": 78.1, "llm_ms": 1913.3, "tts_ms": 1334.0, "total_ms": 5855.8}
+{"case_id": 8, "hold_message": true, "asr_ms": 3402.3, "retrieval_ms": 23.2, "llm_ms": 1210.2, "tts_ms": 647.3, "total_ms": 3567.0}
+{"case_id": 9, "hold_message": false, "asr_ms": 2128.5, "retrieval_ms": 27.1, "llm_ms": 1300.4, "tts_ms": 1062.8, "total_ms": 4878.2}
+{"case_id": 10, "hold_message": true, "asr_ms": 2499.5, "retrieval_ms": 34.7, "llm_ms": 1280.6, "tts_ms": 1424.0, "total_ms": 6181.0}
+{"case_id": 11, "hold_message": false, "asr_ms": 3144.7, "retrieval_ms": 32.0, "llm_ms": 2112.4, "tts_ms": 496.1, "total_ms": 4945.5}
