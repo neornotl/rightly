@@ -86,8 +86,9 @@ VAIFF 2026**.
 |---|---|---|---|---|
 | 1 | Tuyển 8-10 người pilot + thu consent | `pilot_recruits.csv` | 4-5 | Gating tuần sau — làm trước nhất |
 | 2 | Lịch pilot tuần sau + shot-list video | `pilot_schedule.md`, `shot_list.md` | 3h | Video 2-3' |
-| 3 | Email mời đối tác + GTM one-pager | `partner_email_template.md` | 3h | Dựa trên problem statement của C |
+| 3 | NHÁP email đối tác + danh sách đối tác tiềm năng (KHÔNG gửi) | `partner_email_draft.md` | 2h | Gửi chính thức HOÃN tới khi có public link + pilot (theo ý T 08/08) |
 | 4 | Demo script chốt (lời + slide cue) | `demo_script_final.md` | 2h | |
+| 5 | Thử pilot nội bộ 2 người (bắt lỗi trước người thật) | Log thử nội bộ | 2-3h | Bổ sung theo ý T |
 
 ### C-P phối hợp
 - C giao `consent_form_v1.md` (sáng T7) → P dùng ngay khi tuyển.

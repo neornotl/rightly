@@ -42,8 +42,14 @@ tie-break) — test 74/74 xanh.
 |---|---|---|---|
 | P1 | Tuyển 8-10 người pilot + thu consent (gating tuần sau — làm TRƯỚC) | `pilot_recruits.csv` | 4-5h |
 | P2 | Lịch pilot + shot-list video 2-3' | `pilot_schedule.md`, `shot_list.md` | 3h |
-| P3 | Email mời đối tác + GTM one-pager | `partner_email_template.md` | 3h |
+| P3 | Chuẩn bị NHÁP email đối tác + danh sách đối tác tiềm năng (KHÔNG gửi) | `partner_email_draft.md` | 2h |
 | P4 | Demo script chốt (lời + slide cue) | `demo_script_final.md` | 2h |
+| P5 | Tự chạy thử pilot nội bộ (2 người trong team) để bắt lỗi trước khi tuyển người thật | Log thử nội bộ | 2-3h |
+
+> **Cập nhật theo ý T (08/08):** Gửi email mời hợp tác chính thức HOÃN đến khi
+> sản phẩm có public link (12/08) + kết quả pilot. Giai đoạn này chỉ soạn nháp
+> + lập danh sách đối tác tiềm năng. Không mời hợp tác khi chưa có sản phẩm
+> demo được.
 
 ## Quest phối hợp C-P
 
