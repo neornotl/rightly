@@ -59,6 +59,7 @@ class Settings:
     save_transcripts: bool = False
     max_context_chars: int = 12000
     max_response_chars: int = 2000
+    pii_scrub_outbound: bool = True
     min_retrieval_score: float = 0.01
     retriever_rerank: bool = False
     retriever_gate: str = "bm25_dense"
@@ -184,6 +185,8 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
     if max_response > max_context:
         raise ConfigError("MAX_RESPONSE_CHARS must not exceed MAX_CONTEXT_CHARS.")
 
+    pii_scrub_outbound = _bool_env("PII_SCRUB_OUTBOUND", True)
+
     min_score = _float_env("MIN_RETRIEVAL_SCORE", 0.01)
     if min_score < 0:
         raise ConfigError("MIN_RETRIEVAL_SCORE must be >= 0.")
@@ -225,6 +228,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         save_transcripts=_bool_env("SAVE_TRANSCRIPTS", False),
         max_context_chars=max_context,
         max_response_chars=max_response,
+        pii_scrub_outbound=pii_scrub_outbound,
         min_retrieval_score=min_score,
         retriever_rerank=_bool_env("RETRIEVER_RERANK", False),
         retriever_gate=retriever_gate,
@@ -270,6 +274,7 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "save_transcripts": settings.save_transcripts,
         "max_context_chars": settings.max_context_chars,
         "max_response_chars": settings.max_response_chars,
+        "pii_scrub_outbound": settings.pii_scrub_outbound,
         "min_retrieval_score": settings.min_retrieval_score,
         "gemini_api_key": "set" if settings.gemini_api_key else "unset",
         "groq_api_key": "set" if settings.groq_api_key else "unset",

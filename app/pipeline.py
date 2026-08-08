@@ -6,6 +6,9 @@ Privacy guarantees implemented here:
   delete user-provided files outside the project).
 - Transcripts are not logged unless SAVE_TRANSCRIPTS=true.
 - Only the transcript + needed chunks go to the LLM (never raw audio).
+- In cloud mode (gemini/groq), the outbound query is PII-scrubbed first
+  (PII_SCRUB_OUTBOUND=true); local rules, routing, and logging keep the
+  original text.
 """
 
 from __future__ import annotations
@@ -225,7 +228,18 @@ class Pipeline:
         t0 = time.perf_counter()
         llm_classifier = None
         if self.settings.app_mode == "cloud" and hasattr(self.llm, "classify_safe"):
-            llm_classifier = self.llm.classify_safe  # type: ignore[attr-defined]
+            # Outbound: scrub the query before it leaves the machine.
+            if self.settings.pii_scrub_outbound:
+                from app.privacy.scrubber import scrub_outbound
+
+                def _scrubbed_classifier(q: str, ch: object) -> bool:
+                    return self.llm.classify_safe(  # type: ignore[attr-defined]
+                        scrub_outbound(q), ch  # type: ignore[arg-type]
+                    )
+
+                llm_classifier = _scrubbed_classifier
+            else:
+                llm_classifier = self.llm.classify_safe  # type: ignore[attr-defined]
         decision, normalized = self.router.route(query.text, chunks, llm_classifier)
         lat["safety_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
 
@@ -233,8 +247,16 @@ class Pipeline:
         if self.router.would_answer(decision):
             t0 = time.perf_counter()
             try:
+                outbound_text = query.text
+                if (
+                    self.settings.llm_backend in {"gemini", "groq"}
+                    and self.settings.pii_scrub_outbound
+                ):
+                    from app.privacy.scrubber import scrub_outbound
+
+                    outbound_text = scrub_outbound(query.text)
                 doc = self.llm.generate_answer(
-                    query.text,
+                    outbound_text,
                     chunks[:3],
                     max_chars=self.settings.max_response_chars,
                 )
