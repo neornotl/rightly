@@ -86,14 +86,24 @@ def make_llm(settings: Settings) -> BaseLLM:
     if settings.llm_backend == "gemini":
         from app.llm.gemini_llm import GeminiLLM
 
-        llm: BaseLLM = GeminiLLM(api_key=settings.gemini_api_key)
+        llm: BaseLLM = GeminiLLM(
+            api_key=settings.gemini_api_key,
+            timeout_seconds=settings.llm_timeout_seconds,
+            max_retries=settings.llm_max_retries,
+            backoff_seconds=settings.llm_retry_backoff_seconds,
+        )
         if not llm.available:  # type: ignore[attr-defined]
             raise RuntimeError("LLM_BACKEND=gemini but GEMINI_API_KEY is not set.")
         return llm
     if settings.llm_backend == "groq":
         from app.llm.groq_llm import GroqLLM
 
-        llm = GroqLLM(api_key=settings.groq_api_key)
+        llm = GroqLLM(
+            api_key=settings.groq_api_key,
+            timeout_seconds=settings.llm_timeout_seconds,
+            max_retries=settings.llm_max_retries,
+            backoff_seconds=settings.llm_retry_backoff_seconds,
+        )
         if not llm.available:  # type: ignore[attr-defined]
             raise RuntimeError("LLM_BACKEND=groq but GROQ_API_KEY is not set.")
         return llm

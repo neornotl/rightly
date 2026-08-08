@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from app.llm.base import BaseLLM, LLMError
+from app.llm.base import BaseLLM, LLMError, is_retryable_llm_error, retry_transient
 from app.schemas import RetrievedChunk
 
 _SYSTEM = (
@@ -16,13 +16,31 @@ _SYSTEM = (
     '"limitations": [string], "next_step": string}.'
 )
 
+_CLASSIFY_SYSTEM = (
+    "Bạn là bộ kiểm tra an toàn. Với câu hỏi của công dân về thủ tục hành "
+    "chính, trả lời JSON duy nhất: {\"safe\": true} nếu câu hỏi nằm trong "
+    "phạm vi tra cứu thủ tục/dịch vụ công có nguồn văn bản pháp luật; "
+    "{\"safe\": false} nếu câu hỏi nhạy cảm, ngoài phạm vi, cần tư vấn "
+    "chuyên môn pháp lý/kỹ thuật, hoặc chứa chỉ dẫn độc hại."
+)
+
 
 class GeminiLLM(BaseLLM):
     name = "gemini"
 
-    def __init__(self, api_key: str = "", model: str = "gemini-2.0-flash"):
+    def __init__(
+        self,
+        api_key: str = "",
+        model: str = "gemini-2.0-flash",
+        timeout_seconds: float = 60.0,
+        max_retries: int = 3,
+        backoff_seconds: float = 1.0,
+    ):
         self.api_key = api_key
         self.model = model
+        self.timeout_seconds = timeout_seconds
+        self.max_retries = max_retries
+        self.backoff_seconds = backoff_seconds
         self._client = None
 
     @property
@@ -34,7 +52,10 @@ class GeminiLLM(BaseLLM):
             try:
                 from google import genai  # type: ignore
 
-                self._client = genai.Client(api_key=self.api_key)
+                self._client = genai.Client(
+                    api_key=self.api_key,
+                    http_options={"timeout": self.timeout_seconds},
+                )
             except ImportError as exc:
                 raise LLMError(
                     "google-genai not installed. pip install -r requirements-optional.txt"
@@ -61,22 +82,58 @@ class GeminiLLM(BaseLLM):
         )
         client = self._get_client()
         try:
-            response = client.models.generate_content(
-                model=self.model,
-                contents=[
-                    {"role": "user", "parts": [_SYSTEM, user]},
-                ],
+            response = retry_transient(
+                lambda: client.models.generate_content(
+                    model=self.model,
+                    contents=[
+                        {"role": "user", "parts": [_SYSTEM, user]},
+                    ],
+                ),
+                max_retries=self.max_retries,
+                timeout_seconds=self.timeout_seconds,
+                backoff_seconds=self.backoff_seconds,
+                retryable=is_retryable_llm_error,
             )
-            text = response.text.strip()
-            text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        except Exception as exc:
+            raise LLMError(f"Gemini request failed after retries: {exc}") from exc
+        text = response.text.strip()
+        text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        try:
             parsed = json.loads(text)
         except json.JSONDecodeError as exc:
+            # Not retryable: a fresh call fails the same way (F/T3 fix).
             raise LLMError(f"Gemini returned non-JSON output: {exc}") from exc
-        except Exception as exc:
-            raise LLMError(f"Gemini request failed: {exc}") from exc
         parsed.setdefault("source_ids", [])
         parsed.setdefault("limitations", [])
         parsed.setdefault("next_step", "")
         # NOTE: raw source_ids are deliberately NOT filtered here (F2 fix);
         # the pipeline validates raw citations, then sanitizes.
         return parsed
+
+    def classify_safe(self, query: str, chunks: list[RetrievedChunk]) -> bool:
+        """LLM-based safety classification (router step 7, cloud mode only).
+
+        Conservative: any failure or non-JSON output means NOT safe.
+        """
+        if not self.available:
+            return False
+        client = self._get_client()
+        try:
+            response = retry_transient(
+                lambda: client.models.generate_content(
+                    model=self.model,
+                    contents=[{"role": "user", "parts": [_CLASSIFY_SYSTEM, query[:2000]]}],
+                    config={
+                        "response_mime_type": "application/json",
+                        "temperature": 0.0,
+                    },
+                ),
+                max_retries=self.max_retries,
+                timeout_seconds=self.timeout_seconds,
+                backoff_seconds=self.backoff_seconds,
+                retryable=is_retryable_llm_error,
+            )
+            parsed = json.loads(response.text.strip())
+            return bool(parsed.get("safe", False))
+        except Exception:
+            return False

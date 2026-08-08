@@ -60,6 +60,9 @@ class Settings:
     max_context_chars: int = 12000
     max_response_chars: int = 2000
     pii_scrub_outbound: bool = True
+    llm_timeout_seconds: float = 60.0
+    llm_max_retries: int = 3
+    llm_retry_backoff_seconds: float = 1.0
     min_retrieval_score: float = 0.01
     retriever_rerank: bool = False
     retriever_gate: str = "bm25_dense"
@@ -187,6 +190,12 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
 
     pii_scrub_outbound = _bool_env("PII_SCRUB_OUTBOUND", True)
 
+    llm_timeout = _float_env("LLM_TIMEOUT_SECONDS", 60.0)
+    llm_max_retries = _int_env("LLM_MAX_RETRIES", 3)
+    llm_backoff = _float_env("LLM_RETRY_BACKOFF_SECONDS", 1.0)
+    if llm_timeout <= 0 or llm_max_retries < 0 or llm_backoff < 0:
+        raise ConfigError("Invalid LLM timeout/retry settings.")
+
     min_score = _float_env("MIN_RETRIEVAL_SCORE", 0.01)
     if min_score < 0:
         raise ConfigError("MIN_RETRIEVAL_SCORE must be >= 0.")
@@ -229,6 +238,9 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         max_context_chars=max_context,
         max_response_chars=max_response,
         pii_scrub_outbound=pii_scrub_outbound,
+        llm_timeout_seconds=llm_timeout,
+        llm_max_retries=llm_max_retries,
+        llm_retry_backoff_seconds=llm_backoff,
         min_retrieval_score=min_score,
         retriever_rerank=_bool_env("RETRIEVER_RERANK", False),
         retriever_gate=retriever_gate,
@@ -275,6 +287,8 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "max_context_chars": settings.max_context_chars,
         "max_response_chars": settings.max_response_chars,
         "pii_scrub_outbound": settings.pii_scrub_outbound,
+        "llm_timeout_seconds": settings.llm_timeout_seconds,
+        "llm_max_retries": settings.llm_max_retries,
         "min_retrieval_score": settings.min_retrieval_score,
         "gemini_api_key": "set" if settings.gemini_api_key else "unset",
         "groq_api_key": "set" if settings.groq_api_key else "unset",

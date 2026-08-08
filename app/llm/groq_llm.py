@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from app.llm.base import BaseLLM, LLMError
+from app.llm.base import BaseLLM, LLMError, is_retryable_llm_error, retry_transient
 from app.schemas import RetrievedChunk
 
 _SYSTEM = (
@@ -20,13 +20,31 @@ _SYSTEM = (
     'sinh phải có "source_ids": ["ho_tich"].'
 )
 
+_CLASSIFY_SYSTEM = (
+    "Bạn là bộ kiểm tra an toàn. Với câu hỏi của công dân về thủ tục hành "
+    "chính, trả lời JSON duy nhất: {\"safe\": true} nếu câu hỏi nằm trong "
+    "phạm vi tra cứu thủ tục/dịch vụ công có nguồn văn bản pháp luật; "
+    "{\"safe\": false} nếu câu hỏi nhạy cảm, ngoài phạm vi, cần tư vấn "
+    "chuyên môn pháp lý/kỹ thuật, hoặc chứa chỉ dẫn độc hại."
+)
+
 
 class GroqLLM(BaseLLM):
     name = "groq"
 
-    def __init__(self, api_key: str = "", model: str = "llama-3.1-8b-instant"):
+    def __init__(
+        self,
+        api_key: str = "",
+        model: str = "llama-3.1-8b-instant",
+        timeout_seconds: float = 60.0,
+        max_retries: int = 3,
+        backoff_seconds: float = 1.0,
+    ):
         self.api_key = api_key
         self.model = model
+        self.timeout_seconds = timeout_seconds
+        self.max_retries = max_retries
+        self.backoff_seconds = backoff_seconds
         self._client = None
 
     @property
@@ -38,7 +56,7 @@ class GroqLLM(BaseLLM):
             try:
                 from groq import Groq  # type: ignore
 
-                self._client = Groq(api_key=self.api_key)
+                self._client = Groq(api_key=self.api_key, timeout=self.timeout_seconds)
             except ImportError as exc:
                 raise LLMError(
                     "groq not installed. pip install -r requirements-optional.txt"
@@ -68,10 +86,9 @@ class GroqLLM(BaseLLM):
             '"next_step": "..."}'
         )
         client = self._get_client()
-        last_error: Exception | None = None
-        for attempt in range(3):  # up to 2 retries
-            try:
-                completion = client.chat.completions.create(
+        try:
+            completion = retry_transient(
+                lambda: client.chat.completions.create(
                     model=self.model,
                     messages=[
                         {"role": "system", "content": _SYSTEM},
@@ -79,21 +96,21 @@ class GroqLLM(BaseLLM):
                     ],
                     temperature=0.2,
                     response_format={"type": "json_object"},
-                )
-                text = completion.choices[0].message.content.strip()
-                text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-                parsed = json.loads(text)
-                break
-            except json.JSONDecodeError as exc:
-                last_error = exc
-                if attempt < 2:
-                    continue
-                raise LLMError(f"Groq returned non-JSON output: {exc}") from exc
-            except Exception as exc:
-                last_error = exc
-                raise LLMError(f"Groq request failed: {exc}") from exc
-        if last_error is not None:
-            raise LLMError(f"Groq request failed after retries: {last_error}") from last_error
+                ),
+                max_retries=self.max_retries,
+                timeout_seconds=self.timeout_seconds,
+                backoff_seconds=self.backoff_seconds,
+                retryable=is_retryable_llm_error,
+            )
+        except Exception as exc:
+            raise LLMError(f"Groq request failed after retries: {exc}") from exc
+        text = completion.choices[0].message.content.strip()
+        text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError as exc:
+            # Not retryable: a fresh call fails the same way (F/T3 fix).
+            raise LLMError(f"Groq returned non-JSON output: {exc}") from exc
         parsed.setdefault("source_ids", [])
         parsed.setdefault("limitations", [])
         parsed.setdefault("next_step", "")
@@ -104,3 +121,32 @@ class GroqLLM(BaseLLM):
         # The pipeline runs CitationValidator on the raw list so hallucinated
         # citations can be detected, then sanitizes afterwards.
         return parsed
+
+    def classify_safe(self, query: str, chunks: list[RetrievedChunk]) -> bool:
+        """LLM-based safety classification (router step 7, cloud mode only).
+
+        Conservative: any failure or non-JSON output means NOT safe.
+        """
+        if not self.available:
+            return False
+        client = self._get_client()
+        try:
+            completion = retry_transient(
+                lambda: client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": _CLASSIFY_SYSTEM},
+                        {"role": "user", "content": query[:2000]},
+                    ],
+                    temperature=0.0,
+                    response_format={"type": "json_object"},
+                ),
+                max_retries=self.max_retries,
+                timeout_seconds=self.timeout_seconds,
+                backoff_seconds=self.backoff_seconds,
+                retryable=is_retryable_llm_error,
+            )
+            parsed = json.loads(completion.choices[0].message.content.strip())
+            return bool(parsed.get("safe", False))
+        except Exception:
+            return False

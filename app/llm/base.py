@@ -2,13 +2,54 @@
 
 from __future__ import annotations
 
+import time
 from abc import ABC, abstractmethod
+from typing import Callable, TypeVar
 
 from app.schemas import RetrievedChunk
+
+T = TypeVar("T")
 
 
 class LLMError(RuntimeError):
     """Raised when the LLM backend fails or returns unusable output."""
+
+
+def retry_transient(
+    fn: Callable[[], T],
+    *,
+    max_retries: int = 3,
+    timeout_seconds: float = 60.0,
+    backoff_seconds: float = 1.0,
+    retryable: Callable[[Exception], bool] = lambda exc: True,
+) -> T:
+    """Call ``fn`` with exponential backoff on retryable exceptions.
+
+    JSON/format errors are usually NOT retryable (they will fail the same
+    way every time); network errors, 429 rate limits, and 5xx are.
+    """
+    attempt = 0
+    while True:
+        try:
+            return fn()
+        except Exception as exc:
+            if attempt >= max_retries or not retryable(exc):
+                raise
+            attempt += 1
+            time.sleep(backoff_seconds * (2 ** (attempt - 1)))
+
+
+def _is_transient_http(error: Exception) -> bool:
+    """True for network/timeout/429/5xx style errors from HTTP SDKs."""
+    message = str(error).lower()
+    if isinstance(error, (ConnectionError, TimeoutError, OSError)):
+        return True
+    return any(token in message for token in ("429", "500", "502", "503", "504", "timeout"))
+
+
+def is_retryable_llm_error(error: Exception) -> bool:
+    """Conservative retry policy: transient HTTP failures only."""
+    return _is_transient_http(error)
 
 
 class BaseLLM(ABC):

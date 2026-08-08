@@ -22,10 +22,14 @@
 | T4 | Thu hẹp pattern RED false positive (F10) | Test phủ mới | 15/08 |
 | T5 | Release + tag; tài liệu kỹ thuật khớp code | Release note | 24/08 |
 
-*Đã xong (nền tảng)*: pipeline đầu-cuối, 74 tests, preflight 9/9, eval R1-R4,
+*Đã xong (nền tảng)*: pipeline đầu-cuối, 94 tests, preflight 9/9, eval R1-R4,
 CitationValidator chặn nguồn hết hiệu lực, privacy logging, demo transcript
 deterministic (`docs/demo/README.md`), sửa nondeterminism retrieval (BM25/RRF
-tie-break) — test 74/74 xanh.
+tie-break), scrub outbound PII cloud (`app/privacy/scrubber.py`), T3 cloud LLM
+hardening (timeout/retry/classify_safe — `deliverables/T/README.md`).
+
+*Đang chờ*: T1 cần API key (Groq/Gemini) + tài khoản Streamlit; T2 cần xác
+nhận máy AI PC.
 
 ## QUEST C (Content, Compliance & Evaluation — chủ: C)
 
