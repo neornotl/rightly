@@ -1,33 +1,31 @@
 # Security Policy
 
-## Reporting a vulnerability
+## Báo cáo lỗ hổng
 
-Do NOT open a public issue for security problems. Contact the maintainers
-privately (the address will be published when the project has a maintainer
-email; until then, use a private GitHub advisory if/when the repository is
-published).
+Dự án đang ở giai đoạn PREPARATION/MVP (mock-first). Nếu bạn phát hiện lỗ hổng
+bảo mật — bao gồm rò rỉ dữ liệu, lộ secret, prompt injection làm sai lệch nguồn
+pháp luật, hoặc xử lý dữ liệu cá nhân không đúng cam kết trong
+`docs/privacy_deletion_policy.md` — hãy liên hệ người phụ trách đội ([T] trong
+`docs/team_status.md`) hoặc gửi qua GitHub Security Advisory (repo private).
 
-Please include:
+Vui lòng **không** công khai lỗ hổng trước khi đội xác nhận và xử lý.
 
-- Affected version / commit.
-- Steps to reproduce.
-- Impact assessment (data exposed, escalation path, etc.).
+## Cam kết của dự án
 
-## Supported versions
+- **Không commit secret**: `.env`, `*.env` trong .gitignore; chỉ `!.env.example`
+  (placeholder).
+- **Dữ liệu riêng tư**: raw audio bị xóa sau phiên khi bật
+  `DELETE_RAW_AUDIO_AFTER_SESSION`; transcript chỉ lưu khi `SAVE_TRANSCRIPTS=true`.
+  Xem `docs/privacy_deletion_policy.md`.
+- **Cá nhân trong repo**: `data/contacts.json` chỉ chứa đầu mối tư vấn được
+  đồng ý đưa vào; không thêm SĐT/ảnh/audio người tham gia pilot vào repo.
+- **Nguồn pháp luật**: chỉ trích dẫn văn bản trong `data/law_status.json`
+  (registry có kiểm soát); nguồn hết hiệu lực bị chặn bởi CitationValidator.
+- **Môi trường public (Streamlit Cloud)**: dùng cấu hình không lộ secret; nếu
+  không thể đảm bảo, không deploy dữ liệu nhạy cảm.
 
-| Version | Status |
-|---------|--------|
-| 4.0.x   | Active development (pre-pilot) |
+## Phạm vi hỗ trợ
 
-## Security posture (summary)
-
-- No real secrets in the repository; API keys live in `.env` (git-ignored).
-- Default mode never sends audio to the cloud.
-- PII handling follows `docs/privacy_deletion_policy.md`.
-- Threat model: `docs/threat_model.md`.
-- Logs are scrubbed by `scripts/scrub_logs.py`; the scrubber is heuristic and
-  must not be treated as a full redaction guarantee.
-
-## Reporting channels
-
-TBD before deployment. Placeholders are intentionally not real numbers.
+Bảo mật được ưu tiên cho: pipeline local (ASR→TTS), privacy logging, validator
+nguồn, config không lộ key. Các tính năng ngoài scope (điện thoại/SIM,
+FreeSWITCH, multi-tenant) chưa được audit.

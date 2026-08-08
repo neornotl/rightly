@@ -1,43 +1,39 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct
 
-## Our pledge
+## Cam kết của chúng tôi
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic
-status, nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+Để nuôi dưỡng một môi trường cởi mở và thân thiện, đội **Tiếng Làng v4.0**
+cam kết: mọi người tham gia dự án — dù là [T] Technical, [C] Content &
+Compliance, hay [P] Pilot & Partnership — đều được tôn trọng, không phân biệt
+tuổi tác, hoàn cảnh, khả năng, giới tính, ngôn ngữ, hay mức độ hiểu biết kỹ
+thuật.
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+## Tiêu chuẩn hành xử
 
-## Our standards
+Ví dụ hành vi tích cực:
 
-Examples of behavior that contributes to a positive environment:
+- Dùng ngôn ngữ thân thiện, dễ hiểu (tránh thuật ngữ khó với người không rành).
+- Tôn trọng ý kiến khác nhau; mọi quyết định quan trọng qua hội đồng AI pool
+  (5 mô hình + OpenCode, biểu quyết).
+- Chỉ nhận/đưa ra yêu cầu với người có thẩm quyền vai trò (role.md); OpenCode
+  không làm thay C/P, C/P không làm thay T.
+- Không gọi dữ liệu hư cấu là kết quả pilot; không claim quá bằng chứng.
 
-- Demonstrating empathy and kindness toward other people
-- Being respectful of differing opinions, viewpoints, and experiences
-- Giving and gracefully accepting constructive feedback
-- Accepting responsibility and apologizing to those affected by our mistakes
-- Focusing on what is best not just for us as individuals, but for the
-  overall community, especially end users who may be elderly, visually
-  impaired, or have limited digital skills
+Ví dụ hành vi không chấp nhận:
 
-Examples of unacceptable behavior:
+- Quấy rối, xúc phạm, chê bai vì khả năng đọc/viết/kỹ thuật của thành viên.
+- Chia sẻ dữ liệu cá nhân (SĐT, giọng nói, consent) ra ngoài phạm vi dự án.
+- Cố ý làm giả log/kết quả đánh giá.
 
-- Sexualized language or imagery, and sexual attention or advances
-- Trolling, insulting or derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information without explicit permission
-- Other conduct which could reasonably be considered inappropriate
+## Phạm vi
 
-## Enforcement
+Áp dụng trong repo, kênh chat nhóm, pilot, demo và các sự kiện liên quan dự án.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement (contact TBD).
-All complaints will be reviewed and investigated promptly and fairly.
+## Báo cáo vi phạm
 
-## Attribution
+Gửi về người phụ trách đội ([T] trong `docs/team_status.md`). Mọi báo cáo
+được xử lý bảo mật và kịp thời.
 
-This Code of Conduct is adapted from the Contributor Covenant, version 2.1.
+## Ghi nhận
+
+Bản này tham khảo Contributor Covenant 2.1, điều chỉnh cho phù hợp dự án.
