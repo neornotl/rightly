@@ -43,3 +43,13 @@ def test_retrieval_vietnamese_utf8(tmp_path):
     retriever = _retriever(tmp_path)
     results = retriever.search("đăng ký khai sinh cho con tôi", top_k=2)
     assert results[0].text and "đăng ký" in results[0].text.casefold()
+
+
+def test_single_token_generic_query_returns_nothing(tmp_path):
+    """Council T3: a 1-token query whose token is in >50% of the corpus
+    (e.g. 'tục' -> df 3/4) must not flood back half the chunks."""
+    retriever = _retriever(tmp_path)
+    generic = retriever.search("tục", top_k=5)
+    specific = retriever.search("khai", top_k=5)
+    assert generic == []
+    assert specific  # non-generic single tokens still match

@@ -24,6 +24,7 @@ from app.llm.mock_llm import MockLLM
 from app.logging_utils import JsonlLogger, SessionStore, utc_now_iso
 from app.retrieval.base import Retriever
 from app.retrieval.bm25_retriever import BM25Retriever
+from app.retrieval.document_loader import DocumentLoader
 from app.safety.policy import Policy
 from app.safety.router import SafetyRouter
 from app.safety.rules import normalize_query
@@ -43,9 +44,38 @@ def make_asr(settings: Settings) -> BaseASR:
 
 
 def make_retriever(settings: Settings) -> Retriever:
+    chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
+    if settings.retrieval_backend == "hybrid":
+        real_file = settings.chunks_dir / "real_chunks.jsonl"
+        if real_file.exists():
+            chunks_file = real_file
+            cache_path = settings.chunks_dir / "real_embeddings.npz"
+            exclude_demo = settings.app_mode != "mock"
+        else:
+            # F5 fix: demo fallback must not silently empty out. When a real
+            # corpus is required (non-mock), fail loudly; in mock mode use
+            # the demo chunks with their OWN cache and no demo filtering.
+            if settings.app_mode != "mock":
+                raise RuntimeError(
+                    "RETRIEVAL_BACKEND=hybrid requires data/chunks/real_chunks.jsonl "
+                    "(run scripts/crawl_vbpl.py + scripts/ocr_vbpl.py first)."
+                )
+            chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
+            cache_path = settings.chunks_dir / "demo_embeddings.npz"
+            exclude_demo = False
+        from app.retrieval.hybrid_retriever import HybridRetriever
+
+        return HybridRetriever.from_chunks(
+            DocumentLoader.load_chunks(chunks_file),
+            cache_path=cache_path,
+            exclude_demo=exclude_demo,
+            rerank=settings.retriever_rerank,
+            gate=settings.retriever_gate,
+            bm25_gate=settings.bm25_gate,
+            dense_gate=settings.dense_gate,
+        )
     if settings.retrieval_backend != "bm25":
         raise ValueError(f"Unsupported retrieval backend: {settings.retrieval_backend}")
-    chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
     return BM25Retriever.from_jsonl(chunks_file)
 
 
@@ -85,6 +115,7 @@ class Pipeline:
     router: Optional[SafetyRouter] = None
     store: Optional[SessionStore] = None
     logger: Optional[JsonlLogger] = None
+    validator: object = None  # CitationValidator when app_mode != "mock"
     top_k: int = 5
 
     def __post_init__(self) -> None:
@@ -103,6 +134,12 @@ class Pipeline:
             self.tts = make_tts(self.settings)
         if self.router is None:
             self.router = SafetyRouter(settings=self.settings, policy=Policy())
+        if self.validator is None and self.settings.app_mode != "mock":
+            from app.validation.citation_validator import CitationValidator
+
+            self.validator = CitationValidator(
+                status_path=self.settings.resolved_data_dir() / "law_status.json"
+            )
 
     # ---------- lifecycle ----------
 
@@ -134,20 +171,23 @@ class Pipeline:
     def process_audio(self, session_id: str, audio_path: str | Path) -> PipelineResult:
         """Full pipeline for an audio query (ASR first, audio privacy rules)."""
         audio = Path(audio_path)
-        start = time.perf_counter()
-        asr_result = self.asr.transcribe(audio)
-        asr_ms = (time.perf_counter() - start) * 1000.0
-        if self.settings.save_transcripts:
-            self.store.record(session_id, "transcript_saved", transcript=asr_result.transcript)
-        query = UserQuery(
-            text=asr_result.transcript,
-            session_id=session_id,
-            timestamp=utc_now_iso(),
-            audio_path=str(audio),
-        )
-        result = self._run(session_id, query, precomputed_asr_ms=asr_ms)
-        self._apply_audio_privacy(audio)
-        return result
+        try:
+            start = time.perf_counter()
+            asr_result = self.asr.transcribe(audio)
+            asr_ms = (time.perf_counter() - start) * 1000.0
+            if self.settings.save_transcripts:
+                self.store.record(session_id, "transcript_saved", transcript=asr_result.transcript)
+            query = UserQuery(
+                text=asr_result.transcript,
+                session_id=session_id,
+                timestamp=utc_now_iso(),
+                audio_path=str(audio),
+            )
+            return self._run(session_id, query, precomputed_asr_ms=asr_ms)
+        finally:
+            # F13 fix: raw audio is deleted even when ASR or the pipeline
+            # raises, so privacy deletion cannot be skipped by failures.
+            self._apply_audio_privacy(audio)
 
     def _apply_audio_privacy(self, audio: Path) -> None:
         """Delete raw audio only when it lives inside the project data dir."""
@@ -198,10 +238,11 @@ class Pipeline:
                     chunks[:3],
                     max_chars=self.settings.max_response_chars,
                 )
+                raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
                 answer = GroundedAnswer(
                     answer_text=str(doc.get("answer_text", "")).strip(),
                     spoken_citation=str(doc.get("spoken_citation", "")).strip(),
-                    source_ids=[str(s) for s in (doc.get("source_ids") or [])],
+                    source_ids=raw_ids,
                     limitations=[str(s) for s in (doc.get("limitations") or [])],
                     next_step=str(doc.get("next_step", "")).strip(),
                 )
@@ -209,6 +250,45 @@ class Pipeline:
                 decision = self.router.policy.insufficient_decision()
                 self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
             lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+            if answer is not None and not raw_ids:
+                # Council T2: an answer with content but zero citations is
+                # ungrounded — refuse instead of reading it out.
+                decision = self.router.policy.insufficient_decision()
+                self.store.record(
+                    session_id,
+                    "citation_rejected",
+                    issues=[{"kind": "no_citation",
+                             "message": "Câu trả lời không trích dẫn nguồn nào."}],
+                )
+                answer = None
+
+            if answer is not None and self.validator is not None:
+                # Validate RAW citations first (F2 fix): filtering before
+                # validation would silently hide hallucinated source_ids.
+                retrieved = {c.source_id for c in chunks}
+                verdict = self.validator.validate(answer, retrieved)
+                if not verdict.ok:
+                    outdated = any(i.kind == "outdated" for i in verdict.issues)
+                    decision = self.router.policy.citation_decision(
+                        outdated=outdated
+                    )
+                    self.store.record(
+                        session_id,
+                        "citation_rejected",
+                        issues=[vars(i) for i in verdict.issues],
+                    )
+                    answer = None
+                else:
+                    # Sanitize AFTER validation: keep only retrieved sources.
+                    kept = [sid for sid in raw_ids if sid in retrieved]
+                    answer = GroundedAnswer(
+                        answer_text=answer.answer_text,
+                        spoken_citation=answer.spoken_citation,
+                        source_ids=kept,
+                        limitations=answer.limitations,
+                        next_step=answer.next_step,
+                    )
 
         spoken = ""
         if answer is not None:

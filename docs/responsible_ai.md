@@ -6,6 +6,8 @@
   có nguồn dẫn chứng, có cảnh báo giới hạn.
 - Không thay cán bộ/chuyên gia; không phán quyết tranh chấp; không xử lý
   khẩn cấp (RED → chuyển con người/kênh chính thức).
+- **Vụ việc hình sự**: không tự ý đưa ra kết luận hệ trọng; chuyển hướng tới
+  hotline/công an nếu cần tư vấn thêm (`CRIMINAL_MATTER` → ORANGE/GUIDE).
 - Ưu tiên **an toàn hơn đầy đủ**: thiếu nguồn thì từ chối, không đoán.
 - Trung thực về giới hạn hệ thống với người dùng (message CLARIFY/REFUSE
   nói rõ "tôi không trả lời khi chưa chắc chắn").

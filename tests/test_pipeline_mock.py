@@ -127,3 +127,99 @@ def test_logs_do_not_contain_api_key(tmp_path):
     pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu?")
     logs = (pipeline.store.logger.path).read_text(encoding="utf-8")
     assert "FAKE_GEMINI_KEY_FOR_LOGGING_TEST" not in logs
+
+
+def test_audio_deleted_even_when_asr_fails(tmp_path, monkeypatch):
+    pipeline = _pipeline(tmp_path)
+    audio = pipeline.settings.resolved_data_dir() / "audio" / "broken.wav"
+    audio.parent.mkdir(parents=True, exist_ok=True)
+    audio.write_bytes(b"RIFF fake wav")
+
+    class Boom:
+        name = "boom"
+
+        def transcribe(self, path):
+            raise RuntimeError("asr exploded")
+
+    monkeypatch.setattr(pipeline, "asr", Boom())
+    session_id = pipeline.create_session()
+    try:
+        pipeline.process_audio(session_id, audio)
+        assert False, "expected ASR failure to propagate"
+    except RuntimeError:
+        pass
+    assert not audio.exists(), "raw audio must be deleted even on ASR failure"
+
+
+def test_hybrid_mode_fails_loudly_without_real_chunks(tmp_path):
+    pipeline = _pipeline(tmp_path)  # demo chunks only
+    pipeline.settings.chunks_dir.mkdir(parents=True, exist_ok=True)
+    settings = pipeline.settings.__class__(
+        app_mode="local",
+        retrieval_backend="hybrid",
+        data_dir=pipeline.settings.data_dir,
+        results_dir=pipeline.settings.results_dir,
+        log_dir=pipeline.settings.log_dir,
+    )
+    import pytest
+
+    from app.pipeline import make_retriever
+
+    with pytest.raises(RuntimeError, match="real_chunks"):
+        make_retriever(settings)
+
+
+def test_hallucinated_citation_rejected_by_pipeline(tmp_path):
+    """F2 integration: a hallucinated source_id must be caught, not filtered."""
+    import shutil
+
+    (tmp_path / "data").mkdir(parents=True, exist_ok=True)
+    shutil.copy(
+        "data/law_status.json",
+        tmp_path / "data" / "law_status.json",
+    )
+    pipeline = _pipeline(tmp_path, app_mode="local")
+
+    class FakeLLM:
+        name = "fake"
+
+        def generate_answer(self, query, chunks, max_chars=2000):
+            return {
+                "answer_text": "câu trả lời bịa",
+                "spoken_citation": "",
+                "source_ids": ["demo_binhminh_procedures", "HALLUCINATED_SRC"],
+                "limitations": [],
+                "next_step": "",
+            }
+
+    pipeline.llm = FakeLLM()  # type: ignore[assignment]
+    session_id = pipeline.create_session()
+    result = pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu?")
+    assert result.decision.action == Action.REFUSE
+    assert result.decision.zone == Zone.ORANGE
+    assert "CITATION_UNSUPPORTED" in result.decision.reason_codes
+    assert result.answer is None
+
+
+def test_ungrounded_answer_refused(tmp_path):
+    """Council T2: answer with content but zero citations is refused."""
+    pipeline = _pipeline(tmp_path)
+
+    class NoCiteLLM:
+        name = "nocite"
+
+        def generate_answer(self, query, chunks, max_chars=2000):
+            return {
+                "answer_text": "Tôi khẳng định chắc chắn câu này đúng.",
+                "spoken_citation": "",
+                "source_ids": [],
+                "limitations": [],
+                "next_step": "",
+            }
+
+    pipeline.llm = NoCiteLLM()  # type: ignore[assignment]
+    session_id = pipeline.create_session()
+    result = pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu?")
+    assert result.decision.action == Action.REFUSE
+    assert result.answer is None
+    assert "INSUFFICIENT_SOURCE" in result.decision.reason_codes

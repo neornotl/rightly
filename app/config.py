@@ -59,7 +59,11 @@ class Settings:
     save_transcripts: bool = False
     max_context_chars: int = 12000
     max_response_chars: int = 2000
-    min_retrieval_score: float = 1.0
+    min_retrieval_score: float = 0.01
+    retriever_rerank: bool = False
+    retriever_gate: str = "bm25_dense"
+    bm25_gate: float = 12.2
+    dense_gate: float = 0.88
     edge_tts_voice: str = "vi-VN-HoaiMyNeural"
     edge_tts_rate: str = "+0%"
     official_hotline_label: str = "Đường dây nóng (chưa xác minh)"
@@ -134,7 +138,7 @@ def _float_env(key: str, default: float) -> float:
 
 _VALID_MODES = {"mock", "local", "cloud"}
 _VALID_ASR = {"mock", "phowhisper"}
-_VALID_RETRIEVAL = {"bm25"}
+_VALID_RETRIEVAL = {"bm25", "hybrid"}
 _VALID_LLM = {"mock", "gemini", "groq"}
 _VALID_TTS = {"mock", "edge"}
 
@@ -180,9 +184,31 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
     if max_response > max_context:
         raise ConfigError("MAX_RESPONSE_CHARS must not exceed MAX_CONTEXT_CHARS.")
 
-    min_score = _float_env("MIN_RETRIEVAL_SCORE", 1.0)
+    min_score = _float_env("MIN_RETRIEVAL_SCORE", 0.01)
     if min_score < 0:
         raise ConfigError("MIN_RETRIEVAL_SCORE must be >= 0.")
+    # Hybrid RRF scores live in ~[0, 0.1]; a threshold > 0.5 silently
+    # refuses every query (F3 fix). Warn loudly instead of failing silently.
+    if min_score > 0.5:
+        import warnings
+
+        warnings.warn(
+            "MIN_RETRIEVAL_SCORE={} is far above the RRF score scale (~0.01-0.1); "
+            "every hybrid query will be refused.".format(min_score),
+            RuntimeWarning,
+            stacklevel=2,
+        )
+
+    retriever_gate = os.environ.get("RETRIEVER_GATE", "bm25_dense").strip().lower()
+    if retriever_gate not in {"none", "bm25_dense"}:
+        raise ConfigError(
+            f"RETRIEVER_GATE={retriever_gate!r} is invalid. "
+            "Choose one of {'none', 'bm25_dense'}."
+        )
+    bm25_gate = _float_env("RETRIEVAL_BM25_GATE", 12.2)
+    dense_gate = _float_env("RETRIEVAL_DENSE_GATE", 0.88)
+    if bm25_gate < 0 or not (0 < dense_gate <= 1):
+        raise ConfigError("Invalid retrieval gate thresholds.")
 
     return Settings(
         app_mode=app_mode,
@@ -200,6 +226,10 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         max_context_chars=max_context,
         max_response_chars=max_response,
         min_retrieval_score=min_score,
+        retriever_rerank=_bool_env("RETRIEVER_RERANK", False),
+        retriever_gate=retriever_gate,
+        bm25_gate=bm25_gate,
+        dense_gate=dense_gate,
         edge_tts_voice=os.environ.get("EDGE_TTS_VOICE", "vi-VN-HoaiMyNeural"),
         edge_tts_rate=os.environ.get("EDGE_TTS_RATE", "+0%"),
         official_hotline_label=os.environ.get(

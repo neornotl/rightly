@@ -54,6 +54,15 @@ _LEGAL_PATTERNS = [
     r"đất (đai )?tranh chấp",
 ]
 
+_CRIMINAL_PATTERNS = [
+    r"hình sự",
+    r"khởi tố",
+    r"tạm giam",
+    r"tội phạm",
+    r"bắt giữ",
+    r"tố giác tội phạm",
+]
+
 _OUT_OF_SCOPE_PATTERNS = [
     r"dự đoán (giá|xổ số|kết quả)",
     r"xổ số",
@@ -84,12 +93,14 @@ _COMPILED = [
     re.compile(pattern, re.IGNORECASE)
     for pattern in _EMERGENCY_PATTERNS
     + _VIOLENCE_THREAT_PATTERNS
+    + _CRIMINAL_PATTERNS
     + _LEGAL_PATTERNS
     + _OUT_OF_SCOPE_PATTERNS
     + _DOUBT_WORDS
 ]
 _N_EMERGENCY = len(_EMERGENCY_PATTERNS)
 _N_VIOLENCE = len(_VIOLENCE_THREAT_PATTERNS)
+_N_CRIMINAL = len(_CRIMINAL_PATTERNS)
 _N_LEGAL = len(_LEGAL_PATTERNS)
 _N_OOS = len(_OUT_OF_SCOPE_PATTERNS)
 
@@ -98,6 +109,7 @@ _N_OOS = len(_OUT_OF_SCOPE_PATTERNS)
 class RuleHits:
     emergency: list[str] = field(default_factory=list)
     violence: list[str] = field(default_factory=list)
+    criminal: list[str] = field(default_factory=list)
     legal: list[str] = field(default_factory=list)
     out_of_scope: list[str] = field(default_factory=list)
     ambiguous: list[str] = field(default_factory=list)
@@ -117,6 +129,9 @@ def check_rules(normalized_text: str) -> RuleHits:
     for i, pat in enumerate(_VIOLENCE_THREAT_PATTERNS):
         if _match(pat, text):
             hits.violence.append(pat)
+    for i, pat in enumerate(_CRIMINAL_PATTERNS):
+        if _match(pat, text):
+            hits.criminal.append(pat)
     for i, pat in enumerate(_LEGAL_PATTERNS):
         if _match(pat, text):
             hits.legal.append(pat)

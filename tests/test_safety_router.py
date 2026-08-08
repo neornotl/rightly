@@ -8,11 +8,11 @@ from app.safety.router import SafetyRouter
 from app.schemas import Action, RetrievedChunk, Zone
 
 
-def _chunk(score: float = 5.0, source_id: str = "demo_binhminh_procedures") -> RetrievedChunk:
+def _chunk(score: float = 5.0, source_id: str = "demo_binhminh_procedures", text: str | None = None) -> RetrievedChunk:
     return RetrievedChunk(
         chunk_id=f"{source_id}::c000",
         source_id=source_id,
-        text="Thủ tục cấp giấy xác nhận hộ khẩu tại xã Bình Minh (DEMO).",
+        text=text or "Thủ tục cấp giấy xác nhận hộ khẩu tại xã Bình Minh (DEMO).",
         score=score,
     )
 
@@ -39,6 +39,22 @@ def test_red_wins_over_legal_and_safe():
     router = make_router()
     decision, _ = router.route("Tôi bị đe dọa và muốn kiện ra tòa", [_chunk()])
     assert decision.zone == Zone.RED
+
+
+def test_red_wins_over_criminal():
+    decision, _ = make_router().route("Tôi bị đe dọa và đang bị khởi tố hình sự", [_chunk()])
+    assert decision.zone == Zone.RED
+
+
+def test_criminal_matter_is_orange_guide_no_conclusion():
+    decision, _ = make_router().route(
+        "Tôi bị khởi tố hình sự, liệu có bị tịch thu tài sản không?", [_chunk()]
+    )
+    assert decision.zone == Zone.ORANGE
+    assert decision.action == Action.GUIDE
+    assert "CRIMINAL_MATTER" in decision.reason_codes
+    assert "công an" in decision.user_message
+    assert "không tự ý" in decision.user_message
 
 
 def test_legal_judgment_is_orange_guide_not_answer():
@@ -74,6 +90,16 @@ def test_safe_grounded_answers():
     assert decision.zone == Zone.YELLOW
     assert decision.action == Action.ANSWER
     assert "SAFE_GROUNDED_QUERY" in decision.reason_codes
+
+
+def test_phap_luat_regulation_query_is_answerable():
+    decision, _ = make_router().route(
+        "Luật Căn cước quy định gì về cấp thẻ?",
+        [_chunk(source_id="luat26_2023", text="Luật Căn cước quy định việc cấp thẻ căn cước (DEMO).")],
+    )
+    assert decision.zone == Zone.YELLOW
+    assert decision.action == Action.ANSWER
+    assert "pháp lý" not in decision.user_message
 
 
 def test_empty_query_is_ambiguous():

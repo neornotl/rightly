@@ -21,6 +21,11 @@ _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 _PHONE_RE = re.compile(r"(?<!\d)(\+?\d[\d\s\.\-]{7,}\d)(?!\d)")
 _LONG_ID_RE = re.compile(r"\b[A-Za-z0-9_\-]{24,}\b")
 
+# Metadata keys that must survive scrubbing untouched: session ids and
+# timestamps are machine-generated and are not user PII. Scrubbing them
+# corrupts the log (F1 fix) and silently breaks SessionStore.delete_session.
+_PRESERVED_KEYS = {"session_id", "timestamp", "chunk_id", "source_id"}
+
 
 def new_session_id() -> str:
     return uuid.uuid4().hex[:16]
@@ -28,6 +33,22 @@ def new_session_id() -> str:
 
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds")
+
+
+def _scrub_phones(text: str) -> str:
+    """Redact phone-like strings only when the candidate has 9-15 digits.
+
+    The raw regex also matches hex session ids and ISO timestamps (e.g.
+    "2026-08-07T10:46:27"); counting digits keeps those intact while
+    real Vietnamese phone numbers (9-11 digits, incl. separators) are
+    still redacted.
+    """
+
+    def _repl(match: re.Match) -> str:
+        digits = sum(ch.isdigit() for ch in match.group(0))
+        return "[PHONE_REDACTED]" if 9 <= digits <= 15 else match.group(0)
+
+    return _PHONE_RE.sub(_repl, text)
 
 
 def scrub_text(text: str) -> str:
@@ -38,17 +59,23 @@ def scrub_text(text: str) -> str:
     survive; never rely on this alone for legal-grade redaction.
     """
     text = _EMAIL_RE.sub("[EMAIL_REDACTED]", text)
-    text = _PHONE_RE.sub("[PHONE_REDACTED]", text)
+    text = _scrub_phones(text)
     text = _LONG_ID_RE.sub("[ID_REDACTED]", text)
     return text
 
 
 def scrub_value(value: Any) -> Any:
-    """Recursively scrub a JSON-serializable value (in place on containers)."""
+    """Recursively scrub a JSON-serializable value (in place on containers).
+
+    Keys in :data:`_PRESERVED_KEYS` (session_id, timestamp, chunk_id,
+    source_id) are machine-generated identifiers and are never scrubbed.
+    """
     if isinstance(value, str):
         return scrub_text(value)
     if isinstance(value, dict):
         for key in list(value.keys()):
+            if isinstance(key, str) and key.lower() in _PRESERVED_KEYS:
+                continue
             if isinstance(key, str) and key.lower() in {"transcript", "query", "text"}:
                 value[key] = scrub_text(str(value[key]))
             else:

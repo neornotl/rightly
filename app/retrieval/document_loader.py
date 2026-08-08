@@ -36,6 +36,7 @@ class DocumentLoader:
     sources_dir: Path = field(default=Path("data/sources"))
     chunks_dir: Path = field(default=Path("data/chunks"))
     metadata_csv: Path = field(default=Path("data/metadata.csv"))
+    out_name: str = "demo_chunks.jsonl"
     chunk_chars: int = 900
     overlap_chars: int = 120
 
@@ -121,7 +122,7 @@ class DocumentLoader:
                     )
                 )
         self.chunks_dir.mkdir(parents=True, exist_ok=True)
-        out_file = self.chunks_dir / "demo_chunks.jsonl"
+        out_file = self.chunks_dir / self.out_name
         with out_file.open("w", encoding="utf-8") as fh:
             for rec in records:
                 fh.write(json.dumps(rec.__dict__, ensure_ascii=False) + "\n")

@@ -54,26 +54,30 @@ class SafetyRouter:
         if hits.violence:
             return self.policy.violence_decision(), query
 
-        # 2. Legal judgment requests.
+        # 2. Criminal-matter requests (careful, refer out before any conclusion).
+        if hits.criminal:
+            return self.policy.criminal_decision(), query
+
+        # 3. Legal judgment requests.
         if hits.legal:
             return self.policy.legal_decision(), query
 
-        # 3. Out-of-scope.
+        # 4. Out-of-scope.
         if hits.out_of_scope:
             return self.policy.out_of_scope_decision(), query
 
-        # 4. Retrieval sufficiency.
+        # 5. Retrieval sufficiency.
         sufficient = [c for c in chunks if c.score >= self.min_score]
         if not sufficient:
             return self.policy.insufficient_decision(), query
 
-        # 5. Ambiguity heuristics.
+        # 6. Ambiguity heuristics.
         if hits.ambiguous and not chunks:
             return self.policy.ambiguous_decision(), query
         if len(hits.ambiguous) >= 2:
             return self.policy.ambiguous_decision(), query
 
-        # 6. Optional structured LLM classification (only when provided).
+        # 7. Optional structured LLM classification (only when provided).
         if llm_classifier is not None:
             try:
                 safe = llm_classifier(query, sufficient)
@@ -83,7 +87,7 @@ class SafetyRouter:
                 return self.policy.ambiguous_decision(), query
             return self.policy.safe_decision(llm_reasoned=True), query
 
-        # 7. Conservative fallback: grounded safe answer.
+        # 8. Conservative fallback: grounded safe answer.
         return self.policy.safe_decision(llm_reasoned=False), query
 
     def would_answer(self, decision: SafetyDecision) -> bool:

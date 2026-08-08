@@ -2,7 +2,8 @@
 
 Source-grounded, voice-first public-service access agent — hỗ trợ người dân
 (nhất là người cao tuổi, người khiếm thị, người khó đọc, người hạn chế kỹ
-năng số) tra cứu thủ tục hành chính và quyền lợi công bằng **tiếng Việt**, với
+năng số, và người bận rộn không có thời gian tự tra cứu) tra cứu thủ tục hành
+chính, quyền lợi công và quy định pháp luật (dân sự) bằng **tiếng Việt**, với
 câu trả lời **bám nguồn chính thống** và rào chắn an toàn rõ ràng.
 
 > **Trạng thái: PREPARATION / MVP (mock-first).** Mọi kết quả hiện tại là
@@ -20,6 +21,8 @@ không đủ nguồn tin cậy.
 - Người cao tuổi nông thôn / thành thị.
 - Người khiếm thị, người khó đọc.
 - Người ít kỹ năng số.
+- Người bận rộn, không có thời gian đọc/tra cứu văn bản — gọi điện hỏi nhanh
+  về thủ tục, dân sự, quy định pháp luật như gọi hotline.
 
 ## Scope and non-goals
 

@@ -19,6 +19,12 @@ class Policy:
         "hiểm, hãy gọi ngay số khẩn cấp địa phương hoặc nhờ người thân giúp "
         "đỡ. Tôi không thể thay thế hỗ trợ của con người."
     )
+    criminal_message: str = (
+        "Câu hỏi của bạn liên quan đến vụ việc hình sự, rất hệ trọng và tôi "
+        "không tự ý đưa ra kết luận về các tình huống này. Bạn nên liên hệ "
+        "công an hoặc đường dây nóng để được tư vấn trực tiếp (số điện thoại "
+        "chưa xác minh, cần cập nhật trước khi triển khai)."
+    )
     legal_message: str = (
         "Câu hỏi của bạn liên quan đến tranh chấp hoặc phán quyết pháp lý, "
         "ngoài phạm vi thông tin thủ tục hành chính của tôi. Bạn nên liên hệ "
@@ -39,6 +45,16 @@ class Policy:
         "Tôi chưa hiểu rõ câu hỏi của bạn. Bạn có thể nói lại hoặc hỏi chi "
         "tiết hơn, ví dụ: 'Thủ tục cấp giấy xác nhận hộ khẩu?'"
     )
+    citation_outdated_message: str = (
+        "Tôi chỉ tìm thấy văn bản đã hết hiệu lực cho câu hỏi này, nên tôi "
+        "sẽ không đưa ra câu trả lời để tránh thông tin sai. Bạn nên liên hệ "
+        "bộ phận một cửa của xã để được hướng dẫn theo quy định hiện hành."
+    )
+    citation_unsupported_message: str = (
+        "Câu trả lời dự kiến không khớp với nguồn chính thức đã truy xuất, "
+        "nên tôi sẽ không đọc câu trả lời này. Bạn có thể hỏi lại bằng cách "
+        "khác hoặc liên hệ bộ phận một cửa của xã để được hỗ trợ."
+    )
 
     def emergency_decision(self) -> SafetyDecision:
         return SafetyDecision(
@@ -55,6 +71,15 @@ class Policy:
             action=Action.ESCALATE,
             reason_codes=[ReasonCode.VIOLENCE_OR_THREAT.value],
             user_message=self.red_message,
+            requires_human=True,
+        )
+
+    def criminal_decision(self) -> SafetyDecision:
+        return SafetyDecision(
+            zone=Zone.ORANGE,
+            action=Action.GUIDE,
+            reason_codes=[ReasonCode.CRIMINAL_MATTER.value],
+            user_message=self.criminal_message,
             requires_human=True,
         )
 
@@ -103,5 +128,25 @@ class Policy:
             action=Action.ANSWER,
             reason_codes=codes,
             user_message="",
+            requires_human=False,
+        )
+
+    def citation_decision(self, outdated: bool = False) -> SafetyDecision:
+        """Answer was rejected because citations failed grounding checks."""
+        code = (
+            ReasonCode.CITATION_OUTDATED
+            if outdated
+            else ReasonCode.CITATION_UNSUPPORTED
+        )
+        message = (
+            self.citation_outdated_message
+            if outdated
+            else self.citation_unsupported_message
+        )
+        return SafetyDecision(
+            zone=Zone.ORANGE,
+            action=Action.REFUSE,
+            reason_codes=[code.value],
+            user_message=message,
             requires_human=False,
         )

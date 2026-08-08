@@ -157,12 +157,17 @@ def _check_data() -> str:
 
 
 def _check_secrets() -> str:
-    """Scan repo files for leaked key patterns; .env.example allowed."""
+    """Scan repo files for leaked key patterns; .env/.env.example and
+    gitignored artifacts (.venv, caches) are allowed."""
     pattern = re.compile(r"(AIza[0-9A-Za-z_\-]{20,}|sk-[A-Za-z0-9]{20,}|gsk_[A-Za-z0-9]{20,})")
+    ignore_dirs = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
+    ignore_names = {".env", ".env.example", "RECORD"}
     hits = []
     for path in Path.cwd().rglob("*"):
-        if path.is_file() and ".git" not in path.parts:
-            if path.name in {".env.example"} or path.suffix in {".pyc", ".wav", ".mp3"}:
+        if path.is_file():
+            if any(p in ignore_dirs for p in path.parts):
+                continue
+            if path.name in ignore_names or path.suffix in {".pyc", ".wav", ".mp3"}:
                 continue
             try:
                 content = path.read_text(encoding="utf-8", errors="ignore")

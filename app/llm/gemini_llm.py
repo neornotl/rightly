@@ -77,4 +77,6 @@ class GeminiLLM(BaseLLM):
         parsed.setdefault("source_ids", [])
         parsed.setdefault("limitations", [])
         parsed.setdefault("next_step", "")
-        return self.enforce_source_ids(parsed, {c.source_id for c in chunks})
+        # NOTE: raw source_ids are deliberately NOT filtered here (F2 fix);
+        # the pipeline validates raw citations, then sanitizes.
+        return parsed

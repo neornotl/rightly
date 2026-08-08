@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "verified_on": "2026-08-07",
+  "sources": {
+    "nd123_2015": {
+      "ky_hieu": "123/2015/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "15-11-2015",
+      "ngay_hieu_luc": "01-01-2016",
+      "trich_yeu": "Quy định chi tiết một số điều và biện pháp thi hành Luật Hộ tịch",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "luat60_2014": {
+      "ky_hieu": "60/2014/QH13",
+      "loai": "Luật",
+      "ngay_ban_hanh": "20-11-2014",
+      "ngay_hieu_luc": "01-01-2016",
+      "trich_yeu": "Luật Hộ tịch",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "luat52_2014": {
+      "ky_hieu": "52/2014/QH13",
+      "loai": "Luật",
+      "ngay_ban_hanh": "19-06-2014",
+      "ngay_hieu_luc": "01-01-2015",
+      "trich_yeu": "Luật Hôn nhân và Gia đình",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "nd126_2014": {
+      "ky_hieu": "126/2014/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "31-12-2014",
+      "ngay_hieu_luc": "15-02-2015",
+      "trich_yeu": "Quy định chi tiết một số điều và biện pháp thi hành Luật Hôn nhân và gia đình",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "luat68_2020": {
+      "ky_hieu": "68/2020/QH14",
+      "loai": "Luật",
+      "ngay_ban_hanh": "13-11-2020",
+      "ngay_hieu_luc": "01-07-2021",
+      "trich_yeu": "Luật Cư trú",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "nd154_2024": {
+      "ky_hieu": "154/2024/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "26-11-2024",
+      "ngay_hieu_luc": "10-01-2025",
+      "trich_yeu": "Quy định chi tiết một số điều và biện pháp thi hành Luật Cư trú",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "nd07_2025": {
+      "ky_hieu": "07/2025/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "09-01-2025",
+      "ngay_hieu_luc": "09-01-2025",
+      "trich_yeu": "Sửa đổi, bổ sung một số điều của các Nghị định trong lĩnh vực hộ tịch, quốc tịch, chứng thực",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "luat46_2024": {
+      "ky_hieu": "46/2024/QH15",
+      "loai": "Luật",
+      "ngay_ban_hanh": "26-11-2024",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Luật Công chứng",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "nd104_2025": {
+      "ky_hieu": "104/2025/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "15-05-2025",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Quy định chi tiết một số điều và biện pháp thi hành Luật Công chứng",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "luat26_2023": {
+      "ky_hieu": "26/2023/QH15",
+      "loai": "Luật",
+      "ngay_ban_hanh": "27-11-2023",
+      "ngay_hieu_luc": "01-07-2024",
+      "trich_yeu": "Luật Căn cước",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": ""
+    },
+    "nd62_2021": {
+      "ky_hieu": "62/2021/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "29-06-2021",
+      "ngay_hieu_luc": "01-07-2021",
+      "trich_yeu": "Quy định chi tiết một số điều Luật Cư trú",
+      "expired_on": "2025-01-10",
+      "replaced_by": "nd154_2024",
+      "note": "Hết hiệu lực kể từ 10/01/2025; thay thế bởi Nghị định 154/2024/NĐ-CP"
+    },
+    "demo_binhminh_procedures": {
+      "ky_hieu": "DEMO-SYNTHETIC",
+      "loai": "demo",
+      "ngay_ban_hanh": "2026-08-06",
+      "ngay_hieu_luc": "2026-08-06",
+      "trich_yeu": "Hướng dẫn thủ tục hành chính DEMO tại xã Bình Minh (DỮ LIỆU MẪU HƯ CẤU)",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "Nguồn DEMO/SYNTHETIC do đội chuẩn bị Tiếng Làng tạo ra, KHÔNG phải văn bản pháp luật thật. Đăng ký chỉ để demo vận hành; không bao giờ dùng làm cơ sở trả lời câu hỏi thật."
+    }
+  }
+}

@@ -60,3 +60,42 @@ def test_utf8_vietnamese_in_logs(tmp_path):
     logger.log({"event": "x", "session_id": "s", "msg": "thủ tục hành chính - Ủy ban nhân dân"})
     text = logger.path.read_text(encoding="utf-8")
     assert "Ủy ban nhân dân" in text
+
+
+def test_scrub_preserves_session_id_and_timestamp():
+    record = {
+        "event": "pipeline_result",
+        "session_id": "70eadf1234567890",
+        "timestamp": "2026-08-07T10:46:27.123+00:00",
+        "transcript": "gọi 0912345678 giúp tôi",
+    }
+    scrubbed = scrub_value(dict(record))
+    assert scrubbed["session_id"] == record["session_id"]
+    assert scrubbed["timestamp"] == record["timestamp"]
+    assert scrubbed["transcript"] == "gọi [PHONE_REDACTED] giúp tôi"
+
+
+def test_scrub_text_preserves_iso_timestamps_and_hex_ids():
+    text = "lúc 2026-08-07T10:46:27 gọi 0912 345 678, id 70eadf12ab34cd56"
+    scrubbed = scrub_text(text)
+    assert "2026-08-07T10:46:27" in scrubbed
+    assert "70eadf12ab34cd56" in scrubbed
+    assert "0912 345 678" not in scrubbed
+
+
+def test_scrub_text_preserves_pure_digit_16_char_ids():
+    # A 16-digit run (real phone redaction range is 9-15 digits) must
+    # survive; a 10-digit mobile must not.
+    scrubbed = scrub_text("mã 1234567890123456, gọi 0987654321")
+    assert "1234567890123456" in scrubbed
+    assert "0987654321" not in scrubbed
+
+
+def test_session_store_delete_works_with_hex_session_ids(tmp_path):
+    store = SessionStore(tmp_path)
+    s1 = store.create()
+    store.record(s1, "a", x=1)
+    removed = store.delete_session(s1)
+    assert removed == 2
+    remaining = store.logger.read_records()
+    assert all(r["session_id"] != s1 for r in remaining)

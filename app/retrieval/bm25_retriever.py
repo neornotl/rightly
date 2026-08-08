@@ -160,7 +160,7 @@ class BM25Retriever(Retriever):
         doc_tokens = self._doc_token_sets[idx]
         doc_len = self._doc_lens[idx]
         score = 0.0
-        for term in uniq_q:
+        for term in sorted(uniq_q):
             df = self._doc_freqs.get(term, 0)
             if df == 0 or term not in doc_tokens:
                 continue
@@ -175,8 +175,15 @@ class BM25Retriever(Retriever):
             return []
         query_tokens = self._tokenize(query)
         uniq_query = set(query_tokens)
-        if len(uniq_query) <= 1 and not query_tokens:
+        if not query_tokens:
             return []
+        if len(uniq_query) == 1:
+            # Council T3: single-token queries keep the overlap guard lifted,
+            # but tokens that appear in >50% of the corpus are too generic to
+            # match anything ("phường", "hồ sơ") — treat them as empty.
+            token = next(iter(uniq_query))
+            if self._doc_freqs.get(token, 0) > len(self.chunks) / 2:
+                return []
         scored = sorted(
             ((self._score_doc(query_tokens, i), i) for i in range(len(self.chunks))),
             key=lambda pair: pair[0],
