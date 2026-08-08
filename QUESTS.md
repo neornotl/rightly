@@ -89,6 +89,40 @@ nhận máy AI PC.
 > 5. P1 (tuyển pilot) trở thành đường găng #1 của P; C1 nâng thành corpus
 >    trọng điểm 25-30+ văn bản (không cần kho luật đầy đủ).
 
+> **Quyết định hội đồng Round 13 (08/08, họp kín 3 phiên — `debate_output/
+> round13.json`, tổng hợp `results/round13_synthesis.md`):**
+> 1. **Xác minh cuộc thi đúng: Intel(R) Vietnam AI Impact Festival 2026** (bảng
+>    AI Changemakers — Sinh viên 18+; BTC NIC+SHTP+SHTP-IC+Intel VN; chủ đề
+>    "Enriching Lives with AI Innovation"). **Hồ sơ = Google Form duy nhất: tên
+>    ≤10 từ + mô tả ≤150 từ + video ≤2 phút + consent có chữ ký.** Rubric
+>    chính thức đã đọc (M1 15đ, M2 20đ, M3 15đ) — khớp bảng nội bộ. Toàn bộ
+>    sự kiện + link: `docs/competition_aiif26.md`.
+> 2. **Đổi tư duy (5/5): "Đây là bài thi IMPACT + PRESENTATION, không phải bài
+>    thi RAG"** — KHÔNG thêm feature AI lớn; điểm còn thiếu ở bằng chứng người
+>    dùng thật, triển khai thật, video 2 phút. Cắt: uptime 99%, benchmark
+>    30-50 giọng tách biệt, fine-tune, multi-language, mobile app, OpenVINO
+>    thật (giữ narrative "ready" ≤0.3 ngày).
+> 3. **TOP-12 hành động hợp nhất (5/5, ~13 người-ngày):** (1) Pilot 5-7 người
+>    thật + consent + 3 testimony 15-20s + log WER/MOS từ cuộc gọi thật — P+C
+>    ×13/08 (+5); (2) Video 2' "Bà Năm": problem→demo live→impact→ethics,
+>    phụ đề, đúng ≤2:00 — C+T+P ×16/08 (+5-6); (3) Public link Streamlit free
+>    + 3 key Groq xoay vòng + backup link + voice FAQ record 3 câu — T ×12/08
+>    (+3); (4) 150 từ ĐÚNG 150 + SDG 3,10,11,16 + số liệu già hóa có nguồn —
+>    C ×11/08 (+3); (5) Consent chuẩn form gắn kèm pilot — P+C ×12/08 (+1-2);
+>    (6) GTM MỀM: LOI/email Hội NCT–giáo viên–UBND, KHÔNG treo điểm vào chữ
+>    ký UBND — P+C ×18/08 (+1.5); (7) Corpus trọng điểm 15-30 văn bản thật +
+>    metadata hiệu lực — T ×13/08 (+1.5); (8) Technical Rigor 1 trang (WER/MOS
+>    từ log pilot) — T ×14/08 (+1.5); (9) Ethics/privacy disclosure + trang
+>    ethical_ai 1 trang (9 nguyên tắc Intel) — C+T ×15/08 (+1); (10-12) FAQ
+>    giám khảo + script demo 60s; sweep hồ sơ + submission proof ×22-24/08.
+> 4. **Dự báo điểm: 43-46/50 (kỳ vọng ≈44-45, "khóa luận video" có thể 46-47);
+>    thận trọng nhất 42.** Lỗ trống chấp nhận: OpenVINO thật (-1-2 M3),
+>    offline/low-bandwidth (-1 M1), GTM chính quyền (-0.5 M2).
+> 5. **Dòng đỏ:** không pilot người thật + không video 2' chất lượng + không
+>    public link → mất trọn M1 evidence + M2 deployment, nguy cơ <40/50.
+> 6. Freeze feature từ 13/08; "phi-code" chiếm ~70% điểm cộng → C/P là đường
+>    găng, T chỉ phục vụ 5 vật chứng (link, corpus, log, voice FAQ, demo).
+
 ## Quest phối hợp C-P
 
 - C giao `consent_form_v1.md` (sáng T7) → P dùng khi tuyển người.
@@ -99,16 +133,21 @@ nhận máy AI PC.
 
 | Deadline | Mốc |
 |---|---|
-| 08-09/08 | C: C1-C6 · P: P1-P4 (cuối tuần này) |
-| 10/08 | Nháp problem statement + SDG + GTM; checklist video |
-| 12/08 | Public link chạy (T1) |
-| 18/08 | 1-2 user ngoài đội test qua link |
-| 20/08 | Pilot xong + log ẩn danh |
-| 22/08 | Video 2 phút dựng xong |
+| 08-09/08 | C: storyboard video 2' + nháp 150 từ + SDG + số liệu nguồn · P: tuyển user pilot + consent T7 này · T: deploy public link + xoay 3 key Groq |
+| 10/08 | Gửi LOI/email Hội NCT (P); thư mẫu đối tác |
+| 11/08 | LOCK 150 từ + SDG map (C) |
+| 12/08 | Public link chạy + backup link + voice FAQ record (T); consent chuẩn form (P+C) |
+| 13/08 | Pilot 5-7 người XONG + 3 testimony + log ASR; corpus trọng điểm 15-30 văn bản (T); FREEZE FEATURE |
+| 14/08 | Technical Rigor 1 trang (WER/MOS từ log pilot) (T) |
+| 15/08 | Trang ethical_ai 1 trang (C+T) |
+| 16/08 | Video 2 phút RENDER XONG (C+T+P) |
+| 18/08 | GTM evidence mềm: LOI/email xác nhận (P+C) · FAQ giám khảo + script demo 60s (C) |
+| 22-24/08 | Sweep hồ sơ cuối: form + video + link + minh chứng + submission proof |
 | 25/08 | **NỘP** |
 
 ## Status nhanh
 
-- T: pipeline xanh, demo sẵn (`docs/demo/README.md`) — chờ deploy public link.
-- C: chưa có đầu việc mới xong (cuối tuần theo quest C1-C6).
-- P: chưa có người pilot/consent (cuối tuần theo quest P1-P4).
+- T: pipeline xanh — việc ngay: public link Streamlit + xoay key, corpus 15-30
+  văn bản, script log WER/MOS, voice FAQ record.
+- C: việc ngay: storyboard video 2' + 150 từ + SDG map + số liệu (08-11/08).
+- P: việc ngay: tuyển 5-7 user pilot T7 hôm nay, consent v1 có sẵn.
