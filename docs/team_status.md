@@ -121,10 +121,11 @@ VAIFF 2026**.
   thường trực**, điều phối phiên họp và **có quyền biểu quyết** như mọi
   thành viên khác.
 - Round 7 (08/08): kế hoạch cuối tuần cho C/P (`debate_output/round7.json`).
-- Round 8 (08/08): duyệt hoãn gửi đối tác → đồng thuận có điều kiện (nháp sẵn
-  fire 20/08, danh sách đối tác + warm-up 12/08, evidence pack trước 23/08);
-  P5 giữ (điều chỉnh 2 người ngoài team, 2h); thứ tự P1→P5→P2→P4→P3
-  (`debate_output/round8.json`; m365-copilot 502 — bỏ phiếu ý kiến thiếu).
+- Round 8 (08/08): duyệt hoãn gửi đối tác 5/5 có điều kiện (nháp sẵn fire
+  20-21/08, danh sách đối tác + warm-up, evidence pack trước 23/08); P5 giữ
+  (sanity-check 60-90', mở 3-5 người, rubric 5 tiêu chí); thứ tự
+  P1→P5→P2→P4→P3 (3/5 đa số) — `debate_output/round8.json` +
+  `round8_retry.json` (m365 đã fix, họp đủ 5/5).
 
 ## Gate status
 

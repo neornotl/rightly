@@ -46,15 +46,19 @@ tie-break) — test 74/74 xanh.
 | P4 | Demo script chốt (lời + slide cue) | `demo_script_final.md` | 2h |
 | P5 | Thử pilot nội bộ: 2 người NGOÀI core team (người lớn tuổi/ít tech), checklist lỗi (ASR, latency, giọng địa phương), giới hạn 2h | Log thử nội bộ | 2h |
 
-> **Quyết định hội đồng Round 8 (08/08, xem `debate_output/round8.json`):**
-> 1. Đồng thuận hoãn GỬI email đối tác tới khi có public link + kết quả pilot
->    (20/08); NHƯNG nháp phải sẵn để "fire" ngay khi có pilot result.
-> 2. P5 giữ, điều chỉnh: 2 người thử NGOÀI core team, có checklist lỗi,
->    giới hạn 2h.
-> 3. Thứ tự ưu tiên cuối tuần: **P1 → P5 → P2 → P4 → P3** (P1 khóa scope,
->    P5 bắt lỗi sớm, P3 cuối).
-> 4. Rủi ro chính: đối tác trả lời chậm → chuẩn bị sớm evidence pack
->    (screenshot + case study + transcript demo) trước 23/08.
+> **Quyết định hội đồng Round 8 (08/08, 5/5 phiếu — `debate_output/round8.json`
+> + `round8_retry.json`):**
+> 1. **Hoãn GỬI email đối tác: đồng thuận 5/5** tới khi có public link (12/08)
+>    + pilot result (20/08); NHƯNG nháp + danh sách đối tác phải sẵn trước
+>    20/08, gửi ngay theo đợt 20-21/08 để kịp evidence trước 25/08.
+> 2. **P5 giữ (5/5)**, điều chỉnh: chạy như "sanity check" 60-90 phút, mở rộng
+>    3-4 người (đa giọng Bắc-Nam nếu được), chấm nhanh 5 tiêu chí (ASR
+>    accuracy, latency, intent match, fallback, UX).
+> 3. Thứ tự ưu tiên cuối tuần (đa số 3/5): **P1 → P5 → P2 → P4 → P3**
+>    (2/5 đề xuất P5 trước P1 để validate core loop — chấp nhận P1 dẫn trước
+>    vì tuyển cần lead-time dài).
+> 4. Rủi ro chính: đối tác trả lời chậm → evidence pack (screenshot + video
+>    ngắn + transcript demo) chuẩn bị trước 23/08; GTM gửi theo đợt nếu cần.
 
 ## Quest phối hợp C-P
 
