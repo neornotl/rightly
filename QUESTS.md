@@ -42,14 +42,19 @@ tie-break) — test 74/74 xanh.
 |---|---|---|---|
 | P1 | Tuyển 8-10 người pilot + thu consent (gating tuần sau — làm TRƯỚC) | `pilot_recruits.csv` | 4-5h |
 | P2 | Lịch pilot + shot-list video 2-3' | `pilot_schedule.md`, `shot_list.md` | 3h |
-| P3 | Chuẩn bị NHÁP email đối tác + danh sách đối tác tiềm năng (KHÔNG gửi) | `partner_email_draft.md` | 2h |
+| P3 | Soạn NHÁP email đối tác (sẵn để gửi ngày 20/08) + danh sách 3-5 đối tác tiềm năng + warm-up informal trước 12/08 | `partner_email_draft.md`, `partner_list.md` | 2h |
 | P4 | Demo script chốt (lời + slide cue) | `demo_script_final.md` | 2h |
-| P5 | Tự chạy thử pilot nội bộ (2 người trong team) để bắt lỗi trước khi tuyển người thật | Log thử nội bộ | 2-3h |
+| P5 | Thử pilot nội bộ: 2 người NGOÀI core team (người lớn tuổi/ít tech), checklist lỗi (ASR, latency, giọng địa phương), giới hạn 2h | Log thử nội bộ | 2h |
 
-> **Cập nhật theo ý T (08/08):** Gửi email mời hợp tác chính thức HOÃN đến khi
-> sản phẩm có public link (12/08) + kết quả pilot. Giai đoạn này chỉ soạn nháp
-> + lập danh sách đối tác tiềm năng. Không mời hợp tác khi chưa có sản phẩm
-> demo được.
+> **Quyết định hội đồng Round 8 (08/08, xem `debate_output/round8.json`):**
+> 1. Đồng thuận hoãn GỬI email đối tác tới khi có public link + kết quả pilot
+>    (20/08); NHƯNG nháp phải sẵn để "fire" ngay khi có pilot result.
+> 2. P5 giữ, điều chỉnh: 2 người thử NGOÀI core team, có checklist lỗi,
+>    giới hạn 2h.
+> 3. Thứ tự ưu tiên cuối tuần: **P1 → P5 → P2 → P4 → P3** (P1 khóa scope,
+>    P5 bắt lỗi sớm, P3 cuối).
+> 4. Rủi ro chính: đối tác trả lời chậm → chuẩn bị sớm evidence pack
+>    (screenshot + case study + transcript demo) trước 23/08.
 
 ## Quest phối hợp C-P
 

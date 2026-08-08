@@ -120,7 +120,11 @@ VAIFF 2026**.
   nemotron-nano-omni, minimax-m3, m365-copilot) + **OpenCode — thành viên
   thường trực**, điều phối phiên họp và **có quyền biểu quyết** như mọi
   thành viên khác.
-- Hồ sơ: `debate_output/round7.json` + check pool 5/5 OK (08/08).
+- Round 7 (08/08): kế hoạch cuối tuần cho C/P (`debate_output/round7.json`).
+- Round 8 (08/08): duyệt hoãn gửi đối tác → đồng thuận có điều kiện (nháp sẵn
+  fire 20/08, danh sách đối tác + warm-up 12/08, evidence pack trước 23/08);
+  P5 giữ (điều chỉnh 2 người ngoài team, 2h); thứ tự P1→P5→P2→P4→P3
+  (`debate_output/round8.json`; m365-copilot 502 — bỏ phiếu ý kiến thiếu).
 
 ## Gate status
 
