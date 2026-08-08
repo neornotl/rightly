@@ -5,6 +5,8 @@
 > **Quy tắc**: OpenCode (công tác viên của T) KHÔNG làm thay C/P; C/P nhờ khi
 > cần hỗ trợ kỹ thuật. Mọi mục liên quan hiệu lực luật/consent/claim/GTM phải
 > có con người xác nhận (READY_FOR_HUMAN_REVIEW).
+> **Nơi nộp sản phẩm**: `deliverables/C/` (vai trò C), `deliverables/P/` (vai
+> trò P) — quy ước tên file + template xem `deliverables/README.md`.
 
 ## Mục tiêu chung
 
