@@ -45,3 +45,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Streamlit secrets - NEVER commit real keys
+.streamlit/secrets.toml
+!.streamlit/secrets.toml.example
+

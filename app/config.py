@@ -43,6 +43,29 @@ def _load_env_file(path: Path) -> None:
             os.environ[key] = value
 
 
+def _merge_streamlit_secrets() -> None:
+    """Make Streamlit Cloud dashboard secrets visible as env vars.
+
+    T1 fix: the app config reads environment variables; without this merge
+    the Streamlit dashboard secrets never reach :func:`load_settings`.
+    Uses setdefault so a real .env / OS env still wins.
+    """
+    try:
+        import streamlit as st  # type: ignore
+    except ImportError:
+        return
+    secrets = getattr(st, "secrets", None)
+    if secrets is None:
+        return
+    try:
+        items = secrets.to_dict() if hasattr(secrets, "to_dict") else dict(secrets)
+    except Exception:
+        return
+    for key, value in items.items():
+        if isinstance(key, str) and isinstance(value, str) and value:
+            os.environ.setdefault(key, value)
+
+
 @dataclass(frozen=True)
 class Settings:
     app_mode: str = "mock"
@@ -60,6 +83,7 @@ class Settings:
     max_context_chars: int = 12000
     max_response_chars: int = 2000
     pii_scrub_outbound: bool = True
+    log_retention_days: int = 30
     llm_timeout_seconds: float = 60.0
     llm_max_retries: int = 3
     llm_retry_backoff_seconds: float = 1.0
@@ -152,6 +176,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
     if env_file is None:
         env_file = Path.cwd() / ".env"
     _load_env_file(env_file)
+    _merge_streamlit_secrets()
 
     app_mode = os.environ.get("APP_MODE", "mock").strip().lower()
     asr_backend = os.environ.get("ASR_BACKEND", "mock").strip().lower()
@@ -189,6 +214,10 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         raise ConfigError("MAX_RESPONSE_CHARS must not exceed MAX_CONTEXT_CHARS.")
 
     pii_scrub_outbound = _bool_env("PII_SCRUB_OUTBOUND", True)
+
+    log_retention = _int_env("LOG_RETENTION_DAYS", 30)
+    if log_retention < 0:
+        raise ConfigError("LOG_RETENTION_DAYS must be >= 0 (0 = keep forever).")
 
     llm_timeout = _float_env("LLM_TIMEOUT_SECONDS", 60.0)
     llm_max_retries = _int_env("LLM_MAX_RETRIES", 3)
@@ -238,6 +267,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         max_context_chars=max_context,
         max_response_chars=max_response,
         pii_scrub_outbound=pii_scrub_outbound,
+        log_retention_days=log_retention,
         llm_timeout_seconds=llm_timeout,
         llm_max_retries=llm_max_retries,
         llm_retry_backoff_seconds=llm_backoff,
@@ -287,6 +317,7 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "max_context_chars": settings.max_context_chars,
         "max_response_chars": settings.max_response_chars,
         "pii_scrub_outbound": settings.pii_scrub_outbound,
+        "log_retention_days": settings.log_retention_days,
         "llm_timeout_seconds": settings.llm_timeout_seconds,
         "llm_max_retries": settings.llm_max_retries,
         "min_retrieval_score": settings.min_retrieval_score,

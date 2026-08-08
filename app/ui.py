@@ -49,6 +49,14 @@ if "session_id" not in st.session_state:
     st.session_state.session_id = pipeline.create_session()
 session_id = st.session_state.session_id
 
+# Lightweight abuse guard (demo-grade): per-session caps. Honest note: this
+# is NOT real DDoS protection on Streamlit Cloud (multiple instances) - it
+# only limits what one browser session can do.
+MAX_QUERIES_PER_SESSION = 20
+MAX_QUERY_CHARS = 1000
+if "query_count" not in st.session_state:
+    st.session_state.query_count = 0
+
 col_status, col_query = st.columns([1, 2])
 
 with col_status:
@@ -63,7 +71,15 @@ with col_query:
     st.subheader("Nhập câu hỏi (mock transcript)")
     query = st.text_input("Câu hỏi:", key="query_input")
     if st.button("Hỏi", type="primary"):
-        if query.strip():
+        if st.session_state.query_count >= MAX_QUERIES_PER_SESSION:
+            st.error(
+                f"Đã đạt giới hạn {MAX_QUERIES_PER_SESSION} câu hỏi cho phiên này. "
+                "Xóa phiên để tiếp tục."
+            )
+        elif len(query.strip()) > MAX_QUERY_CHARS:
+            st.error(f"Câu hỏi quá dài (tối đa {MAX_QUERY_CHARS} ký tự).")
+        elif query.strip():
+            st.session_state.query_count += 1
             with st.spinner("Đang xử lý..."):
                 result = pipeline.process_text(session_id, query)
             st.session_state.last_result = result.to_dict()

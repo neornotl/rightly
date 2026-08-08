@@ -85,6 +85,28 @@ def scrub_value(value: Any) -> Any:
     return value
 
 
+def prune_old_logs(log_dir: Path, retention_days: int = 30) -> int:
+    """Delete JSONL log files older than ``retention_days``; return count.
+
+    Retention policy (privacy review #2): 0 = disabled, otherwise files with
+    mtime older than the window are removed at startup.
+    """
+    if retention_days <= 0:
+        return 0
+    cutoff = datetime.now(timezone.utc).timestamp() - retention_days * 86400
+    removed = 0
+    if not Path(log_dir).exists():
+        return 0
+    for path in Path(log_dir).glob("*.jsonl"):
+        try:
+            if path.stat().st_mtime < cutoff:
+                path.unlink(missing_ok=True)
+                removed += 1
+        except OSError:
+            continue
+    return removed
+
+
 class JsonlLogger:
     """Appends scrubbed JSONL records to a log file."""
 

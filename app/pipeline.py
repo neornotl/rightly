@@ -133,6 +133,12 @@ class Pipeline:
 
     def __post_init__(self) -> None:
         self.settings.resolved_log_dir().mkdir(parents=True, exist_ok=True)
+        from app.logging_utils import prune_old_logs
+
+        prune_old_logs(
+            self.settings.resolved_log_dir(),
+            retention_days=self.settings.log_retention_days,
+        )
         if self.logger is None:
             self.logger = JsonlLogger(self.settings.resolved_log_dir())
         if self.store is None:

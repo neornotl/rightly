@@ -1,0 +1,5 @@
+# Streamlit Cloud deployment deps (T1) - minimal set for the public demo:
+# UI + Groq cloud LLM only. No ASR weights, no TTS, no eval tooling.
+python-dotenv>=1.0,<2.0
+streamlit>=1.40
+groq>=0.11
