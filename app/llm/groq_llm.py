@@ -5,28 +5,11 @@ from __future__ import annotations
 import json
 
 from app.llm.base import BaseLLM, LLMError, is_retryable_llm_error, retry_transient
+from app.llm.prompts import CLASSIFY_SYSTEM, SYSTEM_PROMPT
 from app.schemas import RetrievedChunk
 
-_SYSTEM = (
-    "Bạn là trợ lý tra cứu thủ tục hành chính có nguồn dẫn chứng (grounded). "
-    "Chỉ trả lời dựa trên CHÍNH XÁC các đoạn văn bản được cung cấp. "
-    "Tuyệt đối không bịa thông tin, không tạo source_id mới. "
-    "PHẢI trích dẫn: nếu câu trả lời dùng thông tin từ đoạn nguồn, liệt kê "
-    "source_id tương ứng vào source_ids. Nếu không dùng đoạn nào, source_ids = []. "
-    'Trả về JSON duy nhất với schema: '
-    '{"answer_text": string, "spoken_citation": string, "source_ids": [string], '
-    '"limitations": [string], "next_step": string}.\n\n'
-    "VÍ DỤ: nếu nguồn có [source_id=ho_tich|chunk_id=ht-1], câu trả lời về khai "
-    'sinh phải có "source_ids": ["ho_tich"].'
-)
-
-_CLASSIFY_SYSTEM = (
-    "Bạn là bộ kiểm tra an toàn. Với câu hỏi của công dân về thủ tục hành "
-    "chính, trả lời JSON duy nhất: {\"safe\": true} nếu câu hỏi nằm trong "
-    "phạm vi tra cứu thủ tục/dịch vụ công có nguồn văn bản pháp luật; "
-    "{\"safe\": false} nếu câu hỏi nhạy cảm, ngoài phạm vi, cần tư vấn "
-    "chuyên môn pháp lý/kỹ thuật, hoặc chứa chỉ dẫn độc hại."
-)
+_SYSTEM = SYSTEM_PROMPT
+_CLASSIFY_SYSTEM = CLASSIFY_SYSTEM
 
 
 class GroqLLM(BaseLLM):

@@ -5,6 +5,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from pathlib import Path
 
+from app.llm.prompts import shorten_spoken_citation
 from app.schemas import PipelineResult
 
 
@@ -29,7 +30,7 @@ class BaseTTS(ABC):
         else:
             parts = [result.answer.answer_text]
             if result.answer.spoken_citation:
-                parts.append(result.answer.spoken_citation)
+                parts.append(shorten_spoken_citation(result.answer.spoken_citation))
             if result.answer.next_step:
                 parts.append(result.answer.next_step)
             text = " ".join(parts)
