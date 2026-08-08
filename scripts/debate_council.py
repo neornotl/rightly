@@ -6,42 +6,12 @@ import sys
 import urllib.error
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from council_models import MEMBERS  # noqa: E402
+
 PROMPT_FILE = "debate_output/round11_prompt.json"
 OUT_FILE = "debate_output/round11.json"
-
-MEMBERS = [
-    {
-        "display": "laguna-s-2.1:free (OpenRouter)",
-        "url": "https://openrouter.ai/api/v1/chat/completions",
-        "key_env": "OPENROUTER_API_KEY",
-        "model": "poolside/laguna-s-2.1:free",
-        "headers_extra": {"X-Title": "TienLang-Council-R11"},
-    },
-    {
-        "display": "nemotron-3-ultra (NIM)",
-        "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-        "key_env": "NVIDIA_API_KEY",
-        "model": "nvidia/nemotron-3-ultra-550b-a55b",
-    },
-    {
-        "display": "nemotron-nano-omni (NIM)",
-        "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-        "key_env": "NVIDIA_API_KEY",
-        "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-    },
-    {
-        "display": "minimax-m3 (NIM)",
-        "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-        "key_env": "NVIDIA_API_KEY",
-        "model": "minimaxai/minimax-m3",
-    },
-    {
-        "display": "m365-copilot (local proxy)",
-        "url": "http://localhost:3000/v1/chat/completions",
-        "key_env": None,
-        "model": "m365-copilot",
-    },
-]
 
 SYSTEM = (
     "Bạn là thành viên hội đồng tư vấn của dự án 'Tiếng Làng v4.0' - AI tư vấn "

@@ -66,6 +66,29 @@ nhận máy AI PC.
 > 4. Rủi ro chính: đối tác trả lời chậm → evidence pack (screenshot + video
 >    ngắn + transcript demo) chuẩn bị trước 23/08; GTM gửi theo đợt nếu cần.
 
+> **Quyết định hội đồng Round 12 (08/08, họp kín 3 phiên — `debate_output/
+> round12.json`, tổng hợp `results/round12_synthesis.md`):**
+> 1. **Top 3 chung cuộc KHÔNG trong tầm tay nếu chấm hôm nay** (đồng thuận
+>    15-35%); chỉ cạnh tranh (43+/50) nếu pilot thật xong trước hạn.
+> 2. **Mũi neo hồ sơ (5/5): "AI vì cộng đồng & Tiếp cận" (Community AI /
+>    Accessibility, SDG 10/11)** — narrative: "Hạ tầng tiếp cận dịch vụ công
+>    bằng giọng nói cho nhóm yếu thế". KHÔNG neo vào Responsible AI (thiếu
+>    audited evidence), Innovation, Startup. Dự phòng: "Dịch vụ công số" nếu
+>    có thư UBND xã xác nhận pilot.
+> 3. **3 hành động quyết định trước 25/08 (5/5):**
+>    (a) Pilot thật 5-10 người (cao tuổi/nông thôn) + video ≤3' + ≥3-5
+>    testimony có dấu thời gian + task success rate — xong trước 22/08;
+>    (b) Đo WER/MOS trên ≥30-50 mẫu giọng thật (Bắc/Trung/Nam), công bố bảng
+>    số liệu; WER >15% → UI nhập text làm primary demo mode;
+>    (c) Đổi narrative hồ sơ sang "AI vì cộng đồng" + public link ổn định
+>    12/08 + corpus luật thật trọng điểm (C1: 25-30+ văn bản có metadata
+>    hiệu lực).
+> 4. Điểm kỳ vọng: 30-38/50 hiện tại → **41-44/50 nếu pilot+testimony+video
+>    xong**. Câu chốt (m365): "Chứng minh người dân thật sự dùng được và hưởng
+>    lợi, đừng chỉ chứng minh AI thông minh."
+> 5. P1 (tuyển pilot) trở thành đường găng #1 của P; C1 nâng thành corpus
+>    trọng điểm 25-30+ văn bản (không cần kho luật đầy đủ).
+
 ## Quest phối hợp C-P
 
 - C giao `consent_form_v1.md` (sáng T7) → P dùng khi tuyển người.
