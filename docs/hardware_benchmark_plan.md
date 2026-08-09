@@ -13,24 +13,33 @@ khi pilot.
 | RAM | 15.8 GB |
 | Python | 3.14.5 |
 | GPU | Không (CPU-only) |
+| NPU | KHÔNG có — máy này chỉ chạy OpenVINO-CPU; NPU chỉ có trên máy AI PC mượn |
 | faster-whisper | 1.2.1 (ctranslate2) |
+
+## Trạng thái 09/08 (F4-prep)
+
+- Script đo đã sẵn: `scripts/benchmark_openvino.py` — detect CPU/NPU, ASR
+  latency + WER + ghi `results/hardware_benchmark.csv` (append, không chứa audio).
+- Chưa có audio thật local (VIVOS chưa tải) → chạy lần đầu khi có máy mượn
+  hoặc khi P/C đưa audio pilot (13/08).
+- Claim trung thực: CHƯA có số liệu OpenVINO; không claim NPU trên máy này.
 
 ## Quy trình đo
 
 1. Cài `faster-whisper` + tải model có chủ đích (chưa làm trong phase này):
    - `phowhisper-small` (khuyến nghị thử đầu tiên, ~500MB)
    - `phowhisper-base` nếu RAM/latency không đạt.
-2. Script đo (roadmap — TODO): dùng 10 file audio thật 5-15s, ghi
-   asr_ms, retrieval_ms, llm_ms, tts_ms, total_ms; tính P50/P90/max bằng
-   `eval/latency.py`.
+2. Chạy `python scripts/benchmark_openvino.py --audio <dir> --refs <jsonl>`
+   hoặc để mặc định dùng VIVOS test nếu có. Ghi asr_ms, audio_seconds, wer,
+   latency; tính P50/P90 bằng `eval/latency.py`.
 3. Đo bộ nhớ: peak RSS bằng `psutil` hoặc Task Manager trong khi chạy.
 4. Nhiệt/nguồn: máy laptop dùng pin — ghi chú.
 
-## Intel AI PC (tùy chọn, chưa có)
+## Intel AI PC (tùy chọn, chờ trả lời loan 12/08)
 
-- Nếu có máy Intel AI PC (Core Ultra): chạy lại cùng script, so sánh.
-- **Không claim OpenVINO**: chưa benchmark; OpenVINO ngoài phạm vi phase này;
-  chỉ ghi số liệu thực đo.
+- Nếu có máy Intel AI PC (Core Ultra): chạy lại cùng script — device NPU sẽ
+  được detect tự động, so sánh CPU vs NPU.
+- **Không claim OpenVINO**: chưa benchmark; chỉ ghi số liệu thực đo.
 
 ## Các biến cần ghi
 

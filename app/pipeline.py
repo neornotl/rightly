@@ -83,7 +83,18 @@ def make_retriever(settings: Settings) -> Retriever:
 
 
 def make_llm(settings: Settings) -> BaseLLM:
-    if settings.llm_backend == "gemini":
+    llm = _build_llm(settings, settings.llm_backend)
+    if settings.llm_fallback_backend:
+        fallback = _build_llm(settings, settings.llm_fallback_backend)
+        if fallback.available:  # type: ignore[attr-defined]
+            from app.llm.fallback import FallbackLLM
+
+            return FallbackLLM(primary=llm, fallback=fallback)
+    return llm
+
+
+def _build_llm(settings: Settings, backend: str) -> BaseLLM:
+    if backend == "gemini":
         from app.llm.gemini_llm import GeminiLLM
 
         llm: BaseLLM = GeminiLLM(
@@ -95,11 +106,12 @@ def make_llm(settings: Settings) -> BaseLLM:
         if not llm.available:  # type: ignore[attr-defined]
             raise RuntimeError("LLM_BACKEND=gemini but GEMINI_API_KEY is not set.")
         return llm
-    if settings.llm_backend == "groq":
+    if backend == "groq":
         from app.llm.groq_llm import GroqLLM
 
         llm = GroqLLM(
             api_key=settings.groq_api_key,
+            api_keys=settings.groq_api_keys,
             timeout_seconds=settings.llm_timeout_seconds,
             max_retries=settings.llm_max_retries,
             backoff_seconds=settings.llm_retry_backoff_seconds,
@@ -129,6 +141,7 @@ class Pipeline:
     store: Optional[SessionStore] = None
     logger: Optional[JsonlLogger] = None
     validator: object = None  # CitationValidator when app_mode != "mock"
+    faq: object = None  # FAQMatcher when data/faq.json exists
     top_k: int = 5
 
     def __post_init__(self) -> None:
@@ -159,6 +172,12 @@ class Pipeline:
             self.validator = CitationValidator(
                 status_path=self.settings.resolved_data_dir() / "law_status.json"
             )
+        if self.faq is None:
+            from app.faq import FAQMatcher
+
+            matcher = FAQMatcher()
+            if matcher.count:
+                self.faq = matcher
 
     # ---------- lifecycle ----------
 
@@ -169,7 +188,7 @@ class Pipeline:
             "config_summary",
             app_mode=self.settings.app_mode,
             asr_backend=self.asr.name,
-            llm_backend=self.llm.name,
+            llm_backend=getattr(self.llm, "active_name", self.llm.name),
             tts_backend=self.tts.name,
             retrieval_backend=self.retriever.name,
         )
@@ -250,7 +269,8 @@ class Pipeline:
 
                 def _scrubbed_classifier(q: str, ch: object) -> bool:
                     return self.llm.classify_safe(  # type: ignore[attr-defined]
-                        scrub_outbound(q), ch  # type: ignore[arg-type]
+                        scrub_outbound(q),
+                        ch,  # type: ignore[arg-type]
                     )
 
                 llm_classifier = _scrubbed_classifier
@@ -262,71 +282,87 @@ class Pipeline:
         answer: Optional[GroundedAnswer] = None
         if self.router.would_answer(decision):
             t0 = time.perf_counter()
-            try:
-                outbound_text = query.text
-                if (
-                    self.settings.llm_backend in {"gemini", "groq"}
-                    and self.settings.pii_scrub_outbound
-                ):
-                    from app.privacy.scrubber import scrub_outbound
 
-                    outbound_text = scrub_outbound(query.text)
-                doc = self.llm.generate_answer(
-                    outbound_text,
-                    chunks[:3],
-                    max_chars=self.settings.max_response_chars,
-                )
-                raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
-                answer = GroundedAnswer(
-                    answer_text=str(doc.get("answer_text", "")).strip(),
-                    spoken_citation=str(doc.get("spoken_citation", "")).strip(),
-                    source_ids=raw_ids,
-                    limitations=[str(s) for s in (doc.get("limitations") or [])],
-                    next_step=str(doc.get("next_step", "")).strip(),
-                )
-            except Exception as exc:
-                decision = self.router.policy.insufficient_decision()
-                self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
-            lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+            # F5: curated voice FAQ short-circuits the LLM on strong matches.
+            # Runs AFTER the safety router (never bypasses RED/ORANGE gates);
+            # skips the LLM + citation validation because FAQ content is
+            # curated by the team (C verifies claims against the corpus).
+            faq_hit = None
+            if self.faq is not None:
+                faq_hit = self.faq.answer(query.text)
+            if faq_hit is not None:
+                answer = faq_hit.to_grounded_answer()
+                decision = self.router.policy.safe_decision()
+                lat["faq_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+                self.store.record(session_id, "faq_hit", faq_id=faq_hit.faq_id, score=faq_hit.score)
+            else:
+                try:
+                    outbound_text = query.text
+                    if (
+                        self.settings.llm_backend in {"gemini", "groq"}
+                        and self.settings.pii_scrub_outbound
+                    ):
+                        from app.privacy.scrubber import scrub_outbound
 
-            if answer is not None and not raw_ids:
-                # Council T2: an answer with content but zero citations is
-                # ungrounded — refuse instead of reading it out.
-                decision = self.router.policy.insufficient_decision()
-                self.store.record(
-                    session_id,
-                    "citation_rejected",
-                    issues=[{"kind": "no_citation",
-                             "message": "Câu trả lời không trích dẫn nguồn nào."}],
-                )
-                answer = None
-
-            if answer is not None and self.validator is not None:
-                # Validate RAW citations first (F2 fix): filtering before
-                # validation would silently hide hallucinated source_ids.
-                retrieved = {c.source_id for c in chunks}
-                verdict = self.validator.validate(answer, retrieved)
-                if not verdict.ok:
-                    outdated = any(i.kind == "outdated" for i in verdict.issues)
-                    decision = self.router.policy.citation_decision(
-                        outdated=outdated
+                        outbound_text = scrub_outbound(query.text)
+                    doc = self.llm.generate_answer(
+                        outbound_text,
+                        chunks[:3],
+                        max_chars=self.settings.max_response_chars,
                     )
+                    raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
+                    answer = GroundedAnswer(
+                        answer_text=str(doc.get("answer_text", "")).strip(),
+                        spoken_citation=str(doc.get("spoken_citation", "")).strip(),
+                        source_ids=raw_ids,
+                        limitations=[str(s) for s in (doc.get("limitations") or [])],
+                        next_step=str(doc.get("next_step", "")).strip(),
+                    )
+                except Exception as exc:
+                    decision = self.router.policy.insufficient_decision()
+                    self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
+                lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+                if answer is not None and not raw_ids:
+                    # Council T2: an answer with content but zero citations is
+                    # ungrounded — refuse instead of reading it out.
+                    decision = self.router.policy.insufficient_decision()
                     self.store.record(
                         session_id,
                         "citation_rejected",
-                        issues=[vars(i) for i in verdict.issues],
+                        issues=[
+                            {
+                                "kind": "no_citation",
+                                "message": "Câu trả lời không trích dẫn nguồn nào.",
+                            }
+                        ],
                     )
                     answer = None
-                else:
-                    # Sanitize AFTER validation: keep only retrieved sources.
-                    kept = [sid for sid in raw_ids if sid in retrieved]
-                    answer = GroundedAnswer(
-                        answer_text=answer.answer_text,
-                        spoken_citation=answer.spoken_citation,
-                        source_ids=kept,
-                        limitations=answer.limitations,
-                        next_step=answer.next_step,
-                    )
+
+                if answer is not None and self.validator is not None:
+                    # Validate RAW citations first (F2 fix): filtering before
+                    # validation would silently hide hallucinated source_ids.
+                    retrieved = {c.source_id for c in chunks}
+                    verdict = self.validator.validate(answer, retrieved)
+                    if not verdict.ok:
+                        outdated = any(i.kind == "outdated" for i in verdict.issues)
+                        decision = self.router.policy.citation_decision(outdated=outdated)
+                        self.store.record(
+                            session_id,
+                            "citation_rejected",
+                            issues=[vars(i) for i in verdict.issues],
+                        )
+                        answer = None
+                    else:
+                        # Sanitize AFTER validation: keep only retrieved sources.
+                        kept = [sid for sid in raw_ids if sid in retrieved]
+                        answer = GroundedAnswer(
+                            answer_text=answer.answer_text,
+                            spoken_citation=answer.spoken_citation,
+                            source_ids=kept,
+                            limitations=answer.limitations,
+                            next_step=answer.next_step,
+                        )
 
         spoken = ""
         if answer is not None:

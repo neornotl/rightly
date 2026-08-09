@@ -23,9 +23,7 @@ def validator():
 
 
 def test_valid_citation_passes(validator):
-    answer = GroundedAnswer(
-        answer_text="x", source_ids=["nd154_2024", "luat68_2020"]
-    )
+    answer = GroundedAnswer(answer_text="x", source_ids=["nd154_2024", "luat68_2020"])
     verdict = validator.validate(answer, {"nd154_2024", "luat68_2020"})
     assert verdict.ok
     assert verdict.issues == []

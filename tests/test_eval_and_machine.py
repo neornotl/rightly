@@ -192,3 +192,37 @@ def test_escalation_path_from_listening():
     machine.transition(State.ESCALATING)
     machine.transition(State.LISTENING)
     assert machine.state == State.LISTENING
+
+
+def test_connect_path_from_listening_and_speaking():
+    machine = DialogueStateMachine()
+    machine.transition(State.DISCLAIMER)
+    machine.transition(State.LISTENING)
+    machine.transition(State.CONNECTING)
+    machine.transition(State.LISTENING)
+    machine.transition(State.TRANSCRIBING)
+    machine.transition(State.RETRIEVING)
+    machine.transition(State.SAFETY_CHECK)
+    machine.transition(State.HOLDING)
+    machine.transition(State.SPEAKING)
+    machine.transition(State.CONNECTING)
+    machine.transition(State.DONE)
+    assert machine.is_terminal()
+
+
+def test_connect_invalid_from_welcome():
+    machine = DialogueStateMachine()
+    try:
+        machine.transition(State.CONNECTING)
+        assert False, "expected TransitionError"
+    except TransitionError:
+        pass
+
+
+def test_connect_parsed_from_voice_commands():
+    from app.dialogue.commands import Command, parse_command
+
+    assert parse_command("nối máy giúp tôi") == Command.CONNECT
+    assert parse_command("oke") == Command.CONNECT
+    assert parse_command("đồng ý kết nối") == Command.CONNECT
+    assert parse_command("kết nối tới bộ phận một cửa") == Command.CONNECT

@@ -1,8 +1,8 @@
-# Responsible AI — Tiếng Làng
+# Responsible AI — Rightly
 
 ## Ethics
 
-- Tiếng Làng **không phải cơ quan nhà nước**; mọi câu trả lời là tham khảo,
+- Rightly **không phải cơ quan nhà nước**; mọi câu trả lời là tham khảo,
   có nguồn dẫn chứng, có cảnh báo giới hạn.
 - Không thay cán bộ/chuyên gia; không phán quyết tranh chấp; không xử lý
   khẩn cấp (RED → chuyển con người/kênh chính thức).

@@ -74,9 +74,7 @@ class TestSpokenCitation:
         assert "Căn cứ" not in out
 
     def test_drops_article_clause_details(self):
-        out = shorten_spoken_citation(
-            "Luật Hôn nhân và Gia đình 2014, Điều 14, Khoản 1, Điểm a"
-        )
+        out = shorten_spoken_citation("Luật Hôn nhân và Gia đình 2014, Điều 14, Khoản 1, Điểm a")
         assert out == "Luật Hôn nhân và Gia đình 2014, Điều 14"
         assert "Khoản" not in out and "Điểm" not in out
 
@@ -87,9 +85,7 @@ class TestSpokenCitation:
         assert "Người lao động" not in out
 
     def test_caps_word_count(self):
-        long = "Luật Hôn nhân và Gia đình năm 2014 " + " ".join(
-            f"từ{a}" for a in range(25)
-        )
+        long = "Luật Hôn nhân và Gia đình năm 2014 " + " ".join(f"từ{a}" for a in range(25))
         out = shorten_spoken_citation(long)
         assert len(out.split()) <= 16
 

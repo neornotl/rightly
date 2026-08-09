@@ -8,7 +8,9 @@ from app.safety.router import SafetyRouter
 from app.schemas import Action, RetrievedChunk, Zone
 
 
-def _chunk(score: float = 5.0, source_id: str = "demo_binhminh_procedures", text: str | None = None) -> RetrievedChunk:
+def _chunk(
+    score: float = 5.0, source_id: str = "demo_binhminh_procedures", text: str | None = None
+) -> RetrievedChunk:
     return RetrievedChunk(
         chunk_id=f"{source_id}::c000",
         source_id=source_id,
@@ -95,7 +97,11 @@ def test_safe_grounded_answers():
 def test_phap_luat_regulation_query_is_answerable():
     decision, _ = make_router().route(
         "Luật Căn cước quy định gì về cấp thẻ?",
-        [_chunk(source_id="luat26_2023", text="Luật Căn cước quy định việc cấp thẻ căn cước (DEMO).")],
+        [
+            _chunk(
+                source_id="luat26_2023", text="Luật Căn cước quy định việc cấp thẻ căn cước (DEMO)."
+            )
+        ],
     )
     assert decision.zone == Zone.YELLOW
     assert decision.action == Action.ANSWER

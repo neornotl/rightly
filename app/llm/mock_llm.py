@@ -66,11 +66,7 @@ class MockLLM(BaseLLM):
         import re
 
         sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
-        clean = [
-            s
-            for s in sentences
-            if not s.startswith(("#", "*", "-", ">", "="))
-        ]
+        clean = [s for s in sentences if not s.startswith(("#", "*", "-", ">", "="))]
         if not clean:
             clean = sentences
         return " ".join(clean[:max_sentences])

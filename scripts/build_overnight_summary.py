@@ -39,7 +39,7 @@ def main() -> int:
                 journeys.append(json.loads(line))
 
     summary = {
-        "project": "Tieng Lang v4.0 - overnight full integration",
+        "project": "Rightly - overnight full integration",
         "completed_on": date.today().isoformat(),
         "environment": {
             "os": "Windows 10 (build 19045)",
@@ -49,13 +49,31 @@ def main() -> int:
             "free_disk_gb": 20.6,
         },
         "phases": {
-            "P0": {"status": "done", "note": "Real ASR models (PhoWhisper) downloaded, smoke-tested"},
-            "P1": {"status": "done", "note": "Groq real LLM integration validated (8/8 queries, schema OK)"},
-            "P2": {"status": "done", "note": "VIVOS eval: WER 17.98% on 30 clips (PhoWhisper-base)"},
+            "P0": {
+                "status": "done",
+                "note": "Real ASR models (PhoWhisper) downloaded, smoke-tested",
+            },
+            "P1": {
+                "status": "done",
+                "note": "Groq real LLM integration validated (8/8 queries, schema OK)",
+            },
+            "P2": {
+                "status": "done",
+                "note": "VIVOS eval: WER 17.98% on 30 clips (PhoWhisper-base)",
+            },
             "P3": {"status": "done", "note": "TTS smoke (edge voice) + latency baselines"},
-            "P4": {"status": "done", "note": "Real corpus: 11 official docs crawled, scanned PDFs OCR'd, 1013 chunks"},
-            "P5": {"status": "done", "note": "Hybrid RAG (BM25+dense+RRF), answerability gate calibrated, ablation"},
-            "P6": {"status": "done", "note": "Citation validator: expiry (ND 62/2021 -> 154/2024), support, unknown"},
+            "P4": {
+                "status": "done",
+                "note": "Real corpus: 11 official docs crawled, scanned PDFs OCR'd, 1013 chunks",
+            },
+            "P5": {
+                "status": "done",
+                "note": "Hybrid RAG (BM25+dense+RRF), answerability gate calibrated, ablation",
+            },
+            "P6": {
+                "status": "done",
+                "note": "Citation validator: expiry (ND 62/2021 -> 154/2024), support, unknown",
+            },
             "P7": {"status": "done", "note": "Full-system journeys J1-J7, redacted traces"},
             "P8": {"status": "done", "note": "This summary + OVERNIGHT_FULL_INTEGRATION_REPORT.md"},
         },
@@ -92,7 +110,8 @@ def main() -> int:
             "journeys": {
                 "total": len(journeys),
                 "as_expected": sum(
-                    1 for j in journeys
+                    1
+                    for j in journeys
                     if (j["expected"] == "answerable" and j["decision"]["action"] == "ANSWER")
                     or (j["expected"] == "refuse" and j["decision"]["action"] == "REFUSE")
                 ),
@@ -139,9 +158,7 @@ def main() -> int:
     }
 
     out = ROOT / "results" / "overnight_summary.json"
-    out.write_text(
-        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    out.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Saved: {out}")
     return 0
 

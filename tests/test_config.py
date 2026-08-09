@@ -1,4 +1,4 @@
-﻿"""Config tests: defaults, validation, and secret redaction."""
+"""Config tests: defaults, validation, and secret redaction."""
 
 from __future__ import annotations
 

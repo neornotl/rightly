@@ -59,7 +59,7 @@ def main() -> int:
             cited = ans.get("source_ids", []) or ["(none)"]
             print(f"  OK: schema={ok_schema} hallucinated_ids={hall or 'none'}")
             print(f"  cited: {cited}")
-            print(f"  answer[:160]: {ans.get('answer_text','')[:160]}")
+            print(f"  answer[:160]: {ans.get('answer_text', '')[:160]}")
             results.append(
                 {
                     "query": q,
@@ -75,9 +75,14 @@ def main() -> int:
 
     out = ROOT / "results" / "groq_basic_test.json"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps({"total": len(results), "results": results}, ensure_ascii=False, indent=2), encoding="utf-8")
+    out.write_text(
+        json.dumps({"total": len(results), "results": results}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     ok = all(r.get("schema_ok", False) for r in results if "error" not in r)
-    print(f"\nSUMMARY: {len(results)} queries, {sum('error' not in r for r in results)} answered, file: {out}")
+    print(
+        f"\nSUMMARY: {len(results)} queries, {sum('error' not in r for r in results)} answered, file: {out}"
+    )
     return 0 if ok else 2
 
 

@@ -11,6 +11,7 @@ class Command(str, Enum):
     NEXT_STEP = "NEXT_STEP"
     SOURCES = "SOURCES"
     HUMAN = "HUMAN"
+    CONNECT = "CONNECT"
     END = "END"
     HELP = "HELP"
     NONE = "NONE"
@@ -54,6 +55,19 @@ _TRIGGERS: dict[Command, list[str]] = {
         "gặp người",
         "tư vấn viên",
         "human",
+    ],
+    Command.CONNECT: [
+        "nối máy",
+        "nối tới",
+        "kết nối cơ quan",
+        "kết nối tới",
+        "gọi cơ quan",
+        "gọi đến cơ quan",
+        "đồng ý kết nối",
+        "oke",
+        "ok",
+        "đồng ý",
+        "connect",
     ],
     Command.END: [
         "kết thúc",

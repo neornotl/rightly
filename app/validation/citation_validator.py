@@ -52,18 +52,14 @@ class CitationValidator:
         status_path: Optional[Path] = None,
         today: Optional[date] = None,
     ) -> None:
-        self.status_path = Path(
-            status_path or Path("data") / "law_status.json"
-        )
+        self.status_path = Path(status_path or Path("data") / "law_status.json")
         self.today = today or date.today()
         self.sources: dict[str, dict] = {}
         self._load()
 
     def _load(self) -> None:
         if not self.status_path.exists():
-            raise FileNotFoundError(
-                f"law status registry not found: {self.status_path}"
-            )
+            raise FileNotFoundError(f"law status registry not found: {self.status_path}")
         data = json.loads(self.status_path.read_text(encoding="utf-8"))
         self.sources = data.get("sources", {})
 

@@ -11,7 +11,7 @@ import sys
 
 
 def main() -> int:
-    print("== Tieng Lang environment check ==")
+    print("== Rightly environment check ==")
     print(f"Python: {sys.version.split()[0]} ({sys.executable})")
     print(f"OS: {platform.platform()}")
     try:

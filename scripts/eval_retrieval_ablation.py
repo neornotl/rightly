@@ -26,20 +26,34 @@ CHUNKS = ROOT / "data" / "chunks" / "real_chunks.jsonl"
 CACHE = ROOT / "data" / "chunks" / "real_embeddings.npz"
 
 QUERIES = [
-    ("Q1", "Tôi cần đăng ký khai sinh cho con, thủ tục như thế nào?",
-     {"nd123_2015", "luat60_2014", "nd07_2025"}),
-    ("Q2", "Hồ sơ đăng ký kết hôn cần những giấy tờ gì?",
-     {"nd123_2015", "nd126_2014", "luat60_2014", "luat52_2014"}),
-    ("Q3", "Đăng ký tạm trú cần bao nhiêu ngày xử lý?",
-     {"luat68_2020", "nd154_2024", "nd62_2021"}),
-    ("Q4", "Tôi muốn xin cấp lại giấy khai sinh vì bị mất, phí là bao nhiêu?",
-     {"nd123_2015", "luat60_2014", "nd07_2025"}),
-    ("Q5", "Thủ tục xin giấy xác nhận tình trạng hôn nhân mất bao lâu?",
-     {"nd123_2015", "nd126_2014"}),
+    (
+        "Q1",
+        "Tôi cần đăng ký khai sinh cho con, thủ tục như thế nào?",
+        {"nd123_2015", "luat60_2014", "nd07_2025"},
+    ),
+    (
+        "Q2",
+        "Hồ sơ đăng ký kết hôn cần những giấy tờ gì?",
+        {"nd123_2015", "nd126_2014", "luat60_2014", "luat52_2014"},
+    ),
+    ("Q3", "Đăng ký tạm trú cần bao nhiêu ngày xử lý?", {"luat68_2020", "nd154_2024", "nd62_2021"}),
+    (
+        "Q4",
+        "Tôi muốn xin cấp lại giấy khai sinh vì bị mất, phí là bao nhiêu?",
+        {"nd123_2015", "luat60_2014", "nd07_2025"},
+    ),
+    (
+        "Q5",
+        "Thủ tục xin giấy xác nhận tình trạng hôn nhân mất bao lâu?",
+        {"nd123_2015", "nd126_2014"},
+    ),
     ("Q6", "Đăng ký khai sinh quá hạn có bị phạt không?", set()),
     ("Q7", "Hồ sơ xin cấp hộ chiếu gồm những gì?", set()),
-    ("Q8", "Tôi cần thay đổi họ tên trong giấy khai sinh, làm ở đâu?",
-     {"nd123_2015", "luat60_2014"}),
+    (
+        "Q8",
+        "Tôi cần thay đổi họ tên trong giấy khai sinh, làm ở đâu?",
+        {"nd123_2015", "luat60_2014"},
+    ),
 ]
 
 
@@ -50,9 +64,7 @@ def ndcg_at5(hits: list, relevant: set[str]) -> float:
         if h.source_id in relevant and h.source_id not in seen:
             seen.add(h.source_id)
             dcg += 1.0 / math.log2(rank + 2)
-    ideal = sum(
-        1.0 / math.log2(i + 2) for i in range(min(5, len(relevant)))
-    )
+    ideal = sum(1.0 / math.log2(i + 2) for i in range(min(5, len(relevant))))
     return dcg / ideal if ideal else 0.0
 
 
@@ -114,20 +126,18 @@ def main() -> int:
         run_variant("hybrid_rerank", lambda q: hybrid_rr.search(q, top_k=5)),
     ]
 
-    print(f"\n{'variant':<14} {'r@5':>6} {'nDCG@5':>8} {'noise@5':>8} "
-          f"{'empty':>6} {'lat(ms)':>8}")
+    print(f"\n{'variant':<14} {'r@5':>6} {'nDCG@5':>8} {'noise@5':>8} {'empty':>6} {'lat(ms)':>8}")
     for r in results:
-        mean_noise = round(
-            sum(row["noise@5"] for row in r["rows"]) / len(r["rows"]), 4
+        mean_noise = round(sum(row["noise@5"] for row in r["rows"]) / len(r["rows"]), 4)
+        print(
+            f"{r['variant']:<14} {r['mean_recall@5']:>6} {r['mean_ndcg@5']:>8} "
+            f"{mean_noise:>8} {r['empty_retrievals']:>6} {r['mean_latency_ms']:>8}"
         )
-        print(f"{r['variant']:<14} {r['mean_recall@5']:>6} {r['mean_ndcg@5']:>8} "
-              f"{mean_noise:>8} {r['empty_retrievals']:>6} {r['mean_latency_ms']:>8}")
 
     out = ROOT / "results" / "retrieval_ablation.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(
-        json.dumps({"queries": len(QUERIES), "results": results},
-                   ensure_ascii=False, indent=2),
+        json.dumps({"queries": len(QUERIES), "results": results}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     print(f"\nSaved: {out}")

@@ -1,4 +1,4 @@
-# Submission Checklist — VAIFF 2026 (≥45/50, hạn 25/08/2026)
+# Submission Checklist — Intel Vietnam AI Impact Festival 2026 (VAIIF26) (≥45/50, hạn 25/08/2026)
 
 Mục tiêu Gate D. Mọi mục đánh status theo quy tắc role.md: TODO /
 IN_PROGRESS / BLOCKED / READY_FOR_HUMAN_REVIEW / VERIFIED / DONE.
@@ -61,8 +61,8 @@ thiếu pilot/user testimony.
 
 ### [T+C+P] Gate D — Hồ sơ tổng hợp
 
-- [ ] [C+P] Form nộp: tên, mô tả 150 từ, video link, dự án (đội ≤3, sinh viên
-  18+ — kiểm tra eligibility)
+- [ ] [C+P] Form nộp: tên, mô tả 150 từ, video link, dự án (đội ≤3, học sinh
+  13-17 đang học THCS/THPT/CĐ nghề; consent phụ huynh/giám hộ — kiểm eligibility)
 - [ ] [T+C+P] Backup + submission proof (screenshot, mã xác nhận) — ĐoD Gate D
 - [ ] [T+C+P] Nhất quán: repo, README, video, form, evidence matrix
 

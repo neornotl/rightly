@@ -30,10 +30,10 @@ STATE = """TỔNG QUAN DỰ ÁN "TIẾNG LÀNG v4.0" — BÁO CÁO KÍN CHO HỘ
 - Chất lượng hiện tại: 111 tests xanh, ruff sạch, preflight 9/9, eval R1-R4 có baseline (WER/Retrieval/Routing/Latency), demo transcript deterministic (docs/demo/), smoke real-mode Groq 12/12 PASSED (ngày 08/08), Round 11 đã làm câu trả lời tự nhiên theo chuẩn tổng đài viên (prompt dùng chung, trích dẫn đọc giọng ≤15 từ), PII scrubber outbound, retry+classify an toàn cho LLM cloud, log retention 30 ngày, UI guard 20 câu/phiên.
 - Các khoản nợ kỹ thuật: corpus hiện là demo tổng hợp ("xã Bình Minh") chưa phải kho luật thật đầy đủ (quest C1 đang giao C); ASR/TTS chưa validate trên audio thật; chưa có AI PC/OpenVINO; Groq key chưa xoay; m365-copilot mới nối lại proxy hôm nay.
 - Nợ con người: C (content) chưa có deliverable cuối tuần; P (pilot) chưa tuyển ai; pilot 8-10 người dự kiến 20/08; video demo 22/08; public link dự kiến 12/08.
-- Deadline: hồ sơ dự thi VAIFF 2026 nộp 25/08/2026; mục tiêu ≥45/50 điểm rubric. Rubric ghi nhận từ các round trước: M1 pilot evidence & user testimony, M2 innovation & GTM, M3 technical stability; các tiêu chí Credibility, Trustworthiness, Compliance, Citation quality, Responsible AI, Impact & SDG alignment, Evaluation rigor.
+- Deadline: hồ sơ dự thi VAIIF26 nộp 25/08/2026; mục tiêu ≥45/50 điểm rubric. Rubric ghi nhận từ các round trước: M1 pilot evidence & user testimony, M2 innovation & GTM, M3 technical stability; các tiêu chí Credibility, Trustworthiness, Compliance, Citation quality, Responsible AI, Impact & SDG alignment, Evaluation rigor.
 
 CÂU HỎI HỘI ĐỒNG ROUND 12 (phiên họp KÍN — ý kiến chỉ nội bộ đội dự thi):
-1) Với trạng thái hiện tại (chấm ngay hôm nay), xác suất dự án vào được TOP 3 TOÀN QUỐC VAIFF 2026 là bao nhiêu %? Lý do trung thực.
+1) Với trạng thái hiện tại (chấm ngay hôm nay), xác suất dự án vào được TOP 3 TOÀN QUỐC VAIIF26 là bao nhiêu %? Lý do trung thực.
 2) Nếu khó top 3 chung cuộc: hạng mục nào dự án có cơ hội TOP 1 nhất để (a) được công nhận/cấp chứng nhận cấp quốc gia, hoặc (b) giành vé đi vòng quốc tế? (các hạng mục điển hình: Dịch vụ công số / AI vì cộng đồng & tiếp cận / Responsible AI & Ethics / Innovation / Startup trẻ...). Chọn 1 hạng mục + luận cứ.
 3) 3 rào cản LỚN NHẤT chặn đường top (kỹ thuật, con người, bằng chứng) + cách vượt cụ thể trước 25/08.
 4) Phương án dự phòng: nếu pilot/evidence chưa kịp, chiến lược tối đa hóa điểm nào, cắt điểm nào?
@@ -54,8 +54,8 @@ _VERDICT_HEADER = """BÁO CÁO KÍN CHO HỘI ĐỒNG — PHIÊN 3 (PHÁN QUYẾ
 Trả lời tối đa 700 từ tiếng Việt, kết thúc dòng: AGREEMENT: [YES/PARTIAL/NO] — [≤15 từ]."""
 
 SYSTEM = (
-    "Bạn là thành viên hội đồng phản biện của dự án 'Tiếng Làng v4.0' (voice-first "
-    "AI tiếng Việt cho người dân, thi VAIFF 2026). Bạn KHÔNG nói xuôi, không nể nang: "
+    "Bạn là thành viên hội đồng phản biện của dự án 'Rightly' (voice-first "
+    "AI tiếng Việt cho người dân, thi VAIIF26). Bạn KHÔNG nói xuôi, không nể nang: "
     "đánh giá trung thực, định lượng, có logic; ý kiến phản biện phải sắc và có căn cứ; "
     "ý kiến đồng thuận phải nêu lý do. Trả lời tiếng Việt."
 )

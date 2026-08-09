@@ -133,16 +133,8 @@ class Policy:
 
     def citation_decision(self, outdated: bool = False) -> SafetyDecision:
         """Answer was rejected because citations failed grounding checks."""
-        code = (
-            ReasonCode.CITATION_OUTDATED
-            if outdated
-            else ReasonCode.CITATION_UNSUPPORTED
-        )
-        message = (
-            self.citation_outdated_message
-            if outdated
-            else self.citation_unsupported_message
-        )
+        code = ReasonCode.CITATION_OUTDATED if outdated else ReasonCode.CITATION_UNSUPPORTED
+        message = self.citation_outdated_message if outdated else self.citation_unsupported_message
         return SafetyDecision(
             zone=Zone.ORANGE,
             action=Action.REFUSE,

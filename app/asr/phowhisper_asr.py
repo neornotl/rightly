@@ -51,8 +51,7 @@ class PhoWhisperASR(BaseASR):
             import transformers  # noqa: F401
         except ImportError:
             return False, (
-                "torch/transformers are not installed. "
-                "Run: pip install torch transformers"
+                "torch/transformers are not installed. Run: pip install torch transformers"
             )
         if self._model_error:
             return False, self._model_error
@@ -107,9 +106,7 @@ class PhoWhisperASR(BaseASR):
         self.check_audio_file(audio_path)
         model, processor = self._load()
         audio, sr = self._decode_to_numpy(audio_path)
-        inputs = processor(
-            audio, sampling_rate=sr, return_tensors="pt"
-        ).input_features
+        inputs = processor(audio, sampling_rate=sr, return_tensors="pt").input_features
         start = time.perf_counter()
         with torch.no_grad():
             generated = model.generate(

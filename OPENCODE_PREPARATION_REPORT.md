@@ -1,4 +1,4 @@
-# OPENCODE PREPARATION REPORT — Tiếng Làng v4.0
+# OPENCODE PREPARATION REPORT — Rightly
 
 Generated: 2026-08-07 (UTC) · Machine: Windows 10, Python 3.14.5,
 Intel Core i7-10510U, 15.8 GB RAM · Repo root: `C:\Users\laptopppp\intel`

@@ -3,7 +3,7 @@
 ## Mục tiêu
 
 Đo khả năng hoàn thành task, thời gian, mức hài lòng và độ chính xác khi
-người dùng thật (8-10 người) dùng Tiếng Làng mock/local trên laptop.
+người dùng thật (8-10 người) dùng Rightly mock/local trên laptop.
 
 ## Người tham gia
 

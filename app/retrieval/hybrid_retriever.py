@@ -67,9 +67,7 @@ class DenseIndex:
             if data["ids"].tolist() == [c.chunk_id for c in self.chunks]:
                 self._embeddings = data["embeddings"]
                 return
-        self._embeddings = model.encode(
-            texts, normalize_embeddings=True, show_progress_bar=True
-        )
+        self._embeddings = model.encode(texts, normalize_embeddings=True, show_progress_bar=True)
         cache.parent.mkdir(parents=True, exist_ok=True)
         np.savez(
             cache,
@@ -89,14 +87,10 @@ class DenseIndex:
         if not self.chunks:
             return []
         model = self._load_model()
-        q = model.encode(
-            [f"{_QUERY_PREFIX}{query}"], normalize_embeddings=True
-        )[0]
+        q = model.encode([f"{_QUERY_PREFIX}{query}"], normalize_embeddings=True)[0]
         sims = self._embeddings @ q
         order = np.argsort(-sims)[:top_k]
-        return [
-            _to_chunk(self.chunks[i], float(sims[i])) for i in order if sims[i] > 0
-        ]
+        return [_to_chunk(self.chunks[i], float(sims[i])) for i in order if sims[i] > 0]
 
 
 def _rrf_fuse(lists: list[list[RetrievedChunk]], k: int = 60) -> list[RetrievedChunk]:
@@ -108,9 +102,7 @@ def _rrf_fuse(lists: list[list[RetrievedChunk]], k: int = 60) -> list[RetrievedC
             if hit.chunk_id not in order:
                 order[hit.chunk_id] = len(order)
     by_chunk = {h.chunk_id: h for hits in lists for h in hits}
-    ranked = sorted(
-        by_chunk, key=lambda cid: (-scores[cid], order[cid], cid)
-    )
+    ranked = sorted(by_chunk, key=lambda cid: (-scores[cid], order[cid], cid))
     return [_to_chunk(by_chunk[cid], scores[cid]) for cid in ranked]
 
 
@@ -181,9 +173,7 @@ class HybridRetriever(Retriever):
             # The gate already decides answerability; rerank only re-orders.
             threshold = self.rerank_threshold if self.gate == "none" else -1e9
             scored = [
-                _to_chunk(h, float(s))
-                for h, s in zip(fused[:12], scores)
-                if float(s) >= threshold
+                _to_chunk(h, float(s)) for h, s in zip(fused[:12], scores) if float(s) >= threshold
             ]
             scored.sort(key=lambda h: h.score, reverse=True)
             fused = scored

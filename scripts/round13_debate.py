@@ -1,4 +1,4 @@
-"""Round 13 — council: breakaway transformations to maximize VAIFF score.
+"""Round 13 — council: breakaway transformations to maximize VAIIF26 score.
 
 3 phases (resumable via --phase N):
   P1 ideas    : each member proposes up to 8 concrete changes (score ROI).
@@ -63,8 +63,8 @@ _P3_HEADER = """BÁO CÁO KÍN PHIÊN 3 (PHÁN QUYẾT CUỐI):
 Trả lời tối đa 700 từ tiếng Việt, kết thúc: AGREEMENT: [YES/PARTIAL/NO] — ≤15 từ."""
 
 SYSTEM = (
-    "Bạn là thành viên hội đồng chiến lược của dự án 'Tiếng Làng v4.0' (voice-first "
-    "AI tiếng Việt, thi VAIFF 2026, hạn 25/08). Bạn THIỆN THỰC, định lượng, không nể nang; "
+    "Bạn là thành viên hội đồng chiến lược của dự án 'Rightly' (voice-first "
+    "AI tiếng Việt, thi Intel Vietnam AI Impact Festival 2026 (VAIIF26), hạn 25/08). Bạn THIỆN THỰC, định lượng, không nể nang; "
     "đề xuất phải KHẢ THI trên thực tế (người-day, rủi ro), ưu tiên ROI. Tiếng Việt."
 )
 

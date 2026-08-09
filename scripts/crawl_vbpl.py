@@ -114,13 +114,10 @@ def build_front_matter(meta: dict[str, str], sid: str, docid: int) -> str:
     loai = meta.get("loai", "")
     co_quan = meta.get("co_quan", "")
     return (
-        "---\n"
-        f"source_id: {sid}\n"
-        f"title: {loai} {meta.get('ky_hieu','')} {title}\n".strip()
-        + "\n"
+        f"---\nsource_id: {sid}\ntitle: {loai} {meta.get('ky_hieu', '')} {title}\n".strip() + "\n"
         f"source_type: gov_legal\n"
         f"publisher: {co_quan}\n"
-        f"published_date: {meta.get('ngay_ban_hanh','')}\n"
+        f"published_date: {meta.get('ngay_ban_hanh', '')}\n"
         f"url: {BASE.format(docid=docid)}\n"
         f"notes: Official text from vanban.chinhphu.vn\n"
         "---\n"
@@ -175,9 +172,7 @@ def main() -> int:
                 import pypdf
 
                 reader = pypdf.PdfReader(str(pdf_path))
-                body = normalize_text(
-                    "\n".join(p.extract_text() or "" for p in reader.pages)
-                )
+                body = normalize_text("\n".join(p.extract_text() or "" for p in reader.pages))
             if len(body.strip()) < 500 and ocr_txt.exists():
                 body = normalize_text(ocr_txt.read_text(encoding="utf-8"))
                 status = "ocr_pending_review"
@@ -189,10 +184,7 @@ def main() -> int:
                 (SOURCES / f"{sid}.md").write_text(md, encoding="utf-8")
             else:
                 md = ""
-            print(
-                f"[OK] {docid} -> {sid} | {ky} | {meta.get('loai','')} | "
-                f"pdf={len(body)} chars"
-            )
+            print(f"[OK] {docid} -> {sid} | {ky} | {meta.get('loai', '')} | pdf={len(body)} chars")
             rows.append(
                 {
                     "source_id": sid,

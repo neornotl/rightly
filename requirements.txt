@@ -1,2 +1,9 @@
 # Core dependencies - minimal. Mock mode runs without these too (stdlib only).
 python-dotenv>=1.0,<2.0
+
+# Cloud runtime deps (F3: Streamlit Cloud + HF Spaces install this file).
+# Mock/dev environments don't need them, but they are lightweight and make
+# the public deploy a single-click flow (no extra "packages" config).
+streamlit>=1.40
+groq>=0.11
+google-genai>=1.0

@@ -2,7 +2,7 @@
 
 ## Cam kết của chúng tôi
 
-Để nuôi dưỡng một môi trường cởi mở và thân thiện, đội **Tiếng Làng v4.0**
+Để nuôi dưỡng một môi trường cởi mở và thân thiện, đội **Rightly**
 cam kết: mọi người tham gia dự án — dù là [T] Technical, [C] Content &
 Compliance, hay [P] Pilot & Partnership — đều được tôn trọng, không phân biệt
 tuổi tác, hoàn cảnh, khả năng, giới tính, ngôn ngữ, hay mức độ hiểu biết kỹ

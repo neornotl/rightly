@@ -1,4 +1,4 @@
-"""Command-line interface for Tieng Lang.
+"""Command-line interface for Rightly.
 
 Runs the full dialogue state machine. Mock mode requires no API key, no model,
 no audio hardware: use ``--transcript`` or a dummy audio file with a sibling
@@ -29,7 +29,7 @@ from app.dialogue.state_machine import DialogueStateMachine, State
 from app.pipeline import Pipeline
 
 DISCLAIMER = (
-    "Chào bạn. Tôi là Tiếng Làng - trợ lý tra cứu thủ tục hành chính. "
+    "Chào bạn. Tôi là Rightly - trợ lý tra cứu thủ tục hành chính. "
     "Tôi KHÔNG phải cơ quan nhà nước; thông tin chỉ để tham khảo. "
     "Bạn có thể hỏi tôi về thủ tục hành chính, hoặc nói 'trợ giúp' để biết "
     "các lệnh. (BẢN DEMO - dữ liệu mẫu, không phải hướng dẫn chính thức.)"
@@ -37,8 +37,9 @@ DISCLAIMER = (
 
 HELP_TEXT = (
     "Tôi hiểu các lệnh: 'nói lại', 'nói chậm hơn', 'bước tiếp theo', "
-    "'nguồn ở đâu', 'hỏi người thật', 'kết thúc'. Hoặc đặt câu hỏi thủ tục "
-    "hành chính, ví dụ: 'Thủ tục cấp giấy xác nhận hộ khẩu?'"
+    "'nguồn ở đâu', 'hỏi người thật', 'nối máy' (kết nối cơ quan), "
+    "'kết thúc'. Hoặc đặt câu hỏi thủ tục hành chính, ví dụ: "
+    "'Thủ tục cấp giấy xác nhận hộ khẩu?'"
 )
 
 RED_TEXT = (
@@ -158,6 +159,9 @@ def run_cli(args) -> int:
                     machine.transition(State.DONE)
                     break
                 continue
+            if cmd == Command.CONNECT:
+                _handle_connect(machine, holder)
+                continue
             if cmd == Command.HELP:
                 print(f"\n[HELP] {HELP_TEXT}")
                 continue
@@ -169,6 +173,46 @@ def run_cli(args) -> int:
     finally:
         pipeline.delete_session(session_id)
     return 0
+
+
+def _handle_connect(machine, holder: dict[str, Optional[str]]) -> None:
+    """Kết nối tới đầu mối cơ quan + phiếu chuẩn bị hồ sơ (demo-grade)."""
+    from app.contacts import default_contact, find_contact
+    from app.forms import build_registration_slip
+
+    machine.transition(State.CONNECTING)
+    contact = find_contact("bo-phan-mot-cua-xa-binh-minh") or default_contact()
+    if contact is None:
+        print("\n[CONNECT] Chưa có đầu mối liên hệ trong danh bạ (P cần xác minh).")
+        machine.transition(State.LISTENING)
+        return
+    # Council R17: 2-step confirmation (false-positive guard on "oke"/"đồng ý").
+    print("\n[CONNECT] Tôi kết nối tới cơ quan có thẩm quyền...")
+    confirm = input(f"Bạn xác nhận kết nối tới: {contact.label}? (có/không): ").strip().casefold()
+    if confirm not in {"co", "có", "yes", "y"}:
+        print("  - Đã HỦY kết nối.")
+        machine.transition(State.LISTENING)
+        return
+    print(f"  - {contact.label}")
+    if contact.callable:
+        print(f"  - Số điện thoại: {contact.phone}")
+        print(
+            "  - (demo: mở quay số bằng nút Gọi ngay trên giao diện web; cuộc "
+            "gọi xuất phát từ thiết bị của bạn — Tiếng Làng không tự gọi.)"
+        )
+    else:
+        print("  - Số điện thoại CHƯA XÁC MINH (placeholder) — không mở quay số.")
+    if contact.note:
+        print(f"  - Ghi chú: {contact.note}")
+    last = holder.get("last_answer")
+    if last:
+        slip = build_registration_slip(
+            query="(câu hỏi trước đó)",
+            summary=last,
+            contact=contact,
+        )
+        print(f"\n[SLIP]\n{slip.to_markdown()}")
+    machine.transition(State.LISTENING)
 
 
 def _handle_query(
@@ -199,7 +243,7 @@ def _handle_query(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="tieng-lang", description=__doc__)
+    parser = argparse.ArgumentParser(prog="rightly", description=__doc__)
     parser.add_argument(
         "--transcript", type=str, default=None, help="Process one text query (mock path)."
     )

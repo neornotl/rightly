@@ -4,8 +4,8 @@ Cập nhật mỗi phiên làm việc. Mọi trạng thái dựa trên file/test
 status/evidence thực tế — không suy đoán. Owner: [T] Technical, [C] Content/
 Compliance/Evaluation, [P] Pilot/Presentation/Partnership.
 
-Cập nhật gần nhất: 08/08/2026 — Mục tiêu Gate D (25/08/2026): **≥45/50 rubric
-VAIFF 2026**.
+Cập nhật gần nhất: 09/08/2026 (tối — sau Round 17) — Mục tiêu Gate D (25/08/2026): **≥45/50 rubric
+VAIIF26**.
 
 ## T - Technical
 
@@ -15,21 +15,34 @@ VAIFF 2026**.
   - CitationValidator (registry `data/law_status.json`, 11 văn bản luật/NĐ
     thật); safety router RED/ORANGE/YELLOW + CRIMINAL_MATTER + citation guard
     (Council T2/T3); privacy logging (scrub, xóa raw audio).
-  - 73 tests pass, ruff clean, preflight 9/9, eval R1–R4 xanh
-    (`results/evaluation_report.md`); 6 vòng hội đồng AI pool
-    (`results/round5_debate.json`, `results/round6_debate.json`).
-  - Corpus thật: 11 nguồn `gov_legal` (`data/sources_real/`, chunk real).
+  - **125→142 tests pass, ruff clean, preflight 9/9** (`results/evaluation_report.md`).
+  - **09/08 (ngày FULL của T — đã xong)**: feature demo "Nối máy + Phiếu hồ sơ"
+    (Command.CONNECT/State.CONNECTING, `app/contacts.py` tel: chỉ khi verified,
+    `app/forms.py` phiếu không thu thập dữ liệu cá nhân, UI+CLI, 14 test mới);
+    **F4** xoay key Groq (GROQ_API_KEY_2/3) + fallback Gemini
+    (`app/llm/fallback.py`) + rate limit theo client (`app/ratelimit.py`);
+    **F5** Voice FAQ 11 kịch bản (`app/faq.py`, `data/faq.json`, khớp không nhạy
+    dấu, chạy sau safety router — tiết kiệm API khi demo); script log pilot
+    WER/MOS/CSAT (`scripts/log_pilot_metrics.py`); OpenVINO benchmark sẵn sàng
+    (`scripts/benchmark_openvino.py`, máy này CPU-only không NPU); deploy prep
+    (`scripts/predeploy_check.py` 0 FAIL, `.streamlit/secrets.toml.example` đủ
+    key mới, `docs/deploy_public.md`); **F8 (R17)**: xác nhận 2 bước nối máy
+    (CLI hỏi lại có/không + UI popover consent trước tel:, chống false-positive
+    ASR) + watermark đỏ phiếu (header+footer "KHÔNG CÓ GIÁ TRỊ PHÁP LÝ");
+    Round 17 synthesis: `results/round17_synthesis.md` (2 YES có điều kiện +
+    1 PARTIAL + 2 NO → duyệt 4 core, OpenVINO + corpus HOÃN 10-11/08).
 - In progress:
-  - [T] Benchmark OpenVINO/AI PC (draft: `docs/hardware_benchmark_plan.md`) —
-    cần phần cứng AI PC để chạy.
-  - [T] Public deploy path (Streamlit Cloud) — chưa bắt đầu.
+  - [T] Bấm Deploy public (Streamlit Cloud + HF Spaces backup) — cần tài khoản;
+    mọi thứ khác đã sẵn sàng. Mốc 12/08.
+  - [T] Zalo OA đăng ký (10-11/08) — chờ P/C bổ sung SĐT thật.
 - Blocked: (none)
 - Needs review:
   - [T+C] Thu hẹp pattern RED false positive (F10) — chưa làm.
 - Next action:
-  - [T] Đo latency/độ ổn định local mode với corpus thật; chuẩn bị config
-    deploy không lộ secret.
-  - [T] OpenVINO inference benchmark khi có máy AI PC.
+  - [T] 12/08: deploy public link + trả lời email Intel loan; chạy predeploy_check
+    trước khi bấm nút. Khi P giao SĐT xác minh → đổi `verified=true` trong
+    `data/contacts.json`. Khi C giao corpus 15-30 văn bản → chạy crawl/ingest +
+    rebuild real_chunks.
 
 ## C - Content, Compliance & Evaluation
 

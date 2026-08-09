@@ -1,6 +1,6 @@
 # Contributing
 
-Cảm ơn bạn quan tâm đóng góp cho **Tiếng Làng v4.0**. Đọc kỹ mục này trước khi
+Cảm ơn bạn quan tâm đóng góp cho **Rightly**. Đọc kỹ mục này trước khi
 gửi thay đổi — repo là dự án có vai trò rõ ràng ([T]/[C]/[P], xem
 `docs/team_status.md` và `QUESTS.md`).
 

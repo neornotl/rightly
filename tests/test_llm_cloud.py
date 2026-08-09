@@ -76,14 +76,30 @@ def test_groq_generate_answer_retries_transient_then_succeeds(monkeypatch):
         if calls["n"] == 1:
             raise RuntimeError("503 Service Unavailable")
         return _FakeCompletion(
-            json.dumps({"answer_text": "ok", "spoken_citation": "c",
-                        "source_ids": ["ht-1"], "limitations": [], "next_step": ""})
+            json.dumps(
+                {
+                    "answer_text": "ok",
+                    "spoken_citation": "c",
+                    "source_ids": ["ht-1"],
+                    "limitations": [],
+                    "next_step": "",
+                }
+            )
         )
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "chat": type("Chat", (), {"completions": type(
-            "Comp", (), {"create": fake_create})()})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
     out = llm.generate_answer("hỏi gì?", CHUNKS)
     assert out["answer_text"] == "ok"
     assert calls["n"] == 2
@@ -97,10 +113,19 @@ def test_groq_generate_answer_non_json_raises_without_retry(monkeypatch):
         calls["n"] += 1
         return _FakeCompletion("không phải json")
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "chat": type("Chat", (), {"completions": type(
-            "Comp", (), {"create": fake_create})()})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
     with pytest.raises(LLMError, match="non-JSON"):
         llm.generate_answer("hỏi gì?", CHUNKS)
     assert calls["n"] == 1
@@ -112,10 +137,19 @@ def test_groq_classify_safe_true(monkeypatch):
     def fake_create(self, **kwargs):
         return _FakeCompletion(json.dumps({"safe": True}))
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "chat": type("Chat", (), {"completions": type(
-            "Comp", (), {"create": fake_create})()})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
     assert llm.classify_safe("thủ tục cấp sổ đỏ cần gì?", CHUNKS) is True
 
 
@@ -125,10 +159,19 @@ def test_groq_classify_safe_conservative_on_failure(monkeypatch):
     def fake_create(self, **kwargs):
         raise ConnectionError("down")
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "chat": type("Chat", (), {"completions": type(
-            "Comp", (), {"create": fake_create})()})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
     assert llm.classify_safe("câu hỏi?", CHUNKS) is False
 
 
@@ -138,9 +181,13 @@ def test_gemini_classify_safe_true(monkeypatch):
     def fake_generate_content(self, **kwargs):
         return _FakeResponse(json.dumps({"safe": True}))
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "models": type("M", (), {"generate_content": fake_generate_content})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C", (), {"models": type("M", (), {"generate_content": fake_generate_content})()}
+        )(),
+    )
     assert llm.classify_safe("thủ tục khai sinh cần gì?", CHUNKS) is True
 
 
@@ -150,9 +197,13 @@ def test_gemini_classify_safe_conservative_on_non_json(monkeypatch):
     def fake_generate_content(self, **kwargs):
         return _FakeResponse("không phải json")
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "models": type("M", (), {"generate_content": fake_generate_content})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C", (), {"models": type("M", (), {"generate_content": fake_generate_content})()}
+        )(),
+    )
     assert llm.classify_safe("câu hỏi?", CHUNKS) is False
 
 
@@ -165,13 +216,24 @@ def test_gemini_generate_answer_retries_transient(monkeypatch):
         if calls["n"] == 1:
             raise RuntimeError("429 Too Many Requests")
         return _FakeResponse(
-            json.dumps({"answer_text": "ok", "spoken_citation": "c",
-                        "source_ids": ["ht-1"], "limitations": [], "next_step": ""})
+            json.dumps(
+                {
+                    "answer_text": "ok",
+                    "spoken_citation": "c",
+                    "source_ids": ["ht-1"],
+                    "limitations": [],
+                    "next_step": "",
+                }
+            )
         )
 
-    monkeypatch.setattr(llm, "_get_client", lambda: type("C", (), {
-        "models": type("M", (), {"generate_content": fake_generate_content})()
-    })())
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C", (), {"models": type("M", (), {"generate_content": fake_generate_content})()}
+        )(),
+    )
     out = llm.generate_answer("hỏi gì?", CHUNKS)
     assert out["answer_text"] == "ok"
     assert calls["n"] == 2

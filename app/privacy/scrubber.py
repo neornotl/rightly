@@ -26,12 +26,8 @@ _CCCD_RE = re.compile(r"(?<!\d)(?:\d{12}|\d{9})(?!\d)")
 _PASSPORT_RE = re.compile(r"\b[A-Z]{1,2}\d{7}\b")
 
 # "số 12 đường X" / "nhà số 5 ngõ Y" / "số 12 thôn Z" — requires a marker.
-_STREET_MARKERS = (
-    "đường|phố|ngõ|ngách|hẻm|kiệt|thôn|xóm|ấp|bản|buôn|sóc|khu phố|tổ dân phố|làng"
-)
-_ADDRESS_RE = re.compile(
-    r"(?:nhà\s+)?số\s+\d+(?:\s*[/\-]\s*\d+)?\s+(" + _STREET_MARKERS + r")\b"
-)
+_STREET_MARKERS = "đường|phố|ngõ|ngách|hẻm|kiệt|thôn|xóm|ấp|bản|buôn|sóc|khu phố|tổ dân phố|làng"
+_ADDRESS_RE = re.compile(r"(?:nhà\s+)?số\s+\d+(?:\s*[/\-]\s*\d+)?\s+(" + _STREET_MARKERS + r")\b")
 
 _PHONE_RE = re.compile(r"(?<!\d)(\+?\d[\d\s.\-]{7,}\d)(?!\d)")
 _LONG_ID_RE = re.compile(r"\b[A-Za-z0-9_\-]{24,}\b")

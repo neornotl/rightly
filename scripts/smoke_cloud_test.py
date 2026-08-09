@@ -65,9 +65,7 @@ def main() -> int:
         try:
             result = pipeline.process_text(session_id, query)
         except Exception as exc:  # noqa: BLE001 - smoke test must not die
-            rows.append(
-                {"query": query, "error": f"{type(exc).__name__}: {str(exc)[:300]}"}
-            )
+            rows.append({"query": query, "error": f"{type(exc).__name__}: {str(exc)[:300]}"})
             print(f"[{i:02d}] ERROR  {query[:50]} -> {type(exc).__name__}")
             continue
         zone = result.decision.zone.value
@@ -97,7 +95,9 @@ def main() -> int:
         )
 
     passed = sum(1 for r in rows if r.get("ok", False))
-    out = ROOT / "results" / f"smoke_cloud_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M')}.json"
+    out = (
+        ROOT / "results" / f"smoke_cloud_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M')}.json"
+    )
     out.parent.mkdir(parents=True, exist_ok=True)
     summary = {
         "date_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),

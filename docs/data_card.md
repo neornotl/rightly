@@ -1,4 +1,4 @@
-# Data card — Tiếng Làng v4.0 (preparation phase)
+# Data card — Rightly (preparation phase)
 
 ## 1. Data collected (in this phase)
 

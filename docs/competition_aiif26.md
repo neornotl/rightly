@@ -125,5 +125,18 @@ mẫu consent có chữ ký người có thẩm quyền. Không có phần thuy�
 - Liên hệ BJO: thi.theu.nguyen@intel.com
 
 **Cần C/P xác nhận:** nội dung từng trường trong Google Form; yêu cầu định dạng
-video (MP4? dung lượng? phụ đề?); chữ ký "người có thẩm quyền" là ai; thời
-điểm công bố kết quả; quy định tuổi tối thiểu 18+ tính theo ngày nào.
+video (MP4? dung lượng? phụ đề?); chữ ký "người có thẩm quyền" cho thí sinh
+<18 tuổi (phụ huynh/giám hộ?); thời điểm công bố kết quả; tuổi 13-17 tính theo
+ngày nào. → ĐỘI THI BẢNG HỌC SINH (13-17): cả 3 thành viên phải trong độ tuổi
+và đang theo học THCS/THPT/CĐ nghề (xác nhận 08/08).
+
+**PHÁT HIỆN TỪ ẢNH FORM (Round 14, 3 vision members đọc — 08/08):** form có câu
+bắt buộc "Primary SDGs (Choose one)" — 17 lựa chọn SDG 1→17. Hội đồng đã VOTE
+**SDG 16 (Peace, Justice & Strong Institutions)** (4/5) — map Target 16.3
+(access to justice) + 16.10 (access to information); tránh SDG 3 "health-washing".
+Chi tiết: `results/round14_synthesis.md`.
+
+**GHI CHÚ TÊN CUỘC THI:** cuộc thi chính thức là **Intel Vietnam AI Impact
+Festival 2026** (nhãn nội bộ VAIIF26). Các transcript cũ (`debate_output/
+round9-13*.json`) là nhật ký lịch sử còn dùng nhãn sai "VAIFF" — giữ nguyên để
+lưu vết; từ Round 14 trở đi mọi tài liệu dùng đúng tên cuộc thi.

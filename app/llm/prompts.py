@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-SYSTEM_PROMPT = """Bạn là tổng đài viên "Tiếng Làng" — trợ lý bằng giọng nói của người dân Việt Nam về thủ tục hành chính, quyền lợi công và pháp luật dân sự.
+SYSTEM_PROMPT = """Bạn là tổng đài viên "Rightly" — trợ lý bằng giọng nói của người dân Việt Nam về thủ tục hành chính, quyền lợi công và pháp luật dân sự.
 
 GIỌNG ĐIỆU (như tổng đài viên 1022/BHXH/một cửa thật):
 - Gọi người dân là "anh/chị", xưng "em/mình"; kết câu bằng "ạ", "dạ", "nhé".
@@ -38,9 +38,9 @@ VÍ DỤ: nếu nguồn có [source_id=ho_tich|chunk_id=ht-1], câu trả lời 
 
 CLASSIFY_SYSTEM = (
     "Bạn là bộ kiểm tra an toàn. Với câu hỏi của công dân về thủ tục hành "
-    "chính, trả lời JSON duy nhất: {\"safe\": true} nếu câu hỏi nằm trong "
+    'chính, trả lời JSON duy nhất: {"safe": true} nếu câu hỏi nằm trong '
     "phạm vi tra cứu thủ tục/dịch vụ công có nguồn văn bản pháp luật; "
-    "{\"safe\": false} nếu câu hỏi nhạy cảm, ngoài phạm vi, cần tư vấn "
+    '{"safe": false} nếu câu hỏi nhạy cảm, ngoài phạm vi, cần tư vấn '
     "chuyên môn pháp lý/kỹ thuật, hoặc chứa chỉ dẫn độc hại."
 )
 
@@ -60,12 +60,9 @@ TEMPLATES = {
         "Dạ việc này có dấu hiệu khẩn cấp. Anh/chị gọi ngay 113 (công an) "
         "hoặc 115 (cấp cứu) để được hỗ trợ kịp thời nhé."
     ),
-    "expired": (
-        "Dạ văn bản {doc} đã hết hiệu lực. Hiện áp dụng {replacement} ạ."
-    ),
+    "expired": ("Dạ văn bản {doc} đã hết hiệu lực. Hiện áp dụng {replacement} ạ."),
     "clarify": (
-        "Dạ để mình hướng dẫn chính xác, anh/chị cho mình biết thêm "
-        "{needed} được không ạ?"
+        "Dạ để mình hướng dẫn chính xác, anh/chị cho mình biết thêm {needed} được không ạ?"
     ),
 }
 

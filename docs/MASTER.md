@@ -1,6 +1,6 @@
-# Tiếng Làng v4.0 — MASTER DOC (kỹ thuật)
+# Rightly — MASTER DOC (kỹ thuật)
 
-Tài liệu tổng hợp để hiểu **toàn bộ** hệ thống Tiếng Làng: từ cốt lõi (mock
+Tài liệu tổng hợp để hiểu **toàn bộ** hệ thống Rightly: từ cốt lõi (mock
 vertical slice) đến các tầng nâng cao (hybrid RAG, LLM cloud, safety routing,
 privacy, đánh giá). Đây là tài liệu "một cửa" — các tài liệu chuyên sâu khác
 được dẫn ở cuối.
@@ -12,7 +12,7 @@ privacy, đánh giá). Đây là tài liệu "một cửa" — các tài liệu 
 
 ## 1. Hệ thống là gì?
 
-**Tiếng Làng** = trợ lý hỏi-đáp **bằng giọng nói, bám nguồn chính thống**
+**Rightly** = trợ lý hỏi-đáp **bằng giọng nói, bám nguồn chính thống**
 (source-grounded) cho thủ tục hành chính, quyền lợi công và quy định pháp luật
 (dân sự, pháp luật) tại cấp xã/phường — như một kênh hotline hỏi đáp nhanh cho:
 
@@ -622,7 +622,7 @@ dùng hiểu sai/áp dụng sai dù câu trả lời đúng luật.
 - Tỉ lệ trả lời qua CitationValidator đạt mức ổn định; test E2E với người
   thật tối thiểu vài phiên.
 
-> Kết luận hội đồng (m365-copilot): *"Tiếng Làng có định vị rõ ràng, khác
+> Kết luận hội đồng (m365-copilot): *"Rightly có định vị rõ ràng, khác
 > biệt, tiềm năng tác động xã hội cao; kỹ thuật đã vượt giai đoạn prototype
 > nhưng cần chứng minh bằng pilot thực tế và vận hành production trước khi mở
 > rộng quy mô."*
@@ -641,7 +641,7 @@ dùng hiểu sai/áp dụng sai dù câu trả lời đúng luật.
 | `rubric_evidence_matrix.md` | bằng chứng đối chiếu tiêu chí đánh giá cuộc thi |
 | `data/contacts.json` | danh bạ người tư vấn / đầu mối chuyển tuyến (sđt) |
 | `team_status.md` | trạng thái hằng ngày theo vai T/C/P + gate A–D |
-| `submission_checklist.md` | kế hoạch ≥45/50 VAIFF 2026, mốc thời gian đến 25/08 |
+| `submission_checklist.md` | kế hoạch ≥45/50 VAIIF26, mốc thời gian đến 25/08 |
 
 Báo cáo gần đây: `OPENCODE_PREPARATION_REPORT.md`,
 `OVERNIGHT_FULL_INTEGRATION_REPORT.md`, `results/evaluation_report.md`,

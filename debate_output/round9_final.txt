@@ -1,0 +1,330 @@
+ROUNDS: 6
+
+AGREEMENTS: [{'round': 1, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'UNKNOWN', 'nemotron-nano-omni (NIM)': 'NO', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'YES'}}, {'round': 2, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'UNKNOWN', 'nemotron-nano-omni (NIM)': 'YES', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'PARTIAL'}}, {'round': 3, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'UNKNOWN', 'nemotron-nano-omni (NIM)': 'PARTIAL', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'PARTIAL'}}, {'round': 4, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'YES', 'nemotron-nano-omni (NIM)': 'UNKNOWN', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'YES'}}, {'round': 5, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'UNKNOWN', 'nemotron-nano-omni (NIM)': 'PARTIAL', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'YES'}}, {'round': 6, 'agreements': {'laguna-s-2.1:free (OpenRouter)': 'UNKNOWN', 'nemotron-3-ultra (NIM)': 'UNKNOWN', 'nemotron-nano-omni (NIM)': 'PARTIAL', 'minimax-m3 (NIM)': 'UNKNOWN', 'm365-copilot (local proxy)': 'YES'}}]
+
+--- FINAL OPINIONS (round 6) ---
+
+===== laguna-s-2.1:free (OpenRouter) =====
+
+## 1) PHÂN TÍCH CÁC Ý KIẾN TRƯỚC
+
+### OpenCode (R6)
+**Đồng ý mạnh:**
+- Outbound PII tới Groq/Gemini là rủi ro #1 chính xác.
+- Log JSONL thiếu retention là lỗ hổng quản trị thực tế.
+- `contacts.json` trong repo nộp = rủi ro pháp lý.
+- Consent + anonymization cho pilot là bắt buộc.
+
+**Bất đồng:**
+- Prompt injection qua voice không nên xếp "không gấp". Voice-first + ASR hallucination → dễ chèn chỉ dẫn độc hại hơn text. Cần test trước pilot.
+
+### Laguna-s-2.1
+**Đồng ý:**
+- Ma trận giai đoạn rõ ràng.
+- DDoS/abuse public link là hợp lý.
+
+**Bất đồng:**
+- "API key leak = Thấp" — **sai**. Streamlit Secrets misconfig (debug mode, `st.secrets` trong traceback) đã có nhiều case study lộ.
+- Thiếu: side-channel `/tmp` Streamlit Cloud, embedding cache inversion, PII scrubber bypass tiếng Việt có dấu.
+
+### Nemotron-3-ultra
+**Đồng ý mạnh (phân tích sâu nhất):**
+- R4: PII scrubber bypass (CCCD, BHYT, "xóm 3, thôn Đông") — regex VN có dấu + địa chỉ tự do gần như không scrub được bằng pattern cố định.
+- R5: side-channel `/tmp` Streamlit Cloud.
+- R6: prompt injection qua ASR.
+- Yêu cầu DPA/BAA, Nghị định 13/2023.
+
+**Bất đồng nhẹ:**
+- Chưa tách rõ "nguy cơ xảy ra" vs "tác động" — cần phân biệt để ưu tiên.
+
+### Nemotron-nano-omni
+**Đồng ý:**
+- Embedding npz cache có thể bị inversion attack suy luận intent.
+- Raw audio nếu cờ `DELETE_RAW_AUDIO_AFTER_SESSION` cài sai thì lưu lâu.
+
+**Bất đồng:**
+- Chưa đề cập đến quasi-identifiers (thôn/xóm, hoàn cảnh gia đình).
+
+### m365-copilot
+**Đồng ý:**
+- Outbound PII là rủi ro #1.
+- Log retention cần chính sách.
+- `contacts.json` không nên đi cùng artifact nộp.
+- Consent + anonymization cho pilot là bắt buộc.
+
+**Bổ sung:**
+- Prompt injection qua voice: Medium hiện tại, High khi public link.
+- Thiếu nhấn mạnh rủi ro secrets leak khi chuyển Streamlit Cloud.
+
+## 2) TỰ ĐÁNH GIÁ
+
+Ý kiến trước của tôi cần sửa:
+- Đã đồng ý đúng với outbound PII nhưng chưa nhấn mạnh đủ mức độ pháp lý (GDPR/CCPA).
+- Cần bổ sung quasi-identifiers vào danh sách rủi ro.
+- Nên tách rõ "khả năng xảy ra" vs "mức độ nghiêm trọng".
+
+## 3)
+
+===== nemotron-3-ultra (NIM) =====
+
+## 1) PHÂN TÍCH Ý KIẾN CÁC THÀNH VIÊN TRƯỚC
+
+### OpenCode (R6)
+**Đồng ý mạnh:** Outbound PII → Groq/Gemini là rủi ro #1 (chưa có DPA/0-retention bằng văn bản); `contacts.json` trong repo nộp = trách nhiệm pháp lý; log JSONL thiếu retention/rotation; thứ tự ưu tiên (a→e) rất actionable.
+**Bất đồng:** Prompt injection bị xếp "không gấp" — **sai**. Voice-first + ASR hallucination + tiếng Việt tự do → attacker chèn chỉ thị qua audio dễ hơn text. Cần test adversarial trước pilot.
+
+### Laguna-s-2.1
+**Đồng ý:** Ma trận theo giai đoạn, DDoS/abuse public link, consent bắt buộc.
+**Bất đồng:** "API key leak = Thấp" — **sai**. Streamlit Secrets misconfig (debug mode, exception traceback in logs) đã có case study lộ khóa thực tế. Thiếu: side-channel `/tmp` Streamlit Cloud, embedding cache inversion, PII scrubber bypass tiếng Việt có dấu.
+
+### Nemotron-3-Ultra
+**Đồng ý mạnh (phân tích sâu nhất):**
+- R4: PII scrubber bypass (CCCD, BHYT, "xóm 3, thôn Đông") — regex VN có dấu + địa chỉ tự do gần như không scrub được bằng pattern cố định. Cần LLM-based redaction hoặc human-in-loop.
+- R5: Side-channel `/tmp` Streamlit Cloud (ephemeral storage có thể bị debug endpoint/path traversal).
+- R6: Prompt injection qua ASR hallucination.
+- Yêu cầu DPA/BAA, Nghị định 13/2023.
+**Bổ sung:** Chưa tách rõ "xác suất xảy ra" vs "tác động" — cần phân biệt để ưu tiên đúng.
+
+### Nemotron-nano-omni
+**Đồng ý:** Embedding npz cache có thể bị inversion attack suy luận intent; raw audio nếu cờ `DELETE_RAW_AUDIO_AFTER_SESSION` sai thì lưu lâu.
+**Bất đồng:** Chưa đề cập vendor risk (Groq/Gemini sub-processors), supply chain (dependencies), model extraction qua API.
+
+### m365-copilot
+**Đồng ý mạnh:** Outbound PPI là #1; log retention thiếu; contacts.json không đi kèm artifact; consent pilot bắt buộc.
+**Bất đồng:** Prompt injection = Medium hiện tại, High khi public link. Voice-first attacker chỉ cần phát audio chứa chỉ thị độc hại → ASR chuyển nguyên vẹn vào pipeline.
+
+---
+
+## 2) TỰ ĐÁNH GIÁ Ý KIẾN TRƯỚC CỦA MÌNH
+*(Là thành viên thứ 7 — minimax-m3)*
+
+**Điểm cần sửa/siết:**
+- Chưa định lượng **xác suất** vs **tác động** cho từng rủi ro (Nemotron-3-Ultra chỉ ra đúng).
+- Chưa nêu rõ **vendor risk**: Groq/Gemini sub-processors, data residency, cross-border transfer (Nghị định 13/2023).
+- Chưa có **threat model** cho embedding cache inversion (Nemotron-nano-omni nêu đúng).
+- Chưa quy trình **incident response** cho pilot (data breach notification 72h theo GDPR/ND13).
+- Prompt injection voice cần **red-team test plan** cụ thể trước pilot.
+
+---
+
+## 3) Ý
+
+===== nemotron-nano-omni (NIM) =====
+
+**1. Phân tích đồng ý / bất đồng với các thành viên**
+
+| Thành viên | Điểm đồng ý | Điểm bất đồng / bổ sung |
+|------------|-------------|------------------------|
+| **OpenCode (R6)** | • Outbound PII tới Groq/Gemini là rủi ro #1 – cần policy lọc dữ liệu nhạy cảm trước khi gọi API.<br>• Log JSONL không có retention → cần xoay vòng và xóa tự động.<br>• `contacts.json` không nên nằm trong repo nộp hồ sơ; nên di chuyển hoặc mã hoá.<br>• File .wav/TTS và session không mã hóa → cần cleanup tự động.<br>• Embedding npz cache chỉ chứa văn bản công khai, không nhạy cảm. | • Đánh giá “prompt injection” là **thấp**; với voice‑first, attacker có thể chèn chỉ thị qua audio (ASR hallucination) → rủi ro **Medium‑High**.<br>• Không nêu rõ rủi ro “API‑key leak” khi public link được triển khai trên Streamlit Cloud – đây là điểm yếu **Cao**. |
+| **Laguna‑s‑2.1** | • Ma trận phân đoạn (local → public → pilot → nộp) đúng.<br>• Nhấn mạnh DDoS/abuse khi công khai link. | • “API key leak = Thấp” **sai**; mis‑config của `st.secrets` hoặc debug mode có thể lộ khóa API → **Cao**.<br>• Thiếu mention side‑channel `/tmp` trên Streamlit Cloud, risk inversion của cache embedding, và khả năng bypass scrubber PII với tiếng Việt có dấu. |
+| **Nemotron‑3‑ultra** | • PII scrubber regex không đủ cho CCCD, BHYT, địa chỉ “xóm 3, thôn Đông” → **Cao**.<br>• Side‑channel `/tmp` Streamlit Cloud là rủi ro thực tế.<br>• Prompt injection qua ASR cần kiểm tra. | • Không nêu rõ mức độ “tác động” so với “nguy cơ xảy ra”; cần phân biệt để ưu tiên. |
+| **Nemotron‑nano‑omni** | • Embedding npz cache có thể bị inversion attack → **Medium**.<br>• Nếu `DELETE_RAW_AUDIO_AFTER_SESSION` tắt, raw audio có thể lưu lâu → **Medium**. | • Không đề cập tới rủi ro consent/anonymisation trong pilot, cũng như việc API‑key có thể rò rỉ qua cấu hình Streamlit. |
+| **m365‑copilot (local proxy)** | • Outbound PII là rủi ro #1 – đồng ý.<br>• Log retention, `contacts.json` không nên trong repo, consent+anonymisation bắt buộc → đồng ý.<br>• Đánh giá prompt injection **Medium‑High** – phù hợp. | • Không nhấn mạnh đủ rủi ro “API‑key leak” khi triển khai public link. |
+
+**2. Tự đánh giá (các điểm cần sửa/sửa lại trong phân tích của mình)**  
+
+- **Rủi ro API‑key**: Đánh giá quá thấp; cần đưa vào mức “Cao” và kèm biện pháp bảo vệ khóa (secrets management, không để trong repo, audit).  
+- **Prompt injection qua voice**: Đánh giá quá thấp; nên xếp **Medium‑High** và chuẩn bị test infiltration trước pilot.  
+- **PII scrubber**: Đã nhận diện được, nhưng chưa nêu rõ cần dùng LLM‑based redaction hoặc human‑in‑loop cho các dữ liệu có dấu và cấu trúc đặc thù Việt Nam.  
+- **Side‑channel `/tmp`**: Thiếu trong các nhận xét; đây là điểm yếu tiềm ẩn khi Streamlit Cloud truy cập file tạm.  
+- **Consent & anonymisation**: Đã nhắc nhưng chưa nêu rõ quy trình xác thực, lưu trữ tạm thời, và cách xóa voice‑print nếu cần.  
+
+**3. Ý kiến cuối cùng (≤ 600 từ)**  
+
+**Rủi ro按阶段**  
+
+- **Local / MVP**  
+  - *Cao*: Raw audio, session files, log JSONL không mã hóa, không có retention policy → rủi ro rò rỉ khi thiết bị bị xâm nhập.  
+  - *Medium*: `contacts.json` trong repo riêng, embedding cache chứa dữ liệu công khai (không nhạy cảm).  
+  - *Thấp*: Không có rủi ro bảo mật nghiêm trọng khác.  
+
+- **Public link (Streamlit Cloud)**  
+  - *Cao*: Lộ lộ API‑key hoặc credential do cấu hình `st.secrets` sai, không có DPA/0‑retention cho LLM provider (Groq/Gemini).  
+  - *Medium*: Side‑channel `/tmp` lưu trữ tạm, khả năng inversion của cache embedding, prompt injection qua ASR.  
+  - *Thấp*: Không có rủi ro nghiêm trọng khác.  
+
+- **Pilot (8‑10 người thực)**  
+  - *Cao*: Consent không rõ, không có quy trình anonymisation voice, raw audio có thể không được xóa nếu `DELETE_RAW_AUDIO_AFTER_SESSION=false`.  
+  - *Medium*: Log JSONL chứa transcript/PII nếu bật, không có vòng xoay; PII có thể tránh được bằng scrubber không hoàn hảo.  
+  - *Thấp*: Không có rủi ro nghiêm trọng khác.  
+
+- **Nộp hồ sơ**  
+  - *Cao*: Tài liệu (contacts.json, API keys) có thể rò rỉ nếu không được tách khỏi repo công khai.  
+  - *Medium*: Không có DPA với nhà cung cấp LLM, không có cơ chế kiểm soát quyền truy cập.  
+
+**Biện pháp giảm thiểu (ưu tiên, khả thi, chi phí‑tác động)**  
+
+1. **Lọc PII trước khi gọi LLM** – Thêm module regex/LLM‑based redaction (tên, SĐT, CCCD, BHYT, địa chỉ) ngay trong pipeline; bật chỉ cho môi trường pilot có consent.  
+2. **DPA/BAA với Groq/Gemini** – Yêu cầu thỏa thuận xử lý dữ liệu (Data Processing Agreement) trước khi bật cloud; nếu không có, tắt cloud cho giai đoạn nộp hồ sơ.  
+3. **Quản lý API‑key** – Dùng secret manager (Vault, AWS Secrets Manager) hoặc file `.env` không được commit; kiểm tra cấu hình Streamlit (`st.secrets`) để tránh debug/log exception lộ key.  
+4. **Retention & rotation log** – Thiết lập cron hoặc serverless function để xoay vòng log JSONL mỗi 30‑90 ngày, xóa transcript nếu không cần; bật “scrub PII” mặc định.  
+5. **Mã hoá/đồng bộ `contacts.json`** – Di chuyển file ra khỏi repo, mã hoá (AES‑256) hoặc lưu trong database riêng, không để trong git.  
+6. **Mã hoá dữ liệu tạm** – Mã hoá thư mục `results/`, `logs/`, `session/` trên đĩa; tự động xóa định kỳ (7‑14 ngày) hoặc khi session hết.  
+7. **Consent & anonymisation pilot** – Yêu cầu người dùng đồng ý (e‑signature), ghi nhận mục đích, thời gian lưu trữ, và thực hiện xóa voice‑print và raw audio sau session; cung cấp UI để người dùng xóa dữ liệu thủ công.  
+8. **Kiểm tra bảo mật side‑channel** – Kiểm tra quyền truy cập `/tmp` và các endpoint debug của Streamlit Cloud; bật chế độ production, tắt debug mode.  
+9. **Test prompt injection** – Thực hiện test automated (audio‑injection) trước pilot; bổ sung guardrail (citation, scope‑limit) và monitor logs.  
+
+**Câu hỏi mở cần trả lời bởi C/T/P**  
+
+- Nhà cung cấp LLM (Groq/Gemini) có sẵn DPA/0‑retention cam kết nào không?  
+- Quy trình xác thực consent và lưu trữ đồng ý của người dùng (định dạng, thời gian) là gì?  
+- Cách thức triển khai “scrub PII” cho tiếng Việt có dấu và các dạng địa chỉ phức tạp (thôn, xóm) – dùng regex hay LLM‑based redaction?  
+- Kế hoạch chi tiết cho việc xoay vòng và xóa log JSONL (tần suất, quy tắc).  
+- Ai chịu trách nhiệm quản lý API‑key và secret trong môi trường Streamlit Cloud?  
+- Kế hoạch kiểm thử và giám sát prompt injection qua voice (kịch bản, công cụ).  
+
+**4. Đánh giá đồng ý**  
+
+AGREEMENT: PARTIAL  
+**Hai bất đồng quan trọng còn lại:**  
+1. Đánh giá rủi ro “API‑key leak” là **Cao**, không phải Thấp.  
+2. Đánh giá rủi ro “prompt injection qua voice” là **Medium‑High**, không phải Thấp.
+
+===== minimax-m3 (NIM) =====
+
+# PHÂN TÍCH & TỔNG HỢP — Thành viên 7 (bản cập nhật)
+
+## 1) PHÂN TÍCH CÁC Ý KIẾN TRƯỚC
+
+### OpenCode (R6)
+**Đồng ý mạnh:** Outbound PII là rủi ro #1 (Groq/Gemini chưa có DPA/0-retention bằng văn bản); `contacts.json` trong repo nộp = trách nhiệm pháp lý; log JSONL thiếu retention; thứ tự ưu tiên (a→e) actionable.
+**Bất đồng:** Xếp prompt injection "không gấp" — **sai**. Voice-first có ASR hallucination + câu dài nhiễu → attacker chèn chỉ thị qua giọng nói dễ hơn text. Cần test trước pilot.
+
+### Laguna-s-2.1
+**Đồng ý:** Ma trận giai đoạn, DDoS/abuse public link, consent.
+**Bất đồng:** "API key leak = Thấp" — **sai**. Streamlit Secrets misconfig (debug mode, `st.secrets` in exception traceback) đã có nhiều case study lộ. Thiếu: side-channel `/tmp`, embedding cache inversion, PII scrubber bypass tiếng Việt có dấu.
+
+### Nemotron-3-ultra
+**Đồng ý mạnh (phân tích sâu nhất):**
+- R4 PII scrubber bypass (CCCD, BHYT, "xóm 3, thôn Đông") — regex VN có dấu + địa chỉ tự do gần như không scrub được bằng pattern cố định.
+- R5 side-channel `/tmp` Streamlit Cloud.
+- R6 prompt injection qua ASR.
+- Yêu cầu DPA/BAA, Nghị định 13/2023.
+**Bất đồng nhẹ:** Chưa tách rõ "nguy cơ xảy ra" vs "tác động" — cần phân biệt để ưu tiên.
+
+### Nemotron-nano-omni
+**Đồng ý:** Embedding npz cache có thể bị inversion attack suy luận intent; raw audio nếu cờ `DELETE_RAW_AUDIO_AFTER_SESSION` cài sai thì lưu lâu.
+**Bất đồng:** Chưa đề cập DPA/0-retention bằng văn bản — đây là gap lớn cho pilot.
+
+### m365-copilot
+**Đồng ý:** Quasi-identifiers (thôn/xóm, hoàn cảnh gia đình) vẫn tái nhận dạng được; vendor risk đúng trọng tâm.
+**Bổ sung:** Ngay cả khi scrub tên/SĐT, ngữ cảnh địa phương nhỏ vẫn là PII gián tiếp — cần kỹ thuật tổng quát hóa (generalization) trước khi ghi log.
+
+## 2) TỰ ĐÁNH GIÁ
+- Bản trước đã đúng về outbound PII, log retention, contacts.json, nhưng **thiếu**: (a) DPA/0-retention bằng văn bản, (b) side-channel `/tmp` Streamlit Cloud, (c) PII scrubber bypass tiếng Việt có dấu + quasi-identifiers, (d) phân biệt xác suất × tác động, (e
+
+===== m365-copilot (local proxy) =====
+
+## 1) PHÂN TÍCH CÁC Ý KIẾN TRƯỚC
+
+### OpenCode (R6)
+**Đồng ý mạnh**
+- Outbound PII tới Groq/Gemini là rủi ro số 1 hiện nay vì đó là điểm dữ liệu rời khỏi biên kiểm soát của dự án.
+- Log retention chưa có chính sách là lỗ hổng thực tế hơn nhiều so với các kịch bản tấn công "cao siêu".
+- `contacts.json` không nên nằm trong artifact nộp.
+- Consent và anonymization cho pilot là bắt buộc.
+
+**Bất đồng**
+- Prompt injection không nên xếp thấp. Với voice-first, attacker chỉ cần phát âm thanh chứa chỉ thị; ASR có thể biến nó thành prompt hợp lệ. Tôi xếp **Medium ở MVP, High khi public link**.
+
+### Laguna-s-2.1
+**Đồng ý**
+- Tiếp cận theo từng giai đoạn (local → public → pilot → nộp hồ sơ).
+- Nhấn mạnh abuse/DDoS khi public link.
+
+**Bất đồng**
+- API key leak không phải rủi ro thấp. Với Streamlit Cloud, lỗi cấu hình secrets hoặc log exception có thể dẫn tới hậu quả nghiêm trọng.
+- Chưa đánh giá đủ rủi ro dữ liệu tạm (`tmp`, cache, artifacts).
+
+### Nemotron-3-Ultra
+**Đồng ý mạnh nhất**
+- PII scrubber tiếng Việt bằng regex là không đủ.
+- Quasi-identifiers (xóm/thôn, hoàn cảnh gia đình, địa phương nhỏ) vẫn có thể tái nhận dạng.
+- Vendor risk (LLM provider) là rủi ro trọng yếu.
+
+**Bổ sung**
+- Ngay cả sau khi scrub tên/SĐT, nội dung câu hỏi dịch vụ công vẫn có thể tiết lộ danh tính gián tiếp.
+
+### Nemotron-Nano-Omni
+**Đồng ý**
+- Nguy cơ cấu hình sai các cờ xóa audio/transcript.
+- Pilot là điểm xuất hiện nghĩa vụ quản trị dữ liệu thực sự.
+
+**Bất đồng**
+- Đánh giá embedding cache hơi cao. Với dữ liệu hiện tại là văn bản pháp luật công khai, đây chưa phải ưu tiên.
+
+### Minimax-M3
+**Đồng ý**
+- Phân biệt rõ Impact và Likelihood để ưu tiên.
+- Nhấn mạnh side-channel, prompt injection, PII bypass là hợp lý.
+
+---
+
+## 2) TỰ ĐÁNH GIÁ
+
+Tôi cần **siết lại 3 điểm** từ nhận định trước:
+
+1. **Prompt injection**: trước đây tôi xếp Medium. Sau khi xét voice-first + public link, nên nâng lên **Medium-High**.
+2. **Secret management**: cần đưa vào nhóm ưu tiên đầu thay vì xem như vấn đề vận hành thứ cấp.
+3. **PII scrubber**: không nên giả định regex đủ hiệu quả cho tiếng Việt; cần coi đây là biện pháp giảm thiểu một phần, không phải biện pháp bảo vệ chính.
+
+---
+
+## 3) Ý KIẾN CẬP NHẬT (BẢN TỔNG HỢP CUỐI)
+
+### Top rủi ro theo giai đoạn
+
+**LOCAL/MVP**
+- Outbound transcript tới LLM cloud chứa PII (Cao / Trung bình).
+- Log JSONL lưu dài hạn, chứa transcript/metadata (Cao / Cao).
+- Raw audio/TTS/session artifacts còn sót do cấu hình hoặc crash (Trung bình / Trung bình).
+- `contacts.json` chứa SĐT thật trong repo (Trung bình / Trung bình).
+
+**PUBLIC LINK**
+- API key/secrets lộ qua cấu hình, traceback, debug (Cao / Trung bình).
+- Prompt injection qua voice/ASR (Cao / Trung bình).
+- Abuse/DDoS làm tăng chi phí API hoặc ngừng dịch vụ (Trung bình-Cao / Cao).
+- Dữ liệu tạm thời trên host cloud, cache, session state (Trung bình / Trung bình).
+
+**PILOT 8-10 NGƯỜI**
+- Thu thập dữ liệu cá nhân nhưng consent chưa đủ rõ (Cao / Trung bình).
+- Tái nhận dạng từ transcript đã "ẩn danh" (Cao / Trung bình).
+- Gửi dữ liệu người thật sang Groq/Gemini không được giải thích minh bạch (Cao / Trung bình).
+
+**NỘP HỒ SƠ / DEMO**
+- Mang theo dữ liệu thật, logs, contacts, screenshots chứa PII (Cao / Thấp-Trung bình).
+- Video demo vô tình lộ tên, SĐT, transcript thật (Cao / Trung bình).
+
+### Ưu tiên giảm thiểu (ROI cao nhất)
+
+**P0 (trước public link)**
+1. Mặc định **redact PII trước mọi outbound LLM call**.
+2. `SAVE_TRANSCRIPTS=false` mặc định.
+3. Log rotation + auto-delete 7-30 ngày.
+4. Tách `contacts.json` khỏi repo; inject từ secret/config.
+5. Secrets chỉ lưu trong Streamlit Secrets, không log.
+
+**P1 (trước pilot)**
+6. Consent form nêu rõ: thu âm, xử lý AI, nhà cung cấp cloud, thời gian lưu.
+7. Dùng ID ngẫu nhiên thay cho tên thật.
+8. Kiểm thử prompt injection và ASR abuse.
+9. Rate limiting + quota theo IP/session.
+
+**P2 (trước nộp hồ sơ)**
+10. Data minimization review.
+11. Xóa toàn bộ dữ liệu pilot không cần thiết.
+12. Artifact scan để bảo đảm không còn PII, key, log, contacts.
+
+### Câu hỏi mở cần con người quyết định
+
+1. Pilot có cho phép dữ liệu đi qua Groq/Gemini hay bắt buộc local-only?
+2. Thời gian lưu transcript/log chính thức là bao lâu?
+3. Có cần lưu audio để cải thiện mô hình hay không?
+4. Người tư vấn trong `contacts.json` có đồng ý xuất hiện trong bản demo/nộp hồ sơ không?
+5. Mức độ ẩn danh chấp nhận được là xóa định danh trực tiếp hay cả quasi-identifiers?
+6. Có yêu cầu tuân thủ Nghị định 13/2023/NĐ-CP ở mức nào đối với pilot?
+7. Sau VAIFF 2026, dữ liệu pilot sẽ bị xóa hoàn toàn hay giữ để nghiên cứu?
+
+**AGREEMENT: YES**
+
+Bất đồng quan trọng còn lại: Không có. Tôi chấp nhận hướng tổng hợp chung; chỉ nhấn mạnh thêm rằng **outbound PII** và **secret management trên public link** là hai ưu tiên số 1 trước khi mở pilot.

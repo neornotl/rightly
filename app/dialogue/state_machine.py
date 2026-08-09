@@ -26,6 +26,7 @@ class State(str, Enum):
     SPEAKING = "SPEAKING"
     CLARIFYING = "CLARIFYING"
     ESCALATING = "ESCALATING"
+    CONNECTING = "CONNECTING"
     DONE = "DONE"
     ERROR = "ERROR"
 
@@ -41,6 +42,7 @@ _EDGES: dict[State, set[State]] = {
         State.TRANSCRIBING,
         State.CLARIFYING,
         State.ESCALATING,
+        State.CONNECTING,
         State.DONE,
         State.ERROR,
         State.WELCOME,
@@ -63,9 +65,11 @@ _EDGES: dict[State, set[State]] = {
         State.DONE,
         State.ERROR,
         State.ESCALATING,
+        State.CONNECTING,
     },
     State.CLARIFYING: {State.LISTENING, State.DONE, State.ERROR, State.SPEAKING},
     State.ESCALATING: {State.LISTENING, State.DONE, State.ERROR},
+    State.CONNECTING: {State.LISTENING, State.SPEAKING, State.DONE, State.ERROR},
     State.DONE: {State.WELCOME, State.ERROR},
     State.ERROR: {State.WELCOME, State.LISTENING, State.DONE},
 }

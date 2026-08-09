@@ -24,7 +24,7 @@ if st is None:
         "Fallback: use the CLI instead -> python -m app.cli"
     )
 
-st.set_page_config(page_title="Tiếng Làng (DEMO)", layout="wide")
+st.set_page_config(page_title="Rightly (DEMO)", layout="wide")
 
 settings = load_settings()
 
@@ -36,18 +36,72 @@ def get_pipeline() -> Pipeline:
 
 pipeline = get_pipeline()
 
-st.title("Tiếng Làng - DEMO")
+st.title("Rightly - DEMO")
 st.caption(
     "DEMO - không phải kênh chính thức. Dữ liệu mẫu SYNTHETIC, không phải hướng dẫn hành chính thật."
 )
 st.warning(
-    "Cảnh báo: bản này là môi trường thử nghiệm. Tiếng Làng không phải cơ "
+    "Cảnh báo: bản này là môi trường thử nghiệm. Rightly không phải cơ "
     "quan nhà nước và không thay thế cán bộ hoặc chuyên gia."
 )
 
 if "session_id" not in st.session_state:
     st.session_state.session_id = pipeline.create_session()
 session_id = st.session_state.session_id
+
+
+def _render_connect_and_slip(data: dict, session_id: str) -> None:
+    """Offer 'nối máy tới cơ quan' + phiếu chuẩn bị hồ sơ (demo-grade).
+
+    Privacy: phone numbers are shown only when verified; the slip never
+    collects personal data. Nothing here leaves the browser.
+    """
+    from app.contacts import default_contact, find_contact
+    from app.forms import build_registration_slip
+
+    contact = find_contact("bo-phan-mot-cua-xa-binh-minh") or default_contact()
+    answer = data.get("answer") or {}
+
+    st.divider()
+    st.markdown("#### 📞 Bạn có muốn kết nối với cơ quan không?")
+    if contact is None:
+        st.info("Chưa có đầu mối liên hệ trong danh bạ (P cần xác minh).")
+        return
+    st.markdown(f"**{contact.label}**")
+    if contact.callable:
+        # Council R17: consent dialog before dialing (no silent tel: action).
+        with st.popover("📞 Gọi ngay", use_container_width=True):
+            st.warning(
+                f"Cuộc gọi sẽ mở từ thiết bị của BẠN tới: **{contact.label}** "
+                f"({contact.phone}). Rightly không tự gọi và không nghe cuộc gọi."
+            )
+            st.link_button("📞 Xác nhận gọi ngay", contact.tel_link, type="primary")
+            st.caption("Không muốn gọi? Đóng hộp này — không có cuộc gọi nào được mở.")
+    else:
+        st.warning(
+            "Số điện thoại chưa được xác minh (placeholder) — P phải gọi thử "
+            "trước khi đưa vào demo public. Bản demo không mở quay số với số ảo."
+        )
+    if contact.note:
+        st.caption(contact.note)
+
+    slip = build_registration_slip(
+        query=str(data.get("query", "")),
+        summary=str(answer.get("answer_text", "")),
+        next_step=str(answer.get("next_step", "")),
+        contact=contact,
+    )
+    st.download_button(
+        "📄 Tải phiếu chuẩn bị hồ sơ (điền sẵn quy trình, bạn tự điền thông tin cá nhân)",
+        data=slip.to_markdown(),
+        file_name="phieu_chuan_bi_ho_so.md",
+        mime="text/markdown",
+    )
+    st.caption(
+        "Phiếu chỉ hỗ trợ khai sẵn quy trình — không thu thập, lưu trữ hay gửi "
+        "thông tin cá nhân của bạn. Rightly không phải cơ quan nhà nước."
+    )
+
 
 # Lightweight abuse guard (demo-grade): per-session caps. Honest note: this
 # is NOT real DDoS protection on Streamlit Cloud (multiple instances) - it
@@ -56,6 +110,25 @@ MAX_QUERIES_PER_SESSION = 20
 MAX_QUERY_CHARS = 1000
 if "query_count" not in st.session_state:
     st.session_state.query_count = 0
+
+# F4: per-client hourly cap (in-memory, per instance). Key = hashed client IP
+# (when available) + session id so a full session never gets locked out.
+from app.ratelimit import RateLimiter  # noqa: E402
+
+_limiter = RateLimiter(
+    limit=settings.rate_limit_per_ip, window_seconds=settings.rate_limit_window_seconds
+)
+
+
+def _client_key() -> str:
+    ip = ""
+    try:
+        headers = st.context.headers
+        ip = headers.get("X-Forwarded-For", "").split(",")[0].strip()
+    except Exception:  # noqa: BLE001 - Streamlit API varies across versions
+        pass
+    return f"{hash(ip or 'local') % 10**9}|{session_id}"
+
 
 col_status, col_query = st.columns([1, 2])
 
@@ -78,6 +151,12 @@ with col_query:
             )
         elif len(query.strip()) > MAX_QUERY_CHARS:
             st.error(f"Câu hỏi quá dài (tối đa {MAX_QUERY_CHARS} ký tự).")
+        elif not _limiter.allow(_client_key()):
+            st.error(
+                f"Đã đạt giới hạn {settings.rate_limit_per_ip} câu hỏi trong "
+                f"{settings.rate_limit_window_seconds // 3600} giờ cho máy này. "
+                "Vui lòng quay lại sau."
+            )
         elif query.strip():
             st.session_state.query_count += 1
             with st.spinner("Đang xử lý..."):
@@ -110,6 +189,7 @@ if "last_result" in st.session_state:
             st.markdown("#### Giới hạn")
             for lim in data["answer"]["limitations"]:
                 st.markdown(f"- {lim}")
+        _render_connect_and_slip(data, session_id)
     else:
         st.markdown("#### Hướng dẫn")
         st.write(decision["user_message"])
@@ -134,6 +214,7 @@ if "last_result" in st.session_state:
             pipeline.delete_session(session_id)
             del st.session_state.session_id
             st.rerun()
+
 
 st.divider()
 st.caption(

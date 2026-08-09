@@ -1,4 +1,4 @@
-"""Configuration for Tieng Lang.
+"""Configuration for Rightly.
 
 Environment-variable driven with safe defaults. Supports `.env` files via
 python-dotenv when available, with an internal fallback parser so mock mode
@@ -78,6 +78,10 @@ class Settings:
     log_dir: Path = Path("logs")
     gemini_api_key: str = ""
     groq_api_key: str = ""
+    groq_api_keys: tuple[str, ...] = ()
+    llm_fallback_backend: str = ""
+    rate_limit_per_ip: int = 60
+    rate_limit_window_seconds: int = 3600
     delete_raw_audio_after_session: bool = True
     save_transcripts: bool = False
     max_context_chars: int = 12000
@@ -168,7 +172,22 @@ _VALID_MODES = {"mock", "local", "cloud"}
 _VALID_ASR = {"mock", "phowhisper"}
 _VALID_RETRIEVAL = {"bm25", "hybrid"}
 _VALID_LLM = {"mock", "gemini", "groq"}
+_VALID_FALLBACK = {"", "gemini", "groq"}
 _VALID_TTS = {"mock", "edge"}
+
+
+def _multi_env(prefix: str, key1: str) -> tuple[str, ...]:
+    """Collect GROQ_API_KEY, GROQ_API_KEY_2, ... GROQ_API_KEY_5 (stop at gap).
+
+    Order matters: the first non-empty key is the primary.
+    """
+    keys = [k for k in (os.environ.get(key1, "").strip(),) if k]
+    for idx in range(2, 6):
+        val = os.environ.get(f"{prefix}_{idx}", "").strip()
+        if not val:
+            break
+        keys.append(val)
+    return tuple(keys)
 
 
 def load_settings(env_file: Optional[Path] = None) -> Settings:
@@ -183,6 +202,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
     retrieval_backend = os.environ.get("RETRIEVAL_BACKEND", "bm25").strip().lower()
     llm_backend = os.environ.get("LLM_BACKEND", "mock").strip().lower()
     tts_backend = os.environ.get("TTS_BACKEND", "mock").strip().lower()
+    llm_fallback_backend = os.environ.get("LLM_FALLBACK_BACKEND", "").strip().lower()
 
     if app_mode not in _VALID_MODES:
         raise ConfigError(
@@ -205,6 +225,18 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         raise ConfigError(
             f"TTS_BACKEND={tts_backend!r} is invalid. Choose one of {sorted(_VALID_TTS)}."
         )
+    if llm_fallback_backend not in _VALID_FALLBACK:
+        raise ConfigError(
+            f"LLM_FALLBACK_BACKEND={llm_fallback_backend!r} is invalid. "
+            f"Choose one of {sorted(_VALID_FALLBACK)}."
+        )
+    if llm_fallback_backend == llm_backend and llm_backend in {"gemini", "groq"}:
+        raise ConfigError("LLM_FALLBACK_BACKEND must differ from LLM_BACKEND.")
+
+    rate_limit_per_ip = _int_env("RATE_LIMIT_PER_IP", 60)
+    rate_limit_window = _int_env("RATE_LIMIT_WINDOW_SECONDS", 3600)
+    if rate_limit_per_ip < 0 or rate_limit_window <= 0:
+        raise ConfigError("RATE_LIMIT_PER_IP >= 0 and RATE_LIMIT_WINDOW_SECONDS > 0 required.")
 
     max_context = _int_env("MAX_CONTEXT_CHARS", 12000)
     max_response = _int_env("MAX_RESPONSE_CHARS", 2000)
@@ -243,8 +275,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
     retriever_gate = os.environ.get("RETRIEVER_GATE", "bm25_dense").strip().lower()
     if retriever_gate not in {"none", "bm25_dense"}:
         raise ConfigError(
-            f"RETRIEVER_GATE={retriever_gate!r} is invalid. "
-            "Choose one of {'none', 'bm25_dense'}."
+            f"RETRIEVER_GATE={retriever_gate!r} is invalid. Choose one of {{'none', 'bm25_dense'}}."
         )
     bm25_gate = _float_env("RETRIEVAL_BM25_GATE", 12.2)
     dense_gate = _float_env("RETRIEVAL_DENSE_GATE", 0.88)
@@ -262,6 +293,10 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         log_dir=Path(os.environ.get("LOG_DIR", "logs")),
         gemini_api_key=os.environ.get("GEMINI_API_KEY", "").strip(),
         groq_api_key=os.environ.get("GROQ_API_KEY", "").strip(),
+        groq_api_keys=_multi_env("GROQ_API_KEY", "GROQ_API_KEY"),
+        llm_fallback_backend=llm_fallback_backend,
+        rate_limit_per_ip=rate_limit_per_ip,
+        rate_limit_window_seconds=rate_limit_window,
         delete_raw_audio_after_session=_bool_env("DELETE_RAW_AUDIO_AFTER_SESSION", True),
         save_transcripts=_bool_env("SAVE_TRANSCRIPTS", False),
         max_context_chars=max_context,
@@ -323,4 +358,8 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "min_retrieval_score": settings.min_retrieval_score,
         "gemini_api_key": "set" if settings.gemini_api_key else "unset",
         "groq_api_key": "set" if settings.groq_api_key else "unset",
+        "groq_key_count": len(settings.groq_api_keys) or (1 if settings.groq_api_key else 0),
+        "llm_fallback_backend": settings.llm_fallback_backend or "none",
+        "rate_limit_per_ip": settings.rate_limit_per_ip,
+        "rate_limit_window_seconds": settings.rate_limit_window_seconds,
     }

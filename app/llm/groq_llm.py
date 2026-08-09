@@ -22,13 +22,19 @@ class GroqLLM(BaseLLM):
         timeout_seconds: float = 60.0,
         max_retries: int = 3,
         backoff_seconds: float = 1.0,
+        api_keys: tuple[str, ...] = (),
     ):
-        self.api_key = api_key
+        # F4: key rotation. `api_key` stays for backward compatibility and is
+        # used as the primary when `api_keys` is empty. Rotation order matters:
+        # the first working key keeps working, 429/5xx rotates to the next.
+        self.api_keys = tuple(api_keys) if api_keys else tuple(k for k in (api_key,) if k)
+        self.api_key = self.api_keys[0] if self.api_keys else api_key
         self.model = model
         self.timeout_seconds = timeout_seconds
         self.max_retries = max_retries
         self.backoff_seconds = backoff_seconds
         self._client = None
+        self._key_index = 0
 
     @property
     def available(self) -> bool:
@@ -39,7 +45,10 @@ class GroqLLM(BaseLLM):
             try:
                 from groq import Groq  # type: ignore
 
-                self._client = Groq(api_key=self.api_key, timeout=self.timeout_seconds)
+                self._client = Groq(
+                    api_key=self.api_keys[self._key_index],
+                    timeout=self.timeout_seconds,
+                )
             except ImportError as exc:
                 raise LLMError(
                     "groq not installed. pip install -r requirements-optional.txt"
@@ -47,6 +56,35 @@ class GroqLLM(BaseLLM):
             except Exception as exc:
                 raise LLMError(f"Failed to init Groq client: {exc}") from exc
         return self._client
+
+    def _rotate(self) -> bool:
+        """Move to the next key; False when already on the last one."""
+        if self._key_index >= len(self.api_keys) - 1:
+            return False
+        self._key_index += 1
+        self._client = None
+        return True
+
+    def _call_with_rotation(self, fn, retryable=is_retryable_llm_error) -> dict:
+        """Retry within a key, then rotate on retryable errors across keys."""
+        while True:
+            try:
+                return retry_transient(
+                    lambda: fn(self._get_client()),
+                    max_retries=self.max_retries,
+                    timeout_seconds=self.timeout_seconds,
+                    backoff_seconds=self.backoff_seconds,
+                    retryable=retryable,
+                )
+            except Exception as exc:
+                # Non-retryable (e.g. non-JSON) fails the same on every key.
+                if not retryable(exc):
+                    raise
+                if not self._rotate():
+                    raise
+                print(
+                    f"  [GroqLLM] key {self._key_index} active after: {type(exc).__name__}: {exc}"
+                )
 
     def generate_answer(
         self,
@@ -68,10 +106,9 @@ class GroqLLM(BaseLLM):
             '"source_ids": ["source_id đã dùng"], "limitations": ["..."], '
             '"next_step": "..."}'
         )
-        client = self._get_client()
         try:
-            completion = retry_transient(
-                lambda: client.chat.completions.create(
+            completion = self._call_with_rotation(
+                lambda client: client.chat.completions.create(
                     model=self.model,
                     messages=[
                         {"role": "system", "content": _SYSTEM},
@@ -79,11 +116,7 @@ class GroqLLM(BaseLLM):
                     ],
                     temperature=0.2,
                     response_format={"type": "json_object"},
-                ),
-                max_retries=self.max_retries,
-                timeout_seconds=self.timeout_seconds,
-                backoff_seconds=self.backoff_seconds,
-                retryable=is_retryable_llm_error,
+                )
             )
         except Exception as exc:
             raise LLMError(f"Groq request failed after retries: {exc}") from exc
@@ -112,10 +145,9 @@ class GroqLLM(BaseLLM):
         """
         if not self.available:
             return False
-        client = self._get_client()
         try:
-            completion = retry_transient(
-                lambda: client.chat.completions.create(
+            completion = self._call_with_rotation(
+                lambda client: client.chat.completions.create(
                     model=self.model,
                     messages=[
                         {"role": "system", "content": _CLASSIFY_SYSTEM},
@@ -123,11 +155,7 @@ class GroqLLM(BaseLLM):
                     ],
                     temperature=0.0,
                     response_format={"type": "json_object"},
-                ),
-                max_retries=self.max_retries,
-                timeout_seconds=self.timeout_seconds,
-                backoff_seconds=self.backoff_seconds,
-                retryable=is_retryable_llm_error,
+                )
             )
             parsed = json.loads(completion.choices[0].message.content.strip())
             return bool(parsed.get("safe", False))

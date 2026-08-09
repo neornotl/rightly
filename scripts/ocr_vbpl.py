@@ -78,9 +78,7 @@ def main() -> int:
         except Exception:  # noqa: BLE001
             pypdf_text = ""
         if len(pypdf_text.strip()) > 500:
-            (CACHE / f"{sid}.ocr.txt").write_text(
-                pypdf_text, encoding="utf-8"
-            )
+            (CACHE / f"{sid}.ocr.txt").write_text(pypdf_text, encoding="utf-8")
             print(f"[SKIP-text] {sid} ({len(pypdf_text)} chars from pypdf)")
             skipped += 1
             continue
@@ -103,7 +101,7 @@ def main() -> int:
             save_cache(cache, key, text)
             pages_text.append(text)
             has_new = True
-            print(f"  {sid} p{i+1}/{n} ({time.time()-t0:.0f}s)")
+            print(f"  {sid} p{i + 1}/{n} ({time.time() - t0:.0f}s)")
 
         body = "\n\n".join(pages_text).strip()
         if body and (has_new or not out_path.exists()):
@@ -113,7 +111,7 @@ def main() -> int:
             print(f"[OCR] {sid}: {len(body)} chars -> {out_path.name}")
         else:
             print(f"[EMPTY] {sid}")
-    print(f"\nDONE: {done} docs OCR'd, {skipped} text-based, {time.time()-t_start:.0f}s total")
+    print(f"\nDONE: {done} docs OCR'd, {skipped} text-based, {time.time() - t_start:.0f}s total")
     return 0
 
 

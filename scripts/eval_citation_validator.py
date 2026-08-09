@@ -28,7 +28,12 @@ CASES = [
     ("C2_valid_nd154", "nd154_2024", {"nd154_2024"}, "Trích dẫn hợp lệ (hiệu lực)"),
     ("C3_unsupported", "luat60_2014", {"nd123_2015"}, "Trích dẫn không thuộc nguồn truy xuất"),
     ("C4_unknown", "luat99_9999", {"nd123_2015"}, "Source_id không tồn tại"),
-    ("C5_valid_multi", "nd123_2015;luat60_2014", {"nd123_2015", "luat60_2014"}, "Đa trích dẫn hợp lệ"),
+    (
+        "C5_valid_multi",
+        "nd123_2015;luat60_2014",
+        {"nd123_2015", "luat60_2014"},
+        "Đa trích dẫn hợp lệ",
+    ),
 ]
 
 
@@ -41,9 +46,7 @@ def main() -> int:
     rows = []
     for name, cited, retrieved, note in CASES:
         ids = [s.strip() for s in cited.split(";")]
-        verdict = validator.validate(
-            GroundedAnswer(answer_text="x", source_ids=ids), retrieved
-        )
+        verdict = validator.validate(GroundedAnswer(answer_text="x", source_ids=ids), retrieved)
         decision = None
         if not verdict.ok:
             outdated = any(i.kind == "outdated" for i in verdict.issues)
@@ -63,8 +66,9 @@ def main() -> int:
     out = ROOT / "results" / "citation_validator_report.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(
-        json.dumps({"today": date.today().isoformat(), "cases": rows},
-                   ensure_ascii=False, indent=2),
+        json.dumps(
+            {"today": date.today().isoformat(), "cases": rows}, ensure_ascii=False, indent=2
+        ),
         encoding="utf-8",
     )
     print(f"\nSaved: {out}")

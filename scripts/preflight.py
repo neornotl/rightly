@@ -65,7 +65,7 @@ def _run_module(module: str, *args: str) -> str:
 
 
 def main() -> int:
-    print("== Tieng Lang preflight ==")
+    print("== Rightly preflight ==")
     passed: list[tuple[str, str]] = []
     failed: list[tuple[str, str]] = []
     skip_tests = "--skip-tests" in sys.argv

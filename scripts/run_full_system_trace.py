@@ -72,9 +72,7 @@ def _scrub_record(record: dict) -> dict:
     record["query"] = scrub_text(record["query"])
     if record.get("answer"):
         record["answer"]["answer_text"] = scrub_text(record["answer"]["answer_text"])
-        record["answer"]["spoken_citation"] = scrub_text(
-            record["answer"]["spoken_citation"]
-        )
+        record["answer"]["spoken_citation"] = scrub_text(record["answer"]["spoken_citation"])
     return record
 
 
@@ -116,9 +114,12 @@ def main() -> int:
                 f"ok={record['citation_verdict']['ok'] if record['citation_verdict'] else 'n/a'}"
             )
 
-    ok_count = sum(1 for _, exp, r in rows
-                   if (exp == "answerable" and r.decision.action.value == "ANSWER")
-                   or (exp == "refuse" and r.decision.action.value == "REFUSE"))
+    ok_count = sum(
+        1
+        for _, exp, r in rows
+        if (exp == "answerable" and r.decision.action.value == "ANSWER")
+        or (exp == "refuse" and r.decision.action.value == "REFUSE")
+    )
     print(f"\n{len(rows)} journeys, {ok_count} behave as expected")
     print(f"Saved: {out_path}")
     return 0

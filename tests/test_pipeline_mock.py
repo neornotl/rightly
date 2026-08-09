@@ -47,7 +47,7 @@ def test_mock_pipeline_end_to_end(tmp_path):
 def test_pipeline_safe_query_cites_demo_only(tmp_path):
     pipeline = _pipeline(tmp_path)
     session_id = pipeline.create_session()
-    result = pipeline.process_text(session_id, "Đăng ký khai sinh cần giấy gì?")
+    result = pipeline.process_text(session_id, "Đăng ký kết hôn cần giấy gì?")
     assert set(result.answer.source_ids) == {"demo_binhminh_procedures"}
 
 

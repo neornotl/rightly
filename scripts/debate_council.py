@@ -14,7 +14,7 @@ PROMPT_FILE = "debate_output/round11_prompt.json"
 OUT_FILE = "debate_output/round11.json"
 
 SYSTEM = (
-    "Bạn là thành viên hội đồng tư vấn của dự án 'Tiếng Làng v4.0' - AI tư vấn "
+    "Bạn là thành viên hội đồng tư vấn của dự án 'Rightly' - AI tư vấn "
     "thủ tục hành chính/ pháp luật bằng giọng nói tiếng Việt cho người dân. "
     "Bạn phân tích kỹ, đưa ý kiến cụ thể, thực tế, có thể dùng ngay. "
     "Trả lời bằng tiếng Việt."

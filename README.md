@@ -1,4 +1,4 @@
-# Tiếng Làng v4.0
+# Rightly
 
 Source-grounded, voice-first public-service access agent — hỗ trợ người dân
 (nhất là người cao tuổi, người khiếm thị, người khó đọc, người hạn chế kỹ
@@ -12,7 +12,7 @@ câu trả lời **bám nguồn chính thống** và rào chắn an toàn rõ r�
 ## Problem
 
 Thông tin hành chính thường dạng văn bản dài, chữ nhỏ, ít kênh bằng giọng nói.
-Người cao tuổi / khiếm thị / khó đọc gặp rào cản lớn. Tiếng Làng cung cấp kênh
+Người cao tuổi / khiếm thị / khó đọc gặp rào cản lớn. Rightly cung cấp kênh
 hỏi-đáp bằng giọng nói, mỗi câu trả lời kèm nguồn, và **từ chối trả lời** khi
 không đủ nguồn tin cậy.
 

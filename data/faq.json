@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "note": "Voice FAQ (F5) — kịch bản ngắn cho người cao tuổi, khớp không nhạy dấu. Mọi claim phải được C xác minh với nguồn trong corpus trước khi public.",
+  "updated_on": "2026-08-09",
+  "faqs": [
+    {
+      "id": "khai-sinh",
+      "question": "Thủ tục đăng ký khai sinh cho cháu cần những gì?",
+      "keywords": ["khai sinh", "giấy khai sinh", "đăng ký khai sinh"],
+      "answer_text": "Đăng ký khai sinh trong 60 ngày kể từ khi trẻ được sinh ra, tại bộ phận một cửa của xã hoặc phường nơi người mẹ cư trú. Cần giấy chứng sinh, sổ hộ khẩu của cha hoặc mẹ, và căn cước công dân của cha mẹ. Nếu sinh tại cơ sở y tế, nơi đó có thể đăng ký hộ.",
+      "spoken_citation": "Theo Luật Hộ tịch năm 2014 và văn bản hướng dẫn"
+    },
+    {
+      "id": "ho-khau-moi",
+      "question": "Tách hộ khẩu cho con đi làm xa cần giấy tờ gì?",
+      "keywords": ["tách hộ khẩu", "tách sổ hộ khẩu", "lập hộ mới"],
+      "answer_text": "Người đủ 18 tuổi có thể lập hộ mới. Cần đơn đề nghị, sổ hộ khẩu cũ, căn cước công dân, và nếu là vợ chồng thì thêm giấy đăng ký kết hôn. Nộp tại công an cấp xã hoặc qua cổng dịch vụ công trực tuyến.",
+      "spoken_citation": "Theo Luật Cư trú năm 2020 và văn bản hướng dẫn"
+    },
+    {
+      "id": "so-do",
+      "question": "Đất chưa có sổ đỏ, làm sổ đỏ lần đầu cần gì?",
+      "keywords": ["sổ đỏ", "giấy chứng nhận quyền sử dụng đất", "cấp giấy chứng nhận"],
+      "answer_text": "Hồ sơ gồm đơn đề nghị cấp giấy chứng nhận, giấy tờ về quyền sử dụng đất nếu có, căn cước công dân, và sơ đồ hoặc bản mô tả thửa đất. Nộp tại văn phòng đăng ký đất đai của huyện, hoặc qua cổng dịch vụ công. Hồ sơ sẽ được trả lời theo quy định của Luật Đất đai 2024.",
+      "spoken_citation": "Theo Luật Đất đai năm 2024 và văn bản hướng dẫn"
+    },
+    {
+      "id": "ho-ngheo",
+      "question": "Xin xác nhận hộ nghèo để con được miễn giảm học phí cần làm gì?",
+      "keywords": ["hộ nghèo", "xác nhận hộ nghèo", "hộ cận nghèo"],
+      "answer_text": "Hộ nghèo được công nhận theo kết quả rà soát của xã mỗi giai đoạn, dựa trên chuẩn nghèo của Chính phủ. Cần đến ủy ban nhân dân xã nơi cư trú để kiểm tra danh sách và xin giấy xác nhận. Trường học có thể dùng giấy này để miễn giảm học phí theo quy định.",
+      "spoken_citation": "Theo Nghị định quy định chuẩn nghèo đa chiều hiện hành"
+    },
+    {
+      "id": "cccd",
+      "question": "Bố mẹ trên 60 tuổi cấp căn cước công dân mới ở đâu?",
+      "keywords": ["căn cước công dân", "cấp căn cước", "thẻ căn cước"],
+      "answer_text": "Từ ngày 1 tháng 7 năm 2024, người từ 14 tuổi trở lên đổi sang thẻ căn cước. Người trên 60 tuổi được miễn lệ phí cấp thẻ. Làm tại công an xã, phường, hoặc đến trụ sở công an cấp huyện. Mang theo sổ hộ khẩu cũ và phiếu đăng ký cư trú nếu cần.",
+      "spoken_citation": "Theo Luật Căn cước năm 2023 và văn bản hướng dẫn"
+    },
+    {
+      "id": "bhxh",
+      "question": "Lương hưu của ông chưa được nhận 2 tháng, phải làm sao?",
+      "keywords": ["lương hưu", "nhận lương hưu", "bảo hiểm xã hội", "trợ cấp hưu trí"],
+      "answer_text": "Cần xác định nơi chi trả lương hưu: nếu chi qua bưu điện hoặc ngân hàng, đến điểm chi trả kiểm tra danh sách. Nếu vẫn chưa rõ, liên hệ bảo hiểm xã hội huyện nơi hưởng để được kiểm tra hồ sơ. Giữ lại phiếu nhận lương của tháng gần nhất để đối chiếu.",
+      "spoken_citation": "Theo Luật Bảo hiểm xã hội và văn bản hướng dẫn"
+    },
+    {
+      "id": "kham-chua-benh",
+      "question": "Khám chữa bệnh bằng bảo hiểm y tế ở tuyến xã cần mang gì?",
+      "keywords": ["bảo hiểm y tế", "khám chữa bệnh", "thẻ bảo hiểm"],
+      "answer_text": "Đến trạm y tế xã hoặc phòng khám đăng ký khám bảo hiểm y tế, mang thẻ bảo hiểm y tế và căn cước công dân. Người trên 60 tuổi thuộc đối tượng được quỹ bảo hiểm y tế chi trả khi khám đúng tuyến theo quy định.",
+      "spoken_citation": "Theo Luật Bảo hiểm y tế và văn bản hướng dẫn"
+    },
+    {
+      "id": "tro-cap-xa-hoi",
+      "question": "Người già neo đơn có được hưởng trợ cấp xã hội không?",
+      "keywords": ["trợ cấp xã hội", "người cao tuổi neo đơn", "trợ cấp người già"],
+      "answer_text": "Người cao tuổi từ 80 tuổi trở lên, hoặc từ 60 tuổi thuộc hộ nghèo và không nơi nương tựa, có thể được hưởng trợ cấp xã hội hằng tháng theo quy định. Đến ủy ban nhân dân xã để được hướng dẫn làm hồ sơ, đơn đề nghị và các giấy tờ theo hướng dẫn của cán bộ xã.",
+      "spoken_citation": "Theo Nghị định về trợ giúp xã hội hiện hành"
+    },
+    {
+      "id": "sang-ten-xe",
+      "question": "Sang tên chiếc xe máy cho con cần thủ tục gì?",
+      "keywords": ["sang tên xe", "đăng ký xe máy", "sang tên xe máy"],
+      "answer_text": "Hợp đồng mua bán hoặc tặng cho xe, căn cước công dân của hai bên, và giấy chứng nhận đăng ký xe cũ. Đến cơ quan công an nơi đăng ký xe để làm thủ tục sang tên. Xe có giấy tờ đầy đủ thì thủ tục thường hoàn thành trong vài ngày làm việc.",
+      "spoken_citation": "Theo Thông tư hướng dẫn đăng ký xe hiện hành"
+    },
+    {
+      "id": "thua-ke",
+      "question": "Đất của bố mẹ để lại chưa làm thủ tục thừa kế, nên làm gì?",
+      "keywords": ["thừa kế", "thừa kế đất", "di sản để lại"],
+      "answer_text": "Di sản gồm quyền sử dụng đất và tài sản khác. Người thừa kế cần làm thủ tục khai nhận di sản tại văn phòng công chứng hoặc ủy ban nhân dân xã, rồi đăng ký biến động tại văn phòng đăng ký đất đai. Các con nên thỏa thuận phân chia trước để hồ sơ gọn và nhanh.",
+      "spoken_citation": "Theo Bộ luật Dân sự năm 2015 và Luật Đất đai 2024"
+    },
+    {
+      "id": "khieu-nai",
+      "question": "Bị xã từ chối hồ sơ hộ nghèo, ông khiếu nại ở đâu?",
+      "keywords": ["khiếu nại", "khiếu nại xã", "khiếu nại hành chính"],
+      "answer_text": "Người dân có quyền khiếu nại quyết định hành chính của xã. Khiếu nại lần đầu gửi đến chính ủy ban nhân dân xã đã ra quyết định, trong thời hạn theo Luật Khiếu nại. Nếu không đồng ý với kết quả, có thể khiếu nại lần hai lên ủy ban nhân dân huyện.",
+      "spoken_citation": "Theo Luật Khiếu nại năm 2011"
+    }
+  ]
+}

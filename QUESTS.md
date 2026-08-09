@@ -1,4 +1,4 @@
-# QUEST — Tiếng Làng v4.0 (Cập nhật: 08/08/2026, thứ 7)
+# QUEST — Rightly (Cập nhật: 08/08/2026, thứ 7)
 
 > Đây là "bảng quest" chung cho cả team: ai làm gì, khi nào, giao gì cho ai.
 > Chi tiết: `docs/team_status.md`, `docs/submission_checklist.md`.
@@ -10,7 +10,8 @@
 
 ## Mục tiêu chung
 
-- Gate D: **≥45/50 rubric VAIFF 2026** — nộp **25/08/2026**.
+- Gate D: **≥45/50 rubric Intel Vietnam AI Impact Festival 2026 (VAIIF26)** —
+  bảng Học sinh 13-17 — nộp **25/08/2026**.
 
 ## QUEST T (Technical — chủ: T, công tác viên: OpenCode)
 
@@ -92,7 +93,7 @@ nhận máy AI PC.
 > **Quyết định hội đồng Round 13 (08/08, họp kín 3 phiên — `debate_output/
 > round13.json`, tổng hợp `results/round13_synthesis.md`):**
 > 1. **Xác minh cuộc thi đúng: Intel(R) Vietnam AI Impact Festival 2026** (bảng
->    AI Changemakers — Sinh viên 18+; BTC NIC+SHTP+SHTP-IC+Intel VN; chủ đề
+>    AI Changemakers; BTC NIC+SHTP+SHTP-IC+Intel VN; chủ đề
 >    "Enriching Lives with AI Innovation"). **Hồ sơ = Google Form duy nhất: tên
 >    ≤10 từ + mô tả ≤150 từ + video ≤2 phút + consent có chữ ký.** Rubric
 >    chính thức đã đọc (M1 15đ, M2 20đ, M3 15đ) — khớp bảng nội bộ. Toàn bộ
@@ -123,25 +124,101 @@ nhận máy AI PC.
 > 6. Freeze feature từ 13/08; "phi-code" chiếm ~70% điểm cộng → C/P là đường
 >    găng, T chỉ phục vụ 5 vật chứng (link, corpus, log, voice FAQ, demo).
 
+> **Quyết định hội đồng Round 14 (08/08, họp kín 3 phiên — `debate_output/
+> round14.json` + vision `debate_output/vision_round14.json`, tổng hợp
+> `results/round14_synthesis.md`):**
+> 1. **BẢNG THI: HỌC SINH 13-17** (xác nhận 08/08). Top 3 và Top 1 đều xét THEO
+>    TỪNG BẢNG: bảng Học sinh có 3 vé riêng (không cạnh tranh Sinh viên); Top 1
+>    bảng → 1 đội/bảng đại diện VN đi Intel AI Global Impact Festival 2026.
+>    Consent thí sinh <18: chữ ký phụ huynh/giám hộ.
+> 2. **VOTE SDG PRIMARY (form bắt buộc chọn 1): SDG 16 — Peace, Justice &
+>    Strong Institutions** (4/5; bỏ SDG 3 "health-washing" không có KPI y tế).
+>    Dùng Target 16.3 (access to justice) + 16.10 (access to information) trong
+>    150 từ + video. Ít đội 13-17 chọn → khác biệt.
+> 3. **SONG NGỮ (đề xuất C) — CHỐT THU HẸP:** Form 150 từ = tiếng Anh 100%
+>    (bản VN nội bộ); video 2' = giọng VN + phụ đề EN hard-burned; UI = 100%
+>    tiếng Việt. Không dịch toàn bộ (lãng phí + rủi ro claim).
+> 4. **XÁC SUẤT CHỐT:** Top 3 bảng Học sinh: 30-35% hôm nay → **45-55%** sau
+>    Top-12. Top 1 bảng: 8-15% → **18-25%**. 3 yếu tố quyết định: pilot thật
+>    + transcript, SDG 16 map chuẩn, video Bà Năm chất lượng phụ đề EN.
+> 5. **Cắt OpenVINO/hardware** (scope creep ROI âm trong 17 ngày); giữ narrative
+>    "CPU-only int8 chạy PC phổ thông" + limitation trung thực.
+> 6. Tên cuộc thi chuẩn: Intel Vietnam AI Impact Festival 2026 (VAIIF26) — đã
+>    rà soát/sửa toàn repo; transcript cũ giữ nguyên (nhật ký), chú thích trong
+>    `docs/competition_aiif26.md`.
+
+> **Quyết định hội đồng Round 15 (08/08, họp kín 3 phiên — `debate_output/
+> round15.json`, tổng hợp `results/round15_synthesis.md`):**
+> 1. **Mục tiêu >80% / >50% KHÔNG thực tế trong 17 ngày** (5/5). Trần trung thực:
+>    Top 3 bảng Học sinh **65-75%**, Top 1 bảng **28-40%** sau TOP-6 booster.
+>    Mục tiêu điều chỉnh chính thức: Top 3 = **70-75%**, Top 1 = **35-40%**.
+> 2. **TOP-6 BOOSTER** (ROI tuyệt đối): (1) Pilot thật **20-30 NCT + KPI** (P lead,
+>    18/08, +12-15% Top 3); (2) **Video pilot thật "Bà Năm"** không diễn + editor
+>    (C+P, 16/08, +8-10%); (3) **SĐT thật + Zalo OA** (T+P, 13/08, +8-10%);
+>    (4) **Intel AI PC/NUC loan + OpenVINO live** — email BTC `thi.theu.nguyen@intel.com`
+>    NGAY 09/08 (T, trả lời 12/08, +6-8%); (5) **LOI/UBND xã + Hội NCT đóng dấu**
+>    (P, 14/08, +5-7%); (6) **A/B demo 1022 vs Rightly** (T+C, 15/08, +5-8%).
+>    LOẠI: Streamlit paid tier (ROI≈0), WER/MOS VIVOS lab (không differentiation —
+>    chỉ làm phụ chứng Technical Rigor).
+> 3. **Hành động 09/08:** SÁNG — P: email Intel xin mượn AI PC/NUC + nộp LOI
+>    UBND xã/Hội NCT; CHIỀU — C: lên xã quay video pilot thật (không diễn);
+>    T: chuẩn bị OpenVINO path (fallback CPU) + kích hoạt SIM/Zalo.
+> 4. **Dòng đỏ:** dồn người-ngày vào booster không chạm rubric (paid tier, VIVOS,
+>    pilot 3 miền rộng) → mất thời gian của pilot thật + video + LOI.
+
+> **Quyết định hội đồng Round 16 (09/08, họp kín 3 phiên — `debate_output/
+> round16.json`, tổng hợp `results/round16_synthesis.md`):**
+> 1. Đề xuất đội trưởng "product-first (T hoàn thiện sản phẩm, P/C chờ)":
+>    **BÁC BỎ bản thuần túy** (5/5). Phương án chốt: **SONG SONG CÓ KIỂM SOÁT** —
+>    T = 100% sản phẩm (3 gap chặn mốc), P/C = 100% field work, không họp dài,
+>    không kéo T vào giấy tờ. Critical path = waiting time bên ngoài (Intel 2-4
+>    ngày, UBND 2-7 ngày, tuyển NCT 3-7 ngày), không phải bug code.
+> 2. **3 gap CHẶN MỐC 13/08 (T làm hôm nay, xong trước 17h):** (1) Deploy public
+>    + backup link (2-3h, Streamlit Cloud + HF Spaces/Render); (2) xoay key Groq
+>    + fallback Gemini + rate-limit (1h); (3) Voice FAQ 5-10 kịch bản NCT (2h).
+>    SĐT/Zalo + OpenVINO + UX nâng cao KHÔNG chặn pilot 13/08 — để sau (SĐT/Zalo
+>    chỉ cần cho 18/08 scale 20-30).
+> 3. **Checklist tối nay 09/08:** T — Deploy → Key → Voice FAQ (5-6h). P — email
+>    Intel loan + LOI UBND/Hội NCT + xác nhận nguồn pilot 13/08 (2h). C — danh
+>    sách NCT + consent + kịch bản phỏng vấn + bắt đầu quay cảnh thật (2h).
+> 4. Dòng đỏ R16: "Trượt 13/08 = vỡ M1 = vỡ Top 3; đừng để đến 16/08 mới biết
+>    thiếu cảnh thật."
+
 ## Quest phối hợp C-P
 
 - C giao `consent_form_v1.md` (sáng T7) → P dùng khi tuyển người.
 - C giao `problem_statement.md` → P dùng cho email đối tác + GTM.
 - C claim check → P đối chiếu kết quả pilot thật.
 
+## Feature backlog (demo — hạn trước FREEZE 13/08)
+
+| # | Feature | Trạng thái | Ghi chú |
+|---|---|---|---|
+| F1 | Nối máy tới cơ quan (Command.CONNECT + State.CONNECTING) | ✅ 09/08 | CLI + UI; chỉ mở tel: khi `verified=true` (P phải xác minh số thật trước demo public) |
+| F2 | Phiếu chuẩn bị hồ sơ (registration slip) | ✅ 09/08 | Markdown, trường cá nhân để trống, có privacy note; không gửi/lưu thông tin |
+| F3 | Deploy public sẵn sàng (Streamlit Cloud + HF Spaces backup) | ✅ 09/08 (chờ bấm nút) | `scripts/predeploy_check.py` 0 FAIL; `docs/deploy_public.md`; secrets template đủ; T bấm Deploy 12/08 |
+| F4 | Xoay key Groq (2-3 key) + fallback Gemini + rate-limit | ✅ 09/08 | `app/llm/fallback.py`; `app/ratelimit.py`; GROQ_API_KEY_2/3; test 10/10 |
+| F5 | Voice FAQ 11 kịch bản (chống lỗi ASR môi trường xôn xao) | ✅ 09/08 | `app/faq.py` + `data/faq.json`; khớp không nhạy dấu; chạy SAU safety router; chặn ~60-70% câu demo → tiết kiệm API |
+| F6 | Script log pilot WER/MOS/CSAT | ✅ 09/08 | `scripts/log_pilot_metrics.py` → `data/eval/pilot_metrics.jsonl` (ẩn danh) — P dùng 13/08 |
+| F7 | OpenVINO benchmark sẵn sàng | ✅ 09/08 (HOÃN chạy) | `scripts/benchmark_openvino.py`; theo R17: chạy khi có máy mượn 12/08+, không claim trước khi đo |
+| F8 | 2-step confirm nối máy + watermark phiếu (R17) | ✅ 09/08 | CLI hỏi lại có/không; UI popover consent trước tel:; phiếu có watermark đỏ "KHÔNG CÓ GIÁ TRỊ PHÁP LÝ" |
+| F9 | SĐT thật + Zalo OA live | ⏳ 13/08 | P xác minh số → `verified=true`; Zalo OA đăng ký 10-11/08 (T+P) |
+| F10 | Corpus mở rộng 15-30 văn bản | ⏳ HOÃN 10-11/08 (R17) | Hiện 11 nguồn thật; C giao link → T crawl/ingest + rebuild real_chunks |
+
 ## Điểm hẹn (hard milestones)
 
 | Deadline | Mốc |
 |---|---|
 | 08-09/08 | C: storyboard video 2' + nháp 150 từ + SDG + số liệu nguồn · P: tuyển user pilot + consent T7 này · T: deploy public link + xoay 3 key Groq |
+| 09/08 | **SÁNG: P email BTC xin mượn AI PC/NUC (thi.theu.nguyen@intel.com) + nộp LOI UBND xã/Hội NCT · CHIỀU: C quay video pilot thật lên xã; T chuẩn bị OpenVINO path + kích hoạt SIM/Zalo** |
 | 10/08 | Gửi LOI/email Hội NCT (P); thư mẫu đối tác |
-| 11/08 | LOCK 150 từ + SDG map (C) |
-| 12/08 | Public link chạy + backup link + voice FAQ record (T); consent chuẩn form (P+C) |
-| 13/08 | Pilot 5-7 người XONG + 3 testimony + log ASR; corpus trọng điểm 15-30 văn bản (T); FREEZE FEATURE |
-| 14/08 | Technical Rigor 1 trang (WER/MOS từ log pilot) (T) |
-| 15/08 | Trang ethical_ai 1 trang (C+T) |
-| 16/08 | Video 2 phút RENDER XONG (C+T+P) |
-| 18/08 | GTM evidence mềm: LOI/email xác nhận (P+C) · FAQ giám khảo + script demo 60s (C) |
+| 11/08 | LOCK 150 từ + SDG **16** (C) |
+| 12/08 | Public link chạy + backup link + voice FAQ record (T); consent chuẩn form (P+C); **trả lời Intel loan PC** |
+| 13/08 | Pilot 5-7 người XONG + 3 testimony + log ASR (P); **SĐT thật + Zalo OA live** (T+P); corpus trọng điểm 15-30 văn bản (T); FREEZE FEATURE |
+| 14/08 | Technical Rigor 1 trang (WER/MOS từ log pilot) (T); **LOI/UBND + Hội NCT đóng dấu** (P) |
+| 15/08 | Trang ethical_ai 1 trang (C+T); **A/B demo 1022 vs Rightly** (T+C) |
+| 16/08 | **Video pilot thật "Bà Năm" RENDER XONG (không diễn, giọng VN + phụ đề EN)** (C+T+P) |
+| 18/08 | **Pilot 20-30 NCT XONG + KPI** (task success/CSAT/latency) (P lead); GTM evidence mềm: LOI/xác nhận (P+C); FAQ giám khảo + script demo 60s (C) |
 | 22-24/08 | Sweep hồ sơ cuối: form + video + link + minh chứng + submission proof |
 | 25/08 | **NỘP** |
 

@@ -1,4 +1,4 @@
-# Template deliverable — Tiếng Làng v4.0
+# Template deliverable — Rightly
 
 > Copy file này, đổi tên theo quy ước `deliverables/README.md`, xoá dòng này.
 

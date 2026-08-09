@@ -1,4 +1,4 @@
-# Threat model — Tiếng Làng v4.0 (preparation)
+# Threat model — Rightly (preparation)
 
 Phạm vi: pipeline hiện tại (mock/local/cloud text-LLM). Mỗi mục: mô tả,
 mức độ (thấp/vừa/cao), mitigation hiện có, việc còn lại (T/C/P).
