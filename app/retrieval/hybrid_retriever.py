@@ -23,7 +23,7 @@ _RERANK_MODEL = "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
 # queries). In-corpus queries score >= one threshold; out-of-corpus queries
 # (e.g. "hộ chiếu", "phạt khai sinh quá hạn") fall below both.
 _BM25_GATE = 12.2
-_DENSE_GATE = 0.88
+_DENSE_GATE = 0.84
 
 
 def _to_chunk(rec, score: float) -> RetrievedChunk:

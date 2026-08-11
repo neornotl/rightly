@@ -25,6 +25,7 @@ from app.dialogue.state_machine import State
 from app.llm.base import BaseLLM
 from app.llm.mock_llm import MockLLM
 from app.logging_utils import JsonlLogger, SessionStore, utc_now_iso
+from app.metrics_logger import log_pipeline_result
 from app.retrieval.base import Retriever
 from app.retrieval.bm25_retriever import BM25Retriever
 from app.retrieval.document_loader import DocumentLoader
@@ -296,48 +297,55 @@ class Pipeline:
                 lat["faq_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
                 self.store.record(session_id, "faq_hit", faq_id=faq_hit.faq_id, score=faq_hit.score)
             else:
-                try:
-                    outbound_text = query.text
-                    if (
-                        self.settings.llm_backend in {"gemini", "groq"}
-                        and self.settings.pii_scrub_outbound
-                    ):
-                        from app.privacy.scrubber import scrub_outbound
-
-                        outbound_text = scrub_outbound(query.text)
-                    doc = self.llm.generate_answer(
-                        outbound_text,
-                        chunks[:3],
-                        max_chars=self.settings.max_response_chars,
-                    )
-                    raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
-                    answer = GroundedAnswer(
-                        answer_text=str(doc.get("answer_text", "")).strip(),
-                        spoken_citation=str(doc.get("spoken_citation", "")).strip(),
-                        source_ids=raw_ids,
-                        limitations=[str(s) for s in (doc.get("limitations") or [])],
-                        next_step=str(doc.get("next_step", "")).strip(),
-                    )
-                except Exception as exc:
+                # Guard: if no chunks retrieved or all scores too low, refuse early
+                # to avoid LLM hallucination and FAKE_LAW false positive.
+                if not chunks or all(c.score < self.settings.min_retrieval_score for c in chunks):
                     decision = self.router.policy.insufficient_decision()
-                    self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
-                lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
-
-                if answer is not None and not raw_ids:
-                    # Council T2: an answer with content but zero citations is
-                    # ungrounded — refuse instead of reading it out.
-                    decision = self.router.policy.insufficient_decision()
-                    self.store.record(
-                        session_id,
-                        "citation_rejected",
-                        issues=[
-                            {
-                                "kind": "no_citation",
-                                "message": "Câu trả lời không trích dẫn nguồn nào.",
-                            }
-                        ],
-                    )
+                    self.store.record(session_id, "empty_chunks_rejected", num_chunks=len(chunks))
                     answer = None
+                else:
+                    try:
+                        outbound_text = query.text
+                        if (
+                            self.settings.llm_backend in {"gemini", "groq"}
+                            and self.settings.pii_scrub_outbound
+                        ):
+                            from app.privacy.scrubber import scrub_outbound
+
+                            outbound_text = scrub_outbound(query.text)
+                        doc = self.llm.generate_answer(
+                            outbound_text,
+                            chunks[:3],
+                            max_chars=self.settings.max_response_chars,
+                        )
+                        raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
+                        answer = GroundedAnswer(
+                            answer_text=str(doc.get("answer_text", "")).strip(),
+                            spoken_citation=str(doc.get("spoken_citation", "")).strip(),
+                            source_ids=raw_ids,
+                            limitations=[str(s) for s in (doc.get("limitations") or [])],
+                            next_step=str(doc.get("next_step", "")).strip(),
+                        )
+                    except Exception as exc:
+                        decision = self.router.policy.insufficient_decision()
+                        self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
+                    lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+                    if answer is not None and not raw_ids:
+                        # Council T2: an answer with content but zero citations is
+                        # ungrounded — refuse instead of reading it out.
+                        decision = self.router.policy.insufficient_decision()
+                        self.store.record(
+                            session_id,
+                            "citation_rejected",
+                            issues=[
+                                {
+                                    "kind": "no_citation",
+                                    "message": "Câu trả lời không trích dẫn nguồn nào.",
+                                }
+                            ],
+                        )
+                        answer = None
 
                 if answer is not None and self.validator is not None:
                     # Validate RAW citations first (F2 fix): filtering before
@@ -385,6 +393,17 @@ class Pipeline:
             app_mode=self.settings.app_mode,
             tts_output=spoken,
         )
+        # WER/MOS metrics logging (P0)
+        try:
+            log_pipeline_result(
+                session_id=session_id,
+                user_id=session_id,  # fallback
+                query_text=query.text,
+                normalized_query=normalized,
+                result=result,
+            )
+        except Exception:
+            pass  # metrics logging must never break the pipeline
         self._log_result(result)
         return result
 
