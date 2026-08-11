@@ -31,6 +31,13 @@ class Policy:
         "trợ giúp pháp lý hoặc cơ quan có thẩm quyền (số điện thoại chưa xác "
         "minh, cần cập nhật trước khi triển khai)."
     )
+    fake_law_message: str = (
+        "Tôi không tìm thấy văn bản pháp luật với số và năm bạn vừa nêu trong "
+        "kho nguồn chính thức đã kiểm chứng. Tôi không tự ý xác nhận hoặc "
+        "bình luận về thông tin chưa được kiểm chứng (tin đồn, mạng xã hội, "
+        "văn bản không rõ nguồn). Bạn nên tra cứu tại Cổng Dịch vụ công quốc "
+        "gia hoặc liên hệ bộ phận một cửa để được hướng dẫn chính thức."
+    )
     out_of_scope_message: str = (
         "Câu hỏi này nằm ngoài phạm vi thủ tục hành chính mà tôi hỗ trợ. "
         "Tôi chỉ giúp về thủ tục hành chính và quyền lợi công tại các xã, "
@@ -98,6 +105,15 @@ class Policy:
             action=Action.GUIDE,
             reason_codes=[ReasonCode.OUT_OF_SCOPE.value],
             user_message=self.out_of_scope_message,
+            requires_human=False,
+        )
+
+    def fake_law_decision(self) -> SafetyDecision:
+        return SafetyDecision(
+            zone=Zone.ORANGE,
+            action=Action.REFUSE,
+            reason_codes=[ReasonCode.FAKE_LAW_REFERENCE.value],
+            user_message=self.fake_law_message,
             requires_human=False,
         )
 

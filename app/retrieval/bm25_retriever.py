@@ -118,6 +118,7 @@ class BM25Retriever(Retriever):
     _doc_lens: list[int] = field(default_factory=list, repr=False)
     _avg_len: float = 0.0
     _doc_token_sets: list[set[str]] = field(default_factory=list, repr=False)
+    _postings: dict[str, list[tuple[int, int]]] = field(default_factory=dict, repr=False)
 
     @staticmethod
     def _tokenize(text: str) -> list[str]:
@@ -127,15 +128,20 @@ class BM25Retriever(Retriever):
     def _build(self) -> None:
         self._doc_lens = []
         self._doc_token_sets = []
+        postings: dict[str, list[tuple[int, int]]] = {}
         all_freqs: Counter = Counter()
-        for chunk in self.chunks:
+        for idx, chunk in enumerate(self.chunks):
             toks = self._tokenize(chunk.text)
             self._doc_lens.append(len(toks))
             uniq = set(toks)
             self._doc_token_sets.append(uniq)
             for t in uniq:
                 all_freqs[t] += 1
+            tf_counts: Counter = Counter(toks)
+            for t, tf in tf_counts.items():
+                postings.setdefault(t, []).append((idx, tf))
         self._doc_freqs = all_freqs
+        self._postings = postings
         n = len(self.chunks)
         self._avg_len = (sum(self._doc_lens) / n) if n else 0.0
 
@@ -170,6 +176,33 @@ class BM25Retriever(Retriever):
             score += idf * (tf * (self.k1 + 1)) / denom
         return score
 
+    def _score_doc_fast(self, query_tokens: list[str], pool: int = 500) -> list[tuple[float, int]]:
+        """Inverted-index BM25 scoring: only docs containing query terms.
+
+        Returns the top-``pool`` scored docs (not all 16k) so search stays
+        fast; overlap filtering happens in ``search`` afterwards.
+        """
+        if not query_tokens or not self.chunks:
+            return []
+        n = len(self.chunks)
+        acc: dict[int, float] = {}
+        for term in set(query_tokens):
+            df = self._doc_freqs.get(term, 0)
+            if df == 0:
+                continue
+            idf = math.log(1 + (n - df + 0.5) / (df + 0.5))
+            for idx, tf in self._postings.get(term, ()):
+                doc_len = self._doc_lens[idx]
+                denom = tf + self.k1 * (1 - self.b + self.b * doc_len / self._avg_len)
+                acc[idx] = acc.get(idx, 0.0) + idf * (tf * (self.k1 + 1)) / denom
+        if not acc:
+            return []
+        if len(acc) <= pool:
+            return sorted(((s, i) for i, s in acc.items()), reverse=True)
+        import heapq
+
+        return heapq.nlargest(pool, ((s, i) for i, s in acc.items()))
+
     def search(self, query: str, top_k: int = 5) -> list[RetrievedChunk]:
         if not self.chunks:
             return []
@@ -184,11 +217,7 @@ class BM25Retriever(Retriever):
             token = next(iter(uniq_query))
             if self._doc_freqs.get(token, 0) > len(self.chunks) / 2:
                 return []
-        scored = sorted(
-            ((self._score_doc(query_tokens, i), i) for i in range(len(self.chunks))),
-            key=lambda pair: pair[0],
-            reverse=True,
-        )
+        scored = self._score_doc_fast(query_tokens)
         results: list[RetrievedChunk] = []
         for score, idx in scored:
             if score <= 0.0:

@@ -95,7 +95,7 @@ class Settings:
     retriever_rerank: bool = False
     retriever_gate: str = "bm25_dense"
     bm25_gate: float = 12.2
-    dense_gate: float = 0.88
+    dense_gate: float = 0.84
     edge_tts_voice: str = "vi-VN-HoaiMyNeural"
     edge_tts_rate: str = "+0%"
     official_hotline_label: str = "Đường dây nóng (chưa xác minh)"
@@ -278,7 +278,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
             f"RETRIEVER_GATE={retriever_gate!r} is invalid. Choose one of {{'none', 'bm25_dense'}}."
         )
     bm25_gate = _float_env("RETRIEVAL_BM25_GATE", 12.2)
-    dense_gate = _float_env("RETRIEVAL_DENSE_GATE", 0.88)
+    dense_gate = _float_env("RETRIEVAL_DENSE_GATE", 0.84)
     if bm25_gate < 0 or not (0 < dense_gate <= 1):
         raise ConfigError("Invalid retrieval gate thresholds.")
 

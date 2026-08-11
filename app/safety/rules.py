@@ -21,12 +21,17 @@ _EMERGENCY_PATTERNS = [
     r"tự sát",
     r"muốn chết",
     r"sốc phản vệ",
-    r"cháy",
+    r"cháy (nhà|rừng|xe|quần áo|đang cháy|không bị bắt|bắt lửa)",
+    r"đang cháy",
     r"hỏa hoạn",
     r"nguy hiểm đến tính mạng",
     r"đang bị tấn công",
     r"bị đánh gấp",
     r"khủng hoảng",
+    r"đốt nhà",
+    r"hack tài khoản",
+    r"tấn công mạng",
+    r"xâm nhập trái phép",
 ]
 
 _VIOLENCE_THREAT_PATTERNS = [
@@ -34,9 +39,13 @@ _VIOLENCE_THREAT_PATTERNS = [
     r"bạo lực",
     r"hành hung",
     r"bắt cóc",
-    r"cướp",
+    r"cướp (giật|xe|tài sản|ngân hàng|tiệm vàng|nhà dân)",
     r"xâm hại",
     r"hiếp dâm",
+    # Active victim statements: "bị chồng đánh", "tôi bị đánh"... (the
+    # person-named form excludes compounds like "đánh giá"/"đánh thuế").
+    r"bị (?:chồng|vợ|bố|mẹ|cha|chú|dì|hàng xóm|bạn trai|người yêu)\s+đánh(?!\s+giá)",
+    r"(?:tôi|con tôi|em tôi|bố tôi|mẹ tôi|chồng tôi|vợ tôi|người thân(?: của)? tôi)\s+(?:đang\s+|vừa\s+|mới\s+)?bị\s+đánh(?!\s+giá)",
 ]
 
 _LEGAL_PATTERNS = [
@@ -62,6 +71,33 @@ _CRIMINAL_PATTERNS = [
     r"bắt giữ",
     r"tố giác tội phạm",
 ]
+
+# Fake / rumored / future law signals — route to ORANGE/REFUSE because the
+# system must never "confirm" a law that does not exist in its verified
+# registry (data/law_status.json). This is hallucination prevention at the
+# router level (council T4).
+_FAKE_LAW_PATTERNS = [
+    # 4-digit numbers are never real NĐ/Thông tư numbers (max 3 digits)
+    r"(nghị định|nđ|thông tư|tt|quyết định)\s*(số|so)?\s*\d{4,}/",
+    # any decree cited with a future year (2031+) cannot be verified
+    r"(nghị định|nđ|thông tư|tt|quyết định)\s*(số|so)?\s*\d+/(203[1-9]|204\d)",
+    r"năm\s+20(3[1-9]|4\d)\s+(quy\s+định|có\s+hiệu\s+lực)",
+    r"luật\s+năm\s+20(3\d|4\d)",
+    r"luật\s+bãi\s+bỏ",
+    r"bộ\s+luật\s+\d{4}",
+    r"(facebook|zalo|mạng\s+xã\s+hội)\s+nói",
+    r"nghe\s+nói",
+    r"bạn\s+tôi\s+bảo",
+    r"sắp\s+bị\s+hủy",
+    r"chỉ\s+cần.*(nộp\s+ảnh|chụp\s+ảnh)",
+]
+
+# Citation pattern to verify against the law registry:
+# "Nghị định/NĐ/Thông tư/TT số? XXXX/YYYY" -> (number, year)
+_CITED_DECREE_RE = re.compile(
+    r"(?:nghị\s+định|nđ|thông\s+tư|tt|quyết\s+định|luật)\s*(?:số|so)?\s*(\d{1,4})/(20\d\d)",
+    re.IGNORECASE,
+)
 
 _OUT_OF_SCOPE_PATTERNS = [
     r"dự đoán (giá|xổ số|kết quả)",
@@ -89,11 +125,135 @@ _DOUBT_WORDS = [
     r"hả",
 ]
 
+# ---------------------------------------------------------------------------
+# Intent disambiguation (item: distinguish law-information questions from
+# dangerous situations).
+#
+# Our keyword patterns are conservative: "bạo lực", "xâm hại", "cấp cứu",
+# "hỏa hoạn" etc. are also textbook LAW TOPICS (Luật phòng chống bạo lực
+# gia đình, thủ tục cấp cứu, ...). Questioning ABOUT these topics is a
+# legitimate legal-information request, NOT an active emergency.
+#
+# Strategy: a RED hit is downgraded (allowed to fall through to ordinary
+# legal/safe routing) ONLY when ALL of the following hold:
+#   1. every emergency/violence hit is a "soft/topic" keyword (see
+#      _TOPIC_EMERGENCY_KW) -- hard signals (tự tử, đốt nhà, hack tài khoản,
+#      đang bị tấn công, ...) NEVER downgrade;
+#   2. the query carries a strong legal-information intent marker
+#      (_LEGAL_INFO_MARKERS) -- it is asking about a rule/procedure/citation;
+#   3. the query has NO victim/danger context marker (_DANGER_CONTEXT_MARKERS)
+#      -- e.g. "Tôi bị chồng bạo lực, luật quy định thế nào?" must stay RED.
+# ---------------------------------------------------------------------------
+
+# Soft/topic keywords whose presence ALONE does not prove an active danger.
+# EXACT raw pattern strings (as they appear in _EMERGENCY_PATTERNS /
+# _VIOLENCE_THREAT_PATTERNS) that merely name a law topic (Luật phòng chống
+# bạo lực gia đình, thủ tục cấp cứu, ...) and may appear inside legitimate
+# legal-information questions.
+_TOPIC_EMERGENCY_PATTERNS = {
+    r"bạo lực",
+    r"xâm hại",
+    r"cấp cứu",
+    r"hỏa hoạn",
+    r"hành hung",
+    r"tấn công mạng",
+    r"cháy (nhà|rừng|xe|quần áo|đang cháy|không bị bắt|bắt lửa)",
+}
+
+# Markers of a legal-information / procedural request (NOT a judgment plea).
+_LEGAL_INFO_MARKERS = [
+    r"thủ tục",
+    r"quy trình",
+    r"hồ sơ",
+    r"quy định",
+    r"trường hợp",
+    r"theo\s+(?:luat|n?đ|nghị định|quyết định|thông tư|bộ luật)",
+    r"luat\d+_\d+",
+    r"boluat\d+_\d+",
+    r"nd\d+_\d+",
+    r"nđ\s*\d+",
+    r"là gì",
+    r"ra sao",
+    r"như thế nào",
+    r"thế nào ạ",
+    r"khác gì",
+    r"khác không",
+    r"liên quan thế nào",
+    r"liên quan gì đến",
+    r"nói lại",
+    r"nghe lại",
+    r"hướng dẫn",
+    r"cho tôi hỏi về",
+    r"cho hỏi",
+    r"có những",
+    r"điều\s+\d+",
+    r"khoản\s+\d+",
+    r"có khác không",
+    r"quyền lợi",
+    r"chế độ",
+    r"theo quy định",
+    r"có được phép",
+    r"được phép",
+    r"phép làm",
+    r"đúng không",
+    r"có đúng không",
+    r"nghe facebook",
+    r"nghe nói",
+    r"bạn tôi bảo",
+    r"facebook nói",
+    r"zalo nói",
+    r"có bị hủy",
+    r"sắp bị hủy",
+]
+
+# Markers that the user (or someone close) is an ACTIVE victim / in danger.
+# Any of these overrides the legal-info downgrade -> stay RED.
+_DANGER_CONTEXT_MARKERS = [
+    r"tôi (?:đang )?bị",
+    r"bị đánh",
+    r"bị xâm hại",
+    r"bị hiếp",
+    r"bị cướp",
+    r"bị bắt cóc",
+    r"bị đe dọa",
+    r"bị bạo lực",
+    r"con tôi",
+    r"em tôi",
+    r"chồng tôi",
+    r"vợ tôi",
+    r"bố tôi",
+    r"mẹ tôi",
+    r"người thân (?:của )?tôi",
+    r"bị hành hung",
+    r"tôi bị đánh",
+    r"đang đe dọa tôi",
+    r"đe dọa đánh tôi",
+    r"đánh tôi",
+    r"tấn công tôi",
+    r"cứu tôi",
+    r"đang đe dọa",
+    r"bị chồng",
+    r"bị vợ",
+    r"đang bị (?:đánh|xâm|hiếp|cướp|bắt cóc|đe dọa|bạo lực|tấn công|hành hung|sát|khống chế)",
+    r"muốn (?:tự tử|tự sát|chết)",
+    r"đang cháy",
+    r"bị thương",
+    r"bị ngộ độc",
+    r"đau tim",
+    r"đột quỵ",
+    r"bị sốc",
+]
+
+# Compact compiled forms used by the intent helper functions below.
+_COMPILED_LEGAL_INFO = [re.compile(p, re.IGNORECASE) for p in _LEGAL_INFO_MARKERS]
+_COMPILED_DANGER = [re.compile(p, re.IGNORECASE) for p in _DANGER_CONTEXT_MARKERS]
+
 _COMPILED = [
     re.compile(pattern, re.IGNORECASE)
     for pattern in _EMERGENCY_PATTERNS
     + _VIOLENCE_THREAT_PATTERNS
     + _CRIMINAL_PATTERNS
+    + _FAKE_LAW_PATTERNS
     + _LEGAL_PATTERNS
     + _OUT_OF_SCOPE_PATTERNS
     + _DOUBT_WORDS
@@ -111,6 +271,7 @@ class RuleHits:
     violence: list[str] = field(default_factory=list)
     criminal: list[str] = field(default_factory=list)
     legal: list[str] = field(default_factory=list)
+    fake_law: list[str] = field(default_factory=list)
     out_of_scope: list[str] = field(default_factory=list)
     ambiguous: list[str] = field(default_factory=list)
 
@@ -132,6 +293,9 @@ def check_rules(normalized_text: str) -> RuleHits:
     for i, pat in enumerate(_CRIMINAL_PATTERNS):
         if _match(pat, text):
             hits.criminal.append(pat)
+    for i, pat in enumerate(_FAKE_LAW_PATTERNS):
+        if _match(pat, text):
+            hits.fake_law.append(pat)
     for i, pat in enumerate(_LEGAL_PATTERNS):
         if _match(pat, text):
             hits.legal.append(pat)
@@ -147,3 +311,35 @@ def check_rules(normalized_text: str) -> RuleHits:
 def normalize_query(text: str) -> str:
     """Lowercase + collapse whitespace (diacritics preserved)."""
     return " ".join(text.casefold().split())
+
+
+def is_soft_topic_emergency(hits: RuleHits) -> bool:
+    """True when EVERY emergency/violence hit is a soft law-topic keyword.
+
+    Hard, unambiguous danger signals (tự tử, đốt nhà, hack tài khoản, đe dọa,
+    bắt cóc, hiếp dâm, cướp, đang bị tấn công, xâm nhập trái phép, ...) are
+    NOT in this set, so a query carrying one can never be downgraded.
+    """
+    ev = hits.emergency + hits.violence
+    if not ev:
+        return False
+    return all(_is_topic_pattern(p) for p in ev)
+
+
+def _is_topic_pattern(pattern: str) -> bool:
+    return pattern in _TOPIC_EMERGENCY_PATTERNS
+
+
+def has_legal_info_intent(normalized_text: str) -> bool:
+    """True when the query reads as a legal-information/procedural request."""
+    text = normalized_text.casefold()
+    return any(pat.search(text) for pat in _COMPILED_LEGAL_INFO)
+
+
+def has_danger_context(normalized_text: str) -> bool:
+    """True when the user (or a relative) is an active victim / in danger.
+
+    Overrides the legal-info downgrade so genuine emergencies stay RED.
+    """
+    text = normalized_text.casefold()
+    return any(pat.search(text) for pat in _COMPILED_DANGER)
