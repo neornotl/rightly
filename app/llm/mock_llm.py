@@ -31,7 +31,7 @@ class MockLLM(BaseLLM):
         if not chunks:
             raise ValueError("MockLLM requires at least one retrieved chunk.")
 
-        top = self._pick_content_chunk(chunks)
+        top = self._pick_content_chunk(chunks, query)
         source_ids = list(dict.fromkeys(c.source_id for c in chunks))
 
         # Extract topic/keywords from query for template
@@ -105,25 +105,37 @@ class MockLLM(BaseLLM):
             return actions[0].strip()
         return "có thể liên hệ cơ quan chức năng để được hỗ trợ"
 
-    @staticmethod
-    def _pick_content_chunk(chunks: list[RetrievedChunk]) -> RetrievedChunk:
-        """Prefer the top chunk that is actual content (not a title/warning)."""
+    def _pick_content_chunk(self, chunks: list[RetrievedChunk], query: str = "") -> RetrievedChunk:
+        """Prefer chunk most relevant to query (contains query keywords)."""
+        query_kws = set(re.findall(r"\w+", query.lower()))
+        best = None
+        best_score = -1
         for chunk in chunks:
             first_line = chunk.text.strip().splitlines()[0] if chunk.text.strip() else ""
             if first_line.startswith("#"):
                 continue
             if "LƯU Ý QUAN TRỌNG" in chunk.text[:200].upper():
                 continue
-            return chunk
-        return chunks[0]
+            # Score by keyword overlap
+            text_lower = chunk.text.lower()
+            score = sum(1 for kw in query_kws if kw in text_lower)
+            if score > best_score:
+                best_score = score
+                best = chunk
+        return best or chunks[0]
 
     @staticmethod
     def _summarize(text: str, max_sentences: int = 2) -> str:
         import re
+        # Priority: extract sentences with numbers (ages, years, months, percentages)
         sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
         clean = [s for s in sentences if not s.startswith(("#", "*", "-", ">", "="))]
         if not clean:
             clean = sentences
+        # Boost sentences with numbers
+        def num_score(s):
+            return len(re.findall(r"\d+", s))
+        clean.sort(key=num_score, reverse=True)
         return " ".join(clean[:max_sentences])
 
     @staticmethod
