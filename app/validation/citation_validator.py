@@ -35,7 +35,7 @@ class CitationIssue:
 @dataclass(frozen=True)
 class CitationVerdict:
     ok: bool
-    issues: list[CitationIssue] = field(default_factory=list)
+    issues: list = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -82,10 +82,13 @@ class CitationValidator:
         self,
         answer: GroundedAnswer,
         retrieved_sources: Optional[set[str]] = None,
-    ) -> CitationVerdict:
+    ):
         retrieved_sources = retrieved_sources or set()
-        issues: list[CitationIssue] = []
+        issues: list = []
+        valid_citations = 0
+        total_citations = 0
         for sid in dict.fromkeys(answer.source_ids):
+            total_citations += 1
             info = self.sources.get(sid)
             if info is None:
                 issues.append(
@@ -113,6 +116,7 @@ class CitationValidator:
                         replacement=replacement,
                     )
                 )
+                continue
             elif sid not in retrieved_sources:
                 issues.append(
                     CitationIssue(
@@ -124,4 +128,10 @@ class CitationValidator:
                         ),
                     )
                 )
-        return CitationVerdict(ok=not issues, issues=issues)
+                continue
+            # Valid current citation
+            valid_citations += 1
+        # If no citations at all, pass (no citations to validate).
+        # If citations exist, require at least one valid current citation.
+        ok = (total_citations == 0) or (valid_citations > 0)
+        return CitationVerdict(ok=ok, issues=issues)

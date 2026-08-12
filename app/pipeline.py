@@ -382,8 +382,9 @@ class Pipeline:
                         )
                         answer = None
                     else:
-                        # Sanitize AFTER validation: keep only retrieved sources.
-                        kept = [sid for sid in raw_ids if sid in retrieved]
+                        # Sanitize AFTER validation: keep only retrieved AND non-outdated sources.
+                        outdated_sids = {i.source_id for i in verdict.issues if i.kind == "outdated"}
+                        kept = [sid for sid in raw_ids if sid in retrieved and sid not in outdated_sids]
                         answer = GroundedAnswer(
                             answer_text=answer.answer_text,
                             spoken_citation=answer.spoken_citation,
