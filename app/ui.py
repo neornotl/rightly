@@ -10,13 +10,23 @@ secrets or raw internal prompts.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+# Streamlit Cloud runs `streamlit run app/ui.py`: only the *script dir*
+# (app/) is prepended to sys.path, so `import app...` breaks. Put the repo
+# root (parent of app/) on sys.path explicitly.
+_APP_ROOT = Path(__file__).resolve().parent.parent
+if str(_APP_ROOT) not in sys.path:
+    sys.path.insert(0, str(_APP_ROOT))
+
 try:
     import streamlit as st  # type: ignore
 except ImportError:  # pragma: no cover - reported to user
     st = None
 
-from app.config import load_settings, safe_settings_summary
-from app.pipeline import Pipeline
+from app.config import load_settings, safe_settings_summary  # noqa: E402 - needs sys.path fix above
+from app.pipeline import Pipeline  # noqa: E402
 
 if st is None:
     raise SystemExit(
