@@ -7,9 +7,9 @@
       "id": "bo-phan-mot-cua-xa-binh-minh",
       "category": "bo_phan_mot_cua",
       "label": "Bộ phận một cửa xã Bình Minh",
-      "phone": "1900XXXX",
-      "verified": false,
-      "note": "Placeholder — cần xác minh bằng cuộc gọi thử trước khi triển khai"
+      "phone": "0373887307",
+      "verified": true,
+      "note": "Đã xác minh bằng cuộc gọi thử (P, 12/08)"
     },
     {
       "id": "cong-an-xa-binh-minh",
