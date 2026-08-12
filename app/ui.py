@@ -1,4 +1,4 @@
-"""Streamlit UI for Tieng Lang (optional dependency).
+"""Streamlit UI for Rightly (optional dependency).
 
 Run with:
     pip install -r requirements-optional.txt
@@ -10,13 +10,23 @@ secrets or raw internal prompts.
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+# Streamlit Cloud runs `streamlit run app/ui.py`: only the *script dir*
+# (app/) is prepended to sys.path, so `import app...` breaks. Put the repo
+# root (parent of app/) on sys.path explicitly.
+_APP_ROOT = Path(__file__).resolve().parent.parent
+if str(_APP_ROOT) not in sys.path:
+    sys.path.insert(0, str(_APP_ROOT))
+
 try:
     import streamlit as st  # type: ignore
 except ImportError:  # pragma: no cover - reported to user
     st = None
 
-from app.config import load_settings, safe_settings_summary
-from app.pipeline import Pipeline
+from app.config import load_settings, safe_settings_summary  # noqa: E402 - needs sys.path fix above
+from app.pipeline import Pipeline  # noqa: E402
 
 if st is None:
     raise SystemExit(
@@ -25,6 +35,27 @@ if st is None:
     )
 
 st.set_page_config(page_title="Rightly (DEMO)", layout="wide")
+
+# Council R20 (nemotron-nano): elderly-friendly CSS — bigger fonts, larger
+# click targets, darker captions (Streamlit defaults are too small for 65-80).
+st.markdown(
+    """
+    <style>
+      html, body, [class*="st-"], .stMarkdown p, .stButton button {
+        font-size: 18px !important;
+      }
+      .stButton button, [data-testid="stLinkButton"] a, .stPopover button {
+        min-height: 48px;
+      }
+      .stCaption, [data-testid="stCaptionContainer"] {
+        color: #444 !important;
+      }
+      h1 { font-size: 1.9rem !important; }
+      h2, h3 { font-size: 1.4rem !important; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 settings = load_settings()
 
@@ -36,9 +67,10 @@ def get_pipeline() -> Pipeline:
 
 pipeline = get_pipeline()
 
-st.title("Rightly - DEMO")
+st.title("Rightly - Tư vấn pháp luật")
 st.caption(
-    "DEMO - không phải kênh chính thức. Dữ liệu mẫu SYNTHETIC, không phải hướng dẫn hành chính thật."
+    "Trả lời dựa trên văn bản pháp luật thật (Luật, Nghị định, Thông tư). "
+    "Bản dùng thử - không phải kênh chính thức, không thay thế cán bộ."
 )
 st.warning(
     "Cảnh báo: bản này là môi trường thử nghiệm. Rightly không phải cơ "
@@ -56,16 +88,19 @@ def _render_connect_and_slip(data: dict, session_id: str) -> None:
     Privacy: phone numbers are shown only when verified; the slip never
     collects personal data. Nothing here leaves the browser.
     """
-    from app.contacts import default_contact, find_contact
+    from app.contacts import default_contact
     from app.forms import build_registration_slip
 
-    contact = find_contact("bo-phan-mot-cua-xa-binh-minh") or default_contact()
+    contact = default_contact()
     answer = data.get("answer") or {}
 
     st.divider()
     st.markdown("#### 📞 Bạn có muốn kết nối với cơ quan không?")
     if contact is None:
-        st.info("Chưa có đầu mối liên hệ trong danh bạ (P cần xác minh).")
+        st.info(
+            "Chưa có đầu mối liên hệ trực tiếp đã xác minh. Bạn có thể liên hệ "
+            "Bộ phận một cửa nơi cư trú hoặc gọi tổng đài 1022 để được hướng dẫn."
+        )
         return
     st.markdown(f"**{contact.label}**")
     if contact.callable:
@@ -79,8 +114,8 @@ def _render_connect_and_slip(data: dict, session_id: str) -> None:
             st.caption("Không muốn gọi? Đóng hộp này — không có cuộc gọi nào được mở.")
     else:
         st.warning(
-            "Số điện thoại chưa được xác minh (placeholder) — P phải gọi thử "
-            "trước khi đưa vào demo public. Bản demo không mở quay số với số ảo."
+            "Số điện thoại chưa được xác minh thực tế (đang là chỗ trống tạm) — "
+            "bản demo không mở quay số với số chưa kiểm chứng."
         )
     if contact.note:
         st.caption(contact.note)
@@ -175,18 +210,19 @@ if "last_result" in st.session_state:
     }.get(decision["zone"], "")
     st.subheader(f"Kết quả {zone_color}")
     st.markdown(
-        f"**Zone:** {decision['zone']} | **Action:** {decision['action']} "
-        f"| **Cần người:** {decision['requires_human']}"
+        f"**Mức độ xử lý:** {decision['zone']} | "
+        f"**Hướng xử lý:** {decision['action']} | "
+        f"**Cần cán bộ hỗ trợ:** {'Có' if decision['requires_human'] else 'Không'}"
     )
-    st.markdown(f"**Reason codes:** `{', '.join(decision['reason_codes'])}`")
+    st.markdown(f"**Lý do:** `{', '.join(decision['reason_codes'])}`")
 
     if data.get("answer"):
         st.markdown("#### Câu trả lời")
         st.write(data["answer"]["answer_text"])
-        st.markdown("#### Spoken citation")
+        st.markdown("#### Phần nhắc (kèm câu trả lời)")
         st.write(data["answer"]["spoken_citation"])
         if data["answer"]["limitations"]:
-            st.markdown("#### Giới hạn")
+            st.markdown("#### Lưu ý")
             for lim in data["answer"]["limitations"]:
                 st.markdown(f"- {lim}")
         _render_connect_and_slip(data, session_id)
@@ -194,17 +230,24 @@ if "last_result" in st.session_state:
         st.markdown("#### Hướng dẫn")
         st.write(decision["user_message"])
 
-    st.markdown("#### Nguồn (retrieved chunks)")
-    for chunk in data["chunks"][:3]:
-        st.markdown(f"- `{chunk['source_id']}::{chunk['chunk_id']}` score={chunk['score']}")
-
-    st.markdown("#### Latency")
-    st.write(data["latencies_ms"])
+    with st.expander("Chi tiết kỹ thuật"):
+        st.markdown("#### Nguồn (retrieved chunks)")
+        for chunk in data["chunks"][:3]:
+            st.markdown(f"- `{chunk['source_id']}::{chunk['chunk_id']}` score={chunk['score']}")
+        st.markdown("#### Latency")
+        st.write(data["latencies_ms"])
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        if st.button("🔁 Nói lại"):
-            if data.get("answer"):
+        if st.button("🔁 Nghe lại"):
+            audio_path = pipeline.settings.resolved_results_dir() / f"{session_id}.wav"
+            if audio_path.exists() and audio_path.stat().st_size > 0:
+                st.audio(str(audio_path))
+            elif data.get("answer"):
+                st.warning(
+                    "Chế độ thử nghiệm hiện không tạo giọng đọc (TTS chưa kích hoạt "
+                    "trên máy chủ này). Xem nội dung bên dưới:"
+                )
                 st.info(data["answer"]["answer_text"])
     with c2:
         if st.button("🐢 Nói chậm hơn"):

@@ -192,10 +192,15 @@ def _multi_env(prefix: str, key1: str) -> tuple[str, ...]:
 
 def load_settings(env_file: Optional[Path] = None) -> Settings:
     """Build :class:`Settings` from environment variables with validation."""
+    explicit_env = env_file is not None
     if env_file is None:
         env_file = Path.cwd() / ".env"
     _load_env_file(env_file)
-    _merge_streamlit_secrets()
+    # Hermetic test support: merge Streamlit secrets only when no explicit
+    # env file was requested (tests pass their own file to stay isolated
+    # from .streamlit/secrets.toml on disk).
+    if not explicit_env:
+        _merge_streamlit_secrets()
 
     app_mode = os.environ.get("APP_MODE", "mock").strip().lower()
     asr_backend = os.environ.get("ASR_BACKEND", "mock").strip().lower()

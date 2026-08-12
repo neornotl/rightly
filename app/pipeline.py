@@ -13,6 +13,7 @@ Privacy guarantees implemented here:
 
 from __future__ import annotations
 
+import logging
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -36,6 +37,8 @@ from app.schemas import GroundedAnswer, PipelineResult, UserQuery
 from app.tts.base import BaseTTS
 from app.tts.mock_tts import MockTTS
 
+logger = logging.getLogger(__name__)
+
 _MIN_QUERY_CHARS = 3
 
 
@@ -48,36 +51,46 @@ def make_asr(settings: Settings) -> BaseASR:
 
 
 def make_retriever(settings: Settings) -> Retriever:
-    chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
-    if settings.retrieval_backend == "hybrid":
-        real_file = settings.chunks_dir / "real_chunks.jsonl"
-        if real_file.exists():
-            chunks_file = real_file
-            cache_path = settings.chunks_dir / "real_embeddings.npz"
-            exclude_demo = settings.app_mode != "mock"
-        else:
-            # F5 fix: demo fallback must not silently empty out. When a real
-            # corpus is required (non-mock), fail loudly; in mock mode use
-            # the demo chunks with their OWN cache and no demo filtering.
-            if settings.app_mode != "mock":
-                raise RuntimeError(
-                    "RETRIEVAL_BACKEND=hybrid requires data/chunks/real_chunks.jsonl "
-                    "(run scripts/crawl_vbpl.py + scripts/ocr_vbpl.py first)."
-                )
-            chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
-            cache_path = settings.chunks_dir / "demo_embeddings.npz"
-            exclude_demo = False
-        from app.retrieval.hybrid_retriever import HybridRetriever
+    # Real legal corpus first (92 vbpl: Luật, Nghị định, Thông tư). The demo
+    # (synthetic "xã Bình Minh") corpus is only a dev/mock fallback.
+    real_file = settings.chunks_dir / "real_chunks.jsonl"
+    demo_file = settings.chunks_dir / "demo_chunks.jsonl"
+    use_real = real_file.exists()
+    if use_real:
+        chunks_file = real_file
+        cache_path = settings.chunks_dir / "real_embeddings.npz"
+        exclude_demo = settings.app_mode != "mock"
+    else:
+        if settings.app_mode != "mock":
+            raise RuntimeError(
+                "No real legal corpus found: data/chunks/real_chunks.jsonl is "
+                "missing (build it with the ingest pipeline first)."
+            )
+        chunks_file = demo_file
+        cache_path = settings.chunks_dir / "demo_embeddings.npz"
+        exclude_demo = False
 
-        return HybridRetriever.from_chunks(
-            DocumentLoader.load_chunks(chunks_file),
-            cache_path=cache_path,
-            exclude_demo=exclude_demo,
-            rerank=settings.retriever_rerank,
-            gate=settings.retriever_gate,
-            bm25_gate=settings.bm25_gate,
-            dense_gate=settings.dense_gate,
-        )
+    if settings.retrieval_backend == "hybrid":
+        try:
+            from app.retrieval.hybrid_retriever import HybridRetriever
+
+            return HybridRetriever.from_chunks(
+                DocumentLoader.load_chunks(chunks_file),
+                cache_path=cache_path,
+                exclude_demo=exclude_demo,
+                rerank=settings.retriever_rerank,
+                gate=settings.retriever_gate,
+                bm25_gate=settings.bm25_gate,
+                dense_gate=settings.dense_gate,
+            )
+        except (ImportError, ModuleNotFoundError) as exc:
+            # Council R20: sentence_transformers/torch (~2GB) cannot install on
+            # Streamlit Cloud free tier -> degrade gracefully to BM25 instead
+            # of crashing the app at boot.
+            logger.warning(
+                "Hybrid retrieval unavailable (%s); falling back to BM25.", exc
+            )
+            return BM25Retriever.from_jsonl(chunks_file)
     if settings.retrieval_backend != "bm25":
         raise ValueError(f"Unsupported retrieval backend: {settings.retrieval_backend}")
     return BM25Retriever.from_jsonl(chunks_file)
@@ -125,9 +138,16 @@ def _build_llm(settings: Settings, backend: str) -> BaseLLM:
 
 def make_tts(settings: Settings) -> BaseTTS:
     if settings.tts_backend == "edge":
-        from app.tts.edge_tts import EdgeTTS
+        from app.tts.fallback import TTSFallback
 
-        return EdgeTTS(voice=settings.edge_tts_voice, rate=settings.edge_tts_rate)
+        return TTSFallback(
+            cache_dir=settings.resolved_results_dir() / "tts_cache",
+            output_format="wav",
+        )
+    if settings.tts_backend == "gtts":
+        from app.tts.gtts_adapter import GTTS
+
+        return GTTS(lang="vi", slow=False, output_format="wav")
     return MockTTS()
 
 

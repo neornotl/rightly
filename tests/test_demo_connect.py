@@ -10,14 +10,14 @@ from app.forms import build_registration_slip
 
 def test_contacts_load_from_disk():
     contacts = all_contacts()
-    assert len(contacts) >= 1
+    assert isinstance(contacts, tuple)
     assert all(c.id for c in contacts)
 
 
-def test_find_contact_by_id():
-    c = find_contact("bo-phan-mot-cua-xa-binh-minh")
-    assert c is not None
-    assert c.category == "bo_phan_mot_cua"
+def test_binhminh_contacts_removed():
+    """Council/user decision: no fake xã Bình Minh contacts in the book."""
+    assert find_contact("bo-phan-mot-cua-xa-binh-minh") is None
+    assert find_contact("cong-an-xa-binh-minh") is None
 
 
 def test_find_contact_missing_returns_none():
@@ -26,12 +26,12 @@ def test_find_contact_missing_returns_none():
 
 def test_find_by_category_orders_verified_first():
     hits = find_by_category("bo_phan_mot_cua")
-    assert hits and hits[0].id == "bo-phan-mot-cua-xa-binh-minh"
+    assert isinstance(hits, tuple)
+    assert all(c.category == "bo_phan_mot_cua" for c in hits)
 
 
-def test_default_contact_prefers_one_stop():
-    assert default_contact() is not None
-    assert default_contact().category in {"bo_phan_mot_cua", "cong_an"}
+def test_default_contact_returns_none_when_book_empty():
+    assert default_contact() is None
 
 
 def test_unverified_phone_is_not_callable():

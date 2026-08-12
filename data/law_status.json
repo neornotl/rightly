@@ -134,17 +134,6 @@
       "status": "expired",
       "verified_on": "2026-08-09"
     },
-    "demo_binhminh_procedures": {
-      "ky_hieu": "DEMO-SYNTHETIC",
-      "loai": "demo",
-      "ngay_ban_hanh": "2026-08-06",
-      "ngay_hieu_luc": "2026-08-06",
-      "trich_yeu": "Hướng dẫn thủ tục hành chính DEMO tại xã Bình Minh (DỮ LIỆU MẪU HƯ CẤU)",
-      "expired_on": null,
-      "replaced_by": null,
-      "note": "Nguồn DEMO/SYNTHETIC do đội chuẩn bị Tiếng Làng tạo ra, KHÔNG phải văn bản pháp luật thật. Đăng ký chỉ để demo vận hành; không bao giờ dùng làm cơ sở trả lời câu hỏi thật.",
-      "status": "demo_synthetic"
-    },
     "boluat91_2015": {
       "ky_hieu": "91/2015/QH13",
       "loai": "Bộ luật",

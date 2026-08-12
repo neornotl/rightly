@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+from pathlib import Path
 
 from app.config import Settings
 from app.pipeline import Pipeline
@@ -178,23 +180,37 @@ def test_hallucinated_citation_rejected_by_pipeline(tmp_path):
         "data/law_status.json",
         tmp_path / "data" / "law_status.json",
     )
+    # Corpus must be real legal chunks (demo removed from runtime).
+    # nd123_2015 = Nghị định 123/2015/NĐ-CP về Hộ tịch (matches "hộ tịch" query).
+    real = Path("data/chunks/real_chunks.jsonl")
+    chunks_tmp = tmp_path / "data" / "chunks"
+    chunks_tmp.mkdir(parents=True, exist_ok=True)
+    with real.open(encoding="utf-8") as src, (chunks_tmp / "real_chunks.jsonl").open(
+        "w", encoding="utf-8"
+    ) as dst:
+        for _ in range(2):
+            line = src.readline()
+            if line:
+                dst.write(line)
     pipeline = _pipeline(tmp_path, app_mode="local")
 
     class FakeLLM:
         name = "fake"
 
         def generate_answer(self, query, chunks, max_chars=2000):
+            # Hallucinate a source_id NOT in retrieved chunks (nd123_2015)
             return {
                 "answer_text": "câu trả lời bịa",
                 "spoken_citation": "",
-                "source_ids": ["demo_binhminh_procedures", "HALLUCINATED_SRC"],
+                "source_ids": ["HALLUCINATED_SRC"],
                 "limitations": [],
                 "next_step": "",
             }
 
     pipeline.llm = FakeLLM()  # type: ignore[assignment]
     session_id = pipeline.create_session()
-    result = pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu?")
+    # Query matching nd123_2015 (Nghị định 123/2015 về Hộ tịch)
+    result = pipeline.process_text(session_id, "Nghị định 123/2015/NĐ-CP về hộ tịch quy định gì?")
     assert result.decision.action == Action.REFUSE
     assert result.decision.zone == Zone.ORANGE
     assert "CITATION_UNSUPPORTED" in result.decision.reason_codes
