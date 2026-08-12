@@ -68,6 +68,14 @@ class ZaloAI_TTS(BaseTTS):
         self.output_format = output_format.lower()
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.api_url = "https://api.zalo.ai/v1/tts/synthesize"
+        # Circuit breaker: after a 429 burst the free tier stays exhausted for a
+        # while, so skip Zalo entirely for the cooldown window (fast-fail into
+        # the fallback chain instead of burning retry time).
+        self._rate_limited_until: float = 0.0
+
+    def _check_circuit_breaker(self) -> bool:
+        """True when the API key is in the 429 cooldown window."""
+        return time.monotonic() < self._rate_limited_until
 
     @staticmethod
     def _cache_key(text: str, voice: str, speed: float) -> str:
@@ -111,6 +119,9 @@ class ZaloAI_TTS(BaseTTS):
 
     def _synthesize_one(self, text: str, out_wav: Path) -> bool:
         """Synthesize a single <=2k chunk to a 16k mono WAV. Returns True on success."""
+        if self._check_circuit_breaker():
+            raise RuntimeError("Zalo AI TTS: in 429 cooldown, skipping")
+
         headers = {"apikey": self.api_key}
         data = {
             "input": text,
@@ -121,12 +132,13 @@ class ZaloAI_TTS(BaseTTS):
         # Whole cycle is retried: 429 from the synth call OR 404 on the audio
         # URL (URLs are single-use; a 404 means the URL was invalidated).
         last_exc: Exception | None = None
-        for attempt in range(5):
+        for attempt in range(3):
             try:
-                response = requests.post(self.api_url, headers=headers, data=data, timeout=60)
+                response = requests.post(self.api_url, headers=headers, data=data, timeout=30)
                 if response.status_code == 429:
                     last_exc = RuntimeError("Zalo AI TTS rate limit (429)")
-                    time.sleep(3.0 * (attempt + 1))
+                    self._rate_limited_until = time.monotonic() + 90.0  # circuit breaker
+                    time.sleep(1.5 * (attempt + 1))
                     continue
                 response.raise_for_status()
 
@@ -140,7 +152,7 @@ class ZaloAI_TTS(BaseTTS):
                 if not audio_url:
                     raise RuntimeError("Zalo AI TTS: no audio URL in response")
 
-                audio_resp = requests.get(audio_url, timeout=60)
+                audio_resp = requests.get(audio_url, timeout=30)
                 if audio_resp.status_code == 404:
                     last_exc = RuntimeError("Zalo AI TTS audio URL invalidated (404)")
                     time.sleep(1.0)
@@ -149,7 +161,8 @@ class ZaloAI_TTS(BaseTTS):
             except requests.exceptions.HTTPError as exc:
                 if getattr(exc.response, "status_code", None) == 429:
                     last_exc = exc
-                    time.sleep(3.0 * (attempt + 1))
+                    self._rate_limited_until = time.monotonic() + 90.0  # circuit breaker
+                    time.sleep(1.5 * (attempt + 1))
                     continue
                 raise RuntimeError(f"Zalo AI TTS request failed: {exc}") from exc
             except Exception as exc:
