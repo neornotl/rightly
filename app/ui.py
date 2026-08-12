@@ -1,4 +1,4 @@
-"""Streamlit UI for Tieng Lang (optional dependency).
+"""Streamlit UI for Rightly (optional dependency).
 
 Run with:
     pip install -r requirements-optional.txt

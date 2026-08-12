@@ -43,6 +43,9 @@ prototype*.py
 design_intent.py
 show_*.py
 demo_samples.py
+compare_tts_voices.py
+test_*.mp3
+test_*.wav
 
 # Crawl / ingest / finalize scripts (one-time use)
 scripts/crawl_*.py

@@ -125,9 +125,16 @@ def _build_llm(settings: Settings, backend: str) -> BaseLLM:
 
 def make_tts(settings: Settings) -> BaseTTS:
     if settings.tts_backend == "edge":
-        from app.tts.edge_tts import EdgeTTS
+        from app.tts.fallback import TTSFallback
 
-        return EdgeTTS(voice=settings.edge_tts_voice, rate=settings.edge_tts_rate)
+        return TTSFallback(
+            cache_dir=settings.resolved_results_dir() / "tts_cache",
+            output_format="wav",
+        )
+    if settings.tts_backend == "gtts":
+        from app.tts.gtts_adapter import GTTS
+
+        return GTTS(lang="vi", slow=False, output_format="wav")
     return MockTTS()
 
 
