@@ -10,7 +10,10 @@ google-genai>=1.0
 
 # TTS: httpx/requests for Zalo AI + FPT.AI adapters, edge-tts + gTTS fallbacks.
 # NOTE: Streamlit Cloud installs THIS file (requirements.txt), not
-# requirements-streamlit.txt — the whole import chain must resolve here.
+# requirements-streamlit.txt �?" the whole import chain must resolve here.
 requests>=2.31
 edge-tts>=6.1.0
 gTTS>=2.5.0
+
+# Retrieval: numpy is a top-level import of hybrid_retriever (R20 council).
+numpy>=1.26

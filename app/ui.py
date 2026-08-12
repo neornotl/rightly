@@ -26,6 +26,27 @@ if st is None:
 
 st.set_page_config(page_title="Rightly (DEMO)", layout="wide")
 
+# Council R20 (nemotron-nano): elderly-friendly CSS — bigger fonts, larger
+# click targets, darker captions (Streamlit defaults are too small for 65-80).
+st.markdown(
+    """
+    <style>
+      html, body, [class*="st-"], .stMarkdown p, .stButton button {
+        font-size: 18px !important;
+      }
+      .stButton button, [data-testid="stLinkButton"] a, .stPopover button {
+        min-height: 48px;
+      }
+      .stCaption, [data-testid="stCaptionContainer"] {
+        color: #444 !important;
+      }
+      h1 { font-size: 1.9rem !important; }
+      h2, h3 { font-size: 1.4rem !important; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 settings = load_settings()
 
 
@@ -79,8 +100,8 @@ def _render_connect_and_slip(data: dict, session_id: str) -> None:
             st.caption("Không muốn gọi? Đóng hộp này — không có cuộc gọi nào được mở.")
     else:
         st.warning(
-            "Số điện thoại chưa được xác minh (placeholder) — P phải gọi thử "
-            "trước khi đưa vào demo public. Bản demo không mở quay số với số ảo."
+            "Số điện thoại chưa được xác minh thực tế (đang là chỗ trống tạm) — "
+            "bản demo không mở quay số với số chưa kiểm chứng."
         )
     if contact.note:
         st.caption(contact.note)
@@ -175,18 +196,19 @@ if "last_result" in st.session_state:
     }.get(decision["zone"], "")
     st.subheader(f"Kết quả {zone_color}")
     st.markdown(
-        f"**Zone:** {decision['zone']} | **Action:** {decision['action']} "
-        f"| **Cần người:** {decision['requires_human']}"
+        f"**Mức độ xử lý:** {decision['zone']} | "
+        f"**Hướng xử lý:** {decision['action']} | "
+        f"**Cần cán bộ hỗ trợ:** {'Có' if decision['requires_human'] else 'Không'}"
     )
-    st.markdown(f"**Reason codes:** `{', '.join(decision['reason_codes'])}`")
+    st.markdown(f"**Lý do:** `{', '.join(decision['reason_codes'])}`")
 
     if data.get("answer"):
         st.markdown("#### Câu trả lời")
         st.write(data["answer"]["answer_text"])
-        st.markdown("#### Spoken citation")
+        st.markdown("#### Phần nhắc (kèm câu trả lời)")
         st.write(data["answer"]["spoken_citation"])
         if data["answer"]["limitations"]:
-            st.markdown("#### Giới hạn")
+            st.markdown("#### Lưu ý")
             for lim in data["answer"]["limitations"]:
                 st.markdown(f"- {lim}")
         _render_connect_and_slip(data, session_id)
@@ -194,20 +216,24 @@ if "last_result" in st.session_state:
         st.markdown("#### Hướng dẫn")
         st.write(decision["user_message"])
 
-    st.markdown("#### Nguồn (retrieved chunks)")
-    for chunk in data["chunks"][:3]:
-        st.markdown(f"- `{chunk['source_id']}::{chunk['chunk_id']}` score={chunk['score']}")
-
-    st.markdown("#### Latency")
-    st.write(data["latencies_ms"])
+    with st.expander("Chi tiết kỹ thuật"):
+        st.markdown("#### Nguồn (retrieved chunks)")
+        for chunk in data["chunks"][:3]:
+            st.markdown(f"- `{chunk['source_id']}::{chunk['chunk_id']}` score={chunk['score']}")
+        st.markdown("#### Latency")
+        st.write(data["latencies_ms"])
 
     c1, c2, c3 = st.columns(3)
     with c1:
         if st.button("🔁 Nghe lại"):
             audio_path = pipeline.settings.resolved_results_dir() / f"{session_id}.wav"
-            if audio_path.exists():
+            if audio_path.exists() and audio_path.stat().st_size > 0:
                 st.audio(str(audio_path))
             elif data.get("answer"):
+                st.warning(
+                    "Chế độ thử nghiệm hiện không tạo giọng đọc (TTS chưa kích hoạt "
+                    "trên máy chủ này). Xem nội dung bên dưới:"
+                )
                 st.info(data["answer"]["answer_text"])
     with c2:
         if st.button("🐢 Nói chậm hơn"):

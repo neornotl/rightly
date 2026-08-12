@@ -81,8 +81,10 @@ class ZaloAI_TTS(BaseTTS):
     def _cache_key(text: str, voice: str, speed: float) -> str:
         return hashlib.sha256(f"{voice}|{speed}|{text}".encode("utf-8")).hexdigest()[:24]
 
-    def _cached_path(self, text: str) -> Path:
-        return self.cache_dir / f"{self._cache_key(text, self.voice, self.speed)}.{self.output_format}"
+    def _cached_path(self, text: str, voice: Optional[str] = None, speed: Optional[float] = None) -> Path:
+        use_voice = voice if voice is not None else self.voice
+        use_speed = speed if speed is not None else self.speed
+        return self.cache_dir / f"{self._cache_key(text, use_voice, use_speed)}.{self.output_format}"
 
     @staticmethod
     def _split_for_limit(text: str, limit: int) -> list[str]:
@@ -158,6 +160,8 @@ class ZaloAI_TTS(BaseTTS):
                     time.sleep(1.0)
                     continue
                 audio_resp.raise_for_status()
+                if len(audio_resp.content) < 100:
+                    raise RuntimeError("Zalo AI TTS: empty audio payload")
             except requests.exceptions.HTTPError as exc:
                 if getattr(exc.response, "status_code", None) == 429:
                     last_exc = exc
@@ -212,12 +216,14 @@ class ZaloAI_TTS(BaseTTS):
         out.parent.mkdir(parents=True, exist_ok=True)
 
         use_speed = speed if speed is not None else self.speed
-        cached = self._cached_path(text)
+        cached = self._cached_path(text, self.voice, use_speed)
 
-        if cached.exists():
+        if cached.exists() and cached.stat().st_size > 0:
             if out != cached:
                 shutil.copy2(cached, out)
             return str(out)
+        elif cached.exists():  # corrupt 0-byte cache entry: drop it
+            cached.unlink(missing_ok=True)
 
         text = text.strip()
         if not text:

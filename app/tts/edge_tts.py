@@ -85,7 +85,7 @@ class EdgeTTS(BaseTTS):
 
         # Check cache
         cached = self._cached_path(text)
-        if cached.exists():
+        if cached.exists() and cached.stat().st_size > 0:
             if self.output_format == "wav" and cached.suffix == ".wav":
                 if out != cached:
                     shutil.copy2(cached, out)
@@ -94,6 +94,8 @@ class EdgeTTS(BaseTTS):
                 if out != cached:
                     shutil.copy2(cached, out)
                 return str(out)
+        elif cached.exists():  # corrupt 0-byte cache entry: drop it
+            cached.unlink(missing_ok=True)
 
         # Synthesize
         try:
@@ -107,6 +109,8 @@ class EdgeTTS(BaseTTS):
             ).save(str(mp3_path)))
         except Exception as exc:
             raise RuntimeError(f"Edge-TTS synthesis failed: {exc}") from exc
+        if not mp3_path.exists() or mp3_path.stat().st_size == 0:
+            raise RuntimeError("Edge-TTS: empty audio payload")
 
         # Convert to requested format
         if self.output_format == "wav":

@@ -14,9 +14,10 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Optional
 
+from app.logging_utils import scrub_text
 from app.schemas import PipelineResult
 
-LOG_DIR = Path(os.environ.get("LOG_DIR", "data/logs"))
+LOG_DIR = Path(os.environ.get("LOG_DIR", "logs"))
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 CSV_PATH = LOG_DIR / "wer_mos_log.csv"
@@ -69,21 +70,33 @@ class MetricsLogger:
                 ])
 
     def log(self, metrics: SessionMetrics):
+        # Council R20: scrub PII before persisting (phones, IDs, CMT).
+        scrubbed = SessionMetrics(
+            **{
+                **asdict(metrics),
+                "query_text": scrub_text(metrics.query_text or ""),
+                "normalized_query": scrub_text(metrics.normalized_query or ""),
+                "asr_transcript": scrub_text(metrics.asr_transcript or "")
+                if metrics.asr_transcript else None,
+                "feedback_text": scrub_text(metrics.feedback_text or "")
+                if metrics.feedback_text else None,
+            }
+        )
         # CSV
         with open(self.csv_path, "a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
-                metrics.session_id, metrics.timestamp, metrics.user_id_hash,
-                metrics.query_text, metrics.normalized_query, metrics.intent,
-                metrics.decision_zone, metrics.decision_action, metrics.reason_codes,
-                metrics.retrieval_ms, metrics.safety_ms, metrics.llm_ms,
-                metrics.tts_ms, metrics.total_ms, metrics.source_ids,
-                metrics.num_chunks, metrics.asr_confidence, metrics.asr_transcript,
-                metrics.wer, metrics.mos, metrics.user_rating, metrics.feedback_text
+                scrubbed.session_id, scrubbed.timestamp, scrubbed.user_id_hash,
+                scrubbed.query_text, scrubbed.normalized_query, scrubbed.intent,
+                scrubbed.decision_zone, scrubbed.decision_action, scrubbed.reason_codes,
+                scrubbed.retrieval_ms, scrubbed.safety_ms, scrubbed.llm_ms,
+                scrubbed.tts_ms, scrubbed.total_ms, scrubbed.source_ids,
+                scrubbed.num_chunks, scrubbed.asr_confidence, scrubbed.asr_transcript,
+                scrubbed.wer, scrubbed.mos, scrubbed.user_rating, scrubbed.feedback_text
             ])
         # JSONL (cho Elasticsearch/Logstash)
         with open(self.jsonl_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(asdict(metrics), ensure_ascii=False) + "\n")
+            f.write(json.dumps(asdict(scrubbed), ensure_ascii=False) + "\n")
 
     def export_summary(self) -> dict:
         """Tổng hợp nhanh cho dashboard."""

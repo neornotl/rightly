@@ -71,10 +71,12 @@ class GTTS(BaseTTS):
         use_slow = slow if slow is not None else self.slow
         cached = self._cached_path(text)
 
-        if cached.exists():
+        if cached.exists() and cached.stat().st_size > 0:
             if out != cached:
                 shutil.copy2(cached, out)
             return str(out)
+        elif cached.exists():  # corrupt 0-byte cache entry: drop it
+            cached.unlink(missing_ok=True)
 
         # Synthesize to MP3 first
         mp3_path = out.with_suffix(".mp3")
@@ -83,6 +85,8 @@ class GTTS(BaseTTS):
             tts.save(str(mp3_path))
         except Exception as exc:
             raise RuntimeError(f"gTTS synthesis failed: {exc}") from exc
+        if not mp3_path.exists() or mp3_path.stat().st_size == 0:
+            raise RuntimeError("gTTS: empty audio payload")
 
         # Convert to requested format
         if self.output_format == "wav":
