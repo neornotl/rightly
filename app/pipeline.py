@@ -13,6 +13,7 @@ Privacy guarantees implemented here:
 
 from __future__ import annotations
 
+import logging
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -35,6 +36,8 @@ from app.safety.rules import normalize_query
 from app.schemas import GroundedAnswer, PipelineResult, UserQuery
 from app.tts.base import BaseTTS
 from app.tts.mock_tts import MockTTS
+
+logger = logging.getLogger(__name__)
 
 _MIN_QUERY_CHARS = 3
 
@@ -67,17 +70,26 @@ def make_retriever(settings: Settings) -> Retriever:
             chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
             cache_path = settings.chunks_dir / "demo_embeddings.npz"
             exclude_demo = False
-        from app.retrieval.hybrid_retriever import HybridRetriever
+        try:
+            from app.retrieval.hybrid_retriever import HybridRetriever
 
-        return HybridRetriever.from_chunks(
-            DocumentLoader.load_chunks(chunks_file),
-            cache_path=cache_path,
-            exclude_demo=exclude_demo,
-            rerank=settings.retriever_rerank,
-            gate=settings.retriever_gate,
-            bm25_gate=settings.bm25_gate,
-            dense_gate=settings.dense_gate,
-        )
+            return HybridRetriever.from_chunks(
+                DocumentLoader.load_chunks(chunks_file),
+                cache_path=cache_path,
+                exclude_demo=exclude_demo,
+                rerank=settings.retriever_rerank,
+                gate=settings.retriever_gate,
+                bm25_gate=settings.bm25_gate,
+                dense_gate=settings.dense_gate,
+            )
+        except (ImportError, ModuleNotFoundError) as exc:
+            # Council R20: sentence_transformers/torch (~2GB) cannot install on
+            # Streamlit Cloud free tier -> degrade gracefully to BM25 instead
+            # of crashing the app at boot.
+            logger.warning(
+                "Hybrid retrieval unavailable (%s); falling back to BM25.", exc
+            )
+            return BM25Retriever.from_jsonl(chunks_file)
     if settings.retrieval_backend != "bm25":
         raise ValueError(f"Unsupported retrieval backend: {settings.retrieval_backend}")
     return BM25Retriever.from_jsonl(chunks_file)
