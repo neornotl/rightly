@@ -118,53 +118,55 @@ class ZaloAI_TTS(BaseTTS):
             "speed": self.speed,
         }
 
+        # Whole cycle is retried: 429 from the synth call OR 404 on the audio
+        # URL (URLs are single-use; a 404 means the URL was invalidated).
         last_exc: Exception | None = None
         for attempt in range(5):
             try:
                 response = requests.post(self.api_url, headers=headers, data=data, timeout=60)
                 if response.status_code == 429:
                     last_exc = RuntimeError("Zalo AI TTS rate limit (429)")
-                    # Free tier is heavily rate-limited: back off and retry.
                     time.sleep(3.0 * (attempt + 1))
                     continue
                 response.raise_for_status()
-                break
+
+                result = response.json()
+                if result.get("error_code") != 0:
+                    raise RuntimeError(
+                        f"Zalo AI TTS error {result.get('error_code')}: {result.get('message')}"
+                    )
+
+                audio_url = result.get("data", {}).get("url")
+                if not audio_url:
+                    raise RuntimeError("Zalo AI TTS: no audio URL in response")
+
+                audio_resp = requests.get(audio_url, timeout=60)
+                if audio_resp.status_code == 404:
+                    last_exc = RuntimeError("Zalo AI TTS audio URL invalidated (404)")
+                    time.sleep(1.0)
+                    continue
+                audio_resp.raise_for_status()
             except requests.exceptions.HTTPError as exc:
-                if response.status_code == 429:
+                if getattr(exc.response, "status_code", None) == 429:
                     last_exc = exc
                     time.sleep(3.0 * (attempt + 1))
                     continue
                 raise RuntimeError(f"Zalo AI TTS request failed: {exc}") from exc
             except Exception as exc:
                 raise RuntimeError(f"Zalo AI TTS request failed: {exc}") from exc
-        else:
-            raise RuntimeError(f"Zalo AI TTS failed after retries: {last_exc}")
 
-        result = response.json()
-        if result.get("error_code") != 0:
-            raise RuntimeError(
-                f"Zalo AI TTS error {result.get('error_code')}: {result.get('message')}"
-            )
-
-        audio_url = result.get("data", {}).get("url")
-        if not audio_url:
-            raise RuntimeError("Zalo AI TTS: no audio URL in response")
-
-        try:
-            audio_resp = requests.get(audio_url, timeout=60)
-            audio_resp.raise_for_status()
-        except Exception as exc:
-            raise RuntimeError(f"Zalo AI TTS download failed: {exc}") from exc
-
-        if self.output_format == "wav":
-            mp3_path = out_wav.with_suffix(".mp3")
-            mp3_path.write_bytes(audio_resp.content)
-            if not self._convert_to_wav(mp3_path, out_wav):
+            if self.output_format == "wav":
+                mp3_path = out_wav.with_suffix(".tmp.mp3")
+                mp3_path.write_bytes(audio_resp.content)
+                if self._convert_to_wav(mp3_path, out_wav):
+                    mp3_path.unlink(missing_ok=True)
+                    return True
                 mp3_path.rename(out_wav)  # ffmpeg unavailable: keep raw bytes
-            mp3_path.unlink(missing_ok=True)
-        else:
-            out_wav.write_bytes(audio_resp.content)
-        return out_wav.exists()
+            else:
+                out_wav.write_bytes(audio_resp.content)
+            return True
+
+        raise RuntimeError(f"Zalo AI TTS failed after retries: {last_exc}")
 
     def _concat_wavs(self, segments: list[Path], out: Path) -> bool:
         """Concatenate WAV segments with ffmpeg (all 16k mono s16)."""

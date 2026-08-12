@@ -203,8 +203,11 @@ if "last_result" in st.session_state:
 
     c1, c2, c3 = st.columns(3)
     with c1:
-        if st.button("🔁 Nói lại"):
-            if data.get("answer"):
+        if st.button("🔁 Nghe lại"):
+            audio_path = pipeline.settings.resolved_results_dir() / f"{session_id}.wav"
+            if audio_path.exists():
+                st.audio(str(audio_path))
+            elif data.get("answer"):
                 st.info(data["answer"]["answer_text"])
     with c2:
         if st.button("🐢 Nói chậm hơn"):
