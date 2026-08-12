@@ -24,21 +24,25 @@ class FPTAI_TTS(BaseTTS):
 
     name = "fpt_ai"
 
-    # Available voices (FPT.AI)
+    # Available voices (FPT.AI) — council R19 picks:
+    # banmai: neutral, warm, best overall (primary); thuminh: south female;
+    # linhsan: youthful; linh/mai/thuminh alternatives.
     VOICES = {
-        "leminh": "leminh",      # Male, deep, professional
-        "mai": "mai",            # Female, warm, clear
-        "linh": "linh",          # Female, young, energetic
-        "thuminh": "thuminh",    # Female, gentle
-        "quynh": "quynh",        # Female, standard
-        "hoa": "hoa",            # Female, soft
+        "banmai": "banmai",        # Female, neutral accent, warm (R19 primary)
+        "thuminh": "thuminh",      # Female, Southern, natural
+        "linhsan": "linhsan",      # Female, youthful
+        "linh": "linh",            # Female, young, energetic
+        "mai": "mai",              # Female, warm, clear
+        "leminh": "leminh",        # Male, deep, professional
+        "quynh": "quynh",          # Female, standard
+        "hoa": "hoa",              # Female, soft
     }
 
     def __init__(
         self,
         api_key: str,
-        voice: str = "mai",
-        speed: float = 0.9,       # Slightly slower for elderly
+        voice: str = "banmai",     # Council R19 primary
+        speed: float = 1.0,        # Council R19: default speed (0.9 sounded old)
         cache_dir: Path = Path("results/tts_cache"),
         output_format: str = "wav",
     ):

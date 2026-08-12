@@ -1,12 +1,11 @@
 """TTS Fallback Chain (F4): Primary → Fallback → Last Resort.
 
-Manages TTS backend selection with automatic fallback on failure.
-Priority (when API keys available):
-  1. Zalo AI TTS (best for Zalo OA integration, most natural VN)
-  2. FPT.AI TTS (high quality, free tier 500 chars/req)
-  3. Edge-TTS (good quality, no API key needed)
-  4. gTTS (decent, no API key needed)
-  5. MockTTS (never fails, last resort)
+Council R19 (12/08): Zalo free tier (1-2 req/min) is NOT viable as primary.
+  1. FPT.AI TTS      ← REQUIRED key (best natural VN voice, 20k req/mo free)
+  2. Zalo AI TTS     ← optional key (demoted, small quota)
+  3. Edge-TTS        ← always available (HoaiMyNeural, rate -15%, pitch +5Hz)
+  4. gTTS            ← always available (decent)
+  5. MockTTS         ← never fails, last resort
 """
 
 from __future__ import annotations
@@ -41,45 +40,48 @@ class TTSFallback(BaseTTS):
         self.output_format = output_format
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
-        # Build backend chain based on available API keys
+        # Build backend chain based on available API keys (council R19 order).
         backends = []
 
-        # 1. Zalo AI TTS (highest priority for Zalo OA)
-        zalo_key = os.environ.get("ZALO_AI_API_KEY")
-        if zalo_key:
-            try:
-                from app.tts.zalo_ai_tts import ZaloAI_TTS
-                backends.append(ZaloAI_TTS(
-                    api_key=zalo_key,
-                    voice="south_female",
-                    speed=0.95,
-                    cache_dir=self.cache_dir,
-                    output_format=output_format,
-                ))
-                logger.info("Zalo AI TTS enabled as primary")
-            except Exception as exc:
-                logger.warning(f"Failed to init Zalo AI TTS: {exc}")
-
-        # 2. FPT.AI TTS
+        # 1. FPT.AI TTS (primary per council R19: best voice, roomiest quota)
         fpt_key = os.environ.get("FPT_AI_API_KEY")
         if fpt_key:
             try:
                 from app.tts.fpt_ai_tts import FPTAI_TTS
+
                 backends.append(FPTAI_TTS(
                     api_key=fpt_key,
-                    voice="mai",
+                    voice="banmai",
+                    speed=1.0,
+                    cache_dir=self.cache_dir,
+                    output_format=output_format,
+                ))
+                logger.info("FPT.AI TTS enabled (primary)")
+            except Exception as exc:  # noqa: BLE001
+                logger.warning(f"Failed to init FPT.AI TTS: {exc}")
+
+        # 2. Zalo AI TTS (demoted from primary - free tier 1-2 req/min)
+        zalo_key = os.environ.get("ZALO_AI_API_KEY")
+        if zalo_key:
+            try:
+                from app.tts.zalo_ai_tts import ZaloAI_TTS
+
+                backends.append(ZaloAI_TTS(
+                    api_key=zalo_key,
+                    voice="south_female",
                     speed=0.9,
                     cache_dir=self.cache_dir,
                     output_format=output_format,
                 ))
-                logger.info("FPT.AI TTS enabled")
-            except Exception as exc:
-                logger.warning(f"Failed to init FPT.AI TTS: {exc}")
+                logger.info("Zalo AI TTS enabled")
+            except Exception as exc:  # noqa: BLE001
+                logger.warning(f"Failed to init Zalo AI TTS: {exc}")
 
-        # 3. Edge-TTS (always available, no API key)
+        # 3. Edge-TTS (always available; council R19: rate -15%, pitch +5Hz)
         backends.append(EdgeTTS(
             voice="hoaimy",
-            rate="-10%",
+            rate="-15%",
+            pitch="+5Hz",
             cache_dir=self.cache_dir,
             output_format=output_format,
         ))
@@ -119,6 +121,7 @@ class TTSFallback(BaseTTS):
                 kwargs = {}
                 if hasattr(backend, 'synthesize'):
                     import inspect
+
                     sig = inspect.signature(backend.synthesize)
                     if 'rate' in sig.parameters:
                         kwargs['rate'] = rate
@@ -131,9 +134,11 @@ class TTSFallback(BaseTTS):
 
                 result = backend.synthesize(text, output_path, **kwargs)
                 if i > 0:
-                    logger.warning(f"TTS fallback used: {backend.name} (primary {self._backends[0].name} failed)")
+                    logger.warning(
+                        f"TTS fallback used: {backend.name} (primary {self._backends[0].name} failed)"
+                    )
                 return result
-            except Exception as exc:
+            except Exception as exc:  # noqa: BLE001
                 last_error = exc
                 logger.warning(f"TTS backend {backend.name} failed: {exc}")
                 continue

@@ -7,3 +7,10 @@ python-dotenv>=1.0,<2.0
 streamlit>=1.40
 groq>=0.11
 google-genai>=1.0
+
+# TTS: httpx/requests for Zalo AI + FPT.AI adapters, edge-tts + gTTS fallbacks.
+# NOTE: Streamlit Cloud installs THIS file (requirements.txt), not
+# requirements-streamlit.txt — the whole import chain must resolve here.
+requests>=2.31
+edge-tts>=6.1.0
+gTTS>=2.5.0
