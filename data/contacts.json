@@ -1,23 +1,6 @@
 {
   "schema": 1,
-  "note": "Danh bạ người tư vấn / đầu mối chuyển tuyến. Chỉ hiển thị số khi verified=true. Chưa xác minh thì dùng lời thoại chung chung (placeholder). Không ghi nội dung này vào log.",
+  "note": "Danh bạ đầu mối chuyển tuyến. Chỉ hiển thị số khi verified=true (đã xác minh bằng cuộc gọi thử). Chưa có số xác minh thì app không hiển thị nút gọi. Không ghi nội dung danh bạ vào log.",
   "updated_on": null,
-  "contacts": [
-    {
-      "id": "bo-phan-mot-cua-xa-binh-minh",
-      "category": "bo_phan_mot_cua",
-      "label": "Bộ phận một cửa xã Bình Minh",
-      "phone": "0373887307",
-      "verified": true,
-      "note": "Đã xác minh bằng cuộc gọi thử (P, 12/08)"
-    },
-    {
-      "id": "cong-an-xa-binh-minh",
-      "category": "cong_an",
-      "label": "Công an xã Bình Minh",
-      "phone": "1900XXXX",
-      "verified": false,
-      "note": "Placeholder — dùng cho hướng dẫn vụ việc hình sự (CRIMINAL_MATTER)"
-    }
-  ]
+  "contacts": []
 }

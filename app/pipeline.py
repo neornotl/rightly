@@ -51,25 +51,26 @@ def make_asr(settings: Settings) -> BaseASR:
 
 
 def make_retriever(settings: Settings) -> Retriever:
-    chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
+    # Real legal corpus first (92 vbpl: Luật, Nghị định, Thông tư). The demo
+    # (synthetic "xã Bình Minh") corpus is only a dev/mock fallback.
+    real_file = settings.chunks_dir / "real_chunks.jsonl"
+    demo_file = settings.chunks_dir / "demo_chunks.jsonl"
+    use_real = real_file.exists()
+    if use_real:
+        chunks_file = real_file
+        cache_path = settings.chunks_dir / "real_embeddings.npz"
+        exclude_demo = settings.app_mode != "mock"
+    else:
+        if settings.app_mode != "mock":
+            raise RuntimeError(
+                "No real legal corpus found: data/chunks/real_chunks.jsonl is "
+                "missing (build it with the ingest pipeline first)."
+            )
+        chunks_file = demo_file
+        cache_path = settings.chunks_dir / "demo_embeddings.npz"
+        exclude_demo = False
+
     if settings.retrieval_backend == "hybrid":
-        real_file = settings.chunks_dir / "real_chunks.jsonl"
-        if real_file.exists():
-            chunks_file = real_file
-            cache_path = settings.chunks_dir / "real_embeddings.npz"
-            exclude_demo = settings.app_mode != "mock"
-        else:
-            # F5 fix: demo fallback must not silently empty out. When a real
-            # corpus is required (non-mock), fail loudly; in mock mode use
-            # the demo chunks with their OWN cache and no demo filtering.
-            if settings.app_mode != "mock":
-                raise RuntimeError(
-                    "RETRIEVAL_BACKEND=hybrid requires data/chunks/real_chunks.jsonl "
-                    "(run scripts/crawl_vbpl.py + scripts/ocr_vbpl.py first)."
-                )
-            chunks_file = settings.chunks_dir / "demo_chunks.jsonl"
-            cache_path = settings.chunks_dir / "demo_embeddings.npz"
-            exclude_demo = False
         try:
             from app.retrieval.hybrid_retriever import HybridRetriever
 

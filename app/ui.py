@@ -67,9 +67,10 @@ def get_pipeline() -> Pipeline:
 
 pipeline = get_pipeline()
 
-st.title("Rightly - DEMO")
+st.title("Rightly - Tư vấn pháp luật")
 st.caption(
-    "DEMO - không phải kênh chính thức. Dữ liệu mẫu SYNTHETIC, không phải hướng dẫn hành chính thật."
+    "Trả lời dựa trên văn bản pháp luật thật (Luật, Nghị định, Thông tư). "
+    "Bản dùng thử - không phải kênh chính thức, không thay thế cán bộ."
 )
 st.warning(
     "Cảnh báo: bản này là môi trường thử nghiệm. Rightly không phải cơ "
@@ -87,16 +88,19 @@ def _render_connect_and_slip(data: dict, session_id: str) -> None:
     Privacy: phone numbers are shown only when verified; the slip never
     collects personal data. Nothing here leaves the browser.
     """
-    from app.contacts import default_contact, find_contact
+    from app.contacts import default_contact
     from app.forms import build_registration_slip
 
-    contact = find_contact("bo-phan-mot-cua-xa-binh-minh") or default_contact()
+    contact = default_contact()
     answer = data.get("answer") or {}
 
     st.divider()
     st.markdown("#### 📞 Bạn có muốn kết nối với cơ quan không?")
     if contact is None:
-        st.info("Chưa có đầu mối liên hệ trong danh bạ (P cần xác minh).")
+        st.info(
+            "Chưa có đầu mối liên hệ trực tiếp đã xác minh. Bạn có thể liên hệ "
+            "Bộ phận một cửa nơi cư trú hoặc gọi tổng đài 1022 để được hướng dẫn."
+        )
         return
     st.markdown(f"**{contact.label}**")
     if contact.callable:

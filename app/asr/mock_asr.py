@@ -21,7 +21,7 @@ class MockASR(BaseASR):
     """
 
     name: str = "mock"
-    fallback_text: str = "Thủ tục cấp giấy xác nhận hộ khẩu tại xã Bình Minh?"
+    fallback_text: str = "Chế độ nghỉ hưu được quy định thế nào theo Luật Bảo hiểm xã hội?"
     transcript_file: Path = field(default=Path("data/sources/demo_transcript.txt"))
     latency_ms: float = 5.0
     used_fallback: bool = field(default=False, init=False)
