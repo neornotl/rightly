@@ -173,7 +173,6 @@ def test_hybrid_mode_fails_loudly_without_real_chunks(tmp_path):
 
 def test_hallucinated_citation_rejected_by_pipeline(tmp_path):
     """F2 integration: a hallucinated source_id must be caught, not filtered."""
-    import shutil
 
     (tmp_path / "data").mkdir(parents=True, exist_ok=True)
     shutil.copy(

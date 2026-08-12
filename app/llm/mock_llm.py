@@ -3,13 +3,19 @@
 No model, no API. Used as the default backend and as the safe fallback when a
 real backend fails. Never invents source IDs (only uses provided chunk
 source_ids).
+
+Round 19 council consensus: answers follow hotline agent structure:
+1. Chào & xác nhận → 2. Kết luận ngắn → 3. Hướng dẫn hành động →
+4. Trích dẫn mềm → 5. Mời hỏi tiếp
 """
 
 from __future__ import annotations
 
 import json
+import re
 
 from app.llm.base import BaseLLM
+from app.llm.prompts import TEMPLATES, shorten_spoken_citation
 from app.schemas import RetrievedChunk
 
 
@@ -24,34 +30,84 @@ class MockLLM(BaseLLM):
     ) -> dict:
         if not chunks:
             raise ValueError("MockLLM requires at least one retrieved chunk.")
+
         top = self._pick_content_chunk(chunks)
         source_ids = list(dict.fromkeys(c.source_id for c in chunks))
-        # Take a concise extract from the top chunk (first ~2 sentences).
-        body = top.text.strip()
-        answer = self._summarize(body)
-        answer = answer[:max_chars]
-        spoken = (
-            f"Thông tin lấy từ {top.metadata.title if top.metadata else top.source_id} "
-            f"({', '.join(source_ids)})."
-        )
+
+        # Extract topic/keywords from query for template
+        topic = self._extract_topic(query)
+        core = self._summarize(top.text)
+        action = self._extract_action(top.text)
+
+        # Build citation
+        citation = shorten_spoken_citation(f"theo {top.metadata.title if top.metadata else top.source_id}")
+
+        # Determine situation
+        situation = self._classify_situation(query, chunks)
+
+        # Fill template
+        if situation == "answer_full":
+            answer_text = TEMPLATES["answer_full"].format(
+                topic=topic, core=core, action=action, citation=citation
+            )
+        elif situation == "insufficient":
+            answer_text = TEMPLATES["insufficient"].format(citation=citation)
+        elif situation == "off_scope":
+            answer_text = TEMPLATES["off_scope"].format(agency="cơ quan có thẩm quyền", citation=citation)
+        elif situation == "expired":
+            answer_text = TEMPLATES["expired"].format(doc="văn bản cũ", replacement="văn bản mới", citation=citation)
+        elif situation == "clarify":
+            answer_text = TEMPLATES["clarify"].format(needed="thông tin chi tiết", citation=citation)
+        else:
+            answer_text = TEMPLATES["answer_full"].format(
+                topic=topic, core=core, action=action, citation=citation
+            )
+
+        spoken = f"Thông tin theo {citation}."
+        limitations = ["Đây là dữ liệu DEMO, không phải hướng dẫn chính thức."]
+        next_step = "Anh/chị cần em giải thích thêm phần nào không ạ?"
+
         return {
-            "answer_text": answer,
+            "answer_text": answer_text[:max_chars],
             "spoken_citation": spoken,
             "source_ids": source_ids,
-            "limitations": [
-                "Đây là dữ liệu DEMO, không phải hướng dẫn chính thức.",
-            ],
-            "next_step": "Bạn có muốn tôi nói lại hoặc hỏi nguồn ở đâu không?",
+            "limitations": limitations,
+            "next_step": next_step,
         }
+
+    def _classify_situation(self, query: str, chunks: list[RetrievedChunk]) -> str:
+        """Simple heuristic to pick template."""
+        query_lower = query.lower()
+        if any(kw in query_lower for kw in ["hết hiệu lực", "cũ", "trước đây"]):
+            return "expired"
+        if any(kw in query_lower for kw in ["gì", "sao", "thế nào", "?"]) and len(chunks) < 2:
+            return "clarify"
+        if any(kw in query_lower for kw in ["khẩn cấp", "113", "115", "gây án", "bị bắt"]):
+            return "criminal"
+        if any(kw in query_lower for kw in ["ngoài phạm vi", "không liên quan", "tự do ngôn luận", "tôn giáo"]):
+            return "off_scope"
+        return "answer_full"
+
+    def _extract_topic(self, query: str) -> str:
+        """Extract topic from query (simplified)."""
+        # Remove question words
+        topic = re.sub(r"^(làm sao|thế nào|như thế nào|bao nhiêu|khi nào|ở đâu|ai|gì|cái gì)\s+", "", query, flags=re.IGNORECASE)
+        topic = topic.strip("? ").strip()
+        if len(topic) > 30:
+            topic = topic[:30] + "..."
+        return topic or "vấn đề này"
+
+    def _extract_action(self, text: str) -> str:
+        """Extract actionable step from chunk text."""
+        # Look for verbs: nộp, đi, làm, đăng ký, cung cấp, chuẩn bị
+        actions = re.findall(r"(nộp|đi|làm|đăng ký|cung cấp|chuẩn bị|liên hệ|gọi|tới)[^.]{0,30}", text, re.IGNORECASE)
+        if actions:
+            return actions[0].strip()
+        return "có thể liên hệ cơ quan chức năng để được hỗ trợ"
 
     @staticmethod
     def _pick_content_chunk(chunks: list[RetrievedChunk]) -> RetrievedChunk:
-        """Prefer the top chunk that is actual content (not a title/warning).
-
-        Markdown title blocks ("# ...") and "LƯU Ý QUAN TRỌNG" intro blocks are
-        skipped so the stub answer reads like a real answer. Falls back to the
-        top-ranked chunk.
-        """
+        """Prefer the top chunk that is actual content (not a title/warning)."""
         for chunk in chunks:
             first_line = chunk.text.strip().splitlines()[0] if chunk.text.strip() else ""
             if first_line.startswith("#"):
@@ -62,9 +118,8 @@ class MockLLM(BaseLLM):
         return chunks[0]
 
     @staticmethod
-    def _summarize(text: str, max_sentences: int = 3) -> str:
+    def _summarize(text: str, max_sentences: int = 2) -> str:
         import re
-
         sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
         clean = [s for s in sentences if not s.startswith(("#", "*", "-", ">", "="))]
         if not clean:

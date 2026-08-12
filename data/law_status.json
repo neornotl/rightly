@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "verified_on": "2026-08-09",
+  "verified_on": "2026-08-12",
   "sources": {
     "nd123_2015": {
       "ky_hieu": "123/2015/NĐ-CP",
@@ -1117,6 +1117,138 @@
       "note": "Official text from congbao.chinhphu.vn (2026_48_374/2025/NĐ-CP.docx)",
       "status": "active_verified",
       "verified_on": "2026-08-10"
+    },
+    "nd135_2020": {
+      "ky_hieu": "135/2020/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "18-11-2020",
+      "ngay_hieu_luc": "01-01-2021",
+      "trich_yeu": "Quy định về tuổi nghỉ hưu",
+      "expired_on": "01-07-2025",
+      "replaced_by": "158/2025/NĐ-CP",
+      "note": "Hết hiệu lực từ 01/07/2025 theo Nghị định 158/2025/NĐ-CP. Chỉ giữ để tham khảo lịch sử.",
+      "status": "expired",
+      "verified_on": "2026-08-12"
+    },
+    "nd115_2015": {
+      "ky_hieu": "115/2015/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "11-11-2015",
+      "ngay_hieu_luc": "01-01-2016",
+      "trich_yeu": "Quy định chi tiết một số điều và biện pháp thi hành Luật Bảo hiểm xã hội",
+      "expired_on": "01-07-2025",
+      "replaced_by": "158/2025/NĐ-CP",
+      "note": "Hết hiệu lực từ 01/07/2025 theo Nghị định 158/2025/NĐ-CP. Chỉ giữ để tham khảo lịch sử.",
+      "status": "expired",
+      "verified_on": "2026-08-12"
+    },
+    "ttlt11_2025": {
+      "ky_hieu": "11/2025/TT-BLĐTBXH",
+      "loai": "Thông tư liên tịch",
+      "ngay_ban_hanh": "15-04-2025",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Hướng dẫn thi hành một số điều của Luật Việc làm về bảo hiểm thất nghiệp",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "TTLT hướng dẫn Luật Việc làm 74/2025/QH15 về BHTN",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "ttlt12_2025": {
+      "ky_hieu": "12/2025/TT-BLĐTBXH",
+      "loai": "Thông tư liên tịch",
+      "ngay_ban_hanh": "15-04-2025",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Hướng dẫn thi hành một số điều của Luật Bảo hiểm xã hội về bảo hiểm xã hội bắt buộc",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "TTLT hướng dẫn Luật BHXH 41/2024/QH15",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "ttlt13_2025": {
+      "ky_hieu": "13/2025/TT-BLĐTBXH",
+      "loai": "Thông tư liên tịch",
+      "ngay_ban_hanh": "15-04-2025",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Hướng dẫn thi hành một số điều của Luật Bảo hiểm y tế",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "TTLT hướng dẫn Luật BYT 25/2008/QH12 (sửa đổi)",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "ttlt14_2025": {
+      "ky_hieu": "14/2025/TT-BLĐTBXH",
+      "loai": "Thông tư liên tịch",
+      "ngay_ban_hanh": "15-04-2025",
+      "ngay_hieu_luc": "01-07-2025",
+      "trich_yeu": "Hướng dẫn thi hành một số điều của Luật Việc làm về bảo hiểm thất nghiệp",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "TTLT hướng dẫn Luật Việc làm 74/2025/QH15 về BHTN",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "nd161_2026": {
+      "ky_hieu": "161/2026/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "01-07-2026",
+      "ngay_hieu_luc": "01-07-2026",
+      "trich_yeu": "Quy định mức lương cơ sở 2.530.000 đồng/tháng và chế độ tiền thưởng đối với cán bộ, công chức, viên chức, lực lượng vũ trang",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "Thay thế Nghị định 73/2024/NĐ-CP. Mức lương cơ sở mới từ 01/07/2026: 2.530.000 đồng/tháng.",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "nd283_2026": {
+      "ky_hieu": "283/2026/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "01-07-2026",
+      "ngay_hieu_luc": "01-07-2026",
+      "trich_yeu": "Quy định xử phạt vi phạm hành chính trong lĩnh vực lao động, bảo hiểm xã hội, người lao động Việt Nam đi làm việc ở nước ngoài theo hợp đồng",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "Thay thế Nghị định 12/2022/NĐ-CP. Hiệu lực từ 01/07/2026.",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "nd293_2025": {
+      "ky_hieu": "293/2025/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "10-11-2025",
+      "ngay_hieu_luc": "01-01-2026",
+      "trich_yeu": "Quy định mức lương tối thiểu vùng đối với người lao động làm việc theo hợp đồng lao động",
+      "expired_on": null,
+      "replaced_by": null,
+      "note": "Hiệu lực từ 01/01/2026. Thay thế ND 74/2024. Vùng I: 5.310.000đ/tháng, II: 4.730.000đ, III: 4.140.000đ, IV: 3.700.000đ. Giờ: I 25.500đ, II 22.700đ, III 20.000đ, IV 17.800đ.",
+      "status": "active_verified",
+      "verified_on": "2026-08-12"
+    },
+    "nd74_2024": {
+      "ky_hieu": "74/2024/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "30-06-2024",
+      "ngay_hieu_luc": "01-07-2024",
+      "trich_yeu": "Quy định mức lương tối thiểu vùng đối với người lao động làm việc theo hợp đồng lao động",
+      "expired_on": "01-01-2026",
+      "replaced_by": "293/2025/NĐ-CP",
+      "note": "Hết hiệu lực từ 01/01/2026 theo Nghị định 293/2025/NĐ-CP. Mức cũ: Vùng I 4.960.000đ, II 4.410.000đ, III 3.860.000đ, IV 3.450.000đ. Chỉ giữ để tham khảo lịch sử.",
+      "status": "expired",
+      "verified_on": "2026-08-12"
+    },
+    "nd73_2024": {
+      "ky_hieu": "73/2024/NĐ-CP",
+      "loai": "Nghị định",
+      "ngay_ban_hanh": "30-06-2024",
+      "ngay_hieu_luc": "01-07-2024",
+      "trich_yeu": "Quy định mức lương cơ sở 2.340.000 đồng/tháng và chế độ tiền thưởng đối với cán bộ, công chức, viên chức, lực lượng vũ trang",
+      "expired_on": "01-07-2026",
+      "replaced_by": "161/2026/NĐ-CP",
+      "note": "Hết hiệu lực từ 01/07/2026 theo Nghị định 161/2026/NĐ-CP. Mức lương cơ sở cũ: 2.340.000 đồng/tháng (07/2024 - 06/2026). Chỉ giữ để tham khảo lịch sử.",
+      "status": "expired",
+      "verified_on": "2026-08-12"
     }
   }
 }
