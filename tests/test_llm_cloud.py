@@ -9,6 +9,7 @@ import pytest
 from app.llm.base import LLMError, is_retryable_llm_error, retry_transient
 from app.llm.gemini_llm import GeminiLLM
 from app.llm.groq_llm import GroqLLM
+from app.llm.pateway_llm import PatewayLLM
 from app.schemas import RetrievedChunk
 
 CHUNKS = [RetrievedChunk(source_id="ho_tich", chunk_id="ht-1", text="nội dung", score=0.9)]
@@ -237,3 +238,147 @@ def test_gemini_generate_answer_retries_transient(monkeypatch):
     out = llm.generate_answer("hỏi gì?", CHUNKS)
     assert out["answer_text"] == "ok"
     assert calls["n"] == 2
+
+
+# ---------- Pateway (OpenAI-compatible gateway, council R21) ----------
+
+
+class _FakePatewayCompletion:
+    def __init__(self, content: str):
+        self.choices = [type("Ch", (), {"message": type("M", (), {"content": content})})]
+
+
+def _fake_pateway_client(completion):
+    return type(
+        "C",
+        (),
+        {
+            "chat": type(
+                "Chat",
+                (),
+                {"completions": type("Comp", (), {"create": lambda self, **kw: completion})()},
+            )()
+        },
+    )()
+
+
+def test_pateway_available_only_with_key():
+    assert PatewayLLM().available is False
+    assert PatewayLLM(api_key="pk-x").available is True
+
+
+def test_pateway_generate_answer_ok(monkeypatch):
+    llm = PatewayLLM(api_key="pk-x", backoff_seconds=0)
+    payload = {
+        "answer_text": "trả lời",
+        "spoken_citation": "c",
+        "source_ids": ["ht-1"],
+        "limitations": [],
+        "next_step": "",
+    }
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: _fake_pateway_client(_FakePatewayCompletion(json.dumps(payload))),
+    )
+    out = llm.generate_answer("hỏi gì?", CHUNKS)
+    assert out["answer_text"] == "trả lời"
+    assert out["source_ids"] == ["ho_tich"]  # chunk_id ht-1 mapped to its source
+
+
+def test_pateway_generate_answer_retries_transient_then_succeeds(monkeypatch):
+    llm = PatewayLLM(api_key="pk-x", backoff_seconds=0)
+    calls = {"n": 0}
+    payload = {
+        "answer_text": "ok",
+        "spoken_citation": "c",
+        "source_ids": ["ht-1"],
+        "limitations": [],
+        "next_step": "",
+    }
+
+    def fake_create(self, **kwargs):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise RuntimeError("503 Service Unavailable")
+        return _FakePatewayCompletion(json.dumps(payload))
+
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
+    out = llm.generate_answer("hỏi gì?", CHUNKS)
+    assert out["answer_text"] == "ok"
+    assert calls["n"] == 2
+
+
+def test_pateway_generate_answer_non_json_raises_without_retry(monkeypatch):
+    llm = PatewayLLM(api_key="pk-x", backoff_seconds=0)
+    calls = {"n": 0}
+
+    def fake_create(self, **kwargs):
+        calls["n"] += 1
+        return _FakePatewayCompletion("không phải json")
+
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
+    with pytest.raises(LLMError, match="non-JSON"):
+        llm.generate_answer("hỏi gì?", CHUNKS)
+    assert calls["n"] == 1
+
+
+def test_pateway_generate_answer_no_key_raises():
+    with pytest.raises(LLMError, match="PATEWAY_API_KEY"):
+        PatewayLLM().generate_answer("hỏi gì?", CHUNKS)
+
+
+def test_pateway_classify_safe_true(monkeypatch):
+    llm = PatewayLLM(api_key="pk-x", backoff_seconds=0)
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: _fake_pateway_client(_FakePatewayCompletion(json.dumps({"safe": True}))),
+    )
+    assert llm.classify_safe("câu hỏi?", CHUNKS) is True
+
+
+def test_pateway_classify_safe_conservative_on_failure(monkeypatch):
+    llm = PatewayLLM(api_key="pk-x", backoff_seconds=0)
+
+    def fake_create(self, **kwargs):
+        raise ConnectionError("down")
+
+    monkeypatch.setattr(
+        llm,
+        "_get_client",
+        lambda: type(
+            "C",
+            (),
+            {
+                "chat": type(
+                    "Chat", (), {"completions": type("Comp", (), {"create": fake_create})()}
+                )()
+            },
+        )(),
+    )
+    assert llm.classify_safe("câu hỏi?", CHUNKS) is False

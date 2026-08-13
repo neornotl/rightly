@@ -49,6 +49,10 @@ def _merge_streamlit_secrets() -> None:
     T1 fix: the app config reads environment variables; without this merge
     the Streamlit dashboard secrets never reach :func:`load_settings`.
     Uses setdefault so a real .env / OS env still wins.
+
+    Note: accessing ``st.secrets`` mutates ``os.environ`` (secrets.toml
+    values overwrite existing env vars). We snapshot the environment first
+    and restore it so a real .env / OS env keeps priority.
     """
     try:
         import streamlit as st  # type: ignore
@@ -57,10 +61,13 @@ def _merge_streamlit_secrets() -> None:
     secrets = getattr(st, "secrets", None)
     if secrets is None:
         return
+    before = os.environ.copy()
     try:
         items = secrets.to_dict() if hasattr(secrets, "to_dict") else dict(secrets)
     except Exception:
         return
+    os.environ.clear()
+    os.environ.update(before)
     for key, value in items.items():
         if isinstance(key, str) and isinstance(value, str) and value:
             os.environ.setdefault(key, value)
@@ -79,6 +86,9 @@ class Settings:
     gemini_api_key: str = ""
     groq_api_key: str = ""
     groq_api_keys: tuple[str, ...] = ()
+    pateway_api_key: str = ""
+    pateway_base_url: str = ""
+    pateway_model: str = ""
     llm_fallback_backend: str = ""
     rate_limit_per_ip: int = 60
     rate_limit_window_seconds: int = 3600
@@ -171,8 +181,8 @@ def _float_env(key: str, default: float) -> float:
 _VALID_MODES = {"mock", "local", "cloud"}
 _VALID_ASR = {"mock", "phowhisper"}
 _VALID_RETRIEVAL = {"bm25", "hybrid"}
-_VALID_LLM = {"mock", "gemini", "groq"}
-_VALID_FALLBACK = {"", "gemini", "groq"}
+_VALID_LLM = {"mock", "gemini", "groq", "pateway"}
+_VALID_FALLBACK = {"", "gemini", "groq", "pateway"}
 _VALID_TTS = {"mock", "edge"}
 
 
@@ -235,7 +245,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
             f"LLM_FALLBACK_BACKEND={llm_fallback_backend!r} is invalid. "
             f"Choose one of {sorted(_VALID_FALLBACK)}."
         )
-    if llm_fallback_backend == llm_backend and llm_backend in {"gemini", "groq"}:
+    if llm_fallback_backend == llm_backend and llm_backend in {"gemini", "groq", "pateway"}:
         raise ConfigError("LLM_FALLBACK_BACKEND must differ from LLM_BACKEND.")
 
     rate_limit_per_ip = _int_env("RATE_LIMIT_PER_IP", 60)
@@ -299,6 +309,9 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         gemini_api_key=os.environ.get("GEMINI_API_KEY", "").strip(),
         groq_api_key=os.environ.get("GROQ_API_KEY", "").strip(),
         groq_api_keys=_multi_env("GROQ_API_KEY", "GROQ_API_KEY"),
+        pateway_api_key=os.environ.get("PATEWAY_API_KEY", "").strip(),
+        pateway_base_url=os.environ.get("PATEWAY_BASE_URL", "").strip(),
+        pateway_model=os.environ.get("PATEWAY_MODEL", "").strip(),
         llm_fallback_backend=llm_fallback_backend,
         rate_limit_per_ip=rate_limit_per_ip,
         rate_limit_window_seconds=rate_limit_window,
@@ -364,6 +377,7 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "gemini_api_key": "set" if settings.gemini_api_key else "unset",
         "groq_api_key": "set" if settings.groq_api_key else "unset",
         "groq_key_count": len(settings.groq_api_keys) or (1 if settings.groq_api_key else 0),
+        "pateway_api_key": "set" if settings.pateway_api_key else "unset",
         "llm_fallback_backend": settings.llm_fallback_backend or "none",
         "rate_limit_per_ip": settings.rate_limit_per_ip,
         "rate_limit_window_seconds": settings.rate_limit_window_seconds,

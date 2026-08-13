@@ -4,10 +4,10 @@ from __future__ import annotations
 
 MEMBERS = [
     {
-        "display": "laguna-s-2.1:free (OpenRouter)",
+        "display": "gpt-4o-mini (OpenRouter)",
         "url": "https://openrouter.ai/api/v1/chat/completions",
         "key_env": "OPENROUTER_API_KEY",
-        "model": "poolside/laguna-s-2.1:free",
+        "model": "openai/gpt-4o-mini",
         "headers_extra": {"X-Title": "TienLang-Council"},
     },
     {
@@ -17,16 +17,18 @@ MEMBERS = [
         "model": "nvidia/nemotron-3-ultra-550b-a55b",
     },
     {
-        "display": "nemotron-nano-omni (NIM)",
-        "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-        "key_env": "NVIDIA_API_KEY",
-        "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "display": "gemini-flash-1.5 (OpenRouter)",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "key_env": "OPENROUTER_API_KEY",
+        "model": "google/gemini-flash-1.5",
+        "headers_extra": {"X-Title": "TienLang-Council"},
     },
     {
-        "display": "minimax-m3 (NIM)",
-        "url": "https://integrate.api.nvidia.com/v1/chat/completions",
-        "key_env": "NVIDIA_API_KEY",
-        "model": "minimaxai/minimax-m3",
+        "display": "claude-3.5-sonnet (OpenRouter)",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "key_env": "OPENROUTER_API_KEY",
+        "model": "anthropic/claude-3.5-sonnet",
+        "headers_extra": {"X-Title": "TienLang-Council"},
     },
     {
         "display": "m365-copilot (local proxy)",

@@ -63,3 +63,40 @@ def test_default_min_retrieval_score_matches_rrf_scale(monkeypatch):
     monkeypatch.delenv("MIN_RETRIEVAL_SCORE", raising=False)
     settings = load_settings(env_file=_NO_ENV)
     assert settings.min_retrieval_score == 0.01
+
+
+def test_pateway_env_parsing(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "pateway")
+    monkeypatch.setenv("PATEWAY_API_KEY", "pk-test")
+    monkeypatch.setenv("PATEWAY_BASE_URL", "https://gw.example.com/v1")
+    monkeypatch.setenv("PATEWAY_MODEL", "gpt-5.6-luna")
+    settings = load_settings(env_file=_NO_ENV)
+    assert settings.llm_backend == "pateway"
+    assert settings.pateway_api_key == "pk-test"
+    assert settings.pateway_base_url == "https://gw.example.com/v1"
+    assert settings.pateway_model == "gpt-5.6-luna"
+
+
+def test_pateway_in_valid_backends(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "pateway")
+    monkeypatch.setenv("LLM_FALLBACK_BACKEND", "groq")
+    settings = load_settings(env_file=_NO_ENV)
+    assert settings.llm_fallback_backend == "groq"
+
+
+def test_pateway_same_primary_and_fallback_raises(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "pateway")
+    monkeypatch.setenv("LLM_FALLBACK_BACKEND", "pateway")
+    try:
+        load_settings(env_file=_NO_ENV)
+        assert False, "expected ConfigError"
+    except ConfigError as exc:
+        assert "must differ" in str(exc)
+
+
+def test_pateway_secret_redacted_in_summary(monkeypatch):
+    monkeypatch.setenv("PATEWAY_API_KEY", "SUPER_SECRET_PK")
+    settings = load_settings(env_file=_NO_ENV)
+    summary = str(safe_settings_summary(settings))
+    assert "SUPER_SECRET_PK" not in summary
+    assert "pateway_api_key" in summary

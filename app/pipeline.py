@@ -87,9 +87,7 @@ def make_retriever(settings: Settings) -> Retriever:
             # Council R20: sentence_transformers/torch (~2GB) cannot install on
             # Streamlit Cloud free tier -> degrade gracefully to BM25 instead
             # of crashing the app at boot.
-            logger.warning(
-                "Hybrid retrieval unavailable (%s); falling back to BM25.", exc
-            )
+            logger.warning("Hybrid retrieval unavailable (%s); falling back to BM25.", exc)
             return BM25Retriever.from_jsonl(chunks_file)
     if settings.retrieval_backend != "bm25":
         raise ValueError(f"Unsupported retrieval backend: {settings.retrieval_backend}")
@@ -132,6 +130,20 @@ def _build_llm(settings: Settings, backend: str) -> BaseLLM:
         )
         if not llm.available:  # type: ignore[attr-defined]
             raise RuntimeError("LLM_BACKEND=groq but GROQ_API_KEY is not set.")
+        return llm
+    if backend == "pateway":
+        from app.llm.pateway_llm import PatewayLLM
+
+        llm = PatewayLLM(
+            api_key=settings.pateway_api_key,
+            base_url=settings.pateway_base_url,
+            model=settings.pateway_model,
+            timeout_seconds=settings.llm_timeout_seconds,
+            max_retries=settings.llm_max_retries,
+            backoff_seconds=settings.llm_retry_backoff_seconds,
+        )
+        if not llm.available:  # type: ignore[attr-defined]
+            raise RuntimeError("LLM_BACKEND=pateway but PATEWAY_API_KEY is not set.")
         return llm
     return MockLLM()
 
@@ -327,7 +339,7 @@ class Pipeline:
                     try:
                         outbound_text = query.text
                         if (
-                            self.settings.llm_backend in {"gemini", "groq"}
+                            self.settings.llm_backend in {"gemini", "groq", "pateway"}
                             and self.settings.pii_scrub_outbound
                         ):
                             from app.privacy.scrubber import scrub_outbound
@@ -383,8 +395,12 @@ class Pipeline:
                         answer = None
                     else:
                         # Sanitize AFTER validation: keep only retrieved AND non-outdated sources.
-                        outdated_sids = {i.source_id for i in verdict.issues if i.kind == "outdated"}
-                        kept = [sid for sid in raw_ids if sid in retrieved and sid not in outdated_sids]
+                        outdated_sids = {
+                            i.source_id for i in verdict.issues if i.kind == "outdated"
+                        }
+                        kept = [
+                            sid for sid in raw_ids if sid in retrieved and sid not in outdated_sids
+                        ]
                         answer = GroundedAnswer(
                             answer_text=answer.answer_text,
                             spoken_citation=answer.spoken_citation,

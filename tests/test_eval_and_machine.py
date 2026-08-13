@@ -128,6 +128,41 @@ def test_latency_eval_runs_on_fixture(tmp_path):
     assert summary["hold_message_comparison"]["true"]["asr_ms"]["p50_ms"] == 2000.0
 
 
+# ---------- R20 answer-quality metrics ----------
+
+
+def test_answer_quality_numeric_extraction():
+    from eval.answer_quality import _numbers
+
+    assert _numbers("5.310.000 đồng") == {"5310000"}
+    assert _numbers("từ 500.000 đến 1.000.000") == {"500000", "1000000"}
+    assert _numbers("không có số nào") == set()
+
+
+def test_answer_quality_numeric_accuracy():
+    from eval.answer_quality import numeric_accuracy
+
+    answer = "Mức lương tối thiểu vùng I là 5.310.000 đồng."
+    chunks_supported = ["Vùng I mức lương tối thiểu tháng 5.310.000 đồng"]
+    chunks_missing = ["Vùng I mức lương tối thiểu tháng không ghi số"]
+    assert numeric_accuracy(answer, chunks_supported) == 1.0
+    assert numeric_accuracy(answer, chunks_missing) == 0.0
+
+
+def test_answer_quality_faithfulness():
+    from eval.answer_quality import retrieval_faithfulness
+
+    assert retrieval_faithfulness(["a", "b"], {"a", "b", "c"}) == 1.0
+    assert retrieval_faithfulness(["a", "x"], {"a", "b"}) == 0.5
+    assert retrieval_faithfulness([], {"a"}) == 0.0
+
+
+def test_answer_quality_vacuously_accurate_without_numbers():
+    from eval.answer_quality import numeric_accuracy
+
+    assert numeric_accuracy("hồ sơ gồm đơn và căn cước", ["đơn", "căn cước"]) == 1.0
+
+
 # ---------- LLM source-ID guard ----------
 
 
