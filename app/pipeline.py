@@ -411,6 +411,12 @@ class Pipeline:
 
         spoken = ""
         if answer is not None:
+            from app.validation.response_validator import detect_issues, sanitize_answer
+
+            issues = detect_issues(answer, query.text)
+            if issues:
+                self.store.record(session_id, "spoken_repaired", issues=issues)
+                answer = sanitize_answer(answer, query.text)
             spoken = self.tts.speak_result(result_for_tts(query, decision, answer))
             t0 = time.perf_counter()
             try:

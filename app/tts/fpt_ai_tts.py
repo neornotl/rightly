@@ -1,8 +1,8 @@
 """FPT.AI TTS Adapter (High-quality Vietnamese TTS with free tier).
 
-Council R19: primary TTS provider (voice banmai, speed 1.0).
-Council R20: chunking <=450 chars (free tier limit 500 chars/request),
-0-byte guard before caching, tighter async polling.
+Council R24: primary voice thuminh (natural Southern, hotline tone).
+Council R19: FPT.AI primary provider; R20: chunking <=450 chars (free tier
+limit 500 chars/request), 0-byte guard before caching, tighter async polling.
 """
 
 from __future__ import annotations
@@ -24,12 +24,12 @@ class FPTAI_TTS(BaseTTS):
 
     name = "fpt_ai"
 
-    # Available voices (FPT.AI) — council R19 picks:
-    # banmai: neutral, warm, best overall (primary); thuminh: south female;
-    # linhsan: youthful; linh/mai/thuminh alternatives.
+    # Available voices (FPT.AI) — council R24 picks:
+    # thuminh: female, Southern, natural, best for hotline tone (primary);
+    # banmai: neutral warm; linhsan: youthful; linh/mai alternatives.
     VOICES = {
-        "banmai": "banmai",        # Female, neutral accent, warm (R19 primary)
-        "thuminh": "thuminh",      # Female, Southern, natural
+        "thuminh": "thuminh",      # Female, Southern, natural (R24 primary)
+        "banmai": "banmai",        # Female, neutral accent, warm
         "linhsan": "linhsan",      # Female, youthful
         "linh": "linh",            # Female, young, energetic
         "mai": "mai",              # Female, warm, clear
@@ -46,7 +46,7 @@ class FPTAI_TTS(BaseTTS):
     def __init__(
         self,
         api_key: str,
-        voice: str = "banmai",     # Council R19 primary
+        voice: str = "thuminh",    # Council R24 primary (natural Southern)
         speed: float = 1.0,        # Council R19: default speed (0.9 sounded old)
         cache_dir: Path = Path("results/tts_cache"),
         output_format: str = "wav",

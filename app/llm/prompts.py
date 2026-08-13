@@ -56,8 +56,8 @@ CLASSIFY_SYSTEM = (
 #: Slots filled by LLM from retrieved chunks: {topic}, {core}, {citation}, {agency}, {doc}, {replacement}, {needed}
 TEMPLATES = {
     "answer_full": (
-        "Dạ vâng ạ, về {topic} thì {core}. "
-        "Anh/chị {action}. {citation} ạ."
+        "Dạ vâng ạ. Về {topic}, theo quy định hiện hành thì {core} ạ. "
+        "{citation} ạ."
     ),
     "insufficient": (
         "Dạ phần này hiện em chưa có dữ liệu chính xác trong nguồn pháp luật. "
@@ -91,6 +91,21 @@ _TRAIL_FILLER = re.compile(r"\s*(?:quy\s*định\s*(?:rằng\s*)?:?\s*)$|:", re.
 
 _MAX_SPOKEN_WORDS = 15
 
+#: Raw source-code suffix that must never be read aloud, e.g. "18_VBHN-VPQH".
+_SOURCE_CODE_SUFFIX = re.compile(r"\s+\d+_[A-Z0-9]+(?:-[A-Z0-9]+)*\s*$", re.IGNORECASE)
+
+
+def clean_spoken_title(title: str) -> str:
+    """Strip raw source codes (e.g. '18_VBHN-VPQH') from a document title
+    so TTS never reads technical identifiers. Council R23/R24 consensus:
+    only the human-readable law name goes to speech; the full title stays
+    in metadata/UI for audit.
+    """
+    text = (title or "").strip()
+    text = _SOURCE_CODE_SUFFIX.sub("", text)
+    text = re.sub(r"\s+", " ", text).strip(" ,;:.")
+    return text
+
 
 def shorten_spoken_citation(citation: str) -> str:
     """Trim a citation so TTS reads a short, soft reference (<=15 words).
@@ -98,7 +113,7 @@ def shorten_spoken_citation(citation: str) -> str:
     Keeps law/document number + article only; the UI still shows the full
     citation from the pipeline result.
     """
-    text = citation.strip()
+    text = clean_spoken_title(citation)
     if not text:
         return ""
     text = _LEAD_STRIP.sub("", text).strip()

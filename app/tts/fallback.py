@@ -51,7 +51,7 @@ class TTSFallback(BaseTTS):
 
                 backends.append(FPTAI_TTS(
                     api_key=fpt_key,
-                    voice="banmai",
+                    voice="thuminh",
                     speed=1.0,
                     cache_dir=self.cache_dir,
                     output_format=output_format,

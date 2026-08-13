@@ -15,8 +15,22 @@ import json
 import re
 
 from app.llm.base import BaseLLM
-from app.llm.prompts import TEMPLATES, shorten_spoken_citation
+from app.llm.prompts import TEMPLATES, clean_spoken_title, shorten_spoken_citation
 from app.schemas import RetrievedChunk
+
+#: Intent keyword -> spoken topic (council R23/R24: no raw query echo).
+_TOPIC_MAP = [
+    ("tuổi nghỉ hưu", "tuổi nghỉ hưu theo lộ trình tăng dần"),
+    ("lương hưu", "chế độ lương hưu"),
+    ("bảo hiểm xã hội", "bảo hiểm xã hội"),
+    ("bảo hiểm y tế", "bảo hiểm y tế"),
+    ("kết hôn", "quy định về kết hôn"),
+    ("ly hôn", "quy định về ly hôn"),
+    ("khai sinh", "thủ tục đăng ký khai sinh"),
+    ("căn cước công dân", "thủ tục cấp căn cước công dân"),
+    ("đất đai", "quy định về đất đai"),
+    ("thừa kế", "quy định về thừa kế"),
+]
 
 
 class MockLLM(BaseLLM):
@@ -37,10 +51,10 @@ class MockLLM(BaseLLM):
         # Extract topic/keywords from query for template
         topic = self._extract_topic(query)
         core = self._summarize(top.text)
-        action = self._extract_action(top.text)
 
-        # Build citation
-        citation = shorten_spoken_citation(f"theo {top.metadata.title if top.metadata else top.source_id}")
+        # Build citation (spoken title only; raw source codes stripped)
+        raw_title = top.metadata.title if top.metadata else top.source_id
+        citation = shorten_spoken_citation(f"theo {clean_spoken_title(raw_title)}")
 
         # Determine situation
         situation = self._classify_situation(query, chunks)
@@ -48,7 +62,7 @@ class MockLLM(BaseLLM):
         # Fill template
         if situation == "answer_full":
             answer_text = TEMPLATES["answer_full"].format(
-                topic=topic, core=core, action=action, citation=citation
+                topic=topic, core=core, citation=citation
             )
         elif situation == "insufficient":
             answer_text = TEMPLATES["insufficient"].format(citation=citation)
@@ -60,7 +74,7 @@ class MockLLM(BaseLLM):
             answer_text = TEMPLATES["clarify"].format(needed="thông tin chi tiết", citation=citation)
         else:
             answer_text = TEMPLATES["answer_full"].format(
-                topic=topic, core=core, action=action, citation=citation
+                topic=topic, core=core, citation=citation
             )
 
         spoken = f"Thông tin theo {citation}."
@@ -89,21 +103,33 @@ class MockLLM(BaseLLM):
         return "answer_full"
 
     def _extract_topic(self, query: str) -> str:
-        """Extract topic from query (simplified)."""
-        # Remove question words
-        topic = re.sub(r"^(làm sao|thế nào|như thế nào|bao nhiêu|khi nào|ở đâu|ai|gì|cái gì)\s+", "", query, flags=re.IGNORECASE)
-        topic = topic.strip("? ").strip()
-        if len(topic) > 30:
-            topic = topic[:30] + "..."
-        return topic or "vấn đề này"
+        """Extract a short spoken topic from the query.
 
-    def _extract_action(self, text: str) -> str:
-        """Extract actionable step from chunk text."""
-        # Look for verbs: nộp, đi, làm, đăng ký, cung cấp, chuẩn bị
-        actions = re.findall(r"(nộp|đi|làm|đăng ký|cung cấp|chuẩn bị|liên hệ|gọi|tới)[^.]{0,30}", text, re.IGNORECASE)
-        if actions:
-            return actions[0].strip()
-        return "có thể liên hệ cơ quan chức năng để được hỗ trợ"
+        Council R23/R24: NEVER echo the raw query or truncate it with '...'.
+        Uses the intent keyword map first, then strips question words from a
+        copy; falls back to a generic topic.
+        """
+        q = query.lower()
+        for keyword, topic in _TOPIC_MAP:
+            if keyword in q:
+                return topic
+        topic = re.sub(
+            r"^(theo quy định của|theo quy định|theo)\s+",
+            "",
+            query,
+            flags=re.IGNORECASE,
+        )
+        topic = re.sub(
+            r"^(làm sao|thế nào|như thế nào|bao nhiêu|khi nào|ở đâu|ai|gì|cái gì)\s+",
+            "",
+            topic,
+            flags=re.IGNORECASE,
+        )
+        topic = topic.strip("? ").strip()
+        words = topic.split()
+        if len(words) > 8:
+            topic = " ".join(words[:8])
+        return topic or "vấn đề này"
 
     def _pick_content_chunk(self, chunks: list[RetrievedChunk], query: str = "") -> RetrievedChunk:
         """Prefer chunk most relevant to query (contains query keywords)."""
