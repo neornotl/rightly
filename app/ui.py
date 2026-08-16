@@ -1,4 +1,4 @@
-"""Streamlit UI for Rightly (optional dependency).
+"""Streamlit UI for Rightly - Public Demo Version.
 
 Run with:
     pip install -r requirements-optional.txt
@@ -34,24 +34,88 @@ if st is None:
         "Fallback: use the CLI instead -> python -m app.cli"
     )
 
-st.set_page_config(page_title="Rightly (DEMO)", layout="wide")
+st.set_page_config(
+    page_title="Rightly | Trợ lý pháp luật",
+    page_icon="⚖",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# Council R20 (nemotron-nano): elderly-friendly CSS — bigger fonts, larger
-# click targets, darker captions (Streamlit defaults are too small for 65-80).
+# Elderly-friendly CSS — bigger fonts, larger click targets, high contrast
 st.markdown(
     """
     <style>
-      html, body, [class*="st-"], .stMarkdown p, .stButton button {
-        font-size: 18px !important;
-      }
+      :root { --ink: #17252a; --muted: #617277; --teal: #0f6b68; --line: #dce5e3; }
+      html, body, [class*="st-"] { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      .stApp { background: linear-gradient(135deg, #f7fbfa 0%, #fffdf9 52%, #eef6f4 100%); color: var(--ink); }
+      .block-container { max-width: 1180px; padding-top: 2.2rem; padding-bottom: 3rem; }
+      .stMarkdown p, .stButton button { font-size: 16px !important; }
+      .stButton button { border-radius: 12px; min-height: 48px; font-weight: 700; }
+      [data-testid="stTextInput"] input { border-radius: 12px; min-height: 52px; border: 1px solid var(--line); }
+      h1, h2, h3 { color: var(--ink); letter-spacing: -0.02em; }
+      h1 { font-size: 2.8rem !important; }
+      .hero { background: radial-gradient(circle at 85% 15%, #cce8df 0, transparent 33%), #173f43; color: white; padding: 34px 38px; border-radius: 24px; margin: 8px 0 22px; box-shadow: 0 18px 45px #173f4322; }
+      .hero h1 { color: white; margin: 0 0 8px; font-size: 2.7rem !important; }
+      .hero p { color: #d9eeea; max-width: 700px; font-size: 1.08rem; margin: 0; }
+      .eyebrow { color: #a9ddd2; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
       .stButton button, [data-testid="stLinkButton"] a, .stPopover button {
-        min-height: 48px;
+        min-height: 56px;
+        font-weight: 600;
       }
       .stCaption, [data-testid="stCaptionContainer"] {
-        color: #444 !important;
+        color: #333 !important;
+        font-size: 16px !important;
       }
-      h1 { font-size: 1.9rem !important; }
-      h2, h3 { font-size: 1.4rem !important; }
+      h1 { font-size: 2.2rem !important; }
+      h2 { font-size: 1.7rem !important; }
+      h3 { font-size: 1.4rem !important; }
+      /* High contrast for answer text */
+      .answer-box {
+        background: #ffffffdd;
+        border: 1px solid #d8e8e3;
+        border-left: 5px solid var(--teal);
+        padding: 20px 22px;
+        border-radius: 16px;
+        margin: 12px 0;
+      }
+      .citation-box {
+        background: #fff9ed;
+        border: 1px solid #f0dfb7;
+        border-left: 5px solid #c78b2c;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 8px 0;
+        font-style: italic;
+      }
+      .source-box {
+        background: #f1f8f6;
+        border: 1px solid #d5e8e2;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 8px 0;
+        font-size: 15px !important;
+      }
+      .warning-box {
+        background: #fff6f1;
+        border: 1px solid #f3d5c2;
+        border-left: 5px solid #c56b35;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 8px 0;
+      }
+      .disclaimer-box {
+        background: #fffdf8;
+        border: 1px solid #e9dfce;
+        padding: 16px;
+        border-radius: 14px;
+        margin: 16px 0;
+        text-align: center;
+      }
+      /* Hide Streamlit default footer/menu */
+      #MainMenu {visibility: hidden;}
+      footer {visibility: hidden;}
+      header {background: transparent !important;}
+      .stDeployButton {display: none;}
     </style>
     """,
     unsafe_allow_html=True,
@@ -67,199 +131,292 @@ def get_pipeline() -> Pipeline:
 
 pipeline = get_pipeline()
 
-st.title("Rightly - Tư vấn pháp luật")
-st.caption(
-    "Trả lời dựa trên văn bản pháp luật thật (Luật, Nghị định, Thông tư). "
-    "Bản dùng thử - không phải kênh chính thức, không thay thế cán bộ."
+# ============================================================
+# HEADER & DISCLAIMER
+# ============================================================
+st.markdown(
+    '<section class="hero"><div class="eyebrow">RIGHTLY · LEGAL ACCESS</div><h1>Hiểu luật, làm đúng bước.</h1><p>Trợ lý pháp luật tiếng Việt giúp bạn tìm quy định hiện hành, hiểu điều khoản và chuẩn bị bước tiếp theo với nguồn trích dẫn rõ ràng.</p></section>',
+    unsafe_allow_html=True,
 )
-st.warning(
-    "Cảnh báo: bản này là môi trường thử nghiệm. Rightly không phải cơ "
-    "quan nhà nước và không thay thế cán bộ hoặc chuyên gia."
+st.caption(
+    "Dựa trên corpus văn bản pháp luật đã kiểm duyệt · Câu trả lời chỉ mang tính tham khảo, không thay thế tư vấn chính thức"
 )
 
+st.markdown(
+    """
+    <div class="disclaimer-box">
+    <strong>⚠️ QUAN TRỌNG - XIN ĐỌC KỸ TRƯỚC KHI DÙNG</strong><br>
+    <ul style="text-align: left; margin: 8px 0;">
+    <li>Rightly <strong>KHÔNG PHẢI</strong> cơ quan nhà nước, <strong>KHÔNG THAY THẾ</strong> cán bộ hoặc chuyên gia pháp luật</li>
+    <li>Câu trả lời chỉ mang tính chất <strong>tham khảo</strong>, dựa trên văn bản pháp luật đã công bố</li>
+    <li>Đối với vụ việc quan trọng, hãy <strong>liên hệ trực tiếp cơ quan có thẩm quyền</strong> hoặc chuyên gia luật</li>
+    <li>Dữ liệu pháp luật có thể thay đổi - Rightly cập nhật theo chu kỳ, không phải real-time</li>
+    </ul>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# ============================================================
+# SESSION & SIDEBAR
+# ============================================================
 if "session_id" not in st.session_state:
     st.session_state.session_id = pipeline.create_session()
 session_id = st.session_state.session_id
 
-
-def _render_connect_and_slip(data: dict, session_id: str) -> None:
-    """Offer 'nối máy tới cơ quan' + phiếu chuẩn bị hồ sơ (demo-grade).
-
-    Privacy: phone numbers are shown only when verified; the slip never
-    collects personal data. Nothing here leaves the browser.
-    """
-    from app.contacts import default_contact
-    from app.forms import build_registration_slip
-
-    contact = default_contact()
-    answer = data.get("answer") or {}
-
+with st.sidebar:
+    st.header("Cách dùng")
+    st.caption("Mỗi câu hỏi được tìm trong nguồn luật, kiểm tra an toàn rồi mới trả lời.")
+    with st.expander("Trạng thái hệ thống"):
+        st.json(safe_settings_summary(settings))
+    
     st.divider()
-    st.markdown("#### 📞 Bạn có muốn kết nối với cơ quan không?")
-    if contact is None:
-        st.info(
-            "Chưa có đầu mối liên hệ trực tiếp đã xác minh. Bạn có thể liên hệ "
-            "Bộ phận một cửa nơi cư trú hoặc gọi tổng đài 1022 để được hướng dẫn."
+    st.markdown("### 📋 Hướng dẫn dùng")
+    st.markdown("""
+    1. **Gõ hoặc dán câu hỏi** vào ô bên dưới
+    2. Nhấn **Hỏi** - hệ thống sẽ:
+       - Tìm văn bản pháp luật liên quan
+       - Kiểm tra an toàn (từ chối nếu rủi ro)
+       - Trả lời có trích dẫn nguồn
+    3. Xem **Câu trả lời**, **Trích dẫn**, **Nguồn gốc**
+    4. Có thể tải **Phiếu chuẩn bị hồ sơ** (nếu có)
+    """)
+    
+    st.divider()
+    st.markdown("### 💡 Câu hỏi mẫu")
+    sample_queries = [
+        "Đăng ký khai sinh cần giấy gì?",
+        "Thủ tục cấp giấy xác nhận hộ khẩu?",
+        "Thừa kế đất đai cần làm gì?",
+        "Người cao tuổi được quyền lợi BHYT gì?",
+        "Cấp căn cước công dân cho người >60 tuổi?",
+        "Xin xác nhận hộ nghèo ở đâu?",
+        "Khám chữa bệnh BHYT tại tuyến xã?",
+        "Sang tên xe máy cho con cần gì?",
+    ]
+    for sq in sample_queries:
+        if st.button(sq, key=f"sample_{sq}", use_container_width=True):
+            st.session_state.query_input = sq
+            st.rerun()
+    
+    if st.button("🗑️ Xóa phiên (Reset)", type="secondary", use_container_width=True):
+        pipeline.delete_session(session_id)
+        for key in list(st.session_state.keys()):
+            del st.session_state[key]
+        st.rerun()
+
+# ============================================================
+# MAIN QUERY INPUT
+# ============================================================
+st.subheader("Bạn đang cần biết điều gì?")
+
+query = st.text_input(
+    "Câu hỏi của bạn:",
+    key="query_input",
+    placeholder="Ví dụ: Hồ sơ đăng ký khai sinh gồm những giấy tờ gì?",
+    label_visibility="collapsed"
+)
+
+col1, col2, col3 = st.columns([2, 1, 1])
+with col1:
+    ask_clicked = st.button("🔍 Hỏi", type="primary", use_container_width=True)
+with col2:
+    st.caption(f"Phiên: {session_id[:8]}...")
+with col3:
+    st.caption(f"Mode: {settings.app_mode.upper()}")
+
+# ============================================================
+# PROCESS QUERY
+# ============================================================
+if ask_clicked and query.strip():
+    with st.spinner("⏳ Đang tìm văn bản pháp luật và tạo câu trả lời..."):
+        result = pipeline.process_text(session_id, query)
+    
+    st.session_state.last_result = result.to_dict()
+    st.rerun()
+
+# ============================================================
+# DISPLAY RESULT
+# ============================================================
+if "last_result" in st.session_state:
+    data = st.session_state.last_result
+    decision = data["decision"]
+    answer = data.get("answer")
+    
+    # Decision zone display
+    zone_icons = {"YELLOW": "🟢", "ORANGE": "🟠", "RED": "🔴", "GREEN": "🟢"}
+    zone_colors = {"YELLOW": "#2e7d32", "ORANGE": "#ef6c00", "RED": "#c62828", "GREEN": "#2e7d32"}
+    zone_icon = zone_icons.get(decision["zone"], "⚪")
+    zone_color = zone_colors.get(decision["zone"], "#666")
+    
+    st.markdown(
+        f"""
+        <div style="background: {zone_color}15; border-left: 5px solid {zone_color}; 
+                    padding: 16px; border-radius: 8px; margin: 16px 0;">
+        <strong>Kết quả xử lý:</strong> {zone_icon} <strong>{decision['zone']}</strong>  |  
+        <strong>Hành động:</strong> {decision['action']}  |  
+        <strong>Cần cán bộ:</strong> {'Có' if decision['requires_human'] else 'Không'}<br>
+        <strong>Lý do:</strong> <code>{', '.join(decision['reason_codes'])}</code>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    if answer:
+        # ANSWER
+        st.markdown("### ✅ Câu trả lời")
+        st.markdown(
+            f'<div class="answer-box">{answer["answer_text"]}</div>',
+            unsafe_allow_html=True,
         )
-        return
-    st.markdown(f"**{contact.label}**")
-    if contact.callable:
-        # Council R17: consent dialog before dialing (no silent tel: action).
-        with st.popover("📞 Gọi ngay", use_container_width=True):
-            st.warning(
-                f"Cuộc gọi sẽ mở từ thiết bị của BẠN tới: **{contact.label}** "
-                f"({contact.phone}). Rightly không tự gọi và không nghe cuộc gọi."
+        
+        # CITATION
+        if answer.get("spoken_citation"):
+            st.markdown("### 📌 Trích dẫn (đọc kèm câu trả lời)")
+            st.markdown(
+                f'<div class="citation-box">"{answer["spoken_citation"]}"</div>',
+                unsafe_allow_html=True,
             )
-            st.link_button("📞 Xác nhận gọi ngay", contact.tel_link, type="primary")
-            st.caption("Không muốn gọi? Đóng hộp này — không có cuộc gọi nào được mở.")
+        
+        # SOURCES
+        if answer.get("source_ids"):
+            st.markdown("### 📚 Nguồn văn bản pháp luật")
+            for src in answer["source_ids"]:
+                st.markdown(
+                    f'<div class="source-box">📄 <code>{src}</code></div>',
+                    unsafe_allow_html=True,
+                )
+        elif answer.get("limitations") and any("FAQ" in lim for lim in answer["limitations"]):
+            st.caption("ℹ️ Câu trả lời từ bộ FAQ nội bộ (đã được team xác minh với corpus pháp luật)")
+        
+        # LIMITATIONS
+        if answer.get("limitations"):
+            st.markdown("### ⚠️ Lưu ý quan trọng")
+            for lim in answer["limitations"]:
+                st.markdown(f'<div class="warning-box">{lim}</div>', unsafe_allow_html=True)
+        
+        # NEXT STEPS
+        if answer.get("next_step"):
+            st.markdown("### ➡️ Bước tiếp theo gợi ý")
+            st.info(answer["next_step"])
+        
+        # ACTIONS
+        st.divider()
+        col_a1, col_a2, col_a3 = st.columns(3)
+        
+        with col_a1:
+            # Audio playback
+            audio_path = pipeline.settings.resolved_results_dir() / f"{session_id}.wav"
+            if audio_path.exists() and audio_path.stat().st_size > 0:
+                st.audio(str(audio_path))
+                st.caption("🔊 Nhấn play để nghe câu trả lời")
+            else:
+                st.caption("🔇 Chế độ demo: TTS chưa kích hoạt trên server này")
+        
+        with col_a2:
+            if st.button("📄 Tải phiếu chuẩn bị hồ sơ", use_container_width=True):
+                from app.contacts import default_contact
+                from app.forms import build_registration_slip
+                contact = default_contact()
+                slip = build_registration_slip(
+                    query=str(data.get("query", "")),
+                    summary=str(answer.get("answer_text", "")),
+                    next_step=str(answer.get("next_step", "")),
+                    contact=contact,
+                )
+                st.download_button(
+                    "💾 Tải về (.md)",
+                    data=slip.to_markdown(),
+                    file_name="phieu_chuan_bi_ho_so.md",
+                    mime="text/markdown",
+                    use_container_width=True,
+                )
+                st.caption("Phiếu chỉ hỗ trợ khai sẵn quy trình - không thu thập thông tin cá nhân")
+        
+        with col_a3:
+            if st.button("🔁 Hỏi lại / Câu hỏi khác", use_container_width=True):
+                if "last_result" in st.session_state:
+                    del st.session_state.last_result
+                st.rerun()
+    
     else:
-        st.warning(
-            "Số điện thoại chưa được xác minh thực tế (đang là chỗ trống tạm) — "
-            "bản demo không mở quay số với số chưa kiểm chứng."
-        )
-    if contact.note:
-        st.caption(contact.note)
+        # NO ANSWER - SHOW GUIDANCE
+        st.markdown("### ℹ️ Hướng dẫn")
+        st.warning(decision["user_message"])
+        
+        if decision["zone"] == "RED":
+            st.error("🚨 **Phát hiện rủi ro an toàn** - Rightly không trả lời câu hỏi này.")
+            st.markdown(decision.get("user_message", ""))
+        
+        st.markdown("**Gợi ý:** Hãy thử hỏi lại cụ thể hơn về thủ tục hành chính, ví dụ:")
+        st.caption("- 'Thủ tục đăng ký khai sinh cần giấy gì?'")
+        st.caption("- 'Quy trình cấp giấy xác nhận hộ khẩu?'")
+        st.caption("- 'Thừa kế đất đai cần làm thủ tục gì?'")
+    
+    # TECHNICAL DETAILS (EXPANDER)
+    with st.expander("🔧 Chi tiết kỹ thuật (cho developer)"):
+        st.markdown("#### Retrieved chunks (top 5)")
+        for i, chunk in enumerate(data["chunks"][:5], 1):
+            st.markdown(f"{i}. `{chunk['source_id']}::{chunk['chunk_id']}` — score: {chunk['score']:.4f}")
+        
+        st.markdown("#### Latency breakdown (ms)")
+        st.json(data["latencies_ms"])
+        
+        st.markdown("#### Raw decision")
+        st.json(decision)
 
-    slip = build_registration_slip(
-        query=str(data.get("query", "")),
-        summary=str(answer.get("answer_text", "")),
-        next_step=str(answer.get("next_step", "")),
-        contact=contact,
-    )
-    st.download_button(
-        "📄 Tải phiếu chuẩn bị hồ sơ (điền sẵn quy trình, bạn tự điền thông tin cá nhân)",
-        data=slip.to_markdown(),
-        file_name="phieu_chuan_bi_ho_so.md",
-        mime="text/markdown",
-    )
-    st.caption(
-        "Phiếu chỉ hỗ trợ khai sẵn quy trình — không thu thập, lưu trữ hay gửi "
-        "thông tin cá nhân của bạn. Rightly không phải cơ quan nhà nước."
-    )
+# ============================================================
+# FOOTER
+# ============================================================
+st.divider()
+st.markdown(
+    """
+    <div style="text-align: center; color: #666; padding: 16px;">
+    <small>
+    Rightly - Voice-first public service access agent<br>
+    Bản demo - Dữ liệu: 92 văn bản pháp luật (Luật, Nghị định, Thông tư) từ VBPL<br>
+    Kiến trúc: ASR → Retrieval (Hybrid BM25+Dense) → Safety Router → LLM → TTS<br>
+    <strong>Không gửi audio ra ngoài</strong> | <strong>Không lưu transcript</strong> mặc định | Mã nguồn mở (MIT)
+    </small>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
+# ============================================================
+# RATE LIMITING (demo-grade)
+# ============================================================
+from app.ratelimit import RateLimiter
 
-# Lightweight abuse guard (demo-grade): per-session caps. Honest note: this
-# is NOT real DDoS protection on Streamlit Cloud (multiple instances) - it
-# only limits what one browser session can do.
-MAX_QUERIES_PER_SESSION = 20
-MAX_QUERY_CHARS = 1000
+MAX_QUERIES_PER_SESSION = 30
 if "query_count" not in st.session_state:
     st.session_state.query_count = 0
 
-# F4: per-client hourly cap (in-memory, per instance). Key = hashed client IP
-# (when available) + session id so a full session never gets locked out.
-from app.ratelimit import RateLimiter  # noqa: E402
-
 _limiter = RateLimiter(
-    limit=settings.rate_limit_per_ip, window_seconds=settings.rate_limit_window_seconds
+    limit=settings.rate_limit_per_ip,
+    window_seconds=settings.rate_limit_window_seconds,
 )
-
 
 def _client_key() -> str:
     ip = ""
     try:
         headers = st.context.headers
         ip = headers.get("X-Forwarded-For", "").split(",")[0].strip()
-    except Exception:  # noqa: BLE001 - Streamlit API varies across versions
+    except Exception:
         pass
     return f"{hash(ip or 'local') % 10**9}|{session_id}"
 
-
-col_status, col_query = st.columns([1, 2])
-
-with col_status:
-    st.subheader("Trạng thái hệ thống")
-    st.json(safe_settings_summary(settings))
-    if st.button("Xóa phiên (delete session)"):
-        pipeline.delete_session(session_id)
-        del st.session_state.session_id
-        st.rerun()
-
-with col_query:
-    st.subheader("Nhập câu hỏi (mock transcript)")
-    query = st.text_input("Câu hỏi:", key="query_input")
-    if st.button("Hỏi", type="primary"):
-        if st.session_state.query_count >= MAX_QUERIES_PER_SESSION:
-            st.error(
-                f"Đã đạt giới hạn {MAX_QUERIES_PER_SESSION} câu hỏi cho phiên này. "
-                "Xóa phiên để tiếp tục."
-            )
-        elif len(query.strip()) > MAX_QUERY_CHARS:
-            st.error(f"Câu hỏi quá dài (tối đa {MAX_QUERY_CHARS} ký tự).")
-        elif not _limiter.allow(_client_key()):
-            st.error(
-                f"Đã đạt giới hạn {settings.rate_limit_per_ip} câu hỏi trong "
-                f"{settings.rate_limit_window_seconds // 3600} giờ cho máy này. "
-                "Vui lòng quay lại sau."
-            )
-        elif query.strip():
-            st.session_state.query_count += 1
-            with st.spinner("Đang xử lý..."):
-                result = pipeline.process_text(session_id, query)
-            st.session_state.last_result = result.to_dict()
-        else:
-            st.info("Nhập câu hỏi trước.")
-
-if "last_result" in st.session_state:
-    data = st.session_state.last_result
-    decision = data["decision"]
-    zone_color = {
-        "YELLOW": "🟡",
-        "ORANGE": "🟠",
-        "RED": "🔴",
-    }.get(decision["zone"], "")
-    st.subheader(f"Kết quả {zone_color}")
-    st.markdown(
-        f"**Mức độ xử lý:** {decision['zone']} | "
-        f"**Hướng xử lý:** {decision['action']} | "
-        f"**Cần cán bộ hỗ trợ:** {'Có' if decision['requires_human'] else 'Không'}"
-    )
-    st.markdown(f"**Lý do:** `{', '.join(decision['reason_codes'])}`")
-
-    if data.get("answer"):
-        st.markdown("#### Câu trả lời")
-        st.write(data["answer"]["answer_text"])
-        st.markdown("#### Phần nhắc (kèm câu trả lời)")
-        st.write(data["answer"]["spoken_citation"])
-        if data["answer"]["limitations"]:
-            st.markdown("#### Lưu ý")
-            for lim in data["answer"]["limitations"]:
-                st.markdown(f"- {lim}")
-        _render_connect_and_slip(data, session_id)
+# Check limits before processing
+if ask_clicked and query.strip():
+    if st.session_state.query_count >= MAX_QUERIES_PER_SESSION:
+        st.error(f"Đã đạt giới hạn {MAX_QUERIES_PER_SESSION} câu hỏi/phiên. Nhấn 'Xóa phiên' để tiếp tục.")
+        st.stop()
+    elif len(query) > 1000:
+        st.error("Câu hỏi quá dài (tối đa 1000 ký tự).")
+        st.stop()
+    elif not _limiter.allow(_client_key()):
+        st.error(f"Đã đạt giới hạn {settings.rate_limit_per_ip} câu hỏi/{settings.rate_limit_window_seconds//3600}h. Quay lại sau.")
+        st.stop()
     else:
-        st.markdown("#### Hướng dẫn")
-        st.write(decision["user_message"])
-
-    with st.expander("Chi tiết kỹ thuật"):
-        st.markdown("#### Nguồn (retrieved chunks)")
-        for chunk in data["chunks"][:3]:
-            st.markdown(f"- `{chunk['source_id']}::{chunk['chunk_id']}` score={chunk['score']}")
-        st.markdown("#### Latency")
-        st.write(data["latencies_ms"])
-
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        if st.button("🔁 Nghe lại"):
-            audio_path = pipeline.settings.resolved_results_dir() / f"{session_id}.wav"
-            if audio_path.exists() and audio_path.stat().st_size > 0:
-                st.audio(str(audio_path))
-            elif data.get("answer"):
-                st.warning(
-                    "Chế độ thử nghiệm hiện không tạo giọng đọc (TTS chưa kích hoạt "
-                    "trên máy chủ này). Xem nội dung bên dưới:"
-                )
-                st.info(data["answer"]["answer_text"])
-    with c2:
-        if st.button("🐢 Nói chậm hơn"):
-            st.info("(mock: chưa kích hoạt tốc độ chậm trong bản demo)")
-    with c3:
-        if st.button("❌ Xóa phiên"):
-            pipeline.delete_session(session_id)
-            del st.session_state.session_id
-            st.rerun()
-
-
-st.divider()
-st.caption(
-    "Không hiển thị secret hoặc prompt nội bộ. Audio không được gửi ra ngoài trong chế độ mặc định."
-)
+        st.session_state.query_count += 1

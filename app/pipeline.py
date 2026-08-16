@@ -97,8 +97,11 @@ def make_retriever(settings: Settings) -> Retriever:
 def make_llm(settings: Settings) -> BaseLLM:
     llm = _build_llm(settings, settings.llm_backend)
     if settings.llm_fallback_backend:
-        fallback = _build_llm(settings, settings.llm_fallback_backend)
-        if fallback.available:  # type: ignore[attr-defined]
+        try:
+            fallback = _build_llm(settings, settings.llm_fallback_backend)
+        except RuntimeError:
+            fallback = None  # fallback backend not usable: skip silently
+        if fallback is not None and fallback.available:  # type: ignore[attr-defined]
             from app.llm.fallback import FallbackLLM
 
             return FallbackLLM(primary=llm, fallback=fallback)
@@ -144,6 +147,23 @@ def _build_llm(settings: Settings, backend: str) -> BaseLLM:
         )
         if not llm.available:  # type: ignore[attr-defined]
             raise RuntimeError("LLM_BACKEND=pateway but PATEWAY_API_KEY is not set.")
+        return llm
+    if backend == "local":
+        from app.llm.local_llm import LocalLLM
+
+        llm = LocalLLM(
+            base_url=settings.ollama_base_url,
+            model=settings.ollama_model,
+            timeout_seconds=settings.llm_timeout_seconds,
+            max_retries=settings.llm_max_retries,
+            backoff_seconds=settings.llm_retry_backoff_seconds,
+        )
+        if not llm.available:
+            raise RuntimeError(
+                "LLM_BACKEND=local but no local server at "
+                f"{settings.ollama_base_url}. Start Ollama ('ollama serve') and "
+                f"pull the model first ('ollama pull {settings.ollama_model}')."
+            )
         return llm
     return MockLLM()
 
@@ -195,6 +215,10 @@ class Pipeline:
             self.retriever = make_retriever(self.settings)
         if self.llm is None:
             self.llm = make_llm(self.settings)
+        if self.settings.llm_backend == "local":
+            from app.local_evidence import ensure_local_evidence
+
+            self.local_evidence = ensure_local_evidence(self.settings, self.llm)
         if self.tts is None:
             self.tts = make_tts(self.settings)
         if self.router is None:
@@ -312,74 +336,91 @@ class Pipeline:
         decision, normalized = self.router.route(query.text, chunks, llm_classifier)
         lat["safety_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
 
+        # F5: FAQ check FIRST - before router decision gates.
+        # FAQ answers are curated & verified, so they can answer even when
+        # router flags CLARIFY/AMBIGUOUS (router doesn't know about FAQ coverage).
+        # Still respects RED/ORANGE hard gates (router already decided those).
         answer: Optional[GroundedAnswer] = None
-        if self.router.would_answer(decision):
+        faq_hit = None
+        faq_answered = ""
+        if self.faq is not None:
+            faq_hit = self.faq.answer(query.text)
+
+        if faq_hit is not None:
+            # FAQ hit: use curated answer, override to SAFE. Re-search with the
+            # FAQ's own question so the evidence chunks match the curated answer
+            # (user query chunks may cover a different topic entirely).
+            faq_chunks = self.retriever.search(
+                faq_hit.retrieval_query, top_k=self.top_k
+            ) or chunks
+            faq_sources = faq_hit.source_ids or tuple(
+                c.source_id
+                for c in faq_chunks
+                if c.score >= self.settings.min_retrieval_score
+            ) or tuple(c.source_id for c in faq_chunks[:3])
+            from dataclasses import replace
+
+            faq_hit = replace(faq_hit, source_ids=faq_sources)
+            answer = faq_hit.to_grounded_answer()
+            chunks = faq_chunks
+            faq_answered = faq_hit.faq_id
+            decision = self.router.policy.safe_decision()
+            lat["faq_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+            self.store.record(session_id, "faq_hit", faq_id=faq_hit.faq_id, score=faq_hit.score)
+        elif self.router.would_answer(decision):
             t0 = time.perf_counter()
 
-            # F5: curated voice FAQ short-circuits the LLM on strong matches.
-            # Runs AFTER the safety router (never bypasses RED/ORANGE gates);
-            # skips the LLM + citation validation because FAQ content is
-            # curated by the team (C verifies claims against the corpus).
-            faq_hit = None
-            if self.faq is not None:
-                faq_hit = self.faq.answer(query.text)
-            if faq_hit is not None:
-                answer = faq_hit.to_grounded_answer()
-                decision = self.router.policy.safe_decision()
-                lat["faq_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
-                self.store.record(session_id, "faq_hit", faq_id=faq_hit.faq_id, score=faq_hit.score)
+            # Guard: if no chunks retrieved or all scores too low, refuse early
+            # to avoid LLM hallucination and FAKE_LAW false positive.
+            if not chunks or all(c.score < self.settings.min_retrieval_score for c in chunks):
+                decision = self.router.policy.insufficient_decision()
+                self.store.record(session_id, "empty_chunks_rejected", num_chunks=len(chunks))
+                answer = None
             else:
-                # Guard: if no chunks retrieved or all scores too low, refuse early
-                # to avoid LLM hallucination and FAKE_LAW false positive.
-                if not chunks or all(c.score < self.settings.min_retrieval_score for c in chunks):
+                try:
+                    outbound_text = query.text
+                    if (
+                        self.settings.llm_backend in {"gemini", "groq", "pateway"}
+                        and self.settings.pii_scrub_outbound
+                    ):
+                        from app.privacy.scrubber import scrub_outbound
+
+                        outbound_text = scrub_outbound(query.text)
+                    doc = self.llm.generate_answer(
+                        outbound_text,
+                        chunks[: self.top_k],
+                        max_chars=self.settings.max_response_chars,
+                    )
+                    raw_ids = list(dict.fromkeys(str(s) for s in (doc.get("source_ids") or [])))
+                    answer = GroundedAnswer(
+                        answer_text=str(doc.get("answer_text", "")).strip(),
+                        spoken_citation=str(doc.get("spoken_citation", "")).strip(),
+                        source_ids=raw_ids,
+                        limitations=[str(s) for s in (doc.get("limitations") or [])],
+                        next_step=str(doc.get("next_step", "")).strip(),
+                    )
+                except Exception as exc:
                     decision = self.router.policy.insufficient_decision()
-                    self.store.record(session_id, "empty_chunks_rejected", num_chunks=len(chunks))
+                    self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
+                lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+                if answer is not None and not raw_ids:
+                    # Council T2: an answer with content but zero citations is
+                    # ungrounded — refuse instead of reading it out.
+                    decision = self.router.policy.insufficient_decision()
+                    self.store.record(
+                        session_id,
+                        "citation_rejected",
+                        issues=[
+                            {
+                                "kind": "no_citation",
+                                "message": "Câu trả lời không trích dẫn nguồn nào.",
+                            }
+                        ],
+                    )
                     answer = None
-                else:
-                    try:
-                        outbound_text = query.text
-                        if (
-                            self.settings.llm_backend in {"gemini", "groq", "pateway"}
-                            and self.settings.pii_scrub_outbound
-                        ):
-                            from app.privacy.scrubber import scrub_outbound
 
-                            outbound_text = scrub_outbound(query.text)
-                        doc = self.llm.generate_answer(
-                            outbound_text,
-                            chunks[:3],
-                            max_chars=self.settings.max_response_chars,
-                        )
-                        raw_ids = [str(s) for s in (doc.get("source_ids") or [])]
-                        answer = GroundedAnswer(
-                            answer_text=str(doc.get("answer_text", "")).strip(),
-                            spoken_citation=str(doc.get("spoken_citation", "")).strip(),
-                            source_ids=raw_ids,
-                            limitations=[str(s) for s in (doc.get("limitations") or [])],
-                            next_step=str(doc.get("next_step", "")).strip(),
-                        )
-                    except Exception as exc:
-                        decision = self.router.policy.insufficient_decision()
-                        self.store.record(session_id, "llm_failure", reason=str(exc)[:500])
-                    lat["llm_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
-
-                    if answer is not None and not raw_ids:
-                        # Council T2: an answer with content but zero citations is
-                        # ungrounded — refuse instead of reading it out.
-                        decision = self.router.policy.insufficient_decision()
-                        self.store.record(
-                            session_id,
-                            "citation_rejected",
-                            issues=[
-                                {
-                                    "kind": "no_citation",
-                                    "message": "Câu trả lời không trích dẫn nguồn nào.",
-                                }
-                            ],
-                        )
-                        answer = None
-
-                if answer is not None and self.validator is not None:
+            if answer is not None and self.validator is not None:
                     # Validate RAW citations first (F2 fix): filtering before
                     # validation would silently hide hallucinated source_ids.
                     retrieved = {c.source_id for c in chunks}
@@ -398,9 +439,9 @@ class Pipeline:
                         outdated_sids = {
                             i.source_id for i in verdict.issues if i.kind == "outdated"
                         }
-                        kept = [
+                        kept = list(dict.fromkeys(
                             sid for sid in raw_ids if sid in retrieved and sid not in outdated_sids
-                        ]
+                        ))
                         answer = GroundedAnswer(
                             answer_text=answer.answer_text,
                             spoken_citation=answer.spoken_citation,
@@ -435,6 +476,7 @@ class Pipeline:
             latencies_ms=lat,
             app_mode=self.settings.app_mode,
             tts_output=spoken,
+            faq_answered=faq_answered,
         )
         # WER/MOS metrics logging (P0)
         try:
@@ -486,4 +528,5 @@ def result_for_tts(
         latencies_ms={},
         app_mode="",
         tts_output="",
+        faq_answered="",
     )

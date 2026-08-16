@@ -43,18 +43,25 @@ class FaqHit:
     answer_text: str
     spoken_citation: str
     score: int
+    source_ids: tuple[str, ...] = ()
+    search_text: str = ""
 
     def to_grounded_answer(self) -> GroundedAnswer:
         return GroundedAnswer(
             answer_text=self.answer_text,
             spoken_citation=self.spoken_citation,
-            source_ids=[],
+            source_ids=list(self.source_ids),
             limitations=[
                 "Đây là câu trả lời ngắn dạng kịch bản FAQ — liên hệ cơ quan "
                 "có thẩm quyền để được hướng dẫn chi tiết cho trường hợp của bạn."
             ],
             next_step="",
         )
+
+    @property
+    def retrieval_query(self) -> str:
+        """Query used to fetch evidence chunks (search_text if provided)."""
+        return self.search_text or self.question
 
 
 @lru_cache(maxsize=1)
@@ -84,7 +91,12 @@ class FAQMatcher:
                 "question": it.get("question", ""),
                 "answer_text": it["answer_text"],
                 "spoken_citation": it.get("spoken_citation", "Câu trả lời thường gặp (FAQ)"),
+                "search_text": it.get("search_text", ""),
+                "source_ids": tuple(str(s) for s in it.get("source_ids", []) if s),
                 "keywords": tuple(_strip_diacritics(k) for k in it.get("keywords", []) if k),
+                "exclude_keywords": tuple(
+                    _strip_diacritics(k) for k in it.get("exclude_keywords", []) if k
+                ),
             }
             for it in _load_faq(path)
         )
@@ -100,6 +112,10 @@ class FAQMatcher:
             return None
         best: Optional[FaqHit] = None
         for item in self._items:
+            # Skip FAQ items whose topic is excluded by the query (e.g. a
+            # query about "cải chính" must not match the "khai sinh" FAQ).
+            if any(ex and ex in text for ex in item["exclude_keywords"]):
+                continue
             for kw in item["keywords"]:
                 if not kw or kw not in text:
                     continue
@@ -111,6 +127,8 @@ class FAQMatcher:
                         answer_text=item["answer_text"],
                         spoken_citation=item["spoken_citation"],
                         score=score,
+                        source_ids=item["source_ids"],
+                        search_text=item["search_text"],
                     )
         if best is None or best.score < self.MIN_SCORE:
             return None
