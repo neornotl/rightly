@@ -238,6 +238,11 @@ def _query_focus(query: str, hit: RetrievedChunk) -> float:
             boost += 0.08
         elif "thời giờ làm việc bình thường" in text:
             boost += 0.03
+    if "nghỉ hưu" in q and not any(term in q for term in ("suy giảm", "đặc biệt nặng nhọc", "nghỉ sớm")):
+        if "điều 169. tuổi nghỉ hưu" in text:
+            boost += 0.12
+        elif "tuổi nghỉ hưu" in text:
+            boost += 0.04
     return boost
 
 
@@ -246,7 +251,7 @@ def _expand_adjacent(
 ) -> list[RetrievedChunk]:
     """Add nearby chunks when the answer is a legal list or procedure."""
     q = query.casefold()
-    if not any(term in q for term in ("hồ sơ", "giấy tờ", "ai được", "những ai", "đối tượng", "điều kiện", "thời giờ làm việc")):
+    if not any(term in q for term in ("hồ sơ", "giấy tờ", "ai được", "những ai", "đối tượng", "điều kiện", "thời giờ làm việc", "nghỉ hưu")):
         return hits
     positions = {chunk.chunk_id: i for i, chunk in enumerate(chunks)}
     selected = {hit.chunk_id: hit for hit in hits}
@@ -266,6 +271,7 @@ def _expand_adjacent(
                 "hồ sơ đề nghị hưởng lương hưu",
                 "hồ sơ đề nghị",
                 "người được trợ giúp pháp lý",
+                "điều 169. tuổi nghỉ hưu",
             )
             for candidate in chunks:
                 if candidate.source_id != hit.source_id:
