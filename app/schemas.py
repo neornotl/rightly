@@ -131,6 +131,7 @@ class PipelineResult:
     latencies_ms: dict[str, float] = field(default_factory=dict)
     app_mode: str = "mock"
     tts_output: str = ""
+    faq_answered: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -143,6 +144,7 @@ class PipelineResult:
             "latencies_ms": {k: round(v, 1) for k, v in self.latencies_ms.items()},
             "app_mode": self.app_mode,
             "tts_output": self.tts_output,
+            "faq_answered": self.faq_answered,
         }
 
 
