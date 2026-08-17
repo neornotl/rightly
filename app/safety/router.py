@@ -28,6 +28,7 @@ from app.safety.rules import (
     check_rules,
     has_danger_context,
     has_legal_info_intent,
+    has_procedural_intent,
     is_soft_topic_emergency,
     normalize_query,
 )
@@ -168,8 +169,10 @@ class SafetyRouter:
 
         # 4. Out-of-scope. A legal/procedural information question ("Thủ tục
         # quay phim?") should not be rejected merely because it mentions a
-        # hobby/entertainment keyword in passing.
-        if hits.out_of_scope and not legal_info_intent:
+        # hobby/entertainment keyword in passing — that is why only STRONG
+        # procedural framing ("thủ tục", "quy định", "hồ sơ"...) overrides an
+        # out-of-scope topic rule; a bare "là gì/thế nào" does not.
+        if hits.out_of_scope and not has_procedural_intent(query):
             return self.policy.out_of_scope_decision(), query
 
         # 5. Retrieval sufficiency.

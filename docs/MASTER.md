@@ -475,6 +475,8 @@ nhận 100%), sửa ngay các bug quan trọng:
 | B17 | — | `SessionStore` ghi file không thread-safe | Đã biết (chưa lock) |
 | B18 | — | LLM call không timeout | Đã biết |
 
+Quyết định **council round 26** (16/08, họp luna + nemotron + m365, 3/3 đồng thuận): giữ kiến trúc 2 chế độ cloud|local, cloud làm default sản phẩm, local chỉ bật bằng `.env` trên máy demo; đổi model local mặc định sang `qwen2.5:7b-instruct-q4_k_m` (VRAM ~4.8GB, JSON ổn định, không thinking; qwen3:8b giữ làm fallback chất lượng với `think=false`; loại gemma3:12b vì OOM); tham số num_ctx 4096 / temperature 0.1 / top_p 0.85-0.9 / max_tokens 512-640, giữ Q4_K_M; **fail-closed cứng**: khi LLM_BACKEND=local KHÔNG bao giờ gọi cloud, lỗi thì trả lời không khả dụng; fallback cloud chỉ khi chủ động đổi .env (banner rõ nếu DEMO_MODE); bắt buộc dry-run trên máy demo trước 23/08, không bootstrap ngày thi. Reference: debate_output/round26.json; chi tiết docs/offline_runbook.md.
+
 Quyết định **council round 4** (5 models, đa số): T1 giữ `MIN_RETRIEVAL_SCORE
 = 0.01`; T2 thêm guard REFUSE khi trả lời không trích dẫn (**đã code**);
 T3 thêm df-guard cho query 1-token (**đã code**).

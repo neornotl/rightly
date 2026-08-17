@@ -1,4 +1,4 @@
-# Rightly
+﻿# Rightly
 
 Source-grounded, voice-first public-service access agent — hỗ trợ người dân
 (nhất là người cao tuổi, người khiếm thị, người khó đọc, người hạn chế kỹ
@@ -73,13 +73,26 @@ dẫn hành chính thật.
 
 - `ASR_BACKEND=phowhisper`: cần `pip install faster-whisper` + chủ động tải
   model (xem `docs/hardware_benchmark_plan.md`).
-- `LLM_BACKEND=gemini|groq`: cần API key trong `.env` (`GEMINI_API_KEY`,
-  `GROQ_API_KEY`). Chỉ transcript + chunks được gửi; không gửi audio.
+- `LLM_BACKEND=gemini|groq|pateway`: cần API key trong `.env` (`GEMINI_API_KEY`,
+  `GROQ_API_KEY`, `PATEWAY_API_KEY`). Chỉ transcript + chunks được gửi; không gửi audio.
+- `LLM_BACKEND=local`: **100% offline** — Ollama (hoặc server OpenAI-compatible
+  bất kỳ), mặc định `qwen2.5:7b-instruct-q4_k_m` (quyết định hội đồng round 26); một lần `ollama pull qwen2.5:7b-instruct-q4_k_m` rồi chạy không
+  mạng. Kiểm tra nhanh: `python scripts/check_local_llm.py`. Xem
+  `docs/offline_runbook.md` (có hướng dẫn cho PC RTX 3060 Ti 8GB).
 - `TTS_BACKEND=edge`: cần `edge-tts`, cần mạng lúc chạy.
 - `APP_MODE=cloud`: bật thêm LLM classification trong router (vẫn bị rule
   RED/ORANGE ghi đè).
 
 Setup chi tiết: `docs/setup.md`.
+
+### One-click local pilot (Windows)
+
+After the one-time `scripts\offline_setup.bat`, double-click
+`scripts\run_local_pilot.bat`. It starts Ollama if needed, verifies the local
+model, launches Streamlit with local-only settings, and automatically records
+the runtime manifest, one-time local benchmark, session traces and latency
+under `logs/` and `results/`. It never falls back to cloud. Export consenting
+pilot metrics separately with `python scripts/log_pilot_metrics.py --export`.
 
 ## Data structure
 

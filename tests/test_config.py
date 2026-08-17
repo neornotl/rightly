@@ -100,3 +100,32 @@ def test_pateway_secret_redacted_in_summary(monkeypatch):
     summary = str(safe_settings_summary(settings))
     assert "SUPER_SECRET_PK" not in summary
     assert "pateway_api_key" in summary
+
+
+def test_local_llm_defaults(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "local")
+    monkeypatch.delenv("OLLAMA_BASE_URL", raising=False)
+    monkeypatch.delenv("OLLAMA_MODEL", raising=False)
+    settings = load_settings(env_file=_NO_ENV)
+    assert settings.llm_backend == "local"
+    assert settings.ollama_base_url == "http://localhost:11434/v1"
+    assert settings.ollama_model == "qwen2.5:7b-instruct-q4_k_m"
+
+
+def test_local_llm_env_parsing(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "local")
+    monkeypatch.setenv("OLLAMA_BASE_URL", "http://127.0.0.1:8888/v1")
+    monkeypatch.setenv("OLLAMA_MODEL", "qwen2.5:7b-instruct")
+    settings = load_settings(env_file=_NO_ENV)
+    assert settings.ollama_base_url == "http://127.0.0.1:8888/v1"
+    assert settings.ollama_model == "qwen2.5:7b-instruct"
+
+
+def test_local_llm_same_primary_and_fallback_raises(monkeypatch):
+    monkeypatch.setenv("LLM_BACKEND", "local")
+    monkeypatch.setenv("LLM_FALLBACK_BACKEND", "local")
+    try:
+        load_settings(env_file=_NO_ENV)
+        assert False, "expected ConfigError"
+    except ConfigError as exc:
+        assert "must differ" in str(exc)

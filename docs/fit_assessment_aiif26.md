@@ -89,8 +89,8 @@ hồ sơ (video/150 từ/consent) chưa có gì, và có 5 điểm lệch nhỏ 
 | Giảm bias | 1 | 0.5 | 1 | Đa giọng vùng (VIVOS) + kế hoạch |
 | Môi trường | 1 | 0.5 | 1 | Tài liệu hóa mức năng lượng |
 | Prototype chạy | 1 | 1 | 1 | Demo deterministic + smoke 12/12 |
-| Triển khai: public link | 2 | 0 | 2 | Streamlit Cloud 12/08 + người dùng thật |
-| GTM/deployment | 1 | 0 | 1 | LOI/email Hội NCT |
+| Triển khai: public link | 2 | 0 | 2 | URL public hoạt động + smoke log + hướng dẫn tự thử |
+| GTM/deployment | 1 | 0 | 0 | Không theo đuổi LOI/đối tác; không claim điểm khi chưa có traction |
 | **M2 cộng dồn** | **20** | **13** | **18** | |
 
 ### M3 — Technical Knowledge and Skills (15đ)
@@ -104,7 +104,7 @@ hồ sơ (video/150 từ/consent) chưa có gì, và có 5 điểm lệch nhỏ 
 | Emerged AI (GenAI/Agents/RAG/multimodal) | 4 | 4 | 4 | Voice RAG + agent routing + multi-modal |
 | **M3 cộng dồn** | **15** | **13** | **13.5** | |
 
-**Tổng kỳ vọng: hôm nay ≈ 33.5/50 (khoảng 31-36) → sau Top-12 ≈ 45/50 (43-46).**
+**Tổng kỳ vọng theo hướng self-serve: hiện khoảng 31-36/50 → sau khi hoàn thiện public link, evidence kỹ thuật, consent/pilot và video khoảng 40-44/50. Mốc 45 chỉ là stretch, không nên lập kế hoạch dựa trên GTM/đối tác.**
 
 ## 4. Điểm lệch cần xử lý để "khớp" cuộc thi (compatibility gaps)
 
@@ -121,8 +121,9 @@ hồ sơ (video/150 từ/consent) chưa có gì, và có 5 điểm lệch nhỏ 
    nay cho "Technical Rigor" mà KHÔNG cần thu âm mới — tăng M2 "data analysis" +
    M3 depth; dùng log pilot làm nguồn chính, VIVOS làm phụ trợ.
 6. **Consent/độ tuổi là rủi ro loại hồ sơ** — ưu tiên xử lý 09-10/08 (C+P).
-7. **M2 GTM (1đ)** chỉ cần "spoken about OR demonstrated" → video 2' nói 1 câu GTM
-   là đủ 1đ; không cần chữ ký chính quyền (tránh phụ thuộc).
+7. **M2 GTM/deployment (1đ)**: hướng self-serve không có bằng chứng adoption/đối tác thì để 0,
+   không nói marketing như thể đó là traction. Tập trung public link, hướng dẫn tự thử
+   và số liệu kỹ thuật có thể tái lập.
 
 ## 5. Cảnh báo cạnh tranh
 

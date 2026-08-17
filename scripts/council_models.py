@@ -44,7 +44,7 @@ MEMBERS = [
         "vision": True,
         "max_tokens": 150,
     },
-    {
+{
         "display": "m365-copilot (local proxy)",
         "url": "http://localhost:8000/v1/chat/completions",
         "key_env": None,

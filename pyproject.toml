@@ -31,6 +31,7 @@ testpaths = ["tests"]
 addopts = "-q"
 markers = [
     "slow: tests that may download models or need network (deselect with -m 'not slow')",
+    "gate: pilot-readiness gate tests (tests/gates)",
 ]
 
 [tool.ruff]

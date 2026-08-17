@@ -7,6 +7,12 @@ faster-whisper>=1.0
 google-genai>=1.0
 groq>=0.11
 
+# LLM local backend (Ollama / any OpenAI-compatible local server) + pateway
+openai>=1.40
+
+# Offline bootstrap (scripts/bootstrap_offline.py)
+huggingface_hub>=0.23
+
 # TTS
 edge-tts>=7.0
 

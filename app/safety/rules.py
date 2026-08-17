@@ -112,6 +112,55 @@ _OUT_OF_SCOPE_PATTERNS = [
     r"hướng dẫn (làm|nấu|cày) (game|game)",
     r"phim ",
     r"bài tập về nhà",
+    # --- Everyday / entertainment / shopping / lifestyle topics (gate 1b).
+    # False positives are contained by the router: an OOS rule only guides a
+    # query out when it has NO legal-info intent marker ("thủ tục", "quy định",
+    # "hồ sơ", "chế độ"...). A legit legal question mentioning one of these
+    # words still carries a marker and keeps flowing to grounded answering.
+    r"thời tiết",
+    r"nấu (?:phở|cháo|cơm|bánh|món|ăn)",
+    r"công thức nấu",
+    r"món ăn",
+    r"đồ ăn",
+    r"pha cà phê",
+    r"cà phê sữa đá",
+    r"giá vàng",
+    r"giá (?:xăng|dầu|gạo)",
+    r"mua (?:điện thoại|máy tính|quần áo|giày|nhà cửa|đồ dùng|hàng hóa)",
+    r"bán (?:giày|quần áo|hàng)",
+    r"thời trang",
+    r"khuyến mãi",
+    r"giảm giá",
+    r"bóng đá",
+    r"đá banh",
+    r"cổ tích",
+    r"ca nhạc",
+    r"bài hát",
+    r"lịch chiếu",
+    r"xếp hạng",
+    r"máy giặt",
+    r"máy lạnh",
+    r"sửa (?:máy giặt|máy lạnh|máy tính|điện thoại|tivi)",
+    r"bài tập thể dục",
+    r"tập (?:yoga|gym|chạy bộ|bơi)",
+    r"ăn kiêng",
+    r"giảm cân",
+    r"chế độ ăn",
+    r"giờ bay",
+    r"chuyến bay",
+    r"vé máy bay",
+    r"du lịch",
+    r"khách sạn",
+    r"đổi sim",
+    r"đăng ký tài khoản (?:game|facebook|zalo|instagram|youtube|google|telegram)",
+    r"kết bạn",
+    r"chơi game",
+    r"tải game",
+    r"chăm sóc da",
+    r"trang điểm",
+    r"làm đẹp",
+    r"cắt tóc",
+    r"nhuộm tóc",
 ]
 
 _DOUBT_WORDS = [
@@ -122,7 +171,7 @@ _DOUBT_WORDS = [
     r"có phải",
     r"là gì nhỉ",
     r"thế nào nhỉ",
-    r"hả",
+    r"\bhả\b",
 ]
 
 # ---------------------------------------------------------------------------
@@ -244,9 +293,48 @@ _DANGER_CONTEXT_MARKERS = [
     r"bị sốc",
 ]
 
+# Markers of an ACTIVE legal/procedural request. Narrower than
+# _LEGAL_INFO_MARKERS: only strong procedural/regulatory framing. Used to
+# decide whether an out-of-scope topic rule should be overridden — a bare
+# question-word ("là gì", "thế nào") must NOT turn an everyday query
+# ("Thời trang nam đang hot là gì?") into an answerable legal question.
+_PROCEDURAL_MARKERS = [
+    r"thủ tục",
+    r"quy trình",
+    r"hồ sơ",
+    r"quy định",
+    r"trường hợp",
+    r"theo\s+(?:luat|n?đ|nghị định|quyết định|thông tư|bộ luật)",
+    r"luat\d+_\d+",
+    r"boluat\d+_\d+",
+    r"nd\d+_\d+",
+    r"nđ\s*\d+",
+    r"cho tôi hỏi về",
+    r"cho hỏi",
+    r"hướng dẫn",
+    r"quyền lợi",
+    r"chế độ",
+    r"theo quy định",
+    r"có được phép",
+    r"được phép",
+    r"phép làm",
+    r"đúng không",
+    r"có đúng không",
+    r"nghe facebook",
+    r"nghe nói",
+    r"bạn tôi bảo",
+    r"facebook nói",
+    r"zalo nói",
+    r"có bị hủy",
+    r"sắp bị hủy",
+    r"điều\s+\d+",
+    r"khoản\s+\d+",
+]
+
 # Compact compiled forms used by the intent helper functions below.
 _COMPILED_LEGAL_INFO = [re.compile(p, re.IGNORECASE) for p in _LEGAL_INFO_MARKERS]
 _COMPILED_DANGER = [re.compile(p, re.IGNORECASE) for p in _DANGER_CONTEXT_MARKERS]
+_COMPILED_PROCEDURAL = [re.compile(p, re.IGNORECASE) for p in _PROCEDURAL_MARKERS]
 
 _COMPILED = [
     re.compile(pattern, re.IGNORECASE)
@@ -334,6 +422,18 @@ def has_legal_info_intent(normalized_text: str) -> bool:
     """True when the query reads as a legal-information/procedural request."""
     text = normalized_text.casefold()
     return any(pat.search(text) for pat in _COMPILED_LEGAL_INFO)
+
+
+def has_procedural_intent(normalized_text: str) -> bool:
+    """True when the query carries STRONG procedural/regulatory framing.
+
+    Narrower than :func:`has_legal_info_intent` — used to decide whether an
+    out-of-scope topic rule applies. Bare question-words ("là gì", "ra sao",
+    "thế nào") are deliberately excluded so an everyday query about an
+    off-scope topic is not promoted to an answerable legal question.
+    """
+    text = normalized_text.casefold()
+    return any(pat.search(text) for pat in _COMPILED_PROCEDURAL)
 
 
 def has_danger_context(normalized_text: str) -> bool:

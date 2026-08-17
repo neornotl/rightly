@@ -42,12 +42,13 @@ class PatewayLLM(BaseLLM):
         backoff_seconds: float = 1.0,
     ):
         self.api_key = api_key
-        self.base_url = base_url.rstrip("/")
-        self.model = model
+        self.base_url = (base_url or _DEFAULT_BASE_URL).rstrip("/")
+        self.model = model or _DEFAULT_MODEL
         self.timeout_seconds = timeout_seconds
         self.max_retries = max_retries
         self.backoff_seconds = backoff_seconds
         self._client = None
+        self.last_usage: dict = {}  # R25: token/cost tracking for 10k eval
 
     @property
     def available(self) -> bool:
@@ -80,12 +81,20 @@ class PatewayLLM(BaseLLM):
         temperature: float,
         response_format: dict | None = None,
     ) -> str:
-        completion = client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            temperature=temperature,
-            response_format=response_format,
-        )
+        kwargs = {
+            "model": self.model,
+            "messages": messages,
+            "response_format": response_format,
+        }
+        # NOTE: gpt-5.6-luna is a reasoning model — Pateway rejects `temperature`.
+        # Defaults to the gateway's deterministic setting.
+        completion = client.chat.completions.create(**kwargs)
+        self.last_usage = {
+            "model": getattr(completion, "model", self.model),
+            "prompt_tokens": int(getattr(completion.usage, "prompt_tokens", 0) or 0),
+            "completion_tokens": int(getattr(completion.usage, "completion_tokens", 0) or 0),
+            "total_tokens": int(getattr(completion.usage, "total_tokens", 0) or 0),
+        }
         return completion.choices[0].message.content.strip()
 
     def generate_answer(
@@ -102,6 +111,9 @@ class PatewayLLM(BaseLLM):
         user = (
             f"Câu hỏi: {query}\n\n"
             f"Các đoạn nguồn (chỉ được dùng các source_id này):\n{context}\n\n"
+            "Ưu tiên đoạn có tiêu đề điều khoản trực tiếp trả lời câu hỏi. "
+            "Nếu hỏi hồ sơ/giấy tờ thì không trả lời bằng đoạn về thời hạn hoặc tạm dừng. "
+            "Nếu hỏi ai/đối tượng thì nêu đầy đủ các nhóm trong đoạn nguồn phù hợp.\n"
             f"Giới hạn câu trả lời: {max_chars} ký tự."
         )
         client = self._get_client()
@@ -140,8 +152,9 @@ class PatewayLLM(BaseLLM):
         return parsed
 
     def classify_safe(self, query: str, chunks: list[RetrievedChunk]) -> bool:
-        """LLM-based safety classification (router step 7, cloud mode only).
+        """LLM-based safety classification (router step 7).
 
+        Enabled in cloud mode and via USE_LLM_CLASSIFIER for local+pateway.
         Conservative: any failure or non-JSON output means NOT safe.
         """
         if not self.available:

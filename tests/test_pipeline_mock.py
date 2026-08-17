@@ -49,7 +49,9 @@ def test_mock_pipeline_end_to_end(tmp_path):
 def test_pipeline_safe_query_cites_demo_only(tmp_path):
     pipeline = _pipeline(tmp_path)
     session_id = pipeline.create_session()
-    result = pipeline.process_text(session_id, "Đăng ký kết hôn cần giấy gì?")
+    # No FAQ match -> must answer from demo corpus and cite it only.
+    result = pipeline.process_text(session_id, "Thủ tục cấp giấy xác nhận hộ khẩu tại xã Bình Minh?")
+    assert result.answer is not None
     assert set(result.answer.source_ids) == {"demo_binhminh_procedures"}
 
 

@@ -17,6 +17,11 @@ _TOKEN_RE = re.compile(
     re.IGNORECASE,
 )
 
+_WORD_RE = re.compile(
+    r"[a-zA-Z0-9_àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]+",
+    re.IGNORECASE,
+)
+
 # Common Vietnamese function words excluded from matching so that generic
 # queries ("là gì", "tôi muốn") cannot push scores above the threshold.
 # NOTE: tokens are diacritic-stripped, so entries must be plain ASCII.
@@ -93,7 +98,12 @@ _VIETNAMESE_STOPWORDS = {
 
 
 def normalize_vietnamese(text: str) -> str:
-    """Lowercase + strip diacritics (for matching robustness)."""
+    """Lowercase + strip diacritics (for matching robustness).
+
+    ``đ``/``Đ`` is mapped to ``d`` *before* NFD decomposition so that a tone
+    mark never splits ``điều`` into the junk tokens ``đ`` + ``ieu``.
+    """
+    text = text.replace("đ", "d").replace("Đ", "D")
     text = unicodedata.normalize("NFD", text)
     text = "".join(ch for ch in text if not unicodedata.combining(ch))
     return text.casefold()
@@ -113,11 +123,15 @@ class BM25Retriever(Retriever):
     k1: float = 1.5
     b: float = 0.75
     min_token_overlap: int = 2
+    phrase_boost: float = 1.0
+    phrase_boost_per_token: float = 0.4
     chunks: list[ChunkRecord] = field(default_factory=list)
     _doc_freqs: Counter = field(default_factory=Counter, repr=False)
     _doc_lens: list[int] = field(default_factory=list, repr=False)
     _avg_len: float = 0.0
     _doc_token_sets: list[set[str]] = field(default_factory=list, repr=False)
+    _doc_tokens: list[list[str]] = field(default_factory=list, repr=False)
+    _doc_words: list[list[str]] = field(default_factory=list, repr=False)
     _postings: dict[str, list[tuple[int, int]]] = field(default_factory=dict, repr=False)
 
     @staticmethod
@@ -128,6 +142,8 @@ class BM25Retriever(Retriever):
     def _build(self) -> None:
         self._doc_lens = []
         self._doc_token_sets = []
+        self._doc_tokens = []
+        self._doc_words = []
         postings: dict[str, list[tuple[int, int]]] = {}
         all_freqs: Counter = Counter()
         for idx, chunk in enumerate(self.chunks):
@@ -135,6 +151,8 @@ class BM25Retriever(Retriever):
             self._doc_lens.append(len(toks))
             uniq = set(toks)
             self._doc_token_sets.append(uniq)
+            self._doc_tokens.append(toks)
+            self._doc_words.append([w.casefold() for w in _WORD_RE.findall(chunk.text)])
             for t in uniq:
                 all_freqs[t] += 1
             tf_counts: Counter = Counter(toks)
@@ -176,7 +194,7 @@ class BM25Retriever(Retriever):
             score += idf * (tf * (self.k1 + 1)) / denom
         return score
 
-    def _score_doc_fast(self, query_tokens: list[str], pool: int = 500) -> list[tuple[float, int]]:
+    def _score_doc_fast(self, query_tokens: list[str], pool: int = 2000) -> list[tuple[float, int]]:
         """Inverted-index BM25 scoring: only docs containing query terms.
 
         Returns the top-``pool`` scored docs (not all 16k) so search stays
@@ -203,6 +221,54 @@ class BM25Retriever(Retriever):
 
         return heapq.nlargest(pool, ((s, i) for i, s in acc.items()))
 
+    @staticmethod
+    def _extract_phrases(words: list[str], max_len: int = 5) -> list[tuple[str, ...]]:
+        """All contiguous word n-grams (2..max_len) from the query.
+
+        Work on the *diacritic* word stream (never diacritic-stripped): plain
+        "chương trình" must not fuse with "chứng", and "di chúc" must stay a
+        phrase even though "di" looks like a stopword.
+        """
+        phrases: list[tuple[str, ...]] = []
+        for width in range(2, max_len + 1):
+            for i in range(len(words) - width + 1):
+                span = words[i : i + width]
+                if all(len(w) >= 2 for w in span):
+                    phrases.append(tuple(span))
+        return phrases
+
+    def _phrase_score(self, phrases: list[tuple[str, ...]], idx: int) -> float:
+        """Contiguous phrase hits in the doc, weighted by phrase length.
+
+        Position maps make the scan O(sum over phrase words of positions),
+        not O(doc_len x n_phrases).
+        """
+        toks = self._doc_words[idx]
+        pos: dict[str, set[int]] = {}
+        for i, w in enumerate(toks):
+            pos.setdefault(w, set()).add(i)
+        total = 0.0
+        for ph in phrases:
+            first = pos.get(ph[0])
+            if first is None:
+                continue
+            hits = first
+            shift = 1
+            for w in ph[1:]:
+                wpos = pos.get(w)
+                if wpos is None:
+                    hits = set()
+                    break
+                hits &= {p - shift for p in wpos}
+                shift += 1
+            count = len(hits)
+            if count == 0:
+                continue
+            width = len(ph)
+            base = self.phrase_boost + self.phrase_boost_per_token * (width - 2)
+            total += base * min(count, 3)
+        return total
+
     def search(self, query: str, top_k: int = 5) -> list[RetrievedChunk]:
         if not self.chunks:
             return []
@@ -218,6 +284,13 @@ class BM25Retriever(Retriever):
             if self._doc_freqs.get(token, 0) > len(self.chunks) / 2:
                 return []
         scored = self._score_doc_fast(query_tokens)
+        phrases = self._extract_phrases([w.casefold() for w in _WORD_RE.findall(query)])
+        if phrases:
+            boosted: list[tuple[float, int]] = []
+            for score, idx in scored:
+                boosted.append((score + self._phrase_score(phrases, idx), idx))
+            boosted.sort(reverse=True)
+            scored = boosted
         results: list[RetrievedChunk] = []
         for score, idx in scored:
             if score <= 0.0:

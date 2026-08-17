@@ -9,10 +9,10 @@ cần xác nhận con người (hiệu lực văn bản, consent, claim, GTM, vi
 
 | Khu | Tối đa | Mục tiêu | Điều kiện để đạt |
 |---|---|---|---|
-| M1 Impact & Inclusion | 15 | **13** | problem statement 150 từ + SDG map + evidence số liệu + user testimony thật (pilot) |
-| M2 AI Innovation: App & Impl | 20 | **18** | public link có người dùng thật (2) + GTM evidence (2) + hồ sơ innovation đầy đủ (14–16) |
-| M3 Technical & Skills | 15 | **14** | tech stack 2 + software 3 + UI custom 3 + emerging AI 4 = 12; hardware AI PC/OpenVINO +2 nếu có máy |
-| **Tổng** | 50 | **45** | |
+| M1 Impact & Inclusion | 15 | **14** | Pilot người cao tuổi có consent, task metrics, accessibility evidence và testimony |
+| M2 AI Innovation: App & Impl | 20 | **17** | Public self-serve link + local edge inference + ethics/evaluation; GTM để 0 |
+| M3 Technical & Skills | 15 | **15** | NPU benchmark thật, offline demo, stack/software/UI/RAG evidence tái lập |
+| **Tổng** | 50 | **46** | Kịch bản stretch; chỉ đạt nếu NPU, pilot và video đều xác minh được |
 
 Điểm tối đa kỳ vọng nếu đủ máy AI PC + pilot đầy đủ: M1 14 + M2 19 + M3 15
 = 48. Rủi ro lớn nhất làm rớt xuống <45: thiếu public link thật, thiếu GTM,
@@ -24,12 +24,16 @@ thiếu pilot/user testimony.
 
 - [ ] [T] Deploy public link (Streamlit Cloud) không lộ secret — **+2đ M2**
   (deadline 18/08; P thêm 1–2 user ngoài đội)
-- [ ] [T] Benchmark OpenVINO/AI PC — **+1–2đ M3** (cần máy; nếu không có,
-  ghi rõ hardware limitation, giữ desktop 1đ)
+- [ ] [T] Benchmark NPU/AI PC thật: model/version, NPU utilization, RAM,
+  latency p50/p95, cold start, throughput và cloud baseline. Không gọi là
+  OpenVINO nếu backend thực tế không dùng OpenVINO.
+- [ ] [T] Offline failure test: rút mạng sau bootstrap, chạy ít nhất 3 task,
+  quay video timestamp + log `offline=true`; test restart/OOM/timeout fail-closed
 - [ ] [T] Config/timeout/retry production-grade cho cloud LLM (F7) — nền cho
   deploy ổn định
 - [ ] [T] Thu hẹp pattern RED false positive (F10) + test phủ — chất lượng R3
 - [ ] [T] Full-system trace ẩn danh mới nhất + hardware/model/latency ghi rõ
+- [ ] [T] Local release bundle có checksum, model tag, config, runbook và lệnh tái lập
 - [ ] [T] Release + tag; tài liệu kỹ thuật khớp code (ĐoD T)
 
 ### [C] Content, Compliance & Evaluation
@@ -45,6 +49,10 @@ thiếu pilot/user testimony.
 - [ ] [C] Evidence matrix đầy đủ mọi tiêu chí rubric (`docs/rubric_evidence_matrix.md`)
 - [ ] [C] Ground truth R1–R4: false accept/reject phân tích; tách development/
   final test — ĐoD C
+- [ ] [C] Accessibility report cho người cao tuổi: cỡ chữ, tốc độ TTS,
+  số lần nhắc lại, tỷ lệ hiểu đúng và lỗi thao tác
+- [ ] [C] Safety red-team pilot: câu hỏi khẩn cấp/hình sự/thiếu nguồn,
+  kiểm tra refusal/chuyển tuyến và human oversight; tách khỏi synthetic
 - [ ] [C] Consent templates pilot + thu âm + video (`consent_form_v1.md`) —
   giao P trước khi tuyển (ưu tiên sáng thứ 7 08/08)
 
@@ -53,10 +61,14 @@ thiếu pilot/user testimony.
 - [ ] [P] Tuyển 8–10 người (ưu tiên cao tuổi/rào cản số) + consent — **+1–2đ M1**
 - [ ] [P] Pilot 3 task chuẩn + 1 tự do, log ẩn danh (task completion, time,
   satisfaction) — evidence M1 + M2 controlled test
-- [ ] [P] Video 2 phút: 1 câu VÀNG + spoken citation + 1 câu CAM/ĐỎ + cảnh
-  từ chối/chuyển tuyến + bảng kết quả thật + phụ đề — **+1–2đ M1/M2**
-- [ ] [P] Demo đối tác + feedback + (nếu có) xác nhận quan tâm — **+2đ GTM**
-  (KHÔNG gọi là deployment nếu chỉ là thư quan tâm)
+- [ ] [P] Pilot local với người cao tuổi: consent riêng cho audio/video/transcript;
+  log device/mode/task/time/success/satisfaction; mã participant không định danh
+- [ ] [P] Thu ít nhất 3 testimony ngắn có consent, tập trung vào nghe, hiểu và
+  hoàn thành bước tiếp theo; không gọi là adoption
+- [ ] [P] Video 2 phút: người cao tuổi dùng bản local + tắt mạng + spoken citation
+  + cảnh từ chối/chuyển tuyến + bảng pilot thật + phụ đề — **+1–2đ M1/M2**
+- [ ] [P] Public self-serve walkthrough + feedback tự nguyện có consent (không gọi là
+  partnership/traction nếu chưa có đối tác hoặc người dùng độc lập)
 - [ ] [P] Pitch/slide đồng bộ với C; demo dự phòng bằng video nếu live lỗi
 
 ### [T+C+P] Gate D — Hồ sơ tổng hợp

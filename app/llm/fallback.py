@@ -19,6 +19,7 @@ class FallbackLLM(BaseLLM):
     def __init__(self, primary: BaseLLM, fallback: BaseLLM):
         self.primary = primary
         self.fallback = fallback
+        self._last_served: BaseLLM | None = None
 
     @property
     def available(self) -> bool:
@@ -28,6 +29,13 @@ class FallbackLLM(BaseLLM):
     def active_name(self) -> str:
         return f"{self.primary.name}->{self.fallback.name}"
 
+    @property
+    def last_usage(self) -> dict:
+        """Usage of the backend that actually served the last call (R25)."""
+        if self._last_served is not None:
+            return dict(getattr(self._last_served, "last_usage", {}) or {})
+        return {}
+
     def generate_answer(
         self,
         query: str,
@@ -35,7 +43,9 @@ class FallbackLLM(BaseLLM):
         max_chars: int = 2000,
     ) -> dict:
         try:
-            return self.primary.generate_answer(query, chunks, max_chars=max_chars)
+            out = self.primary.generate_answer(query, chunks, max_chars=max_chars)
+            self._last_served = self.primary
+            return out
         except LLMError as primary_error:
             if not self.fallback.available:
                 raise LLMError(
@@ -43,7 +53,9 @@ class FallbackLLM(BaseLLM):
                     "no fallback configured/available."
                 ) from primary_error
             try:
-                return self.fallback.generate_answer(query, chunks, max_chars=max_chars)
+                out = self.fallback.generate_answer(query, chunks, max_chars=max_chars)
+                self._last_served = self.fallback
+                return out
             except LLMError as fallback_error:
                 raise LLMError(
                     f"Primary {self.primary.name} failed ({primary_error}); "

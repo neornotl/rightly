@@ -21,9 +21,16 @@ class _FakeChoices:
         self.message = type("M", (), {"content": content})
 
 
+class _FakeUsage:
+    prompt_tokens = 10
+    completion_tokens = 5
+    total_tokens = 15
+
+
 class _FakeCompletion:
     def __init__(self, content: str):
         self.choices = [_FakeChoices(content)]
+        self.usage = _FakeUsage()
 
 
 def _fake_client(create_fn, completions_attr="create"):
@@ -214,7 +221,10 @@ def test_faq_to_grounded_answer_shape():
     assert hit is not None
     ans = hit.to_grounded_answer()
     assert ans.answer_text
-    assert ans.source_ids == []
+    # FAQ entries now carry verified source citations (gate 2): source_ids is a
+    # list of source identifiers (may be empty for self-contained entries).
+    assert isinstance(ans.source_ids, list)
+    assert all(isinstance(s, str) and s for s in ans.source_ids)
     assert any("FAQ" in lim for lim in ans.limitations)
 
 

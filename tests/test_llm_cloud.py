@@ -66,6 +66,7 @@ class _FakeChoices:
 class _FakeCompletion:
     def __init__(self, content: str):
         self.choices = [_FakeChoices(content)]
+        self.usage = _FakeUsage()
 
 
 def test_groq_generate_answer_retries_transient_then_succeeds(monkeypatch):
@@ -243,9 +244,16 @@ def test_gemini_generate_answer_retries_transient(monkeypatch):
 # ---------- Pateway (OpenAI-compatible gateway, council R21) ----------
 
 
+class _FakeUsage:
+    prompt_tokens = 10
+    completion_tokens = 5
+    total_tokens = 15
+
+
 class _FakePatewayCompletion:
     def __init__(self, content: str):
         self.choices = [type("Ch", (), {"message": type("M", (), {"content": content})})]
+        self.usage = _FakeUsage()
 
 
 def _fake_pateway_client(completion):

@@ -33,7 +33,7 @@ from app.retrieval.document_loader import DocumentLoader
 from app.safety.policy import Policy
 from app.safety.router import SafetyRouter
 from app.safety.rules import normalize_query
-from app.schemas import GroundedAnswer, PipelineResult, UserQuery
+from app.schemas import GroundedAnswer, PipelineResult, RetrievedChunk, UserQuery
 from app.tts.base import BaseTTS
 from app.tts.mock_tts import MockTTS
 
@@ -299,6 +299,19 @@ class Pipeline:
             except OSError:
                 pass
 
+    def _retrieve(self, query: str, session_id: str, top_k: int) -> list[RetrievedChunk]:
+        """Search the retriever without letting a retriever fault crash the session.
+
+        A broken/empty retriever degrades to no chunks, which the router and
+        the empty-retrieval guard turn into a graceful REFUSE/CLARIFY. The
+        failure is recorded for audit (gate 7 open item: retriever-level fault).
+        """
+        try:
+            return list(self.retriever.search(query, top_k=top_k))  # type: ignore[union-attr]
+        except Exception as exc:  # noqa: BLE001 - retriever fault must not crash a session
+            self.store.record(session_id, "retriever_failure", reason=str(exc)[:500])
+            return []
+
     def _run(
         self,
         session_id: str,
@@ -314,12 +327,14 @@ class Pipeline:
         lat["normalize_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
 
         t0 = time.perf_counter()
-        chunks = self.retriever.search(query.text, top_k=self.top_k)
+        chunks = self._retrieve(query.text, session_id, self.top_k)
         lat["retrieval_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
 
         t0 = time.perf_counter()
         llm_classifier = None
-        if self.settings.app_mode == "cloud" and hasattr(self.llm, "classify_safe"):
+        if (
+            self.settings.app_mode == "cloud" or self.settings.use_llm_classifier
+        ) and hasattr(self.llm, "classify_safe"):
             # Outbound: scrub the query before it leaves the machine.
             if self.settings.pii_scrub_outbound:
                 from app.privacy.scrubber import scrub_outbound
@@ -350,14 +365,18 @@ class Pipeline:
             # FAQ hit: use curated answer, override to SAFE. Re-search with the
             # FAQ's own question so the evidence chunks match the curated answer
             # (user query chunks may cover a different topic entirely).
-            faq_chunks = self.retriever.search(
-                faq_hit.retrieval_query, top_k=self.top_k
-            ) or chunks
-            faq_sources = faq_hit.source_ids or tuple(
-                c.source_id
-                for c in faq_chunks
-                if c.score >= self.settings.min_retrieval_score
-            ) or tuple(c.source_id for c in faq_chunks[:3])
+            faq_chunks = self._retrieve(faq_hit.retrieval_query, session_id, self.top_k) or chunks
+            faq_source_list = (
+                list(faq_hit.source_ids)
+                if faq_hit.source_ids
+                else [
+                    c.source_id
+                    for c in faq_chunks
+                    if c.score >= self.settings.min_retrieval_score
+                ]
+                or [c.source_id for c in faq_chunks[:3]]
+            )
+            faq_sources = tuple(dict.fromkeys(faq_source_list))
             from dataclasses import replace
 
             faq_hit = replace(faq_hit, source_ids=faq_sources)

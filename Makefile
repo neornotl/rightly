@@ -3,11 +3,14 @@
 PYTHON ?= python
 PIP ?= $(PYTHON) -m pip
 
-.PHONY: setup test lint format mock-demo eval-demo preflight ui clean
+.PHONY: setup test lint format mock-demo eval-demo preflight ui offline-setup clean
 
 setup:
 	$(PYTHON) -m venv .venv
 	$(PIP) install -r requirements.txt -r requirements-dev.txt
+
+offline-setup:
+	$(PYTHON) scripts/bootstrap_offline.py --all
 
 test:
 	$(PYTHON) -m pytest

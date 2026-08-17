@@ -89,6 +89,8 @@ class Settings:
     pateway_api_key: str = ""
     pateway_base_url: str = ""
     pateway_model: str = ""
+    ollama_base_url: str = "http://localhost:11434/v1"
+    ollama_model: str = "qwen2.5:7b-instruct-q4_k_m"
     llm_fallback_backend: str = ""
     rate_limit_per_ip: int = 60
     rate_limit_window_seconds: int = 3600
@@ -97,6 +99,7 @@ class Settings:
     max_context_chars: int = 12000
     max_response_chars: int = 2000
     pii_scrub_outbound: bool = True
+    use_llm_classifier: bool = False
     log_retention_days: int = 30
     llm_timeout_seconds: float = 60.0
     llm_max_retries: int = 3
@@ -108,10 +111,10 @@ class Settings:
     dense_gate: float = 0.84
     edge_tts_voice: str = "vi-VN-HoaiMyNeural"
     edge_tts_rate: str = "+0%"
-    official_hotline_label: str = "Đường dây nóng (chưa xác minh)"
-    official_hotline_value: str = "1900XXXX"
-    official_one_stop_label: str = "Bộ phận một cửa (chưa xác minh)"
-    official_one_stop_value: str = "Chưa có"
+    official_hotline_label: str = "Đường dây nóng khẩn cấp (113)"
+    official_hotline_value: str = "113"
+    official_one_stop_label: str = "Bộ phận một cửa - Tổng đài dịch vụ công 1022"
+    official_one_stop_value: str = "1022"
     hold_message: str = "Xin chờ chút, tôi đang tìm thông tin chính thức cho câu hỏi của bạn."
 
     # Derived paths (relative to project root).
@@ -181,8 +184,8 @@ def _float_env(key: str, default: float) -> float:
 _VALID_MODES = {"mock", "local", "cloud"}
 _VALID_ASR = {"mock", "phowhisper"}
 _VALID_RETRIEVAL = {"bm25", "hybrid"}
-_VALID_LLM = {"mock", "gemini", "groq", "pateway"}
-_VALID_FALLBACK = {"", "gemini", "groq", "pateway"}
+_VALID_LLM = {"mock", "gemini", "groq", "pateway", "local"}
+_VALID_FALLBACK = {"", "gemini", "groq", "pateway", "local"}
 _VALID_TTS = {"mock", "edge"}
 
 
@@ -245,7 +248,12 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
             f"LLM_FALLBACK_BACKEND={llm_fallback_backend!r} is invalid. "
             f"Choose one of {sorted(_VALID_FALLBACK)}."
         )
-    if llm_fallback_backend == llm_backend and llm_backend in {"gemini", "groq", "pateway"}:
+    if llm_fallback_backend == llm_backend and llm_backend in {
+        "gemini",
+        "groq",
+        "pateway",
+        "local",
+    }:
         raise ConfigError("LLM_FALLBACK_BACKEND must differ from LLM_BACKEND.")
 
     rate_limit_per_ip = _int_env("RATE_LIMIT_PER_IP", 60)
@@ -261,6 +269,8 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         raise ConfigError("MAX_RESPONSE_CHARS must not exceed MAX_CONTEXT_CHARS.")
 
     pii_scrub_outbound = _bool_env("PII_SCRUB_OUTBOUND", True)
+
+    use_llm_classifier = _bool_env("USE_LLM_CLASSIFIER", False)
 
     log_retention = _int_env("LOG_RETENTION_DAYS", 30)
     if log_retention < 0:
@@ -312,6 +322,10 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         pateway_api_key=os.environ.get("PATEWAY_API_KEY", "").strip(),
         pateway_base_url=os.environ.get("PATEWAY_BASE_URL", "").strip(),
         pateway_model=os.environ.get("PATEWAY_MODEL", "").strip(),
+        ollama_base_url=os.environ.get(
+            "OLLAMA_BASE_URL", "http://localhost:11434/v1"
+        ).strip(),
+        ollama_model=os.environ.get("OLLAMA_MODEL", "qwen2.5:7b-instruct-q4_k_m").strip(),
         llm_fallback_backend=llm_fallback_backend,
         rate_limit_per_ip=rate_limit_per_ip,
         rate_limit_window_seconds=rate_limit_window,
@@ -320,6 +334,7 @@ def load_settings(env_file: Optional[Path] = None) -> Settings:
         max_context_chars=max_context,
         max_response_chars=max_response,
         pii_scrub_outbound=pii_scrub_outbound,
+        use_llm_classifier=use_llm_classifier,
         log_retention_days=log_retention,
         llm_timeout_seconds=llm_timeout,
         llm_max_retries=llm_max_retries,
@@ -370,6 +385,7 @@ def safe_settings_summary(settings: Settings) -> dict[str, Any]:
         "max_context_chars": settings.max_context_chars,
         "max_response_chars": settings.max_response_chars,
         "pii_scrub_outbound": settings.pii_scrub_outbound,
+        "use_llm_classifier": settings.use_llm_classifier,
         "log_retention_days": settings.log_retention_days,
         "llm_timeout_seconds": settings.llm_timeout_seconds,
         "llm_max_retries": settings.llm_max_retries,

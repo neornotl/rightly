@@ -35,6 +35,7 @@ class GroqLLM(BaseLLM):
         self.backoff_seconds = backoff_seconds
         self._client = None
         self._key_index = 0
+        self.last_usage: dict = {}  # R25: token/cost tracking for 10k eval
 
     @property
     def available(self) -> bool:
@@ -120,6 +121,12 @@ class GroqLLM(BaseLLM):
             )
         except Exception as exc:
             raise LLMError(f"Groq request failed after retries: {exc}") from exc
+        self.last_usage = {
+            "model": getattr(completion, "model", ""),
+            "prompt_tokens": int(getattr(completion.usage, "prompt_tokens", 0) or 0),
+            "completion_tokens": int(getattr(completion.usage, "completion_tokens", 0) or 0),
+            "total_tokens": int(getattr(completion.usage, "total_tokens", 0) or 0),
+        }
         text = completion.choices[0].message.content.strip()
         text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
         try:
