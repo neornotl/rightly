@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import re
+from typing import Optional
 
 from app.llm.base import BaseLLM
 from app.llm.prompts import TEMPLATES, clean_spoken_title, shorten_spoken_citation
@@ -41,6 +42,7 @@ class MockLLM(BaseLLM):
         query: str,
         chunks: list[RetrievedChunk],
         max_chars: int = 2000,
+        history: Optional[list[dict]] = None,
     ) -> dict:
         if not chunks:
             raise ValueError("MockLLM requires at least one retrieved chunk.")

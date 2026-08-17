@@ -198,7 +198,7 @@ def test_hallucinated_citation_rejected_by_pipeline(tmp_path):
     class FakeLLM:
         name = "fake"
 
-        def generate_answer(self, query, chunks, max_chars=2000):
+        def generate_answer(self, query, chunks, max_chars=2000, history=None):
             # Hallucinate a source_id NOT in retrieved chunks (nd123_2015)
             return {
                 "answer_text": "câu trả lời bịa",
@@ -225,7 +225,7 @@ def test_ungrounded_answer_refused(tmp_path):
     class NoCiteLLM:
         name = "nocite"
 
-        def generate_answer(self, query, chunks, max_chars=2000):
+        def generate_answer(self, query, chunks, max_chars=2000, history=None):
             return {
                 "answer_text": "Tôi khẳng định chắc chắn câu này đúng.",
                 "spoken_citation": "",
@@ -240,3 +240,44 @@ def test_ungrounded_answer_refused(tmp_path):
     assert result.decision.action == Action.REFUSE
     assert result.answer is None
     assert "INSUFFICIENT_SOURCE" in result.decision.reason_codes
+
+
+def test_followup_uses_temporary_session_memory(tmp_path):
+    """Turn 2 that alone retrieves nothing must still be answered using the
+    previous turn's grounded evidence (temporary session memory)."""
+    pipeline = _pipeline(tmp_path)
+    session_id = pipeline.create_session()
+
+    r1 = pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu tại xã Bình Minh?")
+    assert r1.answer is not None
+    assert len(pipeline._memory[session_id]) == 1
+
+    r2 = pipeline.process_text(session_id, "vâng ạ")
+    assert r2.answer is not None, "follow-up must reuse previous turn's evidence"
+    assert r2.decision.action == Action.ANSWER
+    assert r2.answer.source_ids, "rescued answer must still cite its evidence"
+    assert set(r2.answer.source_ids).issubset({c.source_id for c in r1.chunks})
+    assert len(pipeline._memory[session_id]) == 2
+
+
+def test_delete_session_clears_temporary_memory(tmp_path):
+    """Ending the session (user says 'kết thúc'/'thoát') must purge the
+    in-memory context — nothing survives past the session."""
+    pipeline = _pipeline(tmp_path)
+    session_id = pipeline.create_session()
+    pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu tại xã Bình Minh?")
+    pipeline.process_text(session_id, "vâng ạ")
+    assert len(pipeline._memory.get(session_id, [])) == 2
+    pipeline.delete_session(session_id)
+    assert session_id not in pipeline._memory
+
+
+def test_hard_refusal_never_bypassed_by_memory(tmp_path):
+    """RED/ORANGE refusals must stay hard even when session memory exists."""
+    pipeline = _pipeline(tmp_path)
+    session_id = pipeline.create_session()
+    pipeline.process_text(session_id, "Thủ tục cấp hộ khẩu tại xã Bình Minh?")
+    # Emergency after a normal turn: must never reach the LLM via memory.
+    result = pipeline.process_text(session_id, "Tôi bị đau tim, cấp cứu giúp!")
+    assert result.decision.zone == Zone.RED
+    assert result.answer is None

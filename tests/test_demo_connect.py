@@ -30,7 +30,8 @@ def test_find_by_category_orders_verified_first():
     assert all(c.category == "bo_phan_mot_cua" for c in hits)
 
 
-def test_default_contact_returns_none_when_book_empty():
+def test_default_contact_returns_none_when_book_empty(monkeypatch):
+    monkeypatch.setattr("app.contacts._load_contacts", lambda path=None: ())
     assert default_contact() is None
 
 

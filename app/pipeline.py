@@ -14,6 +14,7 @@ Privacy guarantees implemented here:
 from __future__ import annotations
 
 import logging
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -196,6 +197,13 @@ class Pipeline:
     validator: object = None  # CitationValidator when app_mode != "mock"
     faq: object = None  # FAQMatcher when data/faq.json exists
     top_k: int = 5
+    #: Temporary per-session conversation memory (RAM only, never persisted).
+    #: Kept for the lifetime of the session; cleared by delete_session()
+    #: (user says "kết thúc"/"thoát" in CLI/UI). Each entry:
+    #: {"user": str, "assistant": str, "chunks": list[RetrievedChunk]}.
+    _memory: dict[str, list[dict]] = field(default_factory=dict, repr=False)
+
+    _MEMORY_MAX_TURNS = 3
 
     def __post_init__(self) -> None:
         self.settings.resolved_log_dir().mkdir(parents=True, exist_ok=True)
@@ -252,6 +260,10 @@ class Pipeline:
         return session_id
 
     def delete_session(self, session_id: str) -> int:
+        """End a session: purge its log lines AND its temporary in-memory
+        context. The memory is RAM-only and never written to disk; after this
+        call the session is gone for good (privacy deletion policy)."""
+        self._memory.pop(session_id, None)
         return self.store.delete_session(session_id)
 
     # ---------- core ----------
@@ -305,9 +317,28 @@ class Pipeline:
         A broken/empty retriever degrades to no chunks, which the router and
         the empty-retrieval guard turn into a graceful REFUSE/CLARIFY. The
         failure is recorded for audit (gate 7 open item: retriever-level fault).
+
+        Follow-up refinement: a follow-up that wraps personal details around a
+        rule question ("tôi làm cho nhà nước được 20 năm, năm nay 55 tuổi, bao
+        nhiêu năm nữa nghỉ hưu?") usually dilutes the retrieval query; the
+        canonical rule chunks (e.g. "tuổi nghỉ hưu") then drop out of the top-k.
+        When the pattern matches, also search the canonical phrasing and merge
+        the extra hits (dedupe by source+text) so the LLM still receives the
+        rule it needs to compute the answer.
         """
         try:
-            return list(self.retriever.search(query, top_k=top_k))  # type: ignore[union-attr]
+            hits = list(self.retriever.search(query, top_k=top_k))  # type: ignore[union-attr]
+            q = normalize_query(query)
+            if (
+                "nghi huu" in q
+                and ("nam nay" in q or "tuoi" in q or re.search(r"\d+\s*nam", q))
+                and re.search(r"(?:bao nhieu nam nua|may nam nua|khi nao|bao gio|den khi nao|sau bao lau)", q)
+            ):
+                extra = list(self.retriever.search("tuoi nghi huu", top_k=3))  # type: ignore[union-attr]
+                seen = {(h.source_id, h.text) for h in hits}
+                extra = [h for h in extra if (h.source_id, h.text) not in seen]
+                hits = extra + hits
+            return hits
         except Exception as exc:  # noqa: BLE001 - retriever fault must not crash a session
             self.store.record(session_id, "retriever_failure", reason=str(exc)[:500])
             return []
@@ -350,6 +381,32 @@ class Pipeline:
                 llm_classifier = self.llm.classify_safe  # type: ignore[attr-defined]
         decision, normalized = self.router.route(query.text, chunks, llm_classifier)
         lat["safety_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+        # Temporary session memory: previous turns of THIS session (RAM only).
+        # Used for follow-ups ("em la nam a" after the retirement-age question)
+        # and scrubbed like the query when leaving the machine in cloud mode.
+        memory = self._memory.get(session_id)
+        history = (
+            [{"user": m["user"], "assistant": m["assistant"]} for m in memory[-self._MEMORY_MAX_TURNS :]]
+            if memory
+            else []
+        )
+        outbound_text = query.text
+        outbound_history = history
+        if (
+            self.settings.llm_backend in {"gemini", "groq", "pateway"}
+            and self.settings.pii_scrub_outbound
+        ):
+            from app.privacy.scrubber import scrub_outbound
+
+            outbound_text = scrub_outbound(query.text)
+            outbound_history = [
+                {
+                    "user": scrub_outbound(str(t.get("user", ""))),
+                    "assistant": scrub_outbound(str(t.get("assistant", ""))),
+                }
+                for t in history
+            ]
 
         # F5: FAQ check FIRST - before router decision gates.
         # FAQ answers are curated & verified, so they can answer even when
@@ -397,18 +454,11 @@ class Pipeline:
                 answer = None
             else:
                 try:
-                    outbound_text = query.text
-                    if (
-                        self.settings.llm_backend in {"gemini", "groq", "pateway"}
-                        and self.settings.pii_scrub_outbound
-                    ):
-                        from app.privacy.scrubber import scrub_outbound
-
-                        outbound_text = scrub_outbound(query.text)
                     doc = self.llm.generate_answer(
                         outbound_text,
                         chunks[: self.top_k],
                         max_chars=self.settings.max_response_chars,
+                        history=outbound_history,
                     )
                     raw_ids = list(dict.fromkeys(str(s) for s in (doc.get("source_ids") or [])))
                     answer = GroundedAnswer(
@@ -469,6 +519,52 @@ class Pipeline:
                             next_step=answer.next_step,
                         )
 
+        # Follow-up rescue: a terse continuation ("em la nam a", "còn nữa
+        # không?") often retrieves nothing by itself. When the router only
+        # failed on retrieval sufficiency/ambiguity (never on safety), fall
+        # back to the previous turns' grounded evidence + memory so the model
+        # can still answer the follow-up. Hard gates (RED/ORANGE refusals)
+        # are never bypassed.
+        _RESCUE_CODES = {"INSUFFICIENT_SOURCE", "AMBIGUOUS_QUERY"}
+        if answer is None and not faq_answered and memory:
+            if set(decision.reason_codes) <= _RESCUE_CODES:
+                t0 = time.perf_counter()
+                try:
+                    followup_chunks = list(dict.fromkeys(memory[-1]["chunks"] + list(chunks)))
+                    if not followup_chunks:
+                        followup_chunks = list(chunks)
+                    doc = self.llm.generate_answer(
+                        outbound_text,
+                        followup_chunks[: self.top_k],
+                        max_chars=self.settings.max_response_chars,
+                        history=outbound_history,
+                    )
+                    raw_ids = list(dict.fromkeys(str(s) for s in (doc.get("source_ids") or [])))
+                    rescued = GroundedAnswer(
+                        answer_text=str(doc.get("answer_text", "")).strip(),
+                        spoken_citation=str(doc.get("spoken_citation", "")).strip(),
+                        source_ids=raw_ids,
+                        limitations=[str(s) for s in (doc.get("limitations") or [])],
+                        next_step=str(doc.get("next_step", "")).strip(),
+                    )
+                    if not rescued.answer_text or not raw_ids:
+                        rescued = None
+                    if rescued is not None and self.validator is not None:
+                        retrieved = {c.source_id for c in followup_chunks}
+                        verdict = self.validator.validate(rescued, retrieved)
+                        if not verdict.ok:
+                            rescued = None
+                    if rescued is not None:
+                        answer = rescued
+                        chunks = followup_chunks
+                        decision = self.router.policy.safe_decision()
+                        self.store.record(
+                            session_id, "followup_memory_used", source_ids=list(raw_ids)
+                        )
+                except Exception as exc:
+                    self.store.record(session_id, "followup_failure", reason=str(exc)[:500])
+                lat["followup_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
         spoken = ""
         if answer is not None:
             from app.validation.response_validator import detect_issues, sanitize_answer
@@ -484,6 +580,15 @@ class Pipeline:
             except Exception as exc:
                 self.store.record(session_id, "tts_failure", reason=str(exc)[:300])
             lat["tts_ms"] = round((time.perf_counter() - t0) * 1000.0, 1)
+
+        # Keep the accepted turn in the session's temporary memory (RAM only).
+        if answer is not None and answer.answer_text:
+            turns = self._memory.setdefault(session_id, [])
+            turns.append(
+                {"user": query.text, "assistant": answer.answer_text, "chunks": list(chunks)}
+            )
+            if len(turns) > self._MEMORY_MAX_TURNS:
+                del turns[: -self._MEMORY_MAX_TURNS]
 
         result = PipelineResult(
             session_id=session_id,

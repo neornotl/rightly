@@ -4,11 +4,28 @@ from __future__ import annotations
 
 import time
 from abc import ABC, abstractmethod
-from typing import Callable, TypeVar
+from typing import Callable, Optional, TypeVar
 
 from app.schemas import RetrievedChunk
 
 T = TypeVar("T")
+
+
+def format_history(history: Optional[list[dict]] = None) -> str:
+    """Render in-session memory as a short dialogue block for the LLM prompt.
+
+    The memory is temporary (RAM, per session) and is deleted when the
+    session ends; it never leaves the machine unless the backend is cloud.
+    """
+    if not history:
+        return ""
+    lines = ["Cuộc trò chuyện trước đó trong cùng phiên (người dân - tổng đài viên):"]
+    for turn in history:
+        if turn.get("user"):
+            lines.append(f"[người dân]: {turn['user']}")
+        if turn.get("assistant"):
+            lines.append(f"[tổng đài viên]: {turn['assistant']}")
+    return "\n".join(lines)
 
 
 class LLMError(RuntimeError):
@@ -70,8 +87,14 @@ class BaseLLM(ABC):
         query: str,
         chunks: list[RetrievedChunk],
         max_chars: int = 2000,
+        history: Optional[list[dict]] = None,
     ) -> dict:
-        """Return a JSON dict with answer fields."""
+        """Return a JSON dict with answer fields.
+
+        ``history`` carries the previous turns of the same session (temporary
+        memory); backends may include it in the prompt, but answers must stay
+        grounded on the ``chunks`` of the CURRENT turn.
+        """
 
     def enforce_source_ids(self, parsed: dict, allowed: set[str]) -> dict:
         """Force source_ids from the answer to be a subset of allowed."""

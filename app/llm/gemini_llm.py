@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from app.llm.base import BaseLLM, LLMError, is_retryable_llm_error, retry_transient
+from app.llm.base import BaseLLM, LLMError, format_history, is_retryable_llm_error, retry_transient
 from app.llm.prompts import CLASSIFY_SYSTEM, SYSTEM_PROMPT
 from app.schemas import RetrievedChunk
 
@@ -56,14 +56,17 @@ class GeminiLLM(BaseLLM):
         query: str,
         chunks: list[RetrievedChunk],
         max_chars: int = 2000,
+        history: Optional[list[dict]] = None,
     ) -> dict:
         if not self.available:
             raise LLMError("GEMINI_API_KEY is not set (LLM_BACKEND=gemini).")
         context = "\n\n".join(
             f"[source_id={c.source_id}|chunk_id={c.chunk_id}]\n{c.text}" for c in chunks
         )
+        history_block = format_history(history)
         user = (
-            f"Câu hỏi: {query}\n\n"
+            (f"{history_block}\n\n" if history_block else "")
+            + f"Câu hỏi: {query}\n\n"
             f"Các đoạn nguồn (chỉ được dùng các source_id này):\n{context}\n\n"
             f"Giới hạn câu trả lời: {max_chars} ký tự."
         )

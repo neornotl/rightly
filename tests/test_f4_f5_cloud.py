@@ -104,7 +104,7 @@ class _FailingLLM:
     def available(self):
         return True
 
-    def generate_answer(self, query, chunks, max_chars=2000):
+    def generate_answer(self, query, chunks, max_chars=2000, history=None):
         raise LLMError("primary down")
 
     def classify_safe(self, query, chunks):
@@ -120,7 +120,7 @@ class _SucceedingLLM:
     def available(self):
         return True
 
-    def generate_answer(self, query, chunks, max_chars=2000):
+    def generate_answer(self, query, chunks, max_chars=2000, history=None):
         return {
             "answer_text": "fallback ok",
             "spoken_citation": "c",

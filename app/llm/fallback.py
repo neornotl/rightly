@@ -9,6 +9,8 @@ Semantics:
 
 from __future__ import annotations
 
+from typing import Optional
+
 from app.llm.base import BaseLLM, LLMError
 from app.schemas import RetrievedChunk
 
@@ -41,9 +43,12 @@ class FallbackLLM(BaseLLM):
         query: str,
         chunks: list[RetrievedChunk],
         max_chars: int = 2000,
+        history: Optional[list[dict]] = None,
     ) -> dict:
         try:
-            out = self.primary.generate_answer(query, chunks, max_chars=max_chars)
+            out = self.primary.generate_answer(
+                query, chunks, max_chars=max_chars, history=history
+            )
             self._last_served = self.primary
             return out
         except LLMError as primary_error:
@@ -53,7 +58,9 @@ class FallbackLLM(BaseLLM):
                     "no fallback configured/available."
                 ) from primary_error
             try:
-                out = self.fallback.generate_answer(query, chunks, max_chars=max_chars)
+                out = self.fallback.generate_answer(
+                    query, chunks, max_chars=max_chars, history=history
+                )
                 self._last_served = self.fallback
                 return out
             except LLMError as fallback_error:
