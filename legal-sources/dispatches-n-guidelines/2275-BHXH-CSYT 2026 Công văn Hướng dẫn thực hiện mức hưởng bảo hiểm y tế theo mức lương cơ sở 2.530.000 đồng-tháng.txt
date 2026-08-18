@@ -1,0 +1,17 @@
+1. Thanh toán BHYT khi đi khám bệnh, chữa bệnh (KCB) ngoại trú theo quy định tại khoản 2, 3 và 4 Điều 19 Nghị định số 188/2025/NĐ-CP
+Khoản 1 Điều 22 Luật BHYT quy định: “Người tham gia bảo hiểm y tế khi khám bệnh, chữa bệnh theo quy định tại Điều 26 và Điều 27 của Luật này được quỹ bảo hiểm y tế thanh toán chi phí khám bệnh, chữa bệnh trong phạm vi được hưởng với mức hưởng như sau:... b) 100% chi phí khám bệnh, chữa bệnh đối với trường hợp chi phí cho một lần khám bệnh, chữa bệnh thấp hơn mức do Chính phủ quy định;... e) 80% chi phí khám bệnh, chữa bệnh đối với đối tượng khác.”.
+Khoản 4 Điều 22 Luật BHYT quy định: “Người tham gia bảo hiểm y tế tự đi khám bệnh, chữa bệnh không đúng cơ sở đăng ký khám bệnh, chữa bệnh bảo hiểm y tế ban đầu, không đúng quy định về chuyển người bệnh quy định tại Điều 26 và Điều 27 của Luật này, trừ trường hợp quy định tại khoản 3 và khoản 5 Điều này, được quỹ bảo hiểm y tế thanh toán theo tỷ lệ phần trăm của mức hưởng quy định tại khoản 1 Điều này như sau: ...e) Từ 50% đến 100% mức hưởng khi khám bệnh, chữa bệnh ngoại trú tại cơ sở khám bệnh, chữa bệnh cấp cơ bản. h) 50% mức hưởng khi khám bệnh, chữa bệnh ngoại trú theo lộ trình do Chính phủ quy định... ”.
+Căn cứ các quy định nêu trên, quỹ BHYT thanh toán khi người bệnh tự đi KCB ngoại trú tại các cơ sở KCB (i) cấp cơ bản đạt số điểm từ 50 điểm đến dưới 70 điểm, (ii) cấp cơ bản mà trước ngày 01/01/2025 đã được cơ quan có thẩm quyền xác định là tuyến tỉnh hoặc tuyến trung ương hoặc tương đương, (iii) cấp chuyên sâu mà trước ngày 01/01/2025 đã được cơ quan có thẩm quyền xác định là tuyến tỉnh như sau:
+a) Trường hợp tổng chi KCB BHYT nhỏ hơn 15% mức lương cơ sở
+Quỹ BHYT chi trả = tổng chi KCB BHYT x 50%. 
+b) Trường hợp tổng chi KCB BHYT bằng hoặc lớn hơn 15% mức lương cơ sở Quỹ BHYT chi trả = tổng chi KCB BHYT x 50% x mức hưởng theo đối tượng.
+2. Áp dụng mức lương cơ sở mới (2.530.000 đồng)
+- Chi phí một lần KCB thấp hơn 15% mức lương cơ sở quy định tại khoản 1 Điều 17 Nghị định số 188/2025/NĐ-CP khi tổng chi KCB BHYT < 379.500 đồng.
+- Số tiền cùng chi trả đủ 06 tháng lương cơ sở quy định tại điểm a khoản 2 Điều 18 Nghị định số 188/2025/NĐ-CP là 15.180.000 đồng.
+- Mức thanh toán trực tiếp quy định tại Điều 57 Nghị định số 188/2025/NĐ-CP:
++ 0,15 lần mức lương cơ sở quy định tại điểm a khoản 1 và điểm a khoản 4 là 379.500 đồng;
++ 0,5 lần mức lương cơ sở quy định tại điểm b khoản 1 và điểm b khoản 4 là 1.265.000 đồng;
++ 01 lần mức lương cơ sở quy định tại khoản 2 là 2.530.000 đồng;
++ 2,5 lần mức lương cơ sở quy định tại khoản 3 là 6.325.000 đồng.
+- Mức thanh toán tổng chi phí thiết bị y tế cho một lần sử dụng dịch vụ kỹ thuật quy định tại điểm a khoản 3 Điều 1 Thông tư số 24/2025/TT-BYT ngày 30/6/2025 của Bộ Y tế không vượt quá 45 tháng lương cơ sở là 113.850.000 đồng.
+Trong quá trình thực hiện nếu có khó khăn, vướng mắc, Bảo hiểm xã hội các tỉnh, thành phố trực thuộc Trung ương báo cáo về Bảo hiểm xã hội Việt Nam để xem xét, giải quyết.
