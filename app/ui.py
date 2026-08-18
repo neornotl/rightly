@@ -27,6 +27,7 @@ except ImportError:  # pragma: no cover - reported to user
 
 from app.config import load_settings, safe_settings_summary  # noqa: E402 - needs sys.path fix above
 from app.pipeline import Pipeline  # noqa: E402
+from app.voice import HandsFreeAudioProcessor  # noqa: E402
 
 if st is None:
     raise SystemExit(
@@ -76,7 +77,12 @@ st.markdown(
         border-left: 5px solid var(--teal);
         padding: 20px 22px;
         border-radius: 16px;
-        margin: 12px 0;
+         margin: 12px 0;
+         max-width: 850px;
+         white-space: pre-wrap;
+         overflow-wrap: anywhere;
+         line-height: 1.8;
+         font-size: 18px;
       }
       .citation-box {
         background: #fff9ed;
@@ -84,8 +90,10 @@ st.markdown(
         border-left: 5px solid #c78b2c;
         padding: 12px;
         border-radius: 8px;
-        margin: 8px 0;
-        font-style: italic;
+         margin: 8px 0;
+         font-style: italic;
+         white-space: pre-wrap;
+         line-height: 1.7;
       }
       .source-box {
         background: #f1f8f6;
@@ -211,6 +219,55 @@ with st.sidebar:
 # ============================================================
 st.subheader("Bạn đang cần biết điều gì?")
 
+st.markdown("#### 🎙️ Hỏi bằng giọng nói")
+st.caption("Bấm Bắt đầu nghe một lần để cấp quyền microphone. Sau đó chỉ cần nói; hệ thống tự nhận câu khi bạn ngừng nói.")
+if settings.asr_backend == "mock":
+    st.error("⚠️ Nhận dạng giọng nói đang ở chế độ demo, không nghe microphone thật. Hãy đặt ASR_BACKEND=phowhisper.")
+try:
+    from streamlit_webrtc import WebRtcMode, webrtc_streamer
+
+    voice_ctx = webrtc_streamer(
+        key=f"handsfree_{session_id}",
+        mode=WebRtcMode.SENDONLY,
+        audio_processor_factory=HandsFreeAudioProcessor,
+        media_stream_constraints={"audio": True, "video": False},
+        async_processing=True,
+    )
+    if voice_ctx.audio_processor:
+        processor = voice_ctx.audio_processor
+
+        @st.fragment(run_every="500ms")
+        def _poll_microphone():
+            audio_bytes = processor.pop_audio()
+            if audio_bytes:
+                st.info("✅ Đã nhận giọng nói. Đang chuyển thành câu hỏi...")
+                audio_path = pipeline.settings.resolved_data_dir() / "audio" / f"voice_{session_id}.wav"
+                audio_path.parent.mkdir(parents=True, exist_ok=True)
+                audio_path.write_bytes(audio_bytes)
+                result = pipeline.process_audio(session_id, audio_path)
+                st.session_state.last_result = result.to_dict()
+                st.rerun(scope="app")
+                return
+
+            # WebRTC can retain an older processor instance across Streamlit reruns.
+            status = getattr(processor, "status", None)
+            if status is None:
+                rms, received_frames, speaking = 0.0, 0, False
+            else:
+                rms, received_frames, speaking = status
+            if received_frames == 0:
+                st.warning("🟡 Đã bật microphone nhưng chưa nhận được tín hiệu âm thanh. Kiểm tra quyền microphone của trình duyệt.")
+            elif speaking:
+                st.success(f"🟢 Đang nghe... tín hiệu microphone: {rms:.0f}")
+            else:
+                st.info(f"🔵 Microphone đang hoạt động. Hãy nói một câu rồi im lặng khoảng 1 giây. Tín hiệu: {rms:.0f}")
+
+        _poll_microphone()
+    elif getattr(voice_ctx, "state", None) and not getattr(voice_ctx.state, "playing", False):
+        st.caption("Bấm Start để trình duyệt xin quyền microphone. Nếu bị từ chối, hãy mở biểu tượng khóa cạnh địa chỉ trang.")
+except ImportError:
+    st.info("Chưa cài bộ phận microphone trên trình duyệt. Bạn vẫn có thể gõ câu hỏi bên dưới.")
+
 query = st.text_input(
     "Câu hỏi của bạn:",
     key="query_input",
@@ -264,6 +321,8 @@ if "last_result" in st.session_state:
     )
     
     if answer:
+        st.markdown("### 🗣️ Câu hệ thống đã nghe")
+        st.info(data.get("query") or "(Không nhận được transcript)")
         # ANSWER
         st.markdown("### ✅ Câu trả lời")
         st.markdown(

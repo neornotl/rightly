@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 import re
 import time
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -41,6 +42,12 @@ from app.tts.mock_tts import MockTTS
 logger = logging.getLogger(__name__)
 
 _MIN_QUERY_CHARS = 3
+
+
+def _strip_diacritics(text: str) -> str:
+    text = text.replace("đ", "d").replace("Đ", "D")
+    text = unicodedata.normalize("NFD", text)
+    return "".join(ch for ch in text if not unicodedata.combining(ch)).casefold()
 
 
 def make_asr(settings: Settings) -> BaseASR:
@@ -329,15 +336,69 @@ class Pipeline:
         try:
             hits = list(self.retriever.search(query, top_k=top_k))  # type: ignore[union-attr]
             q = normalize_query(query)
-            if (
-                "nghi huu" in q
-                and ("nam nay" in q or "tuoi" in q or re.search(r"\d+\s*nam", q))
-                and re.search(r"(?:bao nhieu nam nua|may nam nua|khi nao|bao gio|den khi nao|sau bao lau)", q)
+            plain = _strip_diacritics(q)
+            extra_queries: list[str] = []
+            if "vuot den" in plain:
+                extra_queries = [
+                    "phat tien 18 20 nguoi dieu khien xe khong chap hanh hieu lenh den tin hieu giao thong",
+                    "den tin hieu giao thong mau vang mau do phai dung",
+                ]
+            elif "ho chieu" in plain and any(
+                term in plain for term in ("het han", "sap het han", "cap doi", "lam lai", "cap lai")
             ):
-                extra = list(self.retriever.search("tuoi nghi huu", top_k=3))  # type: ignore[union-attr]
+                extra_queries = [
+                    (
+                        "cap ho chieu tu lan thu hai noi nop 08 ngay "
+                        "cong an cap tinh"
+                    ),
+                    (
+                        "ho chieu pho thong trong nuoc to khai 02 anh "
+                        "can cuoc ho chieu cu cong dich vu cong"
+                    ),
+                    "ho chieu pho thong het han cap moi khong gia han",
+                ]
+            elif "can cuoc" in plain and any(
+                term in plain
+                for term in (
+                    "het han", "sap het han", "cap doi", "lam lai", "cap lai",
+                    "gia han", "doi the", "cap the",
+                )
+            ):
+                extra_queries = [
+                    (
+                        "the can cuoc cap doi het han dieu 24 dieu 25 "
+                        "cong an xa phuong 7 ngay lam viec"
+                    ),
+                    "the can cuoc thoi han su dung cap doi khi het han",
+                    "thu tuc cap doi the can cuoc ho so noi nop thoi han",
+                ]
+            elif ("bao hiem xa hoi" in plain or "bhxh" in plain) and re.search(
+                r"\d+\s*nam", plain
+            ) and re.search(r"\d+\s*tuoi", plain):
+                extra_queries = [
+                    (
+                        "luat bao hiem xa hoi 2024 dieu 64 dieu kien huong luong huu "
+                        "du 15 nam dong bao hiem xa hoi du tuoi nghi huu"
+                    ),
+                    "nam 60 tuoi dong 18 nam bao hiem xa hoi luong huu",
+                ]
+            elif (
+                "nghi huu" in plain
+                and ("nam nay" in plain or "tuoi" in plain or re.search(r"\d+\s*nam", plain))
+                and re.search(r"(?:bao nhieu nam nua|may nam nua|khi nao|bao gio|den khi nao|sau bao lau)", plain)
+            ):
+                extra_queries = ["tuoi nghi huu"]
+            if extra_queries:
+                retriever = getattr(self.retriever, "bm25", self.retriever)
                 seen = {(h.source_id, h.text) for h in hits}
-                extra = [h for h in extra if (h.source_id, h.text) not in seen]
-                hits = extra + hits
+                extra_hits = []
+                for extra_query in extra_queries:
+                    for hit in retriever.search(extra_query, top_k=max(top_k, 8)):  # type: ignore[union-attr]
+                        key = (hit.source_id, hit.text)
+                        if key not in seen:
+                            seen.add(key)
+                            extra_hits.append(hit)
+                hits = extra_hits + hits
             return hits
         except Exception as exc:  # noqa: BLE001 - retriever fault must not crash a session
             self.store.record(session_id, "retriever_failure", reason=str(exc)[:500])

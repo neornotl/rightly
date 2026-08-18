@@ -26,11 +26,14 @@ env/
 # Runtime generated data (ignored)
 data/logs/
 data/private_cache/
+data/audio/
 data/eval/
 data/chunks/*.npz
 logs/
 results/
 *.log
+*_debug.txt
+test_result.txt
 
 # Analysis / debug / prototype scripts (NOT needed for runtime)
 analyze_*.py

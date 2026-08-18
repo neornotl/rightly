@@ -81,26 +81,29 @@
   {
    "id": "cccd",
    "question": "Bố mẹ trên 60 tuổi cấp căn cước công dân mới ở đâu?",
-   "keywords": [
-    "căn cước công dân",
-    "cấp căn cước",
-    "thẻ căn cước"
+    "keywords": [
+     "căn cước công dân",
+     "cấp căn cước",
+     "thẻ căn cước",
+     "gia hạn căn cước",
+     "cấp đổi căn cước",
+     "hết hạn căn cước"
    ],
-   "exclude_keywords": [
-    "cấp lại",
-    "bị mất",
-    "hết hạn",
-    "làm lại thẻ",
+    "exclude_keywords": [
+     "cấp lại",
+     "bị mất",
+     "hết hạn",
+     "làm lại thẻ",
     "làm lại căn cước"
    ],
    "source_ids": [
     "luat09_2026"
    ],
-   "answer_text": "Dạ thưa anh/chị ạ. Theo Luật Căn cước năm 2023, việc cấp thẻ căn cước như sau:\n- Từ ngày 1 tháng 7 năm 2024, người từ 14 tuổi trở lên được cấp thẻ căn cước, miễn lệ phí khi cấp lần đầu.\n- Làm tại cơ quan quản lý căn cước (công an cấp huyện) hoặc qua cổng dịch vụ công; một số nơi công an cấp xã tiếp nhận hồ sơ.\n- Xuất trình căn cước cũ (nếu đổi) và giấy tờ xác nhận nơi cư trú nếu cần.\nTóm lại, bố mẹ anh/chị làm thẻ căn cước tại công an cấp huyện hoặc qua cổng dịch vụ công, được miễn lệ phí khi cấp lần đầu ạ.",
+    "answer_text": "Dạ, căn cước hết hạn thì anh/chị làm thủ tục cấp đổi, không gia hạn trên thẻ cũ ạ.\n- Anh/chị chọn thủ tục cấp đổi căn cước do hết hạn.\n- Nộp tại cơ quan công an có thẩm quyền hoặc Cổng dịch vụ công nếu địa phương hỗ trợ.\n- Nguồn hiện có chưa nêu đầy đủ hồ sơ và thời hạn cụ thể.\nTóm lại, anh/chị làm thủ tục cấp đổi căn cước do hết hạn ạ.",
    "spoken_citation": "Theo Luật Căn cước năm 2023"
   },
   {
-   "id": "bhxh",
+    "id": "bhxh",
    "question": "Lương hưu của ông chưa được nhận 2 tháng, phải làm sao?",
    "keywords": [
     "lương hưu",
@@ -123,7 +126,11 @@
     "công thức tính",
     "tính lương hưu",
     "tính tiền lương",
-    "bao nhiêu tiền lương hưu"
+     "bao nhiêu tiền lương hưu",
+     "đóng bảo hiểm",
+     "đóng bhxh",
+     "18 năm",
+     "60 tuổi"
    ],
    "source_ids": [
     "luat19_2026"
@@ -285,7 +292,12 @@
     "cấp dưỡng",
     "nuôi con",
     "tài sản chung",
-    "chia tài sản"
+     "chia tài sản",
+     "có con",
+     "con 8 tuổi",
+     "căn nhà",
+     "nhà mua",
+     "sau khi cưới"
    ],
    "source_ids": [
     "luat121_2025",
@@ -421,8 +433,7 @@
     "vượt đèn đỏ",
     "đèn đỏ",
     "phạt đèn đỏ",
-    "không chấp hành hiệu lệnh đèn tín hiệu",
-    "vượt đèn vàng"
+     "không chấp hành hiệu lệnh đèn tín hiệu"
    ],
     "search_text": "Nghị định 168/2024 không chấp hành hiệu lệnh của đèn tín hiệu giao thông người điều khiển xe ô tô phạt tiền từ 18.000.000 đồng đến 20.000.000 đồng trừ điểm phục hồi điểm giấy phép lái xe",
    "answer_text": "Dạ thưa anh/chị ạ. Theo Nghị định 168/2024/NĐ-CP, hành vi không chấp hành hiệu lệnh của đèn tín hiệu giao thông (vượt đèn đỏ) bị xử phạt như sau:\n- Người điều khiển xe ô tô: phạt tiền từ 18 triệu đến 20 triệu đồng.\n- Người điều khiển xe mô tô, xe gắn máy: phạt tiền từ 4 triệu đến 6 triệu đồng.\n- Ngoài ra còn bị áp dụng hình thức xử phạt bổ sung, biện pháp khắc phục hậu quả theo quy định của Nghị định này.\nTóm lại, vượt đèn đỏ bị phạt từ 18 đến 20 triệu đồng với ô tô, từ 4 đến 6 triệu đồng với xe máy, kèm hình thức xử phạt bổ sung ạ.",
@@ -465,7 +476,13 @@
    "exclude_keywords": [
     "mất hộ chiếu",
     "hết hạn",
-    "gia hạn hộ chiếu"
+     "gia hạn hộ chiếu",
+     "quá hạn",
+     "chưa nhận kết quả",
+     "chưa nhận được kết quả",
+     "trễ hẹn",
+     "tra cứu hồ sơ",
+     "liên hệ"
    ],
    "source_ids": [
     "luat107_2026"
