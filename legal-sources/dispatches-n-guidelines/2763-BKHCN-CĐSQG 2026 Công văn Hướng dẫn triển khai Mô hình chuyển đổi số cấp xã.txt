@@ -1,0 +1,1366 @@
+1. Nguyên tắc xây dựng Mô hình
+Mô hình được xây dựng trên cơ sở bảo đảm đồng bộ với Khung kiến trúc số tham chiếu cấp xã, thống nhất với Khung kiến trúc số cấp tỉnh và Khung kiến trúc tổng thể quốc gia số.
+2. Mục tiêu xây dựng Mô hình
+Phân định rõ trách nhiệm triển khai Mô hình giữa các cấp, trong đó:
+- Xác định cụ thể các nội dung do Trung ương và cấp tỉnh tổ chức xây dựng, cung cấp và vận hành; các nội dung cấp xã khai thác, sử dụng (không phải đầu tư mới);
+- Xác định các nội dung cấp xã có trách nhiệm triển khai, vận hành tại cơ sở;
+- Quy định các nội dung cấp xã chỉ được triển khai khi có ý kiến thống nhất của cấp tỉnh nhằm bảo đảm phù hợp kiến trúc, tránh trùng lặp, phân tán.
+Đồng thời, Mô hình này hướng tới việc ưu tiên khai thác, sử dụng các nền tảng số, hệ thống thông tin và dữ liệu dùng chung do cấp tỉnh và cấp quốc gia cung cấp, bảo đảm hiệu quả, tiết kiệm và thống nhất trong tổ chức triển khai.
+3. Tổ chức thực hiện
+Căn cứ Mô hình do Bộ Khoa học và Công nghệ ban hành, việc triển khai được thực hiện theo các bước sau:
+Bước 1. Ủy ban nhân dân cấp tỉnh xác định, phân định rõ phạm vi, trách nhiệm triển khai Mô hình chuyển đổi số cấp xã giữa Trung ương, cấp tỉnh và cấp xã.
+Bước 2. Ủy ban nhân dân cấp tỉnh thông báo, hướng dẫn triển khai Mô hình chuyển đổi số cấp xã đến Ủy ban nhân dân cấp xã.
+Bước 3. Ủy ban nhân dân cấp xã căn cứ hướng dẫn của cấp tỉnh, đề xuất nhu cầu và nội dung triển khai các thành phần của Mô hình tại cấp xã, thành phần dùng chung cấp tỉnh (nếu có) phù hợp với điều kiện thực tế.
+Bước 4. Ủy ban nhân dân cấp tỉnh tổng hợp, rà soát các đề xuất của cấp xã, xác định các thành phần triển khai tại cấp xã, cấp tỉnh (nếu có).
+Bước 5. Ủy ban nhân dân cấp tỉnh chịu trách nhiệm toàn diện tổ chức triển khai thực hiện các thành phần của Mô hình bảo đảm thống nhất, hiệu quả. Ủy ban nhân dân cấp xã thực hiện triển khai theo phân cấp, phân quyền.
+4. Định hướng, cách thức tiếp cận khi triển khai Mô hình
+- Ưu tiên sử dụng hạ tầng dùng chung: Ưu tiên sử dụng hạ tầng Trung tâm dữ liệu dùng chung (cấp tỉnh hoặc quốc gia), hạn chế đầu tư phân tán tại cấp xã; bảo đảm hiệu quả đầu tư, an toàn thông tin, khả năng mở rộng và vận hành ổn định.
+- Khuyến khích chia sẻ, nhân rộng: Các ứng dụng, giải pháp đã triển khai hiệu quả được khuyến khích chia sẻ, áp dụng và nhân rộng giữa các xã trong phạm vi tỉnh; giữa các tỉnh trên phạm vi toàn quốc. Bộ Khoa học và Công nghệ là đầu mối tiếp nhận, tổng hợp, đánh giá và hướng dẫn phổ biến, nhân rộng các mô hình, giải pháp điển hình hiệu quả trên phạm vi toàn quốc, Ủy ban nhân dân cấp tỉnh tổ chức lựa chọn, áp dụng và nhân rộng các mô hình, giải pháp phù hợp trên địa bàn tỉnh; đồng thời chia sẻ kinh nghiệm tốt, kết quả triển khai có hiệu quả về Bộ Khoa học và Công nghệ.
+- Triển khai theo lộ trình phù hợp: Việc triển khai Mô hình được thực hiện theo lộ trình phù hợp với điều kiện thực tế của địa phương, gắn với đặc điểm từng loại địa bàn (đô thị, nông thôn, miền núi, biên giới, hải đảo) và năng lực tổ chức thực hiện; bảo đảm khả thi, hiệu quả.
+- Nâng cao mức độ trưởng thành chuyển đổi số: Việc triển khai được thực hiện theo từng bước, có trọng tâm, trọng điểm; bảo đảm từng bước nâng cao mức độ trưởng thành chuyển đổi số của cấp xã, hướng tới đạt mức độ cao, toàn diện, đồng bộ và bền vững.
+Trường hợp có ý kiến góp ý, đề nghị gửi về Bộ Khoa học và Công nghệ để hoàn thiện, có hướng dẫn bổ sung kịp thời.
+Trong quá trình triển khai thực hiện, nếu có khó khăn, vướng mắc, đề nghị các cơ quan, đơn vị liên hệ Bộ Khoa học và Công nghệ (Cục Chuyển đổi số quốc gia) để được hướng dẫn, hỗ trợ. Đầu mối liên hệ: Đồng chí Mai Thùy Ngân, Giám đốc, Trung tâm Công nghệ - Chính phủ số, Cục Chuyển đổi số quốc gia, điện thoại: 0966.686.699; thư điện tử: nganmt@mst.gov.vn.
+Trân trọng.
+BỘ KHOA HỌC VÀ CÔNG NGHỆ
+
+TÀI LIỆU HƯỚNG DẪN
+TRIỂN KHAI MÔ HÌNH CHUYỂN ĐỔI SỐ CẤP XÃ
+(Kèm theo Công văn số /BKHCN-CĐSQG ngày tháng năm 2026 của Bộ Khoa học và Công nghệ)
+
+Hà Nội, 2026
+
+MỤC LỤC
+BẢNG CHÚ GIẢI TỪ VIẾT TẮT
+I. PHẠM VI ĐIỀU CHỈNH VÀ ĐỐI TƯỢNG ÁP DỤNG
+II. NGUYÊN TẮC TRIỂN KHAI
+1. Nguyên tắc kiến trúc và sử dụng dùng chung
+2. Nguyên tắc bao trùm số
+3. Nguyên tắc bảo đảm an toàn thông tin
+4. Nguyên tắc linh hoạt theo điều kiện địa bàn
+III. KIẾN TRÚC CỦA MÔ HÌNH VÀ YÊU CẦU TRIỂN KHAI
+1. Kiến trúc của Mô hình
+2. Lớp 1: Hạ tầng số và an ninh mạng
+3. Lớp 2: Dữ liệu và nền tảng lõi
+4. Lớp 3: Ứng dụng và nghiệp vụ
+5. Lớp 4: Kênh tương tác và đo lường hiệu quả
+6. Thành phần xuyên suốt: Vận hành - quản trị
+7. Thành phần xuyên suốt: Nguồn lực - nhân lực
+IV. TỔ CHỨC THỰC HIỆN
+1. Bộ Khoa học và Công nghệ
+2. Ủy ban nhân dân cấp tỉnh
+3. Ủy ban nhân dân cấp xã 
+4. Doanh nghiệp số
+V. KINH PHÍ THỰC HIỆN
+1. Nguồn kinh phí
+2. Nguyên tắc sử dụng kinh phí 
+3. Lập dự toán và tổ chức thực hiện
+4. Huy động và sử dụng nguồn lực xã hội
+Phụ lục 01
+LỚP 1: HẠ TẦNG SỐ VÀ AN NINH MẠNG
+I. MỤC ĐÍCH, YÊU CẦU
+II. NGUYÊN TẮC THỰC HIỆN
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Thành phần Hạ tầng số (HTS)
+2. Thành phần An ninh mạng (ANM)
+Phụ lục 02
+LỚP 2: DỮ LIỆU VÀ NỀN TẢNG LÕI
+I. MỤC ĐÍCH, YÊU CẦU
+II. NGUYÊN TẮC THỰC HIỆN
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ 
+1. Thành phần dữ liệu (DL)
+2. Thành phần nền tảng lõi (NTL)
+Phụ lục 03
+LỚP 3: ỨNG DỤNG VÀ NGHIỆP VỤ
+I. MỤC ĐÍCH, YÊU CẦU
+II. NGUYÊN TẮC THỰC HIỆN 
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ 
+1. Nhóm ứng dụng và nghiệp vụ phục vụ Chính quyền số (CQS)
+2. Nhóm ứng dụng và nghiệp vụ phục vụ Kinh tế số (KTS)
+3. Nhóm ứng dụng và nghiệp vụ phục vụ Xã hội số (XHS)
+Phụ lục 04
+LỚP 4: KÊNH TƯƠNG TÁC VÀ ĐO LƯỜNG HIỆU QUẢ
+I. MỤC ĐÍCH, YÊU CẦU
+II. NGUYÊN TẮC THỰC HIỆN
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Thành phần Kênh tương tác (KTT)
+2. Thành phần Đo lường hiệu quả (ĐLHQ)
+BẢNG CHÚ GIẢI TỪ VIẾT TẮT CHÍNH
+Từ viết tắt	Tiếng Việt	Tiếng Anh
+API	Giao diện lập trình ứng dụng	Application Programming Interface
+ATTT	An toàn thông tin	Information Security
+BKHCN	Bộ Khoa học và Công nghệ	Ministry of Science and Technology
+CĐS	Chuyển đổi số	Digital Transformation
+CQS	Chính quyền số	Digital Government
+HTS	Hạ tầng số	Digital Infrastructure
+IOC	Trung tâm giám sát, điều hành thông minh	Intelligent Operation Center
+IoT	Internet vạn vật	Internet of Things
+KPI	Khung giám sát và đo lường kết quả	Key Performance Indicator
+KTS	Kinh tế số	Digital Economy
+LAN	Mạng nội bộ	Local Area Network
+LGSP	Nền tảng tích hợp, chia sẻ dữ liệu cấp Bộ/Tỉnh	Local Government Service Platform
+NDOP	Nền tảng chia sẻ, điều phối dữ liệu quốc gia	National Data Operation Platform
+NDXP	Nền tảng tích hợp, chia sẻ dữ liệu quốc gia	National Data Exchange Platform
+OCOP	Chương trình "Mỗi xã một sản phẩm"	One Commune One Product
+SOC	Trung tâm Giám sát an toàn thông tin mạng	Security Operations Center
+V-APEX	Nền tảng trao đổi giao diện lập trình ứng dụng quốc gia	Application Programming Interface Exchange
+XHS	Xã hội số	Digital Society
+I. PHẠM VI ĐIỀU CHỈNH VÀ ĐỐI TƯỢNG ÁP DỤNG
+1. Tài liệu này hướng dẫn triển khai Mô hình chuyển đổi số cấp xã (sau đây gọi tắt là Mô hình), làm cơ sở tổ chức thực hiện thống nhất trên phạm vi cả nước đối với các đơn vị hành chính cấp xã (xã, phường, đặc khu và các loại hình tương đương theo quy định hiện hành); là nền tảng tổ chức triển khai chính quyền số tại cấp xã, đồng thời tạo môi trường thúc đẩy phát triển kinh tế số và xã hội số tại cộng đồng dân cư.
+2. Đối tượng áp dụng: Ủy ban nhân dân cấp tỉnh; Ủy ban nhân dân cấp xã; các cơ quan, tổ chức, doanh nghiệp cung cấp nền tảng, dịch vụ số và các đơn vị liên quan.
+3. Mô hình chuyển đổi số cấp xã xác định các thành phần kiến trúc và hướng dẫn triển khai theo 04 lớp kiến trúc và 02 thành phần xuyên suốt, bao gồm: hạ tầng số và an ninh mạng; dữ liệu và nền tảng lõi; ứng dụng và nghiệp vụ; kênh tương tác và đo lường hiệu quả; vận hành - quản trị; nguồn lực - nhân lực.
+Nội dung thành phần kiến trúc và hướng dẫn triển khai được quy định tại Mục III và các Phụ lục kèm theo.
+4. Việc triển khai Mô hình tại cấp xã được thực hiện theo cơ chế phối hợp giữa Ủy ban nhân dân cấp xã với các cơ quan, lực lượng chuyên ngành và các tổ chức có liên quan trên địa bàn theo chức năng, nhiệm vụ được giao, bảo đảm tính đồng bộ, hiệu quả và phát huy vai trò của các bên liên quan trong tổ chức thực hiện.
+II. NGUYÊN TẮC TRIỂN KHAI
+1. Nguyên tắc kiến trúc và sử dụng dùng chung
+a) Mô hình được xây dựng trên cơ sở Khung kiến trúc số tham chiếu cấp xã tại Mục 7, Phụ lục I của Khung kiến trúc tổng thể quốc gia số, trong đó:
+- Khung kiến trúc số cấp xã là thành phần của Khung kiến trúc số cấp tỉnh;
+- Ưu tiên sử dụng các nền tảng số dùng chung của cấp Trung ương và cấp tỉnh;
+- Ưu tiên sử dụng hạ tầng Trung tâm dữ liệu dùng chung;
+- Thực hiện nguyên tắc dùng chung nhằm tránh trùng lặp, lãng phí; không đầu tư riêng lẻ các hệ thống đã được triển khai ở cấp tỉnh; tận dụng tối đa hạ tầng và dữ liệu hiện có.
+b) Dữ liệu được quản trị theo nguyên tắc “đúng, đủ, sạch, sống, thống nhất, dùng chung” theo định hướng của kiến trúc quốc gia số; bảo đảm an toàn thông tin và bảo vệ dữ liệu cá nhân theo quy định của pháp luật.
+c) Phân định rõ giữa các nền tảng số dùng chung (thực hiện chức năng cốt lõi, dữ liệu dùng chung) và các giải pháp, ứng dụng bổ sung phục vụ nhu cầu đặc thù của địa phương. Việc triển khai các giải pháp, ứng dụng bổ sung phải bảo đảm không trùng lặp chức năng cốt lõi, tuân thủ tiêu chuẩn, quy chuẩn kỹ thuật và bảo đảm kết nối, chia sẻ dữ liệu với các nền tảng số dùng chung theo quy định.
+2. Nguyên tắc bao trùm số
+a) Bảo đảm mọi người dân được tiếp cận dịch vụ số, không phân biệt điều kiện kinh tế, vùng miền và trình độ kỹ năng số.
+b) Triển khai các kênh hỗ trợ người dân tiếp cận dịch vụ số, bao gồm:
+- Điểm hỗ trợ chuyển đổi số cộng đồng;
+- Dịch vụ công lưu động;
+- Hỗ trợ trực tiếp tại Bộ phận Một cửa;
+- Các hình thức hỗ trợ khác phù hợp với điều kiện của địa bàn.
+c) Bảo đảm người dân thuộc nhóm yếu thế, người không có thiết bị hoặc thiếu kỹ năng số vẫn có thể tiếp cận và sử dụng dịch vụ số.
+3. Nguyên tắc bảo đảm an toàn thông tin
+Việc triển khai Mô hình phải tuân thủ các quy định của pháp luật về an toàn thông tin mạng, an ninh mạng và bảo vệ dữ liệu cá nhân; thực hiện phân loại hệ
+thống thông tin theo cấp độ và triển khai các biện pháp bảo vệ phù hợp. Yêu cầu này áp dụng đối với toàn bộ hệ thống thông tin, bao gồm cả các hệ thống do Ủy ban nhân dân cấp xã chủ động triển khai (nếu có), và phải được bảo đảm xuyên suốt trong toàn bộ vòng đời từ khâu đề xuất, thiết kế, triển khai đến vận hành, khai thác, nâng cấp và chấm dứt sử dụng.
+4. Nguyên tắc linh hoạt theo điều kiện địa bàn
+Việc triển khai Mô hình được thực hiện linh hoạt theo điều kiện thực tế của từng địa bàn:
+- Cho phép điều chỉnh lộ trình, mức độ triển khai đối với địa bàn miền núi, vùng sâu, vùng xa, biên giới, hải đảo;
+- Cho phép áp dụng giải pháp thay thế phù hợp (kết nối vệ tinh, điểm hỗ trợ số, dịch vụ công lưu động,...);
+- Không áp dụng cứng các tiêu chí về hạ tầng, kỹ thuật trong trường hợp chưa đáp ứng điều kiện thực tế.
+III. KIẾN TRÚC CỦA MÔ HÌNH VÀ YÊU CẦU TRIỂN KHAI
+1. Kiến trúc của Mô hình
+1.1. Phân lớp kiến trúc
+Mô hình chuyển đổi số cấp xã được xây dựng trên cơ sở Khung kiến trúc số tham chiếu cấp xã, cụ thể hóa theo cấu trúc 04 lớp kiến trúc thống nhất với Khung kiến trúc tổng thể quốc gia số (Hình 1), bao gồm:
+- Lớp 1: Hạ tầng số và an ninh mạng.
+- Lớp 2: Dữ liệu và nền tảng lõi.
+- Lớp 3: Ứng dụng và nghiệp vụ. Lớp này chia làm 3 khối:
++ Ứng dụng và nghiệp vụ phục vụ Chính quyền số.
++ Ứng dụng và nghiệp vụ phục vụ Kinh tế số.
++ Ứng dụng và nghiệp vụ phục vụ Xã hội số.
+- Lớp 4: Kênh tương tác và đo lường hiệu quả.
+Đồng thời xác định hai thành phần xuyên suốt của Mô hình, áp dụng đối với toàn bộ 04 lớp kiến trúc gồm:
+- Vận hành - quản trị.
+- Nguồn lực - nhân lực.
+Hai thành phần xuyên suốt này là bộ phận cấu thành của Mô hình, có vai trò bảo đảm điều kiện tổ chức thực hiện, vận hành ổn định, duy trì hiệu quả và phát triển bền vững đối với toàn bộ các lớp kiến trúc.
+
+Hình 1: Kiến trúc của Mô hình
+1.2. Phân cấp triển khai theo 03 cấp
+Kiến trúc của Mô hình được tổ chức triển khai theo 03 cấp trách nhiệm:
+- Cấp Trung ương: Cung cấp các nền tảng, cơ sở dữ liệu và dịch vụ số dùng chung cấp quốc gia; Ban hành tiêu chuẩn, quy chuẩn, hướng dẫn kỹ thuật.
+- Cấp tỉnh: Cung cấp hạ tầng và nền tảng dùng chung cấp tỉnh; Tích hợp, kết nối, chia sẻ dữ liệu giữa cấp xã với các nền tảng/cơ sở dữ liệu quốc gia; Tổ chức vận hành tập trung, giám sát và hỗ trợ người dùng cho cấp xã.
+- Cấp xã (bao gồm xã, phường, đặc khu): Triển khai các cấu phần của Mô hình tại cơ sở; khai thác, sử dụng và vận hành tại chỗ theo phân cấp đối với các hệ thống, nền tảng do cấp Trung ương và cấp tỉnh cung cấp; Cập nhật dữ liệu địa phương; Tổ chức cung cấp dịch vụ số và tương tác với người dân, doanh nghiệp; Bảo đảm bao trùm số.
+2. Lớp 1: Hạ tầng số và an ninh mạng
+2.1. Thành phần Hạ tầng số (HTS)
+
+2.1.1. Thành phần HTS dùng chung do cấp Trung ương cung cấp
+a) HTS1: Thành phần HTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Trung tâm dữ liệu quốc gia và Nền tảng điện toán đám mây trong Trung tâm dữ liệu quốc gia; Mạng Truyền số liệu chuyên dùng của các cơ quan Đảng, Nhà nước;…).
+b) HTS2: Thành phần HTS dùng chung do cấp Trung ương cung cấp khác.
+2.1.2. Thành phần HTS dùng chung do cấp tỉnh cung cấp
+a) HTS3: Khai thác các thành phần HTS dùng chung do cấp Trung ương cung cấp.
+b) HTS4: Thành phần HTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Trung tâm dữ liệu cấp tỉnh hiện có,…).
+c) HTS5: Thành phần HTS dùng chung do cấp tỉnh cung cấp khác.
+2.1.3. Thành phần HTS thiết yếu triển khai tại cấp xã
+
+a) HTS6: Khai thác các thành phần HTS dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+b) HTS7: Mạng nội bộ (LAN/Intranet) và kết nối Internet băng rộng; Kết nối mạng truyền số liệu chuyên dùng.
+c) HTS8: Thiết bị đầu cuối phục vụ cán bộ, công chức; Thiết bị số hoá hồ sơ; Thiết bị phục vụ hội nghị trực tuyến theo điều kiện.
+d) HTS9: Thành phần HTS thiết yếu triển khai tại cấp xã khác.
+2.1.4. Thành phần HTS bổ sung theo loại địa bàn
+
+Các thành phần HTS quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để chủ động lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, phải bảo đảm tuân thủ nguyên tắc sử dụng dùng chung. Đối với các thành phần đã được cung cấp ở cấp Trung ương hoặc cấp tỉnh thì cấp xã không tổ chức đầu tư riêng lẻ, mà thực hiện khai thác, sử dụng theo phân cấp.
+Cụ thể như sau:
+a) Đô thị
+Ưu tiên triển khai các thành phần HTS phục vụ quản lý đô thị như:
+- HTS10: Wi-Fi công cộng;
+- HTS11: Camera giám sát an ninh, trật tự;
+- HTS12: Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông (bao gồm thiết bị, hệ thống phát thanh, kết nối truyền dẫn);
+- HTS13: Hạ tầng Internet vạn vật (IoT) và bảng điện tử công cộng (nếu có), bảo đảm kết nối với nền tảng giám sát/IOC cấp tỉnh khi triển khai;
+- HTS14: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế.
+b) Nông thôn
+Ưu tiên triển khai các thành phần HTS phục vụ phổ cập kết nối, hỗ trợ người dân tiếp cận dịch vụ số như:
+- HTS15: Điểm truy cập Internet công cộng tại nhà văn hóa, điểm sinh hoạt cộng đồng;
+- HTS16: Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông (bao gồm thiết bị, hệ thống phát thanh, kết nối truyền dẫn);
+- HTS17: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế. c) Miền núi, biên giới, hải đảo
+Ưu tiên triển khai các thành phần HTS bảo đảm kết nối và hỗ trợ tiếp cận dịch vụ số phù hợp điều kiện địa bàn như:
+- HTS18: Hạ tầng kết nối băng rộng di động (4G/5G);
+- HTS19: Các giải pháp kết nối thay thế tại khu vực chưa phủ sóng hoặc không bảo đảm chất lượng (kết nối vệ tinh, trạm phát sóng cộng đồng hoặc hình thức phù hợp khác);
+- HTS20: Điểm hỗ trợ số tại cộng đồng;
+- HTS21: Hạ tầng phục vụ triển khai dịch vụ công lưu động;
+- HTS22: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế.
+2.2. Thành phần An ninh mạng (ANM)
+
+2.2.1. Thành phần ANM dùng chung do cấp Trung ương cung cấp
+a) ANM1: Thành phần ANM dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Nền tảng phòng vệ mạng quốc gia; Hệ thống chứng thực chữ ký số chuyên dùng công vụ,…).
+b) ANM2: Thành phần ANM dùng chung do cấp Trung ương cung cấp khác.
+2.2.2. Thành phần ANM dùng chung do cấp tỉnh cung cấp
+a) ANM3: Khai thác các thành phần ANM dùng chung do cấp Trung ương cung cấp.
+b) ANM4: Thành phần ANM dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Hệ thống giám sát ATTT/SOC hiện có,…).
+c) ANM5: Thành phần ANM dùng chung do cấp tỉnh cung cấp khác.
+2.2.3. Thành phần ANM thiết yếu triển khai tại cấp xã
+
+a) ANM6: Khai thác các thành phần an ninh mạng dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+b) ANM7: Thực hiện các biện pháp bảo đảm an toàn thông tin ở mức cơ sở; bảo vệ thiết bị đầu cuối; sao lưu dữ liệu; bảo đảm an toàn truy cập mạng.
+c) ANM8: Thành phần ANM thiết yếu triển khai tại cấp xã khác.
+Lưu ý: Trang thiết bị đầu cuối và phần mềm cơ bản phục vụ công việc thường xuyên trên môi trường số của cán bộ, công chức cấp xã được trang bị phù hợp với yêu cầu triển khai chính quyền số tại địa phương.
+Việc lựa chọn danh mục thiết bị, cấu hình kỹ thuật tối thiểu và phần mềm cơ bản thực hiện tham khảo Hướng dẫn danh mục phần mềm cơ bản và yêu cầu kỹ thuật, cấu hình tối thiểu của máy tính và một số thiết bị đầu cuối cơ bản phục vụ công việc thường xuyên trên môi trường số ban hành kèm theo Công văn số 519/BKHCN-CĐSQG ngày 28/01/2026 của Bộ Khoa học và Công nghệ, đồng thời bảo đảm phù hợp với nhu cầu thực tế, điều kiện nguồn lực và các quy định hiện hành về quản lý, sử dụng tài sản công.
+(Chi tiết hướng dẫn triển khai Lớp 1 được thể hiện tại Phụ lục 01).
+3. Lớp 2: Dữ liệu và nền tảng lõi
+Việc quản lý dữ liệu tại cấp xã phải bao gồm đầy đủ các hoạt động tạo lập, cập nhật, chuẩn hóa, lưu trữ, chia sẻ và khai thác dữ liệu theo quy định; bảo đảm tuân thủ nguyên tắc “đúng, đủ, sạch, sống, thống nhất, dùng chung” và phù hợp với Khung kiến trúc dữ liệu quốc gia.
+3.1. Thành phần dữ liệu (DL)
+
+3.1.1. Thành phần DL dùng chung do cấp Trung ương cung cấp
+a) DL1: Thành phần DL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Các cơ sở dữ liệu quốc gia và các CSDL chuyên ngành do các Bộ, ngành chủ quản xây dựng; Cơ sở dữ liệu tổng hợp quốc gia tại Trung tâm dữ liệu quốc gia, Bản đồ số quốc gia và hệ thống mã bưu chính,…).
+b) DL2: Khung kiến trúc dữ liệu quốc gia; Khung quản trị, quản lý dữ liệu và từ điển dữ liệu dùng chung.
+c) DL3: Thành phần DL dùng chung do cấp Trung ương cung cấp khác.
+3.1.2. Thành phần DL dùng chung do cấp tỉnh cung cấp
+a) DL4: Khai thác các thành phần DL dùng chung do cấp Trung ương cung cấp.
+b) DL5: Thành phần DL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Kho dữ liệu dùng chung cấp tỉnh; Kho quản lý dữ liệu điện tử của tổ chức, cá nhân; Các CSDL dùng chung, CSDL chuyên ngành,...).
+c) DL6: Cơ chế quản trị dữ liệu cấp tỉnh; Danh mục dữ liệu cấp xã phải cập nhật; Cơ chế kiểm soát chất lượng dữ liệu và chia sẻ dữ liệu liên thông.
+d) DL7: Khung kiến trúc dữ liệu cấp tỉnh; Từ điển dữ liệu dùng chung cấp tỉnh.
+đ) DL8: Thành phần DL dùng chung do cấp tỉnh cung cấp khác.
+3.1.3. Thành phần DL thiết yếu triển khai tại cấp xã
+
+a) DL9: Khai thác các thành phần DL dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+b) DL10: Số hoá hồ sơ và kết quả giải quyết TTHC; Lưu trữ, tra cứu và tái sử dụng dữ liệu số theo quy trình một cửa điện tử (đảm bảo dữ liệu liên thông giữa các phòng/ban, đơn vị để tái sử dụng, không bắt buộc người dân/doanh nghiệp phải nộp lại các kết quả giải quyết TTHC đã thực hiện).
+c) DL11: Cập nhật dữ liệu kinh tế - xã hội địa phương và dữ liệu quản lý địa bàn theo danh mục, biểu mẫu số của cấp tỉnh.
+d) DL12: Chuẩn hoá, lưu trữ, chia sẻ và khai thác dữ liệu theo nguyên tắc “đúng, đủ, sạch, sống, thống nhất, dùng chung”.
+đ) DL13: Thành phần DL thiết yếu triển khai tại cấp xã khác.
+3.1.4. Thành phần DL bổ sung theo loại địa bàn
+
+Các thành phần DL quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để chủ động tổ chức triển khai phù hợp.
+Việc triển khai các thành phần DL này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, việc tổ chức thu thập, cập nhật, quản lý và khai thác dữ liệu phải bảo đảm tuân thủ nguyên tắc quản trị dữ liệu và sử dụng dùng chung theo quy định tại Mục II; đồng thời bảo đảm kết nối, chia sẻ với các hệ thống, nền tảng do cấp tỉnh và cấp Trung ương cung cấp.
+a) Đô thị
+Ưu tiên triển khai, cập nhật và khai thác các nhóm DL phục vụ quản lý đô thị như:
+- DL14: Dữ liệu trật tự đô thị;
+- DL15: Dữ liệu môi trường;
+- DL16: Dữ liệu hạ tầng đô thị trong phạm vi quản lý;
+- DL17: Dữ liệu phản ánh hiện trường;
+- DL18: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm khả năng tích hợp, chia sẻ với hệ thống dữ liệu và IOC/Dashboard cấp tỉnh.
+b) Nông thôn
+Ưu tiên triển khai, cập nhật và khai thác các nhóm DL phục vụ phát triển nông nghiệp và kinh tế nông thôn như:
+- DL19: Dữ liệu sản xuất nông nghiệp;
+- DL20: Dữ liệu sản phẩm OCOP;
+- DL21: Dữ liệu hợp tác xã;
+- DL22: Dữ liệu chuỗi cung ứng sản phẩm địa phương (nếu có);
+- DL23: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ quản lý sản xuất và kết nối tiêu thụ sản phẩm.
+c) Miền núi, biên giới, hải đảo
+Ưu tiên triển khai, cập nhật và khai thác các nhóm DL phục vụ quản lý xã hội và phát triển đặc thù như:
+- DL24: Dữ liệu dân tộc và chính sách xã hội;
+- DL25: Dữ liệu giảm nghèo;
+- DL26: Dữ liệu du lịch cộng đồng;
+- DL27: Dữ liệu đặc thù theo quy hoạch cấp tỉnh;
+- DL28: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm phục vụ công tác an sinh xã hội và phát triển kinh tế địa phương.
+3.2. Thành phần nền tảng lõi (NTL)
+
+(Nền tảng tích hợp, chia sẻ dữ liệu Quốc gia (NDXP); Nền tảng chia sẻ, điều phối dữ liệu của Trung tâm dữ liệu quốc gia (NDOP); Nền tảng trao đổi giao diện lập trình ứng dụng quốc gia (V-APEX); Nền tảng định danh và xác thực điện tử; Nền tảng phân tích dữ liệu lớn và trí tuệ nhân tạo dùng chung (Nền tảng AI))
+3.2.1. Thành phần NTL dùng chung do cấp Trung ương cung cấp
+a) NTL1: Thành phần NTL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số: Nền tảng tích hợp, chia sẻ dữ liệu Quốc gia (NDXP); Nền tảng chia sẻ, điều phối dữ liệu của Trung tâm dữ liệu quốc gia (NDOP); Nền tảng trao đổi giao diện lập trình ứng dụng quốc gia (V- APEX); Nền tảng định danh và xác thực điện tử; Nền tảng phân tích dữ liệu lớn và trí tuệ nhân tạo dùng chung (Nền tảng AI).
+b) NTL2: Thành phần NTL dùng chung do cấp Trung ương cung cấp khác.
+3.2.2. Thành phần NTL dùng chung do cấp tỉnh cung cấp
+a) NTL3: Khai thác các thành phần NTL dùng chung do cấp Trung ương cung cấp.
+b) NTL4: Thành phần NTL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Nền tảng tích hợp, chia sẻ dữ liệu cấp tỉnh; Nền tảng tổng hợp, phân tích dữ liệu cấp tỉnh,…).
+c) NTL5: Thành phần NTL dùng chung do cấp tỉnh cung cấp khác.
+3.2.3. Thành phần NTL thiết yếu triển khai tại cấp xã
+a) NTL6: Khai thác, sử dụng các NTL do cấp Trung ương, cấp tỉnh cung cấp theo thẩm quyền.
+b) NTL7: Thành phần NTL thiết yếu triển khai tại cấp xã khác.
+(Chi tiết hướng dẫn triển khai Lớp 2 được thể hiện tại Phụ lục 02).
+4. Lớp 3: Ứng dụng và nghiệp vụ
+Lớp 3 được tổ chức theo các nhóm ứng dụng và nghiệp vụ phục vụ Chính quyền số, Kinh tế số và Xã hội số; đồng thời khai thác các ứng dụng, nền tảng dùng chung của các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số và Khung kiến trúc số cấp tỉnh.
+Trong từng nhóm xác định rõ thành phần thiết yếu và thành phần đặc thù theo loại địa bàn.
+4.1. Nhóm ứng dụng và nghiệp vụ phục vụ Chính quyền số (CQS)
+4.1.1. Thành phần ứng dụng phục vụ Chính quyền số (ƯDCQS)
+
+a) Thành phần ứng dụng phục vụ Chính phủ số dùng chung do cấp Trung ương cung cấp:
+- ƯDCQS1: Thành phần ứng dụng phục vụ Chính phủ số dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Cổng Dịch vụ công quốc gia; Trục liên thông văn bản quốc gia; Hệ thống thông tin giải quyết thủ tục hành chính; Hệ thống thông tin báo cáo quốc gia,…).
+- ƯDCQS2: Thành phần ứng dụng phục vụ Chính phủ số dùng chung do cấp Trung ương cung cấp khác.
+b) Thành phần ứng dụng phục vụ CQS dùng chung do cấp tỉnh cung cấp:
+- ƯDCQS3: Khai thác thành phần ứng dụng phục vụ Chính phủ số dùng chung do cấp Trung ương cung cấp.
+- ƯDCQS4: Thành phần ứng dụng phục vụ CQS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Hệ thống thông tin phục vụ chỉ đạo, điều hành cấp tỉnh; Trung tâm giám sát, điều hành thông minh cấp tỉnh; Phần mềm quản lý chuyên ngành của các Sở; Ứng dụng hỗ trợ hoạt động của các cơ quan nhà nước (bao gồm các ứng dụng tiêu biểu như: Quản lý công việc, Hệ thống báo cáo, Họp trực tuyến…),…).
+- ƯDCQS5: Thành phần ứng dụng phục vụ CQS dùng chung do cấp tỉnh cung cấp khác.
+c) Thành phần ứng dụng phục vụ CQS thiết yếu triển khai tại cấp xã
+
+- ƯDCQS6: Khai thác các thành phần ứng dụng phục vụ Chính phủ số, Chính quyền số dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+- ƯDCQS7: Công cụ hỗ trợ tác nghiệp số cho cán bộ, công chức (bao gồm trợ lý ảo, công cụ tra cứu dữ liệu, tổng hợp thông tin, hỗ trợ soạn thảo văn bản và trợ giúp thực hiện quy trình công vụ);
+- ƯDCQS8: Thành phần ứng dụng phục vụ CQS thiết yếu triển khai tại cấp xã khác.
+d) Thành phần ứng dụng phục vụ CQS bổ sung theo loại địa bàn
+
+Các thành phần ứng dụng phục vụ CQS quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, phải bảo đảm không trùng lặp với các chức năng cốt lõi của các ứng dụng, nền tảng dùng chung đã được cung cấp; trường hợp triển khai các giải pháp, ứng dụng bổ sung phải bảo đảm tuân thủ quy định tại Mục II về kiến trúc và sử dụng dùng chung.
+- Đô thị: Ưu tiên triển khai các ứng dụng phục vụ quản lý đô thị như:
++ ƯDCQS9: Ứng dụng phản ánh hiện trường;
++ ƯDCQS10: Ứng dụng quản lý trật tự đô thị;
++ ƯDCQS11: Ứng dụng giám sát môi trường;
++ ƯDCQS12: Ứng dụng quản lý đô thị theo phân công;
++ ƯDCQS13: Truyền thanh cơ sở (là kênh thông tin cơ sở phục vụ truyền thông, phổ biến thông tin đến người dân; được triển khai trên cơ sở hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông tại Lớp 1 hoặc các nền tảng số do cấp tỉnh cung cấp);
++ ƯDCQS14: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm tích hợp với hệ thống điều hành và IOC/Dashboard cấp tỉnh.
+- Nông thôn: Ưu tiên triển khai các ứng dụng phục vụ quản lý sản xuất và kinh tế nông thôn như:
++ ƯDCQS15: Ứng dụng quản lý sản xuất nông nghiệp;
++ ƯDCQS16: Ứng dụng hỗ trợ OCOP, hợp tác xã;
++ ƯDCQS17: Truyền thanh cơ sở (là kênh thông tin cơ sở phục vụ truyền thông, phổ biến thông tin đến người dân; được triển khai trên cơ sở hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông tại Lớp 1 hoặc các nền tảng số do cấp tỉnh cung cấp);
++ ƯDCQS18: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ sản xuất và tiêu thụ sản phẩm.
+- Miền núi, biên giới, hải đảo: Ưu tiên triển khai các ứng dụng phục vụ quản lý xã hội và phát triển phù hợp điều kiện địa bàn như:
++ ƯDCQS19: Mô hình dịch vụ công có trợ giúp tại Trung tâm Phục vụ hành chính công cấp xã;
++ ƯDCQS20: Ứng dụng phục vụ quản lý an sinh xã hội, giảm nghèo theo phân công;
++ ƯDCQS21: Truyền thanh cơ sở (triển khai theo điều kiện thực tế của địa phương; có thể sử dụng hạ tầng truyền thanh hoặc các nền tảng số, hệ thống thông tin nguồn do cấp tỉnh cung cấp, bảo đảm phù hợp với điều kiện tiếp cận thông tin của người dân);
++ ƯDCQS22: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm phù hợp với điều kiện địa bàn và khả năng tiếp cận của người dân.
+4.1.2 Hoạt động nghiệp vụ phục vụ Chính quyền số (NVCQS)
+
+- NVCQS1: Xử lý hồ sơ công việc điện tử; Ký số văn bản; Giải quyết TTHC trực tuyến theo lộ trình; Thực hiện báo cáo số; Vận hành Trung tâm Phục vụ hành chính công cấp xã;
+- NVCQS2: Triển khai Quản lý tài chính (thực hiện theo hệ thống và quy định của cơ quan quản lý chuyên ngành);
+- NVCQS3: Hoạt động nghiệp vụ phục vụ Chính quyền số thiết yếu triển khai tại cấp xã khác.
+4.2. Nhóm ứng dụng và nghiệp vụ phục vụ Kinh tế số (KTS)
+4.2.1. Thành phần ứng dụng phục vụ Kinh tế số (ƯDKTS)
+
+a) Thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương cung cấp:
+- ƯDKTS1: Thành phần ứng dụng phục vụ KTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số.
+- ƯDKTS2: Thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương cung cấp khác.
+b) Thành phần ứng dụng phục vụ KTS dùng chung do cấp tỉnh cung cấp:
+- ƯDKTS3: Khai thác các thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương cung cấp.
+- ƯDKTS4: Thành phần ứng dụng phục vụ KTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh.
+- ƯDKTS5: Thành phần ứng dụng phục vụ KTS dùng chung do cấp tỉnh cung cấp khác.
+c) Thành phần ứng dụng phục vụ KTS thiết yếu triển khai tại cấp xã
+
+- ƯDKTS6: Khai thác các thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+- ƯDKTS7: Thành phần ứng dụng phục vụ KTS thiết yếu triển khai tại cấp xã khác.
+d) Thành phần ứng dụng phục vụ KTS bổ sung theo loại địa bàn
+
+Các thành phần ứng dụng phục vụ KTS quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, phải bảo đảm không trùng lặp với các chức năng cốt lõi của các ứng dụng, nền tảng dùng chung đã được cung cấp; trường hợp triển khai các giải pháp, ứng dụng bổ sung phải bảo đảm tuân thủ quy định tại Mục II về kiến trúc và sử dụng dùng chung.
+Cụ thể như sau:
+- Đô thị: Ưu tiên triển khai các nền tảng và giải pháp phục vụ phát triển kinh tế đô thị như:
++ ƯDKTS8: Nền tảng quản lý chợ, phố thương mại;
++ ƯDKTS9: Các dịch vụ đô thị số;
++ ƯDKTS10: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm thúc đẩy thương mại và dịch vụ số.
+- Nông thôn: Ưu tiên triển khai các giải pháp phục vụ phát triển kinh tế nông thôn như:
++ ƯDKTS11: Giải pháp thương mại điện tử sản phẩm địa phương (bao gồm nông sản, đặc sản, OCOP);
++ ƯDKTS12: Giải pháp truy xuất nguồn gốc;
++ ƯDKTS13: Giải pháp hỗ trợ hợp tác xã;
++ ƯDKTS14: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm kết nối sản xuất với thị trường.
+- Miền núi, biên giới, hải đảo: Ưu tiên triển khai các giải pháp phục vụ phát triển kinh tế đặc thù địa bàn như:
++ ƯDKTS15: Giải pháp quảng bá du lịch cộng đồng;
++ ƯDKTS16: Giải pháp thương mại điện tử đặc sản địa phương;
++ ƯDKTS17: Giải pháp hỗ trợ hợp tác xã;
++ ƯDKTS18: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm khai thác lợi thế đặc thù của địa phương.
+4.2.2. Hoạt động nghiệp vụ phục vụ Kinh tế số (NVKTS)
+
+- NVKTS1: Tổ chức hỗ trợ hộ kinh doanh, doanh nghiệp chuyển đổi số và tiếp cận thương mại điện tử;
+- NVKTS2: Hỗ trợ thanh toán số, tài chính số;
+- NVKTS3: Hỗ trợ hiện diện số, tên miền quốc gia “.vn”, chữ ký số, hóa đơn điện tử, sử dụng hợp đồng điện tử;
+- NVKTS4: Hoạt động nghiệp vụ phục vụ KTS thiết yếu triển khai tại cấp xã khác.
+4.3. Nhóm ứng dụng và nghiệp vụ phục vụ Xã hội số (XHS)
+
+4.3.1. Thành phần ứng dụng phục vụ Xã hội số (ƯDXHS)
+a) Thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương cung cấp:
+- ƯDXHS1: Thành phần ứng dụng phục vụ XHS số dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số.
+- ƯDXHS2: Thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương cung cấp khác.
+b) Thành phần ứng dụng phục vụ Xã hội số dùng chung do cấp tỉnh cung cấp:
+- ƯDXHS3: Khai thác thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương cung cấp.
+- ƯDXHS4: Thành phần ứng dụng phục vụ XHS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh.
+- ƯDXHS5: Thành phần ứng dụng phục vụ XHS dùng chung do cấp tỉnh cung cấp khác.
+c) Thành phần ứng dụng phục vụ XHS thiết yếu triển khai tại cấp xã:
+
+- ƯDXHS6: Khai thác các thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+- ƯDXHS7: Hệ thống quan trắc và giám sát môi trường (nếu cấp tỉnh không triển khai tập trung).
+- ƯDXHS8: Thành phần ứng dụng phục vụ XHS thiết yếu triển khai tại cấp xã khác.
+d) Thành phần ứng dụng phục vụ XHS bổ sung theo loại địa bàn
+
+Các thành phần ứng dụng phục vụ XHS quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, phải bảo đảm không trùng lặp với các chức năng cốt lõi của các ứng dụng, nền tảng dùng chung đã được cung cấp; trường hợp triển khai các giải pháp, ứng dụng bổ sung phải bảo đảm tuân thủ quy định tại Mục II về kiến trúc và sử dụng dùng chung.
+Cụ thể như sau:
+- Đô thị: Ưu tiên triển khai các nền tảng, kênh tương tác phục vụ phát triển xã hội số như:
++ ƯDXHS9: Kênh tương tác số thời gian thực giữa chính quyền và người dân;
++ ƯDXHS10: Nền tảng cộng đồng số khu dân cư;
++ ƯDXHS11: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm nâng cao chất lượng tương tác và dịch vụ công.
+- Nông thôn: Ưu tiên triển khai các nền tảng, kênh hỗ trợ người dân tiếp cận thông tin và dịch vụ số như:
++ ƯDXHS12: Nhóm cộng đồng số thôn, bản, tổ dân phố;
++ ƯDXHS13: Kênh phổ biến kiến thức sản xuất, tiêu thụ sản phẩm địa phương;
++ ƯDXHS14: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ người dân tiếp cận thông tin và dịch vụ số.
+- Miền núi, biên giới, hải đảo: Ưu tiên triển khai các nền tảng, dịch vụ bảo đảm bao trùm số như:
++ ƯDXHS15: Dịch vụ y tế từ xa;
++ ƯDXHS16: Học trực tuyến;
++ ƯDXHS17: Dịch vụ công lưu động;
++ ƯDXHS18: Hỗ trợ trực tiếp nhóm yếu thế;
++ ƯDXHS19: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm bao trùm số.
+4.3.2. Hoạt động nghiệp vụ phục vụ Xã hội số (NVXHS)
+
+- NVXHS1: Hỗ trợ kích hoạt định danh điện tử và hướng dẫn người dân sử dụng dịch vụ công trực tuyến.
+- NVXHS2: Tổ công nghệ số cộng đồng.
+- NVXHS3: Điểm hỗ trợ chuyển đổi số (tại Bộ phận Một cửa và/hoặc cộng đồng).
+- NVXHS4: Hoạt động nghiệp vụ phục vụ XHS thiết yếu triển khai tại cấp xã khác.
+(Chi tiết hướng dẫn triển khai Lớp 3 được thể hiện tại Phụ lục 03).
+5. Lớp 4: Kênh tương tác và đo lường hiệu quả
+5.1. Thành phần Kênh tương tác (KTT)
+
+5.1.1. Thành phần KTT dùng chung do cấp Trung ương cung cấp
+a) KTT1: Thành phần KTT dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (gồm Cổng Dịch vụ công quốc gia (dành cho web) và Ứng dụng VNeID (dành cho di động),…).
+b) KTT2: Các thành phần KTT dùng chung do cấp Trung ương cung cấp khác.
+5.1.2. Thành phần KTT dùng chung do cấp tỉnh cung cấp
+a) KTT3: Khai thác thành phần KTT dùng chung do cấp Trung ương cung cấp.
+b) KTT4: Thành phần KTT dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Các kênh tương tác số, phản ánh, kiến nghị (nếu triển khai tập trung),...).
+c) KTT5: Bàn làm việc số cấp tỉnh
+Bàn làm việc số cấp tỉnh (Digital Workplace) là thành phần trung tâm của Không gian làm việc số, cung cấp điểm truy cập thống nhất, cá nhân hóa cho cán bộ, công chức trong khai thác, sử dụng các hệ thống, cơ sở dữ liệu và công cụ làm việc số dùng chung (như quản lý văn bản và điều hành, lịch công tác, hội nghị trực tuyến, quản lý công việc, kho tài liệu số,…), đồng thời hỗ trợ ứng dụng các công nghệ mới như trí tuệ nhân tạo, trợ lý ảo, GenAI.
+Không gian làm việc số cấp tỉnh của cán bộ, công chức là môi trường làm việc thống nhất trên không gian số trong phạm vi toàn tỉnh, tích hợp các hệ thống thông tin, nền tảng số, cơ sở dữ liệu và công cụ hỗ trợ phục vụ xử lý công việc trên một giao diện thống nhất; được tổ chức triển khai tập trung, sử dụng các nền tảng dùng chung, bảo đảm kết nối, liên thông và khai thác dữ liệu thống nhất giữa các cơ quan, đơn vị trên địa bàn.
+Nguyên tắc triển khai: Không gian làm việc số cấp tỉnh được tổ chức triển khai thống nhất, tích hợp các hệ thống quản lý văn bản, giải quyết thủ tục hành chính, báo cáo, dữ liệu và các công cụ hỗ trợ tác nghiệp; không triển khai các ứng dụng làm việc rời rạc, phân tán tại cấp xã. Cán bộ, công chức cấp xã được cấp tài khoản để truy cập, khai thác và sử dụng theo phân quyền.
+d) KTT6: Thành phần KTT dùng chung do cấp tỉnh cung cấp khác.
+5.1.3. Thành phần KTT thiết yếu triển khai tại cấp xã
+
+a) KTT7: Khai thác các thành phần KTT dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+b) KTT8: Trung tâm Phục vụ hành chính công cấp xã.
+c) KTT9: Khai thác, cập nhật Trang/cổng thông tin điện tử cấp xã. d) KTT10: Tiếp nhận phản ánh, kiến nghị.
+đ) KTT11: Thành phần KTT thiết yếu triển khai tại cấp xã khác.
+5.1.4. Thành phần KTT bổ sung theo loại địa bàn
+
+Các thành phần của lớp Kênh tương tác quy định tại khoản này là các thành phần bổ sung theo loại địa bàn, được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân các cấp căn cứ điều kiện thực tế để lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần này không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, phải bảo đảm thống nhất về định danh, dữ liệu và kết nối, chia sẻ với các hệ thống, nền tảng do cấp Trung ương và cấp tỉnh cung cấp theo phân cấp.
+a) Đô thị:
+Ưu tiên triển khai các kênh tương tác và công cụ phục vụ quản lý đô thị và tương tác với người dân như:
+- KTT12: Ứng dụng phản ánh hiện trường đô thị;
+- KTT13: Kênh tương tác số thời gian thực giữa chính quyền và người dân;
+- KTT14: Nền tảng cộng đồng số khu dân cư;
+- KTT15: Tích hợp, khai thác dữ liệu trên IOC/Dashboard cấp tỉnh;
+- KTT16: Các thành phần KTT khác theo nhu cầu và điều kiện thực tế, bảo đảm phục vụ quản lý đô thị và nâng cao chất lượng tương tác.
+b) Nông thôn:
+Ưu tiên triển khai các kênh tương tác và công cụ hỗ trợ người dân tiếp cận thông tin và dịch vụ số như:
+- KTT17: Nhóm tương tác số thôn, bản, tổ dân phố;
+- KTT18: Kênh phổ biến thông tin sản xuất và tiêu thụ sản phẩm địa phương;
+- KTT19: Trang/cổng thông tin điện tử cấp xã tích hợp nội dung phục vụ người dân;
+- KTT20: Các thành phần KTT khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ người dân tiếp cận thông tin và dịch vụ số.
+c) Miền núi, biên giới, hải đảo:
+Ưu tiên triển khai các kênh tương tác và công cụ bảo đảm tiếp cận dịch vụ số cho mọi đối tượng như:
+- KTT21: Điểm hỗ trợ dịch vụ số tại cộng đồng;
+- KTT22: Dịch vụ công lưu động;
+- KTT23: Hệ thống truyền thanh số phục vụ truyền thông chính sách;
+- KTT24: Hỗ trợ người dân sử dụng dịch vụ công trực tuyến;
+- KTT25: Các thành phần KTT khác theo nhu cầu và điều kiện thực tế, bảo đảm khả năng tiếp cận dịch vụ số cho mọi đối tượng.
+5.2. Thành phần Đo lường hiệu quả (ĐLHQ)
+
+5.2.1. Thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp
+a) ĐLHQ1: Thành phần ĐLHQ dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Công cụ chỉ đạo, điều hành: Các Bảng thông tin điều hành (Dashboard) giám sát, điều hành quốc gia, ngành, lĩnh vực,…)
+b) ĐLHQ2: Khung giám sát và đo lường kết quả (KPIs) và các thành phần đo lường khác theo quy định.
+c) ĐLHQ3: Các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp khác.
+5.2.2. Thành phần ĐLHQ dùng chung do cấp tỉnh cung cấp
+a) ĐLHQ4: Khai thác các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp.
+b) ĐLHQ5: Thành phần ĐLHQ dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Bảng thông tin điều hành (Dashboard) giám sát, điều hành cấp tỉnh,…).
+c) ĐLHQ6: Thành phần ĐLHQ dùng chung do cấp tỉnh cung cấp khác.
+5.2.3. Thành phần ĐLHQ thiết yếu triển khai tại cấp xã
+a) ĐLHQ7: Khai thác các thành phần ĐLHQ dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+b) ĐLHQ8: Cập nhật, khai thác bảng thông tin điều hành (Dashboard) cấp tỉnh để theo dõi, đánh giá và phục vụ chỉ đạo, điều hành tại địa phương.
+c) ĐLHQ9: Khảo sát mức độ hài lòng.
+d) ĐLHQ10: Thành phần ĐLHQ thiết yếu triển khai tại cấp xã khác.
+(Chi tiết hướng dẫn triển khai Lớp 4 được thể hiện tại Phụ lục 04).
+Việc đo lường kết quả triển khai Mô hình được thực hiện chủ yếu trên cơ sở dữ liệu tự động thu thập từ các hệ thống thông tin, nền tảng số; hạn chế tối đa việc tổng hợp, báo cáo thủ công, bảo đảm tính khách quan, kịp thời và chính xác của số liệu phục vụ chỉ đạo, điều hành. Việc đo lường được thực hiện theo Khung tiêu chí và phương pháp đánh giá, xét công nhận mức độ chuyển đổi số cấp xã do Bộ Khoa học và Công nghệ ban hành.
+6. Thành phần xuyên suốt: Vận hành - quản trị
+6.1. Vai trò
+Thành phần Vận hành - quản trị là thành phần xuyên suốt của Mô hình, bảo đảm các thành phần thuộc 04 lớp kiến trúc, gồm hạ tầng số và an ninh mạng; dữ liệu và nền tảng lõi; ứng dụng và nghiệp vụ; kênh tương tác và đo lường hiệu quả,
+được tổ chức vận hành thống nhất, liên tục, an toàn, có kiểm soát và có phân công trách nhiệm rõ ràng.
+6.2. Nội dung chủ yếu
+a) Thiết lập cơ chế quản trị, vận hành đối với các nền tảng số, hệ thống thông tin, dữ liệu số và kênh tương tác được triển khai trong Mô hình, bảo đảm phân định rõ trách nhiệm giữa cấp Trung ương, cấp tỉnh và cấp xã.
+b) Ưu tiên mô hình vận hành tập trung đối với các nền tảng, hệ thống thông tin và dịch vụ số dùng chung do cấp tỉnh hoặc cấp Trung ương cung cấp; cấp xã thực hiện khai thác, sử dụng, cập nhật dữ liệu, vận hành tuyến đầu và phối hợp xử lý các vấn đề phát sinh theo phân cấp.
+c) Thiết lập cơ chế hỗ trợ người dùng, hỗ trợ kỹ thuật, tiếp nhận và xử lý sự cố đối với cán bộ, công chức cấp xã trong quá trình sử dụng các nền tảng số, hệ thống thông tin dùng chung.
+d) Bảo đảm yêu cầu về quản lý truy cập, phân quyền, an toàn thông tin, bảo vệ dữ liệu và duy trì tính liên tục trong vận hành.
+đ) Chuẩn hóa quy trình nghiệp vụ số và quy trình phối hợp liên thông, bảo đảm xử lý công việc trên môi trường điện tử, giảm giấy tờ và giảm nhập liệu trùng lặp.
+e) Tổ chức kiểm tra, đánh giá định kỳ việc tuân thủ quy trình vận hành, quy chế quản trị, yêu cầu an toàn thông tin, an ninh mạng và bảo vệ dữ liệu cá nhân trong quá trình triển khai Mô hình.
+g) Phối hợp với các lực lượng chuyên trách, cơ quan chuyên môn và đơn vị kỹ thuật trong bảo đảm an toàn thông tin, an ninh mạng, bảo vệ dữ liệu và xử lý sự cố trong quá trình triển khai, vận hành Mô hình.
+6.3. Trách nhiệm triển khai theo cấp
+a) Cấp Trung ương: ban hành tiêu chuẩn, quy chuẩn, hướng dẫn kỹ thuật, hướng dẫn quản trị và vận hành đối với các thành phần dùng chung của Mô hình ở cấp quốc gia; cung cấp hoặc tổ chức cung cấp các nền tảng, hệ thống, cơ sở dữ liệu, dịch vụ số và kênh tương tác dùng chung cấp quốc gia; theo dõi, tổng hợp, đánh giá tình hình triển khai trên phạm vi toàn quốc trên cơ sở dữ liệu từ các hệ thống thông tin.
+b) Cấp tỉnh: tổ chức vận hành tập trung các nền tảng, hệ thống thông tin, dịch vụ dùng chung cấp tỉnh; thiết lập cơ chế hỗ trợ kỹ thuật, quản lý tài khoản, phân quyền, giám sát vận hành, tổng hợp kết quả triển khai của cấp xã; hướng dẫn, kiểm tra và hỗ trợ cấp xã trong quá trình khai thác, sử dụng.
+c) Cấp xã: triển khai các cấu phần tại cơ sở theo phân công; khai thác, sử dụng các hệ thống, nền tảng dùng chung; cập nhật dữ liệu đầy đủ, đúng thời hạn; tuân thủ quy trình vận hành, quản trị, bảo đảm an toàn thông tin; phối hợp với cơ quan cấp trên và đơn vị hỗ trợ kỹ thuật trong xử lý sự cố và duy trì hoạt động thường xuyên; không tự tổ chức vận hành các nền tảng dùng chung mà thực hiện khai thác, sử dụng theo phân cấp.
+7. Thành phần xuyên suốt: Nguồn lực - nhân lực
+7.1. Vai trò
+Thành phần Nguồn lực - nhân lực là thành phần xuyên suốt của Mô hình, bảo đảm các điều kiện cần thiết về con người, tài chính, tổ chức thực hiện, đào tạo, bồi dưỡng và huy động nguồn lực để triển khai, duy trì, mở rộng và nâng cao hiệu quả chuyển đổi số cấp xã một cách bền vững.
+7.2. Nội dung chủ yếu
+a) Bảo đảm bố trí đầu mối hoặc nhân sự phụ trách công tác chuyển đổi số và an toàn thông tin tại cấp xã theo quy định, phù hợp với quy mô, điều kiện thực tế và yêu cầu triển khai Mô hình.
+b) Tổ chức đào tạo, bồi dưỡng, cập nhật kiến thức, kỹ năng số cho cán bộ, công chức cấp xã; ưu tiên các nội dung phục vụ trực tiếp việc khai thác, sử dụng hệ thống thông tin giải quyết thủ tục hành chính, quản lý văn bản và điều hành, số hóa hồ sơ, bảo vệ dữ liệu cá nhân, an toàn thông tin và hỗ trợ người dân sử dụng dịch vụ số; khuyến khích các nền tảng, giải pháp số tích hợp tài liệu hướng dẫn điện tử, chức năng hỗ trợ người dùng trực tiếp trên hệ thống để phục vụ đào tạo, tự học trong quá trình sử dụng.
+c) Duy trì, củng cố và phát huy vai trò của Tổ công nghệ số cộng đồng, các lực lượng hỗ trợ tại cơ sở và các mô hình hỗ trợ người dân tiếp cận, sử dụng dịch vụ số phù hợp với điều kiện từng địa bàn.
+d) Bố trí kinh phí thực hiện theo phân cấp ngân sách nhà nước và các nguồn hợp pháp khác; ưu tiên phương án sử dụng nền tảng dùng chung, thuê dịch vụ số, thuê dịch vụ công nghệ thông tin, tái sử dụng hạ tầng và dữ liệu nhằm tránh đầu tư phân tán, trùng lặp, kém hiệu quả.
+đ) Huy động sự tham gia của doanh nghiệp số, tổ chức, cá nhân có liên quan trong việc hỗ trợ triển khai nền tảng số, cung cấp giải pháp công nghệ, hỗ trợ kỹ thuật, đào tạo, phổ cập kỹ năng số, hỗ trợ phát triển kinh tế số và xã hội số trên địa bàn.
+e) Gắn việc bố trí nguồn lực với lộ trình triển khai theo mức độ trưởng thành chuyển đổi số của từng loại địa bàn, bảo đảm phù hợp giữa mục tiêu, yêu cầu triển khai và khả năng đáp ứng thực tế.
+g) Khuyến khích lồng ghép nhiệm vụ triển khai Mô hình với các chương trình, đề án, kế hoạch có liên quan về cải cách hành chính, phát triển chính quyền số, kinh tế số, xã hội số, phổ cập kỹ năng số và bao trùm số tại địa phương.
+7.3. Trách nhiệm triển khai theo cấp
+a) Cấp Trung ương: ban hành định hướng, khung kỹ năng số, hướng dẫn đào tạo, bồi dưỡng; hướng dẫn các cơ chế huy động, sử dụng nguồn lực; hỗ trợ triển khai các chương trình dùng chung, chương trình phổ cập kỹ năng số và phát triển nguồn nhân lực số.
+b) Cấp tỉnh: xây dựng kế hoạch bố trí nguồn lực, tổ chức đào tạo, bồi dưỡng cho cấp xã; thiết lập cơ chế hỗ trợ kỹ thuật, hướng dẫn triển khai, phân công đầu mối; tổ chức huy động, điều phối nguồn lực trên địa bàn để hỗ trợ cấp xã thực hiện Mô hình.
+c) Cấp xã: bố trí đầu mối thực hiện; cử cán bộ tham gia đầy đủ các chương trình đào tạo, bồi dưỡng; chủ động rà soát nhu cầu nguồn lực, trang thiết bị, kinh phí; phối hợp huy động lực lượng hỗ trợ tại cộng đồng; sử dụng hiệu quả các nguồn lực được giao để triển khai Mô hình.
+Việc tổ chức triển khai các thành phần của Mô hình được thực hiện theo hướng dẫn chi tiết tại các Phụ lục kèm theo và lộ trình quy định tại Phần IV và Phần V.
+IV. TỔ CHỨC THỰC HIỆN
+1. Bộ Khoa học và Công nghệ
+a) Hướng dẫn, theo dõi việc triển khai thực hiện Mô hình trên phạm vi toàn quốc.
+b) Là đầu mối tiếp nhận, tổng hợp, đánh giá và hướng dẫn phổ biến, nhân rộng các mô hình, giải pháp điển hình hiệu quả trên phạm vi toàn quốc.
+c) Chủ trì đôn đốc, kiểm tra, tổng hợp tình hình, kết quả triển khai thực hiện Mô hình; định kỳ hoặc đột xuất báo cáo cấp có thẩm quyền theo quy định.
+2. Ủy ban nhân dân cấp tỉnh
+a) Căn cứ Mô hình chuyển đổi số cấp xã, xác định các thành phần triển khai trên địa bàn theo phân cấp giữa cấp Trung ương, cấp tỉnh và cấp xã; bảo đảm phù hợp kiến trúc và tránh trùng lặp.
+b) Ban hành kế hoạch triển khai Mô hình trên địa bàn; phân công trách nhiệm, lộ trình thực hiện và bố trí nguồn lực phù hợp với điều kiện thực tế của địa phương.
+c) Thông báo, hướng dẫn Ủy ban nhân dân cấp xã về các thành phần, nhiệm vụ triển khai; chỉ đạo cấp xã đăng ký nhu cầu và đề xuất nội dung thực hiện.
+d) Trên cơ sở đề xuất của cấp xã, tổ chức rà soát, tổng hợp và quyết định danh mục các thành phần giao cấp xã triển khai, bảo đảm phù hợp với điều kiện thực tế và khả năng tổ chức thực hiện.
+đ) Tổ chức cung cấp hoặc hướng dẫn sử dụng các nền tảng số, hệ thống thông tin, dịch vụ dùng chung cấp tỉnh; ưu tiên sử dụng nền tảng dùng chung, hạn chế đầu tư trùng lặp.
+e) Chỉ đạo, hỗ trợ và hướng dẫn cấp xã trong quá trình triển khai, vận hành các thành phần của Mô hình.
+g) Tổng hợp tình hình triển khai trên địa bàn, báo cáo Bộ Khoa học và Công nghệ theo quy định.
+h) Bảo đảm cơ chế hỗ trợ cấp xã, bao gồm:
+- Cung cấp hạ tầng, nền tảng số dùng chung cấp tỉnh;
+- Tổ chức vận hành tập trung các hệ thống, nền tảng;
+- Hỗ trợ kỹ thuật, an toàn thông tin và xử lý sự cố;
+- Tổ chức đào tạo, bồi dưỡng nhân lực và hỗ trợ triển khai tại cơ sở;
+- Hướng dẫn, kiểm tra, giám sát và đánh giá kết quả thực hiện.
+i) Ủy ban nhân dân cấp tỉnh tổ chức lựa chọn, áp dụng và nhân rộng các mô hình, giải pháp phù hợp trên địa bàn tỉnh; đồng thời chia sẻ kinh nghiệm tốt, kết quả triển khai có hiệu quả về Bộ Khoa học và Công nghệ.
+3. Ủy ban nhân dân cấp xã
+a) Căn cứ hướng dẫn của Ủy ban nhân dân cấp tỉnh, rà soát điều kiện thực tế và nhu cầu triển khai tại địa phương.
+b) Đề xuất danh mục các thành phần, nhiệm vụ cần triển khai, gửi Ủy ban nhân dân cấp tỉnh xem xét, quyết định.
+c) Tổ chức triển khai, vận hành các thành phần của Mô hình theo phân công; khai thác, sử dụng các nền tảng số, hệ thống thông tin và dữ liệu dùng chung do cấp Trung ương và cấp tỉnh cung cấp.
+d) Không tổ chức đầu tư, triển khai các hệ thống trùng lặp chức năng cốt lõi; trường hợp cần thiết triển khai giải pháp bổ sung, thực hiện theo hướng dẫn của cấp tỉnh.
+đ) Thực hiện cập nhật, quản lý và khai thác dữ liệu phục vụ công tác quản lý, điều hành và cung cấp dịch vụ cho người dân, doanh nghiệp.
+e) Bố trí đầu mối thực hiện; phối hợp với cơ quan cấp trên và các đơn vị liên quan trong quá trình triển khai.
+4. Doanh nghiệp số
+a) Tham gia triển khai Mô hình chuyển đổi số cấp xã thông qua việc cung cấp nền tảng số, giải pháp công nghệ và dịch vụ kỹ thuật phù hợp với kiến trúc, tiêu chuẩn, quy chuẩn kỹ thuật theo quy định.
+b) Phối hợp với cơ quan nhà nước có thẩm quyền trong việc triển khai, tích hợp và đưa vào vận hành các hệ thống thông tin, nền tảng số phục vụ chính quyền số, kinh tế số và xã hội số tại cấp xã.
+c) Hỗ trợ đào tạo, hướng dẫn cán bộ, công chức cấp xã sử dụng các nền tảng số; cung cấp hỗ trợ kỹ thuật, bảo trì và bảo đảm vận hành ổn định các giải pháp công nghệ do doanh nghiệp cung cấp.
+d) Tuân thủ các quy định của pháp luật về an toàn thông tin mạng, an ninh mạng, bảo vệ dữ liệu cá nhân và các quy định có liên quan trong quá trình triển khai Mô hình.
+V. KINH PHÍ THỰC HIỆN
+1. Nguồn kinh phí
+Kinh phí thực hiện Mô hình được bảo đảm từ các nguồn sau:
+a) Ngân sách nhà nước theo phân cấp ngân sách hiện hành.
+b) Nguồn kinh phí lồng ghép từ các chương trình, đề án, kế hoạch có liên quan đến chuyển đổi số, cải cách hành chính, phát triển chính quyền số, kinh tế số và xã hội số.
+c) Nguồn xã hội hóa, hợp tác công - tư (PPP) và các nguồn kinh phí hợp pháp
+khác theo quy định của pháp luật.
+2. Nguyên tắc sử dụng kinh phí
+a) Việc bố trí, quản lý và sử dụng kinh phí thực hiện Mô hình phải tuân thủ quy định của pháp luật về ngân sách nhà nước, đầu tư công và các quy định có liên quan.
+b) Sử dụng hạ tầng, nền tảng, dữ liệu và dịch vụ dùng chung do cấp Trung ương và cấp tỉnh cung cấp; hạn chế đầu tư riêng lẻ, phân tán tại cấp xã.
+c) Khuyến khích áp dụng hình thức thuê dịch vụ công nghệ thông tin, thuê dịch vụ cho chuyển đổi số; tăng cường tái sử dụng hạ tầng, dữ liệu và các hệ thống hiện có nhằm bảo đảm hiệu quả, tiết kiệm, tránh trùng lặp, lãng phí.
+d) Việc đầu tư, mua sắm, thuê dịch vụ phải căn cứ nhu cầu thực tế, khả năng cân đối nguồn lực và hiệu quả sử dụng, bảo đảm phù hợp với lộ trình triển khai Mô hình.
+3. Lập dự toán và tổ chức thực hiện
+a) Căn cứ Mô hình chuyển đổi số cấp xã, lộ trình triển khai và điều kiện thực tế của địa phương, Ủy ban nhân dân cấp tỉnh chỉ đạo xây dựng kế hoạch và dự toán kinh phí thực hiện theo quy định.
+b) Ủy ban nhân dân cấp xã chủ động rà soát nhu cầu, đề xuất kinh phí thực hiện, lồng ghép với các nhiệm vụ, chương trình có liên quan trên địa bàn.
+c) Việc lập, phân bổ, quản lý và quyết toán kinh phí thực hiện Mô hình được thực hiện theo đúng quy định của pháp luật hiện hành.
+4. Huy động và sử dụng nguồn lực xã hội
+Khuyến khích huy động sự tham gia của doanh nghiệp, tổ chức, cá nhân trong việc cung cấp nền tảng số, giải pháp công nghệ, dịch vụ kỹ thuật, đào tạo, hỗ trợ triển khai và vận hành Mô hình theo quy định của pháp luật; bảo đảm công khai, minh bạch, hiệu quả và phù hợp với định hướng chuyển đổi số quốc gia và kế hoạch triển khai tại địa phương.
+
+Phụ lục 01
+LỚP 1: HẠ TẦNG SỐ VÀ AN NINH MẠNG
+I. MỤC ĐÍCH, YÊU CẦU
+Phụ lục này hướng dẫn triển khai các thành phần thuộc Lớp 1: Hạ tầng số và an ninh mạng, bao gồm thành phần Hạ tầng số (HTS) và thành phần An ninh mạng (ANM), làm cơ sở để Ủy ban nhân dân cấp tỉnh, Ủy ban nhân dân cấp xã và các cơ quan, đơn vị liên quan tổ chức thực hiện thống nhất, phù hợp với Mô hình chuyển đổi số cấp xã.
+Việc triển khai Lớp 1 phải bảo đảm sử dụng hiệu quả các thành phần dùng chung do cấp Trung ương, cấp tỉnh cung cấp; đáp ứng yêu cầu kết nối, vận hành tại cấp xã; bảo đảm an toàn thông tin, an ninh mạng; tránh đầu tư trùng lặp, phân tán, lãng phí.
+II. NGUYÊN TẮC THỰC HIỆN
+1. Ưu tiên khai thác, sử dụng các thành phần HTS, ANM dùng chung do Trung ương và cấp tỉnh cung cấp; cấp xã không đầu tư riêng lẻ các thành phần đã được cung cấp tập trung.
+2. Việc triển khai tại cấp xã thực hiện theo nguyên tắc khai thác, sử dụng và vận hành tại chỗ theo phân cấp; không tổ chức vận hành tập trung các hệ thống, nền tảng dùng chung.
+3. Các thành phần HTS, ANM thiết yếu triển khai tại cấp xã phải phù hợp với điều kiện thực tế, nhu cầu sử dụng, khả năng bảo đảm nguồn lực và quy định hiện hành về quản lý, sử dụng tài sản công.
+4. Các thành phần HTS bổ sung theo loại địa bàn được triển khai theo hướng ưu tiên, không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; địa phương căn cứ điều kiện thực tế để lựa chọn, tổ chức triển khai phù hợp.
+5. Việc triển khai, khai thác, kết nối và vận hành các thành phần HTS, ANM phải bảo đảm an toàn thông tin, an ninh mạng, bảo vệ dữ liệu cá nhân và khả năng kết nối, chia sẻ với các hệ thống, nền tảng dùng chung theo quy định.
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Thành phần Hạ tầng số (HTS)
+1.1. Thành phần HTS dùng chung do cấp Trung ương cung cấp
+a) HTS1: Thành phần HTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số
+Thành phần này bao gồm các hạ tầng số dùng chung ở phạm vi quốc gia, như Trung tâm dữ liệu quốc gia và nền tảng điện toán đám mây trong Trung tâm dữ liệu quốc gia; Mạng truyền số liệu chuyên dùng của các cơ quan Đảng, Nhà nước và các thành phần hạ tầng dùng chung khác theo Khung kiến trúc tổng thể quốc gia số.
+Ủy ban nhân dân cấp tỉnh có trách nhiệm tổ chức kết nối, hướng dẫn khai thác, sử dụng các thành phần HTS dùng chung do cấp Trung ương cung cấp theo phân cấp, bảo đảm phù hợp với kiến trúc, tiêu chuẩn kỹ thuật và yêu cầu an toàn thông tin.
+Ủy ban nhân dân cấp xã thực hiện khai thác, sử dụng các thành phần HTS dùng chung theo hướng dẫn của cấp tỉnh và cơ quan có thẩm quyền; không tự ý thay đổi cấu hình kết nối, không tổ chức đầu tư mới các thành phần có chức năng tương đương.
+b) HTS2: Thành phần HTS dùng chung do cấp Trung ương cung cấp khác
+Các thành phần HTS dùng chung khác do cấp Trung ương cung cấp được triển khai theo hướng dẫn của cơ quan chủ quản ở cấp Trung ương và chỉ đạo của Ủy ban nhân dân cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh rà soát nhu cầu sử dụng của các xã, phường, đặc khu trên địa bàn để tổ chức kết nối, cấp quyền khai thác, hướng dẫn sử dụng và hỗ trợ kỹ thuật phù hợp.
+Ủy ban nhân dân cấp xã tiếp nhận, khai thác, sử dụng đúng mục đích, đúng phạm vi được phân quyền; phối hợp với cơ quan cấp tỉnh trong quá trình vận hành, xử lý sự cố và bảo đảm an toàn thông tin.
+1.2. Thành phần HTS dùng chung do cấp tỉnh cung cấp
+a) HTS3: Khai thác các thành phần HTS dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức đầu mối kỹ thuật để khai thác, kết nối, tích hợp các thành phần HTS dùng chung do cấp Trung ương cung cấp, bảo đảm phục vụ triển khai Mô hình tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác các thành phần này thông qua hạ tầng, tài khoản, quyền truy cập hoặc dịch vụ do cấp tỉnh tổ chức, hướng dẫn; không tổ chức kết nối riêng lẻ khi chưa có hướng dẫn của cơ quan có thẩm quyền.
+b) HTS4: Thành phần HTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm các hạ tầng dùng chung cấp tỉnh như Trung tâm dữ liệu cấp tỉnh hiện có và các hạ tầng kỹ thuật dùng chung khác theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh tổ chức quản lý, vận hành hoặc thuê dịch vụ hạ tầng phù hợp; bảo đảm cấp xã được khai thác, sử dụng hạ tầng dùng chung để triển khai các hệ thống, nền tảng, dữ liệu và dịch vụ số theo Mô hình.
+Ủy ban nhân dân cấp xã ưu tiên sử dụng hạ tầng dùng chung cấp tỉnh; không tự tổ chức xây dựng máy chủ, trung tâm dữ liệu, kho lưu trữ cục bộ hoặc hạ tầng riêng có chức năng trùng lặp khi không thật sự cần thiết.
+c) HTS5: Thành phần HTS dùng chung do cấp tỉnh cung cấp khác
+Các thành phần HTS dùng chung khác do cấp tỉnh cung cấp được triển khai trên cơ sở nhu cầu thực tế, điều kiện nguồn lực và Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục thành phần HTS dùng chung, phạm vi sử dụng, đầu mối hỗ trợ kỹ thuật và phương thức khai thác để cấp xã tổ chức thực hiện.
+Ủy ban nhân dân cấp xã khai thác, sử dụng theo phân cấp; phản ánh kịp thời nhu cầu, khó khăn, vướng mắc trong quá trình sử dụng để cấp tỉnh tổng hợp, xử lý.
+1.3. Thành phần HTS thiết yếu triển khai tại cấp xã
+a) HTS6: Khai thác các thành phần HTS dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã có trách nhiệm khai thác các thành phần HTS dùng chung do cấp Trung ương, cấp tỉnh cung cấp phục vụ xử lý công việc, giải quyết thủ tục hành chính, cung cấp dịch vụ số và tương tác với người dân, doanh nghiệp.
+Việc khai thác phải thực hiện đúng mục đích, đúng quyền hạn, đúng hướng dẫn kỹ thuật; bảo đảm không làm phát sinh kết nối riêng lẻ, hệ thống riêng hoặc hạ tầng trùng lặp với thành phần dùng chung đã có.
+b) HTS7: Mạng nội bộ (LAN/Intranet) và kết nối Internet băng rộng; Kết nối mạng truyền số liệu chuyên dùng
+Ủy ban nhân dân cấp xã tổ chức rà soát, thiết lập và duy trì mạng nội bộ, kết nối Internet băng rộng và kết nối mạng truyền số liệu chuyên dùng phục vụ hoạt động thường xuyên trên môi trường số.
+Việc triển khai HTS7 phải bảo đảm:
+- Kết nối ổn định phục vụ xử lý hồ sơ, văn bản, báo cáo, họp trực tuyến và khai thác nền tảng số;
+- Có phân tách phù hợp giữa mạng nghiệp vụ, mạng truy cập công cộng hoặc mạng khách;
+- Có biện pháp kiểm soát truy cập, lưu vết kết nối và bảo đảm an toàn thông tin;
+- Phù hợp với hướng dẫn kỹ thuật của cơ quan chuyên môn cấp tỉnh.
+c) HTS8: Thiết bị đầu cuối phục vụ cán bộ, công chức; Thiết bị số hoá hồ sơ; Thiết bị phục vụ hội nghị trực tuyến theo điều kiện
+Ủy ban nhân dân cấp xã bố trí thiết bị đầu cuối phục vụ cán bộ, công chức; thiết bị số hóa hồ sơ; thiết bị phục vụ hội nghị trực tuyến theo điều kiện thực tế và yêu cầu triển khai chính quyền số tại địa phương.
+Việc lựa chọn, trang bị, nâng cấp hoặc thuê thiết bị thực hiện theo nhu cầu sử dụng, vị trí việc làm, khả năng cân đối nguồn lực và quy định về quản lý, sử dụng tài sản công; tham khảo hướng dẫn của Bộ Khoa học và Công nghệ về danh mục phần mềm cơ bản, yêu cầu kỹ thuật, cấu hình tối thiểu của máy tính và một số thiết bị đầu cuối phục vụ công việc thường xuyên trên môi trường số.
+Ủy ban nhân dân cấp xã ưu tiên bố trí thiết bị cho Trung tâm Phục vụ hành chính công cấp xã, bộ phận văn thư, lãnh đạo, cán bộ chuyên môn thường xuyên xử lý hồ sơ điện tử, số hóa hồ sơ và tham gia họp trực tuyến.
+d) HTS9: Thành phần HTS thiết yếu triển khai tại cấp xã khác
+Các thành phần HTS thiết yếu khác tại cấp xã được xác định theo nhu cầu thực tế, hướng dẫn của cấp tỉnh và yêu cầu triển khai Mô hình.
+Việc triển khai HTS9 phải bảo đảm phù hợp với Khung kiến trúc số cấp tỉnh, không trùng lặp với hạ tầng dùng chung do cấp Trung ương hoặc cấp tỉnh cung cấp, đáp ứng yêu cầu kết nối, vận hành và an toàn thông tin.
+1.4. Thành phần HTS bổ sung theo loại địa bàn
+Các thành phần HTS bổ sung theo loại địa bàn được triển khai theo hướng ưu tiên, không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc. Ủy ban nhân dân cấp tỉnh căn cứ điều kiện thực tế, đặc điểm địa bàn, nhu cầu quản lý và khả năng nguồn lực để hướng dẫn Ủy ban nhân dân cấp xã lựa chọn, tổ chức triển khai phù hợp.
+Việc triển khai các thành phần HTS bổ sung phải bảo đảm tuân thủ nguyên tắc dùng chung; đối với thành phần đã được cung cấp ở cấp Trung ương hoặc cấp tỉnh thì cấp xã thực hiện khai thác, sử dụng theo phân cấp, không tổ chức đầu tư riêng lẻ.
+a) Đô thị
+- HTS10: Wi-Fi công cộng.
+Wi-Fi công cộng được triển khai tại các khu vực có nhu cầu phục vụ người dân, doanh nghiệp tiếp cận dịch vụ số, tra cứu thông tin, sử dụng dịch vụ công trực tuyến và tương tác với chính quyền.
+Việc triển khai phải bảo đảm phân tách với mạng nghiệp vụ của cơ quan nhà nước; có cơ chế quản lý truy cập, lưu vết theo quy định; ưu tiên tích hợp giám sát trạng thái hoạt động với hệ thống quản lý hoặc IOC/Dashboard cấp tỉnh khi có điều kiện.
+- HTS11: Camera giám sát an ninh, trật tự.
+Camera giám sát an ninh, trật tự được triển khai phục vụ công tác bảo đảm an ninh, trật tự, quản lý đô thị, hỗ trợ xử lý phản ánh hiện trường và cung cấp dữ liệu cho hệ thống điều hành cấp tỉnh khi được phân công.
+Việc đầu tư, thuê dịch vụ, lắp đặt và khai thác camera phải tuân thủ tiêu chuẩn, quy chuẩn kỹ thuật và hướng dẫn của cơ quan có thẩm quyền; bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân, phân quyền truy cập, thời gian lưu trữ dữ liệu và khả năng kết nối, chia sẻ với hệ thống giám sát, điều hành dùng chung cấp tỉnh.
+- HTS12: Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông (bao gồm thiết bị, hệ thống phát thanh, kết nối truyền dẫn).
+Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông được triển khai để phục vụ truyền thông cơ sở, phổ biến thông tin, chính sách, cảnh báo và hướng dẫn người dân sử dụng dịch vụ số.
+Ủy ban nhân dân cấp xã khai thác hạ tầng truyền thanh theo hướng dẫn của cấp tỉnh; bảo đảm nội dung phát thanh được quản lý, phê duyệt theo quy định; thiết bị, hệ thống phát thanh và kết nối truyền dẫn vận hành ổn định, an toàn.
+- HTS13: Hạ tầng Internet vạn vật (IoT) và bảng điện tử công cộng (nếu có), bảo đảm kết nối với nền tảng giám sát/IOC cấp tỉnh khi triển khai.
+Hạ tầng IoT và bảng điện tử công cộng được triển khai trong trường hợp có nhu cầu quản lý đô thị, cung cấp thông tin công cộng, cảnh báo, giám sát môi trường, giao thông hoặc các nội dung quản lý khác theo phân công.
+Việc triển khai phải bảo đảm chuẩn kết nối, khả năng tích hợp dữ liệu với nền tảng giám sát/IOC cấp tỉnh; không hình thành hệ thống rời rạc, khó tích hợp; bảo đảm an toàn thiết bị, an toàn dữ liệu và phương án vận hành, bảo trì.
+- HTS14: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế.
+Các thành phần HTS khác tại địa bàn đô thị được lựa chọn theo nhu cầu thực tế, yêu cầu quản lý đô thị và khả năng nguồn lực.
+Việc triển khai phải bảo đảm phù hợp với kiến trúc, tiêu chuẩn kỹ thuật, khả năng kết nối, chia sẻ dữ liệu và không trùng lặp với các thành phần hạ tầng dùng chung.
+b) Nông thôn
+- HTS15: Điểm truy cập Internet công cộng tại nhà văn hóa, điểm sinh hoạt cộng đồng.
+Điểm truy cập Internet công cộng tại nhà văn hóa, điểm sinh hoạt cộng đồng được triển khai để hỗ trợ người dân tiếp cận thông tin, dịch vụ công trực tuyến, dịch vụ số và các chương trình phổ cập kỹ năng số.
+Ủy ban nhân dân cấp xã lựa chọn vị trí phù hợp, bảo đảm thuận tiện cho người dân; bố trí thiết bị, kết nối và lực lượng hỗ trợ theo điều kiện thực tế; bảo đảm an toàn truy cập, tách biệt với mạng nghiệp vụ và có cơ chế quản lý, duy trì hoạt động.
+- HTS16: Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông (bao gồm thiết bị, hệ thống phát thanh, kết nối truyền dẫn).
+Hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông tại địa bàn nông thôn được triển khai phục vụ thông tin cơ sở, phổ biến chính sách, hướng dẫn sản xuất, cảnh báo thiên tai, dịch bệnh và hỗ trợ người dân tiếp cận dịch vụ số.
+Việc triển khai, quản lý, vận hành thực hiện theo hướng dẫn của cấp tỉnh; ưu tiên sử dụng hệ thống thông tin nguồn, nền tảng dùng chung hoặc hạ tầng đã có để tránh đầu tư phân tán.
+- HTS17: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế.
+Các thành phần HTS khác tại địa bàn nông thôn được triển khai phù hợp với yêu cầu phổ cập kết nối, hỗ trợ sản xuất, tiêu thụ sản phẩm, tiếp cận dịch vụ số và điều kiện thực tế của địa phương.
+Việc triển khai phải bảo đảm hiệu quả, tiết kiệm, dễ vận hành và có khả năng kết nối với các nền tảng, hệ thống dùng chung của cấp tỉnh khi cần thiết.
+c) Miền núi, biên giới, hải đảo
+- HTS18: Hạ tầng kết nối băng rộng di động (4G/5G).
+Hạ tầng kết nối băng rộng di động được ưu tiên triển khai tại địa bàn miền núi, biên giới, hải đảo để bảo đảm khả năng truy cập dịch vụ số, dịch vụ công trực tuyến, học trực tuyến, y tế từ xa và các hoạt động hỗ trợ người dân.
+Ủy ban nhân dân cấp tỉnh phối hợp với doanh nghiệp viễn thông và các cơ quan liên quan rà soát vùng phủ, chất lượng dịch vụ, nhu cầu sử dụng; ưu tiên các khu vực dân cư, điểm cung cấp dịch vụ công, trường học, trạm y tế, điểm sinh hoạt cộng đồng.
+- HTS19: Các giải pháp kết nối thay thế tại khu vực chưa phủ sóng hoặc không bảo đảm chất lượng (kết nối vệ tinh, trạm phát sóng cộng đồng hoặc hình thức phù hợp khác).
+Đối với khu vực chưa được phủ sóng hoặc chất lượng kết nối chưa đáp ứng yêu cầu, địa phương được lựa chọn giải pháp kết nối thay thế phù hợp như kết nối vệ tinh, trạm phát sóng cộng đồng hoặc hình thức kết nối phù hợp khác.
+Việc lựa chọn giải pháp phải căn cứ điều kiện địa hình, mật độ dân cư, nhu cầu sử dụng, chi phí vận hành và khả năng duy trì lâu dài; bảo đảm an toàn, ổn định và phù hợp quy định chuyên ngành.
+- HTS20: Điểm hỗ trợ số tại cộng đồng.
+Điểm hỗ trợ số tại cộng đồng được triển khai nhằm hỗ trợ người dân, nhất là người dân ở khu vực khó khăn, nhóm yếu thế, người thiếu thiết bị hoặc kỹ năng số, tiếp cận và sử dụng dịch vụ số.
+Điểm hỗ trợ số có thể được bố trí tại nhà văn hóa, điểm sinh hoạt cộng đồng, Trung tâm Phục vụ hành chính công cấp xã hoặc địa điểm phù hợp khác; ưu tiên gắn với Tổ công nghệ số cộng đồng và các lực lượng hỗ trợ tại cơ sở.
+- HTS21: Hạ tầng phục vụ triển khai dịch vụ công lưu động.
+Hạ tầng phục vụ triển khai dịch vụ công lưu động bao gồm thiết bị, kết nối, phương tiện, công cụ số hóa và các điều kiện kỹ thuật cần thiết để hỗ trợ cung cấp dịch vụ công tại các cụm dân cư, khu vực xa trung tâm, khó tiếp cận.
+Việc triển khai phải bảo đảm kết nối với hệ thống giải quyết thủ tục hành chính, phục vụ tiếp nhận, số hóa, tra cứu, hướng dẫn và trả kết quả theo quy định; bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân trong quá trình phục vụ lưu động.
+- HTS22: Các thành phần HTS khác theo nhu cầu và điều kiện thực tế.
+Các thành phần HTS khác tại địa bàn miền núi, biên giới, hải đảo được triển khai phù hợp với đặc thù địa lý, điều kiện tiếp cận, khả năng duy trì vận hành và nhu cầu thực tế của người dân.
+Việc triển khai phải ưu tiên hiệu quả sử dụng, tính bền vững, khả năng bảo trì và tính phù hợp với điều kiện địa bàn.
+2. Thành phần An ninh mạng (ANM)
+2.1. Thành phần ANM dùng chung do cấp Trung ương cung cấp
+a) ANM1: Thành phần ANM dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Nền tảng phòng vệ mạng quốc gia; Hệ thống chứng thực chữ ký số chuyên dùng công vụ,…)
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác, kết nối, sử dụng các thành phần ANM dùng chung do cấp Trung ương cung cấp theo hướng dẫn của cơ quan có thẩm quyền; bảo đảm phục vụ an toàn cho các hoạt động kết nối, trao đổi dữ liệu, xác thực và giao dịch điện tử.
+Ủy ban nhân dân cấp xã sử dụng các thành phần ANM dùng chung trong quá trình xử lý công việc, ký số, xác thực, bảo vệ hệ thống, bảo vệ thiết bị đầu cuối và bảo đảm an toàn truy cập theo phân cấp.
+b) ANM2: Thành phần ANM dùng chung do cấp Trung ương cung cấp khác
+Các thành phần ANM dùng chung khác do cấp Trung ương cung cấp được triển khai, khai thác theo hướng dẫn của cơ quan chủ quản.
+Ủy ban nhân dân cấp tỉnh có trách nhiệm tổ chức hướng dẫn, cấp quyền sử dụng, tích hợp và hỗ trợ cấp xã khai thác các thành phần này theo nhu cầu và phạm vi được phân quyền.
+2.2. Thành phần ANM dùng chung do cấp tỉnh cung cấp
+a) ANM3: Khai thác thành phần ANM dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các thành phần ANM dùng chung do cấp Trung ương cung cấp, bảo đảm hỗ trợ cấp xã trong quá trình kết nối, sử dụng hệ thống, bảo vệ dữ liệu và xử lý sự cố.
+Ủy ban nhân dân cấp xã thực hiện theo hướng dẫn của cấp tỉnh; không tự ý thay đổi cấu hình bảo mật, không chia sẻ tài khoản, khóa truy cập, chứng thư số hoặc thông tin xác thực trái quy định.
+b) ANM4: Thành phần ANM dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Hệ thống giám sát ATTT/SOC hiện có,…)
+Thành phần này bao gồm hệ thống giám sát an toàn thông tin/SOC hiện có và các thành phần an ninh mạng dùng chung khác theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh tổ chức giám sát, cảnh báo, hướng dẫn xử lý sự cố an toàn thông tin đối với các hệ thống, thiết bị, nền tảng có liên quan đến cấp xã theo phân cấp.
+Ủy ban nhân dân cấp xã phối hợp cung cấp thông tin, nhật ký, hiện trạng thiết bị, tài khoản và các dữ liệu kỹ thuật cần thiết phục vụ giám sát, cảnh báo, xử lý sự cố; thực hiện khuyến nghị khắc phục theo hướng dẫn của cơ quan chuyên môn.
+c) ANM5: Thành phần ANM dùng chung do cấp tỉnh cung cấp khác
+Các thành phần ANM dùng chung khác do cấp tỉnh cung cấp được tổ chức triển khai phù hợp với điều kiện thực tế, yêu cầu bảo vệ hệ thống, dữ liệu, thiết bị đầu cuối và kết nối của cấp xã.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục thành phần ANM dùng chung, phạm vi áp dụng, quy trình sử dụng và đầu mối hỗ trợ.
+Ủy ban nhân dân cấp xã tổ chức khai thác, sử dụng theo hướng dẫn, bảo đảm đúng mục đích, đúng quyền hạn và kịp thời phản ánh sự cố, rủi ro phát sinh.
+2.3. Thành phần ANM thiết yếu triển khai tại cấp xã
+a) ANM6: Khai thác các thành phần an ninh mạng dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã tổ chức khai thác, sử dụng các thành phần an ninh mạng (ANM) dùng chung do cấp Trung ương và cấp tỉnh cung cấp để bảo đảm an toàn thông tin, an ninh mạng đối với các hệ thống, nền tảng, dữ liệu và thiết bị phục vụ triển khai Mô hình tại địa phương.
+Việc triển khai ANM6 phải bảo đảm:
+- Sử dụng thống nhất các thành phần an ninh mạng dùng chung theo phân cấp, bao gồm các giải pháp phòng vệ mạng, giám sát an toàn thông tin, chứng thực điện tử, ký số và các cơ chế bảo mật liên quan;
+- Thực hiện khai thác thông qua hạ tầng, tài khoản, quyền truy cập hoặc dịch vụ do cấp tỉnh hoặc cơ quan có thẩm quyền cung cấp; không tự ý thiết lập kết nối, cấu hình hoặc triển khai thành phần bảo mật riêng lẻ khi chưa có hướng dẫn;
+- Tuân thủ đầy đủ quy trình, quy định về quản lý tài khoản, phân quyền truy cập, sử dụng chứng thư số, thiết bị ký số và các công cụ bảo mật;
+- Phối hợp với cơ quan chuyên môn cấp tỉnh trong việc giám sát, phát hiện, cảnh báo và xử lý sự cố an toàn thông tin; cung cấp thông tin, nhật ký hệ thống và các dữ liệu kỹ thuật cần thiết theo yêu cầu;
+- Bảo đảm không chia sẻ, tiết lộ thông tin truy cập, khóa bảo mật, chứng thư số hoặc dữ liệu liên quan đến an ninh mạng trái quy định; thực hiện các biện pháp bảo vệ dữ liệu và hệ thống theo hướng dẫn của cơ quan có thẩm quyền.
+b) ANM7: Thực hiện các biện pháp bảo đảm an toàn thông tin ở mức cơ sở; bảo vệ thiết bị đầu cuối; sao lưu dữ liệu; bảo đảm an toàn truy cập mạng
+Ủy ban nhân dân cấp xã tổ chức thực hiện các biện pháp bảo đảm an toàn thông tin ở mức cơ sở đối với hạ tầng, thiết bị, dữ liệu và người dùng tại đơn vị.
+Nội dung triển khai bao gồm:
+- Cài đặt, duy trì phần mềm hoặc giải pháp bảo vệ thiết bị đầu cuối;
+- Thực hiện cập nhật bản vá, kiểm tra mã độc, xử lý thiết bị có nguy cơ mất an toàn;
+- Thiết lập cơ chế quản lý tài khoản, mật khẩu, phân quyền truy cập;
+- Kiểm soát truy cập mạng nội bộ, truy cập Internet và truy cập các hệ thống dùng chung;
+- Thực hiện sao lưu dữ liệu định kỳ đối với dữ liệu thuộc phạm vi quản lý;
+- Lưu vết hoạt động theo quy định để phục vụ kiểm tra, xử lý sự cố khi cần thiết.
+Việc triển khai ANM7 phải phù hợp với hướng dẫn của cơ quan chuyên môn cấp tỉnh, quy định của pháp luật về an toàn thông tin mạng, an ninh mạng và bảo vệ dữ liệu cá nhân.
+c) ANM8: Thành phần, hoạt động ANM thiết yếu triển khai tại cấp xã khác
+Các thành phần, hoạt động ANM thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế, yêu cầu bảo vệ hệ thống, dữ liệu, thiết bị và hướng dẫn của cấp tỉnh.
+Ủy ban nhân dân cấp xã chủ động rà soát rủi ro an toàn thông tin trong quá trình khai thác, sử dụng hệ thống số; phối hợp với cơ quan chuyên môn cấp tỉnh và đơn vị liên quan để xử lý sự cố, khắc phục điểm yếu và nâng cao năng lực bảo vệ tại cơ sở.
+Ghi chú: Việc tổ chức triển khai các nội dung tại Phụ lục này thực hiện theo phân công tại Phần IV của Tài liệu hướng dẫn.
+
+Phụ lục 02
+LỚP 2: DỮ LIỆU VÀ NỀN TẢNG LÕI
+I. MỤC ĐÍCH, YÊU CẦU
+Phụ lục này hướng dẫn triển khai các thành phần thuộc Lớp 2: Dữ liệu và nền tảng lõi của Mô hình chuyển đổi số cấp xã, bao gồm thành phần dữ liệu (DL) và thành phần nền tảng lõi (NTL), làm cơ sở để Ủy ban nhân dân cấp tỉnh, Ủy ban nhân dân cấp xã và các cơ quan, đơn vị liên quan tổ chức triển khai thống nhất.
+Việc triển khai Lớp 2 phải bảo đảm dữ liệu tại cấp xã được tạo lập, cập nhật, chuẩn hóa, lưu trữ, chia sẻ và khai thác theo quy định; ưu tiên khai thác dữ liệu, nền tảng dùng chung do cấp Trung ương và cấp tỉnh cung cấp; phục vụ quản lý, điều hành, giải quyết thủ tục hành chính, cung cấp dịch vụ số và phát triển kinh tế số, xã hội số tại địa bàn.
+II. NGUYÊN TẮC THỰC HIỆN
+1. Dữ liệu được quản lý theo nguyên tắc “đúng, đủ, sạch, sống, thống nhất, dùng chung”; bảo đảm phù hợp với Khung kiến trúc dữ liệu quốc gia, Khung quản trị, quản lý dữ liệu và từ điển dữ liệu dùng chung.
+2. Ưu tiên khai thác dữ liệu, cơ sở dữ liệu, nền tảng lõi dùng chung do Trung ương và cấp tỉnh cung cấp; không tạo lập cơ sở dữ liệu, kho dữ liệu hoặc nền tảng có chức năng trùng lặp với thành phần dùng chung đã có.
+3. Việc tạo lập, cập nhật, chuẩn hóa, lưu trữ, chia sẻ và khai thác dữ liệu tại cấp xã phải thực hiện theo danh mục, biểu mẫu, quy trình, chuẩn dữ liệu, cơ chế phân quyền và hướng dẫn của cấp tỉnh.
+4. Việc kết nối, chia sẻ, khai thác dữ liệu phải thực hiện thông qua các nền tảng tích hợp, chia sẻ dữ liệu theo quy định; bảo đảm lưu vết, kiểm soát truy cập, an toàn dữ liệu và bảo vệ dữ liệu cá nhân.
+5. Dữ liệu cấp xã phải được cập nhật kịp thời, phản ánh đúng tình hình thực tế của địa phương; bảo đảm khả năng tổng hợp, liên thông, phân tích và khai thác phục vụ chỉ đạo, điều hành của cấp xã, cấp tỉnh và cấp có thẩm quyền.
+6. Các thành phần dữ liệu bổ sung theo loại địa bàn được triển khai theo hướng ưu tiên, không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; địa phương căn cứ điều kiện thực tế, nhu cầu quản lý và khả năng nguồn lực để tổ chức thực hiện phù hợp.
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Thành phần dữ liệu (DL)
+1.1. Thành phần DL dùng chung do cấp Trung ương cung cấp
+a) DL1: Thành phần DL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số (Các cơ sở dữ liệu quốc gia và các CSDL chuyên ngành do các Bộ, ngành chủ quản xây dựng; Cơ sở dữ liệu tổng hợp quốc gia tại Trung tâm dữ liệu quốc gia, Bản đồ số quốc gia và hệ thống mã bưu chính,…)
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác, kết nối và hướng dẫn sử dụng các thành phần DL dùng chung do cấp Trung ương cung cấp theo phân cấp, phục vụ triển khai Mô hình tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác dữ liệu từ các cơ sở dữ liệu quốc gia, cơ sở dữ liệu chuyên ngành, cơ sở dữ liệu tổng hợp quốc gia, bản đồ số quốc gia, hệ thống mã bưu chính và các nguồn dữ liệu dùng chung khác thông qua các hệ thống, nền tảng do cấp tỉnh hoặc cấp có thẩm quyền cung cấp.
+Việc khai thác DL1 phải phục vụ đúng mục đích, đúng thẩm quyền; hạn chế yêu cầu người dân, doanh nghiệp cung cấp lại thông tin, giấy tờ đã có trong cơ sở dữ liệu hợp pháp; bảo đảm lưu vết, phân quyền truy cập và bảo vệ dữ liệu cá nhân.
+b) DL2: Khung kiến trúc dữ liệu quốc gia; Khung quản trị, quản lý dữ liệu và từ điển dữ liệu dùng chung
+Ủy ban nhân dân cấp tỉnh căn cứ Khung kiến trúc dữ liệu quốc gia, Khung quản trị, quản lý dữ liệu và từ điển dữ liệu dùng chung để hướng dẫn cấp xã chuẩn hóa dữ liệu, thống nhất cấu trúc dữ liệu, định danh dữ liệu, mã hóa đối tượng, trường dữ liệu, biểu mẫu và phương thức cập nhật.
+Ủy ban nhân dân cấp xã thực hiện tạo lập, cập nhật, chuẩn hóa, lưu trữ và khai thác dữ liệu theo hướng dẫn của cấp tỉnh; bảo đảm dữ liệu có khả năng tích hợp, chia sẻ, tái sử dụng, tổng hợp và phân tích.
+Việc áp dụng DL2 phải được thực hiện xuyên suốt trong quá trình số hóa hồ sơ, cập nhật dữ liệu kinh tế - xã hội, quản lý dữ liệu địa bàn, khai thác cơ sở dữ liệu quốc gia và chia sẻ dữ liệu với cấp trên.
+c) DL3: Thành phần DL dùng chung do cấp Trung ương cung cấp khác
+Các thành phần DL dùng chung khác do cấp Trung ương cung cấp được khai thác theo hướng dẫn của cơ quan chủ quản và phân cấp của Ủy ban nhân dân cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh rà soát nhu cầu khai thác của cấp xã, tổ chức hướng dẫn kết nối, cấp quyền sử dụng, phân quyền truy cập, quy định phạm vi khai thác và đầu mối hỗ trợ.
+Ủy ban nhân dân cấp xã sử dụng các thành phần DL này đúng mục đích, đúng phạm vi được phân quyền; phản ánh kịp thời nhu cầu khai thác, lỗi dữ liệu, thiếu hụt dữ liệu hoặc vướng mắc phát sinh trong quá trình sử dụng.
+1.2. Thành phần DL dùng chung do cấp tỉnh cung cấp
+a) DL4: Khai thác các thành phần DL dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác, tích hợp, tổng hợp và điều phối việc sử dụng các thành phần DL dùng chung do cấp Trung ương cung cấp phục vụ hoạt động của các cơ quan trên địa bàn và triển khai Mô hình tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác các thành phần DL dùng chung này thông qua hệ thống thông tin, nền tảng số, kho dữ liệu hoặc công cụ khai thác do cấp tỉnh cung cấp; không tự tổ chức kết nối riêng lẻ khi chưa có hướng dẫn của cơ quan có thẩm quyền.
+Việc khai thác DL4 phải gắn với yêu cầu giải quyết thủ tục hành chính, xử lý công việc điện tử, quản lý địa bàn, cung cấp dịch vụ số và hỗ trợ người dân, doanh nghiệp.
+b) DL5: Thành phần DL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Kho dữ liệu dùng chung cấp tỉnh; Kho quản lý dữ liệu điện tử của tổ chức, cá nhân; Các CSDL dùng chung, CSDL chuyên ngành,...)
+Ủy ban nhân dân cấp tỉnh tổ chức xây dựng, quản lý, vận hành và khai thác các kho dữ liệu, cơ sở dữ liệu dùng chung, cơ sở dữ liệu chuyên ngành theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp xã có trách nhiệm cập nhật dữ liệu phát sinh tại địa phương vào các hệ thống, cơ sở dữ liệu, kho dữ liệu theo phân công; khai thác dữ liệu phục vụ quản lý, điều hành và cung cấp dịch vụ số tại địa bàn.
+Việc cập nhật, khai thác DL5 phải bảo đảm dữ liệu được quản lý tập trung, hạn chế hình thành dữ liệu cục bộ, phân tán; bảo đảm khả năng tổng hợp, đối soát, chia sẻ, tái sử dụng và liên thông giữa cấp xã với cấp tỉnh.
+c) DL6: Cơ chế quản trị dữ liệu cấp tỉnh; Danh mục dữ liệu cấp xã phải cập nhật; Cơ chế kiểm soát chất lượng dữ liệu và chia sẻ dữ liệu liên thông
+Ủy ban nhân dân cấp tỉnh ban hành hoặc hướng dẫn áp dụng cơ chế quản trị dữ liệu cấp tỉnh; danh mục dữ liệu cấp xã phải cập nhật; biểu mẫu số; tần suất cập nhật; trách nhiệm cập nhật; tiêu chí chất lượng dữ liệu; cơ chế kiểm soát, đối soát, làm sạch và chia sẻ dữ liệu liên thông.
+Ủy ban nhân dân cấp xã thực hiện cập nhật dữ liệu đầy đủ, chính xác, kịp thời theo danh mục, biểu mẫu và tần suất do cấp tỉnh quy định; chịu trách nhiệm về chất lượng dữ liệu thuộc phạm vi quản lý.
+Việc triển khai DL6 phải bảo đảm xác định rõ chủ thể dữ liệu, nguồn dữ liệu, đơn vị cập nhật, đơn vị kiểm tra, đơn vị khai thác; bảo đảm dữ liệu có khả năng kiểm tra, đối soát, truy vết và sử dụng cho chỉ đạo, điều hành.
+d) DL7: Khung kiến trúc dữ liệu cấp tỉnh; Từ điển dữ liệu dùng chung cấp tỉnh
+Ủy ban nhân dân cấp tỉnh tổ chức xây dựng, ban hành hoặc hướng dẫn áp dụng Khung kiến trúc dữ liệu cấp tỉnh và Từ điển dữ liệu dùng chung cấp tỉnh.
+Ủy ban nhân dân cấp xã thực hiện chuẩn hóa dữ liệu theo Khung kiến trúc dữ liệu cấp tỉnh và Từ điển dữ liệu dùng chung cấp tỉnh, bao gồm chuẩn hóa tên trường dữ liệu, kiểu dữ liệu, mã định danh, mã địa bàn, mã đối tượng, biểu mẫu, danh mục dùng chung và quy tắc cập nhật.
+Việc áp dụng DL7 là cơ sở để bảo đảm dữ liệu cấp xã thống nhất với dữ liệu cấp tỉnh, có khả năng tích hợp, chia sẻ, tái sử dụng, phân tích và tổng hợp phục vụ điều hành.
+đ) DL8: Thành phần DL dùng chung do cấp tỉnh cung cấp khác
+Các thành phần DL dùng chung khác do cấp tỉnh cung cấp được triển khai theo nhu cầu quản lý, điều kiện thực tế, Khung kiến trúc số cấp tỉnh và yêu cầu phát triển chính quyền số, kinh tế số, xã hội số tại địa phương.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục, phạm vi, phương thức cập nhật, khai thác và chia sẻ đối với các thành phần DL này.
+Ủy ban nhân dân cấp xã khai thác, cập nhật, sử dụng theo phân cấp; không tạo lập dữ liệu trùng lặp với dữ liệu dùng chung do cấp tỉnh đã cung cấp.
+1.3. Thành phần DL thiết yếu triển khai tại cấp xã
+a) DL9: Khai thác các thành phần DL dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã khai thác các thành phần DL dùng chung do cấp Trung ương, cấp tỉnh cung cấp để phục vụ xử lý công việc, giải quyết thủ tục hành chính, quản lý địa bàn, cung cấp dịch vụ số và hỗ trợ người dân, doanh nghiệp.
+Việc khai thác DL9 phải bảo đảm:
+- Sử dụng đúng nguồn dữ liệu được cấp quyền;
+- Không sao chép, lưu trữ cục bộ dữ liệu trái quy định;
+- Không yêu cầu tổ chức, cá nhân cung cấp lại dữ liệu đã có và đủ điều kiện khai thác;
+- Bảo đảm lưu vết, bảo mật, phân quyền và bảo vệ dữ liệu cá nhân.
+b) DL10: Số hoá hồ sơ và kết quả giải quyết TTHC; Lưu trữ, tra cứu và tái sử dụng dữ liệu số theo quy trình một cửa điện tử (đảm bảo dữ liệu liên thông giữa các phòng/ban, đơn vị để tái sử dụng, không bắt buộc người dân/doanh nghiệp phải nộp lại các kết quả giải quyết TTHC đã thực hiện)
+Ủy ban nhân dân cấp xã tổ chức số hóa hồ sơ và kết quả giải quyết thủ tục hành chính theo quy trình một cửa điện tử, ưu tiên hồ sơ phát sinh trong quá trình giải quyết thủ tục hành chính và từng bước số hóa dữ liệu hiện có theo lộ trình của cấp tỉnh.
+Việc triển khai DL10 phải bảo đảm:
+- Dữ liệu hồ sơ, kết quả giải quyết thủ tục hành chính được lưu trữ, tra cứu, tái sử dụng;
+- Dữ liệu được liên thông giữa Trung tâm Phục vụ hành chính công cấp xã, các phòng, ban, đơn vị liên quan và hệ thống cấp tỉnh;
+- Không bắt buộc người dân, doanh nghiệp nộp lại kết quả giải quyết thủ tục hành chính đã được số hóa, còn giá trị sử dụng và đủ điều kiện khai thác;
+- Bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân, lưu vết truy cập và kiểm soát việc khai thác hồ sơ số.
+c) DL11: Cập nhật dữ liệu kinh tế - xã hội địa phương và dữ liệu quản lý địa bàn theo danh mục, biểu mẫu số của cấp tỉnh
+Ủy ban nhân dân cấp xã thực hiện cập nhật dữ liệu kinh tế - xã hội địa phương và dữ liệu quản lý địa bàn theo danh mục, biểu mẫu số, tần suất và quy trình do cấp tỉnh hướng dẫn.
+Dữ liệu cập nhật phải phản ánh đúng hiện trạng địa bàn; phục vụ công tác thống kê, báo cáo, chỉ đạo điều hành, cung cấp dịch vụ công, phát triển kinh tế số, xã hội số và các nhiệm vụ quản lý nhà nước tại cấp xã.
+Việc triển khai DL11 phải bảo đảm phân công rõ đầu mối cập nhật, kiểm tra tính đầy đủ, hợp lệ, thống nhất của dữ liệu trước khi đồng bộ hoặc gửi lên hệ thống cấp tỉnh.
+d) DL12: Chuẩn hoá, lưu trữ, chia sẻ và khai thác dữ liệu theo nguyên tắc “đúng, đủ, sạch, sống, thống nhất, dùng chung”
+Ủy ban nhân dân cấp xã thực hiện chuẩn hóa dữ liệu thuộc phạm vi quản lý theo quy định của cấp tỉnh và các khung, chuẩn dữ liệu có liên quan.
+Nội dung triển khai DL12 bao gồm:
+- Rà soát dữ liệu hiện có, dữ liệu phát sinh và dữ liệu cần cập nhật;
+- Loại bỏ dữ liệu trùng lặp, dữ liệu sai lệch, dữ liệu không còn giá trị sử dụng;
+- Chuẩn hóa danh mục, trường dữ liệu, mã định danh, biểu mẫu, đơn vị đo, thời gian cập nhật;
+- Lưu trữ dữ liệu trên hệ thống phù hợp, hạn chế lưu trữ phân tán, thiếu kiểm soát;
+- Chia sẻ và khai thác dữ liệu đúng thẩm quyền, đúng mục đích, có lưu vết và phân quyền.
+đ) DL13: Hoạt động liên quan dữ liệu thiết yếu triển khai tại cấp xã khác
+Các hoạt động liên quan dữ liệu thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế, yêu cầu quản lý địa bàn, hướng dẫn của cấp tỉnh và quy định pháp luật có liên quan.
+Việc triển khai DL13 phải bảo đảm không hình thành dữ liệu trùng lặp, không tạo quy trình cập nhật thủ công không cần thiết, không làm phát sinh kho dữ liệu cục bộ ngoài kiểm soát; đồng thời bảo đảm khả năng tích hợp với các hệ thống, nền tảng dữ liệu dùng chung.
+1.4. Thành phần DL bổ sung theo loại địa bàn
+Các thành phần DL bổ sung theo loại địa bàn được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Ủy ban nhân dân cấp tỉnh căn cứ điều kiện thực tế, đặc điểm địa bàn và nhu cầu quản lý để hướng dẫn Ủy ban nhân dân cấp xã tổ chức triển khai phù hợp.
+Việc triển khai các thành phần DL bổ sung không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; tuy nhiên, dữ liệu được tạo lập, cập nhật, quản lý và khai thác phải bảo đảm tuân thủ nguyên tắc quản trị dữ liệu, sử dụng dùng chung, kết nối và chia sẻ với các hệ thống, nền tảng do cấp tỉnh và cấp Trung ương cung cấp.
+a) Đô thị
+- DL14: Dữ liệu trật tự đô thị
+Dữ liệu trật tự đô thị được tạo lập, cập nhật và khai thác phục vụ quản lý trật tự xây dựng, lòng đường, vỉa hè, điểm kinh doanh, điểm tập kết, vi phạm trật tự đô thị và các nội dung quản lý đô thị theo phân công.
+Việc triển khai DL14 phải bảo đảm khả năng liên thông với ứng dụng phản ánh hiện trường, ứng dụng quản lý trật tự đô thị, dữ liệu phản ánh của người dân và hệ thống điều hành cấp tỉnh khi có yêu cầu.
+- DL15: Dữ liệu môi trường
+Dữ liệu môi trường được tạo lập, cập nhật và khai thác phục vụ theo dõi, giám sát chất lượng môi trường, điểm ô nhiễm, thu gom rác thải, nước thải, tiếng ồn, không khí hoặc các nội dung môi trường khác theo phân công.
+Việc triển khai DL15 phải bảo đảm khả năng tích hợp với hệ thống quan trắc, giám sát môi trường, hệ thống phản ánh hiện trường, IOC/Dashboard cấp tỉnh và các hệ thống chuyên ngành liên quan.
+- DL16: Dữ liệu hạ tầng đô thị trong phạm vi quản lý
+Dữ liệu hạ tầng đô thị trong phạm vi quản lý được cập nhật phục vụ quản lý đường giao thông, chiếu sáng, cây xanh, thoát nước, công trình công cộng, điểm dịch vụ, bãi đỗ xe và các hạ tầng đô thị khác theo phân công của cấp có thẩm quyền.
+Việc triển khai DL16 phải bảo đảm thống nhất với dữ liệu chuyên ngành cấp tỉnh, dữ liệu bản đồ số, dữ liệu địa bàn và khả năng khai thác phục vụ điều hành đô thị.
+- DL17: Dữ liệu phản ánh hiện trường
+Dữ liệu phản ánh hiện trường bao gồm thông tin phản ánh, vị trí, hình ảnh, thời gian, trạng thái xử lý, đơn vị xử lý, kết quả xử lý và đánh giá của người dân, doanh nghiệp đối với các phản ánh thuộc phạm vi quản lý.
+Việc triển khai DL17 phải bảo đảm dữ liệu được cập nhật đầy đủ, có trạng thái xử lý rõ ràng, có khả năng phân loại, định tuyến, chuyển cấp xử lý, tổng hợp và tích hợp với IOC/Dashboard cấp tỉnh.
+- DL18: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm khả năng tích hợp, chia sẻ với hệ thống dữ liệu và IOC/Dashboard cấp tỉnh
+Các thành phần DL khác tại địa bàn đô thị được triển khai theo nhu cầu quản lý đô thị, cung cấp dịch vụ công, tương tác với người dân và điều kiện thực tế của địa phương.
+Việc triển khai DL18 phải bảo đảm khả năng tích hợp, chia sẻ với hệ thống dữ liệu và IOC/Dashboard cấp tỉnh; không tạo lập dữ liệu rời rạc, khó liên thông hoặc không có phương án duy trì, cập nhật.
+b) Nông thôn
+- DL19: Dữ liệu sản xuất nông nghiệp
+Dữ liệu sản xuất nông nghiệp được tạo lập, cập nhật và khai thác phục vụ quản lý cây trồng, vật nuôi, mùa vụ, vùng sản xuất, diện tích, sản lượng, mô hình sản xuất, phòng chống dịch bệnh, thiên tai và các nội dung quản lý nông nghiệp theo phân công.
+Việc triển khai DL19 phải bảo đảm phù hợp với biểu mẫu, danh mục, cơ sở dữ liệu chuyên ngành cấp tỉnh; ưu tiên dữ liệu có khả năng hỗ trợ điều hành sản xuất, kết nối tiêu thụ và cảnh báo rủi ro.
+- DL20: Dữ liệu sản phẩm OCOP
+Dữ liệu sản phẩm OCOP được cập nhật phục vụ quản lý thông tin sản phẩm, chủ thể sản xuất, xếp hạng, chứng nhận, tiêu chuẩn, hình ảnh, kênh quảng bá, kênh bán hàng và kết quả tiêu thụ.
+Việc triển khai DL20 phải bảo đảm dữ liệu có thể khai thác phục vụ quảng bá sản phẩm, thương mại điện tử, truy xuất nguồn gốc và kết nối với các nền tảng xúc tiến thương mại, thương mại điện tử của cấp tỉnh hoặc cấp có thẩm quyền.
+- DL21: Dữ liệu hợp tác xã
+Dữ liệu hợp tác xã được tạo lập, cập nhật và khai thác phục vụ quản lý thông tin hợp tác xã, thành viên, ngành nghề, vùng sản xuất, sản phẩm, năng lực cung ứng, nhu cầu hỗ trợ và tình hình chuyển đổi số.
+Việc triển khai DL21 phải bảo đảm hỗ trợ quản lý kinh tế tập thể, kết nối hợp tác xã với chương trình hỗ trợ chuyển đổi số, thương mại điện tử, truy xuất nguồn gốc và các nền tảng dùng chung của cấp tỉnh.
+- DL22: Dữ liệu chuỗi cung ứng sản phẩm địa phương (nếu có)
+Dữ liệu chuỗi cung ứng sản phẩm địa phương được triển khai khi địa phương có nhu cầu và điều kiện, phục vụ quản lý các khâu sản xuất, thu mua, sơ chế, chế biến, vận chuyển, tiêu thụ, truy xuất nguồn gốc và kết nối thị trường.
+Việc triển khai DL22 phải bảo đảm dữ liệu được cập nhật theo chuỗi, có khả năng kết nối với dữ liệu sản xuất nông nghiệp, dữ liệu sản phẩm OCOP, dữ liệu hợp tác xã và các nền tảng thương mại điện tử, truy xuất nguồn gốc.
+- DL23: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ quản lý sản xuất và kết nối tiêu thụ sản phẩm
+Các thành phần DL khác tại địa bàn nông thôn được triển khai theo nhu cầu quản lý sản xuất, hỗ trợ tiêu thụ sản phẩm, phổ biến thông tin thị trường, phát triển kinh tế nông thôn và điều kiện thực tế của địa phương.
+Việc triển khai DL23 phải bảo đảm dữ liệu có giá trị sử dụng thực tế, phục vụ người dân, hợp tác xã, hộ kinh doanh, doanh nghiệp và cơ quan quản lý; tránh thu thập dữ liệu hình thức, khó duy trì hoặc không có mục đích khai thác rõ ràng.
+c) Miền núi, biên giới, hải đảo
+- DL24: Dữ liệu dân tộc và chính sách xã hội
+Dữ liệu dân tộc và chính sách xã hội được tạo lập, cập nhật và khai thác phục vụ quản lý dân cư theo nhóm chính sách, đối tượng thụ hưởng, tình hình tiếp cận dịch vụ, chính sách hỗ trợ và các nội dung quản lý xã hội theo phân công.
+Việc triển khai DL24 phải bảo đảm bảo vệ dữ liệu cá nhân, dữ liệu nhạy cảm; chỉ thu thập, cập nhật, khai thác theo đúng thẩm quyền, mục đích và quy định pháp luật.
+- DL25: Dữ liệu giảm nghèo
+Dữ liệu giảm nghèo được cập nhật phục vụ quản lý hộ nghèo, hộ cận nghèo, hộ mới thoát nghèo, nguyên nhân nghèo, nhu cầu hỗ trợ, kết quả hỗ trợ và tiến độ thực hiện các chính sách giảm nghèo.
+Việc triển khai DL25 phải bảo đảm dữ liệu được cập nhật kịp thời, chính xác, có khả năng liên thông với dữ liệu dân cư, dữ liệu an sinh xã hội, dữ liệu chính sách xã hội và hệ thống chuyên ngành của cấp tỉnh.
+- DL26: Dữ liệu du lịch cộng đồng
+Dữ liệu du lịch cộng đồng được tạo lập, cập nhật và khai thác phục vụ quản lý điểm du lịch, hộ kinh doanh dịch vụ du lịch, sản phẩm du lịch, di sản văn hóa, tuyến điểm, hình ảnh, thông tin quảng bá và phản hồi của du khách.
+Việc triển khai DL26 phải gắn với nhu cầu quảng bá, phát triển kinh tế địa phương, thương mại điện tử đặc sản, bảo tồn văn hóa và khai thác lợi thế đặc thù của địa bàn.
+- DL27: Dữ liệu đặc thù theo quy hoạch cấp tỉnh
+Dữ liệu đặc thù theo quy hoạch cấp tỉnh được cập nhật phục vụ quản lý các nội dung đặc thù của địa bàn miền núi, biên giới, hải đảo theo định hướng phát triển, quy hoạch, kế hoạch và phân công của cấp tỉnh.
+Việc triển khai DL27 phải bảo đảm thống nhất với dữ liệu quy hoạch, dữ liệu ngành, lĩnh vực, dữ liệu không gian và các cơ sở dữ liệu liên quan của cấp tỉnh.
+- DL28: Các thành phần DL khác theo nhu cầu và điều kiện thực tế, bảo đảm phục vụ công tác an sinh xã hội và phát triển kinh tế địa phương
+Các thành phần DL khác tại địa bàn miền núi, biên giới, hải đảo được triển khai theo nhu cầu thực tế, điều kiện tiếp cận, đặc thù dân cư, đặc thù địa lý và yêu cầu phát triển kinh tế - xã hội của địa phương.
+Việc triển khai DL28 phải ưu tiên dữ liệu phục vụ an sinh xã hội, tiếp cận dịch vụ công, hỗ trợ nhóm yếu thế, phát triển sinh kế, du lịch cộng đồng, sản phẩm đặc thù và quản lý địa bàn.
+2. Thành phần nền tảng lõi (NTL)
+2.1. Thành phần NTL dùng chung do cấp Trung ương cung cấp
+a) NTL1: Thành phần NTL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số: Nền tảng tích hợp, chia sẻ dữ liệu Quốc gia (NDXP); Nền tảng chia sẻ, điều phối dữ liệu của Trung tâm dữ liệu quốc gia (NDOP); Nền tảng trao đổi giao diện lập trình ứng dụng quốc gia (V- APEX); Nền tảng định danh và xác thực điện tử; Nền tảng phân tích dữ liệu lớn và trí tuệ nhân tạo dùng chung (Nền tảng AI)
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác, kết nối, tích hợp và hướng dẫn sử dụng các thành phần NTL dùng chung do cấp Trung ương cung cấp phục vụ triển khai Mô hình tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác các nền tảng NTL1 thông qua hệ thống, tài khoản, quyền truy cập, dịch vụ số hoặc kênh tích hợp do cấp tỉnh hoặc cấp có thẩm quyền cung cấp.
+Việc khai thác NTL1 phải bảo đảm:
+- Kết nối, chia sẻ dữ liệu qua nền tảng tích hợp, chia sẻ dữ liệu theo quy định;
+- Sử dụng nền tảng định danh và xác thực điện tử trong cung cấp, khai thác dịch vụ số theo thẩm quyền;
+- Đăng ký, quản lý, khai thác API theo hướng dẫn của cấp có thẩm quyền;
+- Từng bước khai thác năng lực phân tích dữ liệu lớn và trí tuệ nhân tạo dùng chung khi có điều kiện, phục vụ xử lý công việc, phân tích dữ liệu và hỗ trợ ra quyết định.
+b) NTL2: Thành phần NTL dùng chung do cấp Trung ương cung cấp khác
+Các thành phần NTL dùng chung khác do cấp Trung ương cung cấp được triển khai, khai thác theo hướng dẫn của cơ quan chủ quản.
+Ủy ban nhân dân cấp tỉnh rà soát nhu cầu sử dụng, hướng dẫn cấp xã khai thác, kết nối, phân quyền và sử dụng theo phạm vi được giao.
+Ủy ban nhân dân cấp xã khai thác đúng mục đích, đúng quy trình, bảo đảm an toàn thông tin, an toàn dữ liệu và khả năng phối hợp xử lý sự cố trong quá trình sử dụng.
+2.2. Thành phần NTL dùng chung do cấp tỉnh cung cấp
+a) NTL3: Khai thác các thành phần NTL dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các thành phần NTL dùng chung do cấp Trung ương cung cấp để phục vụ tích hợp, chia sẻ dữ liệu, xác thực, định danh, khai thác API, phân tích dữ liệu và cung cấp dịch vụ số trên địa bàn.
+Ủy ban nhân dân cấp xã sử dụng các thành phần này thông qua hệ thống, nền tảng hoặc dịch vụ do cấp tỉnh cung cấp; không tự tổ chức các nền tảng có chức năng tương đương khi chưa có hướng dẫn của cơ quan có thẩm quyền.
+b) NTL4: Thành phần NTL dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh (Nền tảng tích hợp, chia sẻ dữ liệu cấp tỉnh; Nền tảng tổng hợp, phân tích dữ liệu cấp tỉnh,…)
+Ủy ban nhân dân cấp tỉnh tổ chức triển khai, quản lý và vận hành NTL4 để phục vụ kết nối, tích hợp, chia sẻ, tổng hợp, phân tích dữ liệu giữa các hệ thống thông tin, cơ sở dữ liệu, nền tảng số của cấp tỉnh và cấp xã.
+Ủy ban nhân dân cấp xã khai thác NTL4 để cập nhật, chia sẻ, tra cứu, tổng hợp dữ liệu; gửi, nhận dữ liệu theo danh mục, biểu mẫu, quy trình và phân quyền do cấp tỉnh hướng dẫn.
+Việc triển khai NTL4 phải bảo đảm dữ liệu cấp xã được kết nối, chia sẻ thông qua nền tảng dùng chung của tỉnh; hạn chế tích hợp điểm - điểm, trao đổi thủ công hoặc hình thành luồng dữ liệu riêng lẻ khó kiểm soát.
+c) NTL5: Thành phần NTL dùng chung do cấp tỉnh cung cấp khác
+Các thành phần NTL dùng chung khác do cấp tỉnh cung cấp được triển khai theo nhu cầu quản lý, điều kiện thực tế và Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục, phạm vi, phương thức khai thác, yêu cầu kỹ thuật, cơ chế phân quyền và đầu mối hỗ trợ đối với các thành phần NTL này.
+Ủy ban nhân dân cấp xã khai thác, sử dụng theo phân cấp; phản ánh nhu cầu, khó khăn, vướng mắc trong quá trình sử dụng để cấp tỉnh tổng hợp, xử lý.
+2.3. Thành phần NTL thiết yếu triển khai tại cấp xã
+a) NTL6: Khai thác, sử dụng các NTL do cấp Trung ương, cấp tỉnh cung cấp theo thẩm quyền
+Ủy ban nhân dân cấp xã khai thác, sử dụng các NTL do cấp Trung ương, cấp tỉnh cung cấp theo thẩm quyền để phục vụ xử lý công việc, giải quyết thủ tục hành chính, cập nhật dữ liệu, chia sẻ dữ liệu, khai thác dữ liệu và cung cấp dịch vụ số.
+Việc triển khai NTL6 phải bảo đảm:
+- Sử dụng đúng nền tảng, đúng tài khoản, đúng quyền hạn được cấp;
+- Không phát triển nền tảng riêng trùng lặp với nền tảng dùng chung;
+- Thực hiện kết nối, chia sẻ dữ liệu theo hướng dẫn của cấp tỉnh;
+- Bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân và lưu vết trong quá trình khai thác.
+b) NTL7: Hoạt động liên quan NTL thiết yếu triển khai tại cấp xã khác
+Các hoạt động liên quan NTL thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế, yêu cầu quản lý và hướng dẫn của cấp tỉnh.
+Việc triển khai NTL7 phải bảo đảm không hình thành nền tảng phân tán, rời rạc, khó tích hợp; ưu tiên khai thác nền tảng dùng chung, nền tảng cấp tỉnh và nền tảng quốc gia; bảo đảm khả năng kết nối, chia sẻ dữ liệu và duy trì vận hành ổn định.
+Ghi chú: Việc tổ chức triển khai các nội dung tại Phụ lục này thực hiện theo phân công tại Phần IV của Tài liệu hướng dẫn.
+
+Phụ lục 03
+LỚP 3: ỨNG DỤNG VÀ NGHIỆP VỤ
+I. MỤC ĐÍCH, YÊU CẦU
+Phụ lục này hướng dẫn triển khai các thành phần thuộc Lớp 3: Ứng dụng và nghiệp vụ của Mô hình chuyển đổi số cấp xã, bao gồm: nhóm ứng dụng và nghiệp vụ phục vụ Chính quyền số; nhóm ứng dụng và nghiệp vụ phục vụ Kinh tế số; nhóm ứng dụng và nghiệp vụ phục vụ Xã hội số.
+Việc triển khai Lớp 3 phải bảo đảm khai thác, sử dụng thống nhất các ứng dụng, nền tảng số dùng chung do cấp Trung ương và cấp tỉnh cung cấp; phục vụ trực tiếp hoạt động quản lý, điều hành, xử lý công việc, giải quyết thủ tục hành chính, phát triển kinh tế số, xã hội số và hỗ trợ người dân, doanh nghiệp tại cấp xã.
+Các ứng dụng, nghiệp vụ triển khai tại cấp xã phải gắn với dữ liệu, hạ tầng và kênh tương tác của Mô hình; bảo đảm không trùng lặp chức năng cốt lõi với các hệ thống, nền tảng dùng chung đã được cung cấp; phù hợp với điều kiện thực tế, khả năng vận hành và nhu cầu của từng loại địa bàn.
+II. NGUYÊN TẮC THỰC HIỆN
+1. Ưu tiên khai thác, sử dụng các ứng dụng, nền tảng số dùng chung do cấp Trung ương và cấp tỉnh cung cấp; cấp xã không tự phát triển hoặc đầu tư hệ thống có chức năng trùng lặp với hệ thống dùng chung.
+2. Việc triển khai ứng dụng tại cấp xã phải gắn với quy trình nghiệp vụ số, dữ liệu số và kênh tương tác số; bảo đảm xử lý công việc trên môi trường điện tử, cập nhật dữ liệu đầy đủ và phục vụ người dân, doanh nghiệp thuận tiện.
+3. Các ứng dụng bổ sung phục vụ đặc thù địa phương hoặc theo loại địa bàn được xác định theo hướng ưu tiên triển khai, không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc. Việc triển khai phải không trùng lặp chức năng lõi của hệ thống, nền tảng dùng chung; tuân thủ kiến trúc, tiêu chuẩn kỹ thuật, an toàn thông tin, bảo vệ dữ liệu cá nhân; bảo đảm kết nối, chia sẻ dữ liệu với nền tảng, ứng dụng dùng chung cấp Trung ương, cấp tỉnh và được cơ quan chuyên môn cấp tỉnh thẩm định trước khi triển khai.
+4. Việc triển khai các hoạt động nghiệp vụ phải bảo đảm giảm giấy tờ, giảm nhập liệu trùng lặp, tăng cường sử dụng dữ liệu số và từng bước chuyển đổi phương thức phục vụ từ thủ công sang số hóa.
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Nhóm ứng dụng và nghiệp vụ phục vụ Chính quyền số (CQS)
+1.1. Thành phần ứng dụng phục vụ Chính quyền số (ƯDCQS)
+a) ƯDCQS1: Thành phần ứng dụng phục vụ Chính phủ số dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số Thành phần này bao gồm các ứng dụng, hệ thống phục vụ Chính phủ số dùng chung ở phạm vi quốc gia như Cổng Dịch vụ công quốc gia, Trục liên thông văn bản quốc gia, Hệ thống thông tin giải quyết thủ tục hành chính, Hệ thống thông tin báo cáo quốc gia và các hệ thống dùng chung khác theo Khung kiến trúc tổng thể quốc gia số.
+Ủy ban nhân dân cấp tỉnh tổ chức kết nối, tích hợp, phân quyền và hướng dẫn cấp xã khai thác các ứng dụng dùng chung do cấp Trung ương cung cấp theo thẩm quyền.
+Ủy ban nhân dân cấp xã khai thác các ứng dụng này phục vụ giải quyết thủ tục hành chính, gửi nhận văn bản điện tử, thực hiện chế độ báo cáo, xử lý hồ sơ công việc và cung cấp dịch vụ công cho người dân, doanh nghiệp.
+Việc khai thác ƯDCQS1 phải bảo đảm sử dụng đúng tài khoản, đúng phân quyền, đúng quy trình nghiệp vụ; dữ liệu phát sinh trong quá trình xử lý phải được cập nhật, đồng bộ, lưu vết và chia sẻ theo quy định.
+b) ƯDCQS2: Thành phần ứng dụng phục vụ Chính phủ số dùng chung do cấp Trung ương cung cấp khác
+Các thành phần ứng dụng phục vụ Chính phủ số dùng chung khác do cấp Trung ương cung cấp được triển khai theo hướng dẫn của cơ quan chủ quản và chỉ đạo của Ủy ban nhân dân cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh rà soát nhu cầu sử dụng tại cấp xã, tổ chức hướng dẫn, cấp quyền khai thác, cấu hình tài khoản, hỗ trợ kỹ thuật và theo dõi việc sử dụng.
+Ủy ban nhân dân cấp xã khai thác các thành phần này đúng mục đích, đúng thẩm quyền; kịp thời phản ánh vướng mắc trong quá trình sử dụng để cấp tỉnh tổng hợp, xử lý.
+c) ƯDCQS3: Khai thác thành phần ứng dụng phục vụ Chính phủ số do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các ứng dụng phục vụ Chính phủ số do cấp Trung ương cung cấp, bảo đảm phục vụ triển khai thống nhất tại cấp xã.
+Ủy ban nhân dân cấp xã sử dụng các ứng dụng này thông qua hệ thống, tài khoản, quyền truy cập hoặc dịch vụ do cấp tỉnh cung cấp; không tổ chức triển khai kênh kết nối riêng lẻ khi chưa có hướng dẫn của cơ quan có thẩm quyền.
+Việc triển khai ƯDCQS3 phải bảo đảm liên thông giữa cấp xã với cấp tỉnh, giữa hệ thống của địa phương với hệ thống quốc gia; hạn chế xử lý song song trên giấy và trên môi trường điện tử khi không cần thiết.
+d) ƯDCQS4: Thành phần ứng dụng phục vụ CQS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm các hệ thống, ứng dụng phục vụ Chính quyền số dùng chung cấp tỉnh như Hệ thống thông tin phục vụ chỉ đạo, điều hành cấp tỉnh; Trung tâm giám sát, điều hành thông minh cấp tỉnh; phần mềm quản lý chuyên ngành của các sở; ứng dụng hỗ trợ hoạt động của cơ quan nhà nước như quản lý công việc, hệ thống báo cáo, họp trực tuyến và các ứng dụng tương tự.
+Ủy ban nhân dân cấp tỉnh tổ chức triển khai, quản lý, vận hành tập trung hoặc thuê dịch vụ phù hợp; bảo đảm cấp xã được cấp quyền khai thác, sử dụng theo phân cấp.
+Ủy ban nhân dân cấp xã sử dụng ƯDCQS4 phục vụ xử lý công việc, phối hợp chuyên môn, khai thác dữ liệu chỉ đạo điều hành, báo cáo, họp trực tuyến và thực hiện nhiệm vụ quản lý nhà nước tại địa bàn.
+Việc triển khai phải bảo đảm thống nhất tài khoản, phân quyền, quy trình xử lý, luồng dữ liệu và khả năng tích hợp với hệ thống dữ liệu, kênh tương tác, dashboard/IOC cấp tỉnh.
+đ) ƯDCQS5: Thành phần ứng dụng phục vụ CQS dùng chung do cấp tỉnh cung cấp khác
+Các thành phần ứng dụng phục vụ Chính quyền số dùng chung khác do cấp tỉnh cung cấp được triển khai theo Khung kiến trúc số cấp tỉnh, nhu cầu quản lý của địa phương và điều kiện thực tế.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục ứng dụng dùng chung, phạm vi sử dụng, quy trình khai thác, phân quyền, đầu mối hỗ trợ kỹ thuật và yêu cầu cập nhật dữ liệu.
+Ủy ban nhân dân cấp xã tổ chức khai thác, sử dụng theo phân cấp; không triển khai ứng dụng riêng có chức năng trùng lặp với ứng dụng dùng chung do cấp tỉnh đã cung cấp.
+e) ƯDCQS6: Khai thác các thành phần ứng dụng phục vụ Chính phủ số, Chính quyền số dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã khai thác các thành phần ứng dụng phục vụ Chính phủ số, Chính quyền số dùng chung do cấp Trung ương và cấp tỉnh cung cấp để thực hiện nhiệm vụ quản lý, điều hành, giải quyết thủ tục hành chính, xử lý văn bản, báo cáo, họp, ký số và phục vụ người dân, doanh nghiệp.
+Việc khai thác ƯDCQS6 phải bảo đảm:
+- Sử dụng đúng ứng dụng dùng chung được cấp quyền;
+- Cập nhật đầy đủ dữ liệu phát sinh trong quá trình xử lý công việc;
+- Không yêu cầu người dân, doanh nghiệp cung cấp lại thông tin đã có thể khai thác từ hệ thống dùng chung;
+- Không hình thành ứng dụng, cơ sở dữ liệu, quy trình xử lý riêng gây trùng lặp, phân tán.
+g) ƯDCQS7: Công cụ hỗ trợ tác nghiệp số cho cán bộ, công chức
+Công cụ hỗ trợ tác nghiệp số cho cán bộ, công chức bao gồm trợ lý ảo, công cụ tra cứu dữ liệu, tổng hợp thông tin, hỗ trợ soạn thảo văn bản và trợ giúp thực hiện quy trình công vụ.
+Việc triển khai ƯDCQS7 nhằm hỗ trợ cán bộ, công chức cấp xã nâng cao hiệu quả xử lý công việc, tra cứu quy định, tổng hợp thông tin, soạn thảo văn bản, theo dõi tiến độ xử lý và thực hiện quy trình nghiệp vụ.
+Công cụ hỗ trợ tác nghiệp số chỉ có vai trò hỗ trợ; không thay thế thẩm quyền, trách nhiệm chuyên môn, trách nhiệm ký duyệt và trách nhiệm cá nhân của cán bộ, công chức trong xử lý công việc.
+Việc sử dụng công cụ phải bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân, không nhập dữ liệu mật, dữ liệu nhạy cảm, dữ liệu chưa được phép xử lý vào các công cụ không đáp ứng yêu cầu bảo mật theo quy định.
+h) ƯDCQS8: Thành phần ứng dụng phục vụ CQS thiết yếu triển khai tại cấp xã khác
+Các thành phần ứng dụng phục vụ Chính quyền số thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế, yêu cầu quản lý nhà nước tại địa bàn và hướng dẫn của cấp tỉnh.
+Việc triển khai ƯDCQS8 phải bảo đảm phù hợp với Khung kiến trúc số cấp tỉnh; không trùng lặp với hệ thống, nền tảng dùng chung; có khả năng kết nối, chia sẻ dữ liệu với Lớp 2 và phục vụ tương tác qua Lớp 4.
+1.2. Thành phần ứng dụng phục vụ CQS bổ sung theo loại địa bàn
+Các thành phần ứng dụng phục vụ CQS bổ sung theo loại địa bàn là các thành phần được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Việc triển khai không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc, nhưng phải bảo đảm không trùng lặp chức năng cốt lõi với các ứng dụng, nền tảng dùng chung và tuân thủ nguyên tắc kiến trúc, sử dụng dùng chung.
+a) Địa bàn đô thị
+- ƯDCQS9: Ứng dụng phản ánh hiện trường
+Ứng dụng phản ánh hiện trường được triển khai nhằm tiếp nhận, phân loại, chuyển xử lý, theo dõi trạng thái và phản hồi các phản ánh của người dân, doanh nghiệp về các vấn đề phát sinh trên địa bàn đô thị.
+Việc triển khai phải bảo đảm có quy trình tiếp nhận, phân luồng, xử lý, phản hồi; có trạng thái xử lý rõ ràng; có khả năng lưu vết, tổng hợp, thống kê và tích hợp dữ liệu phản ánh với hệ thống điều hành hoặc IOC/Dashboard cấp tỉnh.
+- ƯDCQS10: Ứng dụng quản lý trật tự đô thị
+Ứng dụng quản lý trật tự đô thị được triển khai phục vụ quản lý các nội dung như trật tự xây dựng, lòng đường, vỉa hè, điểm kinh doanh, quảng cáo, vệ sinh đô thị và các nội dung quản lý trật tự đô thị khác theo phân công.
+Việc triển khai phải gắn với dữ liệu trật tự đô thị, dữ liệu phản ánh hiện trường, dữ liệu hạ tầng đô thị và quy trình xử lý của cơ quan có thẩm quyền; bảo đảm dữ liệu có thể chia sẻ, tổng hợp phục vụ chỉ đạo điều hành cấp xã, cấp tỉnh.
+- ƯDCQS11: Ứng dụng giám sát môi trường
+Ứng dụng giám sát môi trường được triển khai phục vụ theo dõi, tiếp nhận, tổng hợp, cảnh báo và xử lý các thông tin liên quan đến môi trường đô thị như rác thải, nước thải, không khí, tiếng ồn, điểm ô nhiễm hoặc các vấn đề môi trường theo phân công.
+Việc triển khai phải bảo đảm kết nối với dữ liệu môi trường, phản ánh của người dân, hệ thống quan trắc hoặc hệ thống chuyên ngành nếu có; dữ liệu giám sát môi trường được chia sẻ với cấp tỉnh phục vụ tổng hợp, phân tích và điều hành.
+- ƯDCQS12: Ứng dụng quản lý đô thị theo phân công
+Ứng dụng quản lý đô thị theo phân công được triển khai phục vụ các nhiệm vụ quản lý đô thị thuộc thẩm quyền hoặc trách nhiệm phối hợp của cấp xã.
+Việc triển khai phải căn cứ chức năng, nhiệm vụ được giao; tránh mở rộng vượt thẩm quyền; bảo đảm tích hợp với hệ thống chuyên ngành cấp tỉnh, hệ thống điều hành đô thị và các nguồn dữ liệu liên quan.
+- ƯDCQS13: Truyền thanh cơ sở
+Truyền thanh cơ sở là kênh thông tin cơ sở phục vụ truyền thông, phổ biến thông tin đến người dân; được triển khai trên cơ sở hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông tại Lớp 1 hoặc các nền tảng số do cấp tỉnh cung cấp.
+Việc triển khai phải bảo đảm nội dung truyền thông được quản lý, biên tập, phê duyệt theo quy định; ưu tiên khai thác hệ thống thông tin nguồn, nền tảng dùng chung, hạ tầng truyền thanh đã có; bảo đảm khả năng tiếp cận thông tin của người dân.
+- ƯDCQS14: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm tích hợp với hệ thống điều hành và IOC/Dashboard cấp tỉnh
+Các ứng dụng khác tại địa bàn đô thị được triển khai theo nhu cầu quản lý, điều kiện thực tế và hướng dẫn của cấp tỉnh.
+Việc triển khai phải bảo đảm có mục tiêu sử dụng rõ ràng, dữ liệu đầu vào, đầu ra rõ ràng, phương án vận hành cụ thể và khả năng tích hợp với hệ thống điều hành, IOC/Dashboard cấp tỉnh.
+b) Địa bàn nông thôn
+- ƯDCQS15: Ứng dụng quản lý sản xuất nông nghiệp
+Ứng dụng quản lý sản xuất nông nghiệp được triển khai phục vụ quản lý vùng sản xuất, mùa vụ, cây trồng, vật nuôi, sản lượng, dịch bệnh, thiên tai, mô hình sản xuất và các nội dung quản lý nông nghiệp theo phân công.
+Việc triển khai phải gắn với dữ liệu sản xuất nông nghiệp, dữ liệu hợp tác xã, dữ liệu sản phẩm địa phương và hệ thống chuyên ngành của cấp tỉnh; bảo đảm hỗ trợ công tác quản lý sản xuất và kết nối tiêu thụ sản phẩm.
+- ƯDCQS16: Ứng dụng hỗ trợ OCOP, hợp tác xã
+Ứng dụng hỗ trợ OCOP, hợp tác xã được triển khai phục vụ quản lý, quảng bá, hỗ trợ phát triển sản phẩm OCOP, hợp tác xã, tổ hợp tác, hộ sản xuất và các chủ thể kinh tế nông thôn.
+Việc triển khai phải gắn với dữ liệu sản phẩm OCOP, dữ liệu hợp tác xã, dữ liệu chuỗi cung ứng sản phẩm địa phương; bảo đảm hỗ trợ kết nối với thương mại điện tử, truy xuất nguồn gốc và các chương trình hỗ trợ phát triển kinh tế nông thôn.
+- ƯDCQS17: Truyền thanh cơ sở
+Truyền thanh cơ sở tại địa bàn nông thôn là kênh thông tin phục vụ phổ biến chính sách, hướng dẫn sản xuất, cảnh báo thiên tai, dịch bệnh, tuyên truyền dịch vụ công trực tuyến và các nội dung thiết yếu đến người dân.
+Việc triển khai thực hiện trên cơ sở hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông tại Lớp 1 hoặc các nền tảng số do cấp tỉnh cung cấp; bảo đảm phù hợp điều kiện tiếp cận thông tin tại địa bàn nông thôn.
+- ƯDCQS18: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ sản xuất và tiêu thụ sản phẩm
+Các ứng dụng khác tại địa bàn nông thôn được triển khai theo nhu cầu hỗ trợ sản xuất, quảng bá sản phẩm, tiêu thụ sản phẩm, phổ biến thông tin thị trường và điều kiện thực tế của địa phương.
+Việc triển khai phải bảo đảm dễ sử dụng, dễ duy trì, có dữ liệu phục vụ quản lý và có khả năng kết nối với các nền tảng dùng chung hoặc hệ thống chuyên ngành cấp tỉnh.
+c) Địa bàn miền núi, biên giới, hải đảo
+- ƯDCQS19: Mô hình dịch vụ công có trợ giúp tại Trung tâm Phục vụ hành chính công cấp xã
+Mô hình dịch vụ công có trợ giúp tại Trung tâm Phục vụ hành chính công cấp xã được triển khai nhằm hỗ trợ người dân, đặc biệt là người thiếu thiết bị, thiếu kỹ năng số, người yếu thế, người ở khu vực khó khăn, có thể tiếp cận và sử dụng dịch vụ công trực tuyến.
+Việc triển khai phải bố trí cán bộ hoặc lực lượng hỗ trợ phù hợp; hướng dẫn người dân tạo tài khoản, định danh, nộp hồ sơ trực tuyến, số hóa giấy tờ, tra cứu trạng thái hồ sơ và nhận kết quả theo quy định.
+- ƯDCQS20: Ứng dụng phục vụ quản lý an sinh xã hội, giảm nghèo theo phân công
+Ứng dụng phục vụ quản lý an sinh xã hội, giảm nghèo được triển khai nhằm hỗ trợ cập nhật, quản lý, khai thác thông tin về đối tượng chính sách, hộ nghèo, hộ cận nghèo, nhóm yếu thế, nhu cầu hỗ trợ và kết quả thực hiện chính sách.
+Việc triển khai phải bảo đảm bảo vệ dữ liệu cá nhân, dữ liệu nhạy cảm; chỉ thu thập, cập nhật, khai thác dữ liệu theo đúng thẩm quyền, mục đích và quy định pháp luật.
+- ƯDCQS21: Truyền thanh cơ sở
+Truyền thanh cơ sở tại địa bàn miền núi, biên giới, hải đảo được triển khai theo điều kiện thực tế của địa phương; có thể sử dụng hạ tầng truyền thanh hoặc các nền tảng số, hệ thống thông tin nguồn do cấp tỉnh cung cấp.
+Việc triển khai phải bảo đảm phù hợp với điều kiện tiếp cận thông tin của người dân, đặc điểm ngôn ngữ, văn hóa, địa hình và khả năng duy trì vận hành tại cơ sở.
+- ƯDCQS22: Các ứng dụng khác theo nhu cầu và điều kiện thực tế, bảo đảm phù hợp với điều kiện địa bàn và khả năng tiếp cận của người dân
+Các ứng dụng khác tại địa bàn miền núi, biên giới, hải đảo được triển khai theo nhu cầu quản lý xã hội, hỗ trợ người dân, phát triển sinh kế, cung cấp dịch vụ công và điều kiện thực tế.
+Việc triển khai phải ưu tiên tính đơn giản, dễ sử dụng, phù hợp hạ tầng kết nối, khả năng hỗ trợ trực tiếp và khả năng tiếp cận của người dân.
+1.3. Hoạt động nghiệp vụ phục vụ Chính quyền số (NVCQS)
+a) NVCQS1: Xử lý hồ sơ công việc điện tử; Ký số văn bản; Giải quyết TTHC trực tuyến theo lộ trình; Thực hiện báo cáo số; Vận hành Trung tâm Phục vụ hành chính công cấp xã
+Ủy ban nhân dân cấp xã tổ chức thực hiện xử lý hồ sơ công việc điện tử, ký số văn bản, giải quyết thủ tục hành chính trực tuyến, thực hiện báo cáo số và vận hành Trung tâm Phục vụ hành chính công cấp xã theo hướng dẫn của cấp tỉnh và quy định chuyên ngành.
+Việc triển khai NVCQS1 phải bảo đảm:
+- Hồ sơ công việc được xử lý trên môi trường điện tử theo quy định;
+- Văn bản điện tử được ký số đúng thẩm quyền;
+- Thủ tục hành chính trực tuyến được tiếp nhận, xử lý, trả kết quả theo lộ trình;
+- Báo cáo được thực hiện trên hệ thống số, hạn chế tổng hợp thủ công;
+- Trung tâm Phục vụ hành chính công cấp xã hỗ trợ người dân, doanh nghiệp tiếp cận và sử dụng dịch vụ công trực tuyến.
+b) NVCQS2: Triển khai Quản lý tài chính
+Triển khai quản lý tài chính được thực hiện theo hệ thống và quy định của cơ quan quản lý chuyên ngành, bảo đảm phục vụ công tác tài chính, kế toán, ngân sách tại cấp xã trên môi trường số.
+Việc triển khai NVCQS2 phải bảo đảm:
+- Sử dụng hệ thống, phần mềm do cơ quan có thẩm quyền hướng dẫn hoặc cung cấp;
+- Cập nhật, quản lý, lưu trữ dữ liệu tài chính theo quy định;
+- Bảo đảm phân quyền, kiểm soát truy cập, lưu vết và an toàn dữ liệu tài chính;
+- Kết nối, chia sẻ dữ liệu với hệ thống tài chính cấp trên khi có yêu cầu.
+c) NVCQS3: Hoạt động nghiệp vụ phục vụ Chính quyền số thiết yếu triển khai tại cấp xã khác
+Các hoạt động nghiệp vụ phục vụ Chính quyền số thiết yếu khác tại cấp xã được triển khai theo yêu cầu quản lý, điều hành, cải cách hành chính và hướng dẫn của cấp tỉnh.
+Việc triển khai NVCQS3 phải bảo đảm gắn với ứng dụng dùng chung, dữ liệu số, quy trình điện tử; tránh phát sinh quy trình thủ công, biểu mẫu giấy hoặc báo cáo riêng không cần thiết.
+2. Nhóm ứng dụng và nghiệp vụ phục vụ Kinh tế số (KTS)
+2.1. Thành phần ứng dụng phục vụ Kinh tế số (ƯDKTS)
+a) ƯDKTS1: Thành phần ứng dụng phục vụ KTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số
+Thành phần này bao gồm các ứng dụng, nền tảng số dùng chung phục vụ phát triển kinh tế số theo Khung kiến trúc tổng thể quốc gia số.
+Ủy ban nhân dân cấp tỉnh tổ chức hướng dẫn cấp xã khai thác các ứng dụng, nền tảng dùng chung phục vụ hỗ trợ hộ kinh doanh, doanh nghiệp, hợp tác xã, người dân tiếp cận thương mại điện tử, thanh toán số, tài chính số và các dịch vụ kinh tế số khác theo thẩm quyền.
+Ủy ban nhân dân cấp xã khai thác các thành phần này để tuyên truyền, hướng dẫn, hỗ trợ chủ thể kinh tế trên địa bàn tham gia môi trường số.
+b) ƯDKTS2: Thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương cung cấp khác
+Các thành phần ứng dụng phục vụ Kinh tế số dùng chung khác do cấp Trung ương cung cấp được triển khai theo hướng dẫn của cơ quan chủ quản.
+Ủy ban nhân dân cấp tỉnh tổ chức phổ biến, hướng dẫn, hỗ trợ cấp xã khai thác; Ủy ban nhân dân cấp xã tổ chức truyền thông, hỗ trợ người dân, hộ kinh doanh, doanh nghiệp tham gia sử dụng theo nhu cầu thực tế.
+c) ƯDKTS3: Khai thác thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các thành phần ứng dụng phục vụ Kinh tế số dùng chung do cấp Trung ương cung cấp, bảo đảm phục vụ hỗ trợ phát triển kinh tế số tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác theo hướng dẫn của cấp tỉnh; không triển khai hệ thống riêng có chức năng trùng lặp với nền tảng dùng chung.
+d) ƯDKTS4: Thành phần ứng dụng phục vụ KTS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm các ứng dụng, nền tảng phục vụ phát triển kinh tế số do cấp tỉnh cung cấp hoặc tổ chức triển khai theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh hướng dẫn cấp xã khai thác các nền tảng hỗ trợ thương mại điện tử, thanh toán số, quảng bá sản phẩm, chuyển đổi số hộ kinh doanh, doanh nghiệp, hợp tác xã và các chương trình phát triển kinh tế số của địa phương.
+Ủy ban nhân dân cấp xã khai thác các thành phần này để hỗ trợ chủ thể kinh tế trên địa bàn tiếp cận, sử dụng và duy trì hoạt động trên môi trường số.
+đ) ƯDKTS5: Thành phần ứng dụng phục vụ KTS dùng chung do cấp tỉnh cung cấp khác
+Các thành phần ứng dụng phục vụ Kinh tế số dùng chung khác do cấp tỉnh cung cấp được triển khai theo điều kiện thực tế, nhu cầu phát triển kinh tế số và kế hoạch của địa phương.
+Ủy ban nhân dân cấp xã khai thác, sử dụng theo hướng dẫn của cấp tỉnh; phối hợp cung cấp thông tin, dữ liệu, danh sách chủ thể kinh tế, nhu cầu hỗ trợ và kết quả triển khai trên địa bàn.
+e) ƯDKTS6: Khai thác các thành phần ứng dụng phục vụ KTS dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã khai thác các thành phần ứng dụng phục vụ Kinh tế số dùng chung do cấp Trung ương, cấp tỉnh cung cấp để hỗ trợ người dân, hộ kinh doanh, doanh nghiệp, hợp tác xã tham gia thương mại điện tử, thanh toán số, tài chính số, hiện diện số, truy xuất nguồn gốc, quảng bá sản phẩm và các hoạt động kinh tế số khác.
+Việc triển khai ƯDKTS6 phải bảo đảm sử dụng nền tảng dùng chung, tránh đầu tư ứng dụng riêng lẻ; dữ liệu phát sinh được cập nhật, chia sẻ theo hướng dẫn của cấp tỉnh.
+g) ƯDKTS7: Thành phần ứng dụng phục vụ KTS thiết yếu triển khai tại cấp xã khác
+Các thành phần ứng dụng phục vụ Kinh tế số thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế của địa phương và hướng dẫn của cấp tỉnh.
+Việc triển khai ƯDKTS7 phải bảo đảm hỗ trợ thực chất cho người dân, hộ kinh doanh, doanh nghiệp, hợp tác xã; không triển khai hình thức, không tạo thêm gánh nặng cập nhật dữ liệu hoặc duy trì hệ thống vượt quá khả năng của cấp xã.
+2.2. Thành phần ứng dụng phục vụ KTS bổ sung theo loại địa bàn
+Các thành phần ứng dụng phục vụ KTS bổ sung theo loại địa bàn là các thành phần được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Việc triển khai không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc, nhưng phải bảo đảm không trùng lặp chức năng cốt lõi với các ứng dụng, nền tảng dùng chung và tuân thủ nguyên tắc kiến trúc, sử dụng dùng chung.
+a) Địa bàn đô thị
+- ƯDKTS8: Nền tảng quản lý chợ, phố thương mại
+Nền tảng quản lý chợ, phố thương mại được triển khai phục vụ quản lý thông tin hộ kinh doanh, điểm bán, quầy sạp, ngành hàng, thanh toán số, phản ánh của người dân và các hoạt động thương mại tại địa bàn đô thị.
+Việc triển khai phải gắn với dữ liệu hộ kinh doanh, dữ liệu địa điểm thương mại, thanh toán số, dịch vụ đô thị số và các chương trình hỗ trợ kinh tế số của cấp tỉnh.
+- ƯDKTS9: Các dịch vụ đô thị số
+Các dịch vụ đô thị số được triển khai phục vụ nhu cầu giao dịch, thanh toán, đặt lịch, tra cứu, phản ánh, sử dụng dịch vụ và các tiện ích số trong không gian đô thị.
+Việc triển khai phải bảo đảm thuận tiện cho người dân, doanh nghiệp; có khả năng kết nối với kênh tương tác, dữ liệu đô thị và hệ thống điều hành cấp tỉnh.
+- ƯDKTS10: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm thúc đẩy thương mại và dịch vụ số
+Các thành phần khác tại địa bàn đô thị được lựa chọn theo nhu cầu thúc đẩy thương mại, dịch vụ, du lịch, tiêu dùng số và điều kiện thực tế của địa phương.
+Việc triển khai phải bảo đảm có đối tượng sử dụng rõ ràng, phương án vận hành phù hợp và khả năng kết nối với các nền tảng kinh tế số dùng chung.
+b) Địa bàn nông thôn
+- ƯDKTS11: Giải pháp thương mại điện tử sản phẩm địa phương
+Giải pháp thương mại điện tử sản phẩm địa phương được triển khai nhằm hỗ trợ đưa nông sản, đặc sản, sản phẩm OCOP và sản phẩm địa phương lên các nền tảng thương mại điện tử, kênh bán hàng số hoặc kênh quảng bá số phù hợp.
+Việc triển khai phải gắn với dữ liệu sản phẩm, chủ thể sản xuất, hình ảnh, mô tả, tiêu chuẩn chất lượng, thông tin liên hệ, phương thức thanh toán và phương thức giao hàng.
+- ƯDKTS12: Giải pháp truy xuất nguồn gốc
+Giải pháp truy xuất nguồn gốc được triển khai nhằm hỗ trợ minh bạch thông tin sản phẩm, vùng sản xuất, quy trình sản xuất, chứng nhận, tiêu chuẩn và chuỗi cung ứng.
+Việc triển khai phải gắn với dữ liệu sản xuất nông nghiệp, dữ liệu sản phẩm OCOP, dữ liệu hợp tác xã và yêu cầu quản lý chuyên ngành của cấp tỉnh.
+- ƯDKTS13: Giải pháp hỗ trợ hợp tác xã
+Giải pháp hỗ trợ hợp tác xã được triển khai nhằm hỗ trợ hợp tác xã chuyển đổi số trong quản lý thông tin, quảng bá sản phẩm, bán hàng trực tuyến, thanh toán số, truy xuất nguồn gốc và kết nối thị trường.
+Việc triển khai phải phù hợp với năng lực của hợp tác xã; ưu tiên giải pháp dễ sử dụng, dễ duy trì, có khả năng kết nối với chương trình hỗ trợ của cấp tỉnh.
+- ƯDKTS14: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm kết nối sản xuất với thị trường
+Các thành phần khác tại địa bàn nông thôn được triển khai nhằm hỗ trợ kết nối sản xuất với thị trường, nâng cao giá trị sản phẩm địa phương và thúc đẩy kinh tế nông thôn.
+Việc triển khai phải bảo đảm hỗ trợ trực tiếp cho người dân, hợp tác xã, hộ kinh doanh, doanh nghiệp; tránh triển khai ứng dụng không có nhu cầu sử dụng thực tế.
+c) Địa bàn miền núi, biên giới, hải đảo
+- ƯDKTS15: Giải pháp quảng bá du lịch cộng đồng
+Giải pháp quảng bá du lịch cộng đồng được triển khai nhằm giới thiệu điểm đến, sản phẩm du lịch, văn hóa bản địa, dịch vụ lưu trú, trải nghiệm cộng đồng và các sản phẩm đặc thù của địa phương.
+Việc triển khai phải gắn với dữ liệu du lịch cộng đồng, hình ảnh, bản đồ số, thông tin liên hệ, kênh đặt dịch vụ và các nền tảng quảng bá của cấp tỉnh hoặc doanh nghiệp cung cấp dịch vụ.
+- ƯDKTS16: Giải pháp thương mại điện tử đặc sản địa phương
+Giải pháp thương mại điện tử đặc sản địa phương được triển khai nhằm hỗ trợ người dân, hộ kinh doanh, hợp tác xã quảng bá, bán hàng, thanh toán và vận chuyển sản phẩm đặc sản trên môi trường số.
+Việc triển khai phải bảo đảm phù hợp với điều kiện hạ tầng, kỹ năng số của người dân và khả năng duy trì cập nhật thông tin sản phẩm.
+- ƯDKTS17: Giải pháp hỗ trợ hợp tác xã
+Giải pháp hỗ trợ hợp tác xã tại địa bàn miền núi, biên giới, hải đảo được triển khai nhằm hỗ trợ tổ chức sản xuất, quảng bá sản phẩm, kết nối tiêu thụ, chuyển đổi số quản lý và tham gia nền tảng số.
+Việc triển khai phải ưu tiên hỗ trợ trực tiếp, hướng dẫn thực hành, phù hợp với điều kiện tiếp cận của hợp tác xã và người dân.
+- ƯDKTS18: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm khai thác lợi thế đặc thù của địa phương
+Các thành phần khác được triển khai nhằm khai thác lợi thế đặc thù về sản phẩm địa phương, du lịch cộng đồng, văn hóa bản địa, kinh tế cửa khẩu, kinh tế biển hoặc các lợi thế phù hợp khác.
+Việc triển khai phải bảo đảm tính khả thi, dễ tiếp cận, dễ duy trì và phục vụ trực tiếp phát triển sinh kế, thu nhập của người dân.
+2.3. Hoạt động nghiệp vụ phục vụ Kinh tế số (NVKTS)
+a) NVKTS1: Tổ chức hỗ trợ hộ kinh doanh, doanh nghiệp chuyển đổi số và tiếp cận thương mại điện tử
+Ủy ban nhân dân cấp xã tổ chức hoặc phối hợp tổ chức hỗ trợ hộ kinh doanh, doanh nghiệp, hợp tác xã, chủ thể sản xuất trên địa bàn tiếp cận các nền tảng số, thương mại điện tử, thanh toán số, quảng bá số và các chương trình chuyển đổi số.
+Nội dung hỗ trợ gồm hướng dẫn tạo lập thông tin số, đăng ký tài khoản, đăng tải sản phẩm, quản lý đơn hàng, phản hồi khách hàng, sử dụng thanh toán số và duy trì hiện diện số.
+b) NVKTS2: Hỗ trợ thanh toán số, tài chính số
+Ủy ban nhân dân cấp xã phối hợp với cơ quan chuyên môn, ngân hàng, tổ chức trung gian thanh toán, doanh nghiệp công nghệ để hỗ trợ người dân, hộ kinh doanh, doanh nghiệp tiếp cận thanh toán số, tài chính số.
+Việc hỗ trợ phải bảo đảm an toàn giao dịch, hướng dẫn phòng tránh lừa đảo trực tuyến, bảo vệ thông tin cá nhân và phù hợp với quy định pháp luật.
+c) NVKTS3: Hỗ trợ hiện diện số, tên miền quốc gia “.vn”, chữ ký số, hóa đơn điện tử, sử dụng hợp đồng điện tử
+Ủy ban nhân dân cấp xã phối hợp hướng dẫn hộ kinh doanh, doanh nghiệp, hợp tác xã thiết lập hiện diện số, sử dụng tên miền quốc gia “.vn”, chữ ký số, hóa đơn điện tử, hợp đồng điện tử và các công cụ giao dịch số.
+Việc triển khai phải gắn với nhu cầu thực tế của chủ thể kinh tế, ưu tiên nhóm có hoạt động sản xuất, kinh doanh ổn định, sản phẩm có khả năng quảng bá, giao dịch trên môi trường số.
+d) NVKTS4: Hoạt động nghiệp vụ phục vụ KTS thiết yếu triển khai tại cấp xã khác
+Các hoạt động nghiệp vụ phục vụ Kinh tế số thiết yếu khác được triển khai theo chương trình, kế hoạch của cấp tỉnh và nhu cầu thực tế tại địa phương.
+Việc triển khai phải hướng tới kết quả sử dụng thực tế của người dân, hộ kinh doanh, doanh nghiệp, hợp tác xã; tránh hoạt động phong trào, hình thức, thiếu duy trì sau hỗ trợ.
+3. Nhóm ứng dụng và nghiệp vụ phục vụ Xã hội số (XHS)
+3.1. Thành phần ứng dụng phục vụ Xã hội số (ƯDXHS)
+a) ƯDXHS1: Thành phần ứng dụng phục vụ XHS số dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số
+Thành phần này bao gồm các ứng dụng, nền tảng số dùng chung phục vụ phát triển xã hội số theo Khung kiến trúc tổng thể quốc gia số.
+Ủy ban nhân dân cấp tỉnh hướng dẫn cấp xã khai thác các ứng dụng, nền tảng phục vụ người dân tiếp cận dịch vụ số, y tế số, giáo dục số, kỹ năng số, an sinh xã hội và các dịch vụ xã hội số khác theo thẩm quyền.
+Ủy ban nhân dân cấp xã tổ chức tuyên truyền, hướng dẫn, hỗ trợ người dân sử dụng các ứng dụng này, ưu tiên nhóm yếu thế, người thiếu kỹ năng số, người không có thiết bị hoặc người ở khu vực khó tiếp cận.
+b) ƯDXHS2: Thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương cung cấp khác
+Các thành phần ứng dụng phục vụ Xã hội số dùng chung khác do cấp Trung ương cung cấp được triển khai theo hướng dẫn của cơ quan chủ quản.
+Ủy ban nhân dân cấp tỉnh tổ chức phổ biến, hướng dẫn, hỗ trợ cấp xã khai thác; Ủy ban nhân dân cấp xã triển khai tuyên truyền, hướng dẫn sử dụng đến người dân trên địa bàn.
+c) ƯDXHS3: Khai thác thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các thành phần ứng dụng phục vụ Xã hội số dùng chung do cấp Trung ương cung cấp.
+Ủy ban nhân dân cấp xã sử dụng các thành phần này để hỗ trợ người dân tiếp cận dịch vụ số, tham gia môi trường số và sử dụng các tiện ích số phục vụ đời sống.
+d) ƯDXHS4: Thành phần ứng dụng phục vụ XHS dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm các ứng dụng, nền tảng phục vụ phát triển xã hội số do cấp tỉnh cung cấp hoặc tổ chức triển khai theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp xã khai thác các ứng dụng này phục vụ phổ cập kỹ năng số, phản ánh kiến nghị, y tế số, giáo dục số, thông tin cơ sở, an sinh xã hội và các dịch vụ xã hội số khác theo hướng dẫn của cấp tỉnh.
+đ) ƯDXHS5: Thành phần ứng dụng phục vụ XHS dùng chung do cấp tỉnh cung cấp khác
+Các thành phần ứng dụng phục vụ Xã hội số dùng chung khác do cấp tỉnh cung cấp được triển khai theo nhu cầu thực tế, điều kiện địa bàn và kế hoạch phát triển xã hội số của địa phương.
+Ủy ban nhân dân cấp xã khai thác, sử dụng theo phân cấp; phối hợp truyền thông, hướng dẫn người dân tiếp cận và sử dụng.
+e) ƯDXHS6: Khai thác các thành phần ứng dụng phục vụ XHS dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã khai thác các thành phần ứng dụng phục vụ Xã hội số dùng chung do cấp Trung ương và cấp tỉnh cung cấp để hỗ trợ người dân tiếp cận dịch vụ số, dịch vụ công trực tuyến, kỹ năng số, y tế số, giáo dục số, an sinh xã hội và các tiện ích số khác.
+Việc triển khai phải bảo đảm người dân dễ tiếp cận, dễ sử dụng; có kênh hỗ trợ tại Bộ phận Một cửa, điểm hỗ trợ cộng đồng hoặc thông qua Tổ công nghệ số cộng đồng.
+g) ƯDXHS7: Hệ thống quan trắc và giám sát môi trường (nếu cấp tỉnh không triển khai tập trung)
+Hệ thống quan trắc và giám sát môi trường được triển khai tại cấp xã trong trường hợp cấp tỉnh chưa triển khai tập trung hoặc có nhu cầu bổ sung theo đặc thù địa bàn.
+Việc triển khai ƯDXHS7 phải phục vụ cảnh báo, giám sát, bảo vệ sức khỏe cộng đồng, quản lý môi trường và cung cấp dữ liệu phục vụ điều hành; đồng thời bảo đảm kết nối, chia sẻ dữ liệu với hệ thống chuyên ngành hoặc hệ thống điều hành cấp tỉnh khi có yêu cầu.
+h) ƯDXHS8: Thành phần ứng dụng phục vụ XHS thiết yếu triển khai tại cấp xã khác
+Các thành phần ứng dụng phục vụ Xã hội số thiết yếu khác được triển khai theo nhu cầu thực tế, điều kiện địa bàn và hướng dẫn của cấp tỉnh.
+Việc triển khai phải bảo đảm mục tiêu bao trùm số, hỗ trợ người dân tiếp cận thông tin, dịch vụ số và các tiện ích thiết yếu phục vụ đời sống.
+3.2. Thành phần ứng dụng phục vụ XHS bổ sung theo loại địa bàn
+Các thành phần ứng dụng phục vụ XHS bổ sung theo loại địa bàn là các thành phần được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Việc triển khai không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc, nhưng phải bảo đảm không trùng lặp chức năng cốt lõi với các ứng dụng, nền tảng dùng chung và tuân thủ nguyên tắc kiến trúc, sử dụng dùng chung.
+a) Địa bàn đô thị
+- ƯDXHS9: Kênh tương tác số thời gian thực giữa chính quyền và người dân
+Kênh tương tác số thời gian thực được triển khai nhằm tăng cường trao đổi, phản hồi, tiếp nhận thông tin và hỗ trợ người dân trong quá trình sử dụng dịch vụ công, phản ánh hiện trường, tiếp cận chính sách và tham gia quản trị đô thị.
+Việc triển khai phải bảo đảm có đầu mối quản trị, quy trình tiếp nhận và phản hồi, lưu vết tương tác, tổng hợp dữ liệu phục vụ cải thiện chất lượng phục vụ.
+- ƯDXHS10: Nền tảng cộng đồng số khu dân cư
+Nền tảng cộng đồng số khu dân cư được triển khai nhằm kết nối chính quyền với người dân tại tổ dân phố, khu dân cư, chung cư, khu đô thị; phục vụ truyền thông chính sách, phổ biến thông tin, hỗ trợ dịch vụ số và tương tác cộng đồng.
+Việc triển khai phải bảo đảm thông tin chính thống, có cơ chế quản trị nội dung, bảo vệ dữ liệu cá nhân và không thay thế các kênh chính thức trong xử lý thủ tục hành chính.
+- ƯDXHS11: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm nâng cao chất lượng tương tác và dịch vụ công
+Các thành phần khác tại địa bàn đô thị được triển khai nhằm nâng cao chất lượng tương tác, hỗ trợ người dân tiếp cận dịch vụ công, phản ánh kiến nghị, thông tin đô thị và các tiện ích xã hội số.
+Việc triển khai phải bảo đảm thuận tiện, dễ sử dụng, có dữ liệu phục vụ cải tiến chất lượng phục vụ và kết nối với kênh tương tác dùng chung khi cần thiết.
+b) Địa bàn nông thôn
+- ƯDXHS12: Nhóm cộng đồng số thôn, bản
+Nhóm cộng đồng số thôn, bản được triển khai nhằm hỗ trợ phổ biến thông tin, hướng dẫn dịch vụ công trực tuyến, tuyên truyền chính sách, phổ cập kỹ năng số và kết nối người dân với chính quyền cơ sở.
+Việc triển khai phải gắn với Tổ công nghệ số cộng đồng, điểm truy cập Internet công cộng, nhà văn hóa, điểm sinh hoạt cộng đồng hoặc các kênh phù hợp khác.
+- ƯDXHS13: Kênh phổ biến kiến thức sản xuất, tiêu thụ sản phẩm địa phương
+Kênh phổ biến kiến thức sản xuất, tiêu thụ sản phẩm địa phương được triển khai nhằm hỗ trợ người dân tiếp cận thông tin về kỹ thuật sản xuất, thị trường, mùa vụ, thương mại điện tử, truy xuất nguồn gốc và tiêu thụ sản phẩm.
+Việc triển khai phải phù hợp với nhu cầu sản xuất của địa phương; ưu tiên thông tin dễ hiểu, dễ áp dụng và có khả năng hỗ trợ trực tiếp cho người dân.
+- ƯDXHS14: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ người dân tiếp cận thông tin và dịch vụ số
+Các thành phần khác tại địa bàn nông thôn được triển khai nhằm hỗ trợ người dân tiếp cận thông tin, dịch vụ công trực tuyến, kỹ năng số, dịch vụ xã hội số và các chương trình phát triển cộng đồng.
+Việc triển khai phải bảo đảm phù hợp điều kiện hạ tầng, trình độ kỹ năng số và khả năng duy trì tại cơ sở.
+c) Địa bàn miền núi, biên giới, hải đảo
+- ƯDXHS15: Dịch vụ y tế từ xa
+Dịch vụ y tế từ xa được triển khai nhằm hỗ trợ người dân ở khu vực khó tiếp cận được tư vấn, kết nối, hỗ trợ khám chữa bệnh, theo dõi sức khỏe và tiếp cận dịch vụ y tế phù hợp.
+Việc triển khai phải phối hợp với ngành y tế, bảo đảm điều kiện kết nối, thiết bị, bảo vệ dữ liệu sức khỏe cá nhân và khả năng hỗ trợ người dân sử dụng.
+- ƯDXHS16: Học trực tuyến
+Học trực tuyến được triển khai nhằm hỗ trợ người dân, học sinh, nhóm yếu thế hoặc cộng đồng ở khu vực khó khăn tiếp cận nội dung giáo dục, đào tạo, bồi dưỡng kỹ năng số và học tập suốt đời.
+Việc triển khai phải phù hợp điều kiện kết nối, thiết bị, không gian học tập và khả năng hỗ trợ tại cộng đồng.
+- ƯDXHS17: Dịch vụ công lưu động
+Dịch vụ công lưu động được triển khai nhằm hỗ trợ người dân ở khu vực xa trung tâm, khó tiếp cận trực tiếp với Trung tâm Phục vụ hành chính công cấp xã có thể được hướng dẫn, nộp hồ sơ, số hóa tài liệu, tra cứu và nhận kết quả theo quy định.
+Việc triển khai phải gắn với hạ tầng phục vụ dịch vụ công lưu động tại Lớp 1, dữ liệu hồ sơ tại Lớp 2 và kênh tương tác tại Lớp 4.
+- ƯDXHS18: Hỗ trợ trực tiếp nhóm yếu thế
+Hỗ trợ trực tiếp nhóm yếu thế được triển khai nhằm bảo đảm người cao tuổi, người khuyết tật, người nghèo, người thiếu thiết bị, người thiếu kỹ năng số và các nhóm khó tiếp cận khác được hướng dẫn, hỗ trợ sử dụng dịch vụ số.
+Việc triển khai phải bảo đảm linh hoạt, nhân văn, phù hợp điều kiện địa bàn; ưu tiên hỗ trợ tại Bộ phận Một cửa, điểm hỗ trợ cộng đồng hoặc thông qua Tổ công nghệ số cộng đồng.
+- ƯDXHS19: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm bao trùm số
+Các thành phần khác tại địa bàn miền núi, biên giới, hải đảo được triển khai nhằm bảo đảm bao trùm số, hỗ trợ người dân tiếp cận dịch vụ số, thông tin thiết yếu, y tế, giáo dục, an sinh xã hội và các tiện ích số phù hợp.
+Việc triển khai phải ưu tiên tính đơn giản, dễ tiếp cận, có hỗ trợ trực tiếp và phù hợp điều kiện hạ tầng, văn hóa, ngôn ngữ, địa hình của địa bàn.
+3.3. Hoạt động nghiệp vụ phục vụ Xã hội số (NVXHS)
+a) NVXHS1: Hỗ trợ kích hoạt định danh điện tử và hướng dẫn người dân sử dụng dịch vụ công trực tuyến
+Ủy ban nhân dân cấp xã tổ chức hỗ trợ người dân kích hoạt, sử dụng định danh điện tử và sử dụng dịch vụ công trực tuyến theo hướng dẫn của cấp có thẩm quyền.
+Nội dung hỗ trợ bao gồm hướng dẫn đăng nhập, xác thực, nộp hồ sơ trực tuyến, tra cứu trạng thái hồ sơ, thanh toán trực tuyến, nhận kết quả và sử dụng các tiện ích số thiết yếu.
+b) NVXHS2: Tổ công nghệ số cộng đồng
+Tổ công nghệ số cộng đồng được duy trì, củng cố và phát huy vai trò hỗ trợ người dân tiếp cận, sử dụng dịch vụ số, nền tảng số, thanh toán số, thương mại điện tử, kỹ năng số và các chương trình chuyển đổi số tại cộng đồng.
+Việc triển khai NVXHS2 phải bảo đảm có phân công nhiệm vụ rõ ràng, nội dung hỗ trợ cụ thể, gắn với nhu cầu thực tế của người dân và điều kiện từng địa bàn.
+c) NVXHS3: Điểm hỗ trợ chuyển đổi số
+Điểm hỗ trợ chuyển đổi số được bố trí tại Bộ phận Một cửa hoặc cộng đồng nhằm hỗ trợ người dân sử dụng dịch vụ công trực tuyến, định danh điện tử, thanh toán số, tra cứu thông tin, nộp hồ sơ và tiếp cận các dịch vụ số thiết yếu.
+Việc triển khai phải bảo đảm có địa điểm phù hợp, thiết bị tối thiểu, lực lượng hỗ trợ, danh mục nội dung hỗ trợ và cơ chế phối hợp với cấp tỉnh, doanh nghiệp, Tổ công nghệ số cộng đồng khi cần thiết.
+d) NVXHS4: Hoạt động nghiệp vụ phục vụ XHS thiết yếu triển khai tại cấp xã khác
+Các hoạt động nghiệp vụ phục vụ Xã hội số thiết yếu khác được triển khai theo nhu cầu của địa phương, chương trình của cấp tỉnh và mục tiêu bao trùm số.
+Việc triển khai phải hướng tới hỗ trợ người dân thực sự sử dụng được dịch vụ số, nhất là nhóm yếu thế, người thiếu kỹ năng số, người không có thiết bị hoặc người ở khu vực khó khăn.
+Ghi chú: Việc tổ chức triển khai các nội dung tại Phụ lục này thực hiện theo phân công tại Phần IV của Tài liệu hướng dẫn.
+
+Phụ lục 04
+LỚP 4: KÊNH TƯƠNG TÁC VÀ ĐO LƯỜNG HIỆU QUẢ
+I. MỤC ĐÍCH, YÊU CẦU
+Phụ lục này hướng dẫn triển khai các thành phần thuộc Lớp 4: Kênh tương tác và đo lường hiệu quả của Mô hình chuyển đổi số cấp xã, bao gồm thành phần Kênh tương tác (KTT) và thành phần Đo lường hiệu quả (ĐLHQ).
+Việc triển khai Lớp 4 nhằm bảo đảm thiết lập các kênh tương tác thống nhất, thuận tiện, an toàn giữa chính quyền với người dân, doanh nghiệp; đồng thời khai thác các công cụ đo lường, bảng thông tin điều hành, khảo sát mức độ hài lòng và dữ liệu vận hành để phục vụ chỉ đạo, điều hành tại cấp xã, cấp tỉnh và cấp có thẩm quyền.
+Việc triển khai các thành phần thuộc Lớp 4 phải bảo đảm kết nối với Lớp 1 về hạ tầng, Lớp 2 về dữ liệu và Lớp 3 về ứng dụng, nghiệp vụ; hạn chế phát triển kênh tương tác riêng lẻ, phân tán, khó tích hợp và khó quản lý.
+II. NGUYÊN TẮC THỰC HIỆN
+1. Ưu tiên khai thác, sử dụng các kênh tương tác và công cụ đo lường dùng chung do cấp Trung ương và cấp tỉnh cung cấp; cấp xã không tự phát triển kênh tương tác, ứng dụng hoặc công cụ đo lường có chức năng trùng lặp.
+2. Kênh tương tác phải bảo đảm đa kênh nhưng thống nhất về định danh, dữ liệu, quy trình tiếp nhận, xử lý, phản hồi, lưu vết và tổng hợp thông tin.
+3. Việc triển khai kênh tương tác phải gắn với quy trình nghiệp vụ, dữ liệu số và hệ thống xử lý của cơ quan nhà nước; tránh tình trạng tiếp nhận thông tin nhưng không có cơ chế xử lý, phản hồi hoặc tổng hợp.
+4. Việc đo lường hiệu quả phải ưu tiên khai thác dữ liệu phát sinh từ hệ thống thông tin, nền tảng số, bảng thông tin điều hành và khảo sát điện tử; hạn chế tổng hợp thủ công, trùng lặp.
+5. Các thành phần bổ sung theo loại địa bàn được xác định theo hướng ưu tiên triển khai, không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; địa phương căn cứ điều kiện thực tế, nhu cầu sử dụng và khả năng nguồn lực để lựa chọn triển khai phù hợp.
+6. Việc triển khai phải bảo đảm an toàn thông tin, bảo vệ dữ liệu cá nhân, kiểm soát truy cập, phân quyền sử dụng và lưu vết trong toàn bộ quá trình tương tác, tiếp nhận, xử lý, phản hồi và đo lường.
+III. HƯỚNG DẪN TRIỂN KHAI CỤ THỂ
+1. Thành phần Kênh tương tác (KTT)
+1.1. Thành phần KTT dùng chung do cấp Trung ương cung cấp
+a) KTT1: Thành phần KTT dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số
+Thành phần này bao gồm các kênh tương tác dùng chung ở phạm vi quốc gia, trong đó có Cổng Dịch vụ công quốc gia dành cho môi trường web và Ứng dụng VNeID dành cho thiết bị di động.
+Ủy ban nhân dân cấp tỉnh tổ chức hướng dẫn, tích hợp, kết nối và phân quyền để Ủy ban nhân dân cấp xã khai thác các kênh tương tác dùng chung do cấp Trung ương cung cấp theo thẩm quyền.
+Ủy ban nhân dân cấp xã sử dụng KTT1 để hướng dẫn người dân, doanh nghiệp nộp hồ sơ trực tuyến, tra cứu trạng thái xử lý, nhận thông báo, thực hiện thanh toán trực tuyến, phản ánh kiến nghị và sử dụng các dịch vụ số được cung cấp trên kênh quốc gia.
+Việc khai thác KTT1 phải bảo đảm thống nhất định danh, xác thực, dữ liệu hồ sơ, trạng thái xử lý, thông báo và phản hồi giữa hệ thống quốc gia, hệ thống cấp tỉnh và hoạt động phục vụ tại cấp xã.
+b) KTT2: Các thành phần KTT dùng chung do cấp Trung ương cung cấp khác
+Các thành phần KTT dùng chung khác do cấp Trung ương cung cấp được triển khai, khai thác theo hướng dẫn của cơ quan chủ quản và chỉ đạo của Ủy ban nhân dân cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh thông báo phạm vi khai thác, phương thức sử dụng, phân quyền truy cập, đầu mối hỗ trợ kỹ thuật và yêu cầu cập nhật dữ liệu đối với các thành phần này.
+Ủy ban nhân dân cấp xã tổ chức hướng dẫn người dân, doanh nghiệp sử dụng đúng kênh, đúng mục đích; không tự ý tạo thêm kênh tương tác có chức năng trùng lặp, gây phân tán thông tin hoặc khó tổng hợp dữ liệu.
+1.2. Thành phần KTT dùng chung do cấp tỉnh cung cấp
+a) KTT3: Khai thác thành phần KTT dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các kênh tương tác dùng chung do cấp Trung ương cung cấp để phục vụ cung cấp dịch vụ công, tiếp nhận phản ánh, kiến nghị, thông tin chỉ đạo điều hành và tương tác với người dân, doanh nghiệp tại địa phương.
+Ủy ban nhân dân cấp xã sử dụng các thành phần này thông qua tài khoản, phân quyền, giao diện hoặc hệ thống do cấp tỉnh cung cấp; không tổ chức kết nối riêng lẻ khi chưa có hướng dẫn của cơ quan có thẩm quyền.
+Việc triển khai KTT3 phải bảo đảm thống nhất dữ liệu tương tác giữa cấp xã, cấp tỉnh và cấp Trung ương; hạn chế việc tiếp nhận, xử lý phản ánh hoặc hồ sơ qua các kênh không chính thức, không lưu vết.
+b) KTT4: Thành phần KTT dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm các kênh tương tác dùng chung cấp tỉnh được tổ chức theo Khung kiến trúc số cấp tỉnh, phục vụ giao tiếp giữa chính quyền với người dân, doanh nghiệp và giữa các cơ quan trong hệ thống chính trị trên địa bàn.
+Ủy ban nhân dân cấp tỉnh tổ chức xây dựng, quản lý, vận hành hoặc thuê dịch vụ phù hợp; bảo đảm cấp xã được khai thác, sử dụng theo phân cấp.
+Ủy ban nhân dân cấp xã khai thác KTT4 để tiếp nhận, hướng dẫn, phản hồi, công bố thông tin, hỗ trợ người dân, doanh nghiệp và phối hợp xử lý các nội dung thuộc phạm vi trách nhiệm.
+Việc triển khai KTT4 phải bảo đảm liên thông với hệ thống giải quyết thủ tục hành chính, hệ thống phản ánh kiến nghị, trang/cổng thông tin điện tử, dashboard/IOC cấp tỉnh và các nền tảng dữ liệu liên quan.
+c) KTT5: Bàn làm việc số cấp tỉnh
+Bàn làm việc số cấp tỉnh là thành phần trung tâm của Không gian làm việc số, cung cấp điểm truy cập thống nhất, cá nhân hóa cho cán bộ, công chức trong khai thác, sử dụng các hệ thống, cơ sở dữ liệu và công cụ làm việc số dùng chung như quản lý văn bản và điều hành, lịch công tác, hội nghị trực tuyến, quản lý công việc, kho tài liệu số và các công cụ hỗ trợ khác.
+Ủy ban nhân dân cấp tỉnh tổ chức triển khai Bàn làm việc số cấp tỉnh theo hướng tập trung, thống nhất, tích hợp các hệ thống quản lý văn bản, giải quyết thủ tục hành chính, báo cáo, dữ liệu và công cụ hỗ trợ tác nghiệp.
+Cán bộ, công chức cấp xã được cấp tài khoản để truy cập, khai thác và sử dụng Bàn làm việc số cấp tỉnh theo phân quyền, phục vụ xử lý công việc trên môi trường số.
+Việc triển khai KTT5 phải bảo đảm:
+- Không phát triển các ứng dụng làm việc rời rạc, phân tán tại cấp xã;
+- Có cơ chế phân quyền, xác thực, quản lý tài khoản và lưu vết sử dụng;
+- Kết nối với các hệ thống dùng chung cấp tỉnh và các cơ sở dữ liệu liên quan;
+- Hỗ trợ nâng cao năng suất xử lý công việc của cán bộ, công chức cấp xã.
+d) KTT6: Thành phần KTT dùng chung do cấp tỉnh cung cấp khác
+Các thành phần KTT dùng chung khác do cấp tỉnh cung cấp được triển khai theo nhu cầu thực tế, Khung kiến trúc số cấp tỉnh và kế hoạch chuyển đổi số của địa phương.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục, phạm vi sử dụng, quy trình khai thác, cơ chế phân quyền, yêu cầu dữ liệu và đầu mối hỗ trợ đối với các thành phần này.
+Ủy ban nhân dân cấp xã khai thác, sử dụng KTT6 theo phân cấp; bảo đảm không hình thành kênh tương tác cục bộ, khó kiểm soát hoặc trùng lặp với kênh dùng chung đã được cấp tỉnh cung cấp.
+1.3. Thành phần KTT thiết yếu triển khai tại cấp xã
+a) KTT7: Khai thác các thành phần KTT dùng chung do cấp Trung ương, cấp tỉnh cung cấp
+Ủy ban nhân dân cấp xã tổ chức khai thác, sử dụng các thành phần Kênh tương tác (KTT) dùng chung do cấp Trung ương và cấp tỉnh cung cấp để phục vụ tiếp nhận, xử lý, phản hồi thông tin và cung cấp dịch vụ cho người dân, doanh nghiệp trên môi trường số.
+Việc triển khai KTT7 phải bảo đảm:
+- Sử dụng thống nhất các kênh tương tác chính thức (Cổng Dịch vụ công quốc gia, ứng dụng VNeID, cổng/ứng dụng dịch vụ công cấp tỉnh, hệ thống phản ánh, kiến nghị và các kênh tương tác số khác theo phân cấp);
+- Thống nhất định danh người dùng, tài khoản truy cập, phân quyền sử dụng và cơ chế xác thực điện tử;
+- Bảo đảm toàn bộ thông tin tiếp nhận từ các kênh dùng chung được xử lý trên hệ thống, có trạng thái xử lý rõ ràng, có lưu vết và có kết quả phản hồi;
+- Không hình thành các kênh tương tác riêng lẻ, phân tán ngoài hệ thống dùng chung;
+- Tổ chức theo dõi, tổng hợp và khai thác dữ liệu tương tác phục vụ đánh giá hiệu quả cung cấp dịch vụ và cải thiện chất lượng phục vụ người dân, doanh nghiệp.
+b) KTT8: Trung tâm Phục vụ hành chính công cấp xã
+Trung tâm Phục vụ hành chính công cấp xã là kênh trực tiếp phục vụ người dân, doanh nghiệp trong tiếp nhận, hướng dẫn, số hóa, xử lý, tra cứu, trả kết quả thủ tục hành chính và hỗ trợ sử dụng dịch vụ công trực tuyến.
+Ủy ban nhân dân cấp xã tổ chức vận hành KTT8 theo quy trình, hướng dẫn của cấp tỉnh và quy định pháp luật về giải quyết thủ tục hành chính.
+Việc triển khai KTT8 phải bảo đảm:
+- Có điểm tiếp nhận, hướng dẫn, hỗ trợ người dân, doanh nghiệp sử dụng dịch vụ công trực tuyến;
+- Có thiết bị, kết nối và công cụ phục vụ số hóa hồ sơ, tra cứu thông tin, theo dõi trạng thái xử lý;
+- Kết nối với hệ thống thông tin giải quyết thủ tục hành chính, kênh phản ánh kiến nghị, khảo sát hài lòng và các hệ thống dùng chung có liên quan;
+- Bảo đảm thái độ phục vụ, quy trình xử lý và kết quả phục vụ được ghi nhận, theo dõi, cải thiện.
+c) KTT9: Khai thác, cập nhật Trang/cổng thông tin điện tử cấp xã
+Trang/cổng thông tin điện tử cấp xã là kênh công khai thông tin, cung cấp nội dung phục vụ người dân, doanh nghiệp, hướng dẫn dịch vụ công trực tuyến, công bố thông tin chỉ đạo điều hành, thông tin kinh tế - xã hội và các nội dung thuộc phạm vi quản lý của cấp xã.
+Ủy ban nhân dân cấp xã tổ chức khai thác, cập nhật thông tin trên Trang/cổng thông tin điện tử cấp xã theo hướng dẫn của cấp tỉnh, bảo đảm thông tin chính xác, kịp thời, dễ tiếp cận và phù hợp với quy định về công khai thông tin.
+Việc triển khai KTT9 phải bảo đảm:
+- Có đầu mối quản trị nội dung, quy trình biên tập, phê duyệt và cập nhật thông tin;
+- Có liên kết hoặc định tuyến đến dịch vụ công trực tuyến, phản ánh kiến nghị, thông tin liên hệ, hướng dẫn người dân, doanh nghiệp;
+- Bảo đảm an toàn thông tin, khả năng truy cập, khả năng tìm kiếm và sử dụng thuận tiện trên thiết bị phổ biến;
+- Không sử dụng trang/cổng thông tin điện tử để thay thế các hệ thống chuyên ngành hoặc hệ thống giải quyết thủ tục hành chính đã có.
+d) KTT10: Tiếp nhận phản ánh, kiến nghị
+Kênh tiếp nhận phản ánh, kiến nghị tại cấp xã được triển khai nhằm tiếp nhận thông tin, phản ánh, kiến nghị của người dân, doanh nghiệp đối với hoạt động quản lý nhà nước, cung cấp dịch vụ công, trật tự đô thị, môi trường, hạ tầng, an sinh xã hội và các vấn đề phát sinh trên địa bàn.
+Ủy ban nhân dân cấp xã tổ chức tiếp nhận, phân loại, định tuyến, theo dõi xử lý và phản hồi phản ánh, kiến nghị theo thẩm quyền; trường hợp vượt thẩm quyền thì chuyển cấp có thẩm quyền xử lý theo quy định.
+Việc triển khai KTT10 phải bảo đảm:
+- Có quy trình tiếp nhận, phân loại, xử lý, phản hồi và lưu vết rõ ràng;
+- Có trạng thái xử lý để người dân, doanh nghiệp theo dõi khi phù hợp;
+- Có khả năng tổng hợp dữ liệu phản ánh, kiến nghị phục vụ chỉ đạo điều hành;
+- Ưu tiên tích hợp hoặc sử dụng kênh phản ánh kiến nghị dùng chung của cấp tỉnh hoặc cấp quốc gia.
+đ) KTT11: Thành phần KTT thiết yếu triển khai tại cấp xã khác
+Các thành phần KTT thiết yếu khác tại cấp xã được triển khai theo nhu cầu thực tế, đặc điểm địa bàn, yêu cầu phục vụ người dân, doanh nghiệp và hướng dẫn của cấp tỉnh.
+Việc triển khai KTT11 phải bảo đảm không trùng lặp với các kênh dùng chung; có mục tiêu sử dụng rõ ràng; có đầu mối quản trị; có cơ chế tiếp nhận, xử lý, phản hồi và tích hợp dữ liệu với hệ thống dùng chung khi cần thiết.
+1.4. Thành phần KTT bổ sung theo loại địa bàn
+Các thành phần KTT bổ sung theo loại địa bàn được xác định theo hướng ưu tiên triển khai, làm căn cứ tham chiếu trong tổ chức thực hiện. Việc triển khai không bắt buộc áp dụng thống nhất trên phạm vi toàn quốc; địa phương căn cứ điều kiện thực tế, nhu cầu tương tác và khả năng nguồn lực để lựa chọn triển khai phù hợp.
+Việc triển khai các thành phần này phải bảo đảm thống nhất về định danh, dữ liệu và kết nối, chia sẻ với các hệ thống, nền tảng do cấp Trung ương và cấp tỉnh cung cấp theo phân cấp.
+a) Địa bàn đô thị
+- KTT12: Ứng dụng phản ánh hiện trường đô thị.
+Ứng dụng phản ánh hiện trường đô thị được triển khai nhằm tăng cường tiếp nhận, xử lý và phản hồi các vấn đề phát sinh trong quản lý đô thị như trật tự đô thị, vệ sinh môi trường, hạ tầng, an ninh trật tự, giao thông, chiếu sáng, cây xanh và các nội dung đô thị khác theo phân công.
+Việc triển khai KTT12 phải bảo đảm:
++ Có khả năng tiếp nhận phản ánh kèm vị trí, hình ảnh, thời gian và nhóm nội dung;
++ Có cơ chế phân loại, định tuyến, chuyển xử lý, theo dõi trạng thái và phản hồi;
++ Có dữ liệu phục vụ tổng hợp, phân tích, đánh giá chất lượng xử lý;
++ Kết nối hoặc chia sẻ dữ liệu với hệ thống điều hành, IOC/Dashboard cấp tỉnh khi có yêu cầu.
+- KTT13: Kênh tương tác số thời gian thực giữa chính quyền và người dân.
+Kênh tương tác số thời gian thực được triển khai nhằm tăng cường khả năng trao đổi, hướng dẫn, phản hồi nhanh giữa chính quyền cấp xã với người dân, doanh nghiệp trong quá trình sử dụng dịch vụ công, phản ánh vấn đề phát sinh và tiếp cận thông tin chính thống.
+Việc triển khai KTT13 phải bảo đảm:
++ Có đầu mối quản trị và thời gian phản hồi phù hợp;
++ Có quy trình tiếp nhận, phân loại và chuyển xử lý;
++ Có lưu vết tương tác để phục vụ theo dõi, tổng hợp và cải thiện chất lượng phục vụ;
++ Không sử dụng thay thế các kênh chính thức trong trường hợp pháp luật quy định phải thực hiện qua hệ thống chuyên ngành hoặc hệ thống thủ tục hành chính.
+- KTT14: Nền tảng cộng đồng số khu dân cư.
+Nền tảng cộng đồng số khu dân cư được triển khai nhằm kết nối chính quyền cơ sở với người dân tại tổ dân phố, khu dân cư, chung cư, khu đô thị; phục vụ truyền thông chính sách, cảnh báo, hướng dẫn dịch vụ công, tiếp nhận thông tin và hỗ trợ tương tác cộng đồng.
+Việc triển khai KTT14 phải bảo đảm:
++ Thông tin được cung cấp từ nguồn chính thống;
++ Có cơ chế quản trị nhóm, quản trị nội dung và xử lý thông tin sai lệch;
++ Bảo vệ dữ liệu cá nhân, không công khai thông tin cá nhân không cần thiết;
++ Có khả năng kết nối với Tổ công nghệ số cộng đồng, kênh phản ánh kiến nghị và các kênh tương tác dùng chung.
+- KTT15: Tích hợp, khai thác dữ liệu trên IOC/Dashboard cấp tỉnh.
+Tích hợp, khai thác dữ liệu trên IOC/Dashboard cấp tỉnh được triển khai nhằm phục vụ cấp xã theo dõi tình hình, khai thác thông tin phục vụ chỉ đạo, điều hành, giám sát các lĩnh vực quản lý và xử lý vấn đề phát sinh trên địa bàn.
+Ủy ban nhân dân cấp xã khai thác KTT15 theo tài khoản, phân quyền, chỉ số, trường dữ liệu và phạm vi được cấp tỉnh cung cấp.
+Việc triển khai KTT15 phải bảo đảm:
++ Dữ liệu đầu vào được cập nhật đầy đủ, đúng nguồn;
++ Chỉ số, thông tin hiển thị phù hợp với nhiệm vụ quản lý của cấp xã;
++ Có khả năng hỗ trợ phát hiện vấn đề, theo dõi xử lý, tổng hợp tình hình;
++ Không hình thành dashboard riêng rời rạc nếu cấp tỉnh đã cung cấp dashboard dùng chung.
+- KTT16: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm phục vụ quản lý đô thị và nâng cao chất lượng tương tác.
+Các thành phần KTT khác tại địa bàn đô thị được triển khai theo nhu cầu quản lý đô thị, tương tác với người dân, doanh nghiệp và điều kiện thực tế của địa phương.
+Việc triển khai KTT16 phải bảo đảm có đối tượng sử dụng rõ ràng, quy trình xử lý rõ ràng, dữ liệu phát sinh có khả năng tổng hợp, tích hợp với hệ thống dùng chung và không trùng lặp với các kênh đã có.
+b) Địa bàn nông thôn
+- KTT17: Nhóm tương tác số thôn, bản, tổ dân phố.
+Nhóm tương tác số thôn, bản, tổ dân phố được triển khai nhằm phổ biến thông tin, tuyên truyền chính sách, hướng dẫn dịch vụ công trực tuyến, hỗ trợ kỹ năng số và kết nối chính quyền cơ sở với người dân.
+Việc triển khai KTT17 phải bảo đảm:
++ Có đầu mối quản trị tại cấp xã hoặc thôn, bản, tổ dân phố;
++ Nội dung thông tin được kiểm soát, bảo đảm chính thống, dễ hiểu, phù hợp với người dân;
++ Gắn với hoạt động của Tổ công nghệ số cộng đồng, điểm truy cập Internet công cộng hoặc điểm sinh hoạt cộng đồng;
++ Không thay thế hệ thống chính thức trong xử lý hồ sơ, thủ tục hành chính hoặc phản ánh kiến nghị có yêu cầu xử lý theo quy định.
+- KTT18: Kênh phổ biến thông tin sản xuất và tiêu thụ sản phẩm địa phương.
+Kênh phổ biến thông tin sản xuất và tiêu thụ sản phẩm địa phương được triển khai nhằm cung cấp thông tin về mùa vụ, kỹ thuật sản xuất, thị trường, giá cả, truy xuất nguồn gốc, thương mại điện tử, quảng bá OCOP, hợp tác xã và các sản phẩm địa phương.
+Việc triển khai KTT18 phải bảo đảm:
++ Thông tin phù hợp với nhu cầu sản xuất, kinh doanh của người dân;
++ Có đầu mối cập nhật, kiểm tra và duy trì nội dung;
++ Có khả năng kết nối với dữ liệu sản xuất nông nghiệp, dữ liệu sản phẩm OCOP, dữ liệu hợp tác xã và các nền tảng thương mại điện tử khi phù hợp;
++ Ưu tiên hình thức dễ tiếp cận, dễ sử dụng, phù hợp với điều kiện kỹ năng số của người dân nông thôn.
+- KTT19: Trang/cổng thông tin điện tử cấp xã tích hợp nội dung phục vụ người dân.
+Trang/cổng thông tin điện tử cấp xã tích hợp nội dung phục vụ người dân được triển khai nhằm cung cấp thông tin chính thống, hướng dẫn dịch vụ công trực tuyến, phổ biến chính sách, thông tin sản xuất, thông tin cộng đồng và các nội dung thiết yếu khác.
+Việc triển khai KTT19 phải bảo đảm:
++ Nội dung được cập nhật thường xuyên, dễ tìm kiếm, dễ truy cập;
++ Tích hợp hoặc liên kết với dịch vụ công trực tuyến, phản ánh kiến nghị, thông tin hỗ trợ, nhóm cộng đồng số;
++ Phù hợp với điều kiện sử dụng của người dân nông thôn;
++ Không trùng lặp với trang/cổng thông tin điện tử cấp xã đã được triển khai tại KTT9 mà thực hiện theo hướng tích hợp, bổ sung nội dung phục vụ đặc thù địa bàn.
+- KTT20: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm hỗ trợ người dân tiếp cận thông tin và dịch vụ số.
+Các thành phần KTT khác tại địa bàn nông thôn được triển khai nhằm hỗ trợ người dân tiếp cận thông tin, dịch vụ công trực tuyến, kỹ năng số, dịch vụ xã hội số và các chương trình phát triển cộng đồng.
+Việc triển khai KTT20 phải bảo đảm dễ sử dụng, dễ duy trì, phù hợp với hạ tầng, kỹ năng số và nhu cầu thực tế của người dân.
+c) Địa bàn miền núi, biên giới, hải đảo
+- KTT21: Điểm hỗ trợ dịch vụ số tại cộng đồng.
+Điểm hỗ trợ dịch vụ số tại cộng đồng được triển khai nhằm hỗ trợ người dân ở khu vực khó khăn, người thiếu thiết bị, thiếu kỹ năng số, người yếu thế hoặc người ở xa trung tâm tiếp cận và sử dụng dịch vụ số.
+Điểm hỗ trợ có thể được bố trí tại nhà văn hóa, điểm sinh hoạt cộng đồng, Trung tâm Phục vụ hành chính công cấp xã, điểm truy cập Internet công cộng hoặc địa điểm phù hợp khác.
+Việc triển khai KTT21 phải bảo đảm:
++ Có thiết bị, kết nối và lực lượng hỗ trợ phù hợp;
++ Có danh mục dịch vụ số được hỗ trợ;
++ Có cơ chế hướng dẫn, ghi nhận nhu cầu, phản ánh vướng mắc của người dân;
++ Gắn với Tổ công nghệ số cộng đồng, dịch vụ công lưu động và các chương trình bao trùm số.
+- KTT22: Dịch vụ công lưu động.
+Dịch vụ công lưu động được triển khai nhằm hỗ trợ người dân tại các cụm dân cư xa trung tâm, khu vực khó tiếp cận, biên giới, hải đảo hoặc địa bàn có điều kiện đi lại khó khăn được tiếp cận dịch vụ công trực tuyến và dịch vụ hành chính công.
+Việc triển khai KTT22 phải bảo đảm:
++ Có kế hoạch, lịch phục vụ và địa điểm phục vụ phù hợp;
++ Có thiết bị, kết nối, công cụ số hóa, tài khoản truy cập hệ thống và phương án bảo vệ dữ liệu cá nhân;
++ Kết nối với hệ thống thông tin giải quyết thủ tục hành chính và Trung tâm Phục vụ hành chính công cấp xã;
++ Phù hợp với điều kiện địa bàn và nhu cầu thực tế của người dân.
+- KTT23: Hệ thống truyền thanh số phục vụ truyền thông chính sách.
+Hệ thống truyền thanh số phục vụ truyền thông chính sách được triển khai nhằm phổ biến thông tin chính thống, chính sách, cảnh báo, hướng dẫn dịch vụ công, kỹ năng số và các nội dung thiết yếu đến người dân ở địa bàn khó tiếp cận.
+Việc triển khai KTT23 phải bảo đảm:
++ Nội dung truyền thông được quản lý, biên tập, phê duyệt theo quy định;
++ Ưu tiên sử dụng hạ tầng truyền thanh ứng dụng công nghệ thông tin - viễn thông hoặc hệ thống thông tin nguồn do cấp tỉnh cung cấp;
++ Phù hợp với đặc điểm ngôn ngữ, văn hóa, địa hình và điều kiện tiếp cận thông tin của người dân;
++ Bảo đảm an toàn thông tin, an ninh mạng trong quản lý tài khoản, nội dung và thiết bị phát thanh.
+- KTT24: Hỗ trợ người dân sử dụng dịch vụ công trực tuyến.
+Hỗ trợ người dân sử dụng dịch vụ công trực tuyến được triển khai nhằm bảo đảm người dân, nhất là người thiếu thiết bị, thiếu kỹ năng số, người cao tuổi, người khuyết tật, người dân vùng sâu, vùng xa, có thể thực hiện dịch vụ công trực tuyến.
+Nội dung hỗ trợ bao gồm hướng dẫn tạo lập hoặc sử dụng tài khoản định danh, nộp hồ sơ trực tuyến, số hóa giấy tờ, thanh toán trực tuyến, tra cứu trạng thái hồ sơ, nhận kết quả và phản ánh vướng mắc trong quá trình sử dụng.
+Việc triển khai KTT24 phải gắn với Trung tâm Phục vụ hành chính công cấp xã, điểm hỗ trợ dịch vụ số tại cộng đồng, Tổ công nghệ số cộng đồng và dịch vụ công lưu động khi phù hợp.
+- KTT25: Các thành phần khác theo nhu cầu và điều kiện thực tế, bảo đảm khả năng tiếp cận dịch vụ số cho mọi đối tượng.
+Các thành phần KTT khác tại địa bàn miền núi, biên giới, hải đảo được triển khai theo nhu cầu thực tế, điều kiện địa lý, đặc điểm dân cư, khả năng kết nối và mục tiêu bao trùm số.
+Việc triển khai KTT25 phải ưu tiên tính dễ tiếp cận, dễ sử dụng, có hỗ trợ trực tiếp, phù hợp với văn hóa, ngôn ngữ, điều kiện địa bàn và khả năng duy trì vận hành lâu dài.
+2. Thành phần Đo lường hiệu quả (ĐLHQ)
+2.1. Thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp
+a) ĐLHQ1: Thành phần ĐLHQ dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc tổng thể quốc gia số
+Thành phần này bao gồm các công cụ chỉ đạo, điều hành như các bảng thông tin điều hành (Dashboard) giám sát, điều hành quốc gia, ngành, lĩnh vực và các công cụ đo lường dùng chung khác theo Khung kiến trúc tổng thể quốc gia số.
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác, tích hợp, phân quyền và hướng dẫn cấp xã sử dụng các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp theo phạm vi được giao.
+Ủy ban nhân dân cấp xã khai thác thông tin, chỉ số, bảng thông tin điều hành được phân quyền để phục vụ theo dõi tình hình, chỉ đạo, điều hành và cải thiện chất lượng phục vụ tại địa phương.
+Việc khai thác ĐLHQ1 phải bảo đảm sử dụng đúng nguồn dữ liệu, đúng phạm vi, không tự ý điều chỉnh, trích xuất, công bố hoặc sử dụng dữ liệu ngoài thẩm quyền.
+b) ĐLHQ2: Khung giám sát và đo lường kết quả (KPIs) và các thành phần đo lường khác theo quy định
+Khung giám sát và đo lường kết quả và các thành phần đo lường khác theo quy định được sử dụng để theo dõi kết quả triển khai, mức độ sử dụng hệ thống, chất lượng phục vụ, hiệu quả vận hành và các nội dung khác theo thẩm quyền.
+Ủy ban nhân dân cấp tỉnh hướng dẫn cấp xã cập nhật, khai thác, sử dụng dữ liệu phục vụ đo lường theo quy định của cấp có thẩm quyền.
+Ủy ban nhân dân cấp xã có trách nhiệm cập nhật đầy đủ, chính xác, kịp thời dữ liệu phát sinh trên các hệ thống thông tin, nền tảng số; khai thác kết quả đo lường để rà soát, cải thiện chất lượng phục vụ và hiệu quả triển khai tại địa phương.
+Việc triển khai ĐLHQ2 trong Tài liệu này chỉ nhằm phục vụ khai thác thành phần đo lường thuộc kiến trúc; việc đánh giá, xếp hạng hoặc công nhận mức độ chuyển đổi số cấp xã thực hiện theo Khung tiêu chí và phương pháp đánh giá, xét công nhận mức độ chuyển đổi số cấp xã do Bộ Khoa học và Công nghệ ban hành.
+c) ĐLHQ3: Các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp khác
+Các thành phần ĐLHQ dùng chung khác do cấp Trung ương cung cấp được triển khai, khai thác theo hướng dẫn của cơ quan chủ quản.
+Ủy ban nhân dân cấp tỉnh tổ chức hướng dẫn, phân quyền và hỗ trợ cấp xã khai thác khi có yêu cầu.
+Ủy ban nhân dân cấp xã sử dụng các thành phần này đúng mục đích, đúng phạm vi được phân quyền; phản ánh khó khăn, vướng mắc trong quá trình khai thác để cấp tỉnh tổng hợp, xử lý.
+2.2. Thành phần ĐLHQ dùng chung do cấp tỉnh cung cấp
+a) ĐLHQ4: Khai thác các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp
+Ủy ban nhân dân cấp tỉnh tổ chức khai thác các thành phần ĐLHQ dùng chung do cấp Trung ương cung cấp, tích hợp với dữ liệu và hệ thống điều hành của địa phương để phục vụ theo dõi, chỉ đạo, điều hành triển khai Mô hình tại cấp xã.
+Ủy ban nhân dân cấp xã khai thác các thành phần này thông qua tài khoản, phân quyền, bảng thông tin hoặc báo cáo do cấp tỉnh cung cấp.
+Việc triển khai ĐLHQ4 phải bảo đảm thống nhất dữ liệu giữa cấp xã, cấp tỉnh và cấp Trung ương; hạn chế tổng hợp thủ công, trùng lặp hoặc báo cáo không đồng nhất giữa các hệ thống.
+b) ĐLHQ5: Thành phần ĐLHQ dùng chung giữa các cơ quan trong hệ thống chính trị theo Khung kiến trúc số cấp tỉnh
+Thành phần này bao gồm bảng thông tin điều hành (Dashboard) giám sát, điều hành cấp tỉnh và các công cụ đo lường, giám sát, tổng hợp dữ liệu khác theo Khung kiến trúc số cấp tỉnh.
+Ủy ban nhân dân cấp tỉnh tổ chức xây dựng, quản lý, vận hành hoặc thuê dịch vụ ĐLHQ5; bảo đảm cấp xã được phân quyền khai thác các chỉ số, dữ liệu, báo cáo phù hợp với nhiệm vụ quản lý tại địa bàn.
+Ủy ban nhân dân cấp xã khai thác ĐLHQ5 để theo dõi tình hình xử lý hồ sơ, sử dụng dịch vụ công trực tuyến, phản ánh kiến nghị, cập nhật dữ liệu, tương tác với người dân, mức độ hài lòng và các nội dung khác theo hướng dẫn của cấp tỉnh.
+Việc triển khai ĐLHQ5 phải bảo đảm:
+- Dữ liệu được lấy từ hệ thống thông tin, nền tảng số, kênh tương tác và nguồn dữ liệu dùng chung;
+- Có cơ chế phân quyền rõ ràng theo cấp, lĩnh vực, địa bàn;
+- Có khả năng cảnh báo, tổng hợp, phân tích phục vụ điều hành;
+- Không tạo thêm hệ thống báo cáo thủ công nếu đã có dữ liệu tự động.
+c) ĐLHQ6: Thành phần ĐLHQ dùng chung do cấp tỉnh cung cấp khác
+Các thành phần ĐLHQ dùng chung khác do cấp tỉnh cung cấp được triển khai theo nhu cầu quản lý, điều hành và điều kiện thực tế của địa phương.
+Ủy ban nhân dân cấp tỉnh thông báo danh mục, phạm vi khai thác, chỉ số, nguồn dữ liệu, chu kỳ cập nhật và đầu mối hỗ trợ đối với các thành phần ĐLHQ này.
+Ủy ban nhân dân cấp xã khai thác, sử dụng theo phân quyền; phối hợp cập nhật dữ liệu đầu vào, kiểm tra tính hợp lý của dữ liệu và phản ánh vướng mắc trong quá trình sử dụng.
+2.3. Thành phần ĐLHQ thiết yếu triển khai tại cấp xã
+a) ĐLHQ7: Khai thác các thành phần ĐLHQ dùng chung do cấp Trung ương, cấp tỉnh cung cấp.
+Ủy ban nhân dân cấp xã tổ chức khai thác, sử dụng các thành phần đo lường hiệu quả (ĐLHQ) dùng chung do cấp Trung ương và cấp tỉnh cung cấp để phục vụ theo dõi, giám sát, đánh giá kết quả triển khai chuyển đổi số và hỗ trợ chỉ đạo, điều hành tại địa phương.
+Việc triển khai ĐLHQ7 phải bảo đảm:
+- Sử dụng thống nhất các công cụ đo lường, bảng thông tin điều hành (Dashboard), hệ thống báo cáo và các thành phần ĐLHQ dùng chung theo phân cấp;
+- Khai thác dữ liệu đo lường được tổng hợp tự động từ các hệ thống thông tin, nền tảng số; hạn chế tối đa việc tổng hợp, báo cáo thủ công;
+- Bảo đảm dữ liệu đầu vào đầy đủ, chính xác, kịp thời, có nguồn gốc rõ ràng và được cập nhật trên các hệ thống dùng chung;
+- Sử dụng kết quả đo lường để theo dõi tiến độ, đánh giá hiệu quả triển khai, phát hiện tồn tại, hạn chế và phục vụ điều chỉnh trong quá trình tổ chức thực hiện;
+- Bảo đảm phân quyền truy cập, kiểm soát khai thác và an toàn thông tin đối với dữ liệu đo lường theo quy định.
+b) ĐLHQ8: Cập nhật, khai thác bảng thông tin điều hành (Dashboard) cấp tỉnh để theo dõi, đánh giá và phục vụ chỉ đạo, điều hành tại địa phương
+Ủy ban nhân dân cấp xã có trách nhiệm cập nhật dữ liệu phát sinh từ hoạt động quản lý, điều hành, xử lý thủ tục hành chính, phản ánh kiến nghị, cung cấp dịch vụ số và các hệ thống liên quan theo hướng dẫn của cấp tỉnh.
+Ủy ban nhân dân cấp xã khai thác bảng thông tin điều hành cấp tỉnh để theo dõi tình hình triển khai, phát hiện vấn đề, chỉ đạo xử lý, điều chỉnh cách thức phục vụ và nâng cao hiệu quả vận hành tại địa phương.
+Việc triển khai ĐLHQ8 phải bảo đảm:
+- Dữ liệu đầu vào được cập nhật đầy đủ, chính xác, kịp thời;
+- Cán bộ được phân quyền sử dụng dashboard phù hợp với nhiệm vụ;
+- Chỉ số, dữ liệu hiển thị được sử dụng phục vụ điều hành, không chỉ phục vụ báo cáo hình thức;
+- Phản ánh kịp thời sai lệch dữ liệu, thiếu dữ liệu hoặc lỗi hiển thị để cấp tỉnh xử lý.
+c) ĐLHQ9: Khảo sát mức độ hài lòng
+Khảo sát mức độ hài lòng được triển khai nhằm ghi nhận ý kiến của người dân, doanh nghiệp đối với chất lượng phục vụ, mức độ thuận tiện, khả năng tiếp cận dịch vụ số và hiệu quả hỗ trợ tại cấp xã.
+Việc triển khai ĐLHQ9 phải bảo đảm:
+- Khảo sát được thực hiện thông qua kênh điện tử, tại Trung tâm Phục vụ hành chính công cấp xã, qua Cổng Dịch vụ công quốc gia, hệ thống cấp tỉnh hoặc kênh phù hợp khác;
+- Nội dung khảo sát ngắn gọn, dễ hiểu, phù hợp với từng nhóm đối tượng;
+- Dữ liệu khảo sát được tổng hợp, phân tích, khai thác để cải thiện chất lượng phục vụ;
+- Bảo đảm khách quan, bảo vệ thông tin cá nhân và không gây phiền hà cho người dân, doanh nghiệp.
+d) ĐLHQ10: Thành phần ĐLHQ thiết yếu triển khai tại cấp xã khác
+Các thành phần ĐLHQ thiết yếu khác tại cấp xã được triển khai theo nhu cầu quản lý, điều hành, hướng dẫn của cấp tỉnh và điều kiện thực tế của địa phương.
+Việc triển khai ĐLHQ10 phải bảo đảm:
+- Có mục tiêu đo lường rõ ràng;
+- Có nguồn dữ liệu xác định;
+- Có phương thức cập nhật, tổng hợp, khai thác phù hợp;
+- Không làm phát sinh báo cáo thủ công, trùng lặp, không cần thiết;
+- Phục vụ trực tiếp việc cải thiện chất lượng phục vụ người dân, doanh nghiệp và hiệu quả quản lý tại địa bàn.
+Ghi chú: Việc tổ chức triển khai các nội dung tại Phụ lục này thực hiện theo phân công tại Phần IV của Tài liệu hướng dẫn.
