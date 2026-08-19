@@ -1,5 +1,7 @@
 # Project Review — Rightly (Hội đồng Round 10)
 
+> **Tài liệu lịch sử.** Đây là ý kiến review ở Round 10, không phải trạng thái chất lượng hiện tại.
+
 > **NHÁP — chờ T đọc, KHÔNG push.** Nguồn: `debate_output/round10.json`
 > (5 mô hình + OpenCode, phản biện chéo + rà soát toàn dự án, 08/08/2026).
 > Đối chiếu dữ liệu thật: 74 tests, preflight 9/9, eval R1–R4, demo

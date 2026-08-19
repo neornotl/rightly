@@ -1,5 +1,7 @@
 # Deployment strategy (đã chốt hướng — 08/08/2026)
 
+> **Quyết định theo thời điểm.** Tài liệu giữ bối cảnh lựa chọn trước đây; mọi triển khai mới phải xác minh backend, secret, contacts, corpus và gate hiện tại.
+
 ## QUYẾT ĐỊNH CỦA T (08/08/2026): CLOUD-FIRST + LOCAL LÀ PHƯƠNG ÁN CHUYÊN NGHIỆP
 
 - **Cloud (chính)**: nguồn vốn + giới hạn phần cứng team → chạy LLM cloud

@@ -1,5 +1,7 @@
 # Pilot protocol (draft — cần review bởi hội đồng trước khi triển khai)
 
+> **Bản nháp, chưa được phép tự động triển khai.** Trước pilot cần review consent, nguồn dữ liệu, kênh liên hệ, rule an toàn và toàn bộ pilot-readiness gates.
+
 ## Mục tiêu
 
 Đo khả năng hoàn thành task, thời gian, mức hài lòng và độ chính xác khi

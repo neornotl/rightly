@@ -1,4 +1,6 @@
-# Pilot-readiness gates (council round 27)
+# Pilot-readiness gates
+
+> **Gate kỹ thuật.** Test pass là điều kiện cần, không phải phê duyệt pilot/deployment. Những điều kiện về consent, nguồn, contact và vận hành cần xác nhận riêng.
 
 8 gate test từ kết luận của luna + m365 (round 27, `debate_output/round27.json`).
 Mục đích: **xác định sản phẩm đã đủ để mở pilot nội bộ (có consent form) chưa.**
@@ -10,7 +12,9 @@ Mục đích: **xác định sản phẩm đã đủ để mở pilot nội bộ
 Chạy nhanh (offline): BM25 corpus thật + MockLLM + MockTTS + validator thật.
 Không cần mạng, không cần API key.
 
-## Trạng thái hiện tại (17/08/2026)
+## Snapshot kết quả (17/08/2026)
+
+> Kết quả dưới đây không thay thế lần chạy gate mới. Hãy chạy lệnh ở trên và lưu output/commit/config khi cần xác nhận trạng thái hiện tại.
 
 `69 passed, 0 failed` (offline; lần đầu: 50 passed / 18 failed)
 

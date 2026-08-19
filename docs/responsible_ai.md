@@ -1,5 +1,7 @@
 # Responsible AI — Rightly
 
+> **Tài liệu kỹ thuật hiện hành.** Các control dưới đây là guard rail phần mềm, không phải chứng nhận an toàn, pháp lý hay tuân thủ độc lập.
+
 ## Ethics
 
 - Rightly **không phải cơ quan nhà nước**; mọi câu trả lời là tham khảo,
@@ -23,7 +25,7 @@
 
 | Nguồn bias | Mitigation (phase này / roadmap) |
 |---|---|
-| Corpus chỉ 1 nguồn demo | Nhãn DEMO, không dùng kết luận |
+| Corpus có thể thiếu, cũ hoặc không bao phủ tình huống | Registry hiệu lực, citation validation, từ chối khi thiếu evidence; vẫn cần data review |
 | Giọng nói vùng miền (ASR) | `accent_group` trong fixture WER; phải thu thập audio thật cho pilot |
 | Người cao tuổi / khó đọc | TTS chậm hơn, lặp lại, nguồn nói ra (spoken citation) |
 | Từ vựng hành chính đa nghĩa | AMBIGUOUS_QUERY → CLARIFY |
@@ -46,6 +48,6 @@
 
 ## Transparency
 
-- UI/CLI luôn hiển thị "DEMO - không phải kênh chính thức".
+- UI/CLI cần hiển thị rõ giới hạn và không được tự nhận là kênh chính thức.
 - Câu trả lời kèm spoken citation + limitations + next_step.
 - Báo cáo eval không bao giờ giả vờ là kết quả pilot.

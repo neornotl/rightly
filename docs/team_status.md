@@ -1,5 +1,7 @@
 # Daily Team Status
 
+> **Nhật ký lịch sử.** Đây không phải bảng điều hành công việc hiện hành; các trạng thái DONE/TODO bên dưới không được tự động suy ra là còn đúng.
+
 Cập nhật mỗi phiên làm việc. Mọi trạng thái dựa trên file/test/log/consent
 status/evidence thực tế — không suy đoán. Owner: [T] Technical, [C] Content/
 Compliance/Evaluation, [P] Pilot/Presentation/Partnership.

@@ -5,8 +5,7 @@
 Dự án đang ở giai đoạn PREPARATION/MVP (mock-first). Nếu bạn phát hiện lỗ hổng
 bảo mật — bao gồm rò rỉ dữ liệu, lộ secret, prompt injection làm sai lệch nguồn
 pháp luật, hoặc xử lý dữ liệu cá nhân không đúng cam kết trong
-`docs/privacy_deletion_policy.md` — hãy liên hệ người phụ trách đội ([T] trong
-`docs/team_status.md`) hoặc gửi qua GitHub Security Advisory (repo private).
+`docs/privacy_deletion_policy.md` — hãy dùng GitHub Security Advisory hoặc liên hệ maintainer hiện hành qua kênh riêng tư.
 
 Vui lòng **không** công khai lỗ hổng trước khi đội xác nhận và xử lý.
 

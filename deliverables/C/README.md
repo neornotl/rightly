@@ -1,4 +1,6 @@
-# Deliverables — Vai trò C (Content, Compliance & Evaluation)
+# Deliverables — Content, Compliance & Evaluation
+
+> **Danh sách quest lịch sử.** Giữ file này làm map artifact; không coi “chờ nộp” hay ưu tiên theo ngày dưới đây là backlog hiện hành.
 
 > Nộp các quest C1-C6 tại đây. Quy ước tên file + template: `deliverables/README.md`.
 

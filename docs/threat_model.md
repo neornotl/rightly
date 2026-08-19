@@ -1,4 +1,6 @@
-# Threat model — Rightly (preparation)
+# Threat model — Rightly
+
+> **Threat model làm việc.** Mức độ rủi ro thay đổi theo deployment, corpus và backend. Hãy review lại trước pilot hoặc khi tích hợp external service.
 
 Phạm vi: pipeline hiện tại (mock/local/cloud text-LLM). Mỗi mục: mô tả,
 mức độ (thấp/vừa/cao), mitigation hiện có, việc còn lại (T/C/P).
@@ -33,16 +35,14 @@ mức độ (thấp/vừa/cao), mitigation hiện có, việc còn lại (T/C/P)
 
 - **Mô tả**: thủ tục đã thay đổi nhưng corpus cũ → trả lời sai "tự tin".
 - **Mức**: vừa (cao với người già).
-- **Mitigation**: `published_date` trên metadata; hiển thị ngày nguồn trong
-  spoken citation; roadmap: refresh có duyệt + hiệu lực hết hạn.
+- **Mitigation**: registry `law_status.json` và `CitationValidator` chặn source đã có expiry; quy trình refresh/provenance vẫn cần người duyệt.
 - **TODO**: T/C/P: quy trình cập nhật nguồn chính thức.
 
 ## T5. Hallucinated citation
 
 - **Mô tả**: LLM tự bịa source_id/đoạn trích.
 - **Mức**: vừa.
-- **Mitigation**: `enforce_source_ids` (chặn ID lạ); citation chỉ từ metadata
-  chunks; test unit bắt buộc; mock path không dùng LLM sáng tạo.
+- **Mitigation**: pipeline kiểm citation thô với registry + evidence vừa truy xuất, rồi mới giữ citation hợp lệ; mock path không dùng LLM sáng tạo.
 - **TODO**: gemini/groq test fixture chứa prompt injection source_id.
 
 ## T6. Log leakage

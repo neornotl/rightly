@@ -1,5 +1,7 @@
 # T1 — Public deploy (Streamlit Cloud) không lộ secret — DONE (08/08/2026)
 
+> **Checklist lịch sử.** Không coi nhãn DONE là xác nhận public deployment còn hoạt động hoặc an toàn ở hiện tại.
+
 - **Owner**: T (công tác viên: OpenCode)
 - **Quest**: T1 · Deadline 12/08 · **Status: DONE** (chờ bước cuối của T: nối repo trên dashboard Streamlit)
 

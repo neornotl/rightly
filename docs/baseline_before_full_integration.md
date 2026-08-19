@@ -1,5 +1,7 @@
 # Baseline before full integration (overnight v4)
 
+> **Baseline lịch sử.** Snapshot trước đợt tích hợp; không phản ánh corpus, test suite hay cấu hình hiện tại.
+
 Recorded: 2026-08-07, before starting overnight full integration.
 Machine: Windows 10 (build 19045), Python 3.14.5, Intel Core i7-10510U (4C/8T, no GPU),
 15.81 GB RAM, free disk ~20.5 GB.

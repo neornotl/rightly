@@ -1,5 +1,7 @@
 # Demo script (mock)
 
+> **Kịch bản trình diễn.** Nội dung dưới đây dành cho mock/demo, không phải kịch bản tư vấn thật.
+
 Kịch bản demo 5 phút, chạy hoàn toàn mock — không key, không model, không
 mạng.
 

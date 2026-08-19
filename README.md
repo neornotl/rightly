@@ -1,165 +1,91 @@
-﻿# Rightly
+# Rightly
 
-Source-grounded, voice-first public-service access agent — hỗ trợ người dân
-(nhất là người cao tuổi, người khiếm thị, người khó đọc, người hạn chế kỹ
-năng số, và người bận rộn không có thời gian tự tra cứu) tra cứu thủ tục hành
-chính, quyền lợi công và quy định pháp luật (dân sự) bằng **tiếng Việt**, với
-câu trả lời **bám nguồn chính thống** và rào chắn an toàn rõ ràng.
+> Trợ lý hỏi đáp tiếng Việt, ưu tiên giọng nói, giúp người dân tiếp cận thông tin công và pháp luật bằng câu trả lời có căn cứ nguồn.
 
-> **Trạng thái: PREPARATION / MVP (mock-first).** Mọi kết quả hiện tại là
-> SYNTHETIC DEMO, không phải kết quả pilot.
+**Trạng thái:** MVP / preparation. Rightly không phải cơ quan nhà nước, không thay thế cán bộ, luật sư, bác sĩ hoặc dịch vụ khẩn cấp.
 
-## Problem
+## Bắt đầu từ đây
 
-Thông tin hành chính thường dạng văn bản dài, chữ nhỏ, ít kênh bằng giọng nói.
-Người cao tuổi / khiếm thị / khó đọc gặp rào cản lớn. Rightly cung cấp kênh
-hỏi-đáp bằng giọng nói, mỗi câu trả lời kèm nguồn, và **từ chối trả lời** khi
-không đủ nguồn tin cậy.
+| Bạn muốn làm gì? | Đọc / chạy |
+| --- | --- |
+| Hiểu hệ thống và các giới hạn | [Tổng quan kỹ thuật](docs/MASTER.md) · [Giới hạn](docs/limitations.md) |
+| Cài và chạy cục bộ | [Hướng dẫn cài đặt](docs/setup.md) |
+| Chạy giao diện web | `python -m streamlit run app/ui.py` |
+| Chạy chế độ demo | `python scripts/run_mock_demo.py` |
+| Kiểm tra chất lượng | `python -m pytest` · `python scripts/preflight.py` |
+| Hiểu dữ liệu và đánh giá | [Data card](docs/data_card.md) · [Evaluation protocol](docs/evaluation_protocol.md) |
 
-## Target users
+## Hệ thống làm gì?
 
-- Người cao tuổi nông thôn / thành thị.
-- Người khiếm thị, người khó đọc.
-- Người ít kỹ năng số.
-- Người bận rộn, không có thời gian đọc/tra cứu văn bản — gọi điện hỏi nhanh
-  về thủ tục, dân sự, quy định pháp luật như gọi hotline.
+Rightly nhận câu hỏi bằng chữ hoặc âm thanh, tìm các đoạn văn bản liên quan, áp dụng rào chắn an toàn rồi mới tạo và đọc câu trả lời.
 
-## Scope and non-goals
-
-**Trong phạm vi (phase này):**
-- Voice-first pipeline chạy local: ASR → chuẩn hóa → retrieval (RAG) →
-  LLM có nguồn → safety routing (VÀNG/CAM/ĐỎ) → TTS.
-- Mock mode chạy đầu-cuối không cần API key / model nặng.
-- Bộ đánh giá R1 (WER), R2 (Retrieval), R3 (Routing), R4 (Latency) với
-  fixture SYNTHETIC.
-- Giao diện CLI (state machine) + Streamlit UI tùy chọn.
-
-**Ngoài phạm vi (phase này):**
-- FreeSWITCH / SIP / callback tự động, đa ngôn ngữ, OpenVINO.
-- Tích hợp điện thoại/SIM (adapter tùy chọn sau).
-- Không dùng dữ liệu thật; không nhận PII ngoài câu hỏi cần thiết.
-
-## Architecture
-
-```
-Người dùng nói
-  → ASR (MockASR | PhoWhisper, local)
-  → normalize + phát hiện rủi ro (rule-based, trước LLM)
-  → retrieval (BM25 trên kho nguồn đã ingest)
-  → SafetyRouter (RED→ORANGE→scope→đủ nguồn→LLM classification tùy chọn)
-  → LLM tạo câu trả lời bám nguồn (MockLLM | Gemini | Groq)
-  → TTS (MockTTS | Edge-TTS)
-  → human-in-the-loop / chuyển kênh chính thức khi cần
+```text
+Văn bản / âm thanh
+  → ASR (nếu có âm thanh)
+  → chuẩn hóa và truy xuất nguồn
+  → safety router
+  → FAQ đã biên soạn hoặc LLM
+  → kiểm tra trích dẫn và hiệu lực
+  → TTS / giao diện
 ```
 
-Chi tiết: `docs/architecture.md`.
+Quy tắc quan trọng: nếu thiếu nguồn, trích dẫn không hợp lệ, hoặc câu hỏi thuộc tình huống rủi ro, hệ thống phải hỏi lại, từ chối hoặc chuyển hướng — không đoán.
 
-## Quick start (mock mode — không cần key, không tải model)
+## Chế độ chạy
+
+| Chế độ | Mục đích | Thành phần mặc định |
+| --- | --- | --- |
+| `mock` | Phát triển và demo không cần key | Mock ASR, BM25, Mock LLM, Mock TTS |
+| `local` | Chạy LLM tại máy qua server tương thích OpenAI/Ollama | BM25 hoặc hybrid, Local LLM |
+| `cloud` | Dùng Gemini, Groq hoặc Pateway | Query được scrub PII trước khi gửi ra ngoài |
+
+Các backend được chọn trong `.env`; xem `.env.example` và [Setup](docs/setup.md). Audio thô không được gửi tới LLM cloud.
+
+## Chạy nhanh trên Windows
 
 ```powershell
-# Windows PowerShell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-dev.txt
-.\.venv\Scripts\python.exe scripts/ingest_documents.py
-.\.venv\Scripts\python.exe scripts/run_mock_demo.py
+.\.venv\Scripts\python.exe scripts\run_mock_demo.py
 ```
 
-Unix (make): `make setup && make mock-demo`.
-
-Demo dữ liệu là **DEMO/SYNTHETIC** (xã Bình Minh hư cấu) — không phải hướng
-dẫn hành chính thật.
-
-## Local / cloud mode
-
-- `ASR_BACKEND=phowhisper`: cần `pip install faster-whisper` + chủ động tải
-  model (xem `docs/hardware_benchmark_plan.md`).
-- `LLM_BACKEND=gemini|groq|pateway`: cần API key trong `.env` (`GEMINI_API_KEY`,
-  `GROQ_API_KEY`, `PATEWAY_API_KEY`). Chỉ transcript + chunks được gửi; không gửi audio.
-- `LLM_BACKEND=local`: **100% offline** — Ollama (hoặc server OpenAI-compatible
-  bất kỳ), mặc định `qwen2.5:7b-instruct-q4_k_m` (quyết định hội đồng round 26); một lần `ollama pull qwen2.5:7b-instruct-q4_k_m` rồi chạy không
-  mạng. Kiểm tra nhanh: `python scripts/check_local_llm.py`. Xem
-  `docs/offline_runbook.md` (có hướng dẫn cho PC RTX 3060 Ti 8GB).
-- `TTS_BACKEND=edge`: cần `edge-tts`, cần mạng lúc chạy.
-- `APP_MODE=cloud`: bật thêm LLM classification trong router (vẫn bị rule
-  RED/ORANGE ghi đè).
-
-Setup chi tiết: `docs/setup.md`.
-
-### One-click local pilot (Windows)
-
-After the one-time `scripts\offline_setup.bat`, double-click
-`scripts\run_local_pilot.bat`. It starts Ollama if needed, verifies the local
-model, launches Streamlit with local-only settings, and automatically records
-the runtime manifest, one-time local benchmark, session traces and latency
-under `logs/` and `results/`. It never falls back to cloud. Export consenting
-pilot metrics separately with `python scripts/log_pilot_metrics.py --export`.
-
-## Data structure
-
-```
-data/
-├── sources/            # markdown nguồn (DEMO/SYNTHETIC)
-├── chunks/             # chunks JSONL (sinh bởi ingest)
-├── metadata.csv
-├── eval/               # fixture dev/test cho R2, R3
-└── schemas/            # JSON schema cho source & eval cases
-```
-
-Xem `docs/data_card.md` và `docs/evaluation_dataset_card.md`.
-
-## Evaluation (R1-R4)
+Để mở UI, cài Streamlit (đã có trong `requirements.txt`) rồi chạy:
 
 ```powershell
-python -m eval.run_all            # chạy tất cả, ghi results/
-python -m eval.wer --input data/eval/wer_dev.jsonl
-python -m eval.retrieval --input data/eval/retrieval_test.jsonl
-python -m eval.routing --input data/eval/routing_test.jsonl
-python -m eval.latency --input data/eval/latency_dev.jsonl
+.\.venv\Scripts\python.exe -m streamlit run app/ui.py
 ```
 
-Output tại `results/`: `*_results.csv`, `*_summary.json`,
-`evaluation_report.md` — tất cả ghi chú **SYNTHETIC DEMO - NOT PILOT RESULTS**.
+## Dữ liệu, an toàn và quyền riêng tư
 
-## Privacy and safety
+- Corpus runtime hiện là `data/chunks/real_chunks.jsonl`; registry hiệu lực là `data/law_status.json`.
+- FAQ là nội dung được biên soạn, nhưng vẫn được gắn nguồn và truy xuất lại evidence trước khi trả lời.
+- Audio trong `DATA_DIR` được xóa sau xử lý khi `DELETE_RAW_AUDIO_AFTER_SESSION=true`.
+- Transcript không được lưu mặc định. Log được scrub theo heuristic; đây không phải cam kết ẩn danh tuyệt đối.
+- Các số liên hệ/kênh chính thức chỉ được hiển thị khi đã được xác minh trong `data/contacts.json`.
 
-- Không gửi audio lên cloud ở thiết kế mặc định.
-- Log ẩn danh (session ID ngẫu nhiên), transcript không lưu trừ khi
-  `SAVE_TRANSCRIPTS=true`; xóa raw audio sau phiên.
-- `scripts/scrub_logs.py` — scrub heuristic (email/điện thoại/ID dài); không
-  phải thay thế xóa dữ liệu pháp lý.
-- Không hard-code số điện thoại khẩn cấp chưa xác minh; dùng placeholder
-  trong config.
-- Xem `docs/responsible_ai.md`, `docs/privacy_deletion_policy.md`,
-  `docs/threat_model.md`.
+Đọc thêm: [Responsible AI](docs/responsible_ai.md), [chính sách xóa dữ liệu](docs/privacy_deletion_policy.md), [threat model](docs/threat_model.md).
 
-## Quality gates
+## Cấu trúc repository
 
-```powershell
-python -m pytest                # test
-python -m ruff check .          # lint
-python -m ruff format --check . # format
-python scripts/validate_data.py # dữ liệu
-python scripts/preflight.py     # toàn bộ (test+lint+demo+eval+secret scan)
+```text
+app/            pipeline, UI, safety, retrieval, adapter ASR/LLM/TTS
+data/           chunks, FAQ, registry hiệu lực, dữ liệu đánh giá
+docs/           tài liệu hiện hành và tài liệu lịch sử có nhãn
+eval/           metric và runner đánh giá
+scripts/        ingest, kiểm tra, benchmark, utility và artifact nghiên cứu
+tests/           unit test và pilot-readiness gates
+legal-sources/  văn bản nguồn thô, không phải đường chạy runtime trực tiếp
 ```
 
-## Limitations
+## Tài liệu theo vai trò
 
-- Rule an toàn là heuristic, cần review bởi chuyên gia tiếng Việt.
-- BM25 không hiểu ngữ nghĩa; chưa có embedding/rerank.
-- Không dùng confidence score (chưa có calibration).
-- Xem đầy đủ: `docs/limitations.md`.
+- Kỹ thuật: [Master](docs/MASTER.md), [Architecture](docs/architecture.md), [Setup](docs/setup.md).
+- Dữ liệu/evaluation: [Data card](docs/data_card.md), [Dataset card](docs/evaluation_dataset_card.md), [Protocol](docs/evaluation_protocol.md).
+- Vận hành: [Deployment](docs/deployment_strategy.md), [Pilot](docs/pilot_protocol.md), [Gates](gates/README.md).
+- An toàn: [Responsible AI](docs/responsible_ai.md), [Privacy](docs/privacy_deletion_policy.md), [Threat model](docs/threat_model.md).
 
-## Project status
-
-| Hạng mục | Trạng thái |
-|---|---|
-| Mock vertical slice | DONE |
-| Adapter PhoWhisper / Gemini / Groq / Edge-TTS | DONE (lazy, chưa pilot) |
-| Streamlit UI | DONE (tùy chọn) |
-| Eval R1-R4 (synthetic) | DONE |
-| Pilot (8-10 người) | TODO — `docs/pilot_protocol.md` |
-| Deployment | TODO — `docs/deployment_strategy.md` |
+Các file có ngày, tên “baseline”, “report”, “review”, “council” hoặc “checklist” là artifact lịch sử; không nên dùng chúng làm hướng dẫn vận hành mà không đối chiếu code và cấu hình hiện tại.
 
 ## License
 
-MIT — xem `LICENSE`.
+MIT — xem [LICENSE](LICENSE).

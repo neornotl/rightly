@@ -1,5 +1,7 @@
 # Question Taxonomy — Tiếng Làng v4.0
 
+> **Taxonomy làm việc.** Đây là khung phân loại hỗ trợ thiết kế/evaluation, không thay thế taxonomy đang được thực thi trong `app/safety/rules.py` và `app/safety/router.py`.
+
 Generated: 2026-08-09 · For 10k Benchmark Generation (Phase C)
 
 ---

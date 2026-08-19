@@ -1,5 +1,7 @@
 # Template deliverable — Rightly
 
+> Dùng template này cho artifact mới. Không ghi secret, PII, audio thô hoặc claim chưa có evidence.
+
 > Copy file này, đổi tên theo quy ước `deliverables/README.md`, xoá dòng này.
 
 ```markdown

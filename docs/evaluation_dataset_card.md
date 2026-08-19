@@ -1,5 +1,7 @@
 # Evaluation dataset card (R1-R4 fixtures)
 
+> **Fixture evaluation.** File này mô tả dữ liệu đánh giá có trong `data/eval/`; fixture kiểm tra metric/logic, không tự đại diện cho hiệu năng người dùng thật.
+
 > Tất cả fixture trong `data/eval/` là **SYNTHETIC DEMO - NOT PILOT RESULTS**.
 
 ## R1 — WER (`data/eval/wer_dev.jsonl`)

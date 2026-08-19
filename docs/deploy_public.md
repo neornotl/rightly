@@ -1,5 +1,7 @@
 # Deploy public (F3) — 09/08/2026
 
+> **Runbook lịch sử.** Các URL, mốc, quota và checklist ở đây không được xác nhận còn hiệu lực. Dùng [deployment strategy](deployment_strategy.md), `.streamlit/secrets.toml.example` và cấu hình hiện tại để chuẩn bị deploy mới.
+
 Mục tiêu 12/08: **public link chính (Streamlit Cloud) + link backup (HF
 Spaces)**. Chỉ còn việc nhấn nút khi: T xong key rotation (F4) + FAQ (F5) +
 P xác minh SĐT (contacts.json verified=true) + C giao corpus bổ sung.

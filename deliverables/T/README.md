@@ -1,4 +1,6 @@
-# Deliverables — Vai trò T (Technical — chủ: T, công tác viên: OpenCode)
+# Deliverables — Technical
+
+> **Trạng thái lịch sử.** Bảng quest và các kết quả smoke test dưới đây là snapshot; chạy lại test/preflight trước khi dựa vào chúng.
 
 > Nộp các quest T1-T5 tại đây. Quy ước tên file + template: `deliverables/README.md`.
 

@@ -1,5 +1,7 @@
 # Assumptions and Decisions (Phase 0)
 
+> **Quyết định lịch sử.** Máy, thư mục làm việc, dependency và phạm vi mô tả bên dưới là snapshot phase 0; code/config hiện tại mới là nguồn sự thật.
+
 This document records environment findings and design decisions made during
 preparation. Everything here is subject to review before pilot deployment.
 

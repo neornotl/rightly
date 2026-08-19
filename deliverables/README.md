@@ -1,8 +1,9 @@
-# Deliverables — Nơi nộp sản phẩm của team
+# Deliverables — nơi lưu artifact theo vai trò
+
+> **Lưu ý trạng thái:** các quest, deadline và bảng “chờ nộp” bên dưới là kế hoạch lịch sử. Chỉ dùng quy ước đặt tên, privacy và evidence; kiểm tra task tracker hiện hành trước khi tạo deliverable mới.
 
 > Mỗi thành viên nộp kết quả quest của mình vào đúng thư mục vai trò:
-> `deliverables/C/` (Content & Compliance) · `deliverables/P/` (Pilot & Partnership).
-> Đối chiếu quest + deadline: `QUESTS.md`. Đánh giá tiến độ: `docs/team_status.md`.
+> `deliverables/C/` (Content & Compliance) · `deliverables/P/` (Pilot & Partnership) · `deliverables/T/` (Technical).
 
 ## Quy ước nộp (bắt buộc)
 
@@ -14,8 +15,7 @@
 4. **Không nộp**: API key, mật khẩu, SĐT thật, audio/video chưa có consent.
    File chứa dữ liệu cá nhân phải để ẩn danh (`data/contacts.json` giữ nguyên,
    KHÔNG copy vào đây).
-5. Nộp qua commit (nhánh `master`) hoặc nhờ OpenCode hỗ trợ commit hộ — ghi rõ
-   "nộp hộ C/P" trong message.
+5. Nộp qua commit/PR theo quy trình dự án; ghi rõ owner, phạm vi và bằng chứng.
 
 ## Checklist tối thiểu trước khi nộp
 

@@ -1,5 +1,7 @@
 # Question Source Catalog — Tiếng Làng v4.0
 
+> **Catalog tham chiếu.** Nguồn câu hỏi và nhãn bên dưới cần được kiểm tra lại trước khi dùng để đo chất lượng hoặc tạo claim bên ngoài repository.
+
 Generated: 2026-08-09 · For 10k Benchmark Generation (Phase B)
 
 ---

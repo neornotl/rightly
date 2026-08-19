@@ -1,5 +1,7 @@
 # Rubric evidence matrix (VAIIF26)
 
+> **Ma trận tham chiếu.** Mỗi liên kết/bằng chứng cần được kiểm tra lại ở thời điểm nộp hoặc đánh giá; không tự xem là claim đã được chứng minh.
+
 Ánh xạ từng tiêu chí đánh giá dự án tới: Claim / Evidence / Status /
 Owner (T=Team, C=Community, P=Project lead) / Risk.
 

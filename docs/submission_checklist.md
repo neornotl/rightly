@@ -1,5 +1,7 @@
 # Submission Checklist — Intel Vietnam AI Impact Festival 2026 (VAIIF26) (≥45/50, hạn 25/08/2026)
 
+> **Checklist theo đợt nộp cũ.** Deadline, điểm mục tiêu và trạng thái checkbox phải được xác minh độc lập trước khi sử dụng lại.
+
 Mục tiêu Gate D. Mọi mục đánh status theo quy tắc role.md: TODO /
 IN_PROGRESS / BLOCKED / READY_FOR_HUMAN_REVIEW / VERIFIED / DONE.
 OpenCode chỉ được phép đánh READY_FOR_HUMAN_REVIEW, không tự DONE các mục

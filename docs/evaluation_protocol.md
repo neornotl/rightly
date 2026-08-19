@@ -1,5 +1,7 @@
 # Evaluation protocol (R1-R4)
 
+> **Protocol kỹ thuật.** Chỉ báo cáo kết quả kèm input, commit/config và watermark phù hợp. Không gộp fixture synthetic với phép đo pilot/production.
+
 ## Nguyên tắc
 
 1. Mọi kết quả demo ghi watermark **SYNTHETIC DEMO - NOT PILOT RESULTS**.

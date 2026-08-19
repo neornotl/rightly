@@ -1,5 +1,7 @@
 # Hardware benchmark plan
 
+> **Kế hoạch đo, không phải kết quả đo.** Chỉ công bố số liệu từ output benchmark có thể truy vết; thông số máy và giả định trong file này có thể đã cũ.
+
 Mục tiêu: đo latency + bộ nhớ thật của pipeline trên laptop chuẩn (general)
 và máy Intel AI PC (nếu có) — **trước khi** chọn model PhoWhisper và trước
 khi pilot.

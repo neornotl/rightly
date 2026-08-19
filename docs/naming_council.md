@@ -1,5 +1,7 @@
 # Hội Đồng Đặt Tên — Rightly
 
+> **Artifact lịch sử.** Quyết định đặt tên không quyết định hành vi kỹ thuật; tên hiển thị hiện hành cần đối chiếu `README.md`, `app/ui.py` và metadata package.
+
 **Ngày:** 2026-08-09  
 **Bối cảnh:** Chuẩn bị nộp Intel Vietnam AI Impact Festival 2026 (VAIIF26) — bảng Học sinh 13-17  
 **Mục tiêu:** Đã chốt tên **Rightly** — ghi lại quá trình hội đồng để tham khảo.

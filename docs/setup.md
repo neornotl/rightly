@@ -1,71 +1,73 @@
-# Setup guide
+# Cài đặt và chạy Rightly
 
-## Requirements
+## Điều kiện
 
-- Python >= 3.10 (tested on 3.14 / Windows 10; Ubuntu CI assumed ≥ 3.11).
-- Internet chỉ cần để cài package; **mock mode chạy offline hoàn toàn**.
+- Python 3.10 trở lên.
+- Chế độ `mock` chỉ cần dependency trong `requirements.txt`.
+- Các backend cloud/local/ASR thật có dependency và cấu hình bổ sung.
 
-## 1. Create environment
+## 1. Tạo môi trường
 
 ```powershell
-# Windows PowerShell
 python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-dev.txt
 ```
 
-Unix:
+Trên macOS/Linux, thay đường dẫn Python bằng `.venv/bin/python`; có thể dùng `make setup`.
 
-```bash
-make setup   # = venv + install requirements.txt + requirements-dev.txt
-```
-
-## 2. Optional adapters
-
-```powershell
-pip install -r requirements-optional.txt
-```
-
-| Adapter | Package | Ghi chú |
-|---|---|---|
-| PhoWhisper ASR | `faster-whisper` | model tải lúc runtime, chủ động chọn |
-| Gemini LLM | `google-genai` | cần `GEMINI_API_KEY` |
-| Groq LLM | `groq` | cần `GROQ_API_KEY` |
-| Edge-TTS | `edge-tts` | cần mạng lúc chạy |
-| Streamlit UI | `streamlit` | `streamlit run app/ui.py` |
-
-## 3. Environment file
+## 2. Tạo cấu hình local
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-Điền key (nếu dùng cloud). `.env` đã bị `.gitignore` — **không bao giờ**
-commit file này. Mặc định (`APP_MODE=mock`) không cần `.env` gì cả.
+Mặc định trong `.env.example` là `mock`; không cần API key. Không commit `.env` hoặc `.streamlit/secrets.toml`.
 
-## 4. Ingest demo data
+Các lựa chọn hợp lệ hiện được validate trong `app/config.py`:
 
-```powershell
-python scripts/ingest_documents.py
-python scripts/validate_data.py
-```
+| Biến | Giá trị |
+| --- | --- |
+| `APP_MODE` | `mock`, `local`, `cloud` |
+| `ASR_BACKEND` | `mock`, `phowhisper` |
+| `RETRIEVAL_BACKEND` | `bm25`, `hybrid` |
+| `LLM_BACKEND` | `mock`, `gemini`, `groq`, `pateway`, `local` |
+| `TTS_BACKEND` | `mock`, `edge` |
 
-## 5. Run
-
-```powershell
-python scripts/run_mock_demo.py                 # demo đầu-cuối (mock)
-python -m app.cli                               # CLI tương tác
-python -m eval.run_all                          # eval R1-R4
-python scripts/preflight.py                     # toàn bộ quality gate
-python -m streamlit run app/ui.py               # UI (nếu cài streamlit)
-```
-
-## Windows note
-
-`make` thường không có sẵn; dùng các lệnh `python` tương đương ở trên.
-Makefile vẫn được giữ cho CI/Unix.
-
-## Kiểm tra môi trường
+## 3. Chạy
 
 ```powershell
-python scripts/check_environment.py
+# Demo text end-to-end
+.\.venv\Scripts\python.exe scripts\run_mock_demo.py
+
+# CLI tương tác
+.\.venv\Scripts\python.exe -m app.cli
+
+# Giao diện Streamlit
+.\.venv\Scripts\python.exe -m streamlit run app/ui.py
 ```
+
+`scripts/ingest_documents.py` chỉ cần khi chủ động tái tạo demo chunks. Không chạy nó nếu mục tiêu là giữ nguyên corpus runtime hiện có.
+
+## 4. Backend tùy chọn
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-optional.txt
+```
+
+| Nhu cầu | Việc cần thêm |
+| --- | --- |
+| PhoWhisper | cài `faster-whisper`, tải model có chủ đích, đặt `ASR_BACKEND=phowhisper` |
+| Groq / Gemini / Pateway | đặt backend tương ứng và key trong `.env` hoặc secrets |
+| Local LLM | chạy Ollama/OpenAI-compatible server, đặt `LLM_BACKEND=local` và `OLLAMA_*` |
+| Hybrid retrieval | cài stack embedding cần thiết; nếu thiếu app tự về BM25 |
+
+## 5. Kiểm tra trước khi chia sẻ
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe scripts\validate_data.py
+.\.venv\Scripts\python.exe scripts\preflight.py
+```
+
+Không coi một lần chạy green là chứng nhận production. Trước pilot/deploy, xem [gates](../gates/README.md), [privacy](privacy_deletion_policy.md) và [deployment strategy](deployment_strategy.md).

@@ -1,5 +1,7 @@
 # Đánh giá mức độ tương thích — Tiếng Làng v4.0 × Intel Vietnam AI Impact Festival 2026
 
+> **Đánh giá lịch sử.** Đây không phải bằng chứng rằng dự án hiện đáp ứng bất kỳ tiêu chí hay deadline nào.
+
 Ngày: 08/08/2026 · Tác giả: OpenCode (tổng hợp dữ liệu verified + rubric chính thức +
 kết quả Round 13) · Đọc cùng: docs/competition_aiif26.md, docs/rubric_evidence_matrix.md
 

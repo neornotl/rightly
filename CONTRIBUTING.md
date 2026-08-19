@@ -1,5 +1,7 @@
 # Contributing
 
+> Quy trình đóng góp ưu tiên tính đúng của nguồn, safety và privacy. Các phân vai/quest theo ngày trong tài liệu lịch sử không thay thế review của người chịu trách nhiệm hiện tại.
+
 Cảm ơn bạn quan tâm đóng góp cho **Rightly**. Đọc kỹ mục này trước khi
 gửi thay đổi — repo là dự án có vai trò rõ ràng ([T]/[C]/[P], xem
 `docs/team_status.md` và `QUESTS.md`).
@@ -20,15 +22,15 @@ gửi thay đổi — repo là dự án có vai trò rõ ràng ([T]/[C]/[P], xem
 
 ## Luồng đóng góp
 
-1. Xem `QUESTS.md` + `docs/submission_checklist.md` chọn quest chưa có ai làm.
-2. Nhánh mới: `git checkout -b quest/<tên-quest>`.
+1. Xác nhận phạm vi và owner của thay đổi.
+2. Nhánh mới: dùng tên mô tả, ví dụ `codex/docs-refresh`.
 3. Code theo chuẩn:
    - `ruff check .` sạch.
-   - `python -m pytest tests/ -q` — toàn bộ test xanh (hiện 74+).
-   - `python scripts/preflight.py` — 9/9.
+   - `python -m pytest` — toàn bộ test phải xanh.
+   - `python scripts/preflight.py` — chạy khi thay đổi có thể ảnh hưởng deploy.
    - Không thêm secret; giữ `.env`/`data/private_cache/` ngoài git.
-4. Cập nhật tài liệu tương ứng (MASTER, team_status, data card nếu đụng dữ liệu).
-5. Commit ngắn gọn theo phong cách repo, push, mở PR lên `master`.
+4. Cập nhật tài liệu hiện hành tương ứng (`README`, `docs/MASTER`, data card khi đụng dữ liệu).
+5. Commit ngắn gọn, nêu rõ verification đã chạy; mở PR theo branch policy hiện hành.
 
 ## Quy tắc dữ liệu & riêng tư
 

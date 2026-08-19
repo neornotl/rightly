@@ -1,5 +1,7 @@
 # QUEST — Rightly (Cập nhật: 08/08/2026, thứ 7)
 
+> **Backlog lịch sử.** Các mục trong file này có thể đã hoàn thành, thay đổi ưu tiên hoặc không còn phù hợp. Xác minh bằng issue/task hiện hành và mã nguồn trước khi triển khai.
+
 > Đây là "bảng quest" chung cho cả team: ai làm gì, khi nào, giao gì cho ai.
 > Chi tiết: `docs/team_status.md`, `docs/submission_checklist.md`.
 > **Quy tắc**: OpenCode (công tác viên của T) KHÔNG làm thay C/P; C/P nhờ khi

@@ -1,4 +1,6 @@
-# Privacy & deletion policy
+# Chính sách privacy và xóa dữ liệu
+
+> **Tài liệu kỹ thuật hiện hành.** Chính sách này mô tả hành vi code mặc định; deployment thực tế còn cần quy trình quyền truy cập, retention và consent được phê duyệt riêng.
 
 ## What we collect / not collect
 
@@ -11,15 +13,17 @@
 | Session ID (random) | Log JSONL | Phân biệt phiên, cho phép xóa |
 | Metadata latency/routing | Log JSONL | Đánh giá |
 
-**NOT collect:**
+**Không chủ đích thu thập:**
 
-- Tên, địa chỉ, email, SĐT, CCCD, vị trí GPS của người dùng.
+- Tên, địa chỉ, email, SĐT, CCCD, vị trí GPS như các trường hồ sơ riêng.
 - Audio gửi lên cloud.
 - Nội dung ngoài câu hỏi hiện tại.
 
+Người dùng vẫn có thể tự đưa PII vào câu hỏi. Khi cloud backend được dùng, outbound scrubber cố gắng thay thế các pattern có độ tin cậy cao; log scrubber cũng chỉ là heuristic.
+
 ## Retention
 
-- Log JSONL: giữ trong `logs/` tới khi bị xóa; có `SessionStore.delete_session`.
+- Log JSONL: mặc định được `prune_old_logs()` dọn theo `LOG_RETENTION_DAYS` (30 ngày). Đặt `0` để tắt auto-prune; `SessionStore.delete_session()` vẫn cho phép xóa theo session.
 - Chunks nguồn: theo vòng đời dữ liệu (mỗi nguồn có `published_date`).
 - Không có lưu trữ dài hạn dữ liệu phiên mặc định.
 

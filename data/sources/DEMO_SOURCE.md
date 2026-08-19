@@ -11,6 +11,8 @@ notes: "Toàn bộ nội dung là dữ liệu mẫu hư cấu (SYNTHETIC DEMO). 
 
 # Hướng dẫn thủ tục hành chính - Xã Bình Minh (DEMO/SYNTHETIC)
 
+> **Dữ liệu hư cấu dùng để demo/kiểm thử. Không phải hướng dẫn hành chính chính thức.**
+
 ## LƯU Ý QUAN TRỌNG
 
 Tài liệu này là **DỮ LIỆU MẪU HƯ CẤU (SYNTHETIC DEMO)** do đội chuẩn bị

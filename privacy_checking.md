@@ -1,5 +1,7 @@
 # Privacy & Security Checking — Tiếng Làng v4.0
 
+> **Checklist tham chiếu.** Đối chiếu nội dung với `app/config.py`, `app/pipeline.py`, `app/privacy/` và [chính sách privacy hiện hành](docs/privacy_deletion_policy.md) trước mỗi đợt deploy.
+
 > **NHÁP — chờ bạn (T) đọc và chốt.** Không push lên GitHub (theo yêu cầu).
 > Nguồn: Hội đồng Round 9 — 6 vòng thảo luận liên tục, 5 mô hình + OpenCode
 > (thành viên thứ 6), mỗi vòng mỗi thành viên phải phân tích ý kiến các thành

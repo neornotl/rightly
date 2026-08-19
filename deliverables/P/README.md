@@ -1,4 +1,6 @@
-# Deliverables — Vai trò P (Pilot, Presentation & Partnership)
+# Deliverables — Pilot, Presentation & Partnership
+
+> **Danh sách quest lịch sử.** Mọi dữ liệu người tham gia, contact hoặc consent mới cần quy trình được phê duyệt, không chỉ theo bảng bên dưới.
 
 > Nộp các quest P1-P5 tại đây. Quy ước tên file + template: `deliverables/README.md`.
 

@@ -1,5 +1,7 @@
 # Code of Conduct
 
+> Áp dụng cho mọi đóng góp, review, demo và hoạt động pilot liên quan tới Rightly.
+
 ## Cam kết của chúng tôi
 
 Để nuôi dưỡng một môi trường cởi mở và thân thiện, đội **Rightly**
@@ -13,10 +15,8 @@ thuật.
 Ví dụ hành vi tích cực:
 
 - Dùng ngôn ngữ thân thiện, dễ hiểu (tránh thuật ngữ khó với người không rành).
-- Tôn trọng ý kiến khác nhau; mọi quyết định quan trọng qua hội đồng AI pool
-  (5 mô hình + OpenCode, biểu quyết).
-- Chỉ nhận/đưa ra yêu cầu với người có thẩm quyền vai trò (role.md); OpenCode
-  không làm thay C/P, C/P không làm thay T.
+- Tôn trọng ý kiến khác nhau; các quyết định ảnh hưởng safety, dữ liệu hoặc người dùng phải có người chịu trách nhiệm phê duyệt.
+- Không dùng công cụ AI để thay người chịu trách nhiệm cho quyết định pháp lý, consent hoặc contact.
 - Không gọi dữ liệu hư cấu là kết quả pilot; không claim quá bằng chứng.
 
 Ví dụ hành vi không chấp nhận:
@@ -31,8 +31,7 @@ Ví dụ hành vi không chấp nhận:
 
 ## Báo cáo vi phạm
 
-Gửi về người phụ trách đội ([T] trong `docs/team_status.md`). Mọi báo cáo
-được xử lý bảo mật và kịp thời.
+Gửi cho maintainer/owner hiện hành của repository qua kênh riêng tư phù hợp. Mọi báo cáo cần được xử lý bảo mật và kịp thời.
 
 ## Ghi nhận
 

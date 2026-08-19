@@ -1,4 +1,6 @@
-# Demo transcript — Tiếng Làng v4.0 (SYNTHETIC DEMO)
+# Demo transcript — Rightly v4.0 (SYNTHETIC DEMO)
+
+> **Demo synthetic.** Không dùng kịch bản, câu trả lời hay kết quả trong thư mục này làm hướng dẫn hành chính thực tế hoặc bằng chứng pilot.
 
 > **THẬN TRỌNG**: đây là **DEMO dữ liệu mẫu hư cấu**, KHÔNG phải kết quả pilot
 > và không thay thế hướng dẫn chính thức. Chạy hoàn toàn cục bộ (Mock LLM +

@@ -1,5 +1,7 @@
 # Intel Vietnam AI Impact Festival 2026 — tài liệu cuộc thi chính thức
 
+> **Tài liệu tham chiếu.** Nội dung này được lưu để tham khảo cuộc thi; các mốc/hướng dẫn có thể thay đổi ngoài repository. Không suy ra trạng thái submission từ file này.
+
 Nguồn gốc để mọi claim trong repo: trang chủ thức cuộc thi + rubric + guidelines.
 
 ## 1. Nhận diện cuộc thi (VERIFIED — web 08/08/2026)

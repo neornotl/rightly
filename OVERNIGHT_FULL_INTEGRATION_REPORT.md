@@ -1,5 +1,7 @@
 # Overnight Full Integration Report (v4.0)
 
+> **Tài liệu lịch sử.** Đây là báo cáo tích hợp theo mốc thời gian, không phải runbook hiện hành. Xem [MASTER](docs/MASTER.md) và [Setup](docs/setup.md) để vận hành.
+
 Recorded: 2026-08-07 — Tieng Làng v4.0, overnight full-integration run.
 Baseline before this run: `docs/baseline_before_full_integration.md`
 (checkpoint commit `ccd2aab`, tag `before-full-integration-v4`).

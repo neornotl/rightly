@@ -1,5 +1,7 @@
 # OPENCODE PREPARATION REPORT — Rightly
 
+> **Tài liệu lịch sử.** Báo cáo này ghi lại một snapshot preparation tại thời điểm tạo. Đối chiếu [README](README.md), [MASTER](docs/MASTER.md) và mã nguồn trước khi dùng cho quyết định hiện tại.
+
 Generated: 2026-08-07 (UTC) · Machine: Windows 10, Python 3.14.5,
 Intel Core i7-10510U, 15.8 GB RAM · Repo root: `C:\Users\laptopppp\intel`
 

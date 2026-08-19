@@ -1,5 +1,7 @@
 # Baseline Before 10k Benchmark Generation — Rightly
 
+> **Baseline lịch sử.** Các số liệu, file count và kết quả kiểm tra bên dưới chỉ đúng tại thời điểm ghi nhận; không dùng làm KPI hoặc trạng thái hiện hành.
+
 Generated: 2026-08-09 (UTC) · Machine: Windows 10, Python 3.14.5, Intel Core i7-10510U, 15.8 GB RAM · Repo root: `C:\Users\laptopppp\intel`
 
 ---
