@@ -1,0 +1,81 @@
+
+CIRCULAR
+Detailing a number of articles of the Government’s Decree No. 91/2020/ND-CP dated August 14, 2020 on fighting spam messages, spam emails and spam calls
+
+Pursuant to the Law on Information Technology dated June 29, 2006;
+Pursuant to the Law on Telecommunications dated November 23, 2009;
+Pursuant to the Law on Advertising dated June 21, 2012;
+Pursuant to the Law on Cyberinformation Security dated November 19, 2015;
+Pursuant to the Decree No. 91/2020/ND-CP dated August 14, 2020 of the Government on fighting spam messages, spam emails and spam calls;
+Pursuant to the Decree No. 17/2017/ND-CP dated February 17, 2017 of the Government defining the functions, tasks, powers and organizational structure of the Ministry of Information and Communications;
+At the request of the Director of the Information Security Authority,
+The Minister of Information and Communications promulgates the Circular detailing a number of articles of the Government’s Decree No. 91/2020/ND-CP dated August 14, 2020 on fighting spam messages, spam emails and spam calls.
+Article 1. Scope of regulation
+This Circular details a number of articles of the Government’s Decree No. 91/2020/ND-CP dated August 14, 2020 on fighting spam messages, spam emails and spam calls;
+Article 2. Subjects of application
+This Circular applies to organizations and individuals involved in the fight against spam messages, spam emails and spam calls, and sending of advertising messages, advertising emails and advertising calls in Vietnam in accordance with Article 2 of the Decree No. 91/2020/ND-CP.
+Article 3. Interpretation of terms
+1. Message-sending source means the information source identified to send a message to a subscriber.
+2. Calling source means the information source identified to make a call to a subscriber.
+3. Email-sending source means the information source identified to send email messages to a specific email address.
+4. Message or call-receiving source means the subscriber identified to receive the message or call from the sending source.
+5. Email-receiving source means an email address that receives information from the email-sending source.
+6. USSD message means information exchange messages between users and telecommunications organizations and enterprises, displayed directly on the phone screen, allowing users to interact via the keyboard.
+Article 4. Regulations on set of criteria for identifying spam messages, spam emails and spam calls
+1. Messages are identified as spam messages based on the following criteria:
+a) Message-sending frequency is the number of messages sent from the message-sending source in a period of time;
+b) Usage behavior features: The sending source is mainly used for outgoing messages, the rate of making and receiving calls is low; The rate of sent messages to subscribers without previously established relationship is the rate of sent messages to subscribers who have no previously established relationship (who have never sent messages before) to total number of sent messages;
+c) Sample spam messages are common character samples to identify spam messages, including sample spam messages collected and shared by telecommunications enterprises.
+2. Calls are identified as spam calls based on the following criteria:
+a) Call making frequency is the number of calls made from the calling source in a period of time;
+b) Usage behavior features: The sending source is mainly used to make outgoing calls, not receive and send messages; The rate of calls with short contact time is the rate of the number of calls with short duration (from connection to the end of the call) to total number of calls; The rate of calls with short interval between calls is the rate of the number of calls with short interval between calls (the interval between two consecutive outgoing calls) to total number of calls; The rate of outgoing calls to subscribers without previously established relationship is the rate of calls to phone numbers without previously established relationship (without any previous calls) to total outgoing calls.
+3. Emails are identified as spam emails based on the following criteria:
+a) Email-sending frequency: is the number of emails sent from an email address in a period of time;
+b) Usage behavior features:
+- The sending source is only used for the purpose of sending email, not for receiving and exchanging information;
+- The rate of sent emails to other email addresses without previously established relationship: is the rate of sent emails to email addresses without previously established relationship (without previously exchanged emails) to total number of sent emails.
+c) Technology used to send and receive emails.
+Article 5. Instructions for users to report and provide evidence to the system for receipt of reports on spam messages, spam emails and spam calls.
+1. Instructions for users to report and provide evidence of spam messages:
+a) Report via message to switchboard 5656: The user composes a reporting message with the following syntax: S [Spam message source][Spam message content] or S (spam message source)(Spam message content) to send to 5656;
+b) Report spam messages according to instructions at website thongbaorac.ais.gov.vn or via switchboard or application.
+2. Instructions for users to report and provide evidence of spam calls:
+a) Report via message to switchboard 5656: The user composes a reporting message with the following syntax: V [Spam call source][Spam call content] or V (Spam call source)(Spam call content) to send to 5656;
+b) Report spam calls according to instructions at website thongbaorac.ais.gov.vn or via switchboard or application.
+3. Instructions for users to report and provide evidence of spam emails:
+a) Report by forwarding spam email to email address: chongthurac@vncert.vn;
+b) Report spam emails according to instructions at website thongbaorac.ais.gov.vn or via switchboard or application.
+Article 6. Instructions for users on registering the inclusion of their phone numbers in or withdrawing them from the DoNotCall list
+1. Registering the inclusion of the phone numbers in or withdrawing them from the DoNotCall list is implemented through one of the following methods:
+a) Register or cancel registration via SMS (via number 5656);
+b) Register or cancel registration via website (khongquangcao.ais.gov.vn) or switchboard or application.
+2. Content of registration or registration cancellation.
+a) Register the inclusion of the phone numbers in or withdraw them from the DoNotCall list for advertising messages.
+- Syntax of registration: DK DNC S sent to 5656;
+- Syntax of registration cancellation: HUY DNC S sent to 5656.
+b) Register the inclusion of the phone numbers in or withdraw them from the DoNotCall list for advertising calls.
+- Syntax of registration: DK DNC V sent to 5656;
+- Syntax of registration cancellation: HUY DNC V sent to 5656.
+c) Register the inclusion of the phone numbers in or withdraw them from the DoNotCall list for advertising messages and calls.
+- Syntax of registration: DK DNC to 5656;
+- Syntax of registration cancellation: HUY DNC to 5656.
+3. Registering the inclusion of the phone numbers in or withdrawing them from the DoNotCall list through the website or through the application must be verified by the phone numbers registered or canceled registration.
+Article 7. Instructions for assessing the status of spam messages and spam calls on telecommunications networks
+1. The Information Security Authority shall make statistics on users’ reports on spam messages and spam calls on the system for receipt of reports on spam messages and spam calls (via number 5656).
+2. Telecommunications enterprises shall make statistics and update data according to the form in the Appendix issued with this Circular to the Information Security Authority's system for receipt of reports on spam messages and spam calls.
+Article 8. Regulations on sending the first and only advertising registration message
+1. Advertisers are only allowed to send the first and only advertising registration message to 01 subscriber number. The first and only advertising registration message is labeled with the DKQC format. The label is placed first in the message.
+2. The message must include the following minimum contents:
+a) Introduction on the advertiser with registration request;
+b) Instructions for registering to receive advertising through the system set up by the advertisers;
+c) Instructions for opt-out through the system set up by the advertisers.
+3. The first and only advertising registration message is only allowed to be sent from 7:00 am to 10:00 pm.
+4. Within 24 hours from the time of sending the first and only advertising registration message, if the user does not respond, the advertiser is not allowed to send any advertising registration messages or any advertising messages to such phone number.
+5. The advertisers must simultaneously send a copy of the first and only advertising registration message to the number 5656 and synchronize the data on registration, opt-out of receiving the first and only advertising message to the DoNotCall list management system.
+Article 9. Instructions for displaying brandnames in USSD messages and advertising calls
+1. The brandnames in the USSD messages shall be displayed at the heads of the advertising messages.
+2. Telecommunications enterprises are responsible for implementing technical solutions to ensure the display of brandnames for calls used for advertising purposes.
+Article 10. Implementation provisions
+1. This Circular takes effect from March 1, 2022.
+2. Chief of Office, Director of Information Security Authority, Heads of agencies and units under the Ministry, Directors of Departments of Information and Communications of provinces and centrally run cities, General Directors, Directors of telecommunications enterprises, Internet service providers, email service providers and relevant agencies, organizations and individuals are responsible for the implementation of this Circular.
+3. During the implementation, if any problems arise, please report them promptly to the Ministry of Information and Communications (the Authority of Information Security) for consideration, guidance and settlement.

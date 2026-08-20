@@ -1,0 +1,131 @@
+
+DECREE
+ Prescribing tax administration for business activities on e-commerce platforms and digital platforms by households and individuals
+
+Pursuant to the Law on Organization of the Government dated February 18, 2025;
+Pursuant to the Law on Tax Administration dated June 13, 2019;
+Pursuant to the Law Amending and Supplementing a Number of Articles of the Law on Securities, Accounting Law, Law on Independent Audit, Law on the State Budget, Law on Management and Use of Public Property, Law on Tax Administration, Law on Personal Income Tax, Law on the National Reserve and Law on Handling of Administrative Violations dated November 29, 2024;
+Pursuant to the Law on Value-Added Tax dated June 3, 2008; the Laws Amending and Supplementing a Number of Articles of the Law on Value-Added Tax dated June 3, 2008; and the Law on Value-Added Tax dated November 29, 2024;
+Pursuant to the Law on Personal Income Tax dated November 21, 2007, and the Law Amending and Supplementing a Number of Articles of the Law on Personal Income Tax dated November 22, 2012;
+At the proposal of the Minister of Finance;
+The Government hereby promulgates the Decree prescribing tax administration for business activities on e-commerce platforms and digital platforms by households and individuals.
+
+Chapter I
+GENERAL PROVISIONS
+
+Article 1. Scope of regulation
+This Decree provides regulations on:
+1. The scope of responsibility for crediting and paying value-added tax and personal income tax on behalf of others by organizations acting as administrators of e-commerce exchanges, organizations acting as administrators of digital platforms with payment functions (including both domestic and foreign organizations), and other organizations engaged in digital economic activities.
+2. The methods by which organizations administering e-commerce exchanges, administering digital platforms, and other organizations engaged in digital economic activities perform crediting and paying tax on behalf of, and declaring the amounts of tax credited, for business transactions conducted on e-commerce platforms and digital platforms by households and individuals.
+3. The dossiers and procedures for tax declaration, tax payment, and tax refund applicable to households and individuals conducting business on e-commerce platforms and digital platforms.
+Article 2. Subjects of application
+1. Organizations acting as administrators of e-commerce exchanges, organizations acting as administrators of digital platforms with payment functions, and other organizations engaged in digital economic activities that are subject to the obligation of crediting and paying tax on behalf of others.
+2. Resident individuals, non-resident individuals, and households engaging in business activities on e-commerce platforms and digital platforms.
+3. Tax administration offices and other relevant organizations and individuals.
+Article 3. Interpretation of terms
+For the purposes of this Decree, the terms below shall be construed as follows:
+1. Organizations acting as administrators of e-commerce exchanges and organizations acting as administrators of digital platforms with payment functions mean administrators of platforms established to enable buyers to make direct payments through payment instruments such as e-wallets, bank cards, payment and transfer via payment accounts, integrated transfer systems, cash-on-delivery (COD) payments, and other means of payment as prescribed by law.
+2. Other organizations engaged in digital economic activities mean organizations in Vietnam that, on behalf of foreign providers of e-commerce platforms or digital platforms, make income payments to households and individuals for products and services involving digital content information in accordance with the law on information technology.
+Organizations acting as administrators of e-commerce exchanges, organizations acting as administrators of digital platforms with payment functions, and other organizations engaged in digital economic activities as prescribed in Clauses 1 and 2 of this Article are collectively referred to as e-commerce platform administrators.
+3. The term “e-commerce platforms” in this Decree includes both e-commerce exchanges and digital platforms.
+4. Resident individuals and non-resident individuals shall comply with the law on personal income tax.
+
+Chapter II
+SCOPE OF RESPONSIBILITY, METHODS OF CREDITING, PAYING TAX ON BEHALF OF, AND DECLARING TAX AMOUNTS CREDITED BY E-COMMERCE PLATFORM ADMINISTRATORS SUBJECT TO THE OBLIGATION OF CREDITING AND PAYING TAX ON BEHALF OF OTHERS
+
+Article 4. Credit and pay tax on behalf of others
+1. Domestic and foreign e-commerce platform administrators (including direct owners managing e-commerce exchanges or persons authorized to manage e-commerce exchanges), who are subject to the obligation of crediting and paying tax on behalf of others, shall credit and pay on behalf of the households and individuals conducting business on e-commerce platforms the value-added tax payable in accordance with the law on value-added tax for each transaction of goods or service provision that generates revenue within the country by such households and individuals.
+2. Foreign and domestic e-commerce platform administrators (including direct owners managing e-commerce exchanges or persons authorized to manage e-commerce exchanges), who are subject to the obligation of crediting and paying tax on behalf of others, shall credit and pay on behalf of resident individuals and households the personal income tax payable in accordance with the law on personal income tax for each transaction of goods or service provision that generates revenue within or outside the country by resident individuals conducting business on e-commerce platforms; and shall credit and pay on behalf of non-resident individuals and households the personal income tax payable in accordance with the law on personal income tax for each transaction of goods or service provision that generates revenue within the country by non-resident individuals conducting business on e-commerce platforms.
+Article 5. Time of crediting and determination of the tax amount to be credited
+1. Time of crediting: E-commerce platform administrators as specified in Article 4 of this Decree shall credit the value-added tax and personal income tax payable for each transaction of goods or service provision that generates revenue on the e-commerce platform under their management immediately upon confirming the successful transaction and accepting payment for the sale of goods or services on the e-commerce platform for households and individuals.
+2. The value-added tax and personal income tax to be credited shall be determined as a percentage (%) of the revenue of each transaction for the sale of goods or provision of services, as follows:
+a) The percentage (%) for calculating value-added tax shall comply with the Law on Value-Added Tax as follows:
+a.1) Goods: 1%
+a.2) Services: 5%
+a.3) Transport services or services associated with goods: 3%
+b) The percentage (%) for calculating personal income tax shall comply with the Law on Personal Income Tax as follows:
+b.1) For resident individuals
+b.1.1) Goods: 0.5%
+b.1.2) Services: 2%
+b.1.3) Transport services or services associated with goods: 1.5%
+b.2) For non-resident individuals
+b.2.1) Goods: 1%
+b.2.2) Services: 5 %
+b.2.3) Transport services or services associated with goods: 2%
+c) In cases where e-commerce platform administrators subject to the obligation of crediting and paying tax on behalf of others are unable to determine whether the transaction generating revenue from the e-commerce platform relates to goods, services, or specific types of services, the tax to be credited shall be calculated using the highest percentage rate specified at Point a of this Clause and the highest percentage rate applicable to services for either resident or non-resident individuals as specified at Point b of this Clause.
+d) The revenue of each transaction for the sale of goods or provision of services is the amount received by the household or individual for the goods or services sold, which is collected on their behalf by the e-commerce platform administrator.
+Article 6. Method of declaration and payment of tax amounts credited
+1. E-commerce platform administrators shall declare the credited tax amounts on a monthly basis.
+For transactions that are cancelled or involve returned goods, the e-commerce platform administrator shall offset the tax amount already credited and paid on behalf for the cancelled transaction or returned goods against the tax amount to be credited and paid on behalf for sales transactions and service provision transactions.
+The tax amount paid on behalf of households and individuals by the e-commerce platform administrator shall be determined as the total tax amount from sales and service provision transactions after offsetting with the total tax amount of cancelled or returned transactions (if any) of such households and individuals.
+Domestic e-commerce platform administrators shall be assigned a separate tax identification number (a 10-digit tax code) by the tax office's system for the purpose of declaring and paying the credited tax amounts and shall not be required to submit tax registration dossiers.
+Foreign e-commerce platform administrators shall be issued a 10-digit tax identification number to fulfill tax obligations arising in Vietnam (if any), in accordance with the provisions applicable to foreign suppliers under Circular No. 80/2021/TT-BTC dated September 29, 2021, of the Minister of Finance, and may use such tax identification number to declare and pay the credited tax amounts of resident individuals conducting business on foreign e-commerce platforms.
+2. The dossier for declaration of credited tax amounts includes:
+a) Tax credit declaration for households and individuals conducting business on e-commerce platforms, using Form No. 01/CNKD-TMDT enclosed with this Decree;
+b) Detailed list of credited tax amounts for households and individuals conducting business on e-commerce platforms, using Form No. 01-1/BK-CNKD-TMDT enclosed with this Decree.
+3. Location and deadlines for submission of declaration dossiers and payment of credited tax amounts:
+a) E-commerce platform administrators shall submit tax declaration dossiers via electronic means. The tax office receiving and processing the tax declaration dossier shall be the tax office managing the e-commerce platform administrator.
+b) The organizations specified in Article 4 of this Decree shall prepare a detailed list of tax payment amounts using Form No. 01/BKNT-TMDT enclosed with this Decree and submit it to the managing tax office after completing the payment to the state budget. The deadline for preparing and submitting the detailed list of tax payment amounts shall coincide with the tax payment deadline prescribed by the law on tax administration.
+c) The location and deadline for submission of tax declaration dossiers and the location, method, and deadline for tax payment shall comply with the law on tax administration.
+Article 7. Responsibilities of e-commerce platform administrators subject to the obligation of crediting and paying tax on behalf of others
+1. To register for the use and processing of tax credit documents for business activities conducted on e-commerce platforms in accordance with the law on invoices and documents.
+2. To issue tax credit documents for business activities conducted on e-commerce platforms using Form No. 01/CTKT-TMDT enclosed with this Decree, on an annual basis and in electronic format, to households and individuals.
+3. To manage the usernames and passwords of accounts issued by the tax offices; to retain data on business transactions, information and documents relevant to the determination of the amount of tax payable and tax credited of households and individuals in accordance with the law on tax administration.
+4. To credit taxes, declare credited tax amounts, and remit the credited tax amounts accurately and fully based on the information provided by households and individuals and in accordance with this Decree; and to bear legal responsibility for the accuracy, truthfulness, and completeness of the tax dossiers.
+An e-commerce platform administrator subject to the obligation of crediting and paying tax on behalf of others that has declared information on the tax amounts credited and paid on behalf of households and individuals to the tax office in accordance with this Decree are not required to provide information on households and individuals as prescribed in Decree No. 91/2022/ND-CP dated October 30, 2022, amending and supplementing a number of articles of Decree No. 126/2020/ND-CP dated October 19, 2020, of the Government, detailing a number of articles of the Law on Tax Administration.
+5. To provide other information relating to business activities on e-commerce platforms upon request of the tax office in accordance with the law on tax administration.
+6. To fully and promptly refund the tax amounts credited and paid on behalf of households and individuals for cancelled transactions or returned goods.
+
+Chapter III
+DOSSIERS AND PROCEDURES FOR TAX DECLARATION, TAX PAYMENT, AND TAX REFUND APPLICABLE TO HOUSEHOLDS AND INDIVIDUALS CONDUCTING BUSINESS ON E-COMMERCE PLATFORMS
+
+Article 8. Tax declaration and payment dossiers and procedures applicable to resident households and individuals engaging in business activities on e-commerce platforms without payment functions
+1. Resident households and individuals engaging in business activities on e-commerce platforms without direct payment functions shall fulfill their obligations relating to value-added tax, personal income tax, excise tax, environmental protection tax, natural resource tax, and other payables to the state budget administered by tax offices in accordance with the tax laws and other relevant laws, and shall declare and pay taxes via electronic means.
+2. Tax declaration
+a) Households and individuals engaging in business activities on e-commerce platforms shall declare taxes on a monthly basis.
+b) Households and individuals conducting non-regular business activities on e-commerce platforms shall declare taxes for each instance of arising tax liability.
+3. Procedures for tax registration, declaration, tax declaration dossier submission, and tax payment:
+a) Tax declaration dossier:
+Tax declaration for households and individuals conducting business on e-commerce platforms, using Form No. 02/CNKD-TDMT enclosed with this Decree.
+b) The procedures for tax registration, deadlines for submission of tax declaration dossiers, and procedures for tax payment shall comply with the law on tax administration.
+c) The agency receiving and processing the tax declaration dossiers shall be the tax office managing the locality where the household or individual resides (current address/temporary residence/permanent residence).
+Article 9. Tax declaration and payment dossiers and procedures applicable to non-resident individuals paying taxes on e-commerce platforms without payment functions
+1. Non-resident individuals engaging in business activities on e-commerce platforms without direct payment functions shall pay value-added tax and personal income tax on goods and services traded on e-commerce platforms at percentage (%) rates based on revenue, in accordance with the Law on Value-Added Tax and the Law on Personal Income Tax.
+2. The percentage rates for calculating value-added tax and personal income tax shall be applied in accordance with the Law on Value-Added Tax and the Law on Personal Income Tax as follows:
+a) Percentage rate for value-added tax calculation:
+a.1) Goods: 1%
+a.2) Services: 5%
+a.3) Transport services or services associated with goods: 3%
+b) Percentage rate for personal income tax calculation:
+b.1) Goods: 1%
+b.2) Services: 5%
+b.3) Transport services or services associated with goods: 2%
+3. Tax declaration
+a) Non-resident individuals specified in Clause 1 of this Article shall declare value-added tax for the domestic purchase and sale of goods, provision of services on e-commerce platforms, and personal income tax, and shall pay tax to the E-Commerce Tax Branch for each instance of arising tax liability via electronic means.
+b) Non-resident individuals engaging in business activities on e-commerce platforms without payment functions shall register for electronic tax transactions and carry out initial tax registration through the tax declaration dossier.
+4. Tax declaration and payment procedures
+a) Tax declaration dossier: Tax declaration for non-resident individuals conducting business on e-commerce platforms, using Form No. 03/CNKD-TMDT enclosed with this Decree.
+b) The deadlines for submission of tax declaration dossiers, and tax payment shall comply with the law on tax administration.
+Article 10. Tax refund dossiers and procedures
+1. In cases where households and individuals have had value-added tax and personal income tax credited and paid on their behalf by the organizations specified in Article 4 of this Decree, in accordance with Article 5 of this Decree, for transactions arising during the year, but their total annual revenue from all business activities falls within the scope of exemption from value-added tax and personal income tax, they shall carry out tax refund procedures for the overpaid tax amount in accordance with the law on tax administration, after the e-commerce platform administrator has fulfilled the obligation to declare and pay on behalf of the households and individuals the credited tax amounts for the tax year.
+2. In cases where households and individuals have directly paid value-added tax and personal income tax for transactions arising during the year, in accordance with Articles 8 and 9 of this Decree, but their total annual revenue from all business activities falls within the scope of exemption from value-added tax and personal income tax, they shall carry out tax refund procedures for the overpaid tax amount in accordance with the law on tax administration.
+3. Tax refund dossier: Written request for tax refund submitted by the household or individual conducting business on the e-commerce platform, using Form No. 03/CNKD-TMDT enclosed with this Decree.
+4. The agency receiving and processing the tax refund dossiers shall be the tax office managing the locality where the household or individual resides (current address/temporary residence/permanent residence).
+
+Chapter IV
+IMPLEMENTATION ORGANIZATION AND IMPLEMENTATION PROVISIONS
+
+Article 11. Responsibilities of households and individuals engaging in business activities on e-commerce platforms
+1. Resident households and individuals engaging in business activities on e-commerce platforms shall be responsible for declaring and paying excise tax, environmental protection tax, natural resource tax, and other amounts payable to the state budget as collected by the tax office, in accordance with the tax laws, the law on tax administration, and other relevant laws.
+2. Households and individuals engaging in business activities on e-commerce platforms shall be responsible for providing complete and accurate information, including tax identification numbers or personal identification numbers (for Vietnamese citizens); passport numbers or identification information issued by competent foreign authorities (for foreign citizens); and other information required of sellers in accordance with the law on e-commerce, to the e-commerce platform administrator.
+3. To promptly and accurately provide information and documents relevant to the determination of tax liabilities to the e-commerce platform administrators subject to the obligation of crediting and paying tax on behalf of taxpayers, and to bear responsibility for fulfilling tax obligations in accordance with this Decree.
+4. Households and individuals whose value-added tax and personal income tax have been credited, declared, and paid on their behalf by the e-commerce platform administrator in accordance with this Decree shall not be required to declare and pay value-added tax and personal income tax for the business activities on e-commerce platforms for which such tax has already been credited and paid on their behalf.
+Article 12. Responsibility for implementation
+1. Ministers and heads of ministerial-level agencies shall, based on the assigned functions and tasks, implement this Decree.
+2. The Ministry of Finance shall provide guidance and organize the implementation of support measures for e-commerce platform administrators subject to the obligation of crediting and paying tax on behalf of taxpayers in accordance with this Decree.
+3. The Ministry of Industry and Trade shall implement measures to manage all e-commerce business activities and shall coordinate with the Ministry of Finance to implement support measures for e-commerce platform administrators subject to the obligation of crediting and paying tax on behalf of taxpayers in accordance with this Decree.
+4. The Director General of the Taxation shall provide guidance on the receipt, inspection, and reconciliation of data for the purpose of automatically processing tax refund dossiers through the tax sector’s information technology application system for households and individuals conducting business on e-commerce platforms in accordance with the law on tax administration; provide information on the amount of tax credited and paid on behalf of households and individuals by e-commerce platform administrators via the taxpayer’s electronic tax account; and assist households and individuals in using personal identification numbers in place of tax identification numbers where the tax identification number has been integrated into the personal identification number.
+5. Chairpersons of People's Committees of provinces and centrally-run cities shall direct agencies and units in localities to coordinate in implementing this Decree.
+Article 13. Effect
+This Decree takes effect from July 1, 2025.
+In case the legal documents referred to in this Decree are amended, supplemented or replaced, the amending, supplementing or replacing ones shall prevail.

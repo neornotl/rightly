@@ -1,0 +1,209 @@
+
+DECREE
+Detailing and guiding the implementation of
+a number of articles of the Law on Social Insurance regarding voluntary social insurance
+______________
+
+Pursuant to the Law on Organization of the Government dated February 18, 2025;
+Pursuant to the Law on Organization of Local Administration dated June 16, 2025;
+Pursuant to the Law on Social Insurance dated June 29, 2024;
+At the proposal of the Minister of Home Affairs;
+The Government hereby promulgates the Decree detailing and guiding the implementation of a number of articles of the Law on Social Insurance regarding voluntary social insurance.
+
+Article 1. Scope of regulation
+This Decree details and guides the implementation of a number of articles of the Law on Social Insurance regarding voluntary social insurance, including:
+1. Clause 7 Article 23 on the regime for voluntary social insurance participants who are ineligible for enjoying pension and have not yet reached the age for enjoying social retirement allowance;
+2. Clauses 1 and 4 Article 36 on the rate, method and time limit for payment of social insurance premiums for voluntary social insurance participants; modification of the premium payment method, monthly income used as the basis for payment of voluntary social insurance premiums; and refund of paid voluntary social insurance premiums;
+3. Clause 6 Article 102 on entitlement to lump-sum social insurance payouts;
+4. Clause 2 Article 104 on the modification of monthly income used as the basis for payment of social insurance premiums.
+5. Clause 2 Article 111 on retirement and survivorship allowances applicable to persons who have paid both compulsory social insurance and voluntary social insurance premiums.
+6. Clause 15 Article 141 on transitional provisions;
+Article 2. Subjects of application
+1. Persons subject to participation in voluntary social insurance as prescribed in Article 3 of this Decree.
+2. Social insurance allowance beneficiaries in accordance with the Law on Social Insurance.
+3. Agencies, organizations, and individuals related to voluntary social insurance.
+Article 3. Persons subject to participation in voluntary social insurance
+1. Persons subject to participation in voluntary social insurance shall comply with Clause 4, Article 2 of the Law on Social Insurance.
+2. Persons currently entitled to social insurance allowance or monthly allowance as stipulated at Point a, Clause 4, Article 2 of the Law on Social Insurance are subjects specified in Clause 4, Article 3 of the Decree No. 158/2025/ND-CP dated June 25, 2025, of the Government detailing and guiding the implementation of a number of articles of the Law on Social Insurance regarding compulsory social insurance.
+Article 4. Modification of the premium payment method, income used as the basis for payment of voluntary social insurance premiums
+Voluntary social insurance participants who have chosen one of the premium payment methods specified at Points a, b, c, d, and dd, Clause 2, Article 36 of the Law on Social Insurance, and the income used as the basis for payment of voluntary social insurance premiums as stipulated in Clause 2, Article 31 of the Law on Social Insurance, and who request to modify the payment method or income used as the basis for payment of voluntary social insurance premiums, shall submit a declaration form with modified information on participation in voluntary social insurance to the social insurance agency. The modification of payment method or income used as the basis for payment of voluntary social insurance premiums shall be implemented after the voluntary social insurance participant has completed the previously selected payment method and income used as the basis for payment of voluntary social insurance premiums.
+Article 5. Support in the payment of social insurance premiums for voluntary social insurance participants
+1. Support levels and support beneficiaries
+The voluntary social insurance participants shall receive support from the State for the social insurance premiums, calculated as a percentage (%) of the voluntary social insurance premium rates based on the rural poor household standard, as stipulated in Clause 2 Article 31 and Clause 1 Article 36 of the Law on Social Insurance, specifically as follows:
+a) Equaling 50% for participants from poor households, and persons residing in island communes or special zones as prescribed by the Government or the Prime Minister;
+b) Equaling 40% for participants from near-poor households;
+c) Equaling 30% for participants who are ethnic minorities;
+d) Equaling 20% for other participants.
+The voluntary social insurance participants who are subject to multiple categories of support beneficiaries shall be entitled to the highest level of support.
+The agencies, organizations, and individuals are encouraged to provide support for social insurance premiums for the voluntary social insurance participants.
+Depending on socio-economic conditions and capacity of balancing budget funds and mobilizing social resources, provincial-level People’s Committees shall propose same-level People’s Councils to decide on provide additional support for voluntary social insurance premiums for participants in their localities, beyond the support levels stipulated in this Decree.
+Based on the socio-economic development conditions and the state budget’s capacity in each period, the Government shall consider adjusting the levels of support in the payment of social insurance premiums for voluntary social insurance participants accordingly.
+2. The duration of support depends on each individual's actual period of voluntary social insurance participation of each person but must not exceed 10 years (120 months).
+3. Support methods
+a) The voluntary social insurance participants who fall under the supported categories as stipulated in Clause 1 of this Article shall pay social insurance premiums within their payment responsibility to the social insurance agencies or to the voluntary social insurance collection service organizations authorized by social insurance agencies;
+b) Every 3, 6 or 12 months, social insurance agencies shall make a list summarizing the number of support-eligible persons, premiums collected from these persons and the state budget’s support sum according to the form issued by the Vietnam Social Security, and send this list to finance agencies for transferring the support sum to the social insurance fund;
+c) Based on the regulations on local budget management decentralization, the list of voluntary social insurance participants and the state budget’s support sum transferred by social insurance agencies, finance agencies shall transfer such support sum to the social insurance fund every quarter. By December 31 of a year at the latest, finance agencies shall complete the transfer of the support sum to the social insurance fund of that year.
+4. The support sum for social insurance premiums for voluntary social insurance participants shall be covered by local budgets according to the current state budget decentralization regulations; the central budget shall support local budgets in accordance with the laws on the principle of targeted support from the central budget to the local budget for implementing centrally issued social security policies.
+5. In case the voluntary social insurance participants have already paid premiums in the form of lump-sum payments for 3 months, 6 months, or 12 months, or lump-sum payments for multiple subsequent years as prescribed at Points b, c, d, and dd, Clause 2, Article 36 of the Law on Social Insurance, and during that time there is a modification in the support-eligible persons as stipulated in Clause 1 of this Article or a change in the rural poor household standard, the paid premium amounts are not required to be adjusted.
+6. Refund of State support for voluntary social insurance premiums
+a) Refund of State support for voluntary social insurance premiums for persons who are entitled to lump-sum social insurance payouts as prescribed at Points a, b, dd, and e, Clause 1, Article 70 of the Law on Social Insurance; Points a, b, and dd, Clause 1, Article 102 of the Law on Social Insurance; and persons specified in Clauses 1 and 3, Article 8 of this Decree;
+b) The refunded amount shall be equal to the amount of social insurance premiums previously supported by the State for voluntary social insurance participants.
+Article 6. Premium rates under the method of lump-sum payments for multiple subsequent years
+1. The voluntary social insurance participant may select the method of lump-sum payments for multiple subsequent years, but for no more than five years (60 months) with each payment.
+2. The level of lump‑sum payment of premiums for many subsequent years shall be equal the total premium payment level of the previous months minus a gross interest calculated at the social insurance fund’s average monthly investment interest rate announced by the Vietnam Social Security in the year preceding the year of payment and shall be determined according to the following formula:
+
+In which:
+MĐ1: Lump‑sum payment level for n subsequent years (VND);
+TNi: The monthly income used as the basis for voluntary social insurance premiums selected by the voluntary social insurance participant at the time of payment (VND/month);
+r: The social insurance fund’s average monthly investment interest rate announced by the Vietnam Social Security in the year preceding the year of payment (%/month);
+n: The number of years with advance payment, as selected by the voluntary social insurance participant, taking a value from 2 to 5;
+i: Natural number parameter ranging from 1 to (n × 12).
+Article 7. Premium rates under the method of lump-sum payments for the remaining period of social insurance premium payment for an employee to receive pension
+1. The voluntary social insurance participants who have reached the retirement age as prescribed in Clause 2, Article 169 of the Labor Code but the period of their social insurance premium payment lacks no more than 5 years (60 months) shall be allowed to make a lump-sum payments for the remaining period in order to complete the required 15 years of payment to receive pension.
+2. The premium rates for lump-sum payments for the remaining period of social insurance premium payment shall be calculated as the total payments for the remaining months, applying gross interest based on the social insurance fund’s average monthly investment interest rate announced by the Vietnam Social Security in the year preceding the year of payment and shall be determined according to the following formula:
+
+In which:
+MĐ2: The premium rates for lump-sum payments for the remaining period of social insurance premium payment (VND);
+TNi: The monthly income used as the basis for voluntary social insurance premiums selected by the voluntary social insurance participant at the time of payment (VND/month);
+r: The social insurance fund’s average monthly investment interest rate announced by the Vietnam Social Security in the year preceding the year of payment (%/month);
+t: The number of remaining months of social insurance premium payment, taking a value from 1 to 60;
+i: Natural number parameter taking values from 1 to t.
+Article 8. Partial refund of paid premiums
+1. The voluntary social insurance participants who have paid premiums in accordance with the payment methods of every 3 months, 6 months, or 12 months, or a lump-sum payment for multiple subsequent years as stipulated at Points b, c, d, and dd, Clause 2, Article 36 of the Law on Social Insurance, and during such time, fall into one of the following cases, shall be entitled to a partial refund of the previously paid premiums:
+a) Be subject to participation in compulsory social insurance;
+b) Be entitled to lump-sum social insurance payouts as prescribed in Article 102 of the Law on Social Insurance;
+c) Die or be declared dead by the court;
+d) Satisfy the conditions and submit a request for settlement of regimes of pension as prescribed in Article 98 or Clause 9, Article 141 of the Law on Social Insurance.
+2. The refund amount for the voluntary social insurance participants in the cases specified at Points a, b, and d, Clause 1 of this Article or to the relatives of voluntary social insurance participants in the case specified at Point c, Clause 1 of this Article shall be determined as the total paid premiums corresponding to the remaining period of the chosen payment method, and shall not include the State’s premium support as specified in Article 5 of this Decree (if any).
+3. In case the voluntary social insurance participant has paid premiums under the method of lump-sum payments for multiple subsequent years as prescribed in Article 6 of this Decree, the refund amount shall be determined according to the following formula:
+
+In which:
+HT: The refund amount (VND);
+TNi: The monthly income used as the basis for voluntary social insurance premiums selected by the voluntary social insurance participant at the time of payment (VND/month);
+M: The amount of State’s support for payment of voluntary social insurance premiums (if any) (VND);
+r: The social insurance fund’s average monthly investment interest rate announced by the Vietnam Social Security in the year preceding the year of payment (%/month);
+n: The number of years with advance payment, as selected by the voluntary social insurance participant, taking a value from 2 to 5;
+m: The number of remaining months in the payment method paid by the voluntary social insurance participant;
+i: The natural number parameter taking values from (n × 12 – m + 1) to (n × 12).
+Article 9. Lump-sum social insurance payouts
+1. The lump-sum social insurance payout rate for one of the cases specified at Points a, b, and dd, Clause 1, Article 102 of the Law on Social Insurance shall be determined as follows:
+MH = TC - M
+In which:
+MH: Lump-sum social insurance payout rate (VND);
+TC: Payout rate determined in accordance with Clause 2, Article 102 of the Law on Social Insurance (VND);
+M: Amount of the State’s support for payment of voluntary social insurance premiums (VND).
+2. The amount of the State’s support for payment of voluntary social insurance premiums shall be calculated as the total monthly amount supported by the State for each month in which the participant paid voluntary social insurance premiums. The monthly support amount shall be calculated according to the following formula:
+Mi = 0.22 x CNi x k
+In which:
+Mi: Amount of State’s support for payment of voluntary social insurance premiums in month i (VND);
+CNi: Rural poor household standard in month i (VND);
+k: State’s support rate in month i (%);
+i: refers the month in which the State provides support for voluntary social insurance premiums.
+Article 10. Modification of monthly income used as the basis for payment of social insurance premiums
+1. The adjusted monthly income used as the basis for payment of social insurance premiums for each year shall be equal to the monthly income used as the basis for payment of social insurance premiums of that year multiplied by the modification coefficient of the monthly income used as the basis for payment of social insurance premiums for the corresponding year.
+2. The modification coefficient of the monthly income used as the basis for payment of social insurance premiums shall be calculated based on the average annual consumer price index using the 2008 average as the base, provided by the General Statistics Office, the Ministry of Finance, and shall be determined according to the following formula:
+Modification coefficient of the monthly income used as the basis for payment of social insurance premiums for year t	=	Average annual consumer price index of the year immediately preceding the year the voluntary social insurance participant receives the social insurance payouts, based on the 2008 average
+		Average annual consumer price index of year t, based on the 2008 average
+In which:
+t: refers any year in the modification period.
+The modification coefficient of the monthly income used as the basis for payment of social insurance premiums for year t shall be rounded to two decimal places, with a minimum value of 1.
+3. In case the voluntary social insurance participant pays lump-sum social insurance premiums for the remaining period in accordance with Article 7 of this Decree, the modified monthly income for the remaining period shall be equal to the monthly income used as the basis for payment of social insurance premiums of the remaining period multiplied by the modification coefficient of 1.
+4. Based on the average annual consumer price index using the 2008 average as the base, provided by the General Statistics Office, the Ministry of Finance, the Vietnam Social Security shall determine the modification coefficient of the monthly income used as the basis for payment of social insurance premiums as prescribed in Clause 2 of this Article and shall implement the modification of the monthly income used as the basis for payment of social insurance premiums for voluntary social insurance participants in accordance with Clause 1 of this Article.
+Article 11. Retirement allowance applicable to persons who have paid both compulsory social insurance and voluntary social insurance premiums
+1. For the persons who have paid both compulsory social insurance and voluntary social insurance premiums, the period calculated for enjoyment of the retirement regime is the aggregate period of payment of compulsory social insurance premiums and voluntary social insurance premiums.
+2. Conditions for pension enjoyment
+a) For the voluntary social insurance participants who have paid compulsory social insurance premiums for full 15 or more years, the condition on retirement age for pension enjoyment must comply with Article 64 of the Law on Social Insurance, except as prescribed at Points b and c of this Clause.
+b) For the voluntary social insurance participants who have paid compulsory social insurance premiums for full 20 or more years and suffer a working capacity decrease of 61% or more, the condition on retirement age for pension enjoyment shall comply with Article 65 of the Law on Social Insurance.
+c) Persons who participated in voluntary social insurance before January 1, 2021, and have paid voluntary social insurance premiums for full 20 years or more are entitled to pension when reaching full 60 years old, for men, or full 55 years old, for women.
+3. The monthly pension rate shall be calculated by multiplying the monthly pension entitlement rate by the average salary and income used for social insurance premium payment as prescribed in Clause 4 of this Article.
+In case the persons who have paid both compulsory social insurance and voluntary social insurance premiums and has participated in social insurance under the categories specified at Points a, b, c, d, dd, g, and i, Clause 1, Article 2 of the Law on Social Insurance before July 01, 2025, and have paid compulsory social insurance premiums under such categories for full 20 years or more, and the calculated monthly pension rate is lower than the reference level, the monthly pension rate shall be equal to the reference level.
+4. The average salary and income used for social insurance premium payment shall be calculated using the following formula:
+Average salary and income used for social insurance premium payment	=	Average salary used for compulsory social insurance premium payment	x	Total months of compulsory social insurance premium payment	+	Total income used for voluntary social insurance premium payment
+		Total months of compulsory social insurance premium payment	+	Total months of voluntary social insurance premium payment
+In which:
+The average monthly salary used as the basis for compulsory social insurance premiums shall be determined in accordance with Articles 72 and 73 of the Law on Social Insurance;
+The total income used for voluntary social insurance premium payment shall be the total income levels used as the basis for voluntary social insurance premiums modified under Article 10 of this Decree.
+5. The lump-sum allowance upon retirement shall be implemented in accordance with Article 100 of the Law on Social Insurance.
+6. The lump-sum social insurance payouts shall be implemented in accordance with Article 102 of the Law on Social Insurance and Article 9 of this Decree. The lump-sum social insurance payout rate shall be calculated based on the average salary and income used for social insurance premium payment as prescribed in Clause 4 of this Article.
+Article 12. Survivorship allowance applicable to persons who have paid both compulsory social insurance and voluntary social insurance premiums
+1. For the persons who have paid both compulsory social insurance and voluntary social insurance premiums, the period calculated for enjoyment of the survivorship regime is the aggregate period of payment of compulsory social insurance premiums and voluntary social insurance premiums.
+2. The organizations and individuals organizing the burial of the following voluntary social insurance participants when they die shall receive a lump-sum burial allowance as prescribed in Clause 2, Article 85 of the Law on Social Insurance:
+a) Those who have a period of compulsory social insurance premium payment of full 12 months or more;
+b) Those who have the compulsory social insurance premium payment periods of less than 12 months but have a combined total of compulsory and voluntary social insurance premium payment periods of at least 60 months;
+c) Those who have resigned from work and currently enjoy or are subject to suspension of the monthly occupational accident or occupational disease allowance;
+d) Those who currently enjoy or are subject to suspension of pension.
+3. If the voluntary social insurance participant falling under one of the following categories die, his/her eligible relatives as prescribed in Clauses 2 and 3, Article 86 of the Law on Social Insurance shall be entitled to receive monthly survivorship allowance in accordance with Article 87 of the Law on Social Insurance:
+a) Those who have a period of compulsory social insurance premium payment of full 15 years or more;
+b) Those who currently enjoy or are subject to suspension of monthly occupational accident or occupational disease allowance with working capacity decrease of 61% or higher;
+c) Those who currently enjoy or are subject to suspension of pension and had a period of compulsory social insurance premium payment of full 15 years or more.
+4. The relatives of the voluntary social insurance participant shall be entitled to a lump-sum survivorship allowance in the following cases:
+a) The voluntary social insurance participant dies without falling under the cases specified in Clause 3 of this Article;
+b) The voluntary social insurance participant dies under one of the cases specified in Clause 3 of this Article but has no relative to receive the monthly survivorship allowance as prescribed in Clauses 2 and 3, Article 86 of the Law on Social Insurance;
+c) Their relatives are entitled to the monthly survivorship allowance as defined in Clauses 2 and 3, Article 86 of the Law on Social Insurance but wish to receive a lump-sum survivorship allowance.
+5. Lump-sum survivorship allowance:
+a) For the persons currently paying social insurance premiums or having their period of social insurance premium payment reserved at the time of death, the lump-sum survivorship allowance shall be calculated in accordance with Clause 2, Article 110 of the Law on Social Insurance, based on the average salary and income used as the basis for payment of social insurance premiums as prescribed in Clause 4, Article 11 of this Decree;
+b) For the persons currently enjoying pension or persons suspended from enjoying pension at the time of death, the lump-sum survivorship allowance shall be calculated in accordance with Clause 4, Article 110 of the Law on Social Insurance;
+c) For the persons currently enjoying or suspended from enjoying monthly occupational accident or occupational disease allowances and currently paying social insurance premiums or having their period of social insurance premium payment reserved at the time of death, the lump-sum survivorship allowance shall be determined as for the persons currently paying social insurance premiums or having their period of social insurance premium payment reserved at the time of death;
+d) For the persons currently enjoying or suspended from enjoying monthly occupational accident or occupational disease allowances, but had received lump-sum social insurance payouts and no longer having their period of social insurance premium payment reserved at the time of death, the lump-sum survivorship allowance shall equal to three months’ current monthly occupational accident or occupational disease allowance. 
+Article 13. Retirement regime for persons participating in voluntary social insurance before January 1, 2021
+1. The persons who began participating in voluntary social insurance before January 1, 2021, and have paid voluntary social insurance premiums for full 20 years or more shall, if so requested, be entitled to pension when reaching full 60 years old, for men, or full 55 years old, for women.
+2. The monthly pension for persons participating in voluntary social insurance who receive a pension under Clause 1 of this Article shall be implemented in accordance with Article 99 of the Law on Social Insurance.
+3. The time of entitlement to pension for persons participating in voluntary social insurance who receive a pension under Clause 1 of this Article shall be implemented in accordance with Article 101 of the Law on Social Insurance.
+4. The Minister of Home Affairs shall detail Clause 3 of this Article.
+Article 14. Regime for voluntary social insurance participants who are ineligible for enjoying pension and have not yet reached the age for enjoying social retirement allowance
+1. The applicable subjects are the persons participating in voluntary social insurance as prescribed in Article 3 of this Decree who have reached the retirement age as prescribed in Clause 2, Article 169 of the Labor Code but are ineligible for enjoying pension in terms of social insurance premium payment period as stipulated in Article 98 of the Law on Social Insurance and ineligible for enjoying social retirement allowance as provided in Article 21 of the Law on Social Insurance.
+2. Entitlement conditions: The subjects specified in Clause 1 of this Article must not have received a lump-sum social insurance payouts, must not have their period of social insurance premium payment reserved, and must have submitted a request to receive monthly allowance.
+3. The duration of monthly allowance entitlement for persons participating in voluntary social insurance as prescribed in Clause 1 and eligible under Clause 2 of this Article shall be determined based on the actual premium payment period, the average income used as the basis for paying voluntary social insurance premiums, or the average salary and income used as the basis for paying social insurance premiums, and shall be calculated according to the following formula:
+
+In which:
+Ttt: Duration of monthly allowance entitlement (in months);
+Mbq: The average income used as the basis for paying voluntary social insurance premiums calculated in accordance with Article 104 of the Law on Social Insurance for persons participating solely in voluntary social insurance; or the average salary and income used as the basis for paying social insurance premiums calculated under Clause 4, Article 11 of this Decree (in VND/month) for the persons who have paid both compulsory social insurance and voluntary social insurance premiums;
+N: Number of years of social insurance premium payment (with full 12 months or more). In case the social insurance premium payment period has an odd time of between 1 month and 6 months or between 7 months and 12 months, such odd time shall be regarded as half-year or one full year, respectively;
+TChtxh: Monthly social retirement allowance levels at the time of decision on the monthly allowance enjoyment (in VND/month).
+In case the result calculated using the formula aforementioned includes an odd time of less than one full month, it shall be rounded up to one full month.
+4. The duration of monthly allowance entitlement shall be determined as the period from the month in which the voluntary social insurance participant submits a written request upon reaching the retirement age until the time they reach the age eligible for receiving the social retirement allowance in accordance with the laws effective at the time of decision on the allowance enjoyment. In case the duration of monthly allowance entitlement calculated according to the formula stipulated in Clause 3 of this Article exceeds the period until the participant reaches the age eligible for receiving the social retirement allowance, the voluntary social insurance participant shall be entitled to the higher monthly allowance as prescribed in Clause 8 of this Article.
+5. If the duration of monthly allowance entitlement calculated according to the formula stipulated in Clause 3 of this Article is not enough for the voluntary social insurance participant to enjoy monthly allowance until he/she reaches the age eligible for enjoying social retirement allowance, he/she may pay the deficit in lump-sum in order to enjoy such monthly allowance until he/she reaches the age eligible for enjoying social retirement allowance if he/she so wishes, the lump-sum deficit payment amount shall be calculated using the following formula:
+STmlct   = (Tdt - Ttt) x TChtxh
+In which:
+STmlct: Lump-sum deficit payment amount (VND);
+Tdt: Duration from the month the voluntary social insurance participant submits a written request until reaching the age eligible for enjoying social retirement allowance (in months);
+Ttt: Duration of monthly allowance entitlement calculated in accordance with the formula stipulated in Clause 3 of this Article (in months);
+TChtxh: Monthly social retirement allowance levels calculated at the time of decision on the monthly allowance enjoyment (in VND/month). In case the voluntary social insurance participant does not pay the deficit in lump-sum at the time of decision on the monthly allowance enjoyment, the monthly social retirement allowance shall be calculated at the time the participant pays the deficit in lump-sum.
+6. In case during the duration of monthly allowance entitlement, the voluntary social insurance participant undergoes changes in policy or in the participant's conditions that lead to a change in the age of entitlement to the monthly social retirement allowance, the participant shall continue to receive the monthly allowance for the duration previously decided. In case the duration of monthly allowance entitlement previously decided has expired and the voluntary social insurance participant has not yet reached the age for enjoying the social retirement allowance, and the participant wishes to pay the deficit in lump-sum so as to enjoy the allowance until reaching the age eligible for enjoying social retirement allowance, the provisions of Clause 5 of this Article shall apply.
+7. The monthly allowance level, at the time of decision on the allowance enjoyment, shall equal to the monthly social retirement allowance level prescribed in Clause 1, Article 22 of the Law on Social Insurance.
+8. If the duration of monthly allowance entitlement calculated under the formula in Clause 3 of this Article exceeds the period until the participant reaches the age for enjoying the social retirement allowance, the voluntary social insurance participant shall receive a monthly allowance higher than the social retirement allowance at the time of decision on the allowance enjoyment. The higher monthly allowance level shall be determined according to the following formula:
+
+In which:
+TCtt: Higher monthly allowance level at the time of decision on the monthly allowance enjoyment (in VND/month);
+TChtxh: Monthly social retirement allowance levels calculated at the time of decision on the monthly allowance enjoyment (in VND/month);
+Ttt: Duration of monthly allowance entitlement calculated in accordance with the formula stipulated in Clause 3 of this Article (in months);
+Tdt: Duration from the month the voluntary social insurance participant submits a written request until reaching the age eligible for enjoying social retirement allowance (in months).
+9. The monthly allowance shall be modified whenever there is the Government’s modification on pensions in accordance with Article 67 of the Law on Social Insurance.
+10. The written request for monthly allowance by the voluntary social insurance participant shall be made in accordance with the form issued by the Vietnam Social Security.
+Article 15. Regime for relatives of persons currently enjoying monthly allowance who die before the end of the duration of allowance entitlement
+1. In case the voluntary social insurance participant who is enjoying monthly allowance under Article 14 of this Decree dies before the end of the duration of monthly allowance entitlement, his/her relatives shall be entitled to receive a lump-sum allowance for the months he/she has not received the allowance. The lump-sum allowance shall be calculated as the number of months not yet received the allowance multiplied by the monthly allowance level being received prior to death.
+2. The organizations and individuals organizing the burial of the voluntary social insurance participants who is receiving monthly allowance and falls under one of the following cases when they die shall receive a lump-sum burial allowance as prescribed in Clause 2, Article 109 of the Law on Social Insurance:
+a) Those who have a period of compulsory social insurance premium payment of full 12 months or more;
+b) Those who have a period of social insurance premium payment of full 60 months or more;
+3. The application dossier for entitlement to the lump-sum allowance and burial allowance as stipulated in Clauses 1 and 2 of this Article shall include:
+a) A copy of the death certificate or an extract of the death declaration, or a copy of the death notice or a copy of the court’s decision declaring such a person dead;
+b) A declaration form of the dead person’s relative, using the form issued by the Vietnam Social Security.
+4. The settlement of entitlement to the lump-sum allowance and burial allowance as stipulated in Clauses 1 and 2 of this Article shall be implemented as follows:
+a) Within 90 days after the death of the person enjoying monthly allowance, his/her relatives shall submit the dossier prescribed in Clause 3 of this Article to the social insurance agency;
+b) Within 10 working days from the date of receipt of a complete dossier as prescribed, the social insurance agency shall be responsible for settlement; in case of refusal, it shall issue a written reply, clearly stating the reason.
+Article 16. Transitional provision
+1. The persons who have participated in voluntary social insurance before July 1, 2025, shall comply with this Decree.
+2. The persons enjoying monthly pensions before July 1, 2025, shall continue to follow the previous regulations and shall follow their adjusted enjoyment levels.
+3. The voluntary social insurance participants who previously paid compulsory social insurance premiums including regional allowances, in addition to pensions, lump-sum social insurance payouts, and survivorship allowance, shall be entitled to a lump-sum regional allowance in accordance with the compulsory social insurance law.
+4. The voluntary social insurance participants who meet the eligibility requirements and receive voluntary social insurance benefits before July 1, 2025, shall continue to comply with the 2014 Law on Social Insurance.
+5. In case the voluntary social insurance participants who have paid premiums in accordance with the payment methods of every 3 months, 6 months, or 12 months, or a lump-sum payment for multiple subsequent years, and such payment includes a period from July 1, 2025 onwards, the support for premium payment prescribed in Article 5 of this Decree shall be implemented from the time the participant continues the voluntary social insurance premium payment with the new payment method, after completing the period of voluntary social insurance payment under the previously registered method.
+Article 17. Effect
+1. This Decree takes effect from July 1, 2025.
+2. The Decree No. 134/2015/ND-CP dated December 29, 2015 of the Government detailing a number of articles of the Law on Social Insurance regarding voluntary social insurance shall cease to be effective as from the effective date of this Decree.
+Article 18. Responsibility for implementation
+1. The Minister of Home Affairs shall guide the implementation of this Decree.
+2. The Minister of Finance and the People's Committees of provinces and centrally-run cities shall ensure the budget for the implementation of the policy to support the voluntary social insurance participants as stipulated in this Decree.
+3. Annually, the General Statistics Office under the Ministry of Finance shall promptly provide the average annual consumer price index using the 2008 average as the base to the Vietnam Social Security for determining the modification coefficient of monthly income on which the social insurance premiums are based, as prescribed in Clause 2, Article 10 of this Decree.
+4. Annually, the Vietnam Social Security shall publish the average monthly investment interest rate of the social insurance fund of the preceding year to serve as the basis for determining the premium payment level, the refundable amount for voluntary social insurance participants as stipulated in Articles 6, 7, and 8 of this Decree, and shall determine the modification coefficient of monthly income on which social insurance premiums are based to implement the modification of such income for voluntary social insurance participants as prescribed in Article 10 of this Decree. The average monthly investment interest rate of the preceding year and the modification coefficient of monthly income on which social insurance premiums are based shall be published on the Vietnam Social Security’s Portal.
+5. The social insurance agencies shall check the list of voluntary social insurance participants as stipulated in Article 5 of this Decree with the list of poor and near-poor households provided by the local authorities to identify the eligible beneficiaries who belong to poor and near-poor households; and check with the National Population Database to identify eligible beneficiaries residing in island communes, special zones, and ethnic minorities, and implement the provisions of this Decree.
+6. The ministers, the heads of the ministerial-level agencies, the heads of the Government agencies, the chairpersons of the People's Committees of centrally affiliated cities and provinces are responsible for the implementation of this Decree.

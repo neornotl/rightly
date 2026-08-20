@@ -1,0 +1,247 @@
+
+CIRCULAR
+Detailing the implementation of, the Law on Social Insurance, Law on Occupational Safety and Health in the field of health, and a number of articles of the Law on Medical Examination and Treatment
+
+Pursuant to the 2024 Law on Social Insurance;
+Pursuant to the 2015 Law on Occupational Safety and Health;
+Pursuant to the 2023 Law on Medical Examination and Treatment;
+Pursuant to the Government’s Decree No. 42/2025/ND-CP dated February 27, 2025, defining the functions, tasks, powers and organizational structure of the Ministry of Health;
+Pursuant to the Government’s Decree No. 143/2024/ND-CP dated November 1, 2024, providing for occupational accident insurance on a voluntary basis for employees working without labor contracts;
+At the proposal of the Director of the Department of Medical Services Administration and the Director of the Agency for Maternal and Child Health;
+The Minister of Health hereby promulgates the Circular detailing the implementation of the Law on Social Insurance, the Law on Occupational Safety and Health in the field of health, and the Law on Medical Examination and Treatment.
+
+Chapter I
+GENERAL PROVISIONS
+
+Article 1. Scope of regulation
+This Circular provides for:
+1. The list of diseases requiring prolonged treatment as prescribed at Point b, Clause 2, Article 10; Clause 2, Article 43; Point d, Clause 2, Article 119; and Clause 5, Article 141 of the Law on Social Insurance.
+2. The forms, procedures, and competence to issue:
+a) Papers in the dossier for claiming sickness allowance as prescribed in Clause 4, Article 47 of the Law on Social Insurance;
+b) Papers in the dossier for claiming maternity regime as prescribed in Clause 9, Article 61 of the Law on Social Insurance;
+c) Substitute papers in case of force majeure events due to natural disasters, catastrophes and epidemics as prescribed in Clause 4, Article 47 and Clause 9, Article 61 of the Law on Social Insurance;
+d) Certificates of injury.
+3. The dossiers, procedures, and contents of examination and assessment of working capacity decrease level serving the settlement of social insurance benefits.
+Article 2. Interpretation of terms
+1. Outpatient treatment leave means the period during which an employee is unfit to work and is prescribed outpatient treatment by a medical examination and treatment practitioner.
+2. A copy of the medical record as prescribed in Clause 2, Article 57 of the Law on Occupational Safety and Health means a medical record summary as prescribed in Clause 1, Article 69 of the Law on Medical Examination and Treatment.
+Article 3. Principles for issuance of papers related to enjoyment of social insurance benefits and issuance of certificates of injury
+1. The issuance of papers as prescribed in this Circular must meet the following requirements:
+a) It must be conformable with the scope of professional activities approved by competent authorities for medical examination and treatment establishments;
+b) It must be suitable to the patient’s health condition and comply with professional guidelines issued by the Minister of Health.
+2. The information contained in the papers prescribed in this Circular is basic and mandatory. In addition to the information required in the form, depending on operational needs, the head of the establishment may decide to add other information serving its operation. In case the information in the form has already been displayed on the VNeID application and has been fully digitally signed in accordance with regulations, it shall be considered equivalent to the paper version.
+Article 4. List of diseases requiring prolonged treatment
+The list of diseases requiring prolonged treatment shall comply with the provisions of Appendix I issued together with this Circular.
+
+Chapter II
+FORMS, PROCEDURES, AND COMPETENCE FOR ISSUANCE OF PAPERS RELATED TO ENJOYMENT OF SOCIAL INSURANCE BENEFITS AND ISSUANCE OF CERTIFICATES OF INJURY
+
+Section 1
+PAPERS, FORMS, PROCEDURES, AND COMPETENCE FOR ISSUANCE OF CERTIFICATES OF INJURY
+
+Article 5. Issuance of certificates of injury
+1. The form and method of completing the certificate of injury shall comply with Form No. 01 of Appendix II issued together with this Circular.
+2. Procedures for issuance: Medical examination and treatment establishments shall be responsible for providing the patient or the patient’s representative (hereinafter referred to as the applicant) with an appointment slip, which must clearly state the time of issuance of the certificate of injury, and shall issue the certificate in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+
+Section 2
+FORMS, PROCEDURES, AND COMPETENCE FOR ISSUANCE OF PAPERS RELATED TO ENJOYMENT OF SICKNESS ALLOWANCE
+
+Article 6. Papers evidencing inpatient treatment and substitute papers in case of force majeure events due to natural disasters, catastrophes, or epidemics in the dossier for claiming sickness allowance
+1. Other papers evidencing inpatient treatment as prescribed at Point c, Clause 1, Article 47 of the Law on Social Insurance include one of the following papers:
+a) Death certificate in case of inpatient treatment;
+b) Certification of inpatient treatment.
+2. Substitute papers in case of force majeure events due to natural disasters, catastrophes, or epidemics include:
+a) Decision on application of quarantine measures;
+b) Certification of care or treatment.
+Article 7. Forms, procedures, and competence for issuance of discharge certificates
+1. The form and method of completing the discharge certificate shall comply with Form No. 02 of Appendix II issued together with this Circular.
+2. Procedures for issuance: Medical examination and treatment establishments shall issue the discharge certificate to the patient after the medical practitioner decides to discharge the patient from the establishment or transfer the patient to another establishment.
+3. Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+Article 8. Forms, procedures, and competence for issuance of medical record summaries
+1. The form and method of completing the medical record summary shall comply with Form No. 03 of Appendix II issued together with this Circular.
+2. Procedures for issuance:
+a) The applicant shall submit a request form as prescribed in Form No. 04 of Appendix II issued together with this Circular to the medical examination and treatment establishment where the patient received medical care;
+b) The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the medical record summary and shall issue the summary in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+Article 9. Forms, procedures, and competence for issuance of papers evidencing inpatient treatment
+1. Issuance of death certificate:
+a) The form and method of completing the death certificate shall comply with Form No. 05 of Appendix II issued together with this Circular;
+b) Procedures for issuance: The medical examination and treatment establishment shall issue the death certificate after the patient dies at the establishment or dies during transfer to another establishment;
+c) Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+2. Issuance of certification of inpatient treatment:
+a) The form and method of completing the certification of inpatient treatment shall comply with Form No. 06 of Appendix II issued together with this Circular;
+b) Procedures for issuance: The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the certification of inpatient treatment and shall issue the certification in accordance with the stated time;
+c) Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+Article 10. Forms, procedures, and competence for issuance of the certificate of leave to enjoy social insurance benefits
+1. The form and method of completing the certificate of leave to enjoy social insurance benefits shall comply with Form No. 07 of Appendix II issued together with this Circular.
+2. Procedures for issuance: The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the certificate of leave to enjoy social insurance benefits and shall issue the certificate in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the patient receives medical examination and treatment.
+Article 11. Forms, procedures, and competence for issuance of substitute papers in case of force majeure events due to natural disasters, catastrophes, or epidemics
+1. In case of force majeure events due to natural disasters, catastrophes, or epidemics, where the patient is required to be quarantined, cared for, or treated at an establishment that is not a medical examination and treatment establishment, the following papers shall be used:
+a) In case of quarantine at an establishment that is not a medical examination and treatment establishment, the decision on application of quarantine measures issued by a competent authority shall be used;
+b) In case of care or treatment at an establishment that is not a medical examination and treatment establishment, a certificate of treatment shall be used.
+2. Decision on application of quarantine measures:
+a) The decision on application of quarantine measures must include the contents specified in Clause 3, Article 9 of the Government’s Decree No. 101/2010/ND-CP dated September 30, 2010, detailing and guiding the implementation of a number of articles of the Law on Prevention and Control of Infectious Diseases regarding the application of medical quarantine measures, enforcement of medical quarantine, and special epidemic prevention and control measures during an epidemic period;
+b) The competence for issuance of decisions on application of quarantine measures shall comply with the provisions of the law on prevention and control of infectious diseases.
+3. Certificate of care or treatment in case of force majeure events due to natural disasters, catastrophes, or epidemics:
+a) The form and method of completing the certificate of care or treatment in case of force majeure events due to natural disasters, catastrophes, or epidemics shall comply with Form No. 08 of Appendix II issued together with this Circular;
+b) Procedures for issuance: The establishment providing care or treatment to the patient shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance and shall issue the certificate in accordance with the stated time;
+c) Competence for issuance: The establishment providing care or treatment to the patient.
+
+Section 3
+FORMS, PROCEDURES, AND COMPETENCE FOR ISSUANCE OF PAPERS RELATED TO THE ENJOYMENT OF MATERNITY REGIME
+
+Article 12. Specific provisions on certain papers in dossiers for claiming maternity regime
+1. Papers evidencing the infertility treatment for a female employee include one of the following documents:
+a) Discharge certificate;
+b) Medical record summary;
+c) Certification of inpatient treatment;
+d) Certification of the infertility treatment for the female employee.
+2. The medical examination and treatment establishment’s document certifying that the female employee has to take leave for pregnancy care includes one of the following documents:
+a) Discharge certificate;
+b) Medical record summary;
+c) Certification of inpatient treatment;
+d) Certificate of leave to enjoy social insurance benefits;
+dd) Certification of leave for pregnancy care.
+3. The forms, procedures, and competence for issuance of discharge certificates, medical record summaries, and certifications of inpatient treatment shall comply with Section 2 of this Chapter.
+Article 13. Forms, procedures, and competence for issuance of certification of the infertility treatment for female employees
+1. The form and method of completing the certification of the infertility treatment for female employees shall comply with Form No. 09 of Appendix II issued together with this Circular.
+2. Procedures for issuance: The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the certification of the infertility treatment for female employees, and shall issue the certification in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the patient received medical examination and treatment.
+Article 14. Forms, procedures, and competence for issuance of the medical examination and treatment establishment’s document certifying that, after childbirth, the mother is no longer physically fit to take care of her child or that, after receiving the child, the female employee as intended mother is no longer physically fit to take care of the child
+1. The form and method of completing the medical examination and treatment establishment’s document certifying that, after childbirth, the mother is no longer physically fit to take care of her child or that, after receiving the child, the female employee as intended mother is no longer physically fit to take care of the child (hereinafter referred to as certification of inability of the mother to take care of the child) shall comply with Form No. 10 of Appendix II issued together with this Circular.
+2. Procedures for issuance: The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the certification of inability of the mother to take care of the child, and shall issue the certification in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the mother received medical examination and treatment.
+Article 15. Forms, procedures, and competence for issuance of the medical examination and treatment establishment’s document certifying that the female employee has to take leave for pregnancy care
+1. The form and method of completing the medical examination and treatment establishment’s document certifying that the female employee has to take leave for pregnancy care (hereinafter referred to as certification of leave for pregnancy care) shall comply with Form No. 11 of Appendix II issued together with this Circular.
+2. Procedures for issuance: The medical examination and treatment establishment shall be responsible for providing the applicant with an appointment slip, which must clearly state the time of issuance of the certification of leave for pregnancy care, and shall issue the certification in accordance with the stated time.
+3. Competence for issuance: The medical examination and treatment establishment where the patient received medical examination and treatment.
+
+Chapter III
+DOSSIERS, PROCEDURES, AND CONTENTS OF EXAMINATION AND ASSESSMENT OF WORKING CAPACITY DECREASE LEVEL 
+
+Article 16. Dossiers for medical examination and assessment
+1. A dossier for first-time medical examination and assessment due to an occupational accident:
+a) A referral for medical assessment issued by the employer using Form No. 12 of Appendix II issued together with this Circular for employees under the management of the employer at the time of the assessment request, or a request for medical assessment using Form No. 13 of Appendix II for employees not under the management of the employer at the time of request or voluntarily participating in social insurance;
+b) A certified true copy as prescribed in Clause 5, Article 2 of the Government’s Decree No. 96/2023/ND-CP dated December 30, 2023, detailing the implementation of a number of articles of the Law on Medical Examination and Treatment (hereinafter referred to as certified true copy) of one of the following documents: discharge certificate, medical record summary, or certificate of injury;
+c) A certified true copy of the occupational accident investigation report (applicable in case of self-requested assessment);
+d) Other papers on diagnosis and treatment (if any).
+2. A dossier for first-time medical examination and assessment of an occupational disease:
+a) Documents specified at Point a, Clause 1 of this Article;
+b) A certified true copy of the occupational disease record.
+3. A dossier for medical examination and assessment for implementation of retirement regime for employees; for implementation of survivorship allowance regime; or for entitlement to lump-sum social insurance payouts:
+a) Papers specified at Point a, Clause 1 of this Article appropriate to the assessment subject;
+b) A certified true copy of diagnosis and treatment documents (if any);
+c) A certified true copy of the medical assessment record or disability certificate (if any).
+4. For individuals specified at Point c, Clause 1, Article 47 of the Law on Occupational Safety and Health, the documents mentioned at Point b, Clause 2 and Point b, Clause 3 of this Article must indicate that the injury is not treatable to a stable condition.
+Article 17. Dossiers for reexamination and reassessment due to recurrence of occupational accident injuries or recurrence/progression of occupational diseases
+1. A request for medical assessment.
+2. Certified true copy of one of the following documents:
+a) Medical record summary or discharge certificate showing worsened injury due to recurrence of occupational accident;
+b) Medical record summary, discharge certificate, or occupational disease record showing progression or recurrence of the occupational disease.
+2. Certified true copy of the most recent medical assessment record.
+3. For individuals specified at Point c, Clause 1, Article 47 of the Law on Occupational Safety and Health, the documents specified in Clause 2 of this Article must indicate that the injury is not treatable to a stable condition.
+Article 18. Dossiers for cumulative medical examination and assessment
+1. A referral for medical assessment issued by the employer for employees under the management of the employer at the time of the assessment request, or a request for medical assessment for employees not under the employer’s management at the time of request or voluntarily participating in social insurance.
+2. A certified true copy of the most recent medical assessment record, if assessment has previously been conducted.
+3. Other documents as specified in Clause 1, Clause 2 of Article 16, or Article 17 of this Circular appropriate to the subject and type of assessment.
+Article 19. Dossiers for superior-level medical examination and assessment
+1. A dossier for superior-level medical assessment due to exceeding the professional competence of the provincial-level Medical Assessment Council or ministerial-level Medical Assessment Council shall comprise:
+a) A written request for medical examination and assessment due to exceeding the professional competence of the standing body of the provincial-level or ministerial-level Medical Assessment Council;
+b) A certified true copy of the medical assessment request dossier;
+c) A certified true copy of one of the following documents: the minutes of the professional consultation meeting in case the assessment has not yet been conducted, or the medical assessment record in case the Medical Assessment Council has conducted an assessment for the person concerned.
+2. A dossier for superior-level medical assessment at the request of an individual or a competent agency or organization shall comprise:
+a) A document issued by the agency or organization, or a written request from the individual, requesting superior-level medical assessment;
+b) A certified true copy of the medical assessment record submitted to the standing body of the central-level or ministerial-level Medical Assessment Council that is responsible for conducting the superior-level assessment;
+c) A certified true copy of the documents prescribed in Articles 16, 17, and 18 of this Circular, appropriate to the subject and type of assessment, as provided by the Medical Assessment Council that previously conducted the assessment.
+Article 20. Dossiers for final superior-level medical examination and assessment
+1. A document issued by the agency or organization, or a written request from the individual, requesting final superior-level medical examination and assessment;
+2. A certified true copy of the medical assessment record submitted to the standing body of the central-level or ministerial-level Medical Assessment Council that has conducted the prior superior-level assessment for the individual;
+3. The decision of the Minister of Health on the establishment of the Final Superior-level Medical Assessment Council.
+Article 21. Responsibilities for preparing dossiers for medical examination and assessment
+1. Employees shall be responsible for preparing and completing the dossier for medical examination and assessment and submitting it to the Medical Assessment Council in the following cases:
+a) Medical examination and assessment for entitlement to lump-sum social insurance payouts;
+b) Medical re-assessment;
+c) Employees who are not under the management of any employer, participate in voluntary social insurance, are preserving their social insurance contribution period, or have received a decision on termination of employment pending settlement of retirement or monthly allowance; employees who are diagnosed with an occupational disease during the guaranteed period of the disease.
+In case the employee as prescribed in this Clause is unable to prepare the dossier by themselves, they may authorize another person to do so in accordance with the law.
+2. Relatives of the employee shall be responsible for preparing and completing the dossier for medical examination and assessment and submitting it to the Medical Assessment Council in case of request for assessment for entitlement to monthly survivorship allowance.
+3. Employers shall be responsible for preparing and completing the dossier for assessment and submitting it to the Medical Assessment Council in cases not specified in Clauses 1, 2, 4, and 5 of this Article.
+4. The standing body of the provincial-level or ministerial-level Medical Assessment Council shall be responsible for preparing the dossier in cases of superior-level medical assessment due to exceeding professional competence.
+5. The standing body of the central-level or ministerial-level Medical Assessment Council with the authority to conduct final-level medical assessment shall be responsible for preparing the dossier for final-level medical examination and assessment.
+Article 22. Procedures and contents of medical examination and assessment
+1. The settlement of dossiers for medical examination and assessment and the procedures for conducting medical examination and assessment shall comply with the Minister of Health’s Circular No. 01/2023/TT-BYT dated February 1, 2023, defining the functions, tasks, powers, working relationships, and operations of Medical Assessment Councils at all levels.
+2. Contents of medical examination and assessment for occupational accidents:
+a) Contents of the first-time assessment of occupational accidents shall be based on the referral letter or written request for assessment recording injuries related to occupational accidents as shown in one of the following documents: discharge certificate, medical record summary, or injury certificate;
+b) Contents of medical re-assessment for recurrent occupational accidents: re-assessment of all injuries recorded in the requested contents of the most recent medical assessment record or injury certificate, and more severe injuries as indicated in the discharge certificate or medical record summary.
+Injuries deemed untreatable shall be indicated in the medical record summary for individuals specified at Point c, Clause 1, Article 47 of the Law on Occupational Safety and Health;
+c) Contents of assessment for cumulative injuries due to multiple occupational accidents shall be conducted in accordance with Point a and Point b of this Clause, as appropriate to each case.
+3. Contents of medical examination and assessment for occupational diseases:
+a) Contents of the first-time assessment shall be based on the occupational disease dossier;
+b) Contents of medical re-assessment (recurrence): assessment based on the occupational disease dossier or the contents of the most recent medical assessment record, and more severe injuries related to occupational diseases as indicated in the medical record summary or discharge certificate of the medical examination and treatment establishment.
+4. Contents of medical examination and assessment for entitlement to retirement regime, lump-sum social insurance payouts, or survivorship allowance shall be based on the contents stated in the referral letter or written request for medical examination and assessment.
+During the assessment process, if additional injuries are detected, such injuries shall also be recorded in the current assessment results in the medical assessment record.
+5. In cases where there is already a medical assessment record for occupational accidents, occupational diseases, war injuries, or diseases, deformities, or malformations related to chemical toxins, the previously recorded injuries and diseases shall not be re-assessed.
+The Medical Assessment Council shall consolidate the bodily injury rate identified in previous medical assessment records with the rate of bodily injury caused by newly assessed injuries or diseases that do not overlap with previously recorded ones to determine the total bodily injury rate.
+6. Contents of cumulative medical examination and assessment shall be implemented as follows:
+a) Assessment contents as prescribed in Clauses 2 and 3 of this Article, as appropriate to each individual;
+b) In cases where the individual already has injuries or occupational diseases and acquires additional injuries or occupational diseases that overlap with previous injuries: a full re-assessment of all current injuries or occupational diseases shall be conducted, and the labor capacity reduction rate shall be determined;
+c) In cases where the individual already has injuries or occupational diseases and now acquires new injuries or occupational diseases that do not overlap with previous injuries: the newly sustained injuries or occupational diseases shall be fully assessed and consolidated with the labor capacity reduction rate as concluded in the most recent medical assessment record to determine the overall labor capacity reduction rate;
+d) In cases where the individual has undergone two or more assessments for occupational accidents or diseases without consolidation of bodily injury rates:
+- If the medical assessment records show overlapping injuries in one or more organs or body parts, the Medical Assessment Council shall conduct a full re-assessment of all injuries recorded in those records (including both overlapping and non-overlapping injuries) and consolidate them with the bodily injury rate recorded in the medical assessment record that contains no overlapping injuries, and issue a new medical assessment record;
+- If the individual has undergone two or more assessments and the summary of the medical record, hospital discharge paper, or occupational disease dossier indicates that the injury status has become more severe or less severe compared to the previously recorded assessment records, the Medical Assessment Council shall conduct a full assessment of all injuries recorded in those records with changed status and consolidate the bodily injury rate with that recorded in the remaining medical assessment record, and issue a new medical assessment record.
+In other cases, the Medical Assessment Council shall consolidate the bodily injury rates recorded in previous assessment records and issue a new medical assessment record.
+7. Where necessary, the standing body of the Medical Assessment Council shall have the right to request the person undergoing the assessment or the medical examination and treatment establishment to provide diagnostic and treatment-related documents, and the employer to provide the occupational accident investigation record as a basis for the assessment conclusion.
+Article 23. Validity period of the medical assessment record
+The medical assessment record shall remain valid until a subsequent medical assessment record with the same contents and purpose is issued.
+
+Chapter IV
+IMPLEMENTATION RESPONSIBILITIES
+
+Article 24. Responsibilities of units under the Ministry of Health
+The Department of Medical Services Administration shall assume the prime responsibility for, and coordinate with the Agency for Maternal and Child Health and relevant units in:
+1. Organizing the implementation, and conducting preliminary and final reviews of the implementation of this Circular nationwide;
+2. Inspecting, supervising, handling violations, and addressing difficulties and problems arising in the implementation of this Circular in accordance with current law.
+Article 25. Responsibilities of Vietnam Social Security and the Ministry of Finance
+1. Directing and guiding agencies in the social insurance system to organize and implement this Circular;
+2. Directing local social insurance agencies to publicly post on their electronic information portals the list of medical examination and treatment establishments authorized to issue the certificate of leave to enjoy social insurance benefits.
+Article 26. Responsibilities of People’s Committees of provinces and centrally run cities, and ministries and sectors
+1. Assuming the prime responsibility for organizing, implementing, and conducting preliminary and final reviews of the implementation of this Circular within their respective management scope;
+2. Inspecting, handling violations, and resolving difficulties in the implementation of this Circular in accordance with the law.
+Article 27. Responsibilities of the standing body of the medical assessment council
+1. Updating the conclusion content of the medical assessment record into the national medical examination and treatment database for integration with the data system of the social insurance agency;
+2. Providing the examinee, after the completion of the assessment, with the following documents:
+a) The medical assessment record;
+b) The invoice or voucher for assessment fees;
+c) The list of assessment contents. If any assessment content was performed by another medical establishment, the name of that establishment must be specified in the “Remarks” column.
+Article 28. Responsibilities of medical examination and treatment establishments
+1. Disseminating and thoroughly informing all practitioners and staff of the establishment of the contents of this Circular;
+2. Developing procedures and fully and promptly providing employees with dossiers and documents serving as the basis for the enjoyment of social insurance benefits in accordance with this Circular; monitoring the completion of the contents in the documents prescribed herein by practitioners at their establishments, and taking legal responsibility for the accuracy and truthfulness of the issuance of these documents;
+3. Updating medical examination and treatment data into the national medical examination and treatment database for integration with the social insurance data system; generating electronic documents on health examination and treatment covered by health insurance in accordance with the Government’s Decree No. 166/2016/ND-CP dated December 24, 2016 on electronic transactions in the fields of social insurance, health insurance, and unemployment insurance, and the roadmap guided by the Ministry of Finance; and bearing legal responsibility for the legality and accuracy of such documents;
+4. The medical examination and treatment establishment that has issued the documents as prescribed in this Circular shall be responsible for:
+a) Re-issuing documents in the following cases:
+- Lost or damaged;
+- Documents signed by unauthorized persons;
+- Improper stamping on the documents;
+In such cases, the stamp “Re-issued” must be affixed;
+b) Supplementing or modifying contents in case of information errors. After the modification or supplementation, the seal of the establishment shall be partially affixed across the correction.
+5. In case the employee has received medical examination or treatment but has not been issued the documents as prescribed in this Circular, the medical examination and treatment establishment where such services were provided shall base on the provisions of this Circular and the written request of the employee to issue the required documents.
+
+Chapter V
+IMPLEMENTATION PROVISIONS
+
+Article 29. Effect
+1. This Circular takes effect from July 1, 2025.
+2. The following documents shall cease to be effective from the effective date of this Circular:
+a) The Minister of Health’s Circular No. 56/2017/TT-BYT dated December 29, 2017, detailing the implementation of the Law on Social Insurance and the Law on Occupational Safety and Health in the field of health;
+b) The Minister of Health’s Circular No. 18/2022/TT-BYT dated December 31, 2022, amending and supplementing a number of articles of the Minister of Health’s Circular No. 56/2017/TT-BYT dated December 29, 2017, detailing the implementation of the Law on Social Insurance and the Law on Occupational Safety and Health in the field of health;
+c) The Minister of Health’s Circular No. 46/2016/TT-BYT dated December 30, 2016, promulgating the list of diseases requiring prolonged treatment;
+d) Medical record summary using Form 52/BV2 and the request for provision of medical record summary/related documents using Form 53/BV2 under Appendix XXIX issued together with the Circular No. 32/2023/TT-BYT dated December 31, 2023, detailing a number of articles of the Law on Medical Examination and Treatment;
+dd) Death certificate using the form specified in Appendix II issued together with the Minister of Health’s Circular No. 24/2020/TT-BYT dated December 28, 2020, on cause-of-death diagnosis forms, issuance of death certificates, and mortality statistics at medical examination and treatment establishments.
+3. Article 3 and the Appendix issued together with the Minister of Health’s Circular No. 18/2025/TT-BYT dated June 15, 2025, stipulating the division of competence between two-level local administration and decentralization in the field of medical examination and treatment are hereby repealed.
+Article 30. Transitional provisions
+1. Certificates of leave to enjoy social insurance benefits, discharge certificates, certificates of leave for pregnancy care, and certificates of inability to take care of a child after childbirth that were issued before the effective date of this Circular remain valid as a basis for enjoyment of social insurance benefits.
+2. For medical assessment dossiers submitted before the effective date of this Circular, the receiving agency shall continue to process them in accordance with the current regulations until the assessment is completed.
+Article 31. Reference clause
+In the event that the legal documents and regulations referred to in this Circular are amended, supplemented, or replaced, the new legal documents shall apply.
+Any difficulties or problems arising in the implementation shall be promptly reported to the Ministry of Health (Department of Medical Services Administration) for consideration and resolution.
