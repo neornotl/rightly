@@ -1,0 +1,568 @@
+
+LAW 
+On Cybersecurity[ Công Báo No 35 (21/01/2026)]
+
+Pursuant to the Constitution of the Socialist Republic of Vietnam, which has a number of articles amended and supplemented under Resolution No. 203/2025/QH15;
+The National Assembly promulgates the Law on Cybersecurity.
+
+Chapter I
+GENERAL PROVISIONS
+Article 1. Scope of regulation and subjects of application
+1. This Law provides cybersecurity and the protection of cybersecurity; rights, obligations and responsibilities of relevant agencies, organisations and individuals.
+2. This Law applies to:
+a/ Vietnamese agencies, organisations and individuals;
+b/ Foreign agencies, organisations and individuals in Vietnam, and persons of Vietnamese origin whose nationality has not yet been determined and who are residing in Vietnam and have been issued identity certificates;
+c/ Foreign agencies, organisations and individuals directly participating in or related to cybersecurity protection activities or doing business in cybersecurity products and services in Vietnam.
+Article 2. Interpretation of terms
+In this Law, the terms below are construed as follows:
+1. Cybersecurity means the stability, security and safety of cyberspace; the protection of information systems and the assurance that information, data and activities in cyberspace do not harm national security, social order and safety, or the lawful rights and interests of agencies, organisations and individuals.
+2. Cyberinformation security means the assurance of the integrity, confidentiality and availability of information in cyberspace, preventing unauthorised access, use, disclosure or alteration, destruction, or other acts that threaten or harm national security or social order and safety.
+3. Data security means the assurance of the quality of data and the processing and use of data in cyberspace for socio-economic development and national digital transformation, thereby preventing unauthorised access, use, disclosure or alteration, destruction, or other acts that threaten or harm national security or social order and safety.
+4. Protection of cybersecurity means the prevention, detection, deterrence and handling of acts infringing upon cybersecurity.
+5. Cyberspace means the environment that is formed by interconnected information technology infrastructure networks, including telecommunications networks, the Internet, computer networks, information systems, information processing and control systems and databases; and where people conduct social activities without limitation of space and time.
+6. National cyberspace means the part of cyberspace under the sovereignty, jurisdiction and control of the State of the Socialist Republic of Vietnam.
+7. Information system means a set of hardware, software and data established for the purpose of creating, providing, transmitting, collecting, processing, storing and exchanging information in cyberspace.
+8. Information system manager means an agency, organisation or individual having the competence to directly manage an information system.
+9. Malicious software means software capable of causing abnormal operation of part or the whole of an information system or unlawfully copying, altering or deleting information stored therein.
+10. Malicious hardware means physical components intentionally designed or added outside standard hardware configurations to unlawfully collect information or data, or to interfere with, disrupt, paralyse or destroy computer systems or information systems.
+11. System log means a set of records reflecting time, users, activities and system status for system management, monitoring and security purposes.
+12. Cybercrime means socially dangerous acts prescribed in the Penal Code, committed by individuals or organisations in cyberspace using information technology or electronic means.
+13. Cyberattack means acts carried out in cyberspace using information technology or electronic means to appropriate information; disrupt, interrupt, paralyse, destroy or control telecommunications networks, the Internet, computer networks, information systems, information processing and control systems, databases or electronic means.
+14. Cyber-terrorism means acts carried out in cyberspace using information technology or electronic means aimed at causing public panic or political instability.
+15. Cyber-espionage means acts carried out in cyberspace using information technology or electronic means to secretly intrude in order to appropriate, collect or copy information classified as state secrets or important data of agencies, organisations or individuals, with the aim of harming national security or social order and safety.
+16. Cybersecurity threat means a state of cyberspace in which appear signs of threats infringing upon national security or causing serious harm to social order and safety or the lawful rights and interests of agencies, organisations or individuals.
+17. Cybersecurity incident means an unexpected event occurring in cyberspace that infringes upon national security, social order and safety or the lawful rights and interests of agencies, organisations or individuals.
+18. Dangerous cybersecurity situation means a state or development in cyberspace involving elements of attack, intrusion, incitement, disclosure or loss of information, or other acts that seriously threaten to infringe upon national security, social order and safety or the lawful rights and interests of agencies, organisations or individuals.
+19. Digital account means information used for authentication, verification and authorisation in the use of applications and services in cyberspace.
+20. Civil cryptography means cryptographic techniques and products used to secure or authenticate information not classified as state secrets, ensuring information security for agencies, organisations and individuals.
+21. Cybersecurity products means hardware and software with functions of protecting cybersecurity, cyberinformation security, data security, information, data, information systems and information technology infrastructure.
+22. Cybersecurity services means services provided to protect cybersecurity, cyberinformation security, data security, information, data, information systems and information technology infrastructure.
+23. Cryptographic information system means an information system using specialised cryptography to protect information classified as state secrets, serving professional cryptographic operations, and directly managed and operated by cryptographic organisations.
+Article 3. The State’s policies on cybersecurity
+1. To build a healthy cyberspace that does not harm national security, social order and safety or the lawful rights and interests of agencies, organisations and individuals.
+2. To prioritise cybersecurity protection in the fields of national defence, security, cryptography, socio-economic development, science, technology and foreign affairs.
+3. To prioritise the allocation of resources for building and developing specialised cybersecurity protection forces; to ensure high-quality human resources for cybersecurity protection; to build the capacity of cybersecurity protection forces and of organisations and individuals participating in cybersecurity protection; to prioritise investment in research and development of modern science and technology serving cybersecurity protection; to adopt specific mechanisms and preferential policies to mobilise, attract, train and utilise talents in the field of cybersecurity.
+4. To promote linkage and investment after the public-private partnership model in cybersecurity protection; to encourage and create favourable conditions for agencies, organisations and individuals to participate in cybersecurity protection and in addressing cybersecurity threats; to research and develop technologies, products, services and applications for cybersecurity protection; to use Vietnamese cybersecurity products and services.
+5. To expand international cooperation in cybersecurity to enhance cybersecurity protection capacity; to prevent and combat cybercrime and transnational cybersecurity threats; to acquire modern technologies to strengthen national cybersecurity autonomy.
+Article 4. Principles of cybersecurity protection
+1. To comply with the Constitution and law; to ensure national security, sovereignty and interests in cyberspace.
+2. To operate under the leadership of the Communist Party of Vietnam and the unified management of the State; to mobilise the combined strength of the political system and the entire nation; to promote the core role of specialised cybersecurity protection forces.
+3. To closely combine cybersecurity protection with socio-economic development, guaranteeing human rights and citizens’ rights, protecting personal data, and creating favourable conditions for agencies, organisations and individuals to lawfully operate in cyberspace.
+4. To apply measures to protect national cyberspace; to proactively prevent, detect, stop and combat to defeat all activities in cyberspace that infringe upon national security, social order and safety or the lawful rights and interests of agencies, organisations and individuals; to promptly and strictly handle violations of the law on cybersecurity.
+5. To carry out cybersecurity protection activities regularly and continuously for national cyberspace infrastructure; to proactively apply measures to protect information systems critical to national security.
+Article 5. Cybersecurity protection measures
+1. Cybersecurity protection measures include:
+a/ Cybersecurity appraisal;
+b/ Assessment of cybersecurity conditions;
+c/ Cybersecurity inspection;
+d/ Cybersecurity monitoring;
+dd/ Response to and remediation of cybersecurity incidents;
+e/ Measures to combat and protect cybersecurity;
+g/ Use of cryptography to protect cyberinformation;
+h/ Application of technical solutions to protect cyberinformation security, data security and information systems; and to prevent unlawful information;
+i/ Prevention, request for suspension or cessation of the provision of cyberinformation; termination or suspension of activities related to the establishment, provision and use of telecommunications networks and the Internet, and the manufacture and use of radio transmitters and receivers/transmitters in accordance with law;
+k/ Request for the removal or access for removal of unlawful information or false information and fake news in cyberspace that infringes upon national security, social order and safety or the lawful rights and interests of agencies, organisations and individuals;
+l/ Collection of electronic data related to activities infringing upon national security, social order and safety or the lawful rights and interests of agencies, organisations and individuals in cyberspace;
+m/ Blocking or restricting the operation of information systems; termination, suspension, or request for cessation of operation of information systems; revocation of domain names in accordance with law;
+n/ Initiation of criminal cases, investigation, prosecution and adjudication in accordance with the Criminal Procedure Code;
+o/ Other measures as specified by the law on national security and the law on handling of administrative violations.
+2. The Government shall promulgate detailed regulations on contents, order, procedures and competence for applying cybersecurity protection measures, except the measures specified in Points n and o, Clause 1 of this Article.
+Article 6. International cooperation in cybersecurity
+1. International cooperation in cybersecurity shall be conducted on the basis of respect for independence, sovereignty, territorial integrity, non-interference in each other’s internal affairs, equality, mutual benefit, and compliance with the Constitution and law of Vietnam and treaties to which the Socialist Republic of Vietnam is a contracting party.
+2. Contents of international cooperation in cybersecurity:
+a/ Sharing information and data, and giving early warnings on risks, incidents and cyberattacks affecting cybersecurity;
+b/ Developing legal frameworks, policies and mechanisms for cooperation and coordination in cybersecurity protection; negotiating, signing and implementing treaties and international agreements on cybersecurity;
+c/ Organising training and consultancy, sharing experience, and building professional and technical capacity in cybersecurity;
+d/ Preventing and combating cybercrime and hi-tech crime; coordinating with foreign countries in investigation and handling of law violations, cybercrime, and hi-tech crime;
+dd/ Researching, developing and transferring technologies, products and technical solutions serving cybersecurity protection;
+e/ Organising international conferences and workshops, and implementing international cooperation programmes and projects on cybersecurity;
+g/ Other international cooperation activities in cybersecurity.
+3. Responsibilities for international cooperation in cybersecurity:
+a/ The Ministry of Public Security shall take responsibility before the Government for assuming the prime responsibility for and coordinating with foreign countries in the implementation of international cooperation in cybersecurity;
+b/ The Ministry of National Defence shall take responsibility before the Government for implementing international cooperation in cybersecurity within its scope of management;
+c/ The Ministry of Foreign Affairs shall coordinate with the Ministry of Public Security and the Ministry of National Defence in international cooperation activities on cybersecurity;
+d/ In case international cooperation in cybersecurity involves the responsibilities of multiple ministries or sectors, it shall be decided by the Prime Minister;
+dd/ For international cooperation activities in cybersecurity implemented by other ministries or sectors or local agencies, written opinions shall be obtained from the Ministry of Public Security prior to implementation.
+Article 7. Prohibited acts related to cybersecurity
+1. Posting or disseminating information in cyberspace with the following contents:
+a/ Propaganda against the State of the Socialist Republic of Vietnam, including: distorting or defaming the people’s administration; psychological warfare; inciting wars of aggression; sowing division and hatred among ethnic groups, religions and peoples of different countries; insulting the nation, national flag, national emblem, national anthem, great figures, leaders, eminent persons or national heroes;
+b/ Distorting history, denying revolutionary achievements, undermining the great national unity bloc, insulting religion, or practising gender discrimination or racial discrimination;
+c/ Fabricating, slandering, or providing false information that infringes upon the dignity, honour or reputation of others, or causes damage to the lawful rights and interests of agencies, organisations or individuals;
+d/ Providing false information causing public confusion, sabotaging socio-economic activities, obstructing the normal operation of state agencies or persons on official duty, or infringing upon the lawful rights and interests of agencies, organisations or individuals; fabricating or providing false information about products, goods, currencies, bonds, treasury bills, public bonds, cheques and other valuable papers; fabricating or providing false information in the fields of finance, banking, e-commerce, multilevel marketing and securities.
+2. Committing the following acts in cyberspace:
+a/ Organising, operating, colluding, instigating, bribing, deceiving, enticing, training or coaching persons to oppose the State of the Socialist Republic of Vietnam;
+b/ Inciting, urging, mobilising, instigating, threatening, or causing division; conducting armed activities or using violence against the people’s administration; calling for, mobilising, instigating, threatening or enticing mass gatherings to cause disorder, oppose persons on official duty, or obstruct activities of agencies or organisations, thereby causing instability in security and order;
+c/ Appropriating, trading, storing or intentionally disclosing information classified as state secrets, official secrets or business secrets; appropriating, trading, storing or intentionally disclosing personal secrets, family secrets and private life information affecting the honour, reputation, dignity or lawful rights and interests of agencies, organisations or individuals; unlawfully eavesdropping on, audio-recording or video-recording conversations in cyberspace; disclosing information on civil cryptographic products or information on lawful users of civil cryptographic products; using or trading in civil cryptographic products of unknown origin;
+d/ Engaging in prostitution, social vices, human trafficking, or trafficking in human body parts; disseminating obscene or depraved cultural products; inciting or promoting violence, depraved or deviant lifestyles, undermining fine customs and traditions of the nation, social morality or community health;
+dd/ Fraudulently appropriating property; organising gambling or online gambling; illegally appropriating international telecommunications charges via the Internet; advertising, trading or promoting goods and services on the lists prohibited by law; infringing upon copyright and intellectual property rights in cyberspace;
+e/ Impersonating websites of agencies, organisations or individuals; forging, circulating, stealing, unlawfully trading, collecting or exchanging information on credit cards, bank accounts, cryptoassets or digital assets of others; unlawfully issuing, providing or using payment instruments; forging documents of agencies or organisations;
+g/ Using artificial intelligence or new technologies to unlawfully fabricate videos, images or voices of others; creating, posting or disseminating information specified in Clause 1 of this Article;
+h/ Illegally collecting, using, disseminating, exchanging, transferring or trading personal information and data of others;
+i/ Instructing, instigating, enticing or inciting others to commit crimes or illegal acts;
+k/ Committing other acts in cyberspace by using information technology or electronic means to violate the laws on national security and social order and safety.
+3. Conducting cyberattacks, cyberterrorism, cyber espionage, cybercrime or hi-tech crime; causing incidents; attacking, intruding, seizing control of, distorting, interrupting, suspending, paralysing or destroying information systems.
+4. Producing or using tools, means or software, or committing acts that obstruct, disrupt or disseminate spam emails, spam messages, spam calls, or informatics programmes harming the operation of telecommunications networks, the Internet, computer networks, information systems, information processing and control systems or electronic means.
+5. Illegally accessing telecommunications networks, computer networks, information systems, information processing and control systems, databases or electronic means of others.
+6. Opposing or obstructing cybersecurity protection forces; unlawfully attacking or disabling cybersecurity protection measures.
+7. Taking advantage of or abusing cybersecurity protection activities to infringe upon national sovereignty, interests or security, social order and safety, or the lawful rights and interests of agencies, organisations or individuals, or for personal gain.
+9. Other acts in violation of this Law.
+
+Chapter II
+CYBERSECURITY PROTECTION FOR INFORMATION SYSTEMS
+Article 8. Classification of information system levels
+1. Information systems shall be classified into 5 levels based on the degree of damage to national security, social order and safety, lawful rights and interests of organisations and individuals, and public interests in the event of incidents or violations of the law on cybersecurity, as follows:
+a/ Level-1 information systems, that may cause damage to the lawful rights and interests of organisations or individuals;
+b/ Level-2 information systems, that may cause serious damage to the lawful rights and interests of organisations or individuals or cause damage to public interests;
+c/ Level-3 information systems, that may cause particularly serious damage to the lawful rights and interests of organisations or individuals; serious damage to public interests; damage or serious damage to social order and safety; or damage to national security;
+d/ Level-4 information systems, that may cause particularly serious damage to public interests or social order and safety, or serious damage to national security;
+dd/ Level-5 information systems, that may cause particularly serious damage to national security.
+2. The Government shall provide in detail the criteria for classification of information system levels; the competence, order and procedures for classification of information system levels, as well as measures, responsibilities and obligations to ensure cybersecurity for each level.
+Article 9. Information systems critical to national security
+1. Information systems critical to national security are those with a strategic and especially important role in politics, national defence, security, foreign affairs, economy and society, where incidents or violations of the law on cybersecurity may cause damage to national security or serious damage to social order and safety, that are on the list issued by the Prime Minister.
+2. Information systems critical to national security include those in the following sectors:
+a/ Military, security, foreign affairs and cryptographic information systems;
+b/ Information systems storing and processing information classified as state secrets;
+c/ Information systems serving the storage and preservation of artefacts and documents of particularly significant value;
+d/ Information systems serving the preservation of materials and substances particularly dangerous to humans or the environment;
+dd/ Information systems serving the preservation, manufacture or management of other physical facilities particularly important to national security;
+e/ Important information systems serving the operation of central-level agencies and organisations;
+g/ National information systems in the sectors of energy, finance, banking, telecommunications, transport, agriculture, natural resources and environment, chemicals, healthcare and culture;
+h/ Automated control and monitoring systems at important works related to national security, or at targets critical to national security.
+3. Information systems critical to national security must undergo cybersecurity appraisal and be certified as meeting cybersecurity conditions before being put into operation and use; shall be regularly inspected and monitored in terms of cybersecurity during operation; and must promptly respond to and remedy cybersecurity incidents.
+4. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries, sectors, agencies, organisations and individuals in, compiling and submitting the list of information systems critical to national security to the Prime Minister for consideration and decision.
+5. The Government shall promulgate detailed regulations on the criteria for determining information systems critical to national security.
+Article 10. Tasks and measures for cybersecurity protection of information systems
+1. Tasks for cybersecurity protection of information systems include:
+a/ Determining the cybersecurity level of information systems and of information systems critical to national security;
+b/ Assessing and managing cybersecurity risks of information systems;
+c/ Urging, supervising and inspecting cybersecurity protection activities of information systems;
+d/ Organising the implementation of cybersecurity protection measures for information systems;
+dd/ Implementing the reporting regime in accordance with regulations;
+e/ Organising public communication and raising awareness about cybersecurity.
+2. Measures for cybersecurity protection of information systems include:
+a/ Promulgating regulations on ensuring cybersecurity in the design, construction, management, operation, use, upgrading and decommissioning of information systems;
+b/ Conducting cybersecurity appraisal of dossiers and designs of information systems;
+c/ Assessing cybersecurity conditions of information systems;
+d/ Applying management measures in conformity with cybersecurity standards and technical regulations; researching and developing a national firewall system to prevent risks and remedy cybersecurity incidents;
+dd/ Organising the implementation of storage and backup measures to protect cyberinformation security and the security of components constituting information systems;
+e/ Inspecting and supervising compliance with regulations and evaluating the effectiveness of applied management and technical measures;
+g/ Conducting cybersecurity monitoring;
+h/ Responding to and remedying cybersecurity incidents in information systems.
+3. Managers of information systems of level 1 and level 2 shall fully perform the tasks specified in Clause 1 of this Article and, depending on practical needs and capabilities, select and apply the measures specified in Clause 2 of this Article.
+4. Managers of information systems of level 3 and level 4 that are not included in the list of information systems critical to national security shall fully perform the tasks specified in Clause 1 of this Article and the measures specified in Points a, d, dd, e, g and h, Clause 2 of this Article, and, depending on practical needs and capabilities, select and apply the measures specified in Points b and c, Clause 2 of this Article.
+5. Managers of information systems on the list of information systems critical to national security shall fully perform all tasks and measures specified in Clauses 1 and 2 of this Article.
+6. The Government shall detail Clauses 1 and 2 of this Article.
+Article 11. Responsibilities for cybersecurity protection of information systems critical to national security
+1. The manager of an information system critical to national security has the following responsibilities:
+a/ To implement the provisions of Clause 5, Article 10 of this Law;
+b/ When establishing, expanding or upgrading the information system critical to national security, to conduct cybersecurity inspection before putting it into operation; to annually carry out self-inspections of cybersecurity, assess cybersecurity conditions, and notify the inspection results in writing before October every year to competent specialised cybersecurity protection forces;
+c/ To assume the prime responsibility for, and coordinate with competent specialised cybersecurity protection forces in, regularly conducting cybersecurity monitoring; to establish mechanisms for giving self-warnings and receiving warnings of cybersecurity threats; to develop emergency response and remediation plans;
+d/ To develop plans for responding to and remedying cybersecurity incidents; to implement such plans when incidents occur, and promptly report thereon to competent specialised cybersecurity protection forces;
+dd/ To coordinate with specialised cybersecurity protection forces in conducting ad hoc cybersecurity inspections.
+2. The Ministry of Public Security has the following responsibilities regarding information systems critical to national security, except military information systems and cryptographic information systems under the management of the Government Cipher Committee:
+a/ To conduct cybersecurity appraisal of information systems critical to national security;
+b/ To assess, and certify satisfaction of cybersecurity conditions for, information systems critical to national security;
+c/ To conduct ad hoc cybersecurity inspections for information systems critical to national security;
+d/ To conduct cybersecurity monitoring; to issue warnings and coordinate with system managers to remedy and handle cybersecurity threats and incidents for information systems critical to national security;
+dd/ To assume the prime responsibility for coordinating response and remediation activities for cybersecurity incidents to information systems critical to national security; to notify system managers upon detection of cyberattacks or cybersecurity incidents;
+e/ To assume the prime responsibility for, and coordinate with the Government Cipher Committee in, implementing measures to protect information systems critical to national security that use cryptographic solutions or products provided by the Government Cipher Committee to protect state secrets.
+3. The Ministry of National Defence shall assume the prime responsibility for conducting cybersecurity appraisal, assessing cybersecurity conditions, performing ad hoc cybersecurity inspections, conducting cybersecurity monitoring, and coordinating response and remediation activities for cybersecurity incidents in military information systems under its management.
+4. The Government Cipher Committee shall assume the prime responsibility for organising the implementation of cryptographic solutions to protect information classified as state secrets within information systems critical to national security; and shall conduct cybersecurity appraisal, assess cybersecurity conditions, perform ad hoc cybersecurity inspections, conduct cybersecurity monitoring, and coordinate response and remediation activities for cybersecurity incidents to cryptographic information systems under its management.
+Article 12. Cybersecurity inspection of information systems of agencies and organisations not included in the list of information systems critical to national security
+1. Cybersecurity inspection of information systems of agencies and organisations not on the list of information systems critical to national security shall be conducted in the following cases:
+a/ When the acts specified in Clauses 12, 13, 14 and 15, Article 2 of this Law occur;
+b/ Upon request of the information system managers.
+2. Objects of cybersecurity inspection include:
+a/ Hardware, software and digital devices used in information systems;
+b/ Information stored, processed and transmitted within information systems;
+c/ Measures for protecting state secrets and preventing the leakage or loss of state secrets through technical channels.
+3. Information system managers shall notify the specialised cybersecurity protection force of the Ministry of Public Security when detecting violations of the law on cybersecurity within the information systems under their management.
+4. The specialised cybersecurity protection force of the Ministry of Public Security shall conduct cybersecurity inspections of information systems of agencies and organisations falling into the cases specified in Clause 1 of this Article. The results of cybersecurity inspections shall be kept confidential in accordance with law.
+5. The Government shall specify the order and procedures for cybersecurity inspection under this Article.
+Chapter III
+PREVENTION AND HANDLING OF ACTS INFRINGING UPON CYBERSECURITY
+Article 13. Information and acts using information technology and electronic means that infringe upon national security or social order and safety in cyberspace
+1. Information having content that propagandises against the State of the Socialist Republic of Vietnam, incites riots, disrupts security, or disturbs public order includes:
+a/ Propagating information or materials that distort, defame or slander the people’s administration;
+b/ Launching psychological warfare; inciting wars of aggression; sowing division and hatred among ethnic groups, religions and peoples of different countries;
+c/ Insulting the nation, national flag, national emblem, national anthem, great figures, leaders, eminent persons or national heroes;
+d/ Calling for, mobilising, instigating, threatening or causing division; conducting armed activities or using violence against the people’s administration;
+dd/ Calling for, mobilising, instigating, threatening, or inciting mass gatherings to cause disorder, oppose persons on official duty, or obstruct the normal operation of agencies or organisations, thereby causing instability in security and order;
+e/ Misrepresenting or providing inaccurate information on national borders and national sovereignty of Vietnam; posting or transmitting inaccurate, incomplete, or misleading images of maps of Vietnam or misrepresenting national sovereignty.
+2. Information having content that undermines national unity policies and socio-economic policies of the Socialist Republic of Vietnam includes:
+a/ Causing conflict and division among social strata, between the people and the people’s administration, the people’s armed forces or socio-political organisations;
+b/ Inciting hatred, discrimination, division or separatism among ethnic groups, infringing upon the right to equality among the community of ethnic groups of Vietnam;
+c/ Inciting conflict and division between religious persons and non-religious persons, among followers of different religions, or between religious followers and the people’s administration, the people’s armed forces or socio-political organisations;
+d/ Undermining or obstructing the implementation of international solidarity policies;
+dd/ Propagating content that directly or indirectly harms the State’s lawful rights and interests in political, economic or social fields, or its international reputation;
+e/ Calling for or inciting sabotage of the implementation of socio-economic policies or obstructing their enforcement;
+g/ Calling for or inciting the destruction of material-technical facilities of the Socialist Republic of Vietnam.
+3. Information having content that infringes upon the lawful rights and interests of organisations and individuals includes:
+a/ Disseminating distorted, fabricated or false information that affects the reputation or normal operations of organisations;
+b/ Calling for, mobilising or instigating boycotts of products, services, goods, brands or trademarks of organisations or enterprises, causing material or reputational damage to organisations or enterprises;
+c/ Impersonating or falsifying information or images, or counterfeiting products, goods or brands of organisations or enterprises by using technological utilities, thereby affecting their reputation;
+d/ Insulting the honour, reputation or dignity of others;
+dd/ Distorting the truth, affecting the honour, reputation or dignity of others;
+e/ Fabricating or disseminating information known to be false that causes damage to the lawful rights and interests of others;
+g/ Falsely accusing others of committing crimes and reporting them to competent agencies;
+h/ Impersonating or falsifying information, images or voices of individuals, affecting their reputation, honour or dignity.
+4. Acts carried out in cyberspace using information technology or electronic means that infringe upon national security or social order and safety include:
+a/ Posting or disseminating information in cyberspace that has the content specified in Clauses 1, 2 and 3 of this Article;
+b/ Committing the acts specified in Clause 1, Article 15 of this Law;
+c/ Appropriating property; organising gambling or online gambling; illegally appropriating international telecommunications charges via the Internet; infringing upon copyright and intellectual property rights in cyberspace;
+d/ Impersonating websites of agencies, organisations or individuals; forging, circulating, stealing, trading, collecting, or unlawfully exchanging credit card or bank account information of others; illegally issuing, providing or using payment instruments; forging seals, documents or other papers of agencies or organisations;
+dd/ Propagating, advertising or illegally trading in weapons, explosives, supporting tools, firecrackers; narcotics, precursors, addictive or psychotropic substances; endangered, precious and rare wildlife; and other goods and services prohibited by law; brokering prostitution; disseminating obscene materials; practising child sexual abuse or sexual harassment;
+e/ Establishing, providing services for, or supporting the operation, business, transactions, trading or online marketing of, illegal platforms, websites or applications in cyberspace, including e-commerce platforms, websites, sales applications, platforms providing e-commerce services, commodity index-based exchanges, digital asset exchanges, and multilevel marketing schemes;
+g/ Using false identities, forged documents or records, or unlawfully using others’ information to establish enterprises or to open or register bank accounts, securities accounts, insurance accounts, tax accounts or other digital accounts; collecting, storing, exchanging, trading, gifting, or unlawfully disclosing data or information relating to bank accounts, bank cards, e-wallets, securities accounts, insurance accounts, tax accounts or other digital accounts;
+h/ Advertising or trading in counterfeit goods, smuggled goods, goods of unknown origin, domestically circulated goods subject to emergency measures, or expired goods;
+i/ Instructing others to commit illegal acts;
+k/ Other acts carried out in cyberspace using information technology or electronic means in violation of the law on national security or social order and safety.
+Article 14. Prevention and handling of information and acts using information technology and electronic means that infringe upon national security or social order and safety in cyberspace
+1. Information system managers and domestic and foreign enterprises providing services on telecommunications networks or the Internet, and value-added services in cyberspace shall implement managerial and technical measures to prevent, detect, block and remove information having the content specified in Clauses 1, 2 and 3, Article 13 of this Law on the information systems under their management or upon request of specialised cybersecurity protection forces.
+2. Specialised cybersecurity protection forces and competent agencies shall apply the measures specified in Clause 1, Article 5 of this Law to handle information in cyberspace having the content specified in Clauses 1, 2 and 3, Article 13 of this Law and to combat and prevent acts using information technology or electronic means that infringe upon national security or social order and safety in cyberspace.
+3. Domestic and foreign enterprises providing services on telecommunications networks or the Internet, and value-added services in cyberspace, and information system managers shall coordinate with specialised cybersecurity protection forces in handling information in cyberspace having the content specified in Clauses 1, 2 and 3, Article 13 of this Law and in preventing and combating acts using information technology or electronic means that infringe upon national security or social order and safety in cyberspace.
+4. Organisations and individuals that create, post or disseminate information in cyberspace having the content specified in Clauses 1, 2 and 3, Article 13 of this Law shall remove such information upon request of specialised cybersecurity protection forces and shall bear responsibility in accordance with law.
+5. The Government shall detail this Article.
+Article 15. Prevention and combat of cyber espionage; protection of information classified as state secrets, official secrets, business secrets, personal secrets, family secrets and private life in cyberspace
+1. Acts of cyber espionage; infringement upon state secrets, official secrets, business secrets, personal secrets, family secrets and private life in cyberspace include:
+a/ Appropriating, trading, storing, or intentionally disclosing information classified as state secrets, official secrets or business secrets; appropriating, trading, storing, or intentionally disclosing personal secrets, family secrets and private life information affecting the honour, reputation, dignity, or lawful rights and interests of agencies, organisations or individuals;
+b/ Intentionally deleting, damaging, losing or altering information classified as state secrets, official secrets, business secrets, personal secrets, family secrets, or private life that is transmitted or stored in cyberspace;
+c/ Intentionally altering, removing or disabling technical measures established and applied to protect information classified as state secrets, official secrets, business secrets, personal secrets, family secrets or private life;
+d/ Uploading to cyberspace information classified as state secrets, official secrets, business secrets, personal secrets, family secrets or private life in violation of law;
+dd/ Intentionally eavesdropping on, audio-recording or video-recording conversations unlawfully;
+e/ Other acts intentionally infringing upon state secrets, official secrets, business secrets, personal secrets, family secrets or private life.
+2. Information system managers have the following responsibilities:
+a/ To conduct cybersecurity inspections to detect and remove malicious software and malicious hardware, remedy security weaknesses and vulnerabilities; to detect, prevent and handle unauthorised access or other threats to cybersecurity;
+b/ To implement managerial and technical measures to prevent, detect and stop acts of cyber espionage and infringements upon state secrets, official secrets, business secrets, personal secrets, family secrets and private life on information systems, and promptly remove information related to such acts;
+c/ To coordinate with, and comply with requests of, specialised cybersecurity protection forces in preventing and combating cyber espionage and protecting information classified as state secrets, official secrets, business secrets, personal secrets, family secrets and private life on information systems.
+3. Agencies and organisations that draft and store information and documents classified as state secrets shall protect such information and documents when drafted and stored on computers or other devices or exchanged in cyberspace in accordance with the law on protection of state secrets.
+4. The Ministry of Public Security has the following responsibilities, except those in the cases specified in Clauses 5 and 6 of this Article:
+a/ To conduct cybersecurity inspections of information systems critical to national security to detect and remove malicious software and malicious hardware and remedy security weaknesses and vulnerabilities; to detect, prevent and handle unauthorised access;
+b/ To conduct cybersecurity inspections of communication equipment, products and services, digital devices and electronic devices before they are put into use in information systems critical to national security;
+c/ To conduct cybersecurity monitoring of information systems critical to national security to detect and handle illegal collection of information classified as state secrets;
+d/ To detect and handle acts of illegal posting, storage or exchange of information or documents classified as state secrets in cyberspace;
+dd/ To participate in research and production of products for storing and transmitting information and documents having content classified as state secrets in accordance with law, and products for encrypting information in cyberspace within its assigned functions and duties;
+e/ To inspect and examine the protection of state secrets in cyberspace by state agencies and the cybersecurity protection by managers of information systems critical to national security;
+g/ To organise training and capacity-building to raise awareness and knowledge of protecting state secrets in cyberspace, preventing cyberattacks, and protecting cybersecurity for the cybersecurity protection forces specified in Clause 1, Article 30 of this Law.
+5. The Ministry of National Defence shall perform the responsibilities specified in Clause 4 of this Article with respect to military information systems.
+6. The Government Cipher Committee shall perform the responsibilities specified in Clause 4 of this Article with respect to cryptographic information systems under its management; and organise the implementation of legal provisions on the use of cryptography to protect information classified as state secrets stored or exchanged in cyberspace.
+Article 16. Prevention and combat of child abuse in cyberspace
+1. Children have the right to access information, participate in social activities, engage in entertainment, have their personal secrets and private life protected, and enjoy other rights in cyberspace in accordance with law.
+2. In case children use value-added services in cyberspace, their parents or guardians as prescribed by the civil law shall register accounts using the information of their parents or guardians and shall supervise and manage the content accessed, posted and shared by children on such service platforms.
+3. Information system managers and enterprises providing services on telecommunications networks or the Internet, and value-added services in cyberspace have the following responsibilities:
+a/ To control information on their information systems or services to ensure that it does not harm children, abuse children or infringe upon children’s rights;
+b/ To prevent the sharing of, and remove, information having content that harms or abuses children or infringes upon children’s rights;
+c/ To develop and deploy technical systems to support the prevention of child-abusive content in cyberspace;
+d/ To coordinate with agencies, organisations and enterprises in stopping sources disseminating child-abusive content in cyberspace;
+dd/ To promptly notify and coordinate with the specialised cybersecurity protection force of the Ministry of Public Security for handling arising matters.
+4. Agencies, organisations and individuals participating in cyberspace activities shall coordinate with competent agencies in guaranteeing children’s rights in cyberspace and in preventing and combating child abuse in cyberspace.
+5. Agencies, organisations, parents, guardians, teachers, caregivers and other relevant individuals shall guarantee children’s rights and protect children when they participate in cyberspace in accordance with the law on children and this Law.
+6. Specialised cybersecurity protection forces and competent agencies shall apply measures to prevent, detect, stop and strictly handle acts of using cyberspace to harm children, abuse children or infringe upon children’s rights.
+Article 17. Prevention, detection, blocking and handling of malicious software
+1. Agencies, organisations and individuals shall proactively prevent, detect and block malicious software, and comply with the guidance and requirements of competent state agencies.
+2. Managers of information systems critical to national security shall deploy technical systems to prevent, detect, block and promptly handle malicious software.
+3. Organisations and enterprises providing email, transmission and information storage services shall implement malware filtering systems during the sending, receipt and storage of information on their systems, and report to competent state agencies in accordance with law.
+4. Enterprises providing Internet services shall implement measures to manage, prevent, detect and block the spread of malicious software, and handle such matters at the request of competent state agencies.
+5. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with the Ministry of National Defence and relevant ministries and sectors in, organising the prevention, detection, blocking and handling of malicious software that harms national security.
+Article 18. Prevention and combat of cyberattacks
+1. Acts of cyberattack and acts related to cyberattacks include:
+a/ Disseminating malicious software programmes that damage telecommunications networks, the Internet, computer networks, information systems, information processing and control systems, databases and electronic means;
+b/ Obstructing, disrupting, paralysing, interrupting or suspending operations or unlawfully preventing the transmission of data in cyberspace;
+c/ Intruding into, damaging or appropriating data stored or transmitted via telecommunications networks, the Internet, computer networks, information systems, information processing and control systems, databases and electronic means;
+d/ Gaining unauthorised access to, creating or exploiting security weaknesses or vulnerabilities in, and system services in order to appropriate information or obtain illegal profits;
+dd/ Producing, trading in, exchanging or gifting tools, equipment or software capable of damaging telecommunications networks, the Internet, computer networks, information systems, information processing and control systems, databases and electronic means for unlawful purposes;
+e/ Other acts affecting the normal operation of telecommunications networks, the Internet, computer networks, information systems, information processing and control systems, databases and electronic means.
+2. Information system managers shall apply technical measures to prevent and stop the acts specified in Points a, b, c, d and e, Clause 1 of this Article in respect of the information systems under their management.
+3. In case a cyberattack occurs that infringes or threatens to infringe upon national sovereignty, interests or security, or causes serious harm to social order and safety, specialised cybersecurity protection forces shall assume the prime responsibility for, and coordinate with information system managers and relevant organisations and individuals in, applying measures to determine the source of the attack and collect evidence; and to request enterprises providing services on telecommunications networks or the Internet and value-added services in cyberspace to filter and block information to prevent and eliminate cyberattacks, and to provide full and timely relevant information and documents.
+4. Responsibilities for preventing and combating cyberattacks:
+a/ The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries, sectors and local authorities, in preventing, detecting and handling the acts specified in Clause 1 of this Article that infringe or threaten to infringe upon national sovereignty, interests and security or cause serious harm to social order and safety nationwide, except the cases specified in Points b and c of this Clause;
+b/ The Ministry of National Defence shall assume the prime responsibility for, and coordinate with relevant ministries and sectors in, preventing, detecting and handling the acts specified in Clause 1 of this Article in respect of military information systems;
+c/ The Government Cipher Committee shall assume the prime responsibility for, and coordinate with relevant ministries and sectors in, preventing, detecting and handling the acts specified in Clause 1 of this Article in respect of cipher information systems under its management.
+Article 19. Prevention and combat of cyber-terrorism
+1. Competent state agencies shall apply measures in accordance with this Law and the law on counter-terrorism to handle cyber-terrorism.
+2. Information system managers shall regularly review and inspect the information systems under their management to eliminate risks of cyber-terrorism.
+3. Upon detecting signs or acts of cyber-terrorism, agencies, organisations and individuals shall promptly report them to cybersecurity protection forces. Agencies in charge of receiving reports on cyber-terrorism shall fully receive such reports and promptly notify them to specialised cybersecurity protection forces.
+4. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries and sectors in, implementing measures to prevent and combat cyber-terrorism, neutralise sources of cyber-terrorism, handle cyber-terrorism and minimise damage to information systems, except the cases specified in Clauses 5 and 6 of this Article.
+5. The Ministry of National Defence shall assume the prime responsibility for, and coordinate with related ministries and sectors in, implementing measures to prevent and combat cyber-terrorism, neutralise sources of cyber-terrorism, handle cyber-terrorism and mitigate damage to military information systems.
+6. The Government Cipher Committee shall assume the prime responsibility for, and coordinate with related ministries and sectors in, implementing measures to prevent and combat cyber-terrorism, neutralize sources of cyber-terrorism, handle cyber-terrorism and minimise damage to cipher information systems under its management.
+Article 20. Prevention and handling of dangerous cybersecurity situations
+1. Dangerous cybersecurity situations include:
+a/ Emergence of inciting information in cyberspace that risks causing riots, security disturbances or terrorism;
+b/ Attacks on information systems critical to national security;
+c/ Large-scale, high-intensity attacks on multiple information systems;
+d/ Cyberattacks aimed at destroying works or targets critical to national security;
+dd/ Cyberattacks that seriously infringe upon national sovereignty, interests or security, or cause particularly serious harm to social order and safety and the lawful rights and interests of agencies, organisations and individuals.
+2. Responsibilities for preventing dangerous cybersecurity situations:
+a/ Specialised cybersecurity protection forces shall coordinate with managers of critical information systems in implementing technical and professional measures to prevent, detect and handle dangerous cybersecurity situations;
+b/ Telecommunications, Internet and information technology enterprises, enterprises providing services on telecommunications networks or the Internet and value-added services in cyberspace, as well as related agencies, organisations and individuals shall coordinate with the specialised cybersecurity protection force under the Ministry of Public Security in preventing, detecting and handling such situations.
+3. Measures for handling dangerous cybersecurity situations include:
+a/ Immediately implementing prevention and emergency response plans to block, eliminate or mitigate damage caused by dangerous cybersecurity situations;
+b/ Notifying the situations to relevant agencies, organisations and individuals;
+c/ Collecting relevant information and conducting continuous monitoring and supervision of dangerous cybersecurity situations;
+d/ Analysing and assessing information, forecasting the possibility of scope of impacts and the extent of damage caused by dangerous cybersecurity situations;
+dd/ Stopping the provision of network information services in specific areas or disconnecting international network gateways;
+e/ Deploying forces and means to block and eliminate dangerous cybersecurity situations;
+g/ Other measures in accordance with the Law on National Security.
+4. Handling of dangerous cybersecurity situations:
+a/ Upon detection of dangerous cybersecurity situations, agencies, organisations and individuals shall promptly report them to specialised cybersecurity protection forces and immediately apply the measures specified in Points a and b, Clause 3 of this Article;
+b/ The Prime Minister shall consider and decide, or authorise the Minister of Public Security to consider and decide, on handling dangerous cybersecurity situations nationwide, in each locality, or for specific targets.
+The Prime Minister shall consider and decide, or authorise the Minister of National Defence to consider and decide, on handling dangerous cybersecurity situations for military information systems and cipher systems under the Government Cipher Committee;
+c/ Specialised cybersecurity protection forces shall assume the prime responsibility for, and coordinate with related agencies, organisations and individuals in, applying the measures specified in Clause 3 of this Article for handling dangerous cybersecurity situations;
+d/ Related agencies, organisations and individuals shall coordinate with specialised cybersecurity protection forces in implementing measures to prevent and handle dangerous cybersecurity situations.
+Article 21. Cybersecurity protection operations
+1. Cybersecurity protection operations are organised activities carried out in cyberspace by specialised cybersecurity protection forces for the purpose of protecting national security and ensuring social order and safety.
+2. Cybersecurity protection operations include:
+a/ Monitoring online information and preventing, combating and handling organisations and individuals engaged in activities using cyberspace to infringe upon national security or social order and safety;
+b/ Using technical solutions to block unlawful information;
+c/ Preventing and combating attacks to, and protecting the stable operation of, information systems critical to national security;
+d/ Disabling or restricting activities using cyberspace for the purpose of harming national security or causing particularly serious harm to social order and safety;
+dd/ Proactively attacking and neutralising targets in cyberspace in order to protect national security and ensure social order and safety.
+3. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries and sectors in, carrying out cybersecurity protection operations; the Ministry of National Defence shall assume the prime responsibility for, and coordinate with related ministries and sectors in, carrying out cybersecurity protection operations in respect of military information systems.
+Article 22. Prevention of information conflicts in cyberspace
+1. Information conflict is the use by two or more domestic or foreign organisations of technological or information-technical measures that damage information or information systems in cyberspace, thereby affecting national security or social order and safety.
+2. Prevention of information conflicts in cyberspace is the implementation of technological and technical measures to monitor, detect, warn, identify sources, block, filter, remove, rebut, guide public opinion, remedy and sanction, and apply other measures to eliminate information conflicts in cyberspace.
+3. Within the ambit of theor tasks and powers, organisations and individuals have the following responsibilities:
+a/ To prevent information conflicts in cyberspace originating from their own information systems; to cooperate in identifying sources, to repel and remedy the consequences of cyber-attacks carried out through information systems of domestic and foreign organisations and individuals;
+b/ To prevent activities of domestic and foreign organisations and individuals aimed at creating information conflicts in cyberspace;
+c/ To terminate the posting and dissemination in cyberspace of information by domestic and foreign organisations and individuals that seriously affects national defence, national security or social order and safety.
+4. The Government shall detail this Article.
+
+Chapter IV
+CYBERSECURITY PROTECTION ACTIVITIES
+Article 23. Implementation of cybersecurity protection activities in state agencies, political organisations and socio-political organisations at central and local levels
+1. Contents of the implementation of cybersecurity protection activities:
+a/ Formulating and improving rules and regulations on the use of internal computer networks and computer networks connected to the Internet; plans for ensuring cybersecurity for information systems; and plans for responding to and remedying cybersecurity incidents;
+b/ Applying and implementing plans, measures and technologies for cybersecurity protection of information systems and of information and documents stored, drafted or transmitted on information systems within the scope of management;
+c/ Organising training in cybersecurity knowledge for cadres, civil servants, public employees and workers; and enhancing the cybersecurity protection capacity of cybersecurity protection forces;
+d/ Protecting cybersecurity in the provision of online public services, the provision, exchange and collection of information with agencies, organisations and individuals, internal information sharing and sharing with other agencies, and in other activities as specified by the Government;
+dd/ Investing in and building physical infrastructure appropriate to the conditions required for implementing cybersecurity protection activities for information systems;
+e/ Conducting cybersecurity inspections of information systems; preventing and combating violations of the law on cybersecurity; and responding to and remedying cybersecurity incidents.
+2. The heads of agencies and organisations shall deploy cybersecurity protection activities within their management competence.
+Article 24. Cybersecurity protection for the national cyberspace infrastructure and international network gateways
+1. Cybersecurity protection for the national cyberspace infrastructure and international network gateways must ensure a close combination of cybersecurity protection requirements with socio-economic development requirements; the placement of international network gateways within the territory of Vietnam is encouraged; and organisations and individuals are encouraged to invest in construction of the national cyberspace infrastructure.
+2. Agencies, organisations and individuals managing or operating the national cyberspace infrastructure and international network gateways have the following responsibilities:
+a/ To protect cybersecurity within their management competence; to submit to the management, inspection and examination of competent state agencies; to comply with cybersecurity protection requirements imposed by competent state agencies;
+b/ To create favourable conditions and implement necessary technical and professional measures for competent state agencies to perform cybersecurity protection tasks upon request.
+Article 25. Assurance of cyberinformation security
+1. Websites, portals or dedicated pages on social networks of agencies, organisations and individuals may not provide, post or transmit information having the content specified in Clauses 1, 2 and 3, Article 13, and in Clause 1, Article 15, of this Law, or other contents infringing upon national security.
+2. Domestic and foreign enterprises providing services on telecommunications networks or the Internet and value-added services in cyberspace in Vietnam have the following responsibilities:
+a/ To authenticate information when users register digital accounts; to keep users’ information and accounts confidential; and to provide user information to the specialised cybersecurity protection force of the Ministry of Public Security within 24 hours after receiving a request made in writing, by email, by telephone or by another confirmed means of communication, for the purposes of verification, investigation and handling of violations of the law on cybersecurity; this time limit is 3 hours for urgent cases involving threats to national security or human life;
+b/ To prevent the sharing of information, delete information, and remove services or applications containing content in violation of this Law within 24 hours after receiving a request from the specialised cybersecurity protection force of the Ministry of Public Security; and retain system logs for the period prescribed by law for the purposes of verification, investigation and handling of violations of the law on cybersecurity; this time limit is 6 hours for urgent cases involving threats to national security;
+c/ Not to provide, or to cease providing, services on telecommunications networks or the Internet and value-added cyberspace services to organisations and individuals that post in cyberspace information having the contents specified in Clauses 1, 2 and 3, Article 13, and in Clauses 1 and 2, Article 14, of this Law, when requested by the specialised cybersecurity protection force of the Ministry of Public Security;
+d/ To retain personal information of service users and data created by service users, including account names, service usage time, payment information for service charges, access IP addresses and other related data, for a period prescribed by law after users cease using the services.
+3. Domestic and foreign enterprises providing services on telecommunications networks or the Internet and value-added cyberspace services in Vietnam that collect, exploit, analyse or process data on personal information, data on service users’ relationships, or data created by service users in Vietnam shall apply data protection measures in accordance with law and store such data in Vietnam for a period prescribed by the Government.
+Foreign enterprises specified in this Clause shall establish a branch or representative office in Vietnam.
+4. The Government shall detail Clauses 2 and 3 of this Article.
+Article 26. Data security assurance
+1. Data security assurance is the overall application of technical, organisational and legal measures to protect data and to prevent and combat infringements upon data security.
+2. Contents of data security assurance:
+a/ Developing policies and establishing procedures for data security assurance;
+b/ Applying measures, standards and technical regulations in accordance with the law on cybersecurity;
+c/ Using state cryptography and civil cryptography to ensure data security;
+d/ Implementing strict control mechanisms over personnel directly involved in data processing;
+dd/ Conducting periodical inspections and risk assessments to detect, prevent and promptly handle threats to data security;
+e/ Inspecting and assessing cross-border data transfers; and conditions for ensuring data security in information systems critical to national security, databases, data centres and data storage systems;
+g/ Other contents as specified by law.
+2. The Government shall detail Clause 2 of this Article, and specify responsibilities for ensuring data security.
+
+Chapter V
+CYBERSECURITY STANDARDS, TECHNICAL REGULATIONS, PRODUCTS AND SERVICES
+Article 27. Cybersecurity standards and technical regulations
+1. Cybersecurity standards and technical regulations shall be applied to information systems, hardware, software, cybersecurity management and operation systems, cybersecurity products and services, information technology and network-connected devices.
+2. Certification of conformity with cybersecurity technical regulations, declaration of conformity with cybersecurity technical regulations, certification of conformity with cybersecurity standards and declaration of conformity with cybersecurity standards shall be carried out in accordance with the law on standards and technical regulations.
+3. Assessment of conformity with cybersecurity standards or technical regulations for information systems critical to national security and for state management activities in cybersecurity shall be conducted by conformity certification organisations designated by the Minister of Public Security.
+4. The Ministry of Public Security has the following responsibilities:
+a/ To develop draft national standards on cybersecurity;
+b/ To manage the quality of cybersecurity products and services, except civil cryptographic products and services;
+c/ To register, designate, and manage the operation of, cybersecurity conformity certification organisations, except the case specified in Clause 6 of this Article.
+5. The Minister of Public Security shall promulgate national technical regulations on cybersecurity.
+6. The Ministry of National Defence shall register, designate, and manage the operation of, cybersecurity conformity certification organisations in the military field.
+The Government Cipher Committee shall assist the Minister of National Defence in managing the quality of civil cryptographic products and services, and in registering, designating and managing the operation of cybersecurity conformity certification organisations in respect of civil cryptographic products and services.
+Article 28. Cybersecurity products and services
+1. Cybersecurity products include:
+a/ Civil cryptographic products;
+b/ Cybersecurity inspection and assessment products;
+c/ Cybersecurity monitoring products;
+d/ Intrusion prevention systems;
+dd/ Other cybersecurity products.
+2. Cybersecurity services include:
+a/ Cybersecurity inspection and assessment services;
+b/ Information security services not using civil cryptography;
+c/ Civil cryptographic services;
+d/ Cybersecurity consultancy services;
+dd/ Cybersecurity monitoring services;
+e/ Cybersecurity incident response services;
+g/ Data recovery services;
+h/ Cyberattack prevention services;
+i/ Other cybersecurity services.
+3. The Government shall detail this Article.
+Article 29. Business in cybersecurity products and services
+1. Enterprises doing business in cybersecurity products and services must possess a licence for doing business in cybersecurity products and services.
+2. Enterprises doing business in cybersecurity products and services have the following responsibilities:
+a/ To comply with the cybersecurity product and service business licence; to comply with the law on cybersecurity and other relevant laws;
+b/ To ensure that cybersecurity products and services conform to the declared applicable standards and corresponding technical regulations in accordance with the law on product and goods quality and the law on standards and technical regulations before being marketed;
+c/ To establish, retain and protect customer information, and to manage records and documents relating to technical solutions and technologies of products and service provision activities in accordance with law;
+d/ To refuse to provide cybersecurity products and services when finding that organisations or individuals violate the law on the use of cybersecurity products and services or breach agreed commitments on the use of products and services they provide;
+dd/ To cooperate with, create favourable conditions for, and comply with requests of, specialised cybersecurity protection forces in implementing cybersecurity protection measures.
+3. The Government shall specify the issuance, suspension and revocation of licences for doing business in cybersecurity products and services; the import and export of cybersecurity products; and the business in cybersecurity products and services.
+
+Chapter VI
+FORCES AND CONDITIONS FOR ENSURING CYBERSECURITY
+Article 30. Cybersecurity protection forces
+1. Cybersecurity protection forces include:
+a/ Specialised cybersecurity protection forces established within the Ministry of Public Security and the Ministry of National Defence;
+b/ Cybersecurity protection forces established within ministries, sectors, provincial-level People’s Committees, and agencies and organisations directly managing information systems critical to national security;
+c/ Organisations and individuals mobilised to participate in cybersecurity protection.
+2. The Government shall detail Clause 1 of this Article and prescribe coordination among cybersecurity protection forces.
+Article 31. Assurance of human resources for cybersecurity protection
+1. The State shall train and develop human resources for cybersecurity protection to ensure sufficient quantity and quality to meet the requirements of national cybersecurity protection capacity.
+2. Specialised cybersecurity protection forces shall be given priority in personnel supply according to job positions and professional standards, and are entitled to special recruitment, selection, utilisation, training, development, remuneration and talent attraction mechanisms as provided by the Government.
+3. Managers of information systems critical to national security have the following responsibilities:
+a/ To assign dedicated units or personnel appropriate to the protection level of the systems;
+b/ To ensure that personnel performing cybersecurity tasks satisfy professional and technical standards;
+c/ To regularly provide training and update skills for personnel involved in system operation and monitoring, and response to and handling of network incidents.
+Article 32. Recruitment, training and development of cybersecurity protection forces
+1. Vietnamese citizens who satisfy standards of moral qualities, health, qualifications and knowledge in cybersecurity and information technology, and who have the desire, may be recruited into cybersecurity protection forces.
+2. Priority shall be given to training and developing high-quality cybersecurity protection forces; discovering young talents in cybersecurity and information technology for orientation, recruitment, attraction and utilisation in the cybersecurity field.
+3. Priority shall be given to developing cybersecurity training institutions up to international standards; and cooperation and partnership in cybersecurity between the public and private sectors, both at home and abroad, are encouraged.
+Article 33. Education and training in cybersecurity knowledge and professional skills
+1. Cybersecurity knowledge shall be incorporated in the subject of national defence and security education in schools and in training programmes on national defence and security knowledge in accordance with the Law on National Defence and Security Education.
+2. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries and sectors in, organising professional cybersecurity training for cybersecurity protection forces and for civil servants, public employees and workers participating in cybersecurity protection.
+The Ministry of National Defence and the Government Cipher Committee shall organise professional cybersecurity training for the subjects under their management.
+Article 34. Intensive training in specialised cybersecurity knowledge and skills
+1. Cybersecurity protection forces specified in Points a and b, Clause 1, Article 30 of this Law must meet requirements for specialised cybersecurity knowledge and skills.
+2. Persons directly administering and operating level-3, level-4 and level-5 information systems in agencies, organisations and state enterprises must undergo intensive training in specialised cybersecurity knowledge and skills and be issued certificates, except individuals having undergone specialised training in cybersecurity.
+3. The Ministry of Public Security shall assume the prime responsibility for, and coordinate with related ministries and sectors in, organising intensive training in specialised cybersecurity knowledge and skills, except the case specified in Clause 4 of this Article.
+4. The Ministry of National Defence and the Government Cipher Committee shall organise intensive training in specialised cybersecurity knowledge and skills for the subjects under their management.
+5. The Government shall specify standards for specialised cybersecurity knowledge and skills, as well as intensive training programmes, content and certification.
+Article 35. Dissemination of cybersecurity knowledge
+1. The State shall adopt policies to disseminate cybersecurity knowledge nationwide, encourage state agencies to cooperate with private organisations and individuals in implementing education and awareness raising programmes on cybersecurity, and prioritise dissemination and guidance for children, the elderly and persons with limited cognitive ability to enhance their ability to protect their lawful rights and interests in cyberspace.
+2. Ministries, sectors, agencies and organisations shall develop and implement cybersecurity knowledge dissemination activities for their cadres, civil servants, public employees and workers.
+3. Provincial-level People’s Committees shall develop and implement activities to disseminate knowledge and raise awareness about cybersecurity for local agencies, organisations and individuals.
+Article 36. Cybersecurity research and development 
+1. Cybersecurity research and development activities include:
+a/ Developing software systems and equipment for cybersecurity protection;
+b/ Methods of evaluating software and equipment for cybersecurity protection to conform to standards and to minimise security weaknesses and vulnerabilities and malicious software;
+c/ Methods of testing hardware and software to ensure they perform their intended functions;
+d/ Methods of protecting state secrets, official secrets, business secrets, personal secrets, family secrets and private life, and ensuring confidentiality in the transmission of information in cyberspace;
+dd/ Determining the sources of information transmitted in cyberspace;
+e/ Addressing cybersecurity threats;
+g/ Developing cyber-ranges and cybersecurity sandboxing;
+h/ Technical initiatives to improve awareness about and skills in cybersecurity;
+i/ Cybersecurity forecasting;
+k/ Practical research and theoretical development in cybersecurity.
+2. Relevant agencies, organisations and individuals have the right to conduct cybersecurity research and development.
+Article 37. Enhancement of cybersecurity autonomy capacity
+1. The State shall encourage and create favourable conditions for agencies, organisations and individuals to enhance their capacity for cybersecurity autonomy capacity and to improve capabilities in the production, testing, evaluation and inspection of digital equipment, network services and network applications.
+2. The Government shall implement the following measures to enhance cybersecurity autonomy capacity for agencies, organisations and individuals:
+a/ Directing the formulation of policies, strategies and master plans for the development of the cybersecurity industry, and standards and technical regulations for hardware and software products to proactively eliminate cybersecurity risks from the product formation stage;
+b/ Promoting the transfer, research, mastery and development of technologies, products and services in the cybersecurity industry;
+c/ Promoting the application of new technologies and advanced technologies related to cybersecurity;
+d/ Organising training, development and optimal utilisation of high-quality cybersecurity human resources;
+dd/ Strengthening the business environment, improving competitive conditions and supporting enterprises in researching and producing products, services and applications for cybersecurity protection.
+3. Investment and resource mobilisation for the development of cybersecurity industrial infrastructure:
+a/ Investment in the construction of cybersecurity industry infrastructure shall be classified as a business line entitled to special investment incentives and entitled to incentives and support in accordance with laws on investment, taxation and land, and other relevant laws;
+b/ The State shall prioritise the allocation of budget funds for the construction of cybersecurity industry infrastructure, including research, design, production and testing facilities for cybersecurity products and services; national key cybersecurity laboratories; testing, measurement and evaluation facilities for cybersecurity products and services; big data centres; cybersecurity industrial zones; and cybersecurity industrial complexes;
+c/ Cybersecurity industrial infrastructure invested by the State under Point b of this Clause constitutes a type of infrastructure asset and shall be managed, exploited and operated in accordance with the law on management and use of public assets;
+d/ Organisations and enterprises may import technological lines, equipment, machinery and tools serving training, research and development of cybersecurity products and services;
+dd/ Agencies, organisations and state enterprises shall prioritise the use of domestically produced cybersecurity products and services.
+4. The Ministry of Public Security shall advise and assist the Government in building and developing cybersecurity industrial infrastructure to enhance cybersecurity autonomy capacity.
+Article 38. Funding for cybersecurity protection
+1. Agencies, organisations, state enterprises, political organisations, socio-political organisations and public non-business units funded by the state budget shall included funding for cybersecurity protection in their annual expenditure estimates for digital transformation and information technology application tasks; and shall allocate at least 15% of the total funding for programmes, schemes and projects on digital transformation and information technology application for cybersecurity protection.
+2. Agencies, organisations and units other than those specified in Clause 1 of this Article shall ensure their own funding for cybersecurity protection.
+
+Chapter VII
+RESPONSIBILITIES OF AGENCIES, ORGANISATIONS AND INDIVIDUALS FOR CYBERSECURITY
+Article 39. Responsibility for state management of cybersecurity
+1. The Government shall perform the unified state management of cybersecurity.
+2. The Ministry of Public Security shall serve as the focal agency assisting the Government in performing the state management of cybersecurity, and shall be accountable to the Government for carrying out the following contents of state management of cybersecurity, except those specified in Clauses 3 and 4 of this Article:
+a/ To promulgate, or submit to competent state agencies for promulgation, legal documents on cybersecurity;
+b/ To formulate and propose strategies, guidelines, policies, plans and measures for cybersecurity protection; to research, build, develop and use security cryptography for the protection of data security within the scope of the Ministry of Public Security’s management;
+c/ To coordinate with relevant agencies in organising the dissemination of information and rebuttal of information containing content opposing the State of the Socialist Republic of Vietnam as specified in Clause 1, Article 13 of this Law;
+d/ To require enterprises providing services on telecommunications networks or the Internet and value-added services in cyberspace, and information system managers to remove information having content that violates the law on cybersecurity from services and information systems directly managed by enterprises, agencies and organisations;
+dd/ To prevent and combat activities using cyberspace to infringe upon national sovereignty, national interests, national security or social order and safety, and to prevent and combat cybercrime;
+e/ To ensure information security in cyberspace and data security; to establish mechanisms for the management of IP address identification; authentication of digital account registration information; and warning and sharing of information on cybersecurity and cybersecurity threats;
+g/ To advise and propose to the Government and the Prime Minister for consideration and decision the assignment and coordination of measures for cybersecurity protection and the prevention and handling of acts infringing upon cybersecurity in case state management responsibilities involve multiple ministries or sectors;
+h/ To mobilise experts, scientists and specialised personnel, and requisition systems, means and equipment in emergency cases to protect national security and ensure social order and safety in cyberspace;
+i/ To organise cyberattack prevention exercises, and incident response and remediation exercises for information systems critical to national security;
+k/ To conduct examinations and inspections, settle complaints and denunciations, and handle violations of the law on cybersecurity.
+3. The Ministry of National Defence shall take responsibility to the Government for performing the state management of cybersecurity within its scope of management as follows:
+a/ To promulgate, or submit to competent state agencies for promulgation, legal documents on cybersecurity within its management scope;
+b/ To formulate and propose strategies, guidelines, policies, plans and measures for cybersecurity protection within its management scope;
+c/ To prevent and combat activities using cyberspace to infringe upon national security within its management scope;
+d/ To coordinate with the Ministry of Public Security in organising cyberattack prevention exercises, and incident response and remediation exercises for information systems critical to national security, and in implementing cybersecurity protection activities;
+dd/ To conduct examinations and inspections, settle complaints and denunciations, and handle violations of the law on cybersecurity within its management scope.
+4. The Government Cipher Committee shall assist the Minister of National Defence in performing the state management of civil cryptography and cybersecurity within its management scope in accordance with law.
+5. Ministries, ministerial-level agencies and government-attached agencies shall, within the ambit of their respective functions, duties and powers, carry out cybersecurity protection activities and coordinate with the Ministry of Public Security in performing the state management of cybersecurity.
+6. Provincial-level People’s Committees shall carry out cybersecurity protection activities in their localities and coordinate with the Ministry of Public Security in performing the state management of cybersecurity.
+Article 40. Responsibilities of information system managers in cybersecurity protection
+1. Information system managers have the following responsibilities:
+a/ To protect information systems in accordance with this Law;
+b/ To connect cybersecurity monitoring systems and centralised anti-malware systems to the National Cybersecurity Centre of the Ministry of Public Security or to the Cybersecurity Centres of the related provinces or cities for the purpose of supporting cybersecurity monitoring;
+c/ To report cybersecurity incidents to the specialised agency of the Ministry of Public Security or the Ministry of National Defence.
+2. Information system managers using the state budget have, in addition to the responsibilities specified in Clause 1 of this Article, the following responsibilities:
+a/ To have a cybersecurity protection plan appraised by a competent state agency when establishing, expanding or upgrading an information system;
+b/ To designate an individual or a unit responsible for cybersecurity.
+Article 41. Responsibilities of enterprises providing services in cyberspace
+1. To comply with the law on cybersecurity.
+2. To warn users of cybersecurity risks in the use of the services they provide in cyberspace and to provide guidance on preventive measures for service users; to formulate emergency response plans for cybersecurity to proactively address cybersecurity weaknesses, risks and incidents.
+3. In case a cybersecurity incident occurs, to immediately implement the emergency response plan for cybersecurity protection and simultaneously report thereon to the specialised cybersecurity protection force concerned in accordance with this Law.
+4. To apply technical measures and solutions to ensure cybersecurity in data processing and personal data processing in accordance with this Law, the law on data, the law on personal data protection and other relevant laws.
+5. To identify IP addresses of organisations and individuals using Internet services; to provide IP address identification information to specialised cybersecurity protection forces for the implementation of cybersecurity protection measures.
+6. To cooperate according to the guidance of the specialised cybersecurity protection force under the Ministry of Public Security in establishing connection systems, connecting technical transmission lines, transmitting data and satisfying other necessary conditions for the deployment of cybersecurity protection solutions and measures when required for the purposes of investigation, verification and handling of violations of the law on cybersecurity.
+7. Enterprises providing services on telecommunications networks or the Internet and value-added services in cyberspace in Vietnam shall comply with this Article and Clauses 2 and 3, Article 25 of this Law.
+Article 42. Responsibilities of agencies, organisations and individuals using cyberspace
+1. To comply with the law on cybersecurity.
+2. To keep confidential information relating to the registration, opening, management and use of their digital accounts. In case a digital account is used to commit unlawful acts, depending on the nature and severity of the violation, the digital account holder or the user of the digital account shall be subject to disciplinary measures, administrative sanctions or penal liability examination; if causing damage to the interests of the State or the lawful rights and interests of organisations or individuals, the digital account holder or the user of the digital account shall pay compensation therefor in accordance with law.
+3. To promptly provide information relating to cybersecurity protection, cybersecurity threats and acts infringing upon cybersecurity to competent agencies and cybersecurity protection forces.
+4. To comply with requests and instructions of competent agencies in cybersecurity protection; o assist and create favourable conditions for responsible agencies, organisations and persons to carry out cybersecurity protection measures.
+
+Chapter VIII
+IMPLEMENTATION PROVISIONS
+Article 43. Amendments and supplements to a number of articles of related laws
+1. To replace a number of phrases and annul a number of clauses of Law No. 33/2024/QH15 on Archives as follows:
+a/ To replace the phrase “information safety” in Point b, Clause 1, Article 35; the phrase “cyberinformation safety” in Point b, Clause 2, Article 36; and the phrase  “information safety and security” in Clause 3, Article 60, with the word “cybersecurity”;
+b/ To annul Clause 4, Article 58.
+2. To replace or annul number of phrases in Law No. 19/2023/QH15 on Protection of Consumer Rights as follows:
+a/ To replace the phrase “information safety” in Point d, Clause 1, Article 16 with the phrase “information security”; and the phrase “information safety and security” in Clause 1, Article 15, the title of Article 19, and Clauses 1 and 3, Article 19, with the word “cybersecurity”;
+b/ To annul the phrase “cyberinformation safety” in Clause 3, Article 19.
+3. To replace a number of phrases in Law No. 97/2015/QH13 on Charges and Fees, which has a number of articles amended and supplemented under Law No. 90/2017/QH14, Law No. 23/2018/QH14, Law No. 72/2020/QH14, Law No. 16/2023/QH15, Law No. 20/2023/QH15, Law No. 24/2023/QH15, Law No. 33/2024/QH15, Law No. 35/2024/QH15, Law No. 47/2024/QH15, Law No. 60/2024/QH15, Law No. 74/2025/QH15, Law No. 89/2025/QH15, Law No. 94/2025/QH15, Law No. 95/2025/QH15 and Law No. 118/2025/QH15, as follows:
+a/ To replace the phrase “information safety” in Subsection 10, Section VI, Part A and Subsection 16, Section III, Part B of Appendix No. 01 – List of Charges and Fees, with the word “cybersecurity”;
+b/ To replace the phrase “cyberinformation safety” in Subsection 11, Section VI, Part A of Appendix No. 01 – List of Charges and Fees, with the word “cybersecurity”.
+4. To replace or annul a number of phrases in Law No. 71/2025/QH15 on the Digital Technology Industry as follows:
+a/ To replace the phrase “information safety” in Point a, Clause 1, Article 25 with the word “cybersecurity”;
+b/ To annul the phrase “cyberinformation safety” in Article 10.
+5. To replace or annul a number of phrases in Law No. 60/2024/QH15 on Data as follows:
+a/ To replace the phrase “data safety and security” in Clause 4, Article 25 with the phrase “data security”;
+b/ To replace the phrase “information security and safety” in Clause 2, Article 33 with the word “cybersecurity”;
+c/ To annul the phrase “, information safety” in Clause 4, Article 25;
+d/ To annul the phrase “cyberinformation safety” in Clause 4, Article 39;
+dd/ To annul the phrase “the law on cyberinformation safety” in Clause 4, Article 43.
+6. To replace or annul a number of phrases in Law No. 45/2024/QH15 on Cultural Heritage, which has a number of articles amended and supplemented under Law No. 84/2025/QH15, as follows:
+a/ To replace the phrase “cyberinformation safety” in Clause 4, Article 59 with the word “cybersecurity”;
+b/ To annul the phrase “cyberinformation safety” in Point c, Clause 2, Article 86.
+7. To replace or annul a number of phrases in Law No. 24/2023/QH15 on Telecommunications, which has a number of articles amended and supplemented under Law No. 47/2024/QH15, as follows:
+a/ To replace the phrase “ cyberinformation safety” in Clause 8, Article 5 with the word “information security”;
+b/ To annul the phrase “, cyberinformation safety” in the title of Article 5, Clause 1 of Article 5, and Point c, Clause 2, Article 38;
+c/ To annul the phrase “cyberinformation safety,” in Clause 2, Article 21 and Point b, Clause 2, Article 29.
+8. To replace or annul a number of phrases in Law No. 20/2023/QH15 on E-Transactions, which has a number of articles amended and supplemented under Law No. 60/2024/QH15, as follows:
+a/ To annul the phrase “cyberinformation safety” in the title of Article 5;
+b/ To annul the phrase “the law on cyberinformation safety” in Clause 1, Article 5;
+c/ To replace the phrase “cyberinformation safety” in Point c, Clause 1, Article 20; Clause 2, Article 21; Point c, Clause 1, Article 29; Clause 6, Article 30; Clause 4, Article 44; Point a, Clause 4, Article 46; and Point c, Clause 1, Article 47, with the word “cybersecurity”;
+d/ To annul the phrase “cyberinformation safety” in Point d, Clause 1, Article 42, and Point a, Clause 1, Article 47.
+9. To replace the phrase “cyberinformation safety” in Point b, Clause 2, Article 12 of Law No. 67/2025/QH15 on Corporate Income Tax; and in Clause 1, Article 169 of Land Law No. 31/2024/QH15, which has a number of articles amended and supplemented under Law No. 43/2024/QH15, Law No. 47/2024/QH15, Law No. 58/2024/QH15, Law No. 71/2025/QH15, Law No. 84/2025/QH15, Law No. 93/2025/QH15 and Law No. 95/2025/QH15, with the word “cybersecurity”.
+10. To replace the phrase “information security and safety” in Point a, Clause 3, Article 7 of Law No. 28/2023/QH15 on Water Resources, which has a number of articles amended and supplemented under Law No. 84/2025/QH15, with the word “cybersecurity”.
+11. To annul the phrase “cyberinformation safety;” in Point dd, Clause 1, Article 24 of Law No. 15/2012/QH13 on Handling of Administrative Violations, which has a number of articles amended and supplemented under Law No. 54/2014/QH13, Law No. 18/2017/QH14, Law No. 67/2020/QH14, Law No. 09/2022/QH15, Law No. 11/2022/QH15, Law No. 56/2024/QH15 and Law No. 88/2025/QH15.
+12. To annul the phrase “cyberinformation safety,” in Clause 6, Article 16 of Law No. 37/2018/QH14 on the People’s Public Security Forces, which has a number of articles amended and supplemented under Law No. 21/2023/QH15, Law No. 30/2023/QH15, Law No. 38/2024/QH15, Law No. 52/2024/QH15 and Law No. 86/2025/QH15; and in Clause 1, Article 66 of Law No. 85/2015/QH13 on Election of Deputies to the National Assembly and Deputies to People’s Councils, which has a number of articles amended and supplemented under Law No. 83/2025/QH15.
+13. To annul the phrase “, information safety” in Clause 3, Article 136 of Law No. 34/2024/QH15 on Organisation of People’s Courts, which has a number of articles amended and supplemented under Law No. 81/2025/QH15; and in Clause 1, Article 26 of Electricity Law No. 61/2024/QH15, which has a number of articles amended and supplemented under Law No. 94/2025/QH15.
+14. To annul the phrase “information safety,” in Clause 8, Article 29; and the phrase “information safety and” in Clauses 2 and 7, Article 29 of Law No. 69/2025/QH15 on Chemicals.
+15. To annul the phrase “information safety,” in Clause 3, Article 51, and Clauses 1 and 5, Article 52, of Law No. 22/2023/QH15 on Bidding, which has a number of articles amended and supplemented under Law No. 57/2024/QH15 and Law No. 90/2025/QH15; and in Point e, Clause 1, Article 23 of Law No. 18/2023/QH15 on Civil Defence, which has a number of articles amended and supplemented under Law No. 98/2025/QH15.
+16. To annul the phrase “, the law on information safety assurance” in Clause 4, Article 7 of Law No. 94/2025/QH15 on Atomic Energy.
+17. To annul Clause 3, Article 49 of Law No. 46/2019/QH14 on Libraries.
+Article 44. Effect
+1. This Law takes effect on July 1, 2026.
+2. Law No. 86/2015/QH13 on Cyberinformation Security, which has a number of articles amended and supplemented under Law No. 35/2018/QH14; and Law No. 24/2018/QH14 on Cybersecurity, cease to be effective on the effective date of this Law.
+Article 45. Transitional provisions
+1. Information systems with classification levels determined under Law No. 86/2015/QH13 on Cyberinformation Security, which has a number of articles amended and supplemented under Law No. 35/2018/QH14, continue to retain their determined classification levels from the date this Law takes effect; however, within 12 months from the date this Law takes effect, they must satisfy the conditions, standards and measures for cybersecurity protection corresponding to such levels as prescribed by this Law.
+2. Licences for doing business in cyberinformation safety products and services and civil cryptographic products and services issued under Law No. 86/2015/QH13 on Cyberinformation Security, which has a number of articles amended and supplemented under Law No. 35/2018/QH14, before the effective date of this Law, remain valid until the expiry date stated therein.
+3. Products, services, solutions and technical means for ensuring cyberinformation safety under Law No. 86/2015/QH13 on Cyberinformation Security, which has a number of articles amended and supplemented under Law No. 35/2018/QH14, that were put into use before the effective date of this Law, may continue to be used; however, within 12 months from the date this Law takes effect, they must satisfy the cybersecurity conditions prescribed by this Law.
