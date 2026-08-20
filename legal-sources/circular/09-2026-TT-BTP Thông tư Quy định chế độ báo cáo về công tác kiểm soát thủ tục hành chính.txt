@@ -1,0 +1,684 @@
+THÔNG TƯ
+QUY ĐỊNH CHẾ ĐỘ BÁO CÁO VỀ CÔNG TÁC KIỂM SOÁT THỦ TỤC HÀNH CHÍNH
+Căn cứ Luật Giao dịch điện tử số 20/2023/QH15;
+Căn cứ Nghị định số 09/2026/NĐ-CP ngày 10 tháng 01 năm 2026 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Tư pháp;
+Căn cứ Nghị định số 09/2019/NĐ-CP ngày 24 tháng 01 năm 2019 của Chính phủ quy định về chế độ báo cáo của cơ quan hành chính nhà nước;
+Căn cứ Nghị định số 63/2010/NĐ-CP ngày 08 tháng 6 năm 2010 của Chính phủ về kiểm soát thủ tục hành chính; sửa đổi, bổ sung bởi Nghị định số 92/2017/NĐ-CP;
+Căn cứ Nghị định số 69/2024/NĐ-CP ngày 25 tháng 6 năm 2024 của Chính phủ quy định về định danh và xác thực điện tử; sửa đổi, bổ sung bởi Nghị định số 169/2025/NĐ-CP;
+Căn cứ Nghị định số 118/2025/NĐ-CP ngày 09 tháng 6 năm 2025 của Chính phủ về thực hiện thủ tục hành chính theo cơ chế một cửa, một cửa liên thông tại Bộ phận Một cửa và Cổng Dịch vụ công quốc gia; sửa đổi, bổ sung bởi Nghị định số 367/2025/NĐ-CP;
+Căn cứ Nghị định số 45/2020/NĐ-CP ngày 08 tháng 4 năm 2020 của Chính phủ về thực hiện thủ tục hành chính trên môi trường điện tử;
+Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết thi hành một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành văn bản quy phạm pháp luật; sửa đổi, bổ sung bởi Nghị định số 187/2025/NĐ-CP;
+Theo đề nghị của Cục trưởng Cục Kiểm soát thủ tục hành chính;
+Bộ trưởng Bộ Tư pháp ban hành Thông tư quy định chế độ báo cáo về công tác kiểm soát thủ tục hành chính.
+Chương I
+QUY ĐỊNH CHUNG
+Điều 1. Phạm vi điều chỉnh
+Thông tư này quy định chế độ báo cáo định kỳ về công tác kiểm soát thủ tục hành chính.
+Điều 2. Đối tượng áp dụng
+1. Các bộ, cơ quan ngang bộ; các cơ quan, đơn vị thuộc bộ, cơ quan ngang bộ; các cơ quan, đơn vị theo hệ thống ngành dọc của bộ, cơ quan ngang bộ tại địa phương.
+2. Ủy ban nhân dân tỉnh, thành phố (sau đây gọi là Ủy ban nhân dân cấp tỉnh) và các cơ quan, đơn vị thuộc Ủy ban nhân dân cấp tỉnh; Ủy ban nhân dân xã, phường, đặc khu (sau đây gọi là Ủy ban nhân dân cấp xã).
+3. Các cơ quan: Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam.
+4. Các tổ chức, cá nhân liên quan khác.
+Điều 3. Giải thích từ ngữ
+Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:
+1. Tài khoản quản trị cấp cao là tài khoản định danh điện tử của cơ quan, tổ chức được cấp theo quy định của pháp luật về định danh và xác thực điện tử; được Bộ Tư pháp phân quyền quản trị trên Hệ thống báo cáo về công tác kiểm soát thủ tục hành chính (sau đây gọi là Hệ thống).
+2. Tài khoản người sử dụng là tài khoản định danh điện tử mức độ 2 của cán bộ, công chức, viên chức, người lao động và các đối tượng khác thuộc Bộ Quốc phòng, Bộ Công an (sau đây gọi chung là cán bộ, công chức, viên chức), được đăng ký theo quy định của pháp luật về định danh, xác thực điện tử và được phân quyền để sử dụng, khai thác Hệ thống.
+Điều 4. Yêu cầu đối với cơ quan gửi báo cáo
+1. Thu thập, tổng hợp, cập nhật thông tin, số liệu báo cáo bảo đảm tính đầy đủ, chính xác, đúng thời hạn theo yêu cầu.
+2. Kịp thời điều chỉnh, bổ sung thông tin, số liệu theo yêu cầu trong trường hợp cơ quan nhận báo cáo trả lại trên Hệ thống.
+Điều 5. Yêu cầu đối với cơ quan nhận báo cáo
+1. Kiểm tra, tổng hợp thông tin, số liệu từ các báo cáo gửi đến, duyệt và báo cáo cấp có thẩm quyền.
+2. Kịp thời trả lại và yêu cầu cơ quan gửi báo cáo điều chỉnh, bổ sung đối với những báo cáo không bảo đảm tính đầy đủ, chính xác.
+Điều 6. Phương thức gửi, nhận báo cáo
+1. Việc cập nhật, tổng hợp thông tin, số liệu, duyệt và gửi, nhận báo cáo quy định tại Thông tư này thực hiện thông qua các chức năng của Hệ thống. Đối với báo cáo có nội dung thuộc bí mật nhà nước thì thực hiện theo quy định pháp luật về bảo vệ bí mật nhà nước.
+2. Trường hợp có sự cố kỹ thuật dẫn tới không thể triển khai gửi, nhận báo cáo trên Hệ thống trong thời hạn quy định thì việc gửi, nhận báo cáo được thực hiện bằng hình thức văn bản điện tử thông qua Trục liên thông văn bản quốc gia hoặc các phương thức khác theo quy định của pháp luật. Cơ quan gửi báo cáo có trách nhiệm nhập thông tin vào Hệ thống ngay sau khi sự cố kỹ thuật được xử lý.
+Điều 7. Ký số báo cáo điện tử
+Cơ quan gửi báo cáo điện tử sử dụng chứng thư số chuyên dùng công vụ được cấp theo quy định để ký số vào các báo cáo điện tử, gói tin dữ liệu báo cáo điện tử trên Hệ thống theo quy định của pháp luật.
+Chương II
+CHẾ ĐỘ BÁO CÁO VỀ CÔNG TÁC KIỂM SOÁT THỦ TỤC HÀNH CHÍNH
+Điều 8. Nội dung yêu cầu báo cáo về công tác kiểm soát thủ tục hành chính
+Nội dung yêu cầu báo cáo về công tác kiểm soát thủ tục hành chính bao gồm tình hình, kết quả thực hiện các nhiệm vụ sau:
+1. Đánh giá tác động thủ tục hành chính quy định tại dự thảo văn bản quy phạm pháp luật.
+2. Thẩm định thủ tục hành chính quy định tại dự thảo văn bản quy phạm pháp luật.
+3. Công bố, công khai thủ tục hành chính, danh mục thủ tục hành chính.
+4. Rà soát, phê duyệt và thực thi phương án cắt giảm, đơn giản hóa thủ tục hành chính.
+5. Cắt giảm, đơn giản hóa thủ tục hành chính dựa trên dữ liệu.
+6. Tiếp nhận, xử lý phản ánh, kiến nghị về quy định, thủ tục hành chính.
+7. Tình hình, kết quả giải quyết thủ tục hành chính.
+8. Triển khai cơ chế một cửa, một cửa liên thông trong giải quyết thủ tục hành chính.
+9. Thực hiện thủ tục hành chính trên môi trường điện tử.
+10. Công bố, công khai và cắt giảm, đơn giản hóa thủ tục hành chính nội bộ giữa các cơ quan hành chính nhà nước.
+11. Truyền thông hỗ trợ hoạt động kiểm soát thủ tục hành chính.
+12. Nghiên cứu, đề xuất sáng kiến cải cách thủ tục hành chính.
+13. Kiểm tra thực hiện kiểm soát thủ tục hành chính.
+14. Các nội dung khác.
+15. Khó khăn, vướng mắc và đề xuất, kiến nghị.
+Điều 9. Tần suất thực hiện báo cáo về công tác kiểm soát thủ tục hành chính
+Báo cáo về công tác kiểm soát thủ tục hành chính thực hiện hằng tháng (các tháng: 1, 2; 4, 5; 7, 8; 10, 11), hằng quý (các quý: I, III), 6 tháng đầu năm và hằng năm.
+Điều 10. Thời gian chốt số liệu báo cáo về công tác kiểm soát thủ tục hành chính
+Thời gian chốt số liệu báo cáo theo quy định tại Điều 12 của Nghị định số 09/2019/NĐ-CP.
+Điều 11. Cơ quan thực hiện báo cáo, cơ quan nhận báo cáo, quy trình và thời hạn gửi báo cáo về công tác kiểm soát thủ tục hành chính
+1. Cơ quan, đơn vị thuộc bộ, cơ quan ngang bộ và các cơ quan, đơn vị theo hệ thống ngành dọc của bộ, cơ quan ngang bộ tại địa phương gửi báo cáo bộ, cơ quan ngang bộ chậm nhất vào ngày 20 hằng tháng, ngày 20 tháng cuối quý, ngày 20 tháng 6 và ngày 20 tháng 12 hằng năm; bộ, cơ quan ngang bộ tổng hợp, duyệt, gửi báo cáo chậm nhất vào ngày 23 hằng tháng, ngày 23 tháng cuối quý, ngày 23 tháng 6 và ngày 23 tháng 12 hằng năm.
+2. Ủy ban nhân dân cấp xã, cơ quan, đơn vị thuộc Ủy ban nhân dân cấp tỉnh cập nhật và gửi Ủy ban nhân dân cấp tỉnh chậm nhất vào ngày 20 hằng tháng, ngày 20 tháng cuối quý, ngày 20 tháng 6 và ngày 20 tháng 12 hằng năm; Ủy ban nhân dân cấp tỉnh tổng hợp, duyệt và gửi báo cáo chậm nhất vào ngày 23 hằng tháng, ngày 23 tháng cuối quý, ngày 23 tháng 6 và ngày 23 tháng 12 hằng năm.
+Đối với các thành phố trực thuộc Trung ương thành lập Trung tâm Phục vụ hành chính công một cấp, Ủy ban nhân dân cấp xã cập nhật và gửi chi nhánh Trung tâm cùng cấp; cơ quan, đơn vị thuộc Ủy ban nhân dân thành phố cập nhật và gửi Trung tâm phục vụ hành chính công một cấp theo phân công của Ủy ban nhân dân thành phố. Ủy ban nhân dân thành phố tổng hợp, duyệt và gửi báo cáo hoặc quyết định việc ủy quyền Trung tâm phục vụ hành chính công một cấp tổng hợp, duyệt và gửi báo cáo chậm nhất vào ngày 23 hằng tháng, ngày 23 tháng cuối quý, ngày 23 tháng 6 và ngày 23 tháng 12 hằng năm.
+3. Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam tổng hợp báo cáo từ các cơ quan, đơn vị trực thuộc, duyệt, gửi báo cáo chậm nhất vào ngày 23 hằng tháng, ngày 23 tháng cuối quý, ngày 23 tháng 6 và ngày 23 tháng 12 hằng năm.
+4. Bộ Tư pháp tổng hợp báo cáo của bộ, cơ quan ngang bộ, Ủy ban nhân dân cấp tỉnh, Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam gửi báo cáo Chính phủ, Thủ tướng Chính phủ tại Phiên họp Chính phủ thường kỳ hằng tháng và ngày 25 tháng 12 hằng năm.
+5. Trường hợp Hệ thống được tích hợp, đồng bộ với các hệ thống thông tin, cơ sở dữ liệu (Cổng Dịch vụ công quốc gia, các hệ thống thông tin giải quyết thủ tục hành chính,...) và cơ quan chủ quản các hệ thống thông tin, cơ sở dữ liệu xác nhận đảm bảo cung cấp các thông tin, số liệu theo các biểu mẫu báo cáo quy định tại Phụ lục kèm theo Thông tư này thì không cần cập nhật, duyệt, gửi báo cáo theo quy định tại khoản 1, 2, 3, 4 Điều này.
+6. Kết quả thực hiện chế độ báo cáo về kiểm soát thủ tục hành chính của các bộ, cơ quan, địa phương trên Hệ thống sau khi được Bộ Tư pháp tiếp nhận, tổng hợp được đồng bộ theo thời gian thực với Cổng Dịch vụ công quốc gia và là cơ sở để thực hiện đánh giá chất lượng phục vụ người dân, doanh nghiệp theo Bộ chỉ số chỉ đạo, điều hành và đánh giá chất lượng phục vụ người dân, doanh nghiệp trong thực hiện thủ tục hành chính, dịch vụ công.
+Điều 12. Mẫu đề cương, biểu mẫu số liệu báo cáo về công tác kiểm soát thủ tục hành chính
+Mẫu đề cương, biểu mẫu số liệu báo cáo theo hướng dẫn tại Phụ lục kèm theo Thông tư này.
+Chương III
+BÁO CÁO ĐIỆN TỬ VỀ CÔNG TÁC KIỂM SOÁT THỦ TỤC HÀNH CHÍNH
+Điều 13. Thực hiện báo cáo điện tử về công tác kiểm soát thủ tục hành chính
+Báo cáo điện tử về công tác kiểm soát thủ tục hành chính được thực hiện trên Hệ thống có các chức năng đáp ứng yêu cầu quy định tại các Điều 15, Điều 17, Điều 18 của Nghị định số 09/2019/NĐ-CP, gồm các nhóm chức năng chính như sau:
+1. Quản lý các chế độ báo cáo quy định tại Điều 8 của Thông tư này, bao gồm:
+a) Tạo mới, chỉnh sửa, cập nhật và quản lý nội dung từng chế độ báo cáo, bảo đảm đầy đủ các thành phần của chế độ báo cáo theo quy định tại Điều 7 của Nghị định số 09/2019/NĐ-CP và Thông tư này trên Hệ thống; quản lý thời hạn thực hiện báo cáo theo quy định của từng chế độ báo cáo.
+b) Thiết lập các biểu mẫu điện tử tương tác theo Mẫu đề cương, biểu mẫu số liệu báo cáo quy định tại các Phụ lục kèm theo Thông tư này; bảo đảm tính thuận tiện, linh hoạt, dễ sử dụng, thân thiện với người dùng.
+c) Gán các cơ quan, đơn vị thực hiện chế độ báo cáo tương ứng với các biểu mẫu điện tử của từng chế độ báo cáo.
+2. Quản lý người dùng trên Hệ thống, bao gồm:
+a) Thêm mới, hủy bỏ, điều chuyển người dùng giữa các cơ quan, đơn vị khi có sự thay đổi về cơ cấu tổ chức, chức năng, nhiệm vụ hoặc do yêu cầu công tác.
+b) Phân quyền cập nhật, tổng hợp, duyệt và gửi báo cáo điện tử theo phân công của cơ quan, đơn vị.
+c) Phân cấp quản lý người dùng theo nguyên tắc: Quản trị cấp cao của bộ, cơ quan, Ủy ban nhân dân cấp tỉnh quản lý toàn bộ người dùng của các cơ quan, đơn vị trực thuộc. Trường hợp cần thiết, tài khoản quản trị cấp cao của bộ, cơ quan, Ủy ban nhân dân cấp tỉnh có thể phân cấp quyền quản lý người dùng cho tài khoản của các cơ quan, đơn vị trực thuộc.
+3. Theo dõi tình hình cập nhật, tổng hợp, duyệt và gửi báo cáo điện tử của các cơ quan, đơn vị trực thuộc hoặc cấp dưới thông qua các màn hình hiển thị trực quan (Dashboard) hoặc chức năng của Hệ thống.
+4. Các phân hệ phần mềm phục vụ công tác báo cáo định kỳ, chuyên đề, đột xuất khác do Bộ Tư pháp chủ trì xây dựng.
+Điều 14. Tài khoản quản trị, sử dụng, khai thác Hệ thống
+1. Các bộ, cơ quan, Ủy ban nhân dân cấp tỉnh đăng ký, quản lý tài khoản định danh của tổ chức theo quy định của pháp luật về định danh và xác thực điện tử; sử dụng các tài khoản này để quản trị người dùng tại bộ, cơ quan, Ủy ban nhân dân các cấp, quản lý các chế độ báo cáo trên Hệ thống hoặc phân cấp việc quản lý theo quy định.
+2. Bộ Tư pháp phân quyền quản trị cấp cao cho các tài khoản quản trị cấp cao của bộ, cơ quan, Ủy ban nhân dân cấp tỉnh trên Hệ thống.
+3. Cán bộ, công chức, viên chức được phân công thực hiện các chế độ báo cáo đăng ký tài khoản định danh điện tử mức độ 2 để khai thác, sử dụng Hệ thống; bảo quản tài khoản, mật khẩu theo quy định của pháp luật về định danh, xác thực điện tử.
+Điều 15. Trách nhiệm của các cơ quan, đơn vị trong quản lý, sử dụng, khai thác Hệ thống
+1. Khai thác, sử dụng chức năng của Hệ thống để thực hiện chế độ báo cáo về công tác kiểm soát thủ tục hành chính; phối hợp với Bộ Tư pháp triển khai các phân hệ phần mềm báo cáo định kỳ, chuyên đề, đột xuất khác theo quy định tại khoản 4 Điều 13 của Thông tư này trên Hệ thống; khai thác các thông tin tổng hợp, dữ liệu lưu trữ trên Hệ thống phù hợp với chức năng, nhiệm vụ được giao hoặc khai thác các thông tin, dữ liệu được công khai trên Hệ thống phục vụ công tác chuyên môn.
+2. Chủ trì rà soát, đối chiếu số liệu báo cáo về công tác kiểm soát thủ tục hành chính với thông tin, dữ liệu được tính toán, hiển thị trên Cổng Dịch vụ công quốc gia (Bộ chỉ số chỉ đạo, điều hành và đánh giá chất lượng phục vụ người dân, doanh nghiệp trong thực hiện thủ tục hành chính, dịch vụ công) và chỉ số đánh giá, chấm điểm công tác cải cách thủ tục hành chính của bộ, cơ quan, địa phương; kịp thời phối hợp với Bộ Tư pháp khắc phục, xử lý các trường hợp sai sót, không đầy đủ, chính xác giữa số liệu báo cáo trên Hệ thống với số liệu báo cáo được đồng bộ trên Cổng Dịch vụ công quốc gia và chỉ số đánh giá, chấm điểm công tác cải cách thủ tục hành chính của bộ, cơ quan, địa phương.
+3. Thông báo cho Bộ Tư pháp ngay sau khi phát hiện Hệ thống có sai sót, sự cố kỹ thuật dẫn tới ảnh hưởng hoạt động hoặc an ninh, an toàn thông tin của Hệ thống; đóng góp ý kiến cho Bộ Tư pháp để cải tiến cách thức quản lý và hoàn thiện Hệ thống.
+Chương IV
+TỔ CHỨC THỰC HIỆN
+Điều 16. Điều khoản chuyển tiếp
+Trong thời gian Hệ thống chưa đưa vào vận hành, việc gửi, nhận báo cáo về công tác kiểm soát thủ tục hành chính được thực hiện bằng hình thức văn bản điện tử thông qua Trục liên thông văn bản quốc gia hoặc các phương thức khác theo quy định của pháp luật.
+Điều 17. Hiệu lực và trách nhiệm thi hành
+1. Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 8 năm 2026.
+2. Các bộ, cơ quan ngang bộ; Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam; Ủy ban nhân dân cấp tỉnh, Ủy ban nhân dân cấp xã và các cơ quan, tổ chức, cá nhân liên quan có trách nhiệm thực hiện nghiêm túc chế độ báo cáo về công tác kiểm soát thủ tục hành chính theo quy định tại Thông tư này và các văn bản quy phạm pháp luật khác; chịu trách nhiệm về tính chính xác của thông tin, số liệu báo cáo thực hiện trên Hệ thống.
+3. Bộ Tư pháp có trách nhiệm:
+a) Hướng dẫn, theo dõi, đôn đốc, kiểm tra việc thực hiện Thông tư này; quản lý, lưu trữ, chia sẻ thông tin báo cáo theo quy định.
+b) Xây dựng, vận hành Hệ thống, đảm bảo kết nối, chia sẻ dữ liệu theo quy định pháp luật.
+4. Trong quá trình thực hiện Thông tư này, nếu có khó khăn, vướng mắc, đề nghị kịp thời phản ánh về Bộ Tư pháp để nghiên cứu, giải quyết./.
+PHỤ LỤC
+ĐỀ CƯƠNG, BIỂU MẪU SỐ LIỆU BÁO CÁO CÔNG TÁC KIỂM SOÁT THỦ TỤC HÀNH CHÍNH
+(Ban hành kèm theo Thông tư số: 09/2026/TT-BTP ngày 15 tháng 6 năm 2026 của Bộ trưởng Bộ Tư pháp)
+A. ĐỀ CƯƠNG BÁO CÁO
+Mẫu: 01-ĐC/BTP/KSTT	ĐỀ CƯƠNG
+BÁO CÁO CÔNG TÁC KIỂM SOÁT THỦ TỤC HÀNH CHÍNH	- Đơn vị báo cáo1:
++ Bộ, cơ quan ngang bộ;
++ Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam;
++ UBND cấp tỉnh.
+- Đơn vị nhận báo cáo:
++ Bộ Tư pháp.
+I. TÌNH HÌNH, KẾT QUẢ KIỂM SOÁT THỦ TỤC HÀNH CHÍNH (TTHC)
+1. Đánh giá tác động TTHC quy định tại dự thảo văn bản quy phạm pháp luật (QPPL)
+- Số lượng TTHC đã được đánh giá tác động trong kỳ báo cáo (trích dẫn các dự thảo văn bản QPPL liên quan), lũy kế đến kỳ báo cáo2:
+- Số lượng TTHC được ban hành trong kỳ báo cáo (trích dẫn các dự thảo văn bản QPPL liên quan), lũy kế đến kỳ báo cáo:
+2. Thẩm định TTHC quy định tại dự thảo văn bản QPPL
+Nêu tổng số TTHC và tổng số văn bản QPPL trong kỳ báo cáo (trích dẫn các dự thảo văn bản QPPL liên quan), lũy kế đến kỳ báo cáo do bộ, cơ quan mình chủ trì thực hiện việc thẩm định3.
+3. Công bố, công khai TTHC, danh mục TTHC
+- Tổng số Quyết định công bố TTHC/danh mục TTHC đã được ban hành trong kỳ báo cáo (trích dẫn Quyết định công bố), lũy kế đến kỳ báo cáo:
+- Tổng số văn bản QPPL có quy định TTHC được công bố (trích dẫn tên văn bản QPPL):
+- Tổng số TTHC/danh mục TTHC được công bố... ; trong đó số TTHC được công khai...
+- Tổng số TTHC thuộc thẩm quyền quản lý, theo dõi của bộ, cơ quan tính đến thời điểm báo cáo:.. TTHC (trong đó: số TTHC thuộc thẩm quyền giải quyết của bộ, cơ quan:.. TTHC; số TTHC thuộc thẩm quyền giải quyết của UBND cấp tỉnh … TTHC; số TTHC thuộc thẩm quyền của UBND cấp xã … TTHC).
+- Tổng số TTHC thuộc thẩm quyền giải quyết của địa phương:..(trong đó: số TTHC do trung ương quy định:....; số TTHC do địa phương quy định:..
+4. Rà soát, phê duyệt và thực thi phương án cắt giảm, đơn giản hóa TTHC
+4.1. Theo chương trình, kế hoạch của Chính phủ, Thủ tướng Chính phủ
+a) Theo chương trình, kế hoạch cắt giảm, đơn giản hóa TTHC liên quan đến hoạt động sản xuất, kinh doanh
+(1) Kết quả rà soát, phê duyệt phương án đơn giản hóa TTHC, ĐKKD:
+- Số lượng TTHC, ĐKKD liên quan đến hoạt động sản xuất kinh doanh được thống kê, rà soát:….
+- Phương án đơn giản hóa cụ thể:
++ Số lượng TTHC, ĐKKD bãi bỏ:......
++ Số lượng TTHC, ĐKKD đơn giản hóa:.......
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %
+(2) Kết quả thực thi phương án đơn giản hóa trong kỳ báo cáo:
+- Số TTHC, ĐKKD đã thực thi xong phương án:…., đạt tỷ lệ:….%.
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %
+(3) Kết quả thực thi phương án đơn giản hóa lũy kế đến kỳ báo cáo:
+- Số TTHC, ĐKKD đã thực thi xong phương án:…., đạt tỷ lệ:….%.
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %
+- Số TTHC, ĐKKD còn phải thực thi phương án:….;
+b) Theo chương trình, kế hoạch khác của Chính phủ, Thủ tướng Chính phủ (nếu có)
+(1) Kết quả rà soát, phê duyệt phương án đơn giản hóa
+(2) Kết quả thực thi phương án đơn giản hóa trong kỳ báo cáo:
+- Số TTHC đã thực thi xong phương án:…., đạt tỷ lệ:….%.
+Trong đó:
++ Số TTHC bãi bỏ:…..
++ Số TTHC đơn giản hóa:…..
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %.
+(3) Kết quả thực thi phương án đơn giản hóa lũy kế đến kỳ báo cáo:
+- Số TTHC đã thực thi xong phương án:…., đạt tỷ lệ:….%.
+Trong đó:
++ Số TTHC bãi bỏ:…..
++ Số TTHC đơn giản hóa:…..
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %.
+- Số TTHC còn phải thực thi phương án:….., chiếm tỷ lệ:….%
+4.2. Theo Kế hoạch của bộ, cơ quan, UBND cấp tỉnh
+(1) Kết quả rà soát, phê duyệt phương án đơn giản hóa
+(2) Kết quả thực thi phương án đơn giản hóa trong kỳ báo cáo:
+- Số TTHC đã thực thi xong phương án:…., đạt tỷ lệ:….%.
+Trong đó:
++ Số TTHC bãi bỏ:…..
++ Số TTHC đơn giản hóa:…..
+- Số tiền tiết kiệm được:…… (triệu đồng); đạt tỷ lệ:…….%
+- Thời gian cắt giảm:……. (ngày); đạt tỷ lệ: ……… %.
+- Số TTHC còn phải thực thi phương án (lũy kế đến kỳ báo cáo):….., chiếm tỷ lệ:….%
+5. Cắt giảm, đơn giản hóa thủ tục hành chính dựa trên dữ liệu
+- Số lượng, tên Cơ sở dữ liệu được công bố phạm vi thông tin trong cơ sở dữ liệu được khai thác, sử dụng thay thế giấy tờ trong thành phần hồ sơ thủ tục hành chính trên Cổng dịch vụ công quốc gia;
+- Số lượng thủ tục hành chính có thành phần hồ sơ, giấy tờ sử dụng thông tin từ Cơ sở dữ liệu được công bố;
+- Số lượng thủ tục hành chính đã được tái cấu trúc quy trình để sử dụng thông tin, dữ liệu từ Cơ sở dữ liệu được công bố để thay thế thành phần hồ sơ hoặc cắt giảm thủ tục hành chính;
+- Số lượng văn bản quy phạm pháp luật cần sửa đổi và đã sửa đổi để thực hiện cắt giảm, đơn giản hóa thủ tục hành chính dựa trên dữ liệu.
+6. Tiếp nhận, xử lý phản ánh, kiến nghị về quy định, TTHC
+- Tổng số phản ánh, kiến nghị đã phân loại và chuyển xử lý: …. phản ánh, kiến nghị. Trong đó: từ chối tiếp nhận: …. phản ánh, kiến nghị; hướng dẫn bổ sung:
+… phản ánh, kiến nghị; chuyển đơn vị khác xử lý:… phản ánh, kiến nghị; công khai qua thư điện tử của công dân: …. phản ánh, kiến nghị.
+- Tổng số phản ánh, kiến nghị đã tiếp nhận trong kỳ báo cáo, trong đó: Số tiếp nhận mới trong kỳ:….; số từ kỳ trước chuyển qua:….; số phản ánh, kiến nghị về quy định hành chính:…; số phản ánh, kiến nghị về hành vi hành chính:….
+- Số phản ánh, kiến nghị đã xử lý:…; trong đó số đã được đăng tải công khai:….
+- Số phản ánh, kiến nghị đang xử lý:….
+- Số phản ánh, kiến nghị xử lý quá hạn: …
+7. Tình hình, kết quả giải quyết TTHC
+- Tổng số hồ sơ TTHC đã tiếp nhận trong kỳ báo cáo, trong đó: Số mới tiếp nhận trong kỳ:…. (trực tuyến:….; trực tiếp và qua dịch vụ bưu chính:….); số từ kỳ trước chuyển qua:…..
+- Số lượng hồ sơ đã giải quyết:….; trong đó, giải quyết trước hạn:…., đúng hạn:…., quá hạn:….
+- Số lượng hồ sơ đang giải quyết:…..; trong đó, trong hạn:….., quá hạn:……
+8. Triển khai cơ chế một cửa, một cửa liên thông trong giải quyết TTHC
+Tình hình, kết quả triển khai thực hiện cơ chế một cửa, một cửa liên thông trong giải quyết TTHC theo quy định của pháp luật: Công tác chỉ đạo và triển khai thực hiện; kết quả thực hiện (ngoài các nhiệm vụ chung trong các biểu mẫu số liệu, báo cáo thêm về nhiệm vụ riêng của từng đơn vị).
+9. Thực hiện TTHC trên môi trường điện tử
+Tình hình, kết quả triển khai thực hiện TTHC trên môi trường điện tử theo quy định của pháp luật: Công tác chỉ đạo và triển khai thực hiện; kết quả thực hiện (ngoài các nhiệm vụ chung trong các biểu mẫu số liệu, báo cáo thêm về nhiệm vụ riêng của từng đơn vị).
+10. Công bố, công khai và cắt giảm, đơn giản hóa TTHC nội bộ giữa các cơ quan hành chính nhà nước
+10.1. Về công bố, công khai
+- Tổng số Quyết định công bố TTHC nội bộ đã được ban hành trong kỳ báo cáo (trích dẫn tên Quyết định công bố); Tổng số TTHC nội bộ được công bố…; lũy kế đến kỳ báo cáo.
+- Tổng số Quyết định công bố và số lượng TTHC nội bộ được công khai (Đã công khai/Chưa công khai)...
+10.2. Tình hình kết quả phê duyệt, thực thi phương án cắt giảm, đơn giản hóa TTHC nội bộ
+- Phương án cắt giảm, đơn giản hóa được cấp có thẩm quyền phê duyệt, cụ thể: số TTHC giữ nguyên:…; số TTHC bãi bỏ:...; số TTHC sửa đổi, bổ sung:...; Tên, số ký hiệu văn bản phê duyệt Phương án.
+- Số TTHC đã thực thi xong phương án:…., đạt tỷ lệ:….; trong đó, số TTHC bãi bỏ:...; số TTHC sửa đổi, bổ sung:...; số TTHC giữ nguyên:..; Tên, số ký hiệu văn bản thực thi; lũy kế đến kỳ báo cáo.
+11. Truyền thông hỗ trợ hoạt động kiểm soát TTHC
+Các hình thức cụ thể đã thực hiện để quán triệt, tuyên truyền, phổ biến chủ trương, chính sách, pháp luật về kiểm soát TTHC, cải cách TTHC.
+12. Nghiên cứu, đề xuất sáng kiến cải cách TTHC
+13. Kiểm tra thực hiện kiểm soát TTHC
+- Số lần kiểm tra việc thực hiện kiểm soát TTHC; hình thức kiểm tra; kết quả kiểm tra.
+- Việc khen thưởng cán bộ, công chức có thành tích, việc xử lý cán bộ, công chức vi phạm quy định về kiểm soát thực hiện TTHC.
+14. Nội dung khác
+- Việc ban hành đồng bộ, cụ thể các chính sách, quy chuẩn, tiêu chuẩn, định mức kinh tế - kỹ thuật gắn với việc giải quyết TTHC.
+- Về công tác xây dựng, ban hành và tổ chức thực hiện văn bản triển khai
+nhiệm vụ trong nội bộ của bộ, ngành, địa phương (quy chế, kế hoạch…).
+- Hoạt động đôn đốc, tập huấn hướng dẫn nghiệp vụ.
+- ….
+II. ĐÁNH GIÁ CHUNG
+- Đánh giá chung về hiệu quả, mức độ hoàn thành công tác kiểm soát TTHC của cơ quan.
+- Đánh giá những khó khăn, vướng mắc, tồn tại, hạn chế trong công tác kiểm soát TTHC:
++ Nêu cụ thể những khó khăn, vướng mắc, tồn tại, hạn chế tại cơ quan, đơn vị trực thuộc trong công tác này;
++ Phân tích rõ nguyên nhân chủ quan, khách quan của những khó khăn, vướng mắc, tồn tại, hạn chế và nguyên nhân.
+III. PHƯƠNG HƯỚNG, NHIỆM VỤ CỦA KỲ TIẾP THEO4
+Nêu những định hướng, mục tiêu cơ bản, những giải pháp, nhiệm vụ cụ thể trong công kiểm soát TTHC sẽ được tập trung thực hiện trong kỳ tiếp theo.
+IV. KIẾN NGHỊ VÀ ĐỀ XUẤT
+- Kiến nghị cơ quan có thẩm quyền nghiên cứu bổ sung, điều chỉnh chính sách, pháp luật về TTHC, kiểm soát TTHC (nếu phát hiện có thiếu sót, bất cập);
+- Kiến nghị cơ quan có thẩm quyền hướng dẫn thực hiện các quy định của pháp luật về TTHC, kiểm soát TTHC (nếu có vướng mắc);
+- Đề xuất các giải pháp, sáng kiến nâng cao hiệu quả công tác kiểm soát TTHC; khắc phục những khó khăn, vướng mắc;
+- Nội dung cụ thể khác cần kiến nghị./.
+_____________________
+1 UBND cấp xã thực hiện báo cáo nội dung I.5, I.6 và IV (nếu có).
+2 Lũy kế tính từ kỳ báo cáo đầu tiên của năm.
+3 Ví dụ: Các văn bản QPPL thuộc thẩm quyền của Thủ tướng Chính phủ trở lên sẽ do Bộ Tư pháp báo cáo về việc thẩm định; các bộ, địa phương báo cáo việc thẩm định TTHC tại văn bản thuộc thẩm quyền ban hành của bộ, địa phương.
+4 Kỳ tiếp theo được hiểu như sau: Đối với báo cáo tháng là tháng sau, báo cáo quý là quý sau, đối với báo cáo năm à năm sau.
+ 
+ 
+B. CÁC BIỂU MẪU SỐ LIỆU BÁO CÁO
+Biểu số 01a/BTP/KSTT 	KẾT QUẢ ĐÁNH GIÁ TÁC ĐỘNG CỦA THỦ TỤC HÀNH CHÍNH (TTHC) TẠI BỘ, CƠ QUAN NGANG BỘ
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ, cơ quan ngang bộ.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên dự án/ dự thảo văn bản QPPL được đánh giá tác động của TTHC	Số lượng TTHC đã được đánh giá tác động	Số lượng TTHC được quy định tại văn bản (sau khi ban hành)
+		Tổng số TTHC được đánh giá tác động	TTHC được quy định mới	TTHC được sửa đổi, bổ sung	TTHC được bãi bỏ	TTHC được giữ nguyên	Tổng số TTHC được quy định	Số, ký hiệu, ngày, tháng, năm ban hành văn bản
+(1)	(2)	(3) = (4)+ (5)+(6)+(7)	(4)	(5)	(6)	(7)	(8)	(9)
+I	Luật	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+II	Pháp lệnh	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+III	Nghị định	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+IV	Nghị quyết Chính phủ	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+V	Quyết định của Thủ tướng Chính phủ	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+VI	Thông tư	 	 	 	 	 	 	 
+1	...	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 
+ 	TỔNG SỐ	 	 	 	 	 	 	 
+Lưu ý: Đối với những dự án/dự thảo văn bản QPPL chưa được ban hành trong kỳ báo cáo, đề nghị cung cấp/ cập nhật thông tin (tên, số ký hiệu, thời gian ban hành văn bản; số lượng TTHC) tại các kỳ báo cáo kế tiếp.
+ 
+Biểu số 01b/BTP/KSTT	KẾT QUẢ ĐÁNH GIÁ TÁC ĐỘNG CỦA THỦ TỤC HÀNH CHÍNH (TTHC) TẠI ĐỊA PHƯƠNG
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên dự thảo văn bản QPPL được đánh giá tác động của TTHC	Số lượng TTHC đã được đánh giá tác động	Số lượng TTHC được quy định tại văn bản (sau khi ban hành)
+		Tổng số TTHC được đánh giá tác động	TTHC được quy định mới	TTHC được sửa đổi, bổ sung	TTHC được bãi bỏ	TTHC được giữ nguyên	Tổng số TTHC được quy định	Số, ký hiệu, ngày, tháng, năm ban hành văn bản
+(1)	(2)	(3) = (4)+ (5)+(6)+(7)	(4)	(5)	(6)	(7)	(8)	(9)
+I	Nghị quyết của HĐND cấp tỉnh	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 
+II	Quyết định của UBND cấp tỉnh	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 
+III.	Quyết định của Chủ tịch UBND cấp tỉnh	 	 	 	 	 	 	 
+1	…	 	 	 	 	 	 	 
+ 	TỔNG SỐ	 	 	 	 	 	 	 
+Lưu ý: Đối với những dự thảo văn bản QPPL chưa được ban hành trong kỳ báo cáo, đề nghị cung cấp/ cập nhật thông tin (tên, số ký hiệu, thời gian ban hành văn bản; số lượng TTHC) tại các kỳ báo cáo kế tiếp.
+
+ 
+Biểu số 02a/BTP/KSTT	KẾT QUẢ THẨM ĐỊNH VỀ THỦ TỤC HÀNH CHÍNH QUY ĐỊNH TRONG CÁC DỰ ÁN/ DỰ THẢO VĂN BẢN QUY PHẠM PHÁP LUẬT THUỘC THẨM QUYỀN CỦA QUỐC HỘI, ỦY BAN THƯỜNG VỤ QUỐC HỘI, CHÍNH PHỦ, THỦ TƯỚNG CHÍNH PHỦ
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên bộ, cơ quan chủ trì soạn thảo	Tổng số	Số lượng TTHC được thẩm định theo tên loại VBQPPL
+			Luật/ Nghị quyết của QH	Pháp lệnh	Nghị định	Nghị quyết của Chính phủ	Quyết định của TTgCP
+		TTHC	VBQPPL	Số lượng TTHC	Số lượng VB QPPL	Số lượng TTHC	Số lượng VB QPPL	Số lượng TTHC	Số lượng VB QPPL	Số lượng TTHC	Số lượng VB QPPL	Số lượng TTHC	Số lượng VB QPPL
+(1)	(2)	(3) = (5)+(7) +(9)+(11)+(13)	(4) = (6)+(8) +(10)+(12)+(14)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)
+1	…	 	 	 	 	 	 	 	 	 	 	 	 
+2	…	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 
+TỔNG SỐ	 	 	 	 	 	 	 	 	 	 	 	 
+ 
+DANH SÁCH VĂN BẢN QUY PHẠM PHÁP LUẬT THẨM ĐỊNH TRONG KỲ BÁO CÁO
+STT	Tên văn bản quy phạm pháp luật thẩm định trong kỳ báo cáo	Bộ/cơ quan chủ trì
+I	Luật/ Nghị quyết của Quốc hội	 
+1	…	 
+n	…	 
+II	Pháp lệnh	 
+1	…	 
+n	…	 
+III	Nghị định	 
+1	…	 
+n	…	 
+IV	Nghị quyết của Chính phủ	 
+1	…	 
+n	…	 
+V	Quyết định của Thủ tướng Chính phủ	 
+1	…	 
+n	…	 
+ 
+Biểu số 02b/BTP/KSTT	KẾT QUẢ THẨM ĐỊNH VỀ THỦ TỤC HÀNH CHÍNH QUY ĐỊNH TẠI THÔNG TƯ CỦA BỘ TRƯỞNG, THỦ TRƯỞNG CƠ QUAN NGANG BỘ
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ, cơ quan ngang bộ
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên cơ quan, đơn vị chủ trì soạn thảo	Số lượng TTHC được thẩm định tại dự thảo Thông tư
+		Số lượng TTHC	Số lượng Thông tư5
+(1)	(2)	(3)	(4)
+1	…	 	 
+2	…	 	 
+…	…	 	 
+TỔNG SỐ	 	 
+____________________
+5 Danh mục Thông tư kèm theo: Tên, trích yếu, ngày tháng năm ban hành.
+ 
+Biểu số 02c/BTP/KSTT	KẾT QUẢ THẨM ĐỊNH VỀ THỦ TỤC HÀNH CHÍNH QUY ĐỊNH TẠI DỰ THẢO VĂN BẢN QUY PHẠM PHÁP LUẬT CỦA ĐỊA PHƯƠNG
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên cơ quan, đơn vị chủ trì soạn thảo	Tổng số	Số lượng TTHC được thẩm định theo tên loại VBQPPL
+			Quyết định của UBND6	Quyết định của Chủ tịch UBND7	Nghị quyết của HĐND8
+		TTHC	VBQPPL	Số lượng VBQPPL	Số lượng TTHC	Số lượng VBQPPL	Số lượng TTHC	Số lượng VBQPPL	Số lượng TTHC
+(1)	(2)	(3) = (5)+(7)+(9)	(4) = (6)+(8)+(10)	(5)	(6)	(7)	(8)	(9)	(10)
+1	Sở…	 	 	 	 	 	 	 	 
+2	Sở…	 	 	 	 	 	 	 	 
+TỔNG SỐ	 	 	 	 	 	 	 	 
+_____________________
+6 Danh mục Quyết định của UBND kèm theo: Tên, trích yếu, ngày tháng năm ban hành.
+7 Danh mục Quyết định của Chủ tịch UBND: Tên, trích yếu, ngày tháng năm ban hành.
+8 Danh mục Nghị quyết của HĐND: Tên, trích yếu, ngày tháng năm ban hành.
+ 
+Biểu số 03a/BTP/KSTT 	KẾT QUẢ CÔNG BỐ, CÔNG KHAI THỦ TỤC HÀNH CHÍNH TẠI BỘ/CƠ QUAN NGANG BỘ/CƠ QUAN
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ Bộ, cơ quan ngang bộ;
++ Ngân hàng Chính sách xã hội; Ngân hàng Phát triển Việt Nam.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+STT	Tên cơ quan, đơn vị thuộc Bộ/cơ quan ngang bộ thực hiện	Số lượng quyết định công bố	Số lượng văn bản QPPL quy định TTHC được công bố	Số lượng TTHC đã được công bố	Số lượng TTHC đã được công khai/ không công khai	Tổng số TTHC thuộc phạm vi quản lý của đơn vị tính đến thời điểm báo cáo
+				Tổng số	TTHC quy định mới	TTHC sửa đổi, bổ sung	TTHC bãi bỏ	Ban hành mới hoặc sửa đổi, bổ sung (Công khai)	Bãi bỏ (Không công khai)	
+(1)	(2)	(3)	(4)	(5) = (6)+(7)+(8)	(6)	(7)	(8)	(9)	(10)	(11)
+1	…	 	 	 	 	 	 	 	 	 
+2	…	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 
+TỔNG SỐ	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 03b/BTP/KSTT	KẾT QUẢ CÔNG BỐ, CÔNG KHAI THỦ TỤC HÀNH CHÍNH TẠI ĐỊA PHƯƠNG
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, VB.
+I. CÔNG BỐ DANH MỤC TTHC, CÔNG KHAI TTHC THUỘC THẨM QUYỀN BAN HÀNH CỦA TRUNG ƯƠNG
+STT	Tên cơ quan, đơn vị thuộc UBND cấp tỉnh thực hiện	Số lượng quyết định công bố	Số lượng TTHC đã được công bố	Số lượng TTHC đã được công khai/ không công khai	Tổng số TTHC thuộc thẩm quyền giải quyết của cơ quan, đơn vị đến thời điểm báo cáo
+			Tổng số	TTHC quy định mới	TTHC sửa đổi, bổ sung	TTHC bãi bỏ	Ban hành mới hoặc sửa đổi, bổ sung (Công khai)	Bãi bỏ (Không công khai)	
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+1	…..	 	 	 	 	 	 	 	 
+ 	TỔNG CỘNG	 	 	 	 	 	 	 	 
+II. CÔNG BỐ, CÔNG KHAI TTHC THUỘC THẨM QUYỀN BAN HÀNH CỦA ĐỊA PHƯƠNG
+STT	Tên cơ quan, đơn vị thuộc UBND cấp tỉnh	Số lượng quyết định công bố	Số lượng văn bản QPPL quy định TTHC được công bố	Số lượng TTHC đã được công bố	Số lượng TTHC đã được công khai/ không công khai	Tổng số TTHC thuộc thẩm quyền giải quyết của cơ quan, đơn vị đến thời điểm báo cáo
+				Tổng số	TTHC quy định mới	TTHC sửa đổi, bổ sung	TTHC bãi bỏ	Ban hành mới hoặc sửa đổi, bổ sung (Công khai)	Bãi bỏ (Không công khai)	
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)
+1	Sở…	 	 	 	 	 	 	 	 	 
+…	 	 	 	 	 	 	 	 	 	 
+ 	TỔNG CỘNG	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 04a/BTP/KSTT	KẾT QUẢ RÀ SOÁT, ĐƠN GIẢN HÓA THỦ TỤC HÀNH CHÍNH TẠI BỘ, CƠ QUAN
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ Bộ, cơ quan ngang bộ;
++ Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC/nhóm TTHC, triệu đồng, %
+STT	Tổng số TTHC cần rà soát, đơn giản hóa theo Kế hoạch	Tổng số TTHC đã được rà soát, thông qua phương án đơn giản hóa	Phương án đơn giản hóa TTHC	Thời gian cắt giảm (ngày)	Tỷ lệ thời gian cắt giảm	Số tiền tiết kiệm (triệu đồng)	Tỷ lệ chi phí tiết kiệm	Số, ký hiệu, ngày của QĐ phê duyệt Phương án đơn giản hóa
+			Số lượng TTHC giữ nguyên	Số lượng TTHC bãi bỏ	Số lượng TTHC sửa đổi, bổ sung	Số lượng VBQPPL phải sửa đổi	Số ký hiệu, tên các VBQPPL phải sửa đổi					
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	 
+I	THEO KẾ HOẠCH RÀ SOÁT CỦA CHÍNH PHỦ, THỦ TƯỚNG CHÍNH PHỦ	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng	 	 	 	 	 	 	 	 	 	 	 	 
+II	THEO KẾ HOẠCH RÀ SOÁT CỦA BỘ, CƠ QUAN NGANG BỘ	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng	 	 	 	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 04b/BTP/KSTT	KẾT QUẢ RÀ SOÁT, ĐƠN GIẢN HÓA THỦ TỤC HÀNH CHÍNH TẠI ĐỊA PHƯƠNG
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+ 
+STT	Tổng số TTHC cần rà soát, đơn giản hóa theo Kế hoạch	Tổng số TTHC đã được rà soát, thông qua phương án đơn giản hóa	Phương án đơn giản hóa TTHC	Thời gian cắt giảm (ngày)	Tỷ lệ thời gian cắt giảm	Số tiền tiết kiệm (triệu đồng)	Tỷ lệ chi phí tiết kiệm	Số, ký hiệu, ngày của QĐ phê duyệt Phương án đơn giản hóa
+			Số lượng TTHC giữ nguyên	Số lượng TTHC bãi bỏ	Số lượng TTHC sửa đổi, bổ sung	Số lượng VBQPPL phải sửa đổi	Số ký hiệu, tên các VBQPPL phải sửa đổi					
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	 
+I	THEO KẾ HOẠCH RÀ SOÁT CỦA CHÍNH PHỦ, THỦ TƯỚNG CHÍNH PHỦ	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng	 	 	 	 	 	 	 	 	 	 	 	 
+II	THEO KẾ HOẠCH RÀ SOÁT CỦA UBND TỈNH, THÀNH PHỐ	 
+ 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng	 	 	 	 	 	 	 	 	 	 	 	 
+													
+ 
+Biểu số 4c/BTP/KSTT	KẾT QUẢ RÀ SOÁT, ĐƠN GIẢN HÓA THỦ TỤC HÀNH CHÍNH, ĐIỀU KIỆN KINH DOANH
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ, cơ quan ngang bộ;
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+ 
+STT	Quyết định phê duyệt PA ĐGH	Phương án đơn giản hóa được phê duyệt	Kết quả thực thi PA ĐGH trong kỳ báo cáo
+		Đơn giản hóa TTHC	Bãi bỏ TT HC	Đơn giản hóa ĐKK D	Cắt giảm ĐKK D	Thời gian cắt giảm (ngày)	Tỷ lệ thời gian cắt giảm	Chi phí cắt giảm (triệu đồng)	Tỷ lệ chi phí cắt giảm	Số lượng VB phải sửa đổi	Đơn giản hóa TTHC	Bãi bỏ TT HC	Đơn giản hóa ĐKKD	Cắt giả m ĐK KD	Thời gian giải quyết TTHC đã cắt giảm (ngày)	Chi phí tuân thủ cắt giảm (triệu đồng)	Số lượng VB đã được ban hành để thực thi PA ĐGH	Số, ký hiệu, ngày tháng năm của Văn bản thực thi và Văn bản được sửa đổi bổ sung (VD: Nghị định số 250/2025/NĐ- CP ngày 01/12/2025 sửa Nghị định số 111/2021/NĐ- CP ngày 01/12/2021,...)
+										Luật	NQ của QH	NĐ	NQ quy phạm của CP	QĐ của TTg	TTư							Luật	NQ của QH	NĐ	NQ quy phạm của CP	QĐ của TTg	TTư	
+A	B	(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)	(18)	(19)	(20)	(21)	(22)	(23)	(24)	(25)	(26)	(27)
+I	Theo Quyết định phê duyệt phương án đơn giản hóa của Thủ tướng Chính phủ (ghi rõ số, ngày, tên Quyết định)	 	 
+1	Quyết định số….ngày ...	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+II	Theo Quyết định phê duyệt phương án đơn giản hóa của Bộ trưởng, Thủ trưởng cơ quan ngang bộ (ghi rõ số, ngày, tên Quyết định)
+1	Quyết định số….ngày ...	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+III	Chủ động thực hiện cắt giảm, đơn giản hóa thủ tục hành chính trong xây dựng, ban hành VBQPPL
+1	Lĩnh vực….	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng cộng	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 4d/BTP/KSTT	KẾT QUẢ RÀ SOÁT, ĐƠN GIẢN HÓA THỦ TỤC HÀNH CHÍNH, ĐIỀU KIỆN KINH DOANH (UBND CẤP TỈNH)
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND tỉnh, thành phố
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+ 
+STT	Quyết định phê duyệt PA ĐGH	Phương án đơn giản hóa được phê duyệt	Kết quả thực thi PA ĐGH trong kỳ báo cáo
+		Đơn giản hóa TTHC	Bãi bỏ TTHC	Đơn giản hóa ĐKKD	Cắt giảm ĐKKD	Thời gian giải quyết TTHC dự kiến cắt giảm (ngày)	Tỷ lệ thời gian cắt giảm	Chi phí tuân thủ cắt giảm (triệu đồng)	Tỷ lệ chi phí cắt giảm	Đơn giản hóa TTHC	Bãi bỏ TTHC	Đơn giản hóa ĐKKD	Cắt giảm ĐKKD	Thời gian giải quyết TTHC đã cắt giảm (ngày)	Chi phí tuân thủ cắt giảm (triệu đồng)	Số lượng VB đã được ban hành để thực thi PA ĐGH	Số, ký hiệu, ngày tháng năm của Văn bản thực thi và Văn bản được sửa đổi bổ sung (VD: Quyết định số 01/2026/QĐ- UBND sửa đổi, bổ sung Quyết định số 12/2023/QĐ- UBND,...).
+																NQ của HĐND	QĐ của UBND	
+A	B	(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)
+I	Theo Quyết định phê duyệt phương án đơn giản hóa của Uỷ ban nhân dân (ghi rõ số, ngày, tên Quyết định)
+1	Quyết định số…ngày….	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+II	Chủ động thực hiện cắt giảm, đơn giản hóa thủ tục hành chính trong xây dựng, ban hành VBQPPL
+1	Lĩnh vực	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+Tổng cộng	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 05a/BTP/KSTT	TÌNH HÌNH, KẾT QUẢ TRIỂN KHAI THỰC HIỆN CẮT GIẢM, ĐƠN GIẢN HÓA TTHC DỰA TRÊN DỮ LIỆU
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ, cơ quan ngang bộ.
+- Đơn vị nhận báo cáo: Bộ Tư pháp
+A. Kết quả sửa đổi, bổ sung văn bản QPPL thực hiện cắt giảm, đơn giản hóa TTHC dựa trên dữ liệu
+STT	Tên văn bản QPPL cần sửa đổi, bổ sung	Tên văn bản QPPL đã được ban hành (Số văn bản; ngày, tháng, năm ban hành) hoặc tiến độ thực hiện đối với văn bản chưa được ban hành	Số TTHC đã thay thế bằng dữ liệu sau khi VBQPPL được sửa đổi, bổ sung	Số TTHC đã cắt giảm bằng dữ liệu sau khi VBQPPL được sửa đổi, bổ sung	Ghi chú
+I	Luật	 	 	 	 
+1	…	 	 	 	 
+II	Nghị định	 	 	 	 
+1	….	 	 	 	 
+III	…	 	 	 	 
+B. Kết quả tái cấu trúc quy trình giải quyết đối với các TTHC có thành phần hồ sơ được thay thế thông tin trên các Cơ sở dữ liệu đã được các Bộ công bố
+ 
+Biểu số 05b/BTP/KSTT 	TÌNH HÌNH, KẾT QUẢ TRIỂN KHAI THỰC HIỆN CẮT GIẢM, ĐƠN GIẢN HÓA TTHC DỰA TRÊN DỮ LIỆU
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ.
+- Đơn vị nhận báo cáo: Bộ Tư pháp
+1. Cơ sở dữ liệu được công bố phạm vi thông tin trong cơ sở dữ liệu được khai thác, sử dụng thay thế giấy tờ trong thành phần hồ sơ thủ tục hành chính
+TT	Tên Cơ sở dữ liệu được công bố	Thông tin trong cơ sở dữ liệu được khai thác, sử dụng thay thế giấy tờ trong thành phần hồ sơ thủ tục hành chính
+		Số lượng	Chi tiết
+ 	 	 	 
+ 	 	 	 
+2. Số thủ tục hành chính có sử dụng thông tin từ Cơ sở dữ liệu đã được công bố
+TT	Tên cơ sở dữ liệu đã công bố	Tổng số TTHC sử dụng thông tin từ Cơ sở dữ liệu/Tổng số TTHC phải tái cấu trúc để sử dụng thông tin từ Cơ sở dữ liệu	Tổng số TTHC đã tái cấu trúc theo Cơ sở dữ liệu
+01	Cơ sở dữ liệu quốc gia về dân cư	 	 
+02	Cơ sở dữ liệu hộ tịch điện tử	 	 
+03	Cơ sở dữ liệu quốc gia nền tảng Sổ sức khoẻ điện tử	 	 
+04	Cơ sở dữ liệu về đăng ký phương tiện	 	 
+05	Cơ sở dữ liệu lý lịch tư pháp	 	 
+06	Cơ sở dữ liệu Giấy phép lái xe	 	 
+07	Cơ sở dữ liệu quốc gia về Đăng ký doanh nghiệp	 	 
+08	Cơ sở dữ liệu quốc gia về Đất đai	 	 
+09	Cơ sở dữ liệu quốc gia về Bảo hiểm xã hội	 	 
+….	…………………………………………	 	 
+ 
+Biểu số 05c/BTP/KSTT	TÌNH HÌNH, KẾT QUẢ TRIỂN KHAI THỰC HIỆN CẮT GIẢM, ĐƠN GIẢN HÓA TTHC DỰA TRÊN DỮ LIỆU
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND tỉnh, thành phố.
+- Đơn vị nhận báo cáo: Bộ Tư pháp
+.
+STT	Kết quả sửa đổi, bổ sung VBQPPL	Tổng số TTHC đã tái cấu trúc theo các CSDL	Số liệu chi tiết TTHC đã tái cấu trúc theo các CSDL	Số Quyết định công bố TTHC đã được ban hành									
+	Tên tỉnh, thành phố	Số TTHC phải cắt giảm, thay thế bằng dữ liệu	Số VBQPPL phải sửa đổi, bổ sung	Số VBQPPL đã được sửa đổi, bổ sung	Số TTHC đã cắt giảm, thay thế bằng dữ liệu sau khi VBQPPL được sửa đổi, bổ sung		Cơ sở dữ liệu quốc gia về dân cư	Cơ sở dữ liệu quốc gia về Đăng ký doanh nghiệp	Cơ sở dữ liệu quốc gia về Bảo hiểm xã hội	Cơ sở dữ liệu hộ tịch điện tử	Cơ sở dữ liệu quốc gia về Đất đai	Từ 02 Cơ sở dữ liệu trở lên										
+			Nghị quyết của HĐND cấp tỉnh	Quyết định của UBND cấp tỉnh	Nghị quyết của HĐND cấp tỉnh	Quyết định của UBND cấp tỉnh																		
+1	………	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+2	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+3	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+4	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+5	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+6	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 									
+ 
+Biểu số 06a/BTP/KSTT	KẾT QUẢ XỬ LÝ PHẢN ÁNH, KIẾN NGHỊ (PAKN)
+VỀ QUY ĐỊNH HÀNH CHÍNH VÀ HÀNH VI HÀNH CHÍNH TẠI CƠ QUAN, ĐƠN VỊ THUỘC BỘ, CƠ QUAN, UBND CẤP TỈNH VÀ TẠI UBND CẤP XÃ
+Kỳ báo cáo: Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ UBND cấp xã, cơ quan chuyên môn thuộc UBND cấp tỉnh.
++ Cơ quan, đơn vị trực thuộc bộ.
+- Đơn vị nhận báo cáo:
++ UBND cấp tỉnh.
++ Bộ, cơ quan ngang bộ.
+Đơn vị tính: Số PAKN.
+STT	Tên ngành, lĩnh vực có PAKN	Số lượng PAKN được tiếp nhận	Kết quả xử lý PAKN	Số PAKN đã xử lý được đăng tải công khai					
+		Tổng số	Theo nội dung	Theo thời điểm tiếp nhận	Đã xử lý	Đang xử lý						
+					Tổng số	Theo nội dung	Theo thời điểm tiếp nhận	Tổng số	Hành vi hành chính	Quy định hành chính						
+			Hành vi hành chính	Quy định hành chính	Từ kỳ trước	Trong kỳ		Hành vi hành chính	Quy định hành chính	Từ kỳ trước	Trong kỳ									
+(1)	(2)	(3)=(4)+(5)=(6)+(7)	(4)	(5)	(6)	(7)	(8)=(9)+(10)=(11)+(12)	(9)	(10)	(11)	(12)	(13)=(14)+(15)	(14)	(15)	(16)					
+1	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+2	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+...	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+TỔNG CỘNG	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+ 
+Biểu số 06b/BTP/KSTT	KẾT QUẢ TIẾP NHẬN, XỬ LÝ PHẢN ÁNH, KIẾN NGHỊ (PAKN) VỀ QUY ĐỊNH HÀNH CHÍNH VÀ HÀNH VI HÀNH CHÍNH CỦA BỘ, CƠ QUAN, ĐỊA PHƯƠNG 
+Kỳ báo cáo: Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ Bộ, cơ quan ngang bộ;
++ Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam.
++ UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: Số PAKN.
+STT	Tên ngành, lĩnh vực có PAKN	Số lượng PAKN được tiếp nhận	Kết quả xử lý PAKN	Số PAKN đã xử lý được đăng tải công khai					
+		Tổng số	Theo nội dung	Theo thời điểm tiếp nhận	Đã xử lý	Đang xử lý						
+					Tổng số	Theo nội dung	Theo thời điểm tiếp nhận	Tổng số	Hành vi hành chính	Quy định hành chính						
+			Hành vi hành chính	Quy định hành chính	Từ kỳ trước	Trong kỳ		Hành vi hành chính	Quy định hành chính	Từ kỳ trước	Trong kỳ									
+(1)	(2)	(3)=(4)+(5)=(6) +(7)	(4)	(5)	(6)	(7)	(8)=(9)+(10) =(11)+(12)	(9)	(10)	(11)	(12)	(13)=(14)+ (15)	(14)	(15)	(16)					
+1	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+2	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+...	...	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+TỔNG CỘNG	 	 	 	 	 	 	 	 	 	 	 	 	 	 					
+ 
+Biểu số 07a/BTP/KSTT	TÌNH HÌNH, KẾT QUẢ GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH TẠI CƠ QUAN, ĐƠN VỊ TRỰC TIẾP GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ UBND cấp xã;
+Cơ quan chuyên môn thuộc UBND cấp tỉnh.
++ Cơ quan, đơn vị trực thuộc bộ, cơ quan ngang bộ.
+- Đơn vị nhận báo cáo:
++ UBND cấp tỉnh.
++ Bộ, cơ quan ngang bộ.
+Đơn vị tính: Số hồ sơ TTHC.
+STT	Lĩnh vực giải quyết	Số lượng hồ sơ tiếp nhận	Số lượng hồ sơ đã giải quyết	Số lượng hồ sơ đang giải quyết
+		Tổng số	Trong kỳ	Từ kỳ trước	Tổng số	Trước hạn	Đúng hạn	Quá hạn	Tổng số	Trong hạn	Quá hạn
+			Trực tuyến toàn trình	Trực tuyến một phần	Qua dịch vụ bưu chính	Trực tiếp								
+(1)	(2)	(3)=(4)+(5) +(6)+(7)+(8)	(4)	(5)	(6)	(7)	(8)	(9)=(10)+(11) +(12)	(10)	(11)	(12)	(13)=(14)+(15)	(14)	(15)
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+TỔNG CỘNG	 	 	 	 	 	 	 	 	 	 	 	 	 
+ 
+Biểu số 07b/BTP/KSTT 	TÌNH HÌNH, KẾT QUẢ GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH CỦA UBND CẤP TỈNH
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: Số hồ sơ TTHC.
+STT	Lĩnh vực giải quyết	Số lượng hồ sơ tiếp nhận	Số lượng hồ sơ đã giải quyết	Số lượng hồ sơ đang giải quyết
+		Tổng số	Trong kỳ	Từ kỳ trước	Tổng số	Trước hạn	Đúng hạn	Quá hạn	Tổng số	Trong hạn	Quá hạn
+			Trực tuyến toàn trình	Trực tuyến một phần	Qua dịch vụ bưu chính	Trực tiếp	 							
+(1)	(2)	(3)=(4)+(5) +(6)+(7)+(8)	(4)	(5)	(6)	(7)	( (8)	9)=(10)+(11) +(12)	(10)	(11)	(12)	(13)=(14)+ (15)	(14)	(15)
+I.	Tình hình, kết quả giải quyết TTHC thuộc phạm vi thẩm quyền của UBND cấp tỉnh
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+II.	Tổng hợp tình hình, kết quả giải quyết TTHC thuộc phạm vi thẩm quyền của UBND cấp xã
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+TỔNG CỘNG	 	 	 	 	 	 	 	 	 	 	 	 	 
+Lưu ý: Mục II: Số liệu được tổng hợp từ báo cáo của UBND các xã, phường, đặc khu.
+ 
+Biểu số 07c/BTP/KSTT	TỔNG HỢP TÌNH HÌNH, KẾT QUẢ GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH CỦA BỘ, CƠ QUAN
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ Bộ, cơ quan ngang Bộ.
++ Ngân hàng Chính sách xã hội, Ngân hàng Phát triển Việt Nam.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: Số hồ sơ TTHC.
+STT	Lĩnh vực giải quyết	Số lượng hồ sơ tiếp nhận	Số lượng hồ sơ đã giải quyết	Số lượng hồ sơ đang giải quyết
+		Tổng số	Trong kỳ	Từ kỳ trước	Tổng số	Trước hạn	Đúng hạn	Quá hạn	Tổng số	Trong hạn	Quá hạn
+			Trực tuyến toàn trình	Trực tuyến một phần	Qua dịch  vụ bưu chính	Trực tiếp								
+(1)	(2)	(3)=(4)+(5) +(6)	(4)	(5)	(6)	(7)	(8)	(9)=(10)+(11) +(12)	(10)	(11)	(12)	(13)=(14)+(15)	(14)	(15)
+I.	 	Tổng hợp tình hình, kết quả giải quyết TTHC tại các cơ quan, đơn vị trực thuộc
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+II.	Tổng hợp tình hình, kết quả giải quyết TTHC thuộc phạm vi thẩm quyền của cơ quan trung ương tổ chức theo ngành dọc cấp trung ương
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+III.	Tổng hợp tình hình, kết quả giải quyết TTHC thuộc phạm vi thẩm quyền của cơ quan trung ương tổ chức theo ngành dọc cấp khu vực/tỉnh
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+IV.	Tổng hợp tình hình, kết quả giải quyết TTHC thuộc phạm vi thẩm quyền của cơ quan trung ương tổ chức theo ngành dọc cấp xã
+1	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Lĩnh vực…	 	 	 	 	 	 	 	 	 	 	 	 	 
+…	…	 	 	 	 	 	 	 	 	 	 	 	 	 
+TỔNG CỘNG	 	 	 	 	 	 	 	 	 	 	 	 	 
+Lưu ý:
+- Cột số (6) của kỳ báo cáo (N) bất kỳ = cột số (11) của kỳ báo cáo (N-1)
+- Các mục: I, II, III, IV: Số liệu được tổng hợp từ báo cáo của các cơ quan, đơn vị trực thuộc.
+ 
+Biểu số 08a/BTP/KSTT 	SỐ LƯỢNG THỦ TỤC HÀNH CHÍNH TRIỂN KHAI TẠI BỘ PHẬN MỘT CỬA (BPMC) CẤP BỘ
+Kỳ báo cáo: Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:
++ Bộ, cơ quan ngang bộ;
++ Ngân hàng Chính sách Xã hội, Ngân hàng Phát triển Việt Nam.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, quy trình.
+STT	TTHC thuộc thẩm quyền giải quyết của Bộ, cơ quan	TTHC được thực hiện theo cơ chế một cửa, một cửa liên thông
+		Số lượng TTHC được thực hiện theo cơ chế một cửa, một cửa liên thông	Số lượng TTHC đã được ban hành quy trình nội bộ để giải quyết
+		Tổng số	TTHC giải quyết tại BPMC của Bộ, cơ quan	TTHC tổ chức theo ngành dọc	
+(1)	(2)	(3) = (4) + (5)	(4)	(5)	(6)
+ 	 	 	 	 	 
+1	Lĩnh vực A	 	 	 	 
+2	Lĩnh vực B	 	 	 	 
+…	….	 	 	 	 
+TỔNG CỘNG	 	 	 	 
+ 
+Biểu số 08b/BTP/KSTT	KẾT QUẢ THỰC HIỆN CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG CỦA CẤP XÃ
+Kỳ báo cáo: Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp xã.
+- Đơn vị nhận báo cáo: UBND cấp tỉnh.
+Đơn vị tính: Điểm tiếp nhận, người.
+STT	Trung tâm Phục vụ hành chính công (TPVHCC) xã/phường	Số lượng điểm tiếp nhận	Nhân sự	Đánh giá trang thiết bị tại các TTPVHCC
+			Chuyên trách của TTPVH CC	Cơ quan/phòng chuyên môn cử đến TTPVHCC	Nhân viên hợp đồng	Trang bị đủ máy tính cho cán bộ tiếp nhận/giải quyết TTHC	Trang bị đủ máy tính hỗ trợ thực hiện Dịch vụ công trực tuyến	Trang bị đủ máy scan	Trang bị đủ màn hình cảm ứng tra cứu thông tin, đánh giá
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+2	Xã/phường….	 	 	 	 	 	 	 	 
+Lưu ý:
+- Các cột (3), (4), (5), (6): Điền số liệu;
+- Các cột (7), (8), (9), (10): Trang bị đủ điền 1, Trang bị chưa đủ điền 0.
+ 
+Biểu số 08c/BTP/KSTT	KẾT QUẢ THỰC HIỆN CƠ CHẾ MỘT CỬA, MỘT CỬA LIÊN THÔNG CỦA ĐỊA PHƯƠNG
+Kỳ báo cáo: Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: UBND cấp tỉnh.
+- Đơn vị nhận báo cáo: Bộ Tư pháp.
+Đơn vị tính: TTHC, chi nhánh/điểm tiếp nhận,người,
+I. SỐ LƯỢNG TTHC TRIỂN KHAI TẠI TTPVHCC CÁC CẤP
+Tổng số TTHC thuộc thẩm quyền giải quyết của địa phương	Tổng số TTHC thuộc thẩm quyền giải quyết của địa phương thực hiện tiếp nhận tại TTPVHCC cấp tỉnh, cấp xã	Số lượng TTHC đã được ban hành quy trình nội bộ để giải quyết
+Tổng số TTHC	Cấp tỉnh	Cấp xã	Tổng số TTHC	Cấp tỉnh	Cấp xã	Tổng số TTHC	Cấp tỉnh	Cấp xã
+(1)=(2)+(3)	(2)	(3)	(4)=(5)+(6)	(5)	(6)	(7)=(8)+(9)	(8)	(9)
+ 	 	 	 	 	 	 	 	 
+II. CƠ CẤU TỔ CHỨC, NHÂN SỰ, TRANG THIẾT BỊ TTPVHCC
+STT	TTPVHCC cấp tỉnh, cấp xã	Số lượng chi nhánh/điểm tiếp nhận	Nhân sự	Đánh giá trang thiết bị tại các TTPVHCC
+			Chuyên trách của TTPVH CC	Các sở/cơ quan/phòng chuyên môn cử đến TTPVHCC	Nhân viên hợp đồng	Trang bị đủ máy tính cho cán bộ tiếp nhận/giải quyết TTHC	Trang bị đủ máy tính hỗ trợ thực hiện Dịch vụ công trực tuyến	Trang bị đủ máy scan	Trang bị đủ màn hình cảm ứng tra cứu thông tin, đánh giá
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+1	Cấp tỉnh	 	 	 	 	 	 	 	 
+2	Cấp xã	 	 	 	 	 	 	 	 
+TỔNG CỘNG	 	 	 	 	 	 	 	 
+Lưu ý: Cách điền mục II:
+- Các cột (3), (4), (5), (6): Điền số liệu;
+- Các cột (7), (8), (9), (10):
++ Đối với cấp tỉnh: Trang bị đủ điền 1, Trang bị chưa đủ điền 0.
++ Đối với cấp xã: Số liệu được tổng hợp từ báo cáo của UBND các xã, phường, đặc khu.
+ 
+Biểu số 09a/BTP/KSTT	KẾT QUẢ CÔNG BỐ, CÔNG KHAI TTHC NỘI BỘ
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo: Các cấp
+- Đơn vị nhận báo cáo: Các cấp
+ 
+STT	Tên Bộ, ngành, địa phương	Kết quả công bố TTHC nội bộ	Kết quả công khai TTHC nội bộ	Lũy kế đến kỳ báo cáo
+		Số lượng Quyết định công bố	Số lượng TTHC nội bộ đã công bố	Đã công khai Quyết định, TTHC	Chưa công khai Quyết định, TTHC	Số lượng Quyết định công bố	Số lượng TTHC nội bộ đã công bố	Đã công khai Quyết định, TTHC	Chưa công khai Quyết định, TTHC
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+1	Bộ A	 	 	 	 	 	 	 	 
+2	Bộ B	 	 	 	 	 	 	 	 
+3	….	 	 	 	 	 	 	 	 
+4	Địa phương A	 	 	 	 	 	 	 	 
+5	Địa phương B	 	 	 	 	 	 	 	 
+6	…	 	 	 	 	 	 	 	 
+ 
+Biểu số 09b/BTP/KSTT 	KẾT QUẢ PHÊ DUYỆT, THỰC THI PHƯƠNG ÁN CẮT GIẢM, ĐƠN GIẢN HÓA TTHC NỘI BỘ
+Kỳ báo cáo: Tháng.../Quý.../06 tháng đầu năm/Năm...
+(Từ ngày .../.../20... đến ngày .../.../20...)	- Đơn vị báo cáo:Các cấp
+- Đơn vị nhận báo cáo: Các cấp
+ 
+STT	Tên bộ, ngành, địa phương	Kết quả phê duyệt Phương án cắt giảm, đơn giản hóa TTHC nội bộ	Tên, số ký hiệu văn bản	Kết quả thực thi Phương án cắt giảm, đơn giản hóa TTHC nội bộ	Văn bản ban hành để thực thi	Kết quả thực thi Phương án cắt giảm, ĐGH TTHC nội bộ (Luỹ kế)	Ghi chú
+		Số bãi bỏ	Số sửa đổi, bổ sung	Số giữ nguyên	Cộng		Số bãi bỏ	Số sửa đổi, bổ sung	Số giữ nguyên	Cộng		Số bãi bỏ	Số sửa đổi, bổ sung	Số giữ nguyên	Cộng	
+(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)
+1	Bộ A	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+2	Bộ B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+3	….	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+4	Địa phương A	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+5	Địa phương B	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 
+6	…
