@@ -74,7 +74,7 @@ docs/           tài liệu hiện hành và tài liệu lịch sử có nhãn
 eval/           metric và runner đánh giá
 scripts/        ingest, kiểm tra, benchmark, utility và artifact nghiên cứu
 tests/           unit test và pilot-readiness gates
-legal-sources/  văn bản nguồn thô, không phải đường chạy runtime trực tiếp
+legal-corpus/  văn bản nguồn thô, không phải đường chạy runtime trực tiếp
 ```
 
 ## Tài liệu theo vai trò
